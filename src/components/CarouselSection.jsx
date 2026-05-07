@@ -5,26 +5,26 @@ const MACHINES = [
   { 
     id: 1, 
     label: 'SEA-LION', 
-    img: '/src/assets/Brands/sea-lion brand/WASHER-EXTRACTOR.png', 
-    logo: '/src/assets/Brands/sea-lion brand/sea-lion-logo.png' 
+    img: '/Brands/sea-lion brand/WASHER-EXTRACTOR.png', 
+    logo: '/Brands/sea-lion brand/sea-lion-logo.png' 
   },
   { 
     id: 2, 
     label: 'KANNEGIESSER', 
-    img: '/src/assets/Brands/Kannegiesser brand/301868_Powertrans_SBW_11_persp04.jpg', 
-    logo: '/src/assets/Brands/Kannegiesser brand/Kannegiesser_Logo.jpg' 
+    img: '/Brands/Kannegiesser brand/301868_Powertrans_SBW_11_persp04.jpg', 
+    logo: '/Brands/Kannegiesser brand/Kannegiesser_Logo.jpg' 
   },
   { 
     id: 3, 
     label: 'MAESTRELLI', 
-    img: '/src/assets/Brands/MAESTRELLI brand/DREAMCLEAN MULTISOLVENT SOFT MOUNT.png', 
-    logo: '/src/assets/Brands/MAESTRELLI brand/Maestrelli_Logo.png' 
+    img: '/Brands/MAESTRELLI brand/DREAMCLEAN MULTISOLVENT SOFT MOUNT.png', 
+    logo: '/Brands/MAESTRELLI brand/Maestrelli_Logo.png' 
   },
   { 
     id: 4, 
     label: 'MAXIPRESS', 
-    img: '/src/assets/Brands/maxipress brand/MPCAFF-FORM FINISHER.png', 
-    logo: '/src/assets/Brands/maxipress brand/Maxipress_Logo.png' 
+    img: '/Brands/maxipress brand/MPCAFF-FORM FINISHER.png', 
+    logo: '/Brands/maxipress brand/Maxipress_Logo.png' 
   },
 ];
 
