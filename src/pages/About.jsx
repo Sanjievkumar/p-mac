@@ -84,112 +84,69 @@ export default function About() {
             viewport={{ once: true, amount: 0.2 }}
             className="flex flex-col items-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#0b1b36] font-display tracking-tighter uppercase inline-block border-b-[3px] border-[#E31E24] pb-3 text-center">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#0b1b36] font-display tracking-tighter uppercase text-center">
               TRUSTED BY LEADING BRANDS
             </h2>
           </motion.div>
 
           <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
             
-            {/* Left Side: 3D Washer Interface & Particle System */}
+            {/* Left Side: Photorealistic Washer & Particle System */}
             <div className="w-full lg:w-1/2 flex justify-center lg:justify-start pl-0 lg:pl-10 relative min-h-[500px]">
-              {/* Washer Body Container */}
-              <div className="relative w-[360px] md:w-[400px] h-[500px] bg-gradient-to-b from-[#e2e8f0] to-[#cbd5e1] rounded-2xl shadow-[inset_-10px_-10px_20px_rgba(0,0,0,0.1),_0_40px_60px_rgba(0,0,0,0.2)] border-t-[6px] border-slate-300 flex flex-col items-center pt-8 z-20">
-                
-                {/* Embedded Digital Console */}
-                <div className="w-[85%] h-24 bg-[#1e293b] rounded-lg shadow-[inset_0_5px_15px_rgba(0,0,0,0.5)] flex flex-col p-3 border-b-4 border-[#0f172a]">
-                  <div className="flex justify-between items-center mb-1">
-                    <span className="text-[#e31e24] font-bold text-[10px] tracking-widest font-display">PROMAC SYS</span>
-                    <div className="flex gap-1.5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse shadow-[0_0_5px_#22c55e]" />
-                      <div className="w-1.5 h-1.5 rounded-full bg-red-500/50" />
-                    </div>
-                  </div>
-                  {/* Digital LED Screen */}
-                  <div className="w-full flex-grow bg-[#050b14] rounded border border-cyan-900/50 flex flex-col justify-center items-center overflow-hidden relative">
-                    <div className="absolute inset-0 bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.4)_50%)] bg-[length:100%_4px] pointer-events-none" />
-                    <span className="text-cyan-400 font-mono text-[9px] tracking-widest">ECOSYSTEM PHASE 1</span>
-                    <span className="text-cyan-300 font-mono text-xs font-bold mt-1 animate-pulse tracking-widest">ACTIVE // 99%</span>
-                  </div>
-                  {/* Physical Faux Buttons */}
-                  <div className="flex gap-3 mt-2 justify-center">
-                    <div className="w-6 h-1.5 bg-slate-500 rounded-sm shadow-[0_2px_0_#475569]" />
-                    <div className="w-6 h-1.5 bg-slate-500 rounded-sm shadow-[0_2px_0_#475569]" />
-                    <div className="w-6 h-1.5 bg-[#e31e24] rounded-sm shadow-[0_2px_0_#991b1b]" />
-                  </div>
-                </div>
+              
+              <div className="relative w-full max-w-[450px] flex items-center justify-center">
+                {/* Photorealistic Washer Image */}
+                <motion.img 
+                  src="/Brands/sea-lion brand/WASHER-EXTRACTOR.png" 
+                  alt="Promac Industrial Washer" 
+                  className="w-full h-auto object-contain drop-shadow-[0_30px_50px_rgba(0,0,0,0.15)] relative z-20"
+                />
 
-                {/* 3D Drum & Rotating Door Mechanism */}
-                <div className="relative mt-12 w-[260px] h-[260px] perspective-[1200px]">
-                  {/* The Black Hole Drum */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] to-black rounded-full shadow-[inset_0_30px_50px_rgba(0,0,0,0.9)] border-[12px] border-slate-400 flex items-center justify-center overflow-hidden">
-                    <div className="w-full h-full opacity-10 bg-[radial-gradient(circle,rgba(255,255,255,0.8)_1px,transparent_1px)] bg-[length:8px_8px]" />
-                  </div>
-
-                  {/* The Opened Door (Swings out on scroll) */}
-                  <motion.div 
-                    initial={{ rotateY: 0 }}
-                    whileInView={{ rotateY: 110 }}
-                    viewport={{ once: true, amount: 0.5 }}
-                    transition={{ duration: 1.5, type: "spring", bounce: 0.2, delay: 0.2 }}
-                    style={{ transformOrigin: "left center", transformStyle: "preserve-3d" }}
-                    className="absolute inset-0 z-30"
-                  >
-                    {/* Glass Door Base */}
-                    <div className="w-full h-full rounded-full border-[18px] border-slate-200 bg-white/5 backdrop-blur-[2px] shadow-[20px_0_40px_rgba(0,0,0,0.4),inset_0_0_20px_rgba(255,255,255,0.3)] flex items-center justify-center">
-                      {/* Glass Glare Reflection */}
-                      <div className="w-[85%] h-[85%] rounded-full border border-white/20 bg-gradient-to-tr from-transparent via-white/10 to-white/30" />
-                    </div>
-                  </motion.div>
-
-                  {/* Real-Look Bubble Physics Emitter */}
-                  <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
-                    {[...Array(15)].map((_, i) => {
-                      // Individualized Chaos Parameters
-                      const randomX = (Math.random() - 0.5) * 150;
-                      const randomDuration = 4 + Math.random() * 6; // 4 to 10 seconds
-                      const randomDelay = Math.random() * 4;
-                      const randomScale = 0.4 + Math.random() * 0.8;
-                      
-                      return (
-                        <motion.div
-                          key={`bubble-${i}`}
-                          initial={{ opacity: 0, y: 60, x: 0, scale: 0 }}
-                          whileInView={{ 
-                            opacity: [0, 0.9, 0.9, 0], 
-                            y: [40, -150, -350], 
-                            x: [0, randomX * 0.5, randomX],
-                            scale: [0, randomScale, randomScale * 1.5]
-                          }}
-                          transition={{ 
-                            repeat: Infinity, 
-                            duration: randomDuration, 
-                            delay: randomDelay,
-                            ease: "easeOut"
-                          }}
-                          className="absolute w-12 h-12 rounded-full bg-white/5 backdrop-blur-md border border-white/30"
-                          style={{
-                            // Iridescent light refraction
-                            boxShadow: 'inset 0 0 15px rgba(255,100,200,0.2), inset 0 0 10px rgba(100,200,255,0.2), 0 4px 10px rgba(0,0,0,0.1)'
-                          }}
-                        />
-                      );
-                    })}
-                  </div>
+                {/* Real-Look Bubble Physics Emitter from Door Area */}
+                <div className="absolute inset-0 z-30 flex items-center justify-center pointer-events-none pb-[15%]">
+                  {[...Array(15)].map((_, i) => {
+                    const randomX = (Math.random() - 0.5) * 200;
+                    const randomDuration = 4 + Math.random() * 6; // 4 to 10 seconds
+                    const randomDelay = Math.random() * 4;
+                    const randomScale = 0.4 + Math.random() * 0.8;
+                    
+                    return (
+                      <motion.div
+                        key={`bubble-${i}`}
+                        initial={{ opacity: 0, y: 40, x: 0, scale: 0 }}
+                        whileInView={{ 
+                          opacity: [0, 0.9, 0.9, 0], 
+                          y: [0, -150, -400], 
+                          x: [0, randomX * 0.5, randomX],
+                          scale: [0, randomScale, randomScale * 1.5]
+                        }}
+                        transition={{ 
+                          repeat: Infinity, 
+                          duration: randomDuration, 
+                          delay: randomDelay,
+                          ease: "easeOut"
+                        }}
+                        className="absolute w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/40"
+                        style={{
+                          boxShadow: 'inset 0 0 15px rgba(255,255,255,0.4), inset 0 0 10px rgba(100,200,255,0.2), 0 4px 10px rgba(0,0,0,0.1)'
+                        }}
+                      />
+                    );
+                  })}
                 </div>
               </div>
             </div>
 
             {/* Right Side: Wobbling Brand Anchor Bubbles */}
             <div className="w-full lg:w-1/2 relative min-h-[500px] flex items-center justify-center pr-0 lg:pr-10">
-              <div className="flex flex-wrap items-center justify-center gap-8 relative z-30">
+              <div className="flex flex-wrap items-center justify-center gap-12 relative z-30">
                 {ANCHOR_BRANDS.map((brand, i) => {
                   const wobbleAngle = i % 2 === 0 ? 3 : -3;
                   return (
                     <motion.div
                       key={i}
                       animate={{ 
-                        y: [-12, 12, -12],
+                        y: [-15, 15, -15],
                         rotateZ: [0, wobbleAngle, 0, -wobbleAngle, 0]
                       }}
                       transition={{
@@ -198,15 +155,12 @@ export default function About() {
                         duration: 5 + (i * 0.8), // Different speeds for organic floating
                         ease: "easeInOut"
                       }}
-                      className="bg-white/80 backdrop-blur-2xl w-[180px] h-[180px] md:w-[220px] md:h-[220px] rounded-full shadow-[0_20px_40px_rgba(0,0,0,0.08),inset_0_0_30px_rgba(255,255,255,0.9)] border border-white/60 flex items-center justify-center hover:border-[#e31e24] hover:shadow-[0_20px_60px_rgba(227,30,36,0.2)] transition-all duration-300 relative group overflow-hidden"
+                      className="w-[180px] h-[100px] md:w-[220px] md:h-[120px] flex items-center justify-center transition-all duration-300 relative group"
                     >
-                      {/* Internal Iridescent Glass Glare */}
-                      <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-transparent via-white/50 to-transparent pointer-events-none" />
-                      
                       <img 
                         src={brand.logo} 
                         alt={brand.name} 
-                        className="w-[65%] h-[65%] object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-110 relative z-10" 
+                        className="w-full h-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-110 relative z-10 drop-shadow-sm" 
                         onError={(e) => {
                           e.target.style.display = 'none';
                           e.target.nextSibling.style.display = 'block';
