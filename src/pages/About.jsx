@@ -1,91 +1,85 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Award, Settings, MapPin, Handshake } from 'lucide-react';
 
-// --- FIXED DATA (computed once, outside render to avoid hydration chaos) ---
-
+// Brand bubbles – large, contain logos, scattered across full scene
 const BRAND_BUBBLES = [
-  // (name, logo, left%, top%, size in px, float duration, delay)
-  { name: 'SEA-LION',      logo: '/Brands/sea-lion brand/sea-lion-logo.png',          left: 30, top: 12, size: 130, dur: 5.5, delay: 0 },
-  { name: 'KANNEGIESSER',  logo: '/Brands/Kannegiesser brand/Kannegiesser_Logo.png',  left: 57, top: 8,  size: 155, dur: 6.5, delay: 0.8 },
-  { name: 'MAESTRELLI',    logo: '/Brands/MAESTRELLI brand/Maestrelli_Logo.png',      left: 72, top: 40, size: 140, dur: 7,   delay: 1.6 },
-  { name: 'MAXIPRESS',     logo: '/Brands/maxipress brand/Maxipress_Logo.png',        left: 48, top: 52, size: 120, dur: 5,   delay: 2.4 },
+  { name: 'SEA-LION',     logo: '/Brands/sea-lion brand/sea-lion-logo.png',         l: 27, t: 10, s: 138, dur: 5.5, delay: 0   },
+  { name: 'KANNEGIESSER', logo: '/Brands/Kannegiesser brand/Kannegiesser_Logo.png', l: 56, t: 5,  s: 158, dur: 6.5, delay: 0.9 },
+  { name: 'MAESTRELLI',   logo: '/Brands/MAESTRELLI brand/Maestrelli_Logo.png',     l: 74, t: 36, s: 144, dur: 7.0, delay: 1.7 },
+  { name: 'MAXIPRESS',    logo: '/Brands/maxipress brand/Maxipress_Logo.png',        l: 47, t: 50, s: 126, dur: 5.2, delay: 2.5 },
 ];
 
-const SMALL_BUBBLES = [
-  { left: 25, top: 55, size: 60,  dur: 4.8, delay: 0   },
-  { left: 33, top: 30, size: 80,  dur: 5.2, delay: 1   },
-  { left: 40, top: 70, size: 48,  dur: 6.1, delay: 0.5 },
-  { left: 50, top: 28, size: 72,  dur: 5.8, delay: 1.8 },
-  { left: 61, top: 65, size: 55,  dur: 4.5, delay: 0.3 },
-  { left: 68, top: 18, size: 90,  dur: 6.6, delay: 2.2 },
-  { left: 80, top: 15, size: 65,  dur: 5.3, delay: 0.7 },
-  { left: 84, top: 50, size: 52,  dur: 4.9, delay: 1.4 },
-  { left: 88, top: 70, size: 44,  dur: 7.2, delay: 0.1 },
-  { left: 38, top: 50, size: 36,  dur: 3.8, delay: 3.1 },
-  { left: 55, top: 74, size: 42,  dur: 4.2, delay: 2.0 },
-  { left: 76, top: 78, size: 58,  dur: 5.6, delay: 1.1 },
-  { left: 91, top: 35, size: 48,  dur: 6.3, delay: 0.4 },
-  { left: 26, top: 75, size: 34,  dur: 4.0, delay: 2.7 },
-  { left: 64, top: 83, size: 66,  dur: 5.9, delay: 1.3 },
+// Small decorative soap bubbles – scattered from machine outward across entire width
+const DECO_BUBBLES = [
+  { l:24, t:54, s:64,  dur:4.8, delay:0.0 },
+  { l:32, t:28, s:82,  dur:5.2, delay:1.1 },
+  { l:40, t:68, s:46,  dur:6.1, delay:0.4 },
+  { l:50, t:22, s:74,  dur:5.9, delay:1.9 },
+  { l:62, t:62, s:54,  dur:4.5, delay:0.2 },
+  { l:68, t:14, s:92,  dur:6.6, delay:2.3 },
+  { l:80, t:12, s:66,  dur:5.3, delay:0.6 },
+  { l:85, t:50, s:50,  dur:4.9, delay:1.5 },
+  { l:89, t:70, s:42,  dur:7.1, delay:0.1 },
+  { l:37, t:48, s:34,  dur:3.9, delay:3.2 },
+  { l:55, t:76, s:44,  dur:4.2, delay:2.0 },
+  { l:77, t:80, s:60,  dur:5.7, delay:1.2 },
+  { l:92, t:32, s:48,  dur:6.3, delay:0.5 },
+  { l:25, t:78, s:36,  dur:4.0, delay:2.8 },
+  { l:65, t:85, s:58,  dur:5.8, delay:1.4 },
+  { l:44, t:38, s:38,  dur:4.4, delay:0.8 },
+  { l:58, t:44, s:28,  dur:3.6, delay:3.5 },
+  { l:73, t:58, s:34,  dur:4.6, delay:1.0 },
 ];
 
-// Soap bubble CSS reused on both brand and small bubbles
-const bubbleStyle = {
-  background: 'radial-gradient(circle at 32% 28%, rgba(255,255,255,0.62) 0%, rgba(255,255,255,0.10) 45%, rgba(200,230,255,0.04) 100%)',
-  border: '1.5px solid rgba(255,255,255,0.55)',
+const soap = (extra = {}) => ({
+  background: 'radial-gradient(circle at 30% 28%, rgba(255,255,255,0.65) 0%, rgba(220,240,255,0.12) 45%, rgba(190,220,255,0.04) 100%)',
+  border: '1.5px solid rgba(255,255,255,0.60)',
   boxShadow: [
-    'inset  4px  4px 12px rgba(255,255,255,0.55)',
-    'inset -4px -4px 14px rgba(130,190,255,0.25)',
-    'inset  0    0   20px rgba(255,140,200,0.12)',
-    '0  8px 24px rgba(0,0,0,0.06)',
+    'inset  5px  5px 14px rgba(255,255,255,0.55)',
+    'inset -5px -5px 16px rgba(120,180,255,0.28)',
+    'inset  0    0   22px rgba(255,120,200,0.12)',
+    '0  8px 28px rgba(0,0,0,0.06)',
   ].join(', '),
-  backdropFilter: 'blur(4px)',
-};
+  backdropFilter: 'blur(5px)',
+  borderRadius: '50%',
+  position: 'absolute',
+  ...extra,
+});
 
 export default function About() {
   return (
     <div className="w-full min-h-screen bg-white font-sans flex flex-col">
       <Navbar />
 
-      {/* ── SECTION 1: HERO COPY & GLASS CONSOLE ── */}
+      {/* ── SECTION 1: HERO + GLASS CONSOLE ── */}
       <section className="relative w-full pt-32 pb-10 px-6 lg:px-12 flex flex-col items-center overflow-hidden">
-        <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-[#e31e24] rounded-full blur-[150px] opacity-[0.05] pointer-events-none" />
-        <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-[#0b1b36] rounded-full blur-[120px] opacity-[0.05] pointer-events-none" />
-
-        <div className="max-w-[1000px] w-full text-center mb-16 relative z-10 pt-10">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl lg:text-[56px] font-extrabold text-[#0b1b36] tracking-tighter mb-6 font-display uppercase leading-[1.1]"
-          >
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#e31e24] rounded-full blur-[160px] opacity-[0.04] pointer-events-none" />
+        <div className="max-w-[1000px] w-full text-center mb-16 pt-10">
+          <motion.h1 initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.6}}
+            className="text-4xl md:text-5xl lg:text-[56px] font-extrabold text-[#0b1b36] tracking-tighter mb-6 font-display uppercase leading-[1.1]">
             BEYOND EQUIPMENT.<br/>
             <span className="text-[#e31e24]">DEFINING FUTURE EFFICIENCY.</span>
           </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl md:text-2xl text-slate-500 font-serif font-medium italic"
-          >
+          <motion.p initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.6,delay:0.2}}
+            className="text-xl md:text-2xl text-slate-500 font-serif font-medium italic">
             One Partner. Every Aspect. Complete Confidence.
           </motion.p>
         </div>
 
         {/* Glass Console */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }} transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 }}
-          className="relative max-w-[1000px] w-full rounded-2xl overflow-hidden z-10 shadow-[0_20px_50px_rgba(0,0,0,0.15)] mb-20"
-        >
+        <motion.div initial={{opacity:0,y:50}} whileInView={{opacity:1,y:0}} viewport={{once:true}}
+          transition={{duration:0.8,ease:'easeOut',delay:0.4}}
+          className="relative max-w-[1000px] w-full rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] mb-20">
           <div className="absolute inset-[-50%] z-0 animate-[spin_4s_linear_infinite] opacity-70">
             <div className="w-full h-full bg-[conic-gradient(from_90deg_at_50%_50%,#0f172a_0%,#0f172a_70%,#e31e24_100%)]" />
           </div>
-          <div className="relative z-10 m-[2px] bg-slate-900/80 backdrop-blur-xl rounded-[14px] p-8 md:p-12 lg:p-16 border border-white/5 flex flex-col items-center gap-6">
-            <div className="absolute top-4 left-4  w-4 h-4 border-t-2 border-l-2 border-[#e31e24]/60" />
+          <div className="relative z-10 m-[2px] bg-slate-900/80 backdrop-blur-xl rounded-[14px] p-8 md:p-14 border border-white/5 flex flex-col items-center gap-6">
+            <div className="absolute top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-[#e31e24]/60" />
             <div className="absolute top-4 right-4 w-4 h-4 border-t-2 border-r-2 border-[#e31e24]/60" />
-            <div className="absolute bottom-4 left-4  w-4 h-4 border-b-2 border-l-2 border-[#e31e24]/60" />
+            <div className="absolute bottom-4 left-4 w-4 h-4 border-b-2 border-l-2 border-[#e31e24]/60" />
             <div className="absolute bottom-4 right-4 w-4 h-4 border-b-2 border-r-2 border-[#e31e24]/60" />
             <p className="text-slate-200 text-lg md:text-[20px] leading-relaxed text-center font-body max-w-[850px]">
               Promac Technologies Pvt Ltd is a leading laundry equipment supplier in India, providing advanced commercial laundry and dry-cleaning machines for hospitality, healthcare, institutional, and industrial laundries. As an experienced industrial laundry solutions provider, we support businesses with reliable equipment, expert guidance, and long-term service support.
@@ -97,260 +91,218 @@ export default function About() {
         </motion.div>
       </section>
 
-      {/* ── SECTION 2: TRUSTED BY LEADING BRANDS — exact design replica ── */}
-      <section
-        className="relative w-full overflow-hidden"
-        style={{
-          background: 'linear-gradient(160deg, #f0f7ff 0%, #e8f4ff 40%, #f5faff 100%)',
-          minHeight: 700,
-        }}
-      >
-        {/* Blue ambient top-left blob */}
-        <div className="absolute top-0 left-0 w-[600px] h-[500px] bg-[#cce8ff] rounded-full blur-[120px] opacity-60 pointer-events-none translate-x-[-30%] translate-y-[-30%]" />
+      {/* ═══════════════════════════════════════════════════════════
+          SECTION 2 — "TRUSTED BY LEADING BRANDS"
+          Exact pixel-faithful replica of the reference design
+      ════════════════════════════════════════════════════════════ */}
+      <section style={{
+        background: 'linear-gradient(155deg,#e8f4ff 0%,#f4f9ff 35%,#ffffff 65%,#f0f7ff 100%)',
+        position:'relative', overflow:'hidden', paddingBottom: 0,
+      }}>
+        {/* Ambient blue blobs matching reference */}
+        <div style={{position:'absolute',top:'-15%',left:'-10%',width:500,height:500,background:'#c8e3f8',borderRadius:'50%',filter:'blur(120px)',opacity:0.55,pointerEvents:'none'}} />
+        <div style={{position:'absolute',bottom:'10%',right:'-5%',width:350,height:350,background:'#d0eaff',borderRadius:'50%',filter:'blur(100px)',opacity:0.4,pointerEvents:'none'}} />
 
-        {/* ── TYPOGRAPHY HEADER (centred above everything) ── */}
-        <div className="relative z-20 pt-14 pb-4 text-center">
-          <p className="text-[#e31e24] text-xs font-bold tracking-[0.25em] uppercase mb-2">OUR CLIENTS</p>
-          <h2 className="text-4xl md:text-[44px] font-extrabold tracking-tight text-[#111] leading-tight mb-4">
+        {/* ── Header ── */}
+        <div style={{position:'relative',zIndex:20,paddingTop:56,paddingBottom:16,textAlign:'center'}}>
+          <p style={{color:'#E31E24',fontSize:11,fontWeight:700,letterSpacing:'0.22em',textTransform:'uppercase',marginBottom:10}}>OUR CLIENTS</p>
+          <h2 style={{fontSize:'clamp(32px,4vw,48px)',fontWeight:800,color:'#111',lineHeight:1.15,marginBottom:16}}>
             Trusted by Leading Brands
           </h2>
-          <p className="text-gray-500 text-sm md:text-base max-w-md mx-auto leading-relaxed">
-            Proud to be the laundry technology partner<br />for India's most respected brands and institutions.
+          <p style={{color:'#6b7280',fontSize:15,maxWidth:430,margin:'0 auto',lineHeight:1.7}}>
+            Proud to be the laundry technology partner<br/>for India's most respected brands and institutions.
           </p>
         </div>
 
-        {/* ── SCENE: Machine left, bubbles right ── */}
-        <div className="relative w-full" style={{ height: 580 }}>
+        {/* ── Scene: Machine + Bubble Cloud ── */}
+        <div style={{position:'relative',width:'100%',height:620,overflow:'hidden'}}>
 
-          {/* ═══════════════════════════════════════
-              PURE-CSS INDUSTRIAL WASHING MACHINE
-              Anchored to the left, bottom of scene
-          ════════════════════════════════════════ */}
-          <div
-            className="absolute bottom-0 left-0 z-30"
-            style={{ width: 380, height: 520 }}
-          >
-            {/* Main body — brushed stainless gradient */}
-            <div
-              className="absolute bottom-0 left-0"
-              style={{
-                width: 340,
-                height: 500,
-                borderRadius: '10px 10px 4px 4px',
-                background: 'linear-gradient(170deg, #d8dfe8 0%, #f0f4f8 25%, #c8d0da 50%, #e0e6ed 75%, #b8c4cf 100%)',
-                boxShadow: '6px 0 20px rgba(0,0,0,0.18), inset 2px 0 6px rgba(255,255,255,0.7), inset -2px 0 4px rgba(0,0,0,0.1)',
-              }}
-            >
-              {/* Subtle brushed-metal horizontal lines */}
-              {[...Array(24)].map((_, i) => (
-                <div key={i} style={{ position:'absolute', left:0, right:0, top: 20 + i*20, height:1, background:'rgba(255,255,255,0.25)' }} />
+          {/* ─────────────────────────────────────
+              PURE CSS INDUSTRIAL WASHING MACHINE
+              Left-anchored, bottom of scene
+          ───────────────────────────────────── */}
+          <div style={{position:'absolute',bottom:0,left:0,zIndex:25,width:400,height:540}}>
+
+            {/* Machine body */}
+            <div style={{
+              position:'absolute',bottom:0,left:0,width:360,height:520,
+              borderRadius:'12px 12px 4px 4px',
+              background:'linear-gradient(175deg,#d4dbe4 0%,#eef2f6 20%,#c8d2dc 45%,#dde4ec 65%,#b8c4cf 100%)',
+              boxShadow:'8px 0 24px rgba(0,0,0,0.16),inset 2px 0 8px rgba(255,255,255,0.6),inset -2px 0 6px rgba(0,0,0,0.12)',
+            }}>
+              {/* Brushed metal horizontal lines */}
+              {Array.from({length:28}).map((_,i)=>(
+                <div key={i} style={{position:'absolute',left:0,right:0,top:16+i*18,height:1,background:'rgba(255,255,255,0.22)'}} />
               ))}
 
-              {/* ── TOP CONTROL PANEL (dark) ── */}
-              <div
-                style={{
-                  position:'absolute', top:0, left:0, right:0,
-                  height: 110,
-                  borderRadius: '10px 10px 0 0',
-                  background: 'linear-gradient(180deg, #1e2530 0%, #252d38 100%)',
-                  borderBottom: '3px solid #111',
-                  boxShadow: 'inset 0 -4px 8px rgba(0,0,0,0.4)',
-                  display:'flex', flexDirection:'column', justifyContent:'center',
-                  padding: '10px 18px',
-                  gap: 8,
-                }}
-              >
-                {/* Row 1: PROMAC badge + indicator lights */}
-                <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between' }}>
-                  {/* PROMAC badge */}
-                  <div style={{ display:'flex', alignItems:'center', gap:6 }}>
-                    <div style={{ width:14, height:14, borderRadius:'50%', background:'#E31E24', boxShadow:'0 0 8px #E31E24', border:'2px solid #ff6060' }} />
-                    <span style={{ color:'#fff', fontWeight:800, fontSize:13, letterSpacing:'0.15em', fontFamily:'sans-serif' }}>PROMAC</span>
+              {/* ── TOP CONTROL PANEL ── */}
+              <div style={{
+                position:'absolute',top:0,left:0,right:0,height:116,
+                borderRadius:'12px 12px 0 0',
+                background:'linear-gradient(180deg,#1b2230 0%,#232b38 100%)',
+                borderBottom:'3px solid #0e1520',
+                boxShadow:'inset 0 -6px 12px rgba(0,0,0,0.45)',
+                padding:'12px 20px',display:'flex',flexDirection:'column',gap:8,justifyContent:'center',
+              }}>
+                {/* Row 1: Brand + lights */}
+                <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
+                  <div style={{display:'flex',alignItems:'center',gap:7}}>
+                    <div style={{width:15,height:15,borderRadius:'50%',background:'#E31E24',boxShadow:'0 0 10px #E31E24',border:'2px solid #ff7070'}} />
+                    <span style={{color:'#fff',fontWeight:800,fontSize:14,letterSpacing:'0.18em'}}>PROMAC</span>
                   </div>
-                  {/* Indicator LEDs */}
-                  <div style={{ display:'flex', gap:6, alignItems:'center' }}>
-                    <div style={{ width:10, height:10, borderRadius:'50%', background:'#22c55e', boxShadow:'0 0 8px #22c55e' }} />
-                    <div style={{ width:10, height:10, borderRadius:'50%', background:'#f59e0b', boxShadow:'0 0 6px #f59e0b' }} />
-                    <div style={{ width:10, height:10, borderRadius:'50%', background:'#555' }} />
+                  <div style={{display:'flex',gap:7,alignItems:'center'}}>
+                    <div style={{width:10,height:10,borderRadius:'50%',background:'#22c55e',boxShadow:'0 0 8px #22c55e'}} />
+                    <div style={{width:10,height:10,borderRadius:'50%',background:'#f59e0b',boxShadow:'0 0 6px #f59e0b'}} />
+                    <div style={{width:10,height:10,borderRadius:'50%',background:'#3b4555'}} />
                   </div>
                 </div>
-                {/* Row 2: LCD Screen + buttons */}
-                <div style={{ display:'flex', alignItems:'center', gap:10 }}>
-                  {/* LCD display */}
+                {/* Row 2: LCD + knobs + E-stop */}
+                <div style={{display:'flex',alignItems:'center',gap:10}}>
+                  {/* LCD */}
                   <div style={{
-                    flex:1, height:38, background:'#7bb8d4',
-                    borderRadius:4, border:'2px solid #4a7a99',
-                    boxShadow:'inset 0 2px 8px rgba(0,0,0,0.5)',
-                    display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center',
-                    gap:3, padding:'4px 6px',
+                    flex:1,height:42,background:'linear-gradient(135deg,#7ab8d5,#5a9ab8)',
+                    borderRadius:5,border:'2px solid #4a7a99',
+                    boxShadow:'inset 0 3px 10px rgba(0,0,0,0.55)',
+                    display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center',gap:4,padding:'4px 8px',
                   }}>
                     {[...Array(3)].map((_,i)=>(
-                      <div key={i} style={{ width:'90%', height:2, background:'rgba(255,255,255,0.4)', borderRadius:1 }} />
+                      <div key={i} style={{width:'88%',height:2,background:'rgba(255,255,255,0.42)',borderRadius:1}} />
                     ))}
                   </div>
-                  {/* Row of small buttons */}
-                  <div style={{ display:'flex', gap:5 }}>
-                    {['#888','#888','#E31E24','#888','#888'].map((c,i)=>(
+                  {/* Knobs row */}
+                  <div style={{display:'flex',gap:5,flexWrap:'wrap',maxWidth:80}}>
+                    {['#777','#777','#E31E24','#777','#777','#555','#555','#555'].map((c,i)=>(
                       <div key={i} style={{
-                        width:14, height:14, borderRadius:'50%', background:c,
-                        boxShadow: c==='#E31E24' ? '0 0 6px #E31E24' : '0 2px 4px rgba(0,0,0,0.4)',
-                        border:'1.5px solid rgba(255,255,255,0.15)',
+                        width:12,height:12,borderRadius:'50%',background:c,
+                        boxShadow:c==='#E31E24'?'0 0 6px #E31E24':'0 2px 4px rgba(0,0,0,0.45)',
+                        border:'1.5px solid rgba(255,255,255,0.12)',
                       }} />
                     ))}
                   </div>
-                  {/* Big red Emergency Stop */}
+                  {/* E-Stop */}
                   <div style={{
-                    width:32, height:32, borderRadius:'50%',
-                    background:'radial-gradient(circle at 35% 30%, #ff5555, #cc0000)',
-                    border:'3px solid #991111',
-                    boxShadow:'0 3px 8px rgba(0,0,0,0.5), 0 0 10px rgba(200,0,0,0.4)',
+                    width:36,height:36,borderRadius:'50%',flexShrink:0,
+                    background:'radial-gradient(circle at 34% 30%,#ff5555,#b91c1c)',
+                    border:'3px solid #7f1d1d',
+                    boxShadow:'0 3px 10px rgba(0,0,0,0.5),0 0 12px rgba(200,0,0,0.45)',
                   }} />
                 </div>
               </div>
 
-              {/* ── DOOR FRAME RING (outer chrome) ── */}
-              <div
-                style={{
-                  position:'absolute', top:128, left:'50%', transform:'translateX(-50%)',
-                  width:248, height:248,
-                  borderRadius:'50%',
-                  background:'linear-gradient(135deg, #e8edf2 0%, #b0bac5 40%, #d8e0e8 70%, #a0aab5 100%)',
-                  boxShadow:'0 8px 30px rgba(0,0,0,0.35), inset 0 4px 8px rgba(255,255,255,0.6), inset 0 -4px 8px rgba(0,0,0,0.2)',
-                  display:'flex', alignItems:'center', justifyContent:'center',
-                }}
-              >
-                {/* Inner rubber gasket */}
+              {/* ── MAIN DOOR RING ── */}
+              <div style={{
+                position:'absolute',top:138,left:'50%',transform:'translateX(-50%)',
+                width:264,height:264,borderRadius:'50%',
+                background:'linear-gradient(140deg,#e0e7ef 0%,#aab5c2 38%,#d5dde6 65%,#98a8b8 100%)',
+                boxShadow:'0 10px 36px rgba(0,0,0,0.38),inset 0 5px 10px rgba(255,255,255,0.55),inset 0 -4px 8px rgba(0,0,0,0.22)',
+                display:'flex',alignItems:'center',justifyContent:'center',
+              }}>
+                {/* Rubber gasket */}
                 <div style={{
-                  width:218, height:218, borderRadius:'50%',
-                  background:'linear-gradient(135deg, #1c2028, #2a303a)',
-                  boxShadow:'inset 0 6px 20px rgba(0,0,0,0.9), 0 0 0 6px #181e26',
-                  display:'flex', alignItems:'center', justifyContent:'center',
+                  width:228,height:228,borderRadius:'50%',
+                  background:'linear-gradient(135deg,#181e28,#252d3a)',
+                  boxShadow:'inset 0 8px 24px rgba(0,0,0,0.95),0 0 0 7px #14181f',
+                  display:'flex',alignItems:'center',justifyContent:'center',
                 }}>
-                  {/* The Glass Porthole */}
+                  {/* Glass porthole */}
                   <div style={{
-                    width:196, height:196, borderRadius:'50%',
-                    background:'radial-gradient(circle at 38% 32%, rgba(255,255,255,0.18) 0%, rgba(20,40,80,0.5) 40%, rgba(5,10,20,0.95) 100%)',
-                    overflow:'hidden', position:'relative',
-                    boxShadow:'inset 0 0 40px rgba(0,0,0,0.9)',
+                    width:205,height:205,borderRadius:'50%',overflow:'hidden',
+                    background:'radial-gradient(circle at 38% 32%,rgba(255,255,255,0.15) 0%,rgba(20,45,90,0.45) 38%,rgba(4,8,18,0.96) 100%)',
+                    boxShadow:'inset 0 0 50px rgba(0,0,0,0.92)',
+                    position:'relative',
                   }}>
-                    {/* Clothes simulation - blue fabric */}
-                    <div style={{ position:'absolute', bottom:'-5%', left:'-10%', width:'130%', height:'65%', background:'radial-gradient(ellipse, #1d4ed8, #1e3a8a)', borderRadius:'50%', filter:'blur(12px)', opacity:0.9, transform:'rotate(-15deg)' }} />
-                    {/* Clothes - red piece */}
-                    <div style={{ position:'absolute', bottom:'10%', right:'-5%', width:'80%', height:'55%', background:'radial-gradient(ellipse, #dc2626, #991b1b)', borderRadius:'50%', filter:'blur(10px)', opacity:0.85, transform:'rotate(20deg)' }} />
-                    {/* Clothes - white piece */}
-                    <div style={{ position:'absolute', top:'25%', left:'20%', width:'50%', height:'40%', background:'radial-gradient(ellipse, rgba(255,255,255,0.5), transparent)', borderRadius:'50%', filter:'blur(8px)', opacity:0.7 }} />
-                    {/* Glass glare highlight */}
-                    <div style={{ position:'absolute', top:'8%', left:'12%', width:'38%', height:'38%', background:'radial-gradient(circle, rgba(255,255,255,0.4), transparent)', borderRadius:'50%', filter:'blur(4px)' }} />
-                    {/* Secondary small glare */}
-                    <div style={{ position:'absolute', top:'18%', left:'22%', width:'15%', height:'15%', background:'rgba(255,255,255,0.55)', borderRadius:'50%', filter:'blur(2px)' }} />
+                    {/* Clothes: blue */}
+                    <div style={{position:'absolute',bottom:'-8%',left:'-12%',width:'135%',height:'68%',background:'radial-gradient(ellipse,#1d4ed8,#1e3a8a)',borderRadius:'50%',filter:'blur(14px)',opacity:0.88,transform:'rotate(-14deg)'}} />
+                    {/* Clothes: red */}
+                    <div style={{position:'absolute',bottom:'8%',right:'-8%',width:'82%',height:'58%',background:'radial-gradient(ellipse,#dc2626,#991b1b)',borderRadius:'50%',filter:'blur(12px)',opacity:0.82,transform:'rotate(22deg)'}} />
+                    {/* Clothes: white */}
+                    <div style={{position:'absolute',top:'22%',left:'18%',width:'54%',height:'42%',background:'radial-gradient(ellipse,rgba(255,255,255,0.45),transparent)',borderRadius:'50%',filter:'blur(9px)',opacity:0.65}} />
+                    {/* Primary glass glare */}
+                    <div style={{position:'absolute',top:'7%',left:'10%',width:'40%',height:'40%',background:'radial-gradient(circle,rgba(255,255,255,0.45),transparent)',borderRadius:'50%',filter:'blur(4px)'}} />
+                    {/* Secondary glare dot */}
+                    <div style={{position:'absolute',top:'17%',left:'21%',width:'16%',height:'16%',background:'rgba(255,255,255,0.58)',borderRadius:'50%',filter:'blur(2px)'}} />
                   </div>
                 </div>
               </div>
 
               {/* Door handle */}
-              <div style={{
-                position:'absolute', top:128+110, left:6,
-                width:22, height:28,
-                background:'linear-gradient(180deg, #c8d0d8, #8090a0)',
-                borderRadius:'4px 0 0 4px',
-                boxShadow:'-2px 2px 6px rgba(0,0,0,0.4)',
-                border:'1px solid rgba(255,255,255,0.3)',
-              }} />
+              <div style={{position:'absolute',top:248,left:4,width:20,height:32,background:'linear-gradient(180deg,#c0ccd8,#7a8da0)',borderRadius:'4px 0 0 4px',boxShadow:'-2px 3px 8px rgba(0,0,0,0.42)',border:'1px solid rgba(255,255,255,0.28)'}} />
 
-              {/* Bottom panel stripe */}
-              <div style={{ position:'absolute', bottom:0, left:0, right:0, height:50,
-                background:'linear-gradient(180deg, #c0cad4, #a8b4be)',
+              {/* Bottom footer stripe */}
+              <div style={{
+                position:'absolute',bottom:0,left:0,right:0,height:56,
+                background:'linear-gradient(180deg,#b8c4ce,#a0aeb8)',
                 borderRadius:'0 0 4px 4px',
-                borderTop:'2px solid #8090a0',
-                display:'flex', alignItems:'center', justifyContent:'center', gap:12,
+                borderTop:'2px solid #7a8a9a',
+                display:'flex',alignItems:'center',justifyContent:'center',gap:14,
               }}>
-                {[80,40,80].map((w,i)=>(
-                  <div key={i} style={{ width:w, height:6, background:'#8898a8', borderRadius:3, boxShadow:'inset 0 1px 3px rgba(0,0,0,0.4)' }} />
+                {[88,44,88].map((w,i)=>(
+                  <div key={i} style={{width:w,height:7,background:'#7a8a9a',borderRadius:4,boxShadow:'inset 0 1px 4px rgba(0,0,0,0.4)'}} />
                 ))}
               </div>
             </div>
           </div>
           {/* END Machine */}
 
-          {/* ═══════════════════════════════
+          {/* ─────────────────────────────────────
               SOAP BUBBLE CLOUD
-          ═══════════════════════════════ */}
+              Spans full width – overlaps machine
+          ───────────────────────────────────── */}
 
-          {/* Small / empty decorative bubbles */}
-          {SMALL_BUBBLES.map((b, i) => (
-            <motion.div
-              key={`sb-${i}`}
-              className="absolute rounded-full pointer-events-none"
-              style={{
-                left: `${b.left}%`,
-                top: `${b.top}%`,
-                width: b.size,
-                height: b.size,
-                ...bubbleStyle,
-              }}
-              animate={{ y: [-10, 10, -10] }}
-              transition={{ repeat: Infinity, repeatType: 'mirror', duration: b.dur, delay: b.delay, ease: 'easeInOut' }}
+          {/* Decorative empty bubbles */}
+          {DECO_BUBBLES.map((b,i)=>(
+            <motion.div key={`d${i}`}
+              style={{...soap(), left:`${b.l}%`, top:`${b.t}%`, width:b.s, height:b.s, zIndex:20}}
+              animate={{y:[-10,10,-10]}}
+              transition={{repeat:Infinity,repeatType:'mirror',duration:b.dur,delay:b.delay,ease:'easeInOut'}}
             >
-              {/* Glare dot */}
-              <div style={{ position:'absolute', top:'14%', left:'16%', width:'22%', height:'22%', background:'rgba(255,255,255,0.75)', borderRadius:'50%', filter:'blur(2px)' }} />
+              <div style={{position:'absolute',top:'13%',left:'15%',width:'22%',height:'22%',background:'rgba(255,255,255,0.78)',borderRadius:'50%',filter:'blur(2px)'}} />
             </motion.div>
           ))}
 
-          {/* Large brand logo bubbles */}
-          {BRAND_BUBBLES.map((b, i) => (
-            <motion.div
-              key={`bb-${i}`}
-              className="absolute rounded-full flex items-center justify-center z-20"
-              style={{
-                left: `${b.left}%`,
-                top: `${b.top}%`,
-                width: b.size,
-                height: b.size,
-                ...bubbleStyle,
-                cursor: 'default',
-              }}
-              animate={{ y: [-14, 14, -14] }}
-              transition={{ repeat: Infinity, repeatType: 'mirror', duration: b.dur, delay: b.delay, ease: 'easeInOut' }}
+          {/* Brand logo bubbles */}
+          {BRAND_BUBBLES.map((b,i)=>(
+            <motion.div key={`b${i}`}
+              style={{...soap(), left:`${b.l}%`, top:`${b.t}%`, width:b.s, height:b.s, zIndex:28, display:'flex', alignItems:'center', justifyContent:'center', cursor:'default'}}
+              animate={{y:[-14,14,-14]}}
+              transition={{repeat:Infinity,repeatType:'mirror',duration:b.dur,delay:b.delay,ease:'easeInOut'}}
             >
-              {/* Glare */}
-              <div style={{ position:'absolute', top:'12%', left:'14%', width:'26%', height:'26%', background:'rgba(255,255,255,0.80)', borderRadius:'50%', filter:'blur(3px)', pointerEvents:'none' }} />
-              <img
-                src={b.logo}
-                alt={b.name}
-                className="relative z-10 object-contain mix-blend-multiply"
-                style={{ width:'65%', height:'65%' }}
-                onError={e => { e.target.style.display='none'; e.target.nextSibling.style.display='flex'; }}
+              <div style={{position:'absolute',top:'11%',left:'13%',width:'26%',height:'26%',background:'rgba(255,255,255,0.82)',borderRadius:'50%',filter:'blur(3px)',pointerEvents:'none'}} />
+              <img src={b.logo} alt={b.name}
+                style={{width:'62%',height:'62%',objectFit:'contain',mixBlendMode:'multiply',position:'relative',zIndex:1}}
+                onError={e=>{e.target.style.display='none';e.target.nextSibling.style.display='flex';}}
               />
-              <span
-                className="hidden absolute inset-0 items-center justify-center text-[11px] font-extrabold text-[#0b1b36] tracking-wider text-center uppercase leading-tight px-2"
-              >
+              <span style={{display:'none',position:'absolute',inset:0,alignItems:'center',justifyContent:'center',fontSize:11,fontWeight:800,color:'#0b1b36',letterSpacing:'0.08em',textAlign:'center',textTransform:'uppercase',lineHeight:1.3,padding:'0 16px'}}>
                 {b.name}
               </span>
             </motion.div>
           ))}
         </div>
+        {/* END Scene */}
 
         {/* ── STATS BAR ── */}
-        <div className="relative z-30 px-6 lg:px-16 pb-16 -mt-4">
-          <div
-            className="max-w-[1100px] mx-auto bg-white rounded-[20px] shadow-[0_8px_40px_rgba(0,0,0,0.08)] border border-gray-100"
-            style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)' }}
-          >
+        <div style={{position:'relative',zIndex:30,padding:'0 40px 56px'}}>
+          <div style={{
+            maxWidth:1100,margin:'0 auto',background:'#fff',
+            borderRadius:20,boxShadow:'0 8px 40px rgba(0,0,0,0.07)',
+            border:'1px solid #f0f0f0',
+            display:'grid',gridTemplateColumns:'repeat(4,1fr)',
+          }}>
             {[
-              { icon: <Award className="w-9 h-9 text-[#E31E24]" strokeWidth={1.5} />, num:'20+',      sub:'Years of\nIndustry Experience' },
-              { icon: <Settings className="w-9 h-9 text-[#E31E24]" strokeWidth={1.5} />, num:'1000+',  sub:'Installations\nCompleted' },
-              { icon: <MapPin className="w-9 h-9 text-[#E31E24]" strokeWidth={1.5} />,   num:'Pan India', sub:'Presence' },
-              { icon: <Handshake className="w-9 h-9 text-[#E31E24]" strokeWidth={1.5} />, num:'Trusted by', sub:'Leading Brands' },
-            ].map((s, i) => (
-              <div
-                key={i}
-                className="flex flex-col sm:flex-row items-center gap-4 px-6 py-8"
-                style={{ borderRight: i < 3 ? '1px solid #e5e7eb' : 'none' }}
-              >
+              {icon:<Award  className="text-[#E31E24]" style={{width:38,height:38}} strokeWidth={1.5}/>, n:'20+',        s:'Years of\nIndustry Experience'},
+              {icon:<Settings className="text-[#E31E24]" style={{width:38,height:38}} strokeWidth={1.5}/>, n:'1000+',    s:'Installations\nCompleted'},
+              {icon:<MapPin  className="text-[#E31E24]" style={{width:38,height:38}} strokeWidth={1.5}/>, n:'Pan India', s:'Presence'},
+              {icon:<Handshake className="text-[#E31E24]" style={{width:38,height:38}} strokeWidth={1.5}/>, n:'Trusted by', s:'Leading Brands'},
+            ].map((s,i)=>(
+              <div key={i} style={{
+                display:'flex',flexDirection:'row',alignItems:'center',gap:16,
+                padding:'28px 24px',
+                borderRight: i<3 ? '1px solid #e5e7eb' : 'none',
+              }}>
                 {s.icon}
-                <div className="text-center sm:text-left">
-                  <div className="text-2xl font-extrabold text-gray-900 leading-tight">{s.num}</div>
-                  <div className="text-xs text-gray-500 font-medium leading-snug mt-0.5 whitespace-pre-line">{s.sub}</div>
+                <div>
+                  <div style={{fontSize:24,fontWeight:800,color:'#111',lineHeight:1.2}}>{s.n}</div>
+                  <div style={{fontSize:11,color:'#6b7280',fontWeight:500,lineHeight:1.5,marginTop:2,whiteSpace:'pre-line'}}>{s.s}</div>
                 </div>
               </div>
             ))}
