@@ -51,15 +51,14 @@ const BubbleGlassStyle = (size) => ({
   width: size,
   height: size,
   borderRadius: '50%',
-  background: 'radial-gradient(circle at 32% 28%, rgba(255,255,255,0.70) 0%, rgba(230,244,255,0.18) 42%, rgba(200,226,255,0.06) 75%, transparent 100%)',
-  border: '1.5px solid rgba(255,255,255,0.65)',
+  background: 'rgba(255, 255, 255, 0.10)',
+  border: '1px solid rgba(255,255,255,0.30)',
   boxShadow: [
-    'inset 6px 6px 16px rgba(255,255,255,0.60)',
-    'inset -6px -6px 20px rgba(110,172,255,0.32)',
-    'inset 0 0 28px rgba(255,110,190,0.14)',
-    '0 10px 32px rgba(0,0,0,0.055)',
+    '0 0 25px rgba(255, 255, 255, 0.50)',
+    'inset 0 0 20px rgba(255,255,255,0.15)',
+    '0 8px 32px rgba(100,160,220,0.15)',
   ].join(', '),
-  backdropFilter: 'blur(5px)',
+  backdropFilter: 'blur(10px)',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -113,7 +112,7 @@ export default function About() {
       ══════════════════════════════════════════════════════════════ */}
       <section style={{
         position: 'relative',
-        background: 'linear-gradient(145deg, #e4f0fa 0%, #eff6fd 20%, #f8fbff 50%, #ffffff 100%)',
+        background: 'radial-gradient(ellipse at 60% 40%, #ffffff 0%, #f8fafc 45%, #f1f5f9 100%)',
         overflow: 'hidden',
         paddingBottom: 0,
       }}>
@@ -142,7 +141,7 @@ export default function About() {
           <div style={{
             position: 'absolute',
             bottom: 0,
-            left: -90,       // cropped off left edge like the reference
+            left: -90,
             zIndex: 28,
             height: '100%',
             display: 'flex',
@@ -156,9 +155,20 @@ export default function About() {
                 width: 'auto',
                 objectFit: 'contain',
                 objectPosition: 'bottom left',
-                filter: 'drop-shadow(20px 0 40px rgba(0,0,0,0.18))',
+                filter: 'drop-shadow(24px 0 44px rgba(0,0,0,0.20))',
               }}
             />
+            {/* Ground shadow — makes machine look grounded */}
+            <div style={{
+              position: 'absolute',
+              bottom: -10,
+              left: '10%',
+              width: '75%',
+              height: 40,
+              background: 'radial-gradient(ellipse, rgba(0,0,0,0.18) 0%, transparent 70%)',
+              filter: 'blur(12px)',
+              pointerEvents: 'none',
+            }} />
           </div>
 
           {/* ══ EMPTY SOAP BUBBLES — decorative, scattered ══ */}
@@ -204,6 +214,7 @@ export default function About() {
                   height: '60%',
                   objectFit: 'contain',
                   mixBlendMode: 'multiply',
+                  opacity: 0.8,
                   position: 'relative',
                   zIndex: 1,
                 }}
@@ -233,10 +244,11 @@ export default function About() {
           <div style={{
             maxWidth: 1060,
             margin: '0 auto',
-            background: '#fff',
-            borderRadius: 20,
-            boxShadow: '0 8px 48px rgba(0,0,0,0.08)',
-            border: '1px solid #efefef',
+            background: 'rgba(255,255,255,0.90)',
+            backdropFilter: 'blur(20px)',
+            borderRadius: 28,
+            boxShadow: '0 24px 64px rgba(0,0,0,0.12), 0 4px 16px rgba(0,0,0,0.06)',
+            border: '1px solid rgba(255,255,255,0.7)',
             display: 'grid',
             gridTemplateColumns: 'repeat(4,1fr)',
           }}>
