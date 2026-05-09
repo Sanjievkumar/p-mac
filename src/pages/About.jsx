@@ -2,6 +2,17 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { Award, Wrench, MapPin, Building2 } from 'lucide-react';
+
+const CLIENT_BRANDS = [
+  { name: 'Taj Hotels', delay: 0, duration: 4 },
+  { name: 'Hilton', delay: 1, duration: 5 },
+  { name: 'Marriott', delay: 0.5, duration: 3.5 },
+  { name: 'Apollo Hospitals', delay: 2, duration: 4.5 },
+  { name: 'ITC Hotels', delay: 1.5, duration: 4 },
+  { name: 'Radisson', delay: 0.2, duration: 5.5 },
+  { name: 'Hyatt', delay: 2.5, duration: 3.8 },
+];
 
 export default function About() {
   return (
@@ -9,7 +20,7 @@ export default function About() {
       <Navbar />
       
       {/* ── ABOUT PAGE: SECTION 1 ── */}
-      <section className="relative w-full pt-32 pb-24 px-6 lg:px-12 flex flex-col items-center flex-grow overflow-hidden">
+      <section className="relative w-full pt-32 pb-16 px-6 lg:px-12 flex flex-col items-center flex-grow overflow-hidden">
         
         {/* Background Ambient Light */}
         <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-[#e31e24] rounded-full blur-[150px] opacity-[0.05] pointer-events-none" />
@@ -42,7 +53,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-          className="relative max-w-[900px] w-full rounded-2xl overflow-hidden group z-10 shadow-[0_20px_50px_rgba(0,0,0,0.15)]"
+          className="relative max-w-[1000px] w-full rounded-2xl overflow-hidden group z-10 shadow-[0_20px_50px_rgba(0,0,0,0.15)] mb-28"
         >
           {/* CSS Animation: Moving Red Light Border Scanner */}
           <div className="absolute inset-[-50%] z-0 animate-[spin_4s_linear_infinite] opacity-70">
@@ -50,7 +61,7 @@ export default function About() {
           </div>
           
           {/* The Inner Frosted Glass Console */}
-          <div className="relative z-10 m-[2px] bg-slate-900/80 backdrop-blur-xl rounded-[14px] p-8 md:p-12 lg:p-16 border border-white/5 flex items-center justify-center">
+          <div className="relative z-10 m-[2px] bg-slate-900/80 backdrop-blur-xl rounded-[14px] p-8 md:p-12 lg:p-16 border border-white/5 flex flex-col items-center justify-center gap-6">
             
             {/* Decorative Cyber/Engineering Corner Accents */}
             <div className="absolute top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-[#e31e24]/60" />
@@ -58,12 +69,137 @@ export default function About() {
             <div className="absolute bottom-4 left-4 w-4 h-4 border-b-2 border-l-2 border-[#e31e24]/60" />
             <div className="absolute bottom-4 right-4 w-4 h-4 border-b-2 border-r-2 border-[#e31e24]/60" />
 
-            {/* Core Paragraph */}
-            <p className="text-slate-200 text-lg md:text-[22px] leading-relaxed text-center font-body max-w-[750px]">
-              For over two decades, Promac Technologies has redefined the boundaries of industrial laundry operations. By engineering robust, intelligent, and deeply integrated systems, we provide unparalleled efficiency and reliability. Our commitment to innovation ensures that our partners are equipped not just for the challenges of today, but for the evolving demands of tomorrow.
+            {/* Official Client Content */}
+            <p className="text-slate-200 text-lg md:text-[20px] leading-relaxed text-center font-body max-w-[850px]">
+              Promac Technologies Pvt Ltd is a leading laundry equipment supplier in India, providing advanced commercial laundry and dry-cleaning machines for hospitality, healthcare, institutional, and industrial laundries. As an experienced industrial laundry solutions provider, we support businesses with reliable equipment, expert guidance, and long-term service support.
+            </p>
+            <p className="text-slate-200 text-lg md:text-[20px] leading-relaxed text-center font-body max-w-[850px]">
+              With decades of hands-on industry experience, we help clients design, install, and operate efficient laundry facilities that deliver consistent performance and operational efficiency.
             </p>
           </div>
         </motion.div>
+
+        {/* ── SECTION 2: TRUSTED BY LEADING BRANDS ── */}
+        <div className="w-full max-w-[1200px] mx-auto mb-20 relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            className="flex flex-col items-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#0b1b36] font-display tracking-tighter uppercase inline-block border-b-[3px] border-[#E31E24] pb-3 text-center">
+              TRUSTED BY LEADING BRANDS
+            </h2>
+          </motion.div>
+
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
+            
+            {/* Left Side: 3D Washer Image */}
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="w-full lg:w-1/2 flex justify-center lg:justify-start pl-0 lg:pl-10"
+            >
+              <motion.img 
+                src="/Brands/sea-lion brand/WASHER-EXTRACTOR.png" 
+                alt="Promac Industrial Washer" 
+                className="w-full max-w-[450px] h-auto object-contain drop-shadow-[0_30px_50px_rgba(0,0,0,0.15)] mix-blend-multiply"
+                animate={{ y: [-15, 10, -15] }}
+                transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+              />
+            </motion.div>
+
+            {/* Right Side: Floating Brand Cloud */}
+            <div className="w-full lg:w-1/2 relative min-h-[400px] flex items-center justify-center pr-0 lg:pr-10">
+              <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
+                {CLIENT_BRANDS.map((brand, i) => (
+                  <motion.div
+                    key={i}
+                    animate={{ y: [0, -15, 0] }}
+                    transition={{
+                      repeat: Infinity,
+                      duration: brand.duration,
+                      delay: brand.delay,
+                      ease: "easeInOut"
+                    }}
+                    className="bg-white px-6 md:px-8 py-4 md:py-5 rounded-full shadow-[0_10px_30px_rgba(0,0,0,0.06)] border border-slate-100 flex items-center justify-center cursor-default hover:border-[#e31e24] hover:shadow-[0_10px_30px_rgba(227,30,36,0.15)] transition-all duration-300"
+                  >
+                    <span className="text-base md:text-lg font-bold text-slate-700 tracking-wide font-display uppercase whitespace-nowrap">
+                      {brand.name}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ── SECTION 3: STATS BAR ── */}
+        <div className="w-full max-w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 relative z-10">
+          
+          {/* Stat 1 */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="bg-white p-8 rounded-xl shadow-lg border border-slate-100 flex flex-col items-center text-center group hover:-translate-y-2 hover:border-[#e31e24]/30 transition-all duration-300"
+          >
+            <div className="w-16 h-16 bg-[#e31e24]/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#e31e24] transition-colors duration-300">
+              <Award className="w-8 h-8 text-[#e31e24] group-hover:text-white transition-colors duration-300" />
+            </div>
+            <h3 className="text-4xl font-extrabold text-[#0b1b36] mb-3">20+</h3>
+            <p className="text-slate-500 font-bold text-[13px] tracking-widest uppercase">Years of Industry Experience</p>
+          </motion.div>
+
+          {/* Stat 2 */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="bg-white p-8 rounded-xl shadow-lg border border-slate-100 flex flex-col items-center text-center group hover:-translate-y-2 hover:border-[#e31e24]/30 transition-all duration-300"
+          >
+            <div className="w-16 h-16 bg-[#e31e24]/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#e31e24] transition-colors duration-300">
+              <Wrench className="w-8 h-8 text-[#e31e24] group-hover:text-white transition-colors duration-300" />
+            </div>
+            <h3 className="text-4xl font-extrabold text-[#0b1b36] mb-3">1000+</h3>
+            <p className="text-slate-500 font-bold text-[13px] tracking-widest uppercase">Installations Completed</p>
+          </motion.div>
+
+          {/* Stat 3 */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="bg-white p-8 rounded-xl shadow-lg border border-slate-100 flex flex-col items-center text-center group hover:-translate-y-2 hover:border-[#e31e24]/30 transition-all duration-300"
+          >
+            <div className="w-16 h-16 bg-[#e31e24]/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#e31e24] transition-colors duration-300">
+              <MapPin className="w-8 h-8 text-[#e31e24] group-hover:text-white transition-colors duration-300" />
+            </div>
+            <h3 className="text-4xl font-extrabold text-[#0b1b36] mb-3">PAN INDIA</h3>
+            <p className="text-slate-500 font-bold text-[13px] tracking-widest uppercase">Presence</p>
+          </motion.div>
+
+          {/* Stat 4 */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="bg-white p-8 rounded-xl shadow-lg border border-slate-100 flex flex-col items-center text-center group hover:-translate-y-2 hover:border-[#e31e24]/30 transition-all duration-300"
+          >
+            <div className="w-16 h-16 bg-[#e31e24]/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#e31e24] transition-colors duration-300">
+              <Building2 className="w-8 h-8 text-[#e31e24] group-hover:text-white transition-colors duration-300" />
+            </div>
+            <h3 className="text-4xl font-extrabold text-[#0b1b36] mb-3">TRUSTED</h3>
+            <p className="text-slate-500 font-bold text-[13px] tracking-widest uppercase">by Leading Brands</p>
+          </motion.div>
+          
+        </div>
 
       </section>
 
