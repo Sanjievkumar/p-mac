@@ -3,12 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import promacLogo from '../assets/promac-logo.png';
 
 const NAV_LINKS = [
-  { label: 'HOME', href: '#' },
-  { label: 'ABOUT', href: '#about' },
-  { label: 'BRANDS', href: '#brands' },
-  { label: 'SERVICE', href: '#service' },
-  { label: 'CONSULTANCY', href: '#consultancy' },
-  { label: 'CONTACT', href: '#contact' },
+  { label: 'HOME', href: '/' },
+  { label: 'ABOUT', href: '/about' },
+  { label: 'BRANDS', href: '/#brands' },
+  { label: 'SERVICE', href: '/#service' },
+  { label: 'CONSULTANCY', href: '/#consultancy' },
+  { label: 'CONTACT', href: '/#contact' },
 ];
 
 export default function Navbar() {
