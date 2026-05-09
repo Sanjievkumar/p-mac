@@ -54,16 +54,16 @@ export default function FounderSection() {
                <motion.div custom={3} variants={textVariants} className="text-[#cc3333] font-serif italic mt-2">Always.</motion.div>
              </h2>
              
-             <motion.p custom={4} variants={textVariants} className="text-gray-300 text-sm md:text-base leading-relaxed mb-6 max-w-[450px] font-body">
+             <motion.p custom={4} variants={textVariants} className="text-gray-300 text-sm md:text-base leading-[1.8] mb-6 max-w-[450px] font-body">
                At Promac Technologies, our journey has always been about solving real challenges with practical, reliable and future-ready solutions. We believe in engineering excellence, long-term partnerships, and creating value that lasts.
              </motion.p>
              
-             <motion.p custom={5} variants={textVariants} className="text-gray-300 text-sm md:text-base leading-relaxed mb-10 max-w-[450px] font-body">
+             <motion.p custom={5} variants={textVariants} className="text-gray-300 text-sm md:text-base leading-[1.8] mb-10 max-w-[450px] font-body">
                Our commitment to innovation, quality, and customer success drives everything we do. Thank you for being a part of our journey.
              </motion.p>
 
              <motion.div custom={6} variants={textVariants} className="mt-8">
-               <p className="text-4xl text-[#cc3333] mb-4" style={{ fontFamily: "'Brush Script MT', 'Great Vibes', cursive" }}>
+               <p className="text-4xl text-[#cc3333]/70 mb-4" style={{ fontFamily: "'Brush Script MT', 'Great Vibes', cursive" }}>
                  Senthil Kumar
                </p>
                <p className="text-gray-200 font-bold text-sm tracking-wide font-display">Senthil Kumar DR</p>

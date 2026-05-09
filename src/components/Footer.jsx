@@ -55,7 +55,7 @@ export default function Footer() {
           {/* ── Column 3: Contact Details ── */}
           <div>
             <h3 className="text-lg font-bold tracking-widest text-white mb-6 font-display uppercase">
-              Contact Us
+              DIRECT CONTACT
             </h3>
             <div className="flex flex-col gap-5 text-gray-300 text-[15px]">
               <div className="flex items-start gap-4 group cursor-pointer hover:text-white transition-colors duration-300">
@@ -85,7 +85,7 @@ export default function Footer() {
           {/* ── Column 4: Newsletter ── */}
           <div>
             <h3 className="text-lg font-bold tracking-widest text-white mb-6 font-display uppercase">
-              Engineering Updates
+              ENGINEERING UPDATES
             </h3>
             <form className="flex flex-col gap-3" onSubmit={(e) => e.preventDefault()}>
               <input 
@@ -109,7 +109,7 @@ export default function Footer() {
       {/* ── Bottom Bar ── */}
       <div className="border-t border-white/10 relative z-10">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-gray-400 text-xs tracking-wider">
+          <p className="text-gray-400 text-xs tracking-wider opacity-80">
             © 2026 Promac Technologies Pvt Ltd. All Rights Reserved.
           </p>
           

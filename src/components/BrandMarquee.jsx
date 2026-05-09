@@ -33,15 +33,18 @@ function MagneticBrand({ brand }) {
     mouseY.set(0);
   };
 
+  const isKannegiesser = brand === "KANNEGIESSER";
+  const defaultSpacing = isKannegiesser ? "0.05em" : "0.1em";
+
   return (
     <motion.div
-      className="px-24 text-slate-800 font-sans font-extrabold text-4xl lg:text-[44px] cursor-pointer mix-blend-multiply flex items-center justify-center"
+      className="px-24 text-slate-800 font-sans font-extrabold text-3xl lg:text-4xl cursor-pointer flex items-center justify-center"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ perspective: 1000 }}
       
       // Start slightly expansive
-      initial={{ letterSpacing: "0.1em", color: "#1e293b", textShadow: "0px 0px 0px rgba(227, 30, 36, 0)" }}
+      initial={{ letterSpacing: defaultSpacing, color: "#1e293b", textShadow: "0px 0px 0px rgba(227, 30, 36, 0)" }}
       
       // Ultra-Premium Interaction State
       whileHover={{ 

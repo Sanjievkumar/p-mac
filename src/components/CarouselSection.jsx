@@ -191,13 +191,11 @@ export default function CarouselSection() {
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="max-w-[700px] mx-auto px-6 pt-4"
+        className="max-w-[700px] mx-auto px-6 pt-4 flex flex-col items-center"
       >
-        <div className="w-full h-[2px] bg-slate-200 mb-6" />
-        <h2 className="text-center text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0b1b36] font-display tracking-tighter italic">
-          -Our Best Sellers.-
+        <h2 className="text-4xl font-extrabold text-[#0b1b36] font-display tracking-tighter uppercase inline-block border-b-[3px] border-[#E31E24] pb-3 mb-8">
+          OUR BEST SELLERS
         </h2>
-        <div className="w-full h-[2px] bg-slate-200 mt-6" />
       </motion.div>
     </section>
   );
