@@ -1,17 +1,70 @@
-import { motion } from 'framer-motion';
+import { motion, useAnimationFrame } from 'framer-motion';
+import { useRef, useState } from 'react';
 import founderWords from '../assets/founder-words.png';
 
+/* ─────────────────────────────────────────────
+   Animated glow orb that drifts behind the
+   founder-words image, simulating light
+   punching through the word cutouts.
+───────────────────────────────────────────── */
+function AnimatedGlow() {
+  const [pos, setPos] = useState({ x: 50, y: 50 });
+  const t = useRef(0);
+
+  useAnimationFrame((time) => {
+    t.current = time / 1000;
+    // Lissajous-style slow drift
+    const x = 50 + Math.sin(t.current * 0.4) * 28;
+    const y = 50 + Math.cos(t.current * 0.27) * 22;
+    setPos({ x, y });
+  });
+
+  return (
+    <>
+      {/* Primary cyan glow */}
+      <div
+        className="absolute inset-0 pointer-events-none rounded-2xl transition-none"
+        style={{
+          background: `radial-gradient(circle at ${pos.x}% ${pos.y}%, rgba(0,200,255,0.55) 0%, rgba(0,100,200,0.18) 45%, transparent 72%)`,
+          mixBlendMode: 'screen',
+        }}
+        aria-hidden="true"
+      />
+      {/* Secondary warm accent for depth */}
+      <div
+        className="absolute inset-0 pointer-events-none rounded-2xl"
+        style={{
+          background: `radial-gradient(circle at ${100 - pos.x}% ${100 - pos.y}%, rgba(0,31,63,0.7) 0%, transparent 65%)`,
+          mixBlendMode: 'multiply',
+        }}
+        aria-hidden="true"
+      />
+      {/* Pulsing outer halo */}
+      <motion.div
+        className="absolute inset-0 pointer-events-none rounded-2xl"
+        animate={{ opacity: [0.3, 0.65, 0.3] }}
+        transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
+        style={{
+          background:
+            'radial-gradient(ellipse at 50% 50%, rgba(0,200,255,0.22) 0%, transparent 70%)',
+          mixBlendMode: 'screen',
+        }}
+        aria-hidden="true"
+      />
+    </>
+  );
+}
+
+/* ─────────────────────────────────────────────
+   Main Component
+───────────────────────────────────────────── */
 export default function FounderSection() {
   const textVariants = {
     hidden: { opacity: 0, x: -40 },
     visible: (i) => ({
       opacity: 1,
       x: 0,
-      transition: {
-        delay: i * 0.15,
-        duration: 0.8,
-        ease: 'easeOut',
-      },
+      transition: { delay: i * 0.15, duration: 0.8, ease: 'easeOut' },
     }),
   };
 
@@ -79,25 +132,42 @@ export default function FounderSection() {
           </motion.div>
         </div>
 
-        {/* ── RIGHT: Founder Words image ── */}
+        {/* ── RIGHT: Founder Words — animated light-through-mask effect ── */}
         <div className="relative w-full md:w-[45%] flex items-center justify-center px-6 md:px-10 py-12 md:py-0">
           <motion.div
             initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="w-full max-w-[420px]"
+            className="relative w-full max-w-[420px] aspect-square"
           >
+            {/* ── Animated glow lives BEHIND the image ── */}
+            <div className="absolute inset-0 rounded-2xl overflow-hidden">
+              <AnimatedGlow />
+            </div>
+
+            {/* ── The actual founder words image ──
+                mix-blend-mode: multiply makes the dark background of the PNG
+                transparent against the glow, so only the word shapes (lighter
+                pixels) let the cyan light through — simulating a cutout mask. ── */}
             <img
               src={founderWords}
               alt="Words from our Founder — Senthil Kumar DR"
-              className="
-                w-full h-auto
-                object-contain object-center
-                rounded-2xl
-                shadow-2xl
-                border border-slate-200/20
-              "
+              className="relative z-10 w-full h-full object-contain object-center rounded-2xl"
+              style={{ mixBlendMode: 'lighten' }}
+            />
+
+            {/* Subtle outer glow ring around the whole card */}
+            <motion.div
+              className="absolute -inset-[2px] rounded-[18px] pointer-events-none"
+              animate={{ opacity: [0.4, 0.9, 0.4] }}
+              transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
+              style={{
+                background:
+                  'linear-gradient(135deg, rgba(0,200,255,0.35), rgba(0,31,63,0.1), rgba(0,200,255,0.2))',
+                filter: 'blur(6px)',
+              }}
+              aria-hidden="true"
             />
           </motion.div>
 
