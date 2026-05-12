@@ -11,7 +11,7 @@ export default {
         'mint': '#D8F3DC',
         'navy': '#0A2540',
         'promac-blue': '#0B4F8A',
-        'promac-red': '#D42B2B',
+        'promac-red': '#E31E24',
         'promac-dark': '#0a0a0a',
       },
       fontFamily: {

@@ -51,8 +51,8 @@ export default function FounderSection() {
 
         {/* Eyebrow */}
         <motion.div {...fade(0)} style={{ marginBottom: '32px' }}>
-          <div style={{ width: '28px', height: '1px', backgroundColor: '#cc3333', marginBottom: '10px' }} />
-          <p style={{ color: '#cc3333', fontSize: '9px', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', margin: 0 }}>
+          <div style={{ width: '28px', height: '1px', backgroundColor: '#E31E24', marginBottom: '10px' }} />
+          <p style={{ color: '#E31E24', fontSize: '9px', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', margin: 0 }}>
             A Few Words From Our Founder
           </p>
         </motion.div>
@@ -83,7 +83,7 @@ export default function FounderSection() {
 
         {/* Headline line 3 — red italic */}
         <motion.p {...line(0.38)} style={{
-          color: '#cc3333',
+          color: '#E31E24',
           fontSize: 'clamp(1.8rem, 2.5vw, 2.6rem)',
           fontStyle: 'italic',
           fontFamily: 'Georgia, "Times New Roman", serif',

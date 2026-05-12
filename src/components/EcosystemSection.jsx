@@ -116,25 +116,25 @@ export default function EcosystemSection() {
               viewport={{ once: false, amount: 0.2 }}
             >
               <motion.div custom={0} variants={textVariants} className="flex items-center gap-4 mb-6">
-                <p className="text-[#e23028] font-bold tracking-[0.1em] text-[10px] uppercase">
+                <p className="text-[#E31E24] font-bold tracking-[0.4em] text-[10px] uppercase">
                   THE PROMAC ECOSYSTEM
                 </p>
-                <div className="w-10 h-[1px] bg-[#e23028]" />
+                <div className="w-10 h-[1px] bg-[#E31E24]" />
               </motion.div>
 
-              <h2 className="text-5xl md:text-6xl lg:text-[64px] text-[#0b1b36] leading-[1.05] tracking-tight mb-8">
-                <motion.div custom={1} variants={textVariants} className="font-serif font-bold text-[#0b1b36]">One Partner.</motion.div>
-                <motion.div custom={2} variants={textVariants} className="font-serif font-bold text-[#e23028]">Every Aspect.</motion.div>
-                <motion.div custom={3} variants={textVariants} className="font-serif font-normal italic text-[#0b1b36] mt-2">Complete Confidence.</motion.div>
+              <h2 className="text-5xl md:text-6xl lg:text-[64px] text-[#001F3F] leading-[1.05] tracking-tight mb-8">
+                <motion.div custom={1} variants={textVariants} className="font-display font-bold text-[#001F3F]">One Partner.</motion.div>
+                <motion.div custom={2} variants={textVariants} className="font-display font-bold text-[#E31E24]">Every Aspect.</motion.div>
+                <motion.div custom={3} variants={textVariants} className="font-display font-normal italic text-[#001F3F] mt-2">Complete Confidence.</motion.div>
               </h2>
 
-              <motion.p custom={4} variants={textVariants} className="text-gray-500 font-sans text-sm md:text-[15px] leading-relaxed max-w-sm mb-10">
+              <motion.p custom={4} variants={textVariants} className="text-gray-500 font-display text-sm md:text-[15px] leading-relaxed max-w-sm mb-10">
                 An integrated ecosystem of expertise, technology and support that powers your laundry operations — today and tomorrow.
               </motion.p>
 
               {/* Replica Button */}
               <motion.div custom={5} variants={textVariants}>
-                <button className="border border-[#e23028] text-[#e23028] text-[10px] font-bold tracking-[0.15em] px-8 py-3.5 flex items-center gap-4 hover:bg-[#e23028] hover:text-white transition-all duration-300 rounded-[3px] group">
+                <button className="border border-[#E31E24] text-[#E31E24] text-[10px] font-bold tracking-[0.15em] px-8 py-3.5 flex items-center gap-4 hover:bg-[#E31E24] hover:text-white transition-all duration-300 rounded-[3px] group">
                   EXPLORE THE ECOSYSTEM
                   <span className="w-5 h-5 rounded-full border border-current flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1">
                     <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -158,20 +158,20 @@ export default function EcosystemSection() {
                viewport={{ once: true }}
                transition={{ duration: 0.6, delay: idx * 0.1, ease: "easeOut" }}
                // Group class added to trigger hover interactions for children elements
-               className="group bg-white rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.03)] p-8 border border-gray-100/50 flex flex-col hover:shadow-[0_20px_50px_rgba(226,48,40,0.08)] transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+               className="group bg-white rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.03)] p-8 border border-gray-100/50 flex flex-col hover:shadow-[0_20px_50px_rgba(227,30,36,0.08)] transition-all duration-500 hover:-translate-y-2 cursor-pointer"
              >
                 <div className="flex justify-between items-start mb-10">
-                   <span className="text-[#e23028] font-bold text-xl">{card.id}</span>
+                   <span className="text-[#E31E24] font-bold text-xl">{card.id}</span>
                    {/* Custom precision-built SVG icons */}
-                   <div className="text-[#e23028] w-8 h-8 opacity-90 transition-transform duration-500 group-hover:scale-110">{card.icon}</div>
+                   <div className="text-[#E31E24] w-8 h-8 opacity-90 transition-transform duration-500 group-hover:scale-110">{card.icon}</div>
                 </div>
                 
-                <h3 className="text-[22px] text-[#0b1b36] font-serif font-bold leading-[1.2] mb-3 whitespace-pre-line tracking-tight transition-colors duration-300">
+                <h3 className="text-[22px] text-[#001F3F] font-display font-bold leading-[1.2] mb-3 whitespace-pre-line tracking-tight transition-colors duration-300">
                   {card.title}
                 </h3>
                 
                 {/* Expanding Red Line Micro-Interaction */}
-                <div className="w-8 h-[2px] bg-[#e23028] mb-5 transition-all duration-500 ease-out group-hover:w-full" />
+                <div className="w-8 h-[2px] bg-[#E31E24] mb-5 transition-all duration-500 ease-out group-hover:w-full" />
                 
                 <p className="text-gray-500 text-[12px] leading-relaxed font-sans transition-colors duration-300 group-hover:text-gray-800">
                   {card.text}

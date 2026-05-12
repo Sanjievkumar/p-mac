@@ -150,7 +150,7 @@ export default function About() {
       ══════════════════════════════════════════ */}
       <section className="relative w-full pt-44 pb-20 px-6 lg:px-12 flex flex-col items-center overflow-hidden">
         {/* Ambient blobs */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#D42B2B]/[0.03] rounded-full blur-[180px] -mr-40 -mt-40" />
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#E31E24]/[0.03] rounded-full blur-[180px] -mr-40 -mt-40" />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#0B4F8A]/[0.02] rounded-full blur-[160px] -ml-40 -mb-40" />
 
         <div className="max-w-[1100px] w-full text-center mb-20 relative z-10">
@@ -161,7 +161,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="mb-8"
           >
-            <span className="text-[#D42B2B] font-bold text-[10px] tracking-[0.5em] uppercase bg-[#D42B2B]/5 px-6 py-2 rounded-full border border-[#D42B2B]/10">
+            <span className="text-[#E31E24] font-bold text-[10px] tracking-[0.4em] uppercase bg-[#E31E24]/5 px-6 py-2 rounded-full border border-[#E31E24]/10">
               Engineering the Future
             </span>
           </motion.div>
@@ -185,7 +185,7 @@ export default function About() {
             <div className="block">
               <SplitText
                 text="PURE PERFORMANCE."
-                className="inline text-[#D42B2B]"
+                className="inline text-[#E31E24]"
                 baseDelay={0.1 + 'BEYOND EQUIPMENT.'.length * 0.03}
               />
             </div>
@@ -195,7 +195,7 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
-            className="text-lg md:text-2xl text-slate-600 font-medium max-w-3xl mx-auto leading-relaxed"
+            className="text-base md:text-lg text-slate-500 font-medium max-w-2xl mx-auto leading-relaxed"
           >
             Promac Technologies is India's premier turnkey partner for world-class industrial laundry systems.
           </motion.p>
@@ -225,13 +225,13 @@ export default function About() {
               <div className="relative z-10 space-y-6">
                 <h2 className="text-4xl font-black text-white tracking-tighter leading-tight">
                   Decades of <br />
-                  <span className="text-[#D42B2B]">Hands-on Expertise.</span>
+                  <span className="text-[#E31E24]">Hands-on Expertise.</span>
                 </h2>
                 <p className="text-slate-400 text-lg leading-relaxed">
                   As an experienced industrial laundry solutions provider, we support businesses with reliable equipment, expert guidance, and long-term service support. We help clients design, install, and operate efficient laundry facilities that deliver consistent performance.
                 </p>
                 <div className="flex gap-4 pt-2">
-                  <div className="w-12 h-1 bg-[#D42B2B]" />
+                  <div className="w-12 h-1 bg-[#E31E24]" />
                   <div className="w-4 h-1 bg-gray-700" />
                   <div className="w-2 h-1 bg-gray-700" />
                 </div>
@@ -264,7 +264,7 @@ export default function About() {
                 <p className="text-slate-400 leading-relaxed text-lg">
                   To empower the hospitality and healthcare sectors with sustainable, high-efficiency laundry technologies that redefine operational excellence across India.
                 </p>
-                <button className="mt-4 text-[10px] font-bold tracking-widest uppercase text-[#D42B2B] flex items-center gap-3 group-hover:translate-x-2 transition-transform duration-300">
+                <button className="mt-4 text-[10px] font-bold tracking-widest uppercase text-[#E31E24] flex items-center gap-3 group-hover:translate-x-2 transition-transform duration-300">
                   Learn More <span className="text-xl">→</span>
                 </button>
               </div>
@@ -291,7 +291,7 @@ export default function About() {
         <div className="max-w-[1200px] mx-auto px-6 relative z-10">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-6xl font-black text-[#0a0a0a] tracking-tighter mb-6 uppercase">
-              The Promac <span className="text-[#D42B2B]">Pillars.</span>
+              The Promac <span className="text-[#E31E24]">Pillars.</span>
             </h2>
             <p className="text-slate-600 text-lg max-w-xl mx-auto leading-relaxed">
               Our foundation is built on three core principles that drive every project we undertake.
@@ -312,11 +312,11 @@ export default function About() {
                   border border-white/70
                   shadow-[0_8px_40px_rgba(0,0,0,0.07)]
                   hover:shadow-[0_20px_60px_rgba(0,0,0,0.13)]
-                  hover:border-[#D42B2B]/20
+                  hover:border-[#E31E24]/20
                   transition-all duration-500 group cursor-pointer`}
               >
                 <PulseIcon>{pillar.icon}</PulseIcon>
-                <span className="text-[#D42B2B] font-bold text-[10px] tracking-widest mb-4 block">{pillar.id}</span>
+                <span className="text-[#E31E24] font-bold text-[10px] tracking-widest mb-4 block">{pillar.id}</span>
                 <h3 className="text-2xl font-black text-[#0a0a0a] mb-4 tracking-tighter">{pillar.title}</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">{pillar.desc}</p>
               </motion.div>

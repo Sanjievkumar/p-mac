@@ -50,7 +50,7 @@ const TrustedBrands = () => {
     <section className="relative w-full bg-[#fafafa] py-32 px-4 md:px-16 overflow-hidden min-h-[900px] font-display">
       
       {/* BACKGROUND DECOR */}
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#D42B2B]/5 rounded-full blur-[140px] -mr-40 -mt-40" />
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#E31E24]/5 rounded-full blur-[140px] -mr-40 -mt-40" />
 
       {/* HEADER SECTION */}
       <div className="text-center mb-24 relative z-30">
@@ -60,11 +60,11 @@ const TrustedBrands = () => {
           viewport={{ once: true }}
           className="inline-flex items-center gap-3 mb-6"
         >
-          <div className="w-8 h-[2px] bg-[#D42B2B]" />
-          <span className="text-[#D42B2B] font-bold text-[10px] tracking-[0.4em] uppercase">
+          <div className="w-8 h-[2px] bg-[#E31E24]" />
+          <span className="text-[#E31E24] font-bold text-[10px] tracking-[0.4em] uppercase">
             ESTABLISHED PARTNERSHIPS
           </span>
-          <div className="w-8 h-[2px] bg-[#D42B2B]" />
+          <div className="w-8 h-[2px] bg-[#E31E24]" />
         </motion.div>
         
         <motion.h2
@@ -74,7 +74,7 @@ const TrustedBrands = () => {
           transition={{ delay: 0.2 }}
           className="text-[#0a0a0a] text-5xl md:text-7xl font-extrabold tracking-tightest mb-8 uppercase"
         >
-          Trusted by <span className="text-[#D42B2B]">Leading Brands.</span>
+          Trusted by <span className="text-[#E31E24]">Leading Brands.</span>
         </motion.h2>
         
         <motion.p 
@@ -151,7 +151,7 @@ const TrustedBrands = () => {
               whileHover={{ 
                 scale: 1.15, 
                 backgroundColor: 'rgba(255, 255, 255, 0.7)',
-                borderColor: '#D42B2B',
+                borderColor: '#E31E24',
                 transition: { duration: 0.3 }
               }}
             >
@@ -188,9 +188,9 @@ const TrustedBrands = () => {
 const StatItem = ({ icon, value, label }) => (
   <div className="flex flex-col items-center text-center group">
     <div className="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center text-3xl mb-4 transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110 shadow-sm">
-      <span className="text-[#D42B2B]">{icon}</span>
+      <span className="text-[#E31E24]">{icon}</span>
     </div>
-    <h3 className="text-4xl font-extrabold text-[#0a0a0a] tracking-tightest mb-1 group-hover:text-[#D42B2B] transition-colors">{value}</h3>
+    <h3 className="text-4xl font-extrabold text-[#0a0a0a] tracking-tightest mb-1 group-hover:text-[#E31E24] transition-colors">{value}</h3>
     <p className="text-[9px] text-gray-500 font-bold uppercase tracking-[0.2em]">{label}</p>
   </div>
 );
