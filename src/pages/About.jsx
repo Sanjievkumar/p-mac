@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import TrustedBrands from '../components/TrustedBrands';
 import TurnkeyProcess from '../components/TurnkeyProcess';
+import MissionSection from '../components/MissionSection';
 
 export default function About() {
   const pillars = [
@@ -147,6 +148,9 @@ export default function About() {
 
       {/* ── SECTION 4: TURNKEY PROCESS ── */}
       <TurnkeyProcess />
+
+      {/* ── SECTION 5: MISSION ── */}
+      <MissionSection />
 
       <Footer />
     </div>
