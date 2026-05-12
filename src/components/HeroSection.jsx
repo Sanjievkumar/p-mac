@@ -5,16 +5,16 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative w-full h-[calc(100vh-68px)] min-h-[600px] mt-[68px] bg-black overflow-hidden"
+      className="relative w-full h-[calc(100vh-68px)] min-h-[600px] mt-[68px] overflow-hidden bg-black"
     >
-      {/* ── Slow-zoom image with brushed-steel CSS filter ── */}
+      {/* ── Slow-zoom background image — no colour overlay ── */}
       <motion.div
         className="absolute inset-0 w-full h-full"
         initial={{ scale: 1.1, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{
           scale:   { duration: 8, ease: 'easeOut' },
-          opacity: { duration: 1.5, delay: 0.3, ease: 'easeInOut' },
+          opacity: { duration: 1.4, delay: 0.2, ease: 'easeInOut' },
         }}
       >
         <img
@@ -22,49 +22,70 @@ export default function HeroSection() {
           alt="Promac Technologies — Industrial Facility"
           className="w-full h-full object-cover object-center"
           style={{
-            /* Brushed-steel: boost contrast + saturation + sharpen highlights */
-            filter: 'contrast(1.18) saturate(0.85) brightness(1.08)',
+            /* Pop the steel surfaces — no colour cast */
+            filter: 'brightness(1.10) contrast(1.05)',
           }}
         />
       </motion.div>
 
-      {/* ── Deep navy-to-cyan radial gradient overlay (replaces flat black) ── */}
+      {/* ── Minimal dark vignette only at top + bottom edges ── */}
       <div
-        className="absolute inset-0 z-[1] opacity-70"
-        style={{
-          background:
-            'radial-gradient(ellipse at center, #001F3F 0%, #001F3F 55%, #00C8FF 160%)',
-        }}
+        className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/40 to-transparent pointer-events-none z-[1]"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/40 to-transparent pointer-events-none z-[1]"
         aria-hidden="true"
       />
 
-      {/* ── Pulsing text brightness layer ── */}
-      <motion.div
-        className="absolute inset-0 z-[2] flex flex-col items-center justify-center select-none pointer-events-none px-6 text-center"
-        animate={{ opacity: [0.75, 1, 0.75] }}
-        transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-        aria-hidden="true"
-      >
-        <p className="text-white/10 text-[clamp(3rem,10vw,9rem)] font-black tracking-tighter leading-none uppercase">
-          BEYOND EQUIPMENT.
-        </p>
-        <p className="text-[#00C8FF]/10 text-[clamp(3rem,10vw,9rem)] font-black tracking-tighter leading-none uppercase">
-          PURE PERFORMANCE.
-        </p>
-      </motion.div>
+      {/* ── Hero text centred over the image ── */}
+      <div className="absolute inset-0 z-[2] flex flex-col items-center justify-center px-6 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        >
+          {/* Eyebrow */}
+          <p className="text-white/70 text-[11px] font-bold tracking-[0.55em] uppercase mb-5 drop-shadow-lg">
+            Promac Technologies
+          </p>
 
-      {/* ── Subtle vignette edges ── */}
-      <div
-        className="absolute inset-0 z-[3] pointer-events-none"
-        style={{
-          boxShadow: 'inset 0 0 120px 40px rgba(0,0,0,0.55)',
-        }}
-        aria-hidden="true"
-      />
+          {/* Main headline */}
+          <h1
+            className="text-[clamp(2.8rem,8vw,8rem)] font-black tracking-tighter leading-[0.92] uppercase text-white"
+            style={{
+              textShadow:
+                '0 4px 32px rgba(0,0,0,0.85), 0 1px 2px rgba(0,0,0,0.9)',
+            }}
+          >
+            BEYOND EQUIPMENT.
+            <br />
+            <span
+              className="text-white/90"
+              style={{
+                textShadow:
+                  '0 4px 32px rgba(0,0,0,0.85), 0 1px 2px rgba(0,0,0,0.9)',
+              }}
+            >
+              PURE PERFORMANCE.
+            </span>
+          </h1>
 
-      {/* ── Bottom fade to blend with next section ── */}
+          {/* Sub-line */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1.1 }}
+            className="mt-6 text-white/65 text-base md:text-lg font-medium max-w-xl mx-auto leading-relaxed drop-shadow-md"
+          >
+            India's premier turnkey partner for world-class industrial laundry systems.
+          </motion.p>
+        </motion.div>
+      </div>
+
+      {/* ── Bottom fade blending into next section ── */}
       <div
-        className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-[#f5f5f5] to-transparent pointer-events-none z-[4]"
+        className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-[#f5f5f5] to-transparent pointer-events-none z-[3]"
         aria-hidden="true"
       />
     </section>
