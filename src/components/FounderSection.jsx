@@ -1,18 +1,18 @@
 import { motion } from 'framer-motion';
-import founderImg from '../assets/founder-words.png';
+import showroomImg from '../assets/hero-new.png';
 
 /* ─────────────────────────────────────────────
-   Masked line reveal — slides up from hidden
-   boundary. Replays on every scroll in/out.
+   Per-line masked reveal
+   Replays every time section enters viewport
 ───────────────────────────────────────────── */
 function RevealLine({ children, delay = 0 }) {
   return (
-    <div className="overflow-hidden leading-none">
+    <div style={{ overflow: 'hidden' }}>
       <motion.div
         initial={{ y: '110%' }}
         whileInView={{ y: '0%' }}
-        viewport={{ once: false, amount: 0.8 }}
-        transition={{ duration: 0.85, delay, ease: [0.76, 0, 0.24, 1] }}
+        viewport={{ once: false, amount: 0 }}
+        transition={{ duration: 0.9, delay, ease: [0.76, 0, 0.24, 1] }}
       >
         {children}
       </motion.div>
@@ -20,14 +20,14 @@ function RevealLine({ children, delay = 0 }) {
   );
 }
 
-/* Fade-up for body text */
+/* Body text fade-up */
 function RevealFade({ children, delay = 0 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 16 }}
+      initial={{ opacity: 0, y: 14 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, amount: 0.6 }}
-      transition={{ duration: 0.75, delay, ease: 'easeOut' }}
+      viewport={{ once: false, amount: 0 }}
+      transition={{ duration: 0.7, delay, ease: 'easeOut' }}
     >
       {children}
     </motion.div>
@@ -41,103 +41,139 @@ export default function FounderSection() {
       className="relative w-full flex flex-col md:flex-row"
       style={{ minHeight: '480px' }}
     >
-
-      {/* ══════════════════════════════════════
-          LEFT — Dark text panel
-      ══════════════════════════════════════ */}
+      {/* ═══════════════════════════════════════
+          LEFT — coded dark text panel
+      ═══════════════════════════════════════ */}
       <div
-        className="
-          relative w-full md:w-[37%]
-          bg-[#0e0e0e]
-          flex flex-col justify-center
-          px-8 md:px-10 lg:px-12
-          py-16 md:py-24
-          z-10
-        "
+        className="relative w-full md:w-[38%] flex flex-col justify-center
+                   px-8 md:px-10 lg:px-14 py-16 md:py-24"
+        style={{ backgroundColor: '#0e0e0e', zIndex: 10 }}
       >
-        {/* Eyebrow: red rule + label */}
+        {/* Eyebrow */}
         <RevealFade delay={0}>
           <div className="mb-7">
-            <div className="w-8 h-[1px] bg-[#cc3333] mb-2" />
-            <p className="text-[#cc3333] text-[9px] font-bold tracking-[0.32em] uppercase">
+            <div style={{ width: '32px', height: '1px', backgroundColor: '#cc3333', marginBottom: '8px' }} />
+            <p style={{
+              color: '#cc3333',
+              fontSize: '9px',
+              fontWeight: 700,
+              letterSpacing: '0.32em',
+              textTransform: 'uppercase',
+            }}>
               A Few Words From Our Founder
             </p>
           </div>
         </RevealFade>
 
-        {/* Headline — each line masked individually */}
-        <h2 className="mb-8 space-y-1">
-          <RevealLine delay={0.08}>
-            <span className="block text-white text-[2rem] md:text-[2.4rem] lg:text-[2.7rem] font-bold leading-[1.12] tracking-tight">
+        {/* Headline — 3 individually masked lines */}
+        <div style={{ marginBottom: '28px' }}>
+          <RevealLine delay={0.1}>
+            <p style={{
+              color: '#ffffff',
+              fontSize: 'clamp(1.8rem, 2.5vw, 2.6rem)',
+              fontWeight: 700,
+              lineHeight: 1.15,
+              letterSpacing: '-0.02em',
+              paddingBottom: '4px',
+            }}>
               Building Solutions.
-            </span>
+            </p>
           </RevealLine>
 
-          <RevealLine delay={0.2}>
-            <span className="block text-white text-[2rem] md:text-[2.4rem] lg:text-[2.7rem] font-bold leading-[1.12] tracking-tight">
+          <RevealLine delay={0.22}>
+            <p style={{
+              color: '#ffffff',
+              fontSize: 'clamp(1.8rem, 2.5vw, 2.6rem)',
+              fontWeight: 700,
+              lineHeight: 1.15,
+              letterSpacing: '-0.02em',
+              paddingBottom: '4px',
+            }}>
               Delivering Value.
-            </span>
+            </p>
           </RevealLine>
 
-          <RevealLine delay={0.32}>
-            <span
-              className="block text-[#cc3333] text-[2rem] md:text-[2.4rem] lg:text-[2.7rem] leading-[1.12] tracking-tight"
-              style={{ fontStyle: 'italic', fontFamily: 'Georgia, serif' }}
-            >
+          <RevealLine delay={0.34}>
+            <p style={{
+              color: '#cc3333',
+              fontSize: 'clamp(1.8rem, 2.5vw, 2.6rem)',
+              fontStyle: 'italic',
+              fontFamily: 'Georgia, serif',
+              lineHeight: 1.15,
+              letterSpacing: '-0.01em',
+            }}>
               Always.
-            </span>
+            </p>
           </RevealLine>
-        </h2>
+        </div>
 
-        {/* Body paragraphs */}
-        <RevealFade delay={0.46}>
-          <p className="text-gray-400 text-[13px] leading-[1.85] mb-4 max-w-[300px]">
-            At Promac Technologies, our journey has always been about solving real challenges
-            with practical, reliable and future-ready solutions. We believe in engineering
-            excellence, long-term partnerships, and creating value that lasts.
+        {/* Body text */}
+        <RevealFade delay={0.5}>
+          <p style={{
+            color: '#9ca3af',
+            fontSize: '13px',
+            lineHeight: 1.85,
+            maxWidth: '300px',
+            marginBottom: '16px',
+          }}>
+            At Promac Technologies, our journey has always been about solving real
+            challenges with practical, reliable and future-ready solutions. We believe
+            in engineering excellence, long-term partnerships, and creating value that lasts.
           </p>
         </RevealFade>
 
-        <RevealFade delay={0.58}>
-          <p className="text-gray-400 text-[13px] leading-[1.85] max-w-[300px]">
+        <RevealFade delay={0.62}>
+          <p style={{
+            color: '#9ca3af',
+            fontSize: '13px',
+            lineHeight: 1.85,
+            maxWidth: '300px',
+          }}>
             Our commitment to innovation, quality, and customer success drives everything
             we do. Thank you for being a part of our journey.
           </p>
         </RevealFade>
-
-        {/* Right-edge gradient blending into the photo */}
-        <div
-          className="hidden md:block absolute inset-y-0 right-0 w-16
-                     bg-gradient-to-r from-transparent to-[#0e0e0e] pointer-events-none"
-          aria-hidden="true"
-        />
       </div>
 
-      {/* ══════════════════════════════════════
-          RIGHT — Showroom photo
-          Uses founder-words.png, object-right
-          crops out the already-baked text side
-          and shows only the machine photo half.
-      ══════════════════════════════════════ */}
-      <div className="relative w-full md:w-[63%] min-h-[340px] md:min-h-0 overflow-hidden">
+      {/* ═══════════════════════════════════════
+          RIGHT — clean showroom photo
+          hero-new.png has no baked-in text
+      ═══════════════════════════════════════ */}
+      <div
+        className="relative w-full md:w-[62%] overflow-hidden"
+        style={{ minHeight: '360px' }}
+      >
         <img
-          src={founderImg}
+          src={showroomImg}
           alt="Promac Technologies Industrial Laundry Showroom"
-          className="w-full h-full object-cover"
-          style={{
-            objectPosition: 'right center',
-            filter: 'brightness(0.9) contrast(1.05)',
-          }}
+          className="w-full h-full object-cover object-center"
+          style={{ filter: 'brightness(0.88) contrast(1.06)' }}
         />
-
-        {/* Left edge blends into dark panel */}
+        {/* Seamless left blend */}
         <div
-          className="absolute inset-y-0 left-0 w-28
-                     bg-gradient-to-r from-[#0e0e0e] to-transparent pointer-events-none"
+          className="absolute inset-y-0 left-0 pointer-events-none"
+          style={{
+            width: '120px',
+            background: 'linear-gradient(to right, #0e0e0e, transparent)',
+          }}
           aria-hidden="true"
         />
+        {/* Wall text matching reference */}
+        <div
+          className="absolute pointer-events-none"
+          style={{ top: '18%', left: '18%' }}
+        >
+          <p style={{
+            color: 'rgba(255,255,255,0.18)',
+            fontSize: '13px',
+            fontWeight: 600,
+            letterSpacing: '0.35em',
+            textTransform: 'uppercase',
+          }}>
+            Quality &nbsp;·&nbsp; Reliability &nbsp;·&nbsp; Performance
+          </p>
+        </div>
       </div>
-
     </section>
   );
 }
