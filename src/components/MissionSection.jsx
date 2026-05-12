@@ -1,89 +1,108 @@
 import { motion } from 'framer-motion';
-import missionBg from '../assets/mission-bg.png';
+import missionBg from '../assets/mission-handshake.png';
 
 export default function MissionSection() {
   return (
-    <section className="relative w-full overflow-hidden" style={{ minHeight: '560px' }}>
-
-      {/* ── Parallax Background Image ── */}
+    <section
+      className="relative w-full overflow-hidden"
+      style={{ minHeight: '640px' }}
+    >
+      {/* ── Fixed parallax background ── */}
       <div
-        className="absolute inset-0 bg-center bg-cover bg-no-repeat"
-        style={{ backgroundImage: `url(${missionBg})` }}
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `url(${missionBg})`,
+          backgroundAttachment: 'fixed',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
         aria-hidden="true"
       />
 
-      {/* ── Dark overlay (slate-950 / 65%) ── */}
+      {/* ── Dark navy overlay ── */}
       <div
-        className="absolute inset-0 bg-slate-950/65"
+        className="absolute inset-0 bg-[#001F3F]/60"
         aria-hidden="true"
       />
 
-      {/* ── Subtle top & bottom gradient fade ── */}
+      {/* ── Soft vignette top & bottom ── */}
       <div
-        className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-slate-950/60 to-transparent"
+        className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#001F3F]/50 to-transparent pointer-events-none"
         aria-hidden="true"
       />
       <div
-        className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-slate-950/60 to-transparent"
+        className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#001F3F]/50 to-transparent pointer-events-none"
         aria-hidden="true"
       />
 
       {/* ── Content ── */}
-      <div className="relative z-10 flex items-center justify-center min-h-[560px] px-6 py-24">
+      <div className="relative z-10 flex items-center justify-center min-h-[640px] px-6 py-28">
         <motion.div
-          initial={{ opacity: 0, y: 48 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.45 }}
-          transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+          initial={{ opacity: 0, scale: 0.95, y: 32 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           className="
-            max-w-4xl w-full
-            bg-white/5 backdrop-blur-lg
-            border border-white/10
-            rounded-3xl
-            px-10 py-14 md:px-20 md:py-20
+            relative max-w-4xl w-full
+            bg-white/5 backdrop-blur-xl
+            border border-white/20
+            rounded-[40px]
+            px-10 py-16 md:px-20 md:py-20
             text-center
+            shadow-[0_8px_80px_rgba(0,0,0,0.45)]
           "
         >
-          {/* Eye-brow label */}
+          {/* Subtle inner glow ring */}
+          <div
+            className="absolute inset-0 rounded-[40px] pointer-events-none"
+            style={{
+              background:
+                'radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.07) 0%, transparent 60%)',
+            }}
+            aria-hidden="true"
+          />
+
+          {/* ── OUR PURPOSE label ── */}
           <motion.p
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-[#E31E24] text-[10px] font-bold tracking-[0.45em] uppercase mb-6"
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-[#E31E24] text-[10px] font-bold tracking-[0.5em] uppercase mb-8"
           >
             Our Purpose
           </motion.p>
 
-          {/* Main quote */}
+          {/* ── Main Quote ── */}
           <motion.p
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.75, delay: 0.28 }}
-            className="text-5xl font-bold italic text-blue-50 text-center leading-tight"
+            transition={{ duration: 0.75, delay: 0.32 }}
+            className="text-white text-4xl md:text-5xl font-bold italic leading-tight"
           >
             "Our mission is to bridge the gap between industrial necessity and technological elegance."
           </motion.p>
 
-          {/* Decorative line */}
+          {/* ── Decorative divider ── */}
           <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.5 }}
-            className="mx-auto mt-10 w-20 h-px bg-gradient-to-r from-transparent via-blue-300/60 to-transparent origin-center"
+            transition={{ duration: 0.7, delay: 0.55 }}
+            className="mx-auto mt-12 mb-8 w-24 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent origin-center"
           />
 
-          {/* Attribution */}
+          {/* ── Footer attribution ── */}
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.65 }}
-            className="mt-6 text-blue-200/50 text-sm tracking-widest uppercase font-medium"
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="text-white/50 text-[11px] font-semibold tracking-[0.4em] uppercase"
           >
-            Promac Technologies — Est. 2010
+            Promac Technologies &mdash; Est.&nbsp;2010
           </motion.p>
         </motion.div>
       </div>
