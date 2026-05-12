@@ -2,28 +2,28 @@ import { motion } from 'framer-motion';
 import founderImg from '../assets/founder-words.png';
 
 /* ─────────────────────────────────────────────
-   Per-line masked reveal — slides up from clip
-   Replays on every scroll (once: false)
+   Clip-path reveal per line — avoids the
+   overflow:hidden height-collapse bug.
+   Clips from bottom → reveals top to bottom.
+   once:false → replays every scroll.
 ───────────────────────────────────────────── */
 function RevealLine({ children, delay = 0 }) {
   return (
-    <div style={{ overflow: 'hidden' }}>
-      <motion.div
-        initial={{ y: '115%' }}
-        whileInView={{ y: '0%' }}
-        viewport={{ once: false, amount: 0 }}
-        transition={{ duration: 0.9, delay, ease: [0.76, 0, 0.24, 1] }}
-      >
-        {children}
-      </motion.div>
-    </div>
+    <motion.div
+      initial={{ clipPath: 'inset(0 0 100% 0)', opacity: 0 }}
+      whileInView={{ clipPath: 'inset(0 0 0% 0)', opacity: 1 }}
+      viewport={{ once: false, amount: 0 }}
+      transition={{ duration: 0.85, delay, ease: [0.76, 0, 0.24, 1] }}
+    >
+      {children}
+    </motion.div>
   );
 }
 
 function RevealFade({ children, delay = 0 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 14 }}
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false, amount: 0 }}
       transition={{ duration: 0.75, delay, ease: 'easeOut' }}
@@ -37,28 +37,40 @@ export default function FounderSection() {
   return (
     <section
       id="about"
-      style={{ display: 'flex', width: '100%', minHeight: '480px' }}
+      style={{
+        display: 'flex',
+        flexDirection: 'row',
+        width: '100%',
+        minHeight: '480px',
+        backgroundColor: '#0e0e0e',
+        overflow: 'hidden',
+      }}
     >
-      {/* ══════════════════════════════════════════
-          LEFT — dark coded text panel (38%)
-      ══════════════════════════════════════════ */}
-      <div
-        style={{
-          width: '38%',
-          backgroundColor: '#0e0e0e',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          padding: 'clamp(2rem, 4vw, 4rem) clamp(1.5rem, 3vw, 3.5rem)',
-          position: 'relative',
-          zIndex: 10,
-          flexShrink: 0,
-        }}
-      >
-        {/* Eyebrow */}
+
+      {/* ═══════════════════════════════════════
+          LEFT — dark coded text panel
+          Matches reference: ~37% width
+      ═══════════════════════════════════════ */}
+      <div style={{
+        width: '37%',
+        flexShrink: 0,
+        backgroundColor: '#0e0e0e',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        padding: 'clamp(2.5rem, 5vw, 5rem) clamp(1.5rem, 3vw, 3rem)',
+        position: 'relative',
+        zIndex: 2,
+      }}>
+
+        {/* ── Eyebrow: red line + label ── */}
         <RevealFade delay={0}>
-          <div style={{ marginBottom: '28px' }}>
-            <div style={{ width: '32px', height: '1px', backgroundColor: '#cc3333', marginBottom: '8px' }} />
+          <div style={{ marginBottom: '32px' }}>
+            <div style={{
+              width: '28px', height: '1px',
+              backgroundColor: '#cc3333',
+              marginBottom: '10px',
+            }} />
             <p style={{
               color: '#cc3333',
               fontSize: '9px',
@@ -72,41 +84,44 @@ export default function FounderSection() {
           </div>
         </RevealFade>
 
-        {/* Headline — each line individually masked */}
+        {/* ── Headlines — clip-path reveal per line ── */}
         <div style={{ marginBottom: '28px' }}>
+
           <RevealLine delay={0.1}>
             <p style={{
               color: '#ffffff',
-              fontSize: 'clamp(1.7rem, 2.4vw, 2.55rem)',
+              fontSize: 'clamp(1.9rem, 2.6vw, 2.7rem)',
               fontWeight: 700,
-              lineHeight: 1.15,
-              letterSpacing: '-0.02em',
-              margin: '0 0 4px 0',
+              lineHeight: 1.12,
+              letterSpacing: '-0.025em',
+              margin: '0 0 2px 0',
+              fontFamily: 'inherit',
             }}>
               Building Solutions.
             </p>
           </RevealLine>
 
-          <RevealLine delay={0.23}>
+          <RevealLine delay={0.22}>
             <p style={{
               color: '#ffffff',
-              fontSize: 'clamp(1.7rem, 2.4vw, 2.55rem)',
+              fontSize: 'clamp(1.9rem, 2.6vw, 2.7rem)',
               fontWeight: 700,
-              lineHeight: 1.15,
-              letterSpacing: '-0.02em',
-              margin: '0 0 4px 0',
+              lineHeight: 1.12,
+              letterSpacing: '-0.025em',
+              margin: '0 0 2px 0',
+              fontFamily: 'inherit',
             }}>
               Delivering Value.
             </p>
           </RevealLine>
 
-          <RevealLine delay={0.36}>
+          <RevealLine delay={0.34}>
             <p style={{
               color: '#cc3333',
-              fontSize: 'clamp(1.7rem, 2.4vw, 2.55rem)',
+              fontSize: 'clamp(1.9rem, 2.6vw, 2.7rem)',
               fontStyle: 'italic',
               fontFamily: 'Georgia, "Times New Roman", serif',
-              lineHeight: 1.15,
+              lineHeight: 1.12,
               letterSpacing: '-0.01em',
               margin: 0,
             }}>
@@ -115,7 +130,7 @@ export default function FounderSection() {
           </RevealLine>
         </div>
 
-        {/* Paragraph 1 */}
+        {/* ── Body paragraphs ── */}
         <RevealFade delay={0.5}>
           <p style={{
             color: '#9ca3af',
@@ -130,8 +145,7 @@ export default function FounderSection() {
           </p>
         </RevealFade>
 
-        {/* Paragraph 2 */}
-        <RevealFade delay={0.63}>
+        <RevealFade delay={0.62}>
           <p style={{
             color: '#9ca3af',
             fontSize: '13px',
@@ -143,47 +157,47 @@ export default function FounderSection() {
             we do. Thank you for being a part of our journey.
           </p>
         </RevealFade>
-
-        {/* Right-edge gradient to blend into photo */}
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          right: 0,
-          bottom: 0,
-          width: '60px',
-          background: 'linear-gradient(to right, transparent, #0e0e0e)',
-          pointerEvents: 'none',
-        }} aria-hidden="true" />
       </div>
 
-      {/* ══════════════════════════════════════════
-          RIGHT — founder-words.png, cropped to
-          show ONLY the right showroom half.
+      {/* ═══════════════════════════════════════
+          RIGHT — showroom photo (63% width)
 
-          backgroundSize: 200% → doubles the image
-          backgroundPosition: right → anchors to
-          right edge, hiding the left text panel.
-      ══════════════════════════════════════════ */}
-      <div
-        style={{
-          flex: 1,
-          backgroundImage: `url(${founderImg})`,
-          backgroundSize: '200%',
-          backgroundPosition: 'right center',
-          backgroundRepeat: 'no-repeat',
-          position: 'relative',
-          minHeight: '360px',
-          filter: 'brightness(0.9) contrast(1.05)',
-        }}
-      >
-        {/* Left blend from dark panel into photo */}
+          TECHNIQUE: img is position:absolute,
+          anchored to right:0, height:100%.
+          Width is auto (proportional).
+          The LEFT portion of founder-words.png
+          (the baked text panel) overflows past
+          the container's left edge and is
+          hidden by overflow:hidden on section.
+      ═══════════════════════════════════════ */}
+      <div style={{
+        flex: 1,
+        position: 'relative',
+        overflow: 'hidden',
+        minHeight: '380px',
+      }}>
+        <img
+          src={founderImg}
+          alt="Promac Technologies Industrial Laundry Showroom"
+          style={{
+            position: 'absolute',
+            top: 0,
+            right: 0,
+            height: '100%',
+            width: 'auto',
+            maxWidth: 'none',
+            display: 'block',
+            filter: 'brightness(0.88) contrast(1.06)',
+          }}
+        />
+        {/* Left-edge blend from dark panel into photo */}
         <div style={{
           position: 'absolute',
-          inset: 0,
-          left: 0,
-          width: '100px',
+          top: 0, left: 0, bottom: 0,
+          width: '80px',
           background: 'linear-gradient(to right, #0e0e0e, transparent)',
           pointerEvents: 'none',
+          zIndex: 1,
         }} aria-hidden="true" />
       </div>
 
