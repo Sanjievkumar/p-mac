@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import showroom from '../assets/hero-new.png';
+import showroom from '../assets/showroom.png';
 
 export default function FounderSection() {
   const sectionRef = useRef(null);
