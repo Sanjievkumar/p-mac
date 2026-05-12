@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link, useLocation } from 'react-router-dom';
 import promacLogo from '../assets/promac-logo.png';
 
 const NAV_LINKS = [
@@ -14,6 +15,7 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -35,21 +37,47 @@ export default function Navbar() {
       >
         <div className="max-w-[1100px] mx-auto px-6 flex items-center justify-between h-[68px]">
           {/* Logo — left side */}
-          <img src={promacLogo} alt="Promac Logo" className="h-8 w-auto object-contain" />
+          <Link to="/">
+            <img src={promacLogo} alt="Promac Logo" className="h-8 w-auto object-contain cursor-pointer" />
+          </Link>
 
-          {/* Desktop Nav Links + Page Number */}
+          {/* Desktop Nav Links */}
           <div className="hidden md:flex items-center gap-0">
-            {NAV_LINKS.map((link) => (
-              <motion.a
-                key={link.label}
-                href={link.href}
-                whileHover={{ y: -2 }}
-                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                className="px-2.5 lg:px-3.5 py-2 text-[11px] font-bold tracking-widest text-gray-900 hover:text-[#0B4F8A] transition-colors duration-200 font-display uppercase"
-              >
-                {link.label}
-              </motion.a>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const isHash = link.href.startsWith('/#');
+              const isExternal = link.href.startsWith('http');
+              
+              if (isHash || isExternal) {
+                return (
+                  <motion.a
+                    key={link.label}
+                    href={link.href}
+                    whileHover={{ y: -2 }}
+                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                    className="px-2.5 lg:px-3.5 py-2 text-[11px] font-bold tracking-widest text-gray-900 hover:text-[#0B4F8A] transition-colors duration-200 font-display uppercase"
+                  >
+                    {link.label}
+                  </motion.a>
+                );
+              }
+
+              return (
+                <motion.div
+                  key={link.label}
+                  whileHover={{ y: -2 }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                >
+                  <Link
+                    to={link.href}
+                    className={`px-2.5 lg:px-3.5 py-2 text-[11px] font-bold tracking-widest transition-colors duration-200 font-display uppercase ${
+                      location.pathname === link.href ? 'text-[#0B4F8A]' : 'text-gray-900 hover:text-[#0B4F8A]'
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
+              );
+            })}
           </div>
 
           {/* Mobile Hamburger */}
@@ -76,19 +104,44 @@ export default function Navbar() {
             className="fixed inset-0 top-[68px] z-40 bg-white/95 backdrop-blur-2xl md:hidden"
           >
             <div className="flex flex-col items-center gap-6 pt-16">
-              {NAV_LINKS.map((link, i) => (
-                <motion.a
-                  key={link.label}
-                  href={link.href}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.08 }}
-                  onClick={() => setMobileOpen(false)}
-                  className="text-lg font-bold tracking-[0.12em] text-gray-900 font-display"
-                >
-                  {link.label}
-                </motion.a>
-              ))}
+              {NAV_LINKS.map((link, i) => {
+                const isHash = link.href.startsWith('/#');
+                
+                if (isHash) {
+                  return (
+                    <motion.a
+                      key={link.label}
+                      href={link.href}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: i * 0.08 }}
+                      onClick={() => setMobileOpen(false)}
+                      className="text-lg font-bold tracking-[0.12em] text-gray-900 font-display uppercase"
+                    >
+                      {link.label}
+                    </motion.a>
+                  );
+                }
+
+                return (
+                  <motion.div
+                    key={link.label}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.08 }}
+                  >
+                    <Link
+                      to={link.href}
+                      onClick={() => setMobileOpen(false)}
+                      className={`text-lg font-bold tracking-[0.12em] font-display uppercase ${
+                        location.pathname === link.href ? 'text-[#0B4F8A]' : 'text-gray-900'
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                );
+              })}
             </div>
           </motion.div>
         )}
