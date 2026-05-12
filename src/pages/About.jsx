@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import TrustedBrands from '../components/TrustedBrands';
+import TurnkeyProcess from '../components/TurnkeyProcess';
 
 export default function About() {
   const pillars = [
@@ -143,6 +144,9 @@ export default function About() {
 
       {/* ── SECTION 3: TRUSTED BRANDS ── */}
       <TrustedBrands />
+
+      {/* ── SECTION 4: TURNKEY PROCESS ── */}
+      <TurnkeyProcess />
 
       <Footer />
     </div>

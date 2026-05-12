@@ -5,7 +5,7 @@ import FounderSection from '../components/FounderSection';
 import SectionDivider from '../components/SectionDivider';
 import EcosystemSection from '../components/EcosystemSection';
 import CarouselSection from '../components/CarouselSection';
-import TurnkeyProcess from '../components/TurnkeyProcess';
+
 import Footer from '../components/Footer';
 import BrandMarquee from '../components/BrandMarquee';
 
@@ -24,8 +24,6 @@ export default function Home() {
       <EcosystemSection />
       <SectionDivider />
       <CarouselSection />
-      <SectionDivider />
-      <TurnkeyProcess />
       <SectionDivider />
       <BrandMarquee />
       <Footer />
