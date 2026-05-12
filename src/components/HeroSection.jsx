@@ -7,7 +7,7 @@ export default function HeroSection() {
       id="hero"
       className="relative w-full mt-[68px] bg-white overflow-hidden"
     >
-      {/* ── Hero image ── */}
+      {/* ── Hero image — slow fade in ── */}
       <motion.div
         className="w-full"
         initial={{ opacity: 0 }}
@@ -22,59 +22,21 @@ export default function HeroSection() {
         />
       </motion.div>
 
-      {/* ── Animated spotlight glow over the logo area ──
-          No PNG overlay — just a pulsing radial light
-          positioned where the Promac logo sits in the image.
-          pointer-events:none so it never interferes with clicks.
+      {/* ── Shimmer sweep — single diagonal white light glint ──
+          Moves left-to-right once on load, like sunlight
+          catching on the logo's metallic surface.
+          Pure white, no colour tint, no glow blob.
       ── */}
       <motion.div
-        className="absolute pointer-events-none"
+        className="absolute inset-0 pointer-events-none"
         style={{
-          top: '8%',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: 'clamp(180px, 24%, 340px)',
-          aspectRatio: '3 / 1',
           background:
-            'radial-gradient(ellipse at 50% 50%, rgba(227,30,36,0.18) 0%, rgba(227,30,36,0.06) 45%, transparent 75%)',
-          borderRadius: '50%',
-          filter: 'blur(8px)',
+            'linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.55) 50%, transparent 65%)',
+          backgroundSize: '250% 100%',
         }}
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{
-          opacity: [0, 1, 0.7, 1],
-          scale: [0.5, 1, 1.08, 1],
-        }}
-        transition={{
-          duration: 2.4,
-          ease: [0.22, 1, 0.36, 1],
-          times: [0, 0.5, 0.75, 1],
-          delay: 0.4,
-        }}
-      />
-
-      {/* ── After entrance: continuous slow breathing glow ── */}
-      <motion.div
-        className="absolute pointer-events-none"
-        style={{
-          top: '8%',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: 'clamp(180px, 24%, 340px)',
-          aspectRatio: '3 / 1',
-          background:
-            'radial-gradient(ellipse at 50% 50%, rgba(227,30,36,0.14) 0%, transparent 70%)',
-          borderRadius: '50%',
-          filter: 'blur(10px)',
-        }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: [0, 0.6, 1, 0.6], scale: [0.95, 1.05, 0.95] }}
-        transition={{
-          duration: 3.5,
-          repeat: Infinity,
-          ease: 'easeInOut',
-          delay: 2.8,
-        }}
+        initial={{ backgroundPosition: '-100% 0' }}
+        animate={{ backgroundPosition: '250% 0' }}
+        transition={{ duration: 1.4, delay: 0.9, ease: 'easeInOut' }}
         aria-hidden="true"
       />
 
