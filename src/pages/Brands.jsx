@@ -68,86 +68,74 @@ function FadeUp({ children, delay = 0, className = '' }) {
 
 /* ─── Single brand row ──────────────────────── */
 function BrandRow({ brand, reverse }) {
-  const textCol = (
-    <FadeUp delay={0.1} className="flex flex-col justify-center py-12 px-8 lg:px-14">
-      {/* Origin badge */}
-      <div className="flex items-center gap-3 mb-6">
-        <div className="w-6 h-[1px] bg-[#E31E24]" />
-        <span className="text-[#E31E24] text-[9px] font-bold tracking-[0.4em] uppercase">
-          {brand.origin} — {brand.tagline}
-        </span>
-      </div>
-
-      {/* Name */}
-      <h2 className="text-4xl md:text-5xl font-black text-[#001F3F] tracking-tighter mb-5 leading-none">
-        {brand.name}
-      </h2>
-
-      {/* Description */}
-      <p className="text-slate-600 text-[15px] leading-relaxed mb-8 max-w-[460px]">
-        {brand.desc}
-      </p>
-
-      {/* Product chips */}
-      <div className="flex flex-wrap gap-2 mb-10">
-        {brand.products.map((p) => (
-          <span
-            key={p}
-            className="text-[10px] font-bold tracking-widest uppercase text-[#001F3F] border border-[#001F3F]/20 px-3 py-1.5 rounded-sm"
-          >
-            {p}
-          </span>
-        ))}
-      </div>
-
-      {/* CTA */}
-      <div>
-        <a
-          href={`#${brand.id}`}
-          className="group inline-flex items-center gap-4 text-[10px] font-bold tracking-[0.2em] uppercase text-[#E31E24] border border-[#E31E24] px-7 py-3.5 rounded-sm transition-all duration-300 hover:bg-[#E31E24] hover:text-white"
-        >
-          VIEW PRODUCTS
-          <span className="w-5 h-5 rounded-full border border-current flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1">
-            <svg className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-            </svg>
-          </span>
-        </a>
-      </div>
-    </FadeUp>
-  );
-
-  const imgCol = (
-    <FadeUp
-      delay={0}
-      className="relative flex items-center justify-center bg-white min-h-[360px] lg:min-h-[480px] overflow-hidden"
-    >
-      {/* Circle container for the logo */}
-      <div className="relative w-[280px] h-[280px] md:w-[320px] md:h-[320px] rounded-full border border-gray-200 bg-[#f8f9fa] flex items-center justify-center shadow-sm group-hover:shadow-lg transition-shadow duration-500">
-        <img
-          src={brand.logo}
-          alt={brand.name}
-          className="max-h-[140px] max-w-[70%] object-contain mix-blend-multiply"
-        />
-      </div>
-    </FadeUp>
-  );
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
       id={brand.id}
-      className="border-b border-black/10 last:border-b-0 hover:-translate-y-[5px] transition-transform duration-500 bg-white group"
+      className="bg-slate-50/50 border border-slate-100 rounded-[2rem] overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-[5px] transition-all duration-500 group mb-16"
     >
-      <div className="grid grid-cols-1 lg:grid-cols-2">
-        <div className={`order-1 ${reverse ? 'lg:order-2' : 'lg:order-1'} flex`}>
-          {imgCol}
+      <div className="grid grid-cols-1 md:grid-cols-2 items-stretch min-h-[400px]">
+        
+        {/* Logo Column */}
+        <div className={`order-1 ${reverse ? 'md:order-2' : 'md:order-1'} p-8 md:p-12 flex items-center justify-center bg-white/40`}>
+          <div className="relative w-[240px] h-[240px] md:w-[320px] md:h-[320px] rounded-full bg-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-700 border border-gray-100">
+            <img
+              src={brand.logo}
+              alt={brand.name}
+              className="max-h-[140px] max-w-[65%] object-contain mix-blend-multiply"
+            />
+          </div>
         </div>
-        <div className={`order-2 ${reverse ? 'lg:order-1' : 'lg:order-2'} flex`}>
-          {textCol}
+
+        {/* Text Column */}
+        <div className={`order-2 ${reverse ? 'md:order-1' : 'md:order-2'} p-8 md:p-14 flex flex-col justify-center bg-transparent`}>
+          {/* Origin badge */}
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-6 h-[1px] bg-[#E31E24]" />
+            <span className="text-[#E31E24] text-[9px] font-bold tracking-[0.4em] uppercase">
+              {brand.origin} — {brand.tagline}
+            </span>
+          </div>
+
+          {/* Name */}
+          <h2 className="text-4xl md:text-5xl font-black text-[#001F3F] tracking-tighter mb-5 leading-none">
+            {brand.name}
+          </h2>
+
+          {/* Description */}
+          <p className="text-slate-600 text-[15px] leading-relaxed mb-8 max-w-[420px]">
+            {brand.desc}
+          </p>
+
+          {/* Product chips */}
+          <div className="flex flex-wrap gap-2 mb-10">
+            {brand.products.map((p) => (
+              <span
+                key={p}
+                className="text-[10px] font-bold tracking-widest uppercase text-[#001F3F] bg-white border border-slate-200 px-3 py-1.5 rounded-md shadow-sm"
+              >
+                {p}
+              </span>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div>
+            <a
+              href={`#${brand.id}`}
+              className="group/btn inline-flex items-center gap-4 text-[10px] font-bold tracking-[0.2em] uppercase text-[#E31E24] border border-[#E31E24] px-7 py-3.5 rounded-md transition-all duration-300 hover:bg-[#E31E24] hover:text-white hover:shadow-[0_0_15px_rgba(227,30,36,0.4)] bg-white"
+            >
+              VIEW PRODUCTS
+              <span className="w-5 h-5 rounded-full border border-current flex items-center justify-center transition-transform duration-300 group-hover/btn:translate-x-1">
+                <svg className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </a>
+          </div>
         </div>
       </div>
     </motion.div>
@@ -197,10 +185,21 @@ export default function Brands() {
       </section>
 
       {/* ── Brand Catalog ── */}
-      <section className="w-full border-t border-black/10">
-        {BRANDS.map((brand, idx) => (
-          <BrandRow key={brand.id} brand={brand} reverse={idx % 2 !== 0} />
-        ))}
+      <section className="relative w-full py-24 bg-white overflow-hidden">
+        {/* Faint technical grid background */}
+        <div
+          className="absolute inset-0 opacity-[0.03] pointer-events-none"
+          style={{
+            backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)',
+            backgroundSize: '40px 40px',
+          }}
+        />
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+          {BRANDS.map((brand, idx) => (
+            <BrandRow key={brand.id} brand={brand} reverse={idx % 2 !== 0} />
+          ))}
+        </div>
       </section>
 
       {/* ── 3D Globe ── */}
