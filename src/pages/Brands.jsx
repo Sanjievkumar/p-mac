@@ -3,9 +3,13 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import GlobeSection from '../components/GlobeSection';
 
+import sealionLogo from '../assets/brands/sealion.png';
+import maestrelliLogo from '../assets/brands/maestrelli.png';
+import maxipressLogo from '../assets/brands/maxipress.png';
+import kannegiesserLogo from '../assets/brands/kannegiesser.png';
+
 /* ─────────────────────────────────────────────
    Brand catalog data
-   img  → main product showcase image
    logo → brand logo (white bg, mix-blend-multiply)
 ───────────────────────────────────────────── */
 const BRANDS = [
@@ -14,8 +18,7 @@ const BRANDS = [
     name: 'SEA-LION',
     origin: 'China',
     tagline: 'Industrial Laundry Machines',
-    logo: '/Brands/sea-lion brand/sea-lion-logo.png',
-    img:  '/Brands/sea-lion brand/WASHER-EXTRACTOR.png',
+    logo: sealionLogo,
     desc: 'SEA-LION is a globally established manufacturer of industrial laundry machines, offering reliable, energy-efficient, and automation-ready solutions.',
     products: ['Washer Extractors', 'Tumble Dryers', 'Flatwork Ironers', 'Barrier Washers'],
   },
@@ -24,8 +27,7 @@ const BRANDS = [
     name: 'MAESTRELLI',
     origin: 'Italy',
     tagline: 'Dry Cleaning Systems',
-    logo: '/Brands/MAESTRELLI brand/Maestrelli_Logo.png',
-    img:  '/Brands/MAESTRELLI brand/DREAMCLEAN MULTISOLVENT SOFT MOUNT.png',
+    logo: maestrelliLogo,
     desc: 'Designed for reliability, fabric protection, and operational efficiency, Maestrelli systems help commercial laundries and dry cleaners achieve consistent cleaning quality with reduced solvent usage.',
     products: ['Multisolvent Dry Cleaning', 'Perc Machines', 'Soft-Mount Systems'],
   },
@@ -34,8 +36,7 @@ const BRANDS = [
     name: 'MAXIPRESS',
     origin: 'Spain',
     tagline: 'Garment Finishing Equipment',
-    logo: '/Brands/maxipress brand/Maxipress_Logo.png',
-    img:  '/Brands/maxipress brand/MPCAFF-FORM FINISHER.png',
+    logo: maxipressLogo,
     desc: 'Engineered for high-volume commercial laundries and professional garment care facilities, MAXIPRESS solutions deliver consistent finishing quality, operational reliability, and long service life.',
     products: ['Form Finishers', 'Utility Presses', 'Steam Vacuum Boards', 'Collar & Cuff Presses'],
   },
@@ -44,8 +45,7 @@ const BRANDS = [
     name: 'KANNEGIESSER',
     origin: 'Germany',
     tagline: 'End-to-End Laundry Automation',
-    logo: '/Brands/Kannegiesser brand/Kannegiesser_Logo.png',
-    img:  '/Brands/Kannegiesser brand/313434_EMQ_Halle_Keyvisual.jpg',
+    logo: kannegiesserLogo,
     desc: 'Kannegiesser has evolved from a machine manufacturer into a global technology partner for industrial laundries, delivering complete end-to-end laundry automation systems with decades of engineering expertise.',
     products: ['Tunnel Washers', 'Powertrans Systems', 'Flatwork Ironers', 'Automated Sorting'],
   },
@@ -134,7 +134,14 @@ function BrandRow({ brand, reverse }) {
   );
 
   return (
-    <div id={brand.id} className="border-b border-black/10 last:border-b-0 hover:-translate-y-[5px] transition-transform duration-500 bg-white group">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      id={brand.id}
+      className="border-b border-black/10 last:border-b-0 hover:-translate-y-[5px] transition-transform duration-500 bg-white group"
+    >
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className={`order-1 ${reverse ? 'lg:order-2' : 'lg:order-1'} flex`}>
           {imgCol}
@@ -143,7 +150,7 @@ function BrandRow({ brand, reverse }) {
           {textCol}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

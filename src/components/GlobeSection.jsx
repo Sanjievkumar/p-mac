@@ -20,14 +20,14 @@ export default function GlobeSection() {
   const containerRef = useRef(null);
   const globeRef     = useRef(null);
   const [ready, setReady] = useState(false);
-  const [size,  setSize]  = useState({ w: 600, h: 500 });
+  const [size,  setSize]  = useState({ w: 800, h: 500 });
 
   /* Responsive size based on container */
   useEffect(() => {
     const measure = () => {
       if (!containerRef.current) return;
-      const w = Math.min(containerRef.current.offsetWidth, 780);
-      setSize({ w, h: Math.round(w * 0.72) });
+      const w = containerRef.current.offsetWidth || 800;
+      setSize({ w, h: 500 });
     };
     measure();
     window.addEventListener('resize', measure);
@@ -149,8 +149,8 @@ export default function GlobeSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           ref={containerRef}
-          className="rounded-2xl overflow-hidden shadow-[0_0_80px_rgba(14,30,60,0.8)]"
-          style={{ width: size.w, height: size.h, background: '#060d1a' }}
+          className="w-full h-[500px] rounded-2xl overflow-hidden shadow-[0_0_80px_rgba(14,30,60,0.8)]"
+          style={{ background: '#060d1a' }}
         />
 
         {/* Legend */}
