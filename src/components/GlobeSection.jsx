@@ -11,11 +11,6 @@ const PINS = [
   { lat: 40.4168, lng:  -3.7038, label: 'MAXIPRESS',     country: 'Spain',   color: '#E31E24' },
 ];
 
-const COMING_SOON = [
-  { lat: 25.2048, lng: 55.2708, label: 'COMING SOON\nMiddle East' },
-  { lat: 1.3521,  lng: 103.8198, label: 'COMING SOON\nSE Asia' },
-];
-
 /* ─────────────────────────────────────────────
    Lazy-loaded 3-D Globe wrapper
    react-globe.gl uses Three.js (heavy) so we
@@ -51,11 +46,11 @@ export default function GlobeSection() {
         waitForGlobeReady: true,
       })(containerRef.current);
 
-      /* Earth textures from public CDN */
+      /* Earth textures from public CDN - Using HTTPS to prevent black box on localhost */
       globe
-        .globeImageUrl('//unpkg.com/three-globe/example/img/earth-day.jpg')
-        .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
-        .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
+        .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-day.jpg')
+        .bumpImageUrl('https://unpkg.com/three-globe/example/img/earth-topology.png')
+        .backgroundImageUrl('https://unpkg.com/three-globe/example/img/night-sky.png')
         .showAtmosphere(true)
         .atmosphereColor('#7ec8e3')
         .atmosphereAltitude(0.18)
@@ -69,14 +64,6 @@ export default function GlobeSection() {
         .pointAltitude(0.04)
         .pointRadius(0.6)
         .pointsMerge(false)
-        /* "Coming Soon" rings */
-        .ringsData(COMING_SOON)
-        .ringLat('lat')
-        .ringLng('lng')
-        .ringColor(() => 'rgba(227,30,36,0.7)')
-        .ringMaxRadius(4)
-        .ringPropagationSpeed(2)
-        .ringRepeatPeriod(1000)
         /* Labels on pins */
         .labelsData(PINS)
         .labelLat('lat')
@@ -191,23 +178,6 @@ export default function GlobeSection() {
               </div>
             </div>
           ))}
-
-          <div className="border-t border-white/10 pt-4 mt-2">
-            <p className="text-[10px] font-bold tracking-[0.4em] text-slate-500 uppercase mb-3">
-              Expanding To
-            </p>
-            {COMING_SOON.map((cs) => (
-              <div key={cs.label} className="flex items-center gap-3 mb-3">
-                <span className="relative flex h-3 w-3 shrink-0">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-60" />
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-amber-400" />
-                </span>
-                <p className="text-amber-400 text-[11px] font-bold whitespace-pre-line leading-tight">
-                  {cs.label}
-                </p>
-              </div>
-            ))}
-          </div>
         </motion.div>
       </div>
     </section>

@@ -78,23 +78,13 @@ function BrandRow({ brand, reverse }) {
         </span>
       </div>
 
-      {/* Logo */}
-      <div className="mb-6 h-12 flex items-center">
-        <img
-          src={brand.logo}
-          alt={brand.name}
-          className="h-full w-auto max-w-[180px] object-contain mix-blend-multiply"
-          onError={(e) => { e.target.style.display = 'none'; }}
-        />
-      </div>
-
       {/* Name */}
       <h2 className="text-4xl md:text-5xl font-black text-[#001F3F] tracking-tighter mb-5 leading-none">
         {brand.name}
       </h2>
 
       {/* Description */}
-      <p className="text-slate-500 text-[15px] leading-relaxed mb-8 max-w-[460px]">
+      <p className="text-slate-600 text-[15px] leading-relaxed mb-8 max-w-[460px]">
         {brand.desc}
       </p>
 
@@ -130,38 +120,28 @@ function BrandRow({ brand, reverse }) {
   const imgCol = (
     <FadeUp
       delay={0}
-      className="relative flex items-center justify-center bg-[#f7f7f7] min-h-[360px] lg:min-h-[480px] overflow-hidden"
+      className="relative flex items-center justify-center bg-white min-h-[360px] lg:min-h-[480px] overflow-hidden"
     >
-      {/* Subtle grid watermark */}
-      <div
-        className="absolute inset-0 opacity-[0.04] pointer-events-none"
-        style={{
-          backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)',
-          backgroundSize: '32px 32px',
-        }}
-      />
-      <img
-        src={brand.img}
-        alt={brand.name}
-        className="relative z-10 max-h-[320px] max-w-[80%] object-contain drop-shadow-[0_24px_40px_rgba(0,0,0,0.14)] mix-blend-multiply"
-      />
+      {/* Circle container for the logo */}
+      <div className="relative w-[280px] h-[280px] md:w-[320px] md:h-[320px] rounded-full border border-gray-200 bg-[#f8f9fa] flex items-center justify-center shadow-sm group-hover:shadow-lg transition-shadow duration-500">
+        <img
+          src={brand.logo}
+          alt={brand.name}
+          className="max-h-[140px] max-w-[70%] object-contain mix-blend-multiply"
+        />
+      </div>
     </FadeUp>
   );
 
   return (
-    <div id={brand.id} className="border-b border-black/8 last:border-b-0">
-      <div className={`grid grid-cols-1 lg:grid-cols-2 ${reverse ? 'lg:grid-flow-row-dense' : ''}`}>
-        {reverse ? (
-          <>
-            <div className={reverse ? 'lg:col-start-2' : ''}>{textCol}</div>
-            <div className={reverse ? 'lg:col-start-1' : ''}>{imgCol}</div>
-          </>
-        ) : (
-          <>
-            {imgCol}
-            {textCol}
-          </>
-        )}
+    <div id={brand.id} className="border-b border-black/10 last:border-b-0 hover:-translate-y-[5px] transition-transform duration-500 bg-white group">
+      <div className="grid grid-cols-1 lg:grid-cols-2">
+        <div className={`order-1 ${reverse ? 'lg:order-2' : 'lg:order-1'} flex`}>
+          {imgCol}
+        </div>
+        <div className={`order-2 ${reverse ? 'lg:order-1' : 'lg:order-2'} flex`}>
+          {textCol}
+        </div>
       </div>
     </div>
   );
@@ -204,7 +184,7 @@ export default function Brands() {
             <span className="text-[#E31E24]">Brand Partners.</span>
           </h1>
           <p className="text-slate-300 text-lg max-w-lg mx-auto leading-relaxed">
-            Promac is the authorised Indian representative for four globally recognised industrial laundry technology manufacturers.
+            Promac is the authorised Indian representative for globally recognised industrial laundry technology manufacturers.
           </p>
         </motion.div>
       </section>
