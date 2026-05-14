@@ -1,3 +1,4 @@
+import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -66,6 +67,37 @@ function FadeUp({ children, delay = 0, className = '' }) {
   );
 }
 
+function MagneticButton({ children, href, className }) {
+  const ref = useRef(null);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  const handleMouse = (e) => {
+    const { clientX, clientY } = e;
+    const { height, width, left, top } = ref.current.getBoundingClientRect();
+    const middleX = clientX - (left + width / 2);
+    const middleY = clientY - (top + height / 2);
+    setPosition({ x: middleX * 0.2, y: middleY * 0.2 });
+  };
+
+  const reset = () => {
+    setPosition({ x: 0, y: 0 });
+  };
+
+  return (
+    <motion.a
+      ref={ref}
+      href={href}
+      onMouseMove={handleMouse}
+      onMouseLeave={reset}
+      animate={{ x: position.x, y: position.y }}
+      transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
+      className={className}
+    >
+      {children}
+    </motion.a>
+  );
+}
+
 /* ─── Single brand row ──────────────────────── */
 /* ─── Single brand row ──────────────────────── */
 function BrandRow({ brand, reverse }) {
@@ -76,14 +108,16 @@ function BrandRow({ brand, reverse }) {
       viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
       id={brand.id}
-      className="bg-white/60 border border-slate-100 rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:shadow-2xl hover:-translate-y-[5px] transition-all duration-500 group mb-16 relative z-10"
+      className="bg-white/60 border border-slate-100 rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:shadow-2xl hover:-translate-y-[10px] transition-all duration-500 group mb-16 relative z-10"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 items-stretch min-h-[400px]">
         
         {/* Logo Column */}
         <div className={`order-1 ${reverse ? 'md:order-2' : 'md:order-1'} p-8 md:p-12 flex items-center justify-center bg-white/40`}>
-          <div className="relative w-[240px] h-[240px] md:w-[320px] md:h-[320px] rounded-full bg-white flex items-center justify-center shadow-xl group-hover:rotate-[360deg] group-hover:shadow-[0_0_40px_rgba(227,30,36,0.3)] group-hover:border-[#E31E24]/30 transition-all duration-[1.5s] ease-in-out border border-gray-100">
-            <img
+          <div className="relative w-[240px] h-[240px] md:w-[320px] md:h-[320px] rounded-full bg-white flex items-center justify-center shadow-xl border border-gray-100">
+            <motion.img
+              animate={{ scale: [1, 1.05, 1] }}
+              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
               src={brand.logo}
               alt={brand.name}
               className="max-h-[140px] max-w-[65%] object-contain mix-blend-multiply"
@@ -125,9 +159,9 @@ function BrandRow({ brand, reverse }) {
 
           {/* CTA */}
           <div>
-            <a
+            <MagneticButton
               href={`#${brand.id}`}
-              className="group/btn inline-flex items-center gap-4 text-[10px] font-bold tracking-[0.2em] uppercase text-[#E31E24] border border-[#E31E24] px-7 py-3.5 rounded-md transition-all duration-300 hover:bg-[#E31E24] hover:text-white hover:shadow-[0_0_15px_rgba(227,30,36,0.4)] bg-white hover:animate-pulse"
+              className="group/btn inline-flex items-center gap-4 text-[10px] font-bold tracking-[0.2em] uppercase text-[#E31E24] border border-[#E31E24] px-7 py-3.5 rounded-md transition-colors duration-300 hover:bg-[#E31E24] hover:text-white hover:shadow-[0_0_15px_rgba(227,30,36,0.4)] bg-white"
             >
               VIEW PRODUCTS
               <span className="w-5 h-5 rounded-full border border-current flex items-center justify-center transition-transform duration-300 group-hover/btn:translate-x-1">
@@ -135,7 +169,7 @@ function BrandRow({ brand, reverse }) {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
               </span>
-            </a>
+            </MagneticButton>
           </div>
         </div>
       </div>
@@ -175,7 +209,7 @@ export default function Brands() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="inline-flex items-center gap-3 mb-6"
+            className="inline-flex items-center gap-3 mb-6 animate-pulse"
           >
             <div className="w-6 h-[1px] bg-[#E31E24]" />
             <p className="text-[#E31E24] text-[10px] font-bold tracking-[0.4em] uppercase">
@@ -189,9 +223,9 @@ export default function Brands() {
               {"World-Class".split('').map((char, i) => (
                 <motion.span
                   key={`w-${i}`}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: i * 0.05, duration: 0.5 }}
+                  initial={{ opacity: 0, scale: 0.5, y: 20 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{ delay: i * 0.05, type: "spring", bounce: 0.5, duration: 0.8 }}
                 >
                   {char}
                 </motion.span>
@@ -201,9 +235,9 @@ export default function Brands() {
               {"Brand Partners.".split('').map((char, i) => (
                 <motion.span
                   key={`b-${i}`}
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6 + i * 0.04, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                  initial={{ opacity: 0, scale: 0.5, y: 50 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{ delay: 0.4 + i * 0.04, type: "spring", bounce: 0.5, duration: 0.8 }}
                   className="inline-block"
                 >
                   {char === ' ' ? '\u00A0' : char}

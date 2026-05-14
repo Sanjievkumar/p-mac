@@ -15,7 +15,7 @@ const PINS = [
 export default function GlobeSection() {
   const containerRef = useRef(null);
   const globeRef = useRef(null);
-  const [size, setSize] = useState({ w: 800, h: 600 });
+  const [size, setSize] = useState({ w: 0, h: 0 });
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -28,12 +28,17 @@ export default function GlobeSection() {
       if (!containerRef.current) return;
       setSize({
         w: containerRef.current.offsetWidth,
-        h: containerRef.current.offsetHeight || 600
+        h: containerRef.current.offsetHeight
       });
     };
     measure();
     window.addEventListener('resize', measure);
-    return () => window.removeEventListener('resize', measure);
+    // Add a slight delay measure to catch late layout shifts
+    const to = setTimeout(measure, 300);
+    return () => {
+      window.removeEventListener('resize', measure);
+      clearTimeout(to);
+    };
   }, [isClient]);
 
   /* Globe Init */
@@ -41,9 +46,9 @@ export default function GlobeSection() {
     if (globeRef.current) {
       globeRef.current.controls().autoRotate = true;
       globeRef.current.controls().autoRotateSpeed = 0.5;
-      globeRef.current.pointOfView({ lat: 30, lng: 60, altitude: 2.2 }, 0);
+      globeRef.current.pointOfView({ lat: 35, lng: 55, altitude: 2.2 }, 0);
     }
-  }, [isClient]);
+  }, [isClient, size.w]);
 
   return (
     <section className="relative w-full bg-[#000814] pt-24 overflow-hidden flex flex-col">
@@ -83,42 +88,55 @@ export default function GlobeSection() {
       </div>
 
       {/* Globe Container */}
-      <div className="max-w-[1200px] mx-auto px-6 flex flex-col items-center justify-center relative z-10">
+      <div className="max-w-[1200px] mx-auto w-full px-6 flex flex-col items-center justify-center relative z-10">
         <motion.div
           initial={{ opacity: 0, scale: 0.92 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           ref={containerRef}
-          className="w-full h-[500px] md:h-[650px] rounded-3xl overflow-hidden shadow-[0_0_120px_rgba(0,30,80,0.5)] border border-white/10 bg-[#000814] flex justify-center"
+          className="w-full h-[600px] rounded-3xl overflow-hidden shadow-[0_0_120px_rgba(0,30,80,0.5)] border border-white/10 bg-[#000814] flex justify-center relative z-10"
         >
-          {isClient && (
+          {isClient && size.w > 0 && (
             <Globe
               ref={globeRef}
               width={size.w}
               height={size.h}
-              globeImageUrl="//unpkg.com/three-globe/example/img/earth-dark.jpg"
-              bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
+              globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
               backgroundColor="rgba(0,0,0,0)"
-              atmosphereColor="#3a86ff"
-              atmosphereAltitude={0.25}
+              
+              /* Red Pulsing Rings for Pins */
+              ringsData={PINS}
+              ringLat="lat"
+              ringLng="lng"
+              ringColor={() => '#E31E24'}
+              ringMaxRadius={5}
+              ringPropagationSpeed={3}
+              ringRepeatPeriod={800}
+              
+              /* Solid Red Inner Dot */
+              pointsData={PINS}
+              pointLat="lat"
+              pointLng="lng"
+              pointColor={() => '#E31E24'}
+              pointAltitude={0.01}
+              pointRadius={0.5}
+              
+              /* HTML Labels on top */
               htmlElementsData={PINS}
               htmlLat="lat"
               htmlLng="lng"
               htmlElement={d => {
                 const el = document.createElement('div');
                 el.innerHTML = `
-                  <div class="relative flex flex-col items-center group cursor-pointer" style="transform: translate(-50%, -50%);">
+                  <div class="relative flex flex-col items-center group cursor-pointer" style="transform: translate(-50%, -50%); pointer-events: auto;">
                     <!-- Tooltip -->
-                    <div class="absolute bottom-full mb-3 bg-white px-3 py-1.5 rounded text-xs font-bold text-[#001F3F] shadow-xl whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-50 flex items-center gap-2">
+                    <div class="absolute bottom-full mb-3 bg-white px-3 py-1.5 rounded text-xs font-bold text-[#001F3F] shadow-xl whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50 flex items-center gap-2">
                       <span class="text-[#E31E24] text-lg leading-none">•</span>
                       ${d.label} <span class="text-slate-500 font-normal ml-1">(${d.country})</span>
                     </div>
-                    <!-- Pin -->
-                    <span class="relative flex h-4 w-4">
-                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E31E24] opacity-80"></span>
-                      <span class="relative inline-flex rounded-full h-4 w-4 bg-[#E31E24] shadow-[0_0_15px_rgba(227,30,36,1)] border-2 border-[#000814]"></span>
-                    </span>
+                    <!-- Hit Area -->
+                    <div class="w-8 h-8 rounded-full transparent"></div>
                   </div>
                 `;
                 return el;
