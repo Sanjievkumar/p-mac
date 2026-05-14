@@ -121,6 +121,8 @@ export default function GlobeSection() {
               pointColor={() => '#E31E24'}
               pointAltitude={0.01}
               pointRadius={0.5}
+              atmosphereColor="#0077ff"
+              atmosphereAltitude={0.3}
               
               /* HTML Labels on top */
               htmlElementsData={PINS}
@@ -131,12 +133,12 @@ export default function GlobeSection() {
                 el.innerHTML = `
                   <div class="relative flex flex-col items-center group cursor-pointer" style="transform: translate(-50%, -50%); pointer-events: auto;">
                     <!-- Tooltip -->
-                    <div class="absolute bottom-full mb-3 bg-white px-3 py-1.5 rounded text-xs font-bold text-[#001F3F] shadow-xl whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50 flex items-center gap-2">
+                    <div class="absolute bottom-full mb-3 bg-white px-3 py-1.5 rounded text-xs font-bold text-[#001F3F] shadow-xl whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50 flex items-center gap-2 border border-slate-100">
                       <span class="text-[#E31E24] text-lg leading-none">•</span>
-                      ${d.label} <span class="text-slate-500 font-normal ml-1">(${d.country})</span>
+                      ${d.label} - ${d.country}
                     </div>
                     <!-- Hit Area -->
-                    <div class="w-8 h-8 rounded-full transparent"></div>
+                    <div class="w-8 h-8 rounded-full transparent absolute z-20"></div>
                   </div>
                 `;
                 return el;

@@ -67,6 +67,36 @@ function FadeUp({ children, delay = 0, className = '' }) {
   );
 }
 
+function MagneticWrapper({ children, className }) {
+  const ref = useRef(null);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  const handleMouse = (e) => {
+    const { clientX, clientY } = e;
+    const { height, width, left, top } = ref.current.getBoundingClientRect();
+    const middleX = clientX - (left + width / 2);
+    const middleY = clientY - (top + height / 2);
+    setPosition({ x: middleX * 0.2, y: middleY * 0.2 });
+  };
+
+  const reset = () => {
+    setPosition({ x: 0, y: 0 });
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      onMouseMove={handleMouse}
+      onMouseLeave={reset}
+      animate={{ x: position.x, y: position.y }}
+      transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
 function MagneticButton({ children, href, className }) {
   const ref = useRef(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -105,16 +135,17 @@ function BrandRow({ brand, reverse }) {
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
+      whileHover={{ y: -10, boxShadow: "0 25px 50px rgba(0,0,0,0.1)" }}
       viewport={{ once: true, amount: 0.15 }}
-      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
       id={brand.id}
-      className="bg-white/60 border border-slate-100 rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:shadow-2xl hover:-translate-y-[10px] transition-all duration-500 group mb-16 relative z-10"
+      className="bg-white/60 border border-slate-100 rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.04)] group mb-16 relative z-10"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 items-stretch min-h-[400px]">
         
         {/* Logo Column */}
         <div className={`order-1 ${reverse ? 'md:order-2' : 'md:order-1'} p-8 md:p-12 flex items-center justify-center bg-white/40`}>
-          <div className="relative w-[240px] h-[240px] md:w-[320px] md:h-[320px] rounded-full bg-white flex items-center justify-center shadow-xl border border-gray-100">
+          <MagneticWrapper className="relative w-[240px] h-[240px] md:w-[320px] md:h-[320px] rounded-full bg-white flex items-center justify-center shadow-xl border border-gray-100 cursor-pointer">
             <motion.img
               animate={{ scale: [1, 1.05, 1] }}
               transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
@@ -122,7 +153,7 @@ function BrandRow({ brand, reverse }) {
               alt={brand.name}
               className="max-h-[140px] max-w-[65%] object-contain mix-blend-multiply"
             />
-          </div>
+          </MagneticWrapper>
         </div>
 
         {/* Text Column */}
@@ -219,31 +250,22 @@ export default function Brands() {
           </motion.div>
 
           <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-6 leading-[0.95] overflow-hidden flex flex-col items-center">
-            <span className="inline-flex overflow-hidden">
-              {"World-Class".split('').map((char, i) => (
-                <motion.span
-                  key={`w-${i}`}
-                  initial={{ opacity: 0, scale: 0.5, y: 20 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  transition={{ delay: i * 0.05, type: "spring", bounce: 0.5, duration: 0.8 }}
-                >
-                  {char}
-                </motion.span>
-              ))}
-            </span>
-            <span className="text-[#E31E24] inline-flex overflow-hidden pb-2">
-              {"Brand Partners.".split('').map((char, i) => (
-                <motion.span
-                  key={`b-${i}`}
-                  initial={{ opacity: 0, scale: 0.5, y: 50 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  transition={{ delay: 0.4 + i * 0.04, type: "spring", bounce: 0.5, duration: 0.8 }}
-                  className="inline-block"
-                >
-                  {char === ' ' ? '\u00A0' : char}
-                </motion.span>
-              ))}
-            </span>
+            <motion.span
+              initial={{ opacity: 0, x: -100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ type: "spring", bounce: 0.4, duration: 1 }}
+              className="inline-block"
+            >
+              World-Class
+            </motion.span>
+            <motion.span
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, type: "spring", bounce: 0.6, duration: 1 }}
+              className="text-[#E31E24] inline-block pb-2"
+            >
+              Brand Partners.
+            </motion.span>
           </h1>
 
           <motion.p
