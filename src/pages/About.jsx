@@ -2,7 +2,6 @@ import React, { useRef, useState, useCallback } from 'react';
 import { motion, useAnimationControls, animate } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import TrustedBrands from '../components/TrustedBrands';
 import TurnkeyProcess from '../components/TurnkeyProcess';
 import MissionSection from '../components/MissionSection';
 
@@ -324,9 +323,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
-      {/* ── SECTION 3: TRUSTED BRANDS ── */}
-      <TrustedBrands />
 
       {/* ── SECTION 4: TURNKEY PROCESS ── */}
       <TurnkeyProcess />
