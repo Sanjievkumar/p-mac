@@ -76,13 +76,13 @@ function BrandRow({ brand, reverse }) {
       viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
       id={brand.id}
-      className="bg-white/60 border border-slate-100 rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_30px_60px_rgba(0,0,0,0.08)] hover:-translate-y-[5px] transition-all duration-500 group mb-16 relative z-10"
+      className="bg-white/60 border border-slate-100 rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:shadow-2xl hover:-translate-y-[5px] transition-all duration-500 group mb-16 relative z-10"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 items-stretch min-h-[400px]">
         
         {/* Logo Column */}
         <div className={`order-1 ${reverse ? 'md:order-2' : 'md:order-1'} p-8 md:p-12 flex items-center justify-center bg-white/40`}>
-          <div className="relative w-[240px] h-[240px] md:w-[320px] md:h-[320px] rounded-full bg-white flex items-center justify-center shadow-xl group-hover:rotate-[360deg] transition-transform duration-[1.5s] ease-in-out border border-gray-100">
+          <div className="relative w-[240px] h-[240px] md:w-[320px] md:h-[320px] rounded-full bg-white flex items-center justify-center shadow-xl group-hover:rotate-[360deg] group-hover:shadow-[0_0_40px_rgba(227,30,36,0.3)] group-hover:border-[#E31E24]/30 transition-all duration-[1.5s] ease-in-out border border-gray-100">
             <img
               src={brand.logo}
               alt={brand.name}
@@ -153,13 +153,19 @@ export default function Brands() {
       <section className="relative pt-40 pb-20 px-6 bg-[#001F3F] overflow-hidden text-center">
         {/* Animated Blueprint Grid */}
         <motion.div
-          className="absolute inset-0 opacity-[0.06] pointer-events-none"
+          className="absolute inset-0 pointer-events-none"
           style={{
             backgroundImage: 'linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)',
             backgroundSize: '48px 48px',
           }}
-          animate={{ backgroundPosition: ['0px 0px', '48px 48px'] }}
-          transition={{ repeat: Infinity, duration: 4, ease: 'linear' }}
+          animate={{ 
+            backgroundPosition: ['0px 0px', '48px 48px'],
+            opacity: [0.03, 0.09, 0.03]
+          }}
+          transition={{ 
+            backgroundPosition: { repeat: Infinity, duration: 8, ease: 'linear' },
+            opacity: { repeat: Infinity, duration: 4, ease: 'easeInOut' }
+          }}
         />
         {/* Ambient glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[#E31E24]/10 rounded-full blur-[120px] pointer-events-none" />
@@ -178,27 +184,29 @@ export default function Brands() {
             <div className="w-6 h-[1px] bg-[#E31E24]" />
           </motion.div>
 
-          <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-6 leading-[0.95]">
-            {"World-Class".split('').map((char, i) => (
-              <motion.span
-                key={`w-${i}`}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.04, duration: 0.4 }}
-              >
-                {char}
-              </motion.span>
-            ))}
-            <br />
-            <span className="text-[#E31E24]">
+          <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-6 leading-[0.95] overflow-hidden flex flex-col items-center">
+            <span className="inline-flex overflow-hidden">
+              {"World-Class".split('').map((char, i) => (
+                <motion.span
+                  key={`w-${i}`}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: i * 0.05, duration: 0.5 }}
+                >
+                  {char}
+                </motion.span>
+              ))}
+            </span>
+            <span className="text-[#E31E24] inline-flex overflow-hidden pb-2">
               {"Brand Partners.".split('').map((char, i) => (
                 <motion.span
                   key={`b-${i}`}
-                  initial={{ opacity: 0, y: 10 }}
+                  initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 + i * 0.04, duration: 0.4 }}
+                  transition={{ delay: 0.6 + i * 0.04, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                  className="inline-block"
                 >
-                  {char}
+                  {char === ' ' ? '\u00A0' : char}
                 </motion.span>
               ))}
             </span>
