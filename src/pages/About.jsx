@@ -210,62 +210,52 @@ export default function About() {
         >
           <div className="grid md:grid-cols-2 gap-16 items-center">
             {/* Left: Expertise */}
-            <MagneticCard className="relative bg-[#0a0a0a] rounded-3xl p-10 text-white overflow-hidden group border border-white/[0.08]"
-              style={{ borderImage: 'linear-gradient(135deg,#555,#222,#555) 1' }}>
-              {/* brushed-steel shimmer border via pseudo-gradient overlay */}
+            <MagneticCard className="relative bg-[#E31E24] rounded-3xl p-10 text-white overflow-hidden group shadow-[0_0_50px_rgba(150,0,0,0.4)] border border-[#ff4d4d]/30">
+              {/* shimmer border via pseudo-gradient overlay */}
               <div
                 className="absolute inset-0 rounded-3xl pointer-events-none z-0"
                 style={{
                   background:
-                    'linear-gradient(135deg, rgba(255,255,255,0.07) 0%, transparent 50%, rgba(255,255,255,0.04) 100%)',
+                    'linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%, rgba(255,255,255,0.05) 100%)',
                 }}
                 aria-hidden="true"
               />
               <div className="relative z-10 space-y-6">
                 <h2 className="text-4xl font-black text-white tracking-tighter leading-tight">
                   Decades of <br />
-                  <span className="text-[#E31E24]">Hands-on Expertise.</span>
+                  <span className="text-[#001F3F]">Hands-on Expertise.</span>
                 </h2>
-                <p className="text-slate-400 text-lg leading-relaxed">
+                <p className="text-white/90 text-lg leading-relaxed">
                   As an experienced industrial laundry solutions provider, we support businesses with reliable equipment, expert guidance, and long-term service support. We help clients design, install, and operate efficient laundry facilities that deliver consistent performance.
                 </p>
-                <div className="flex gap-4 pt-2">
-                  <div className="w-12 h-1 bg-[#E31E24]" />
-                  <div className="w-4 h-1 bg-gray-700" />
-                  <div className="w-2 h-1 bg-gray-700" />
-                </div>
               </div>
             </MagneticCard>
 
-            {/* Right: Mission (with mouse-follow red glow) */}
+            {/* Right: Mission */}
             <MagneticCard
-              glowRed
-              className="relative bg-[#0a0a0a] rounded-3xl p-10 text-white overflow-hidden group border border-white/[0.08]"
+              className="relative bg-[#E31E24] rounded-3xl p-10 text-white overflow-hidden group shadow-[0_0_50px_rgba(150,0,0,0.4)] border border-[#ff4d4d]/30"
             >
-              {/* Brushed-steel shimmer */}
+              {/* Shimmer */}
               <div
                 className="absolute inset-0 rounded-3xl pointer-events-none z-0"
                 style={{
                   background:
-                    'linear-gradient(135deg, rgba(255,255,255,0.07) 0%, transparent 50%, rgba(255,255,255,0.03) 100%)',
+                    'linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%, rgba(255,255,255,0.05) 100%)',
                 }}
                 aria-hidden="true"
               />
               {/* Decorative crosshair */}
               <div className="absolute top-0 right-0 p-8 opacity-20 transition-transform duration-700 group-hover:scale-150 z-0" aria-hidden="true">
-                <svg className="w-32 h-32" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+                <svg className="w-32 h-32" viewBox="0 0 100 100" fill="none" stroke="white">
                   <circle cx="50" cy="50" r="40" strokeWidth="0.5" />
                   <path d="M50 10V90M10 50H90" strokeWidth="0.5" />
                 </svg>
               </div>
               <div className="relative z-10 space-y-6">
-                <h3 className="text-2xl font-black tracking-tighter">Our Mission</h3>
-                <p className="text-slate-400 leading-relaxed text-lg">
+                <h3 className="text-2xl text-white font-black tracking-tighter">Our Mission</h3>
+                <p className="text-white/90 leading-relaxed text-lg">
                   To empower the hospitality and healthcare sectors with sustainable, high-efficiency laundry technologies that redefine operational excellence across India.
                 </p>
-                <button className="mt-4 text-[10px] font-bold tracking-widest uppercase text-[#E31E24] flex items-center gap-3 group-hover:translate-x-2 transition-transform duration-300">
-                  Learn More <span className="text-xl">→</span>
-                </button>
               </div>
             </MagneticCard>
           </div>
