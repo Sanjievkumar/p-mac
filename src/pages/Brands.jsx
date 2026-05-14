@@ -67,6 +67,7 @@ function FadeUp({ children, delay = 0, className = '' }) {
 }
 
 /* ─── Single brand row ──────────────────────── */
+/* ─── Single brand row ──────────────────────── */
 function BrandRow({ brand, reverse }) {
   return (
     <motion.div
@@ -75,13 +76,13 @@ function BrandRow({ brand, reverse }) {
       viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
       id={brand.id}
-      className="bg-slate-50/50 border border-slate-100 rounded-[2rem] overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-[5px] transition-all duration-500 group mb-16"
+      className="bg-white/60 border border-slate-100 rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_30px_60px_rgba(0,0,0,0.08)] hover:-translate-y-[5px] transition-all duration-500 group mb-16 relative z-10"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 items-stretch min-h-[400px]">
         
         {/* Logo Column */}
         <div className={`order-1 ${reverse ? 'md:order-2' : 'md:order-1'} p-8 md:p-12 flex items-center justify-center bg-white/40`}>
-          <div className="relative w-[240px] h-[240px] md:w-[320px] md:h-[320px] rounded-full bg-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-700 border border-gray-100">
+          <div className="relative w-[240px] h-[240px] md:w-[320px] md:h-[320px] rounded-full bg-white flex items-center justify-center shadow-xl group-hover:rotate-[360deg] transition-transform duration-[1.5s] ease-in-out border border-gray-100">
             <img
               src={brand.logo}
               alt={brand.name}
@@ -126,7 +127,7 @@ function BrandRow({ brand, reverse }) {
           <div>
             <a
               href={`#${brand.id}`}
-              className="group/btn inline-flex items-center gap-4 text-[10px] font-bold tracking-[0.2em] uppercase text-[#E31E24] border border-[#E31E24] px-7 py-3.5 rounded-md transition-all duration-300 hover:bg-[#E31E24] hover:text-white hover:shadow-[0_0_15px_rgba(227,30,36,0.4)] bg-white"
+              className="group/btn inline-flex items-center gap-4 text-[10px] font-bold tracking-[0.2em] uppercase text-[#E31E24] border border-[#E31E24] px-7 py-3.5 rounded-md transition-all duration-300 hover:bg-[#E31E24] hover:text-white hover:shadow-[0_0_15px_rgba(227,30,36,0.4)] bg-white hover:animate-pulse"
             >
               VIEW PRODUCTS
               <span className="w-5 h-5 rounded-full border border-current flex items-center justify-center transition-transform duration-300 group-hover/btn:translate-x-1">
@@ -150,42 +151,72 @@ export default function Brands() {
 
       {/* ── Hero Banner ── */}
       <section className="relative pt-40 pb-20 px-6 bg-[#001F3F] overflow-hidden text-center">
-        {/* Blueprint grid */}
-        <div
+        {/* Animated Blueprint Grid */}
+        <motion.div
           className="absolute inset-0 opacity-[0.06] pointer-events-none"
           style={{
             backgroundImage: 'linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)',
             backgroundSize: '48px 48px',
           }}
+          animate={{ backgroundPosition: ['0px 0px', '48px 48px'] }}
+          transition={{ repeat: Infinity, duration: 4, ease: 'linear' }}
         />
         {/* Ambient glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[#E31E24]/10 rounded-full blur-[120px] pointer-events-none" />
 
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="relative z-10 max-w-[800px] mx-auto"
-        >
-          <div className="inline-flex items-center gap-3 mb-6">
+        <div className="relative z-10 max-w-[800px] mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            className="inline-flex items-center gap-3 mb-6"
+          >
             <div className="w-6 h-[1px] bg-[#E31E24]" />
             <p className="text-[#E31E24] text-[10px] font-bold tracking-[0.4em] uppercase">
               Strategic Partners
             </p>
             <div className="w-6 h-[1px] bg-[#E31E24]" />
-          </div>
+          </motion.div>
+
           <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-6 leading-[0.95]">
-            World-Class<br />
-            <span className="text-[#E31E24]">Brand Partners.</span>
+            {"World-Class".split('').map((char, i) => (
+              <motion.span
+                key={`w-${i}`}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.04, duration: 0.4 }}
+              >
+                {char}
+              </motion.span>
+            ))}
+            <br />
+            <span className="text-[#E31E24]">
+              {"Brand Partners.".split('').map((char, i) => (
+                <motion.span
+                  key={`b-${i}`}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 + i * 0.04, duration: 0.4 }}
+                >
+                  {char}
+                </motion.span>
+              ))}
+            </span>
           </h1>
-          <p className="text-slate-300 text-lg max-w-lg mx-auto leading-relaxed">
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 0.8 }}
+            className="text-slate-300 text-lg max-w-lg mx-auto leading-relaxed"
+          >
             Promac is the authorised Indian representative for globally recognised industrial laundry technology manufacturers.
-          </p>
-        </motion.div>
+          </motion.p>
+        </div>
       </section>
 
       {/* ── Brand Catalog ── */}
-      <section className="relative w-full py-24 bg-white overflow-hidden">
+      <section className="relative w-full py-24 bg-gradient-to-b from-white to-slate-100 overflow-hidden">
         {/* Faint technical grid background */}
         <div
           className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -201,6 +232,9 @@ export default function Brands() {
           ))}
         </div>
       </section>
+
+      {/* ── Smooth Transition to Globe ── */}
+      <div className="w-full h-32 bg-gradient-to-b from-slate-100 to-[#000814]" />
 
       {/* ── 3D Globe ── */}
       <GlobeSection />
