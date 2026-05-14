@@ -155,10 +155,11 @@ export default function EcosystemSection() {
                key={card.id}
                initial={{ opacity: 0, y: 30 }}
                whileInView={{ opacity: 1, y: 0 }}
+               whileHover={{ scale: 1.03 }}
                viewport={{ once: true }}
                transition={{ duration: 0.6, delay: idx * 0.1, ease: "easeOut" }}
                // Group class added to trigger hover interactions for children elements
-               className="group bg-white rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.03)] p-8 border border-gray-100/50 flex flex-col hover:shadow-[0_20px_50px_rgba(227,30,36,0.08)] transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+               className="group bg-white rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.03)] p-8 border border-gray-100/50 flex flex-col hover:shadow-2xl transition-all duration-300 hover:bg-[#001F3F] cursor-pointer"
              >
                 <div className="flex justify-between items-start mb-10">
                    <span className="text-[#E31E24] font-bold text-xl">{card.id}</span>
@@ -166,14 +167,14 @@ export default function EcosystemSection() {
                    <div className="text-[#E31E24] w-8 h-8 opacity-90 transition-transform duration-500 group-hover:scale-110">{card.icon}</div>
                 </div>
                 
-                <h3 className="text-[22px] text-[#001F3F] font-display font-bold leading-[1.2] mb-3 whitespace-pre-line tracking-tight transition-colors duration-300">
+                <h3 className="text-[22px] text-[#001F3F] group-hover:text-white font-display font-bold leading-[1.2] mb-3 whitespace-pre-line tracking-tight transition-colors duration-300">
                   {card.title}
                 </h3>
                 
                 {/* Expanding Red Line Micro-Interaction */}
-                <div className="w-8 h-[2px] bg-[#E31E24] mb-5 transition-all duration-500 ease-out group-hover:w-full" />
+                <div className="w-8 h-[2px] bg-[#E31E24] mb-5 transition-all duration-300 ease-out group-hover:w-full" />
                 
-                <p className="text-gray-500 text-[12px] leading-relaxed font-sans transition-colors duration-300 group-hover:text-gray-800">
+                <p className="text-gray-500 group-hover:text-white/90 text-[12px] leading-relaxed font-sans transition-colors duration-300">
                   {card.text}
                 </p>
              </motion.div>
