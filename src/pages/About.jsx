@@ -35,7 +35,7 @@ function SplitText({ text, className, staggerDelay = 0.03, baseDelay = 0 }) {
 ───────────────────────────────────────────── */
 function MagneticCard({ children, className = '', glowRed = false }) {
   const ref = useRef(null);
-  const [transform, setTransform] = useState({ rotateX: 0, rotateY: 0 });
+  const [transform, setTransform] = useState({ rotateX: 0, rotateY: 0, scale: 1 });
   const [glowPos, setGlowPos] = useState({ x: 50, y: 50 });
 
   const handleMouseMove = useCallback((e) => {
@@ -44,7 +44,7 @@ function MagneticCard({ children, className = '', glowRed = false }) {
     const cy = rect.top + rect.height / 2;
     const dx = (e.clientX - cx) / (rect.width / 2);
     const dy = (e.clientY - cy) / (rect.height / 2);
-    setTransform({ rotateX: -dy * 7, rotateY: dx * 7 });
+    setTransform({ rotateX: -dy * 7, rotateY: dx * 7, scale: 1.05 });
     if (glowRed) {
       const px = ((e.clientX - rect.left) / rect.width) * 100;
       const py = ((e.clientY - rect.top) / rect.height) * 100;
@@ -53,7 +53,7 @@ function MagneticCard({ children, className = '', glowRed = false }) {
   }, [glowRed]);
 
   const handleMouseLeave = useCallback(() => {
-    setTransform({ rotateX: 0, rotateY: 0 });
+    setTransform({ rotateX: 0, rotateY: 0, scale: 1 });
     setGlowPos({ x: 50, y: 50 });
   }, []);
 
@@ -63,7 +63,7 @@ function MagneticCard({ children, className = '', glowRed = false }) {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{
-        transform: `perspective(800px) rotateX(${transform.rotateX}deg) rotateY(${transform.rotateY}deg)`,
+        transform: `perspective(800px) rotateX(${transform.rotateX}deg) rotateY(${transform.rotateY}deg) scale(${transform.scale})`,
         transition: 'transform 0.15s ease-out',
       }}
       className={className}
@@ -210,10 +210,10 @@ export default function About() {
         >
           <div className="grid md:grid-cols-2 gap-16 items-center">
             {/* Left: Expertise */}
-            <MagneticCard className="relative bg-[#E31E24] rounded-3xl p-10 text-white overflow-hidden group shadow-[0_0_50px_rgba(150,0,0,0.4)] border border-[#ff4d4d]/30">
+            <MagneticCard className="relative bg-[#001F3F] hover:bg-white rounded-3xl p-10 text-white overflow-hidden group shadow-lg hover:shadow-2xl transition-colors duration-500 border border-white/10 hover:border-gray-200">
               {/* shimmer border via pseudo-gradient overlay */}
               <div
-                className="absolute inset-0 rounded-3xl pointer-events-none z-0"
+                className="absolute inset-0 rounded-3xl pointer-events-none z-0 opacity-100 group-hover:opacity-0 transition-opacity duration-500"
                 style={{
                   background:
                     'linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%, rgba(255,255,255,0.05) 100%)',
@@ -221,11 +221,11 @@ export default function About() {
                 aria-hidden="true"
               />
               <div className="relative z-10 space-y-6">
-                <h2 className="text-4xl font-black text-white tracking-tighter leading-tight">
+                <h2 className="text-4xl font-black tracking-tighter leading-tight text-white group-hover:text-[#001F3F] transition-colors duration-500">
                   Decades of <br />
-                  <span className="text-[#001F3F]">Hands-on Expertise.</span>
+                  <span className="text-[#E31E24]">Hands-on Expertise.</span>
                 </h2>
-                <p className="text-white/90 text-lg leading-relaxed">
+                <p className="text-white/90 group-hover:text-[#001F3F]/90 text-lg leading-relaxed transition-colors duration-500">
                   As an experienced industrial laundry solutions provider, we support businesses with reliable equipment, expert guidance, and long-term service support. We help clients design, install, and operate efficient laundry facilities that deliver consistent performance.
                 </p>
               </div>
@@ -233,11 +233,11 @@ export default function About() {
 
             {/* Right: Mission */}
             <MagneticCard
-              className="relative bg-[#E31E24] rounded-3xl p-10 text-white overflow-hidden group shadow-[0_0_50px_rgba(150,0,0,0.4)] border border-[#ff4d4d]/30"
+              className="relative bg-[#001F3F] hover:bg-white rounded-3xl p-10 text-white overflow-hidden group shadow-lg hover:shadow-2xl transition-colors duration-500 border border-white/10 hover:border-gray-200"
             >
               {/* Shimmer */}
               <div
-                className="absolute inset-0 rounded-3xl pointer-events-none z-0"
+                className="absolute inset-0 rounded-3xl pointer-events-none z-0 opacity-100 group-hover:opacity-0 transition-opacity duration-500"
                 style={{
                   background:
                     'linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%, rgba(255,255,255,0.05) 100%)',
@@ -246,14 +246,14 @@ export default function About() {
               />
               {/* Decorative crosshair */}
               <div className="absolute top-0 right-0 p-8 opacity-20 transition-transform duration-700 group-hover:scale-150 z-0" aria-hidden="true">
-                <svg className="w-32 h-32" viewBox="0 0 100 100" fill="none" stroke="white">
+                <svg className="w-32 h-32 stroke-white group-hover:stroke-[#E31E24] transition-colors duration-500" viewBox="0 0 100 100" fill="none">
                   <circle cx="50" cy="50" r="40" strokeWidth="0.5" />
                   <path d="M50 10V90M10 50H90" strokeWidth="0.5" />
                 </svg>
               </div>
               <div className="relative z-10 space-y-6">
-                <h3 className="text-2xl text-white font-black tracking-tighter">Our Mission</h3>
-                <p className="text-white/90 leading-relaxed text-lg">
+                <h3 className="text-2xl font-black tracking-tighter text-white group-hover:text-[#001F3F] transition-colors duration-500">Our Mission</h3>
+                <p className="text-white/90 group-hover:text-[#001F3F]/90 leading-relaxed text-lg transition-colors duration-500">
                   To empower the hospitality and healthcare sectors with sustainable, high-efficiency laundry technologies that redefine operational excellence across India.
                 </p>
               </div>
