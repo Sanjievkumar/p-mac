@@ -39,7 +39,7 @@ function HeroSection() {
           <h1 className="text-5xl md:text-6xl lg:text-[72px] font-extrabold tracking-tighter text-[#001F3F] leading-[1.05]">
             Smart Planning.<br />
             Efficient Operations.<br />
-            <span className="text-[#E31E24]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500">
               Stronger Results.
             </span>
           </h1>
@@ -50,12 +50,21 @@ function HeroSection() {
 
           {/* CTA BUTTONS */}
           <div className="flex flex-wrap gap-4 pt-4">
-            <button className="bg-[#E31E24] hover:bg-[#c8191f] text-white font-bold tracking-widest text-[11px] uppercase px-8 py-4 rounded-md flex items-center gap-3 transition-all shadow-md shadow-[#E31E24]/20 hover:scale-[1.02]">
+            <button className="bg-[#E31E24] hover:bg-gradient-to-r hover:from-pink-600 hover:to-[#E31E24] text-white font-bold tracking-widest text-[11px] uppercase px-8 py-4 rounded-[8px] flex items-center gap-3 transition-all duration-300 shadow-md shadow-[#E31E24]/20 hover:shadow-lg hover:-translate-y-1">
               Request Consultation
-              <span className="text-lg leading-none">→</span>
+              <span className="group-hover:translate-x-1 transition-transform border border-white/40 rounded-full p-0.5">
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
             </button>
-            <button className="bg-white hover:bg-slate-50 text-[#001F3F] font-bold tracking-widest text-[11px] uppercase px-8 py-4 rounded-md border border-slate-200 shadow-sm transition-all hover:scale-[1.02]">
+            <button className="bg-white hover:bg-[#001F3F] text-[#001F3F] hover:text-white font-bold tracking-widest text-[11px] uppercase px-8 py-4 rounded-[8px] border border-slate-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex items-center gap-3 group">
               Talk to an Expert
+              <span className="text-slate-400 group-hover:text-white transition-colors">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
+                </svg>
+              </span>
             </button>
           </div>
         </motion.div>
@@ -63,12 +72,12 @@ function HeroSection() {
         {/* RIGHT COLUMN: RENDER IMAGE & LIGHTING ENVIRONMENT */}
         <div className="lg:col-span-6 flex justify-center items-center relative h-[500px] lg:h-[600px]">
           
-          <div className="relative flex flex-col items-center justify-center w-full max-w-[500px]">
+          <div className="relative flex flex-col items-center justify-center w-full max-w-[550px] mt-10">
             {/* Floating Washing Machine Image Container */}
             <motion.div 
-              animate={{ y: [0, -12, 0] }}
+              animate={{ y: [0, -20, 0] }}
               transition={{
-                duration: 5,
+                duration: 4,
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
@@ -77,12 +86,12 @@ function HeroSection() {
               <img 
                 src="/images/consultancy/industrial-washer.png" 
                 alt="Industrial Laundry setup visualization" 
-                className="w-full h-auto object-contain drop-shadow-[0_35px_35px_rgba(0,0,0,0.12)] mix-blend-multiply"
+                className="w-full h-auto object-contain drop-shadow-[0_40px_40px_rgba(0,0,0,0.15)] mix-blend-multiply scale-110 origin-bottom"
               />
             </motion.div>
 
             {/* Glowing Platform/Base Pod directly beneath the image */}
-            <div className="absolute bottom-[-10px] w-[80%] h-[40px] bg-white/40 rounded-[100%] border border-white/60 shadow-[0_20px_50px_rgba(147,197,253,0.3)] backdrop-blur-sm z-0" />
+            <div className="absolute bottom-[-20px] w-[90%] h-[45px] bg-white/50 rounded-[100%] border border-white/60 shadow-[0_20px_60px_rgba(147,197,253,0.4)] backdrop-blur-md z-0" />
           </div>
 
           {/* Micro Visual Accents: Floating Glassmorphic Bubbles */}
