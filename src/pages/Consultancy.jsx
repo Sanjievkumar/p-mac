@@ -72,7 +72,7 @@ function HeroSection() {
         {/* RIGHT COLUMN: RENDER IMAGE & LIGHTING ENVIRONMENT */}
         <div className="lg:col-span-6 flex justify-center items-center relative h-[500px] lg:h-[600px]">
           
-          <div className="relative flex flex-col items-center justify-center w-full max-w-[550px] mt-10">
+          <div className="relative flex flex-col items-center justify-center w-full max-w-[650px] mt-10">
             {/* Floating Washing Machine Image Container */}
             <motion.div 
               animate={{ y: [0, -20, 0] }}
@@ -84,14 +84,14 @@ function HeroSection() {
               className="relative z-10 w-full"
             >
               <img 
-                src="/images/consultancy/industrial-washer.png" 
+                src="/images/hero-laundry.png" 
                 alt="Industrial Laundry setup visualization" 
-                className="w-full h-auto object-contain drop-shadow-[0_40px_40px_rgba(0,0,0,0.15)] mix-blend-multiply scale-110 origin-bottom"
+                className="w-full h-auto object-contain drop-shadow-[0_40px_40px_rgba(0,0,0,0.15)] origin-bottom"
               />
             </motion.div>
 
             {/* Glowing Platform/Base Pod directly beneath the image */}
-            <div className="absolute bottom-[-20px] w-[90%] h-[45px] bg-white/50 rounded-[100%] border border-white/60 shadow-[0_20px_60px_rgba(147,197,253,0.4)] backdrop-blur-md z-0" />
+            <div className="absolute bottom-[-10px] w-[80%] h-[40px] bg-white/50 rounded-[100%] border border-white/60 shadow-[0_20px_60px_rgba(147,197,253,0.4)] backdrop-blur-md z-0" />
           </div>
 
           {/* Micro Visual Accents: Floating Glassmorphic Bubbles */}
