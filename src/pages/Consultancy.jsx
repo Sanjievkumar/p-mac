@@ -49,10 +49,10 @@ function HeroSection() {
 
           {/* CTA BUTTONS */}
           <div className="flex flex-wrap gap-4 pt-4">
-            <button className="bg-[#E31E24] hover:bg-gradient-to-r hover:from-pink-600 hover:to-[#E31E24] text-white font-bold tracking-widest text-[11px] uppercase px-8 py-4 rounded-[8px] flex items-center gap-3 transition-all duration-300 shadow-md shadow-[#E31E24]/20 hover:shadow-lg hover:-translate-y-1">
+            <button className="bg-[#E31E24] hover:bg-gradient-to-r hover:from-pink-600 hover:to-[#E31E24] text-white font-bold tracking-widest text-[11px] uppercase px-8 py-4 rounded-[8px] flex items-center gap-3 transition-all duration-300 shadow-md shadow-[#E31E24]/20 hover:shadow-lg hover:-translate-y-1 group">
               Request Consultation
-              <span className="group-hover:translate-x-1 transition-transform border border-white/40 rounded-full p-0.5">
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <span className="group-hover:translate-x-1 transition-transform border border-white rounded-full p-1 bg-white/10">
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
               </span>
@@ -72,38 +72,25 @@ function HeroSection() {
         <div className="lg:col-span-6 flex justify-center items-center relative h-[500px] lg:h-[600px]">
           
           <div className="relative flex flex-col items-center justify-center w-full max-w-[650px] mt-10">
-            {/* Secondary Machine (Top-Right Floating) */}
+            {/* Main Floating Washing Machine & Integrated Elements Container */}
             <motion.div 
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-[-20%] right-[-10%] z-0 w-[180px] opacity-90 mix-blend-multiply"
-            >
-              <img 
-                src="/images/consultancy/industrial-washer.png" 
-                alt="Secondary Machine" 
-                className="w-full h-auto object-contain drop-shadow-xl"
-              />
-            </motion.div>
-
-            {/* Main Floating Washing Machine Container */}
-            <motion.div 
-              animate={{ y: [0, -25, 0] }}
+              animate={{ y: [0, -20, 0] }}
               transition={{
-                duration: 4,
+                duration: 5,
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="relative z-10 w-full mix-blend-multiply"
+              className="relative z-10 w-full"
             >
               <img 
-                src="/images/consultancy/industrial-washer.png" 
-                alt="Industrial Laundry setup visualization" 
-                className="w-full h-auto object-contain scale-110 origin-bottom"
+                src="/images/hero-laundry.png" 
+                alt="Integrated Industrial Laundry setup visualization" 
+                className="w-full h-auto object-contain drop-shadow-[0_40px_40px_rgba(0,0,0,0.15)] origin-bottom"
               />
             </motion.div>
 
             {/* Futuristic Electric-Blue Neon Ring Podium */}
-            <div className="absolute bottom-[-20px] w-[80%] h-[40px] bg-white/20 rounded-[100%] border-[2px] border-blue-400 shadow-[0_0_30px_rgba(59,130,246,0.6),inset_0_0_20px_rgba(59,130,246,0.3)] backdrop-blur-md z-0" />
+            <div className="absolute bottom-[-15px] w-[80%] h-[40px] bg-white/20 rounded-[100%] border-[2px] border-blue-400 shadow-[0_0_30px_rgba(59,130,246,0.6),inset_0_0_20px_rgba(59,130,246,0.3)] backdrop-blur-md z-0" />
           </div>
 
           {/* Micro Visual Accents: Floating Glassmorphic Bubbles */}
