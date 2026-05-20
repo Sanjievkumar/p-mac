@@ -39,7 +39,7 @@ function HeroSection() {
           <h1 className="text-5xl md:text-6xl lg:text-[72px] font-extrabold tracking-tighter text-[#001F3F] leading-[1.05]">
             Smart Planning.<br />
             Efficient Operations.<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E31E24] via-purple-500 to-blue-500">
+            <span className="text-[#E31E24]">
               Stronger Results.
             </span>
           </h1>
@@ -63,25 +63,27 @@ function HeroSection() {
         {/* RIGHT COLUMN: RENDER IMAGE & LIGHTING ENVIRONMENT */}
         <div className="lg:col-span-6 flex justify-center items-center relative h-[500px] lg:h-[600px]">
           
-          {/* Glowing Platform/Base Pod */}
-          <div className="absolute bottom-[10%] w-[80%] h-[40px] bg-white/40 rounded-full border border-white/60 shadow-[0_20px_50px_rgba(147,197,253,0.3)] backdrop-blur-sm" />
-          
-          {/* Floating Washing Machine Image Container */}
-          <motion.div 
-            animate={{ y: [0, -15, 0] }}
-            transition={{
-              duration: 5,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            className="relative z-10 w-full max-w-[500px]"
-          >
-            <img 
-              src={ecosystemImg} 
-              alt="Industrial Laundry setup visualization" 
-              className="w-full h-auto object-contain drop-shadow-[0_35px_35px_rgba(0,0,0,0.12)] mix-blend-multiply"
-            />
-          </motion.div>
+          <div className="relative flex flex-col items-center justify-center w-full max-w-[500px]">
+            {/* Floating Washing Machine Image Container */}
+            <motion.div 
+              animate={{ y: [0, -12, 0] }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="relative z-10 w-full"
+            >
+              <img 
+                src="/images/consultancy/industrial-washer.png" 
+                alt="Industrial Laundry setup visualization" 
+                className="w-full h-auto object-contain drop-shadow-[0_35px_35px_rgba(0,0,0,0.12)] mix-blend-multiply"
+              />
+            </motion.div>
+
+            {/* Glowing Platform/Base Pod directly beneath the image */}
+            <div className="absolute bottom-[-10px] w-[80%] h-[40px] bg-white/40 rounded-[100%] border border-white/60 shadow-[0_20px_50px_rgba(147,197,253,0.3)] backdrop-blur-sm z-0" />
+          </div>
 
           {/* Micro Visual Accents: Floating Glassmorphic Bubbles */}
           <motion.div 
