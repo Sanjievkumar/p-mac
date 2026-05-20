@@ -13,13 +13,12 @@ import ecosystemImg from '../assets/ecosystem-3d.png';
 ───────────────────────────────────────────── */
 function HeroSection() {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-[#F3F5F9] px-6 py-24 lg:px-16 flex items-center">
+    <section className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-[#f8f9ff] via-[#ffffff] to-[#f0f4ff] px-6 py-24 lg:px-16 flex items-center">
       
       {/* BACKGROUND LAYER STACK */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        {/* Soft, Fluid ambient gradient blobs matching the Canva layout */}
-        <div className="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full bg-gradient-to-br from-blue-200/40 via-purple-200/30 to-pink-200/40 blur-3xl" />
-        <div className="absolute bottom-[-5%] left-[-5%] w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-cyan-100/50 to-transparent blur-3xl" />
+        {/* Soft ambient lighting mimicking the clean expected output */}
+        <div className="absolute top-[10%] right-[5%] w-[800px] h-[800px] rounded-full bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 blur-3xl opacity-60" />
       </div>
 
       {/* CONTENT GRID */}
@@ -75,7 +74,7 @@ function HeroSection() {
           <div className="relative flex flex-col items-center justify-center w-full max-w-[650px] mt-10">
             {/* Floating Washing Machine Image Container */}
             <motion.div 
-              animate={{ y: [0, -20, 0] }}
+              animate={{ y: [0, -25, 0] }}
               transition={{
                 duration: 4,
                 repeat: Infinity,
@@ -84,26 +83,31 @@ function HeroSection() {
               className="relative z-10 w-full"
             >
               <img 
-                src="/images/hero-laundry.png" 
+                src="/images/consultancy/industrial-washer.png" 
                 alt="Industrial Laundry setup visualization" 
-                className="w-full h-auto object-contain drop-shadow-[0_40px_40px_rgba(0,0,0,0.15)] origin-bottom"
+                className="w-full h-auto object-contain drop-shadow-[0_40px_40px_rgba(0,0,0,0.15)] mix-blend-multiply scale-110 origin-bottom"
               />
             </motion.div>
 
             {/* Glowing Platform/Base Pod directly beneath the image */}
-            <div className="absolute bottom-[-10px] w-[80%] h-[40px] bg-white/50 rounded-[100%] border border-white/60 shadow-[0_20px_60px_rgba(147,197,253,0.4)] backdrop-blur-md z-0" />
+            <div className="absolute bottom-[-15px] w-[80%] h-[35px] bg-white/60 rounded-[100%] border border-white/80 shadow-[0_20px_50px_rgba(147,197,253,0.5)] backdrop-blur-md z-0" />
           </div>
 
           {/* Micro Visual Accents: Floating Glassmorphic Bubbles */}
           <motion.div 
-            animate={{ y: [-10, 10, -10] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-12 right-12 w-8 h-8 rounded-full bg-white/30 border border-white/50 backdrop-blur-[2px] shadow-inner" 
+            animate={{ y: [-15, 15, -15], x: [-5, 5, -5] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-10 right-20 w-12 h-12 rounded-full bg-gradient-to-br from-white/60 to-white/10 border border-white/50 backdrop-blur-[4px] shadow-[inset_0_0_10px_rgba(255,255,255,0.5),0_10px_20px_rgba(0,0,0,0.05)] z-20" 
           />
           <motion.div 
-            animate={{ y: [10, -10, 10] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute bottom-24 left-4 w-12 h-12 rounded-full bg-white/20 border border-white/40 backdrop-blur-[1px] shadow-inner" 
+            animate={{ y: [15, -15, 15], x: [5, -5, 5] }}
+            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            className="absolute bottom-32 left-10 w-16 h-16 rounded-full bg-gradient-to-br from-white/60 to-white/10 border border-white/50 backdrop-blur-[4px] shadow-[inset_0_0_15px_rgba(255,255,255,0.5),0_15px_30px_rgba(0,0,0,0.05)] z-20" 
+          />
+          <motion.div 
+            animate={{ y: [-10, 10, -10], scale: [1, 1.1, 1] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+            className="absolute top-1/3 left-4 w-8 h-8 rounded-full bg-gradient-to-br from-white/70 to-white/20 border border-white/60 backdrop-blur-[2px] shadow-[inset_0_0_8px_rgba(255,255,255,0.6)] z-20" 
           />
         </div>
 
