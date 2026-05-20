@@ -161,10 +161,30 @@ function HeroSection() {
    INDUSTRY SLIDER SECTION
 ───────────────────────────────────────────── */
 const INDUSTRIES = [
-  { id: 1, title: 'Hotels & Resorts', desc: 'High-volume linen management with impeccable finishing quality.', img: showroomImg },
-  { id: 2, title: 'Hospitals', desc: 'Strict hygiene protocols and barrier-laundry compliance.', img: ecosystemImg },
-  { id: 3, title: 'Commercial Laundries', desc: 'Scalable automation for maximum throughput and ROI.', img: showroomImg },
-  { id: 4, title: 'Facility Management', desc: 'Turnkey operational setups for large-scale enterprise needs.', img: ecosystemImg },
+  { 
+    id: 1, 
+    title: 'Hotels & Resorts', 
+    desc: 'High-volume linen management with impeccable finishing quality.', 
+    images: ['/images/consultancy/industries/hotels-1.jpg', '/images/consultancy/industries/hotels-2.jpg', '/images/consultancy/industries/hotels-3.jpg']
+  },
+  { 
+    id: 2, 
+    title: 'Hospitals', 
+    desc: 'Strict hygiene protocols and barrier-laundry compliance.', 
+    images: ['/images/consultancy/industries/hospitals-1.jpg', '/images/consultancy/industries/hospitals-2.jpg', '/images/consultancy/industries/hospitals-3.jpg']
+  },
+  { 
+    id: 3, 
+    title: 'Commercial Laundries', 
+    desc: 'Scalable automation for maximum throughput and ROI.', 
+    images: ['/images/consultancy/industries/commercial-1.jpg', '/images/consultancy/industries/commercial-2.jpg', '/images/consultancy/industries/commercial-3.jpg']
+  },
+  { 
+    id: 4, 
+    title: 'Facility Management', 
+    desc: 'Turnkey operational setups for large-scale enterprise needs.', 
+    images: ['/images/consultancy/industries/facility-1.jpg', '/images/consultancy/industries/facility-2.jpg', '/images/consultancy/industries/facility-3.jpg']
+  },
 ];
 
 function IndustrySlider() {
@@ -256,8 +276,34 @@ function IndustrySlider() {
                   style={{ zIndex }}
                   onClick={() => setActiveIndex(i)}
                 >
-                  <div className="h-[60%] w-full bg-slate-50 p-6 flex items-center justify-center border-b border-slate-100">
-                    <img src={ind.img} alt={ind.title} className="max-h-full object-contain mix-blend-multiply" />
+                  <div className="h-[60%] w-full bg-slate-50 relative group overflow-hidden flex items-center justify-center border-b border-slate-100 cursor-pointer">
+                    {ind.images.map((imgSrc, idx) => {
+                      const isFirst = idx === 0;
+                      const isSecond = idx === 1;
+                      
+                      // Base cascading stack classes
+                      let baseTransform = isFirst 
+                        ? 'translate-x-0 translate-y-0 rotate-0 scale-100 z-30 opacity-100 shadow-[0_10px_20px_rgba(0,0,0,0.15)]' 
+                        : isSecond 
+                          ? 'translate-x-3 translate-y-3 rotate-3 scale-95 z-20 opacity-80 shadow-[0_10px_15px_rgba(0,0,0,0.1)]' 
+                          : 'translate-x-6 translate-y-6 rotate-6 scale-90 z-10 opacity-60 shadow-[0_5px_10px_rgba(0,0,0,0.05)]';
+                                     
+                      // Hover split/expand classes
+                      let hoverTransform = isFirst 
+                        ? 'group-hover:-translate-x-10 group-hover:-translate-y-4 group-hover:-rotate-6 group-hover:scale-105 group-hover:opacity-100 group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)]' 
+                        : isSecond 
+                          ? 'group-hover:translate-x-0 group-hover:translate-y-0 group-hover:rotate-0 group-hover:scale-100 group-hover:opacity-100 group-hover:shadow-[0_15px_30px_rgba(0,0,0,0.15)]' 
+                          : 'group-hover:translate-x-10 group-hover:translate-y-4 group-hover:rotate-6 group-hover:scale-95 group-hover:opacity-100 group-hover:shadow-[0_10px_20px_rgba(0,0,0,0.1)]';
+
+                      return (
+                        <div 
+                          key={idx}
+                          className={`absolute w-[65%] h-[75%] rounded-xl border-2 border-white overflow-hidden transition-all duration-500 ease-out origin-center ${baseTransform} ${hoverTransform}`}
+                        >
+                          <img src={imgSrc} alt={`${ind.title} view ${idx + 1}`} className="w-full h-full object-cover" />
+                        </div>
+                      );
+                    })}
                   </div>
                   <div className="h-[40%] p-6 flex flex-col justify-center">
                     <h3 className="text-xl font-bold text-[#001F3F] tracking-tight mb-2">{ind.title}</h3>
@@ -275,8 +321,10 @@ function IndustrySlider() {
             <button
               key={i}
               onClick={() => setActiveIndex(i)}
-              className={`transition-all duration-300 rounded-full border-2 ${
-                i === activeIndex ? 'w-4 h-4 border-[#E31E24] bg-white' : 'w-3 h-3 border-transparent bg-slate-300 hover:bg-slate-400'
+              className={`transition-all duration-500 rounded-full ${
+                i === activeIndex 
+                  ? 'w-10 h-3 bg-gradient-to-r from-pink-500 via-blue-500 to-green-400 shadow-[0_0_10px_rgba(59,130,246,0.4)]' 
+                  : 'w-3 h-3 bg-slate-300 hover:bg-slate-400'
               }`}
             />
           ))}
