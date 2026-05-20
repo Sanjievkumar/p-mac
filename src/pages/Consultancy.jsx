@@ -13,12 +13,12 @@ import ecosystemImg from '../assets/ecosystem-3d.png';
 ───────────────────────────────────────────── */
 function HeroSection() {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-[#f8f9ff] via-[#ffffff] to-[#f0f4ff] px-6 py-24 lg:px-16 flex items-center">
+    <section className="relative min-h-screen w-full overflow-hidden bg-gradient-to-b from-[#f8f9fa] to-[#ffffff] px-6 py-24 lg:px-16 flex items-center">
       
       {/* BACKGROUND LAYER STACK */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Soft ambient lighting mimicking the clean expected output */}
-        <div className="absolute top-[10%] right-[5%] w-[800px] h-[800px] rounded-full bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 blur-3xl opacity-60" />
+        <div className="absolute top-[10%] right-[5%] w-[800px] h-[800px] rounded-full bg-gradient-to-br from-blue-50/50 via-purple-50/50 to-pink-50/50 blur-3xl opacity-60" />
       </div>
 
       {/* CONTENT GRID */}
@@ -72,7 +72,20 @@ function HeroSection() {
         <div className="lg:col-span-6 flex justify-center items-center relative h-[500px] lg:h-[600px]">
           
           <div className="relative flex flex-col items-center justify-center w-full max-w-[650px] mt-10">
-            {/* Floating Washing Machine Image Container */}
+            {/* Secondary Machine (Top-Right Floating) */}
+            <motion.div 
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute top-[-20%] right-[-10%] z-0 w-[180px] opacity-90 mix-blend-multiply"
+            >
+              <img 
+                src="/images/consultancy/industrial-washer.png" 
+                alt="Secondary Machine" 
+                className="w-full h-auto object-contain drop-shadow-xl"
+              />
+            </motion.div>
+
+            {/* Main Floating Washing Machine Container */}
             <motion.div 
               animate={{ y: [0, -25, 0] }}
               transition={{
@@ -89,8 +102,8 @@ function HeroSection() {
               />
             </motion.div>
 
-            {/* Glowing Platform/Base Pod directly beneath the image */}
-            <div className="absolute bottom-[-15px] w-[80%] h-[35px] bg-white/60 rounded-[100%] border border-white/80 shadow-[0_20px_50px_rgba(147,197,253,0.5)] backdrop-blur-md z-0" />
+            {/* Futuristic Electric-Blue Neon Ring Podium */}
+            <div className="absolute bottom-[-20px] w-[80%] h-[40px] bg-white/20 rounded-[100%] border-[2px] border-blue-400 shadow-[0_0_30px_rgba(59,130,246,0.6),inset_0_0_20px_rgba(59,130,246,0.3)] backdrop-blur-md z-0" />
           </div>
 
           {/* Micro Visual Accents: Floating Glassmorphic Bubbles */}
