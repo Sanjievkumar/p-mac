@@ -13,70 +13,89 @@ import ecosystemImg from '../assets/ecosystem-3d.png';
 ───────────────────────────────────────────── */
 function HeroSection() {
   return (
-    <section className="relative w-full pt-44 pb-20 px-6 lg:px-12 flex flex-col items-center overflow-hidden bg-white">
-      {/* Ambient shadows */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#E31E24]/[0.03] rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#001F3F]/[0.02] rounded-full blur-[150px] pointer-events-none" />
+    <section className="relative min-h-screen w-full overflow-hidden bg-[#F3F5F9] px-6 py-24 lg:px-16 flex items-center">
       
-      <div className="max-w-[1400px] mx-auto w-full grid lg:grid-cols-2 gap-12 items-center relative z-10">
+      {/* BACKGROUND LAYER STACK */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* Soft, Fluid ambient gradient blobs matching the Canva layout */}
+        <div className="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full bg-gradient-to-br from-blue-200/40 via-purple-200/30 to-pink-200/40 blur-3xl" />
+        <div className="absolute bottom-[-5%] left-[-5%] w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-cyan-100/50 to-transparent blur-3xl" />
+      </div>
+
+      {/* CONTENT GRID */}
+      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full mt-16">
         
-        {/* Left: Typography Stack */}
+        {/* LEFT COLUMN: TYPOGRAPHY & CTAs */}
         <motion.div 
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="space-y-8"
+          className="lg:col-span-6 space-y-6 text-left"
         >
-          <div className="inline-block px-4 py-1.5 rounded-full bg-[#E31E24]/5 border border-[#E31E24]/10 text-[#E31E24] text-[10px] font-bold tracking-[0.2em] uppercase">
-            Consultancy Services
-          </div>
+          <span className="text-xs font-bold tracking-[0.2em] text-[#E31E24] uppercase block">
+            Consultancy
+          </span>
           
-          <h1 className="text-5xl md:text-7xl font-black text-[#001F3F] tracking-tighter leading-[1.05]">
-            Smart Planning. <br />
-            Efficient Operations. <br />
-            <span className="text-[#E31E24]">Strong Results.</span>
+          <h1 className="text-5xl md:text-6xl lg:text-[72px] font-extrabold tracking-tighter text-[#001F3F] leading-[1.05]">
+            Smart Planning.<br />
+            Efficient Operations.<br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E31E24] via-purple-500 to-blue-500">
+              Stronger Results.
+            </span>
           </h1>
-          
-          <p className="text-lg text-slate-500 leading-relaxed max-w-lg">
-            We bridge industrial engineering precision with real-world operational demands. Let our experts design a turnkey laundry setup that maximizes efficiency and guarantees long-term ROI.
+
+          <p className="text-slate-500 text-lg md:text-xl max-w-lg font-medium leading-relaxed">
+            Expert consultancy for industrial laundry setups that reduce costs, improve efficiency and drive long term success.
           </p>
-          
-          <div className="flex flex-wrap items-center gap-4 pt-4">
-            <button className="group relative inline-flex items-center justify-center gap-3 bg-[#E31E24] text-white px-8 py-4 font-bold tracking-widest text-[11px] uppercase transition-all duration-300 hover:scale-105 hover:bg-[#c8191f] hover:shadow-[0_10px_30px_rgba(227,30,36,0.2)]">
+
+          {/* CTA BUTTONS */}
+          <div className="flex flex-wrap gap-4 pt-4">
+            <button className="bg-[#E31E24] hover:bg-[#c8191f] text-white font-bold tracking-widest text-[11px] uppercase px-8 py-4 rounded-md flex items-center gap-3 transition-all shadow-md shadow-[#E31E24]/20 hover:scale-[1.02]">
               Request Consultation
-              <span className="group-hover:translate-x-1 transition-transform">
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </span>
+              <span className="text-lg leading-none">→</span>
             </button>
-            
-            <button className="group relative inline-flex items-center justify-center gap-3 border-2 border-slate-200 text-[#001F3F] px-8 py-4 font-bold tracking-widest text-[11px] uppercase transition-all duration-300 hover:border-[#001F3F] hover:bg-slate-50">
+            <button className="bg-white hover:bg-slate-50 text-[#001F3F] font-bold tracking-widest text-[11px] uppercase px-8 py-4 rounded-md border border-slate-200 shadow-sm transition-all hover:scale-[1.02]">
               Talk to an Expert
-              <span className="group-hover:translate-x-1 transition-transform">
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                </svg>
-              </span>
             </button>
           </div>
         </motion.div>
-        
-        {/* Right: Imagery */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-          className="relative flex justify-center lg:justify-end"
-        >
-          <motion.img 
-            src={ecosystemImg} 
-            alt="Promac Consultancy"
+
+        {/* RIGHT COLUMN: RENDER IMAGE & LIGHTING ENVIRONMENT */}
+        <div className="lg:col-span-6 flex justify-center items-center relative h-[500px] lg:h-[600px]">
+          
+          {/* Glowing Platform/Base Pod */}
+          <div className="absolute bottom-[10%] w-[80%] h-[40px] bg-white/40 rounded-full border border-white/60 shadow-[0_20px_50px_rgba(147,197,253,0.3)] backdrop-blur-sm" />
+          
+          {/* Floating Washing Machine Image Container */}
+          <motion.div 
+            animate={{ y: [0, -15, 0] }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            className="relative z-10 w-full max-w-[500px]"
+          >
+            <img 
+              src={ecosystemImg} 
+              alt="Industrial Laundry setup visualization" 
+              className="w-full h-auto object-contain drop-shadow-[0_35px_35px_rgba(0,0,0,0.12)] mix-blend-multiply"
+            />
+          </motion.div>
+
+          {/* Micro Visual Accents: Floating Glassmorphic Bubbles */}
+          <motion.div 
             animate={{ y: [-10, 10, -10] }}
-            transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-            className="w-full max-w-[600px] object-contain drop-shadow-[0_30px_50px_rgba(0,0,0,0.1)] mix-blend-multiply"
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-12 right-12 w-8 h-8 rounded-full bg-white/30 border border-white/50 backdrop-blur-[2px] shadow-inner" 
           />
-        </motion.div>
+          <motion.div 
+            animate={{ y: [10, -10, 10] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            className="absolute bottom-24 left-4 w-12 h-12 rounded-full bg-white/20 border border-white/40 backdrop-blur-[1px] shadow-inner" 
+          />
+        </div>
+
       </div>
     </section>
   );
