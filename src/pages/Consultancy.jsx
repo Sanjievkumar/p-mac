@@ -80,12 +80,12 @@ function HeroSection() {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="relative z-10 w-full"
+              className="relative z-10 w-full mix-blend-multiply"
             >
               <img 
                 src="/images/consultancy/industrial-washer.png" 
                 alt="Industrial Laundry setup visualization" 
-                className="w-full h-auto object-contain drop-shadow-[0_40px_40px_rgba(0,0,0,0.15)] mix-blend-multiply scale-110 origin-bottom"
+                className="w-full h-auto object-contain scale-110 origin-bottom"
               />
             </motion.div>
 
