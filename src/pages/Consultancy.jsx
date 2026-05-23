@@ -98,19 +98,16 @@ function HeroSection() {
               />
             </motion.div>
 
-            {/* Photorealistic AI-Rendered Glass Podium */}
-            <div 
-              className="absolute bottom-[-160px] w-full z-0 flex justify-center pointer-events-none mix-blend-multiply opacity-90"
-              style={{
-                WebkitMaskImage: 'radial-gradient(ellipse at center, black 40%, transparent 70%)',
-                maskImage: 'radial-gradient(ellipse at center, black 40%, transparent 70%)'
-              }}
-            >
-              <img 
-                src="/images/consultancy/glass-podium.jpg" 
-                alt="Glass stage" 
-                className="w-[140%] max-w-[140%] h-auto object-contain scale-y-[0.8]" 
-              />
+            {/* Elegant, Ultra-Thin CSS Glass Stage Podium */}
+            <div className="absolute bottom-[12%] w-[85%] max-w-[500px] h-[35px] z-0 flex justify-center perspective-[1200px]">
+              {/* Very soft pink ambient floor glow */}
+              <div className="absolute bottom-[-10px] w-[110%] h-[15px] rounded-[100%] bg-pink-400/20 blur-[15px] z-0" />
+              
+              {/* Ultra-thin elegant cyan neon rim */}
+              <div className="absolute inset-0 rounded-[100%] border-[2px] border-cyan-300/70 bg-white/5 backdrop-blur-2xl shadow-[0_0_20px_rgba(34,211,238,0.3),inset_0_0_10px_rgba(34,211,238,0.2)] z-10 transform rotateX-[75deg]" />
+              
+              {/* Extremely subtle glossy top surface */}
+              <div className="absolute top-[1px] left-[1%] w-[98%] h-[95%] rounded-[100%] bg-gradient-to-br from-white/40 to-transparent opacity-60 z-20 transform rotateX-[75deg]" />
             </div>
           </div>
 
