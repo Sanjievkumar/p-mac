@@ -89,28 +89,28 @@ function HeroSection() {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="relative z-10 w-[110%] ml-[-5%] drop-shadow-[0_30px_40px_rgba(0,0,0,0.25)]"
+              className="relative z-10 w-[110%] ml-[-5%] drop-shadow-[0_40px_40px_rgba(0,0,0,0.3)]"
             >
               <img 
-                src="/images/consultancy/hero-machine-flawless.png" 
+                src="/images/consultancy/hero-machine-ultimate.png" 
                 alt="Integrated Industrial Laundry setup visualization" 
-                className="w-full h-auto object-contain origin-bottom"
+                className="w-full h-auto object-contain origin-bottom scale-105"
               />
             </motion.div>
 
-            {/* Elegant, Ultra-Premium CSS Glass Stage Podium */}
-            <div className="absolute bottom-[-30px] w-[90%] h-[70px] z-0 flex justify-center perspective-[1200px]">
-              {/* Soft pink ambient floor glow */}
-              <div className="absolute bottom-[-5px] w-[110%] h-[20px] rounded-[100%] bg-pink-400/30 blur-[20px] z-0" />
-              
-              {/* Elegant cyan neon rim */}
-              <div className="absolute inset-0 rounded-[100%] border-[2px] border-cyan-300/80 bg-white/10 backdrop-blur-3xl shadow-[0_0_30px_rgba(34,211,238,0.4),inset_0_0_15px_rgba(34,211,238,0.3)] z-10 transform rotateX-[60deg]" />
-              
-              {/* Refined glossy top surface */}
-              <div className="absolute top-[2px] left-[1%] w-[98%] h-[90%] rounded-[100%] bg-gradient-to-br from-white/70 via-white/10 to-transparent opacity-90 z-20 transform rotateX-[60deg] shadow-[inset_0_2px_10px_rgba(255,255,255,0.8)]" />
-              
-              {/* Subtle bottom edge reflection */}
-              <div className="absolute bottom-[-2px] w-[80%] h-[2px] bg-cyan-300/50 rounded-[100%] blur-[2px] z-30 transform rotateX-[60deg]" />
+            {/* Photorealistic AI-Rendered Glass Podium */}
+            <div 
+              className="absolute bottom-[-160px] w-[140%] left-[-20%] z-0 flex justify-center pointer-events-none mix-blend-multiply opacity-90"
+              style={{
+                WebkitMaskImage: 'radial-gradient(ellipse at center, black 40%, transparent 70%)',
+                maskImage: 'radial-gradient(ellipse at center, black 40%, transparent 70%)'
+              }}
+            >
+              <img 
+                src="/images/consultancy/glass-podium.jpg" 
+                alt="Glass stage" 
+                className="w-full h-auto object-contain scale-y-[0.8]" 
+              />
             </div>
           </div>
 
