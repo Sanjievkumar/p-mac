@@ -100,16 +100,16 @@ function HeroSection() {
 
             {/* Photorealistic AI-Rendered Glass Podium */}
             <div 
-              className="absolute bottom-[2%] w-[130%] z-0 flex justify-center pointer-events-none mix-blend-multiply opacity-90"
+              className="absolute bottom-[-35%] w-[140%] z-0 flex justify-center pointer-events-none mix-blend-multiply opacity-90"
               style={{
-                WebkitMaskImage: 'radial-gradient(ellipse at center, black 45%, transparent 75%)',
-                maskImage: 'radial-gradient(ellipse at center, black 45%, transparent 75%)'
+                WebkitMaskImage: 'radial-gradient(ellipse at center, black 40%, transparent 70%)',
+                maskImage: 'radial-gradient(ellipse at center, black 40%, transparent 70%)'
               }}
             >
               <img 
                 src="/images/consultancy/glass-podium.jpg" 
                 alt="Glass stage" 
-                className="w-full h-auto object-contain" 
+                className="w-full h-auto object-contain scale-y-[0.75]" 
               />
             </div>
           </div>
