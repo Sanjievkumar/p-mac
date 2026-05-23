@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -160,8 +160,6 @@ function HeroSection() {
 /* ─────────────────────────────────────────────
    INDUSTRY SLIDER SECTION
 ───────────────────────────────────────────── */
-import { useState, useEffect, useRef } from 'react';
-
 const INDUSTRIES_DATA = [
   { 
     id: 1, 
