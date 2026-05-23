@@ -83,38 +83,31 @@ function HeroSection() {
           <div className="relative flex flex-col items-center justify-center w-full max-w-[650px] mt-10">
             {/* Main Floating Washing Machine & Integrated Elements Container */}
             <motion.div 
-              animate={{ y: [0, -20, 0] }}
+              animate={{ y: [0, -15, 0] }}
               transition={{
                 duration: 5,
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="relative z-10 w-[110%] ml-[-5%] mix-blend-multiply"
-              style={{
-                WebkitMaskImage: 'radial-gradient(ellipse at center, black 65%, transparent 100%)',
-                maskImage: 'radial-gradient(ellipse at center, black 65%, transparent 100%)'
-              }}
+              className="relative z-10 w-[110%] ml-[-5%] drop-shadow-[0_40px_40px_rgba(0,0,0,0.3)]"
             >
               <img 
-                src="/images/consultancy/hero-machine-enhanced.jpg" 
+                src="/images/consultancy/hero-machine-new.png-removebg-preview.png" 
                 alt="Integrated Industrial Laundry setup visualization" 
                 className="w-full h-auto object-contain origin-bottom"
               />
             </motion.div>
 
-            {/* Photorealistic AI-Rendered Glass Podium */}
-            <div 
-              className="absolute bottom-[-160px] w-[140%] left-[-20%] z-0 flex justify-center pointer-events-none mix-blend-multiply"
-              style={{
-                WebkitMaskImage: 'radial-gradient(ellipse at center, black 40%, transparent 70%)',
-                maskImage: 'radial-gradient(ellipse at center, black 40%, transparent 70%)'
-              }}
-            >
-              <img 
-                src="/images/consultancy/glass-podium.jpg" 
-                alt="Glass stage" 
-                className="w-full h-auto object-contain opacity-90 scale-y-75" 
-              />
+            {/* Ultra-Premium CSS Glass Stage Podium */}
+            <div className="absolute bottom-[-30px] w-[90%] h-[70px] z-0 flex justify-center perspective-[1200px]">
+              {/* Deep pink ambient floor glow */}
+              <div className="absolute bottom-[-15px] w-[130%] h-[40px] rounded-[100%] bg-pink-500/60 blur-[25px] z-0" />
+              
+              {/* Thick cyan neon rim */}
+              <div className="absolute inset-0 rounded-[100%] border-[4px] border-cyan-400 bg-white/20 backdrop-blur-3xl shadow-[0_0_50px_rgba(34,211,238,0.8),inset_0_0_30px_rgba(34,211,238,0.6)] z-10 transform rotateX-[60deg]" />
+              
+              {/* Glossy top surface */}
+              <div className="absolute top-[4px] left-[3%] w-[94%] h-[90%] rounded-[100%] bg-gradient-to-b from-white/90 to-transparent opacity-90 z-20 transform rotateX-[60deg]" />
             </div>
           </div>
 
