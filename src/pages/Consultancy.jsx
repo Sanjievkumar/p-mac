@@ -89,10 +89,10 @@ function HeroSection() {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="relative z-10 w-[110%] ml-[-5%] mix-blend-multiply"
+              className="relative z-10 w-[110%] ml-[-5%] drop-shadow-[0_30px_40px_rgba(0,0,0,0.25)]"
             >
               <img 
-                src="/images/consultancy/hero-machine-clean.jpg" 
+                src="/images/consultancy/hero-machine-new.png-removebg-preview.png" 
                 alt="Integrated Industrial Laundry setup visualization" 
                 className="w-full h-auto object-contain origin-bottom"
               />
