@@ -3,7 +3,7 @@ import fs from 'fs';
 
 async function processImage() {
   console.log('Loading high-res AI image...');
-  const img = await loadImage('public/images/consultancy/hero-machine-enhanced.jpg');
+  const img = await loadImage('public/images/consultancy/hero-machine-new-ai.jpg');
   
   const width = img.width;
   const height = img.height;
@@ -18,7 +18,7 @@ async function processImage() {
   console.log(`Image size: ${width}x${height}`);
   
   const visited = new Uint8Array(width * height);
-  const tolerance = 25; // Out of 255
+  const tolerance = 20; // Out of 255
   
   // Start color is the top-left pixel
   const sr = data[0], sg = data[1], sb = data[2];
@@ -29,8 +29,18 @@ async function processImage() {
            Math.abs(data[idx+2] - sb) <= tolerance;
   }
   
-  const queue = [{x: 0, y: 0}];
-  visited[0] = 1;
+  // Start flood fill from multiple corners to ensure full coverage
+  const seeds = [
+    {x: 0, y: 0},
+    {x: width - 1, y: 0},
+    {x: 0, y: height - 1},
+    {x: width - 1, y: height - 1}
+  ];
+  
+  const queue = [...seeds];
+  for (const s of seeds) {
+    visited[s.y * width + s.x] = 1;
+  }
   
   let pixelsProcessed = 0;
   console.log('Running flood-fill transparency...');
@@ -69,7 +79,7 @@ async function processImage() {
   console.log('Saving true transparent 8k PNG...');
   
   const buffer = canvas.toBuffer('image/png');
-  fs.writeFileSync('public/images/consultancy/hero-machine-flawless.png', buffer);
+  fs.writeFileSync('public/images/consultancy/hero-machine-perfect.png', buffer);
   console.log('Done!');
 }
 
