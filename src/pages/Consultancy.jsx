@@ -89,12 +89,13 @@ function HeroSection() {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="relative z-10 w-[110%] ml-[-5%] drop-shadow-[0_40px_40px_rgba(0,0,0,0.3)]"
+              className="relative z-10 w-[110%] ml-[-5%] drop-shadow-[0_40px_40px_rgba(0,0,0,0.3)] filter contrast-105 saturate-110"
             >
               <img 
-                src="/images/consultancy/hero-machine-perfect.png" 
+                src="/images/consultancy/hero-machine-new.png-removebg-preview.png" 
                 alt="Integrated Industrial Laundry setup visualization" 
-                className="w-full h-auto object-contain origin-bottom scale-[1.15]"
+                className="w-full h-auto object-contain origin-bottom scale-[1.05]"
+                style={{ imageRendering: 'high-quality' }}
               />
             </motion.div>
 
