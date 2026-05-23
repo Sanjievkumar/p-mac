@@ -89,10 +89,10 @@ function HeroSection() {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="relative z-10 w-[110%] ml-[-5%] drop-shadow-[0_40px_40px_rgba(0,0,0,0.3)]"
+              className="relative z-10 w-[110%] mx-auto drop-shadow-[0_40px_40px_rgba(0,0,0,0.3)]"
             >
               <img 
-                src="/images/consultancy/hero-machine-strict-extract.png" 
+                src="/images/consultancy/hero-machine-smooth.png" 
                 alt="Integrated Industrial Laundry setup visualization" 
                 className="w-full h-auto object-contain origin-bottom scale-[1.05]"
               />
@@ -100,7 +100,7 @@ function HeroSection() {
 
             {/* Photorealistic AI-Rendered Glass Podium */}
             <div 
-              className="absolute bottom-[-160px] w-[140%] left-[-20%] z-0 flex justify-center pointer-events-none mix-blend-multiply opacity-90"
+              className="absolute bottom-[-160px] w-full z-0 flex justify-center pointer-events-none mix-blend-multiply opacity-90"
               style={{
                 WebkitMaskImage: 'radial-gradient(ellipse at center, black 40%, transparent 70%)',
                 maskImage: 'radial-gradient(ellipse at center, black 40%, transparent 70%)'
@@ -109,7 +109,7 @@ function HeroSection() {
               <img 
                 src="/images/consultancy/glass-podium.jpg" 
                 alt="Glass stage" 
-                className="w-full h-auto object-contain scale-y-[0.8]" 
+                className="w-[140%] max-w-[140%] h-auto object-contain scale-y-[0.8]" 
               />
             </div>
           </div>
