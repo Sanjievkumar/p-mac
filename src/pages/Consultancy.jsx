@@ -92,7 +92,7 @@ function HeroSection() {
               className="relative z-10 w-[110%] ml-[-5%]"
             >
               <img 
-                src="/images/hero-laundry.png" 
+                src="/images/consultancy/hero-machine-new.png-removebg-preview.png" 
                 alt="Integrated Industrial Laundry setup visualization" 
                 className="w-full h-auto object-contain origin-bottom drop-shadow-[0_40px_40px_rgba(0,0,0,0.15)]"
               />
