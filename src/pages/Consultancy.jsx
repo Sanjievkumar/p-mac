@@ -13,12 +13,21 @@ import ecosystemImg from '../assets/ecosystem-3d.png';
 ───────────────────────────────────────────── */
 function HeroSection() {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-white px-6 py-24 lg:px-16 flex flex-col justify-center">
+    <section className="relative min-h-screen w-full overflow-hidden bg-[#fafcff] px-6 py-24 lg:px-16 flex flex-col justify-center">
       
       {/* BACKGROUND LAYER STACK */}
       <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* 3D Wave Photorealistic Background Image */}
+        <div 
+          className="absolute inset-0 w-full h-full opacity-70 mix-blend-multiply"
+          style={{
+            backgroundImage: "url('/images/consultancy/hero-waves-bg.jpg')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'left center',
+          }}
+        />
         {/* Soft diffused background mixed with central gradient light effect */}
-        <div className="absolute top-[20%] left-[20%] w-[800px] h-[800px] rounded-full bg-gradient-to-br from-teal-50/60 via-purple-50/60 to-orange-50/60 blur-3xl opacity-80" />
+        <div className="absolute top-[10%] left-[10%] w-[1000px] h-[1000px] rounded-full bg-gradient-to-br from-teal-50/60 via-purple-50/60 to-orange-50/60 blur-[100px] opacity-80" />
       </div>
 
       {/* CONTENT GRID */}
@@ -89,8 +98,20 @@ function HeroSection() {
               />
             </motion.div>
 
-            {/* Futuristic Electric-Blue Neon Ring Podium */}
-            <div className="absolute bottom-[-15px] w-[80%] h-[40px] bg-white/20 rounded-[100%] border-[2px] border-blue-400 shadow-[0_0_30px_rgba(59,130,246,0.6),inset_0_0_20px_rgba(59,130,246,0.3)] backdrop-blur-md z-0" />
+            {/* Photorealistic Futuristic Glass Stage Podium */}
+            <div className="absolute bottom-[-30px] w-[95%] h-[60px] z-0 flex justify-center perspective-[1000px]">
+              {/* The pink under-glow reflection spreading on the floor */}
+              <div className="absolute bottom-[-20px] w-[120%] h-[40px] rounded-[100%] bg-pink-500/40 blur-[20px] z-0" />
+              
+              {/* The thick glowing neon ring (cyan) */}
+              <div className="absolute inset-0 rounded-[100%] border-[3px] border-cyan-300 bg-white/20 backdrop-blur-2xl shadow-[0_0_50px_rgba(34,211,238,0.7),inset_0_0_30px_rgba(34,211,238,0.4)] z-10 transform rotateX-12" />
+              
+              {/* Inner glass surface reflection */}
+              <div className="absolute top-[4px] left-[5%] w-[90%] h-[25px] rounded-[100%] bg-gradient-to-b from-white/60 to-transparent blur-md z-20" />
+              
+              {/* Subtle top edge highlight */}
+              <div className="absolute top-0 w-[80%] h-[2px] bg-white/80 rounded-[100%] blur-[1px] z-30" />
+            </div>
           </div>
 
           {/* Micro Visual Accents: Floating Glassmorphic Bubbles */}
