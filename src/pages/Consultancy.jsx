@@ -89,28 +89,28 @@ function HeroSection() {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="relative z-10 w-[110%] ml-[-5%] drop-shadow-[0_30px_40px_rgba(0,0,0,0.25)]"
+              className="relative z-10 w-[110%] ml-[-5%]"
             >
               <img 
-                src="/images/consultancy/hero-machine-new.png-removebg-preview.png" 
+                src="/images/hero-laundry.png" 
                 alt="Integrated Industrial Laundry setup visualization" 
-                className="w-full h-auto object-contain origin-bottom"
+                className="w-full h-auto object-contain origin-bottom drop-shadow-[0_40px_40px_rgba(0,0,0,0.15)]"
               />
             </motion.div>
 
-            {/* Photorealistic Futuristic Glass Stage Podium */}
-            <div className="absolute bottom-[-30px] w-[95%] h-[60px] z-0 flex justify-center perspective-[1000px]">
-              {/* The pink under-glow reflection spreading on the floor */}
-              <div className="absolute bottom-[-20px] w-[120%] h-[40px] rounded-[100%] bg-pink-500/40 blur-[20px] z-0" />
-              
-              {/* The thick glowing neon ring (cyan) */}
-              <div className="absolute inset-0 rounded-[100%] border-[3px] border-cyan-300 bg-white/20 backdrop-blur-2xl shadow-[0_0_50px_rgba(34,211,238,0.7),inset_0_0_30px_rgba(34,211,238,0.4)] z-10 transform rotateX-12" />
-              
-              {/* Inner glass surface reflection */}
-              <div className="absolute top-[4px] left-[5%] w-[90%] h-[25px] rounded-[100%] bg-gradient-to-b from-white/60 to-transparent blur-md z-20" />
-              
-              {/* Subtle top edge highlight */}
-              <div className="absolute top-0 w-[80%] h-[2px] bg-white/80 rounded-[100%] blur-[1px] z-30" />
+            {/* Photorealistic AI-Rendered Glass Podium */}
+            <div 
+              className="absolute bottom-[-160px] w-[140%] left-[-20%] z-0 flex justify-center pointer-events-none mix-blend-multiply"
+              style={{
+                WebkitMaskImage: 'radial-gradient(ellipse at center, black 40%, transparent 70%)',
+                maskImage: 'radial-gradient(ellipse at center, black 40%, transparent 70%)'
+              }}
+            >
+              <img 
+                src="/images/consultancy/glass-podium.jpg" 
+                alt="Glass stage" 
+                className="w-full h-auto object-contain opacity-90 scale-y-75" 
+              />
             </div>
           </div>
 
