@@ -160,174 +160,175 @@ function HeroSection() {
 /* ─────────────────────────────────────────────
    INDUSTRY SLIDER SECTION
 ───────────────────────────────────────────── */
-const INDUSTRIES = [
+import { useState, useEffect, useRef } from 'react';
+
+const INDUSTRIES_DATA = [
   { 
     id: 1, 
-    title: 'Hotels & Resorts', 
-    desc: 'High-volume linen management with impeccable finishing quality.', 
-    images: ['/images/consultancy/industries/hotels-1.jpg', '/images/consultancy/industries/hotels-2.jpg', '/images/consultancy/industries/hotels-3.jpg']
+    title: 'Hotels', 
+    images: ['/images/consultancy/industries/hotels-1.jpg', '/images/consultancy/industries/hotels-2.jpg'],
+    color: 'bg-[#ff3b68]',
+    icon: (
+      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+      </svg>
+    )
   },
   { 
     id: 2, 
     title: 'Hospitals', 
-    desc: 'Strict hygiene protocols and barrier-laundry compliance.', 
-    images: ['/images/consultancy/industries/hospitals-1.jpg', '/images/consultancy/industries/hospitals-2.jpg', '/images/consultancy/industries/hospitals-3.jpg']
+    images: ['/images/consultancy/industries/hospitals-1.jpg', '/images/consultancy/industries/hospitals-2.jpg'],
+    color: 'bg-[#8b5cf6]',
+    icon: (
+      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+      </svg>
+    )
   },
   { 
     id: 3, 
     title: 'Commercial Laundries', 
-    desc: 'Scalable automation for maximum throughput and ROI.', 
-    images: ['/images/consultancy/industries/commercial-1.jpg', '/images/consultancy/industries/commercial-2.jpg', '/images/consultancy/industries/commercial-3.jpg']
+    images: ['/images/consultancy/industries/commercial-1.jpg', '/images/consultancy/industries/commercial-2.jpg'],
+    color: 'bg-[#3b82f6]',
+    icon: (
+      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+        <rect x="4" y="2" width="16" height="20" rx="2" strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="12" cy="14" r="4" strokeLinecap="round" strokeLinejoin="round" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M8 6h8" />
+      </svg>
+    )
   },
   { 
     id: 4, 
     title: 'Facility Management', 
-    desc: 'Turnkey operational setups for large-scale enterprise needs.', 
-    images: ['/images/consultancy/industries/facility-1.jpg', '/images/consultancy/industries/facility-2.jpg', '/images/consultancy/industries/facility-3.jpg']
+    images: ['/images/consultancy/industries/facility-1.jpg', '/images/consultancy/industries/facility-2.jpg'],
+    color: 'bg-[#4ade80]',
+    icon: (
+      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3 21h18M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16m-6-8h.01M9 13h.01" />
+      </svg>
+    )
   },
 ];
 
+function IndustryCard({ ind }) {
+  const [currentImg, setCurrentImg] = useState(0);
+
+  useEffect(() => {
+    // Randomize slightly so they don't all flip at the exact same millisecond
+    const timer = setInterval(() => {
+      setCurrentImg((prev) => (prev + 1) % ind.images.length);
+    }, 3500 + Math.random() * 500);
+    return () => clearInterval(timer);
+  }, [ind.images.length]);
+
+  return (
+    <div className="w-[180px] md:w-[220px] shrink-0 flex flex-col bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.04)] overflow-visible relative pb-6 border border-slate-50">
+      {/* Image Slideshow Area */}
+      <div className="h-[220px] w-full rounded-t-2xl overflow-hidden relative bg-slate-100">
+        {ind.images.map((img, idx) => (
+          <img 
+            key={idx}
+            src={img} 
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${idx === currentImg ? 'opacity-100' : 'opacity-0'}`} 
+            alt={ind.title}
+          />
+        ))}
+      </div>
+
+      {/* Overlapping Icon */}
+      <div className={`absolute top-[200px] left-1/2 -translate-x-1/2 w-11 h-11 rounded-full flex items-center justify-center ${ind.color} border-[3px] border-white shadow-sm z-10`}>
+        {ind.icon}
+      </div>
+
+      {/* Content Area */}
+      <div className="pt-10 flex flex-col items-center px-4 text-center">
+        <h3 className="text-[#001F3F] font-extrabold text-[15px] tracking-tight leading-tight">{ind.title}</h3>
+        
+        {/* Pagination Dots matching card color */}
+        <div className="flex gap-1 mt-3">
+          {ind.images.map((_, idx) => (
+            <div 
+              key={idx}
+              className={`w-1.5 h-1.5 rounded-full transition-all duration-500 ${idx === currentImg ? ind.color : 'bg-slate-200'}`}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function IndustrySlider() {
-  const [activeIndex, setActiveIndex] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
 
-  const goLeft = () => setActiveIndex((p) => (p - 1 + INDUSTRIES.length) % INDUSTRIES.length);
-  const goRight = () => setActiveIndex((p) => (p + 1) % INDUSTRIES.length);
-
   return (
-    <section ref={ref} className="py-24 bg-[#f8f9fa] overflow-hidden border-t border-gray-200">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="mb-16"
-        >
-          <span className="text-[#E31E24] font-bold text-[10px] tracking-[0.2em] uppercase mb-3 block">WHO WE HELP</span>
-          <h2 className="text-4xl md:text-5xl font-black text-[#001F3F] tracking-tighter">
-            Solutions for Every Industry.
-          </h2>
-        </motion.div>
+    <section ref={ref} className="py-24 bg-gradient-to-r from-[#f8faff] to-[#ffffff] overflow-hidden border-t border-gray-100 relative">
+      
+      {/* Background aesthetic blobs matching the reference */}
+      <div className="absolute right-[-5%] bottom-[-10%] w-[400px] h-[400px] rounded-full bg-gradient-to-br from-purple-100/40 to-blue-100/40 blur-3xl pointer-events-none z-0" />
 
-        {/* Carousel Container */}
-        <div className="relative w-full h-[500px] flex items-center justify-center">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
           
-          {/* Navigation Arrows */}
-          <button 
-            onClick={goLeft}
-            className="absolute left-0 md:left-4 z-40 w-12 h-12 bg-white border-2 border-slate-100 rounded-full flex items-center justify-center hover:border-[#E31E24] hover:text-[#E31E24] transition-colors shadow-sm"
+          {/* Left Text Column */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="w-full lg:w-[30%] flex flex-col items-start"
           >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
+            <span className="text-[#E31E24] font-bold text-[10px] tracking-[0.2em] uppercase mb-4 block">WHO WE HELP</span>
+            <h2 className="text-4xl md:text-5xl lg:text-[42px] font-extrabold text-[#001F3F] tracking-tighter leading-[1.1] mb-6">
+              Solutions for<br />Every Industry
+            </h2>
+            <p className="text-slate-500 text-[15px] font-medium leading-relaxed mb-8 max-w-[280px]">
+              Our consultancy services are trusted by a wide range of industries.
+            </p>
+            <button className="bg-transparent border border-slate-300 hover:border-[#001F3F] text-[#001F3F] font-bold tracking-widest text-[11px] uppercase px-6 py-3.5 rounded-full flex items-center gap-3 transition-all duration-300 hover:bg-[#001F3F] hover:text-white">
+              EXPLORE ALL INDUSTRIES
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </button>
+          </motion.div>
 
-          <button 
-            onClick={goRight}
-            className="absolute right-0 md:right-4 z-40 w-12 h-12 bg-white border-2 border-slate-100 rounded-full flex items-center justify-center hover:border-[#E31E24] hover:text-[#E31E24] transition-colors shadow-sm"
+          {/* Right Carousel Area */}
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="w-full lg:w-[70%] relative flex items-center"
           >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
+            {/* Left Nav Arrow */}
+            <button className="absolute left-[-20px] md:left-[-25px] z-20 w-12 h-12 bg-white border border-slate-100 shadow-[0_5px_15px_rgba(0,0,0,0.08)] rounded-full flex items-center justify-center text-slate-400 hover:text-[#001F3F] transition-colors">
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
 
-          {/* Cards */}
-          <div className="relative w-full max-w-[1000px] h-full flex justify-center items-center">
-            {INDUSTRIES.map((ind, i) => {
-              const total = INDUSTRIES.length;
-              let diff = i - activeIndex;
-              if (diff > Math.floor(total / 2)) diff -= total;
-              if (diff < -Math.floor(total / 2)) diff += total;
-              
-              const isCenter = diff === 0;
-              const absDiff = Math.abs(diff);
-              
-              let scale = 1;
-              let x = 0;
-              let opacity = 1;
-              let zIndex = 20;
-              let filter = 'blur(0px)';
+            {/* Cards Row */}
+            <div className="w-full overflow-x-auto pb-8 pt-4 px-4 flex gap-4 md:gap-6 scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+              {INDUSTRIES_DATA.map((ind) => (
+                <IndustryCard key={ind.id} ind={ind} />
+              ))}
+            </div>
 
-              if (isCenter) {
-                scale = 1.05;
-                x = 0;
-                zIndex = 30;
-              } else if (absDiff === 1) {
-                scale = 0.85;
-                x = diff * 300;
-                opacity = 0.6;
-                zIndex = 20;
-                filter = 'blur(2px)';
-              } else {
-                scale = 0.7;
-                x = diff * 450;
-                opacity = 0;
-                zIndex = 10;
-                filter = 'blur(5px)';
-              }
+            {/* Right Nav Arrow */}
+            <button className="absolute right-[-10px] md:right-[-25px] z-20 w-12 h-12 bg-white border border-slate-100 shadow-[0_5px_15px_rgba(0,0,0,0.08)] rounded-full flex items-center justify-center text-slate-400 hover:text-[#001F3F] transition-colors">
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+            
+            {/* Overlay Bubbles representing the decorative art on the right */}
+            <div className="absolute right-[-40px] bottom-0 pointer-events-none z-30 opacity-70 mix-blend-multiply flex flex-col gap-2">
+              <div className="w-16 h-16 rounded-full border-2 border-blue-200/50 shadow-[inset_0_0_15px_rgba(59,130,246,0.2)]" />
+              <div className="w-10 h-10 rounded-full border-2 border-purple-200/50 shadow-[inset_0_0_10px_rgba(168,85,247,0.2)] ml-8" />
+            </div>
+          </motion.div>
 
-              return (
-                <motion.div
-                  key={ind.id}
-                  animate={{ scale, x, opacity, filter }}
-                  transition={{ type: "spring", stiffness: 200, damping: 25 }}
-                  className="absolute w-[300px] md:w-[360px] h-[400px] bg-white rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col border border-slate-100 cursor-pointer"
-                  style={{ zIndex }}
-                  onClick={() => setActiveIndex(i)}
-                >
-                  <div className="h-[60%] w-full bg-slate-50 relative group overflow-hidden flex items-center justify-center border-b border-slate-100 cursor-pointer">
-                    {ind.images.map((imgSrc, idx) => {
-                      const isFirst = idx === 0;
-                      const isSecond = idx === 1;
-                      
-                      // Base cascading stack classes
-                      let baseTransform = isFirst 
-                        ? 'translate-x-0 translate-y-0 rotate-0 scale-100 z-30 opacity-100 shadow-[0_10px_20px_rgba(0,0,0,0.15)]' 
-                        : isSecond 
-                          ? 'translate-x-3 translate-y-3 rotate-3 scale-95 z-20 opacity-80 shadow-[0_10px_15px_rgba(0,0,0,0.1)]' 
-                          : 'translate-x-6 translate-y-6 rotate-6 scale-90 z-10 opacity-60 shadow-[0_5px_10px_rgba(0,0,0,0.05)]';
-                                     
-                      // Hover split/expand classes
-                      let hoverTransform = isFirst 
-                        ? 'group-hover:-translate-x-10 group-hover:-translate-y-4 group-hover:-rotate-6 group-hover:scale-105 group-hover:opacity-100 group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)]' 
-                        : isSecond 
-                          ? 'group-hover:translate-x-0 group-hover:translate-y-0 group-hover:rotate-0 group-hover:scale-100 group-hover:opacity-100 group-hover:shadow-[0_15px_30px_rgba(0,0,0,0.15)]' 
-                          : 'group-hover:translate-x-10 group-hover:translate-y-4 group-hover:rotate-6 group-hover:scale-95 group-hover:opacity-100 group-hover:shadow-[0_10px_20px_rgba(0,0,0,0.1)]';
-
-                      return (
-                        <div 
-                          key={idx}
-                          className={`absolute w-[65%] h-[75%] rounded-xl border-2 border-white overflow-hidden transition-all duration-500 ease-out origin-center ${baseTransform} ${hoverTransform}`}
-                        >
-                          <img src={imgSrc} alt={`${ind.title} view ${idx + 1}`} className="w-full h-full object-cover" />
-                        </div>
-                      );
-                    })}
-                  </div>
-                  <div className="h-[40%] p-6 flex flex-col justify-center">
-                    <h3 className="text-xl font-bold text-[#001F3F] tracking-tight mb-2">{ind.title}</h3>
-                    <p className="text-sm text-slate-500 leading-relaxed">{ind.desc}</p>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Pagination Dots */}
-        <div className="flex justify-center gap-3 mt-8">
-          {INDUSTRIES.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setActiveIndex(i)}
-              className={`transition-all duration-500 rounded-full ${
-                i === activeIndex 
-                  ? 'w-10 h-3 bg-gradient-to-r from-pink-500 via-blue-500 to-green-400 shadow-[0_0_10px_rgba(59,130,246,0.4)]' 
-                  : 'w-3 h-3 bg-slate-300 hover:bg-slate-400'
-              }`}
-            />
-          ))}
         </div>
       </div>
     </section>
