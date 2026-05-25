@@ -9,6 +9,15 @@ import maestrelliLogo from '../assets/brands/maestrelli.png';
 import maxipressLogo from '../assets/brands/maxipress.png';
 import kannegiesserLogo from '../assets/brands/kannegiesser.png';
 
+const customFontStyles = `
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Oswald:wght@700&family=Roboto:wght@900&display=swap');
+  
+  .font-kannegiesser { font-family: 'Roboto', sans-serif; }
+  .font-sealion { font-family: 'Oswald', sans-serif; }
+  .font-maestrelli { font-family: 'Montserrat', sans-serif; }
+  .font-maxipress { font-family: 'Montserrat', sans-serif; }
+`;
+
 /* ─────────────────────────────────────────────
    Brand catalog data
    logo → brand logo (white bg, mix-blend-multiply)
@@ -18,7 +27,7 @@ const BRANDS = [
     id: 'kannegiesser',
     name: 'KANNEGIESSER',
     customTitle: (
-      <h2 className="text-4xl md:text-5xl font-sans font-black text-[#1e293b] tracking-tighter mb-6 leading-none">
+      <h2 className="text-4xl md:text-5xl font-kannegiesser font-black text-[#1A1A1A] tracking-tighter mb-6 leading-none">
         KANNEGIESSER
       </h2>
     ),
@@ -32,7 +41,7 @@ const BRANDS = [
     id: 'sea-lion',
     name: 'SEA-LION',
     customTitle: (
-      <h2 className="text-4xl md:text-5xl font-sans font-black text-[#c31a22] tracking-wide mb-6 leading-none">
+      <h2 className="text-4xl md:text-6xl font-sealion font-bold text-[#00509E] tracking-normal mb-6 leading-none">
         SEA-LION
       </h2>
     ),
@@ -46,7 +55,7 @@ const BRANDS = [
     id: 'maestrelli',
     name: 'MAESTRELLI',
     customTitle: (
-      <h2 className="text-4xl md:text-[42px] font-sans font-extrabold text-[#0f3980] tracking-[0.15em] mb-6 leading-none">
+      <h2 className="text-4xl md:text-[42px] font-maestrelli font-extrabold text-[#003B73] tracking-[0.18em] mb-6 leading-none">
         MAESTRELLI
       </h2>
     ),
@@ -61,10 +70,10 @@ const BRANDS = [
     name: 'MAXIPRESS',
     customTitle: (
       <div className="mb-6 flex flex-col justify-end">
-        <span className="text-[#808285] text-[10px] md:text-[11px] font-bold tracking-[0.25em] mb-1.5 leading-none">
+        <span className="font-maxipress text-[#808285] text-[10px] md:text-[11px] font-bold tracking-[0.25em] mb-1.5 leading-none">
           MAXIMUM MAXIBILITY
         </span>
-        <h2 className="text-4xl md:text-5xl font-sans font-black text-[#F47920] tracking-tight leading-none">
+        <h2 className="text-4xl md:text-[52px] font-maxipress font-black text-[#F26522] tracking-tight leading-none">
           MAXI-PRESS
         </h2>
       </div>
@@ -236,6 +245,7 @@ function BrandRow({ brand, reverse }) {
 export default function Brands() {
   return (
     <div className="w-full min-h-screen bg-white font-display flex flex-col">
+      <style>{customFontStyles}</style>
       <Navbar />
 
       {/* ── Hero Banner ── */}
