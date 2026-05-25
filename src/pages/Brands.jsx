@@ -180,7 +180,7 @@ function BrandRow({ brand, reverse }) {
             <img 
               src={brand.logo} 
               alt={brand.name} 
-              className="absolute top-0 right-0 h-full w-auto max-w-none object-contain mix-blend-multiply" 
+              className="absolute top-0 right-0 h-full w-auto max-w-none mix-blend-multiply" 
             />
           </div>
 
