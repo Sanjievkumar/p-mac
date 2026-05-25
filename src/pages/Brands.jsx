@@ -17,6 +17,7 @@ const BRANDS = [
   {
     id: 'kannegiesser',
     name: 'KANNEGIESSER',
+    nameStyle: 'text-slate-800 tracking-tighter font-sans font-black',
     origin: 'Germany',
     tagline: 'End-to-End Laundry Automation',
     logo: kannegiesserLogo,
@@ -26,6 +27,7 @@ const BRANDS = [
   {
     id: 'sea-lion',
     name: 'SEA-LION',
+    nameStyle: 'text-[#005bb5] font-black tracking-wide',
     origin: 'China',
     tagline: 'Industrial Laundry Machines',
     logo: sealionLogo,
@@ -35,6 +37,7 @@ const BRANDS = [
   {
     id: 'maestrelli',
     name: 'MAESTRELLI',
+    nameStyle: 'text-[#0f3980] font-extrabold tracking-widest',
     origin: 'Italy',
     tagline: 'Dry Cleaning Systems',
     logo: maestrelliLogo,
@@ -44,6 +47,7 @@ const BRANDS = [
   {
     id: 'maxipress',
     name: 'MAXIPRESS',
+    nameStyle: 'text-[#e31e24] font-black italic tracking-tight',
     origin: 'Spain',
     tagline: 'Garment Finishing Equipment',
     logo: maxipressLogo,
@@ -166,10 +170,10 @@ function BrandRow({ brand, reverse }) {
             </span>
           </div>
 
-          {/* Name / Logo as Title */}
-          <div className="mb-6 h-10 md:h-12 w-auto flex justify-start">
-            <img src={brand.logo} alt={brand.name} className="h-full w-auto object-contain mix-blend-multiply" />
-          </div>
+          {/* Name stylized to match the logo */}
+          <h2 className={`text-4xl md:text-5xl mb-5 leading-none ${brand.nameStyle}`}>
+            {brand.name}
+          </h2>
 
           {/* Description */}
           <p className="text-slate-600 text-[15px] leading-relaxed mb-8 max-w-[420px]">
