@@ -425,15 +425,25 @@ function ProcessTimeline() {
       <motion.div 
         animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute left-[-8%] top-[10%] w-[400px] h-auto z-0 opacity-80 mix-blend-multiply hidden lg:block"
+        className="absolute left-[-15%] top-[-5%] w-[500px] h-auto z-0 opacity-90 mix-blend-multiply hidden lg:block"
+        style={{
+          WebkitMaskImage: 'radial-gradient(circle at center, black 40%, transparent 70%)',
+          maskImage: 'radial-gradient(circle at center, black 40%, transparent 70%)',
+          filter: 'contrast(1.1) brightness(1.05)'
+        }}
       >
-        <img src="/images/consultancy/process-bubbles.png" alt="Floating bubbles" className="w-full h-auto object-contain" />
+        <img src="/images/consultancy/process-bubbles.png" alt="Floating bubbles" className="w-full h-auto object-contain scale-[1.2]" />
       </motion.div>
       
       <motion.div 
         animate={{ y: [0, 20, 0], rotate: [0, -3, 0] }}
         transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute right-[-8%] top-[5%] w-[400px] h-auto z-0 opacity-90 drop-shadow-2xl hidden lg:block"
+        className="absolute right-[-8%] top-[5%] w-[400px] h-auto z-0 opacity-90 mix-blend-multiply hidden lg:block"
+        style={{
+          WebkitMaskImage: 'radial-gradient(circle at center, black 50%, transparent 85%)',
+          maskImage: 'radial-gradient(circle at center, black 50%, transparent 85%)',
+          filter: 'contrast(1.05) brightness(1.02)'
+        }}
       >
         <img src="/images/consultancy/process-towels.png" alt="Stacked towels" className="w-full h-auto object-contain" />
       </motion.div>
