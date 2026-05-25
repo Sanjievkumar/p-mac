@@ -933,7 +933,7 @@ function BrandsFooter() {
           <motion.div 
             animate={{ x: [0, -1200] }} 
             transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
-            className="flex items-center gap-24 w-max opacity-60 grayscale hover:grayscale-0 transition-all duration-500"
+            className="flex items-center gap-24 w-max"
           >
             {logos.map((logo, idx) => (
               <img 
