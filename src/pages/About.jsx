@@ -104,9 +104,13 @@ function Scanline() {
   return (
     <motion.div
       className="absolute inset-x-0 pointer-events-none z-20"
-      style={{ height: '2px', background: 'rgba(255,255,255,0.06)' }}
+      style={{ 
+        height: '3px', 
+        background: 'linear-gradient(90deg, transparent, #E31E24, transparent)',
+        boxShadow: '0 0 12px rgba(227,30,36,0.6)'
+      }}
       animate={{ top: ['0%', '100%'] }}
-      transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
+      transition={{ duration: 3.5, repeat: Infinity, ease: 'linear' }}
       aria-hidden="true"
     />
   );
