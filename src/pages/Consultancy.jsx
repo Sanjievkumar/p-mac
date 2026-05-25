@@ -545,67 +545,91 @@ function ProcessTimeline() {
 }
 
 /* ─────────────────────────────────────────────
-   METRICS GRID SECTION
+   DESIGN & PERFORMANCE SECTION
 ───────────────────────────────────────────── */
-function MetricsGrid() {
+function DesignPerformance() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
 
   const metrics = [
-    { value: '30%', label: 'Average Reduction in Operational Costs' },
-    { value: '25%', label: 'Increase in Productivity & Efficiency' },
-    { value: '40%', label: 'Energy Savings with Smart Planning' },
-    { value: '100%', label: 'Compliance with Safety & Standards' },
+    { value: '30%', label: 'Average Reduction in Operational Costs', color: 'text-red-500', bg: 'bg-red-50', icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" />
+      </svg>
+    )},
+    { value: '25%', label: 'Increase in Productivity & Efficiency', color: 'text-purple-500', bg: 'bg-purple-50', icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    )},
+    { value: '40%', label: 'Energy Savings with Smart Planning', color: 'text-blue-500', bg: 'bg-blue-50', icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+    )},
+    { value: '100%', label: 'Compliance with Safety & Standards', color: 'text-green-500', bg: 'bg-green-50', icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+      </svg>
+    )},
   ];
 
   return (
-    <section ref={ref} className="py-24 bg-[#0a0a0a] text-white overflow-hidden relative">
-      <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_#E31E24_0%,_transparent_60%)]" />
-      
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+    <section ref={ref} className="py-24 bg-[#fdfdff] relative">
+      <div className="max-w-[1300px] mx-auto px-6 relative z-10">
         
-        {/* Split Layout */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
-          <motion.div 
-            initial={{ opacity: 0, x: -40 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8 }}
-            className="space-y-6"
-          >
-            <h2 className="text-5xl md:text-6xl font-black tracking-tighter leading-tight">
-              We Design. <br />
-              <span className="text-[#E31E24]">You Perform.</span>
+        {/* Main Card */}
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="w-full bg-white rounded-[32px] shadow-[0_20px_60px_rgba(0,31,63,0.08)] flex flex-col lg:flex-row overflow-hidden border border-slate-100"
+        >
+          {/* Left Column: Content */}
+          <div className="w-full lg:w-[45%] p-10 lg:p-14 flex flex-col justify-center">
+            <span className="text-[#E31E24] font-bold text-[11px] tracking-[0.2em] uppercase mb-4 block">
+              FROM PLAN TO PERFORMANCE
+            </span>
+            <h2 className="text-4xl md:text-[42px] font-black text-[#001F3F] tracking-tighter leading-[1.1] mb-6">
+              We Design. You Perform.
             </h2>
-            <p className="text-slate-400 text-lg leading-relaxed max-w-lg">
-              Optimized layouts and cutting-edge machinery integration aren't just aesthetic choices; they represent tangible returns on investment.
+            <p className="text-slate-500 text-[15px] leading-relaxed max-w-md font-medium mb-12">
+              Our consultancy transforms ideas into high-performing laundry operations that deliver long-term value.
             </p>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="w-full bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-sm"
-          >
-             <img src={showroomImg} alt="Facility Design" className="w-full h-auto object-contain drop-shadow-2xl opacity-90 mix-blend-screen" />
-          </motion.div>
-        </div>
+            
+            {/* Metrics */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4">
+              {metrics.map((m, idx) => (
+                <div key={idx} className="flex flex-col">
+                  <div className={`w-10 h-10 rounded-full ${m.bg} flex items-center justify-center ${m.color} mb-4`}>
+                    {m.icon}
+                  </div>
+                  <h4 className={`text-3xl font-black ${m.color} mb-2 tracking-tight`}>{m.value}</h4>
+                  <p className="text-[11px] text-slate-500 leading-snug font-medium pr-2 uppercase tracking-wide">
+                    {m.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
 
-        {/* Metrics Row */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {metrics.map((metric, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.4 + idx * 0.1 }}
-              className="border-t-2 border-[#E31E24]/30 pt-6"
-            >
-              <h4 className="text-5xl font-black text-white mb-3 tracking-tighter">{metric.value}</h4>
-              <p className="text-sm text-slate-400 uppercase tracking-widest leading-relaxed">{metric.label}</p>
-            </motion.div>
-          ))}
-        </div>
+          {/* Right Column: Image & Media */}
+          <div className="w-full lg:w-[55%] relative min-h-[400px] lg:min-h-full overflow-hidden group cursor-pointer">
+            <img 
+              src="/images/consultancy/facility-split.png" 
+              alt="Facility Split View" 
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            
+            {/* Play Button Overlay */}
+            <div className="absolute inset-0 bg-black/5 group-hover:bg-black/10 transition-colors duration-300" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.15)] transition-transform duration-300 group-hover:scale-110">
+              <svg className="w-8 h-8 text-[#E31E24] ml-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -664,7 +688,7 @@ export default function Consultancy() {
       <HeroSection />
       <IndustrySlider />
       <ProcessTimeline />
-      <MetricsGrid />
+      <DesignPerformance />
       <TrustMatrix />
       <Footer />
     </div>
