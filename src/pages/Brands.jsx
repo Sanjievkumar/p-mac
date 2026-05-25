@@ -17,7 +17,11 @@ const BRANDS = [
   {
     id: 'kannegiesser',
     name: 'KANNEGIESSER',
-    crop: { containerW: '150px', containerH: '40px', imgH: '40px' }, // Clips the left icon
+    customTitle: (
+      <h2 className="text-4xl md:text-5xl font-sans font-black text-[#1e293b] tracking-tighter mb-6 leading-none">
+        KANNEGIESSER
+      </h2>
+    ),
     origin: 'Germany',
     tagline: 'End-to-End Laundry Automation',
     logo: kannegiesserLogo,
@@ -27,7 +31,11 @@ const BRANDS = [
   {
     id: 'sea-lion',
     name: 'SEA-LION',
-    crop: { containerW: '140px', containerH: '40px', imgH: '40px' }, // Clips the left emblem
+    customTitle: (
+      <h2 className="text-4xl md:text-5xl font-sans font-black text-[#c31a22] tracking-wide mb-6 leading-none">
+        SEA-LION
+      </h2>
+    ),
     origin: 'China',
     tagline: 'Industrial Laundry Machines',
     logo: sealionLogo,
@@ -37,7 +45,11 @@ const BRANDS = [
   {
     id: 'maestrelli',
     name: 'MAESTRELLI',
-    crop: { containerW: '140px', containerH: '40px', imgH: '40px' }, // Clips the left crest
+    customTitle: (
+      <h2 className="text-4xl md:text-[42px] font-sans font-extrabold text-[#0f3980] tracking-[0.15em] mb-6 leading-none">
+        MAESTRELLI
+      </h2>
+    ),
     origin: 'Italy',
     tagline: 'Dry Cleaning Systems',
     logo: maestrelliLogo,
@@ -47,7 +59,16 @@ const BRANDS = [
   {
     id: 'maxipress',
     name: 'MAXIPRESS',
-    crop: { containerW: '160px', containerH: '35px', imgH: '65px' }, // Zooms in drastically to clip both the left icon and the top tagline text
+    customTitle: (
+      <div className="mb-6 flex flex-col justify-end">
+        <span className="text-[#808285] text-[10px] md:text-[11px] font-bold tracking-[0.25em] mb-1.5 leading-none">
+          MAXIMUM MAXIBILITY
+        </span>
+        <h2 className="text-4xl md:text-5xl font-sans font-black text-[#F47920] tracking-tight leading-none">
+          MAXI-PRESS
+        </h2>
+      </div>
+    ),
     origin: 'Spain',
     tagline: 'Garment Finishing Equipment',
     logo: maxipressLogo,
@@ -171,20 +192,8 @@ function BrandRow({ brand, reverse }) {
           </div>
 
           {/* Logo Physically Cropped to Text Only */}
-          {/* Logo Physically Cropped to Text Only via Flexbox Overflow */}
-          {/* By rendering the image larger than its container and anchoring it to the bottom-right, 
-              we cleanly slice off the top and left elements (icons, taglines) so only the brand text remains. */}
-          <div 
-            className="mb-6 overflow-hidden flex justify-end items-end relative mix-blend-multiply" 
-            style={{ width: brand.crop.containerW, height: brand.crop.containerH }}
-          >
-            <img 
-              src={brand.logo} 
-              alt={brand.name} 
-              className="max-w-none flex-shrink-0" 
-              style={{ height: brand.crop.imgH, width: 'auto' }}
-            />
-          </div>
+          {/* Custom Styled Brand Name (HTML/CSS Recreations) */}
+          {brand.customTitle}
 
           {/* Description */}
           <p className="text-slate-600 text-[15px] leading-relaxed mb-8 max-w-[420px]">
