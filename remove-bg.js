@@ -2,8 +2,16 @@ import { createCanvas, loadImage } from 'canvas';
 import fs from 'fs';
 
 async function processImage() {
-  console.log('Loading high-res AI image...');
-  const img = await loadImage('public/images/consultancy/hero-machine-new-ai.jpg');
+  const inputFile = process.argv[2];
+  const outputFile = process.argv[3];
+  
+  if (!inputFile || !outputFile) {
+    console.error("Usage: node remove-bg.js <input> <output>");
+    process.exit(1);
+  }
+
+  console.log(`Loading high-res AI image from ${inputFile}...`);
+  const img = await loadImage(inputFile);
   
   const width = img.width;
   const height = img.height;
@@ -18,7 +26,7 @@ async function processImage() {
   console.log(`Image size: ${width}x${height}`);
   
   const visited = new Uint8Array(width * height);
-  const tolerance = 20; // Out of 255
+  const tolerance = 15; // Strict tolerance for white backgrounds
   
   // Start color is the top-left pixel
   const sr = data[0], sg = data[1], sb = data[2];
@@ -76,10 +84,10 @@ async function processImage() {
   ctx.putImageData(imageData, 0, 0);
   
   console.log(`Removed ${pixelsProcessed} pixels.`);
-  console.log('Saving true transparent 8k PNG...');
+  console.log(`Saving true transparent 8k PNG to ${outputFile}...`);
   
   const buffer = canvas.toBuffer('image/png');
-  fs.writeFileSync('public/images/consultancy/hero-machine-perfect.png', buffer);
+  fs.writeFileSync(outputFile, buffer);
   console.log('Done!');
 }
 

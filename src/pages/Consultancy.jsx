@@ -358,10 +358,60 @@ function IndustrySlider() {
    PROCESS TIMELINE SECTION
 ───────────────────────────────────────────── */
 const PROCESS_STEPS = [
-  { num: '01', title: 'Requirement Analysis' },
-  { num: '02', title: 'Site Evaluation' },
-  { num: '03', title: 'Solution Planning' },
-  { num: '04', title: 'Execution Guidance' },
+  { 
+    num: '01', 
+    title: 'Requirement Analysis', 
+    desc: 'We understand your business needs, challenges and goals.',
+    solidColor: 'bg-red-500',
+    textColor: 'text-red-500',
+    shadowColor: 'shadow-red-500/20',
+    icon: (
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+    )
+  },
+  { 
+    num: '02', 
+    title: 'Site Evaluation', 
+    desc: 'Assessing your space, utilities and operational constraints.',
+    solidColor: 'bg-purple-500',
+    textColor: 'text-purple-500',
+    shadowColor: 'shadow-purple-500/20',
+    icon: (
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.242-4.243a8 8 0 1111.314 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
+    )
+  },
+  { 
+    num: '03', 
+    title: 'Solution Planning', 
+    desc: 'We design the optimal layout, workflow and equipment plan.',
+    solidColor: 'bg-blue-500',
+    textColor: 'text-blue-500',
+    shadowColor: 'shadow-blue-500/20',
+    icon: (
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+      </svg>
+    )
+  },
+  { 
+    num: '04', 
+    title: 'Execution Guidance', 
+    desc: 'We guide you through implementation and support successful commissioning.',
+    solidColor: 'bg-green-500',
+    textColor: 'text-green-500',
+    shadowColor: 'shadow-green-500/20',
+    icon: (
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
+    )
+  },
 ];
 
 function ProcessTimeline() {
@@ -369,49 +419,112 @@ function ProcessTimeline() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section ref={ref} className="py-24 bg-white relative overflow-hidden">
-      <div className="max-w-[1200px] mx-auto px-6 text-center">
-        <motion.h2 
+    <section ref={ref} className="py-24 bg-gradient-to-b from-[#fdfdff] to-[#f4f7fb] relative overflow-hidden">
+      
+      {/* Floating Background Assets */}
+      <motion.div 
+        animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute left-[-8%] top-[10%] w-[400px] h-auto z-0 opacity-80 mix-blend-multiply hidden lg:block"
+      >
+        <img src="/images/consultancy/process-bubbles.png" alt="Floating bubbles" className="w-full h-auto object-contain" />
+      </motion.div>
+      
+      <motion.div 
+        animate={{ y: [0, 20, 0], rotate: [0, -3, 0] }}
+        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute right-[-8%] top-[5%] w-[400px] h-auto z-0 opacity-90 drop-shadow-2xl hidden lg:block"
+      >
+        <img src="/images/consultancy/process-towels.png" alt="Stacked towels" className="w-full h-auto object-contain" />
+      </motion.div>
+
+      <div className="max-w-[1200px] mx-auto px-6 text-center relative z-10">
+        
+        {/* Header */}
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-black text-[#001F3F] tracking-tighter mb-20"
+          className="mb-24"
         >
-          A Proven Consultancy Process
-        </motion.h2>
+          <span className="text-[#E31E24] font-bold text-[11px] tracking-[0.2em] uppercase mb-4 block">
+            OUR PROCESS
+          </span>
+          <h2 className="text-4xl md:text-5xl lg:text-[44px] font-extrabold text-[#001F3F] tracking-tighter">
+            A Proven Consultancy Process
+          </h2>
+        </motion.div>
 
         <div className="relative">
-          {/* Connecting SVG Path Line */}
-          <div className="hidden md:block absolute top-[28px] left-[10%] right-[10%] h-[2px] bg-slate-100 z-0">
+          {/* Main Connecting SVG Path Line */}
+          <div className="hidden md:block absolute top-[40px] left-[12%] right-[12%] h-[2px] bg-slate-200 z-0">
             <motion.div
               initial={{ scaleX: 0 }}
               animate={isInView ? { scaleX: 1 } : {}}
               transition={{ duration: 1.5, ease: "easeInOut", delay: 0.3 }}
-              className="h-full bg-[#E31E24] origin-left"
-            />
+              className="h-full bg-gradient-to-r from-red-500 via-purple-500 via-blue-500 to-green-500 origin-left relative"
+            >
+              {/* Animated pulses on the line */}
+              <motion.div 
+                animate={{ x: ["0%", "100%"], opacity: [0, 1, 0] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                className="absolute top-[-2px] left-0 w-16 h-[6px] rounded-full bg-white blur-[2px]"
+              />
+            </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-4 relative z-10">
+          {/* Nodes Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-16 md:gap-4 relative z-10">
             {PROCESS_STEPS.map((step, idx) => (
               <motion.div
                 key={step.num}
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.5 + idx * 0.2 }}
-                className="flex flex-col items-center"
+                className="flex flex-col items-center group cursor-pointer"
               >
                 {/* Node Marker */}
-                <div className="w-14 h-14 rounded-full bg-white border-4 border-slate-100 flex items-center justify-center mb-6 shadow-sm relative transition-all duration-300">
+                <div className="relative mb-8">
+                  {/* The number badge */}
                   <motion.div 
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                    transition={{ delay: 0.8 + idx * 0.2, duration: 0.3 }}
-                    className="absolute inset-[-4px] rounded-full border-4 border-[#E31E24]"
-                  />
-                  <span className="text-[#001F3F] font-bold text-lg">{step.num}</span>
+                    whileHover={{ scale: 1.1 }}
+                    className={`absolute -top-3 -left-3 w-8 h-8 rounded-full ${step.solidColor} text-white font-bold text-xs flex items-center justify-center z-20 shadow-md border-2 border-white transition-transform`}
+                  >
+                    {step.num}
+                  </motion.div>
+                  
+                  {/* The main icon circle */}
+                  <motion.div 
+                    whileHover={{ scale: 1.05, y: -5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                    className={`w-20 h-20 rounded-full bg-white flex items-center justify-center relative z-10 shadow-xl ${step.shadowColor} border border-slate-50`}
+                  >
+                    {/* Subtle colored ring inside */}
+                    <div className={`absolute inset-2 rounded-full border border-slate-100 flex items-center justify-center ${step.textColor} bg-slate-50/50 group-hover:bg-transparent transition-colors duration-300`}>
+                      {step.icon}
+                    </div>
+                  </motion.div>
+                  
+                  {/* Connection arrow for desktop (not on last item) */}
+                  {idx < PROCESS_STEPS.length - 1 && (
+                    <div className="hidden md:block absolute top-1/2 -right-[50%] -translate-y-1/2 text-slate-300">
+                      <motion.div
+                        animate={{ x: [0, 5, 0] }}
+                        transition={{ duration: 1.5, repeat: Infinity, delay: idx * 0.2 }}
+                      >
+                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                        </svg>
+                      </motion.div>
+                    </div>
+                  )}
                 </div>
                 
-                <h3 className="text-lg font-bold text-[#001F3F] uppercase tracking-wider">{step.title}</h3>
+                {/* Text Content */}
+                <h3 className="text-[17px] font-extrabold text-[#001F3F] mb-3 tracking-tight group-hover:text-[#E31E24] transition-colors">{step.title}</h3>
+                <p className="text-[13px] text-slate-500 leading-relaxed max-w-[200px] font-medium">
+                  {step.desc}
+                </p>
               </motion.div>
             ))}
           </div>
