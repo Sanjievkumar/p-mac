@@ -660,52 +660,60 @@ function CombinedWhyChooseAndCta() {
 
   const reasons = [
     { text: '20+ Years of\nIndustry Experience', color: 'text-[#E31E24]', icon: (
-      <svg className="w-10 h-10 drop-shadow-md" fill="currentColor" viewBox="0 0 24 24">
+      <svg className="w-10 h-10 mb-4" fill="currentColor" viewBox="0 0 24 24">
         <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
       </svg>
     )},
     { text: 'Deep Understanding of\nLaundry Operations', color: 'text-[#8A2BE2]', icon: (
-      <svg className="w-10 h-10 drop-shadow-md" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+      <svg className="w-10 h-10 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
         <circle cx="12" cy="12" r="9" />
         <circle cx="12" cy="12" r="4" fill="currentColor" />
       </svg>
     )},
     { text: 'Practical & Cost-effective\nSolutions', color: 'text-[#007BFF]', icon: (
-      <svg className="w-10 h-10 drop-shadow-md" fill="currentColor" viewBox="0 0 24 24">
+      <svg className="w-10 h-10 mb-4" fill="currentColor" viewBox="0 0 24 24">
         <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
       </svg>
     )},
     { text: 'End-to-End Involvement\n& Support', color: 'text-[#28A745]', icon: (
-      <svg className="w-10 h-10 drop-shadow-md" fill="currentColor" viewBox="0 0 24 24">
+      <svg className="w-10 h-10 mb-4" fill="currentColor" viewBox="0 0 24 24">
         <path d="M18 4V2H2v16h2v-4h14V4zM4 12V4h12v8H4zm14 6v-2H6v2h12z" />
       </svg>
     )},
   ];
 
   return (
-    <section ref={ref} className="pt-24 pb-24 bg-gradient-to-b from-[#f8fbff] to-[#eaf2fc] relative z-20 font-display">
+    <section ref={ref} className="py-24 bg-[#f8faff] relative z-20 font-display">
       
       {/* ──────────────── ROW 1: WHY CHOOSE PROMAC ──────────────── */}
       
-      <div className="max-w-[1450px] mx-auto px-4 relative z-10 flex flex-col xl:flex-row items-center justify-between gap-6 mb-16">
+      <div className="max-w-[1450px] mx-auto px-4 relative z-10 flex flex-col xl:flex-row items-center justify-between gap-8 mb-16">
         
-        {/* 1. Dynamic Splash Machine (Left - 30%) */}
-        <div className="w-full xl:w-[30%] relative flex items-center justify-center pointer-events-none min-h-[350px]">
+        {/* 1. Dynamic Machine (Left - 30%) 
+            Removed aggressive scaling to prevent the cropped image edges from hitting the container limits. 
+            Added a radial mask to seamlessly fade any hard edges into the background.
+        */}
+        <div className="w-full xl:w-[30%] relative flex items-center justify-center min-h-[350px]">
           <motion.div
             animate={{ y: [0, -8, 0] }}
             transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute z-10 w-[140%] xl:w-[150%] left-[-20%] xl:left-[-15%]"
+            className="w-full h-[400px] flex justify-center items-center"
           >
-            <img src="/images/consultancy/promac-dynamic-splash.png" alt="Dynamic Washer Composition" className="w-full h-auto drop-shadow-2xl object-contain" />
+            <img 
+              src="/images/consultancy/promac-dynamic-splash.png" 
+              alt="Dynamic Washer Composition" 
+              className="w-full h-full object-contain drop-shadow-2xl"
+              style={{ maskImage: 'radial-gradient(ellipse at center, black 70%, transparent 100%)', WebkitMaskImage: 'radial-gradient(ellipse at center, black 70%, transparent 100%)' }}
+            />
           </motion.div>
         </div>
 
-        {/* 2. Text (Center - 20%) */}
-        <div className="w-full xl:w-[20%] z-10 text-center xl:text-left px-2">
-          <span className="text-[#E31E24] font-bold text-[9px] tracking-[0.2em] uppercase mb-3 block">
+        {/* 2. Text (Center - 25%) */}
+        <div className="w-full xl:w-[25%] z-10 text-center xl:text-left px-2">
+          <span className="text-[#E31E24] font-bold text-[10px] tracking-widest uppercase mb-4 block">
             WHY CHOOSE PROMAC
           </span>
-          <h2 className="text-3xl xl:text-[36px] font-black text-[#041E42] tracking-tight leading-[1.1]">
+          <h2 className="text-3xl xl:text-[38px] font-black text-[#041E42] tracking-tight leading-[1.15]">
             Your Partner in <br/>
             Building <br/>
             Better Laundry <br/>
@@ -713,32 +721,35 @@ function CombinedWhyChooseAndCta() {
           </h2>
         </div>
 
-        {/* 3. Unique White Card (Right - 50%) */}
-        <div className="w-full xl:w-[50%] relative z-10">
-          {/* Subtle glowing backdrop for uniqueness */}
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-purple-400/20 blur-2xl rounded-[40px] -z-10 transform translate-y-4 scale-95" />
+        {/* 3. Premium White Card (Right - 45%) */}
+        <div className="w-full xl:w-[45%] relative z-10">
+          {/* Unique Premium Touch: A subtle, ambient rotating glow behind the card */}
+          <motion.div 
+            animate={{ rotate: 360 }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            className="absolute top-[-20px] right-[-20px] w-64 h-64 bg-gradient-to-tr from-blue-300/30 to-cyan-300/30 rounded-full blur-[60px] -z-10" 
+          />
           
           <motion.div 
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="bg-gradient-to-br from-white to-slate-50/90 backdrop-blur-xl rounded-[40px] shadow-[0_20px_50px_rgba(4,30,66,0.08)] py-12 px-8 relative overflow-hidden border border-white/60"
+            className="bg-white rounded-[32px] shadow-[0_20px_60px_rgba(4,30,66,0.04)] border border-slate-100 py-12 px-6 relative overflow-hidden"
           >
-            {/* Unique accent styling */}
-            <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-[#E31E24] via-[#8A2BE2] to-[#007BFF]" />
-            <div className="absolute top-[-20px] right-[-20px] w-32 h-32 bg-blue-100/50 rounded-full blur-2xl pointer-events-none" />
+            {/* Elegant Top-Left Ornament */}
+            <div className="absolute top-0 left-0 w-24 h-24 border-t-[8px] border-l-[8px] border-blue-50 rounded-tl-[32px] rounded-br-[60px] opacity-70" />
             
-            <div className="flex flex-col sm:flex-row justify-between divide-y sm:divide-y-0 sm:divide-x divide-slate-200 relative z-10 gap-y-8 sm:gap-y-0">
+            <div className="flex flex-row justify-between divide-x divide-slate-100 relative z-10">
               {reasons.map((r, idx) => (
                 <motion.div 
                   key={idx} 
-                  whileHover={{ y: -5, scale: 1.05 }}
-                  className="flex-1 flex flex-col items-center text-center px-4 group cursor-pointer"
+                  whileHover={{ y: -5 }}
+                  className="flex-1 flex flex-col items-center text-center px-2 group cursor-pointer"
                 >
-                  <div className={`mb-5 p-4 rounded-full bg-slate-50 shadow-inner group-hover:shadow-md transition-all duration-300 ${r.color}`}>
+                  <div className={`transition-transform duration-300 group-hover:scale-110 ${r.color}`}>
                     {r.icon}
                   </div>
-                  <p className="text-[11px] font-bold text-slate-700 leading-[1.5] whitespace-pre-line group-hover:text-[#041E42] transition-colors">
+                  <p className="text-[11px] font-bold text-slate-600 leading-[1.4] whitespace-pre-line group-hover:text-[#041E42] transition-colors">
                     {r.text}
                   </p>
                 </motion.div>
@@ -751,81 +762,77 @@ function CombinedWhyChooseAndCta() {
 
       {/* ──────────────── ROW 2: CTA BANNER ──────────────── */}
       
-      <div className="max-w-[1350px] mx-auto px-4 relative z-30">
+      <div className="max-w-[1400px] mx-auto px-4 relative z-30">
         
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative flex flex-col xl:flex-row items-center justify-between p-10 xl:p-0 xl:px-14 min-h-[180px] rounded-[24px] shadow-[0_30px_60px_rgba(10,24,45,0.4)] bg-[#061224]"
+          className="relative flex flex-col xl:flex-row items-center p-8 xl:p-0 xl:pl-14 min-h-[160px] rounded-[24px] shadow-[0_20px_40px_rgba(10,24,45,0.2)] bg-[#0A1428]"
         >
-          {/* Inner container for sleek dark background and subtle masking */}
+          {/* Inner container for dark background and masking */}
           <div className="absolute inset-0 rounded-[24px] overflow-hidden pointer-events-none">
-            {/* Left side soap bubbles - subtle and masked */}
             <div className="absolute left-0 top-[-20%] bottom-[-20%] w-[45%] opacity-[0.25] mix-blend-screen">
-              <img 
-                src="/images/consultancy/soap-bubbles.png" 
-                alt="Bubbles" 
-                className="w-full h-full object-cover" 
-                style={{ WebkitMaskImage: 'linear-gradient(to right, black 20%, transparent 100%)' }}
-              />
+              <img src="/images/consultancy/soap-bubbles.png" alt="Bubbles" className="w-full h-full object-cover" style={{ WebkitMaskImage: 'linear-gradient(to right, black 20%, transparent 100%)' }} />
             </div>
-            {/* Right side water splash - subtle and masked */}
             <div className="absolute right-0 top-[-30%] bottom-[-30%] w-[50%] opacity-[0.15] mix-blend-screen">
-              <img 
-                src="/images/consultancy/water-splash.png" 
-                alt="Water Background" 
-                className="w-full h-full object-cover" 
-                style={{ WebkitMaskImage: 'linear-gradient(to left, black 20%, transparent 100%)' }}
-              />
+              <img src="/images/consultancy/water-splash.png" alt="Water Background" className="w-full h-full object-cover" style={{ WebkitMaskImage: 'linear-gradient(to left, black 20%, transparent 100%)' }} />
             </div>
           </div>
 
-          {/* Banner Content (Left) */}
-          <div className="relative z-40 text-center xl:text-left mb-8 xl:mb-0 w-full xl:w-[40%]">
-            <p className="text-slate-300 text-[11px] font-semibold mb-2 tracking-widest uppercase opacity-90">
-              Planning a Laundry Setup?
-            </p>
-            <h2 className="text-[32px] xl:text-[38px] font-black text-white tracking-tight leading-[1.05]">
-              Let Our Experts <br />
-              Help You <span className="text-[#00E1FF]">Build It</span> <span className="text-[#E31E24]">Right.</span>
-            </h2>
-          </div>
-
-          {/* Buttons (Center-Left) */}
-          <div className="relative z-50 flex flex-col sm:flex-row gap-5 w-full xl:w-[40%] justify-center xl:justify-start">
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-[#E31E24] hover:bg-red-600 text-white font-bold py-4 px-6 rounded-lg text-[11px] tracking-widest uppercase transition-all shadow-[0_10px_20px_rgba(227,30,36,0.3)] flex items-center justify-center gap-3 whitespace-nowrap border border-red-500"
-            >
-              Get Expert Advice
-              <svg className="w-4 h-4 rounded-full border border-white/40 p-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </motion.button>
+          {/* 3-COLUMN LAYOUT to prevent Cart overlapping Buttons */}
+          <div className="w-full flex flex-col xl:flex-row items-center justify-between relative z-40">
             
-            <motion.button 
-              whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.15)" }}
-              whileTap={{ scale: 0.95 }}
-              className="border border-white/30 bg-white/5 text-white font-bold py-4 px-6 rounded-lg text-[11px] tracking-widest uppercase transition-all flex items-center justify-center gap-3 whitespace-nowrap backdrop-blur-md hover:border-white/60 shadow-lg"
-            >
-              Request Consultation
-              <svg className="w-4 h-4 opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-              </svg>
-            </motion.button>
-          </div>
+            {/* COL 1: Text (40%) */}
+            <div className="w-full xl:w-[40%] text-center xl:text-left mb-6 xl:mb-0">
+              <p className="text-slate-300 text-[10px] font-semibold mb-2 tracking-widest uppercase opacity-90">
+                Planning a Laundry Setup?
+              </p>
+              <h2 className="text-[30px] xl:text-[36px] font-black text-white tracking-tight leading-[1.05]">
+                Let Our Experts <br />
+                Help You <span className="text-[#00E1FF]">Build It</span> <span className="text-[#E31E24]">Right.</span>
+              </h2>
+            </div>
 
-          {/* Laundry Cart Image (Right - Clean overhang) */}
-          <motion.div 
-            initial={{ opacity: 0, x: 40 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 1, delay: 0.3 }}
-            className="hidden xl:block absolute right-[2%] bottom-0 z-40 w-[24%] pointer-events-none transform translate-y-[20%]"
-          >
-            <img src="/images/consultancy/cta-cart.png" alt="Laundry Cart" className="w-full h-auto drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)] object-contain" />
-          </motion.div>
+            {/* COL 2: Buttons (35%) */}
+            <div className="w-full xl:w-[35%] flex flex-col sm:flex-row gap-4 justify-center xl:justify-start">
+              <motion.button 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-[#E31E24] hover:bg-red-600 text-white font-bold py-3.5 px-6 rounded-md text-[11px] tracking-widest uppercase transition-all flex items-center justify-center gap-3 whitespace-nowrap shadow-[0_10px_20px_rgba(227,30,36,0.3)]"
+              >
+                Get Expert Advice
+                <svg className="w-3.5 h-3.5 rounded-full border border-white/40 p-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </motion.button>
+              
+              {/* Fixed visibility: High contrast hollow border instead of muddy blur */}
+              <motion.button 
+                whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
+                whileTap={{ scale: 0.95 }}
+                className="border border-white/50 text-white font-bold py-3.5 px-6 rounded-md text-[11px] tracking-widest uppercase transition-all flex items-center justify-center gap-3 whitespace-nowrap"
+              >
+                Request Consultation
+                <svg className="w-4 h-4 opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+              </motion.button>
+            </div>
+
+            {/* COL 3: Cart (25%) */}
+            <div className="w-full xl:w-[25%] relative h-[160px] hidden xl:flex items-center justify-end">
+              <motion.img 
+                initial={{ opacity: 0, x: 30 }}
+                animate={isInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 1, delay: 0.3 }}
+                src="/images/consultancy/cta-cart.png" 
+                alt="Laundry Cart" 
+                className="absolute right-[-10%] top-[-30%] w-[130%] h-[160%] object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)] pointer-events-none" 
+              />
+            </div>
+            
+          </div>
           
         </motion.div>
       </div>
