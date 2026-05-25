@@ -848,26 +848,36 @@ function CombinedWhyChooseAndCta() {
               </motion.button>
             </div>
 
-          {/* COL 3: Cart */}
-            <div className="w-full xl:w-[25%] relative hidden xl:block">
-              {/* Grounding shadow to anchor the faded wheels */}
-              <div className="absolute right-[5%] bottom-[-25px] w-[200px] h-[30px] bg-[#030812] blur-[20px] rounded-full z-40 opacity-80" />
+            {/* COL 3: Cart (Enhanced with Premium Illuminated Stage) */}
+            <div className="w-full xl:w-[25%] relative h-[160px] hidden xl:flex items-center justify-end">
               
+              {/* THE STAGE: A brilliantly lit podium that serves as a design enhancement 
+                  AND perfectly camouflages the cart's baked-in white floor puddle by blending white-on-white. */}
+              <div className="absolute right-[0%] bottom-[-50px] w-[260px] h-[100px] z-30 pointer-events-none">
+                {/* Stage Ambient Glow */}
+                <div className="absolute inset-0 bg-blue-400/20 blur-[40px] rounded-full" />
+                
+                {/* The Illuminated Floor Surface (Pure white center to melt the puddle) */}
+                <div className="absolute bottom-[20px] left-[10%] right-[10%] h-[40px] bg-white rounded-[100%] shadow-[0_0_50px_rgba(255,255,255,1)] blur-[4px]" />
+                
+                {/* Stage Physical Edge (Metallic look) */}
+                <div className="absolute bottom-[18px] left-[10%] right-[10%] h-[40px] border-[2px] border-white/60 rounded-[100%] shadow-[0_15px_30px_rgba(0,0,0,0.8)]" />
+                
+                {/* Bright spotlight hitting the center of the stage */}
+                <div className="absolute bottom-[30px] left-[20%] right-[20%] h-[20px] bg-white blur-md rounded-full opacity-100" />
+              </div>
+
+              {/* The Cart sitting perfectly on the stage */}
               <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 1, delay: 0.3 }}
-                className="absolute right-[-15px] bottom-[-45px] w-[270px] pointer-events-none z-50"
+                className="absolute right-[-10px] bottom-[-25px] w-[240px] pointer-events-none z-40"
               >
                 <img 
                   src="/images/consultancy/cta-cart.png" 
                   alt="Laundry Cart" 
-                  className="w-full h-auto drop-shadow-[0_10px_20px_rgba(0,0,0,0.4)]"
-                  style={{
-                    /* Precision mask to completely erase the jagged white floor artifact baked into the PNG's bottom edge */
-                    maskImage: 'linear-gradient(to bottom, black 85%, transparent 98%)',
-                    WebkitMaskImage: 'linear-gradient(to bottom, black 85%, transparent 98%)'
-                  }}
+                  className="w-full h-auto drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]" 
                 />
               </motion.div>
             </div>
