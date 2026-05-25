@@ -659,23 +659,23 @@ function WhyChoosePromac() {
   const isInView = useInView(ref, { once: true, margin: '-50px' });
 
   const reasons = [
-    { text: '20+ Years of Industry Experience', color: 'text-red-500', icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    { text: '20+ Years of\nIndustry\nExperience', color: 'text-red-500', icon: (
+      <svg className="w-[42px] h-[42px] drop-shadow-sm" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
       </svg>
     )},
-    { text: 'Deep Understanding of Laundry Operations', color: 'text-purple-500', icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    { text: 'Deep\nUnderstanding of\nLaundry\nOperations', color: 'text-purple-500', icon: (
+      <svg className="w-[42px] h-[42px] drop-shadow-sm" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zm-7.518-.267A8.25 8.25 0 1120.25 10.5M8.288 14.212A5.25 5.25 0 1117.25 10.5" />
       </svg>
     )},
-    { text: 'Practical & Cost-effective Solutions', color: 'text-blue-500', icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    { text: 'Practical & Cost-\neffective\nSolutions', color: 'text-blue-500', icon: (
+      <svg className="w-[42px] h-[42px] drop-shadow-sm" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
       </svg>
     )},
-    { text: 'End-to-End Involvement & Support', color: 'text-green-500', icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    { text: 'End-to-End\nInvolvement &\nSupport', color: 'text-green-500', icon: (
+      <svg className="w-[42px] h-[42px] drop-shadow-sm" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
       </svg>
     )},
@@ -683,34 +683,29 @@ function WhyChoosePromac() {
 
   return (
     <section ref={ref} className="py-24 bg-[#fdfdff] relative overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-6 relative z-10 flex flex-col lg:flex-row items-center gap-10">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10 flex flex-col lg:flex-row items-center gap-4 lg:gap-10">
         
-        {/* Left: Machine & Splash */}
-        <div className="w-full lg:w-[25%] relative h-[400px] flex items-center justify-center pointer-events-none">
+        {/* Left: Dynamic Splashing Chaotic Composition */}
+        <div className="w-full lg:w-[35%] relative h-[500px] flex items-center justify-center pointer-events-none">
           <motion.div
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute z-10 w-[280px]"
+            animate={{ y: [0, -15, 0] }}
+            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute z-10 w-[140%] left-[-20%] drop-shadow-2xl"
           >
-            <img src="/images/consultancy/hero-machine-final-perfect.png" alt="Machine" className="w-full h-auto drop-shadow-2xl" />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 1 }}
-            className="absolute z-0 w-[450px] mix-blend-multiply opacity-80"
-          >
-            <img src="/images/consultancy/water-splash.png" alt="Splash" className="w-full h-auto" />
+            <img src="/images/consultancy/promac-dynamic-splash.png" alt="Dynamic Laundry Composition" className="w-full h-auto object-contain" />
           </motion.div>
         </div>
 
         {/* Center: Title */}
-        <div className="w-full lg:w-[20%] z-10 text-center lg:text-left">
-          <span className="text-[#E31E24] font-extrabold text-[11px] tracking-[0.15em] uppercase mb-3 block">
+        <div className="w-full lg:w-[20%] z-10 text-center lg:text-left pr-4">
+          <span className="text-[#E31E24] font-extrabold text-[11px] tracking-[0.15em] uppercase mb-4 block">
             WHY CHOOSE PROMAC
           </span>
-          <h2 className="text-3xl lg:text-[34px] font-black text-[#001F3F] tracking-tight leading-[1.15]">
-            Your Partner in Building Better Laundry Operations
+          <h2 className="text-3xl lg:text-[40px] font-black text-[#001F3F] tracking-tighter leading-[1.05]">
+            Your Partner in <br/>
+            Building Better <br/>
+            Laundry <br/>
+            Operations
           </h2>
         </div>
 
@@ -719,19 +714,25 @@ function WhyChoosePromac() {
           initial={{ opacity: 0, x: 50 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="w-full lg:w-[55%] bg-white rounded-[32px] shadow-[0_15px_50px_rgba(0,31,63,0.06)] p-8 lg:p-10 border border-slate-50 flex z-10"
+          className="w-full lg:w-[50%] bg-white rounded-[40px] shadow-[0_20px_60px_rgba(0,31,63,0.06)] p-8 lg:p-12 border border-slate-50 flex z-10"
         >
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 w-full lg:divide-x divide-slate-100">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 w-full">
             {reasons.map((r, idx) => (
               <motion.div 
                 key={idx} 
-                whileHover={{ y: -5 }}
-                className="flex flex-col items-center text-center px-4 group cursor-pointer"
+                whileHover={{ y: -8, scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="flex flex-col items-center text-center group cursor-pointer relative"
               >
-                <div className={`mb-4 transition-transform duration-300 group-hover:scale-110 ${r.color}`}>
+                {/* Separator Lines (Hidden on last item) */}
+                {idx < reasons.length - 1 && (
+                  <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 h-1/2 w-[1px] bg-slate-100" />
+                )}
+                
+                <div className={`mb-6 transition-colors duration-300 ${r.color}`}>
                   {r.icon}
                 </div>
-                <p className="text-[12px] font-semibold text-slate-600 leading-snug group-hover:text-[#001F3F] transition-colors">
+                <p className="text-[11px] font-bold text-slate-600 leading-relaxed group-hover:text-[#001F3F] transition-colors whitespace-pre-line px-1">
                   {r.text}
                 </p>
               </motion.div>
