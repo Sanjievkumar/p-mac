@@ -98,25 +98,6 @@ function PulseIcon({ children }) {
 }
 
 /* ─────────────────────────────────────────────
-   Scanline overlay
-───────────────────────────────────────────── */
-function Scanline() {
-  return (
-    <motion.div
-      className="absolute inset-x-0 pointer-events-none z-20"
-      style={{ 
-        height: '3px', 
-        background: 'linear-gradient(90deg, transparent, #E31E24, transparent)',
-        boxShadow: '0 0 12px rgba(227,30,36,0.6)'
-      }}
-      animate={{ top: ['0%', '100%'] }}
-      transition={{ duration: 3.5, repeat: Infinity, ease: 'linear' }}
-      aria-hidden="true"
-    />
-  );
-}
-
-/* ─────────────────────────────────────────────
    Main Page
 ───────────────────────────────────────────── */
 export default function About() {
@@ -174,9 +155,6 @@ export default function About() {
             className="text-5xl md:text-8xl font-black text-[#0a0a0a] tracking-tighter mb-8 leading-[0.95] relative overflow-hidden"
             aria-label="BEYOND EQUIPMENT. PURE PERFORMANCE."
           >
-            {/* Scanline over the text block */}
-            <Scanline />
-
             <div className="block">
               <SplitText text="BEYOND " className="inline" baseDelay={0.1} />
               <SplitText
