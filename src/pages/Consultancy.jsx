@@ -848,10 +848,11 @@ function CombinedWhyChooseAndCta() {
               </motion.button>
             </div>
 
-            {/* COL 3: Cart */}
+          {/* COL 3: Cart */}
             <div className="w-full xl:w-[25%] relative hidden xl:block">
-              {/* No floating animation because the cart image has a baked-in white floor puddle. 
-                  We anchor it directly over the page's white background to hide the puddle seamlessly. */}
+              {/* Grounding shadow to anchor the faded wheels */}
+              <div className="absolute right-[5%] bottom-[-25px] w-[200px] h-[30px] bg-[#030812] blur-[20px] rounded-full z-40 opacity-80" />
+              
               <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -861,7 +862,12 @@ function CombinedWhyChooseAndCta() {
                 <img 
                   src="/images/consultancy/cta-cart.png" 
                   alt="Laundry Cart" 
-                  className="w-full h-auto drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]" 
+                  className="w-full h-auto drop-shadow-[0_10px_20px_rgba(0,0,0,0.4)]"
+                  style={{
+                    /* Precision mask to completely erase the jagged white floor artifact baked into the PNG's bottom edge */
+                    maskImage: 'linear-gradient(to bottom, black 85%, transparent 98%)',
+                    WebkitMaskImage: 'linear-gradient(to bottom, black 85%, transparent 98%)'
+                  }}
                 />
               </motion.div>
             </div>
