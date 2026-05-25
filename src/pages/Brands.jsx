@@ -17,7 +17,7 @@ const BRANDS = [
   {
     id: 'kannegiesser',
     name: 'KANNEGIESSER',
-    textWidth: '220px', // Width to precisely frame the text and hide the left-side icon
+    crop: { containerW: '150px', containerH: '40px', imgH: '40px' }, // Clips the left icon
     origin: 'Germany',
     tagline: 'End-to-End Laundry Automation',
     logo: kannegiesserLogo,
@@ -27,7 +27,7 @@ const BRANDS = [
   {
     id: 'sea-lion',
     name: 'SEA-LION',
-    textWidth: '160px',
+    crop: { containerW: '140px', containerH: '40px', imgH: '40px' }, // Clips the left emblem
     origin: 'China',
     tagline: 'Industrial Laundry Machines',
     logo: sealionLogo,
@@ -37,7 +37,7 @@ const BRANDS = [
   {
     id: 'maestrelli',
     name: 'MAESTRELLI',
-    textWidth: '200px',
+    crop: { containerW: '140px', containerH: '40px', imgH: '40px' }, // Clips the left crest
     origin: 'Italy',
     tagline: 'Dry Cleaning Systems',
     logo: maestrelliLogo,
@@ -47,7 +47,7 @@ const BRANDS = [
   {
     id: 'maxipress',
     name: 'MAXIPRESS',
-    textWidth: '170px',
+    crop: { containerW: '160px', containerH: '35px', imgH: '65px' }, // Zooms in drastically to clip both the left icon and the top tagline text
     origin: 'Spain',
     tagline: 'Garment Finishing Equipment',
     logo: maxipressLogo,
@@ -171,16 +171,18 @@ function BrandRow({ brand, reverse }) {
           </div>
 
           {/* Logo Physically Cropped to Text Only */}
-          {/* We use a fixed-width hidden-overflow container and anchor the image to the right. 
-              This perfectly chops off the left side (the symbol) without breaking the layout. */}
+          {/* Logo Physically Cropped to Text Only via Flexbox Overflow */}
+          {/* By rendering the image larger than its container and anchoring it to the bottom-right, 
+              we cleanly slice off the top and left elements (icons, taglines) so only the brand text remains. */}
           <div 
-            className="mb-6 h-10 md:h-12 relative overflow-hidden" 
-            style={{ width: brand.textWidth }}
+            className="mb-6 overflow-hidden flex justify-end items-end relative mix-blend-multiply" 
+            style={{ width: brand.crop.containerW, height: brand.crop.containerH }}
           >
             <img 
               src={brand.logo} 
               alt={brand.name} 
-              className="absolute top-0 right-0 h-full w-auto max-w-none mix-blend-multiply" 
+              className="max-w-none flex-shrink-0" 
+              style={{ height: brand.crop.imgH, width: 'auto' }}
             />
           </div>
 
