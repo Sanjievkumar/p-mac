@@ -682,25 +682,26 @@ function WhyChoosePromac() {
   ];
 
   return (
-    <section ref={ref} className="py-20 bg-[#fdfdff] relative overflow-hidden">
+    <section ref={ref} className="pt-20 pb-24 bg-[#fdfdff] relative z-20">
+      {/* Decorative Bubble floating up from CTA */}
+      <motion.div
+        animate={{ y: [0, -20, 0] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute bottom-[-30px] left-[40%] w-[100px] mix-blend-multiply opacity-60 pointer-events-none z-0"
+      >
+        <img src="/images/consultancy/soap-bubbles.png" alt="floating bubble" className="w-full h-auto" />
+      </motion.div>
+
       <div className="max-w-[1500px] mx-auto px-6 relative z-10 flex flex-col xl:flex-row items-center justify-between gap-8">
         
-        {/* Left: Machine & Splash */}
+        {/* Left: Dynamic Splashing Chaotic Composition (Purple Ribbon Machine) */}
         <div className="w-full xl:w-[25%] relative h-[400px] flex items-center justify-center pointer-events-none">
           <motion.div
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute z-10 w-[280px]"
+            animate={{ y: [0, -15, 0] }}
+            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute z-10 w-[170%] left-[-20%] drop-shadow-2xl"
           >
-            <img src="/images/consultancy/hero-machine-final-perfect.png" alt="Machine" className="w-full h-auto drop-shadow-2xl" />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 1 }}
-            className="absolute z-0 w-[450px] mix-blend-multiply opacity-80"
-          >
-            <img src="/images/consultancy/water-splash.png" alt="Splash" className="w-full h-auto" />
+            <img src="/images/consultancy/promac-dynamic-splash.png" alt="Dynamic Laundry Composition" className="w-full h-auto object-contain" />
           </motion.div>
         </div>
 
@@ -753,39 +754,49 @@ function CtaBanner() {
   const isInView = useInView(ref, { once: true, margin: '-50px' });
 
   return (
-    <section ref={ref} className="pb-16 bg-[#fdfdff] relative px-6">
+    <section ref={ref} className="pb-20 bg-[#fdfdff] relative px-6 z-10 -mt-10">
+      {/* Decorative Splash connecting down from WhyChoosePromac */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={isInView ? { opacity: 1 } : {}}
+        transition={{ duration: 1.5 }}
+        className="absolute top-[-50px] right-[2%] w-[250px] pointer-events-none z-20 opacity-80 mix-blend-multiply"
+      >
+        <img src="/images/consultancy/water-splash.png" alt="water splash" className="w-full h-auto object-contain" />
+      </motion.div>
+
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8 }}
-        className="max-w-[1300px] mx-auto bg-gradient-to-r from-[#061428] to-[#112a4d] rounded-[24px] relative overflow-hidden shadow-2xl flex flex-col lg:flex-row items-center justify-between p-10 lg:p-14"
+        className="max-w-[1400px] mx-auto bg-[#0a182d] rounded-[24px] relative overflow-hidden shadow-[0_20px_50px_rgba(10,24,45,0.4)] flex flex-col lg:flex-row items-center p-10 lg:p-14 min-h-[300px]"
       >
-        {/* Soap Bubbles Effect */}
+        {/* Soap Bubbles Effect - heavily grouped on the left behind text */}
         <motion.div 
-          animate={{ y: [0, -15, 0] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute left-0 top-0 bottom-0 w-[400px] pointer-events-none mix-blend-screen opacity-70"
+          animate={{ y: [0, -10, 0] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute left-[-5%] top-[-30%] bottom-[-30%] w-[50%] pointer-events-none mix-blend-screen opacity-60"
         >
-          <img src="/images/consultancy/soap-bubbles.png" alt="Bubbles" className="w-full h-full object-cover opacity-80" />
+          <img src="/images/consultancy/soap-bubbles.png" alt="Bubbles" className="w-full h-full object-cover" />
         </motion.div>
 
-        {/* Content */}
-        <div className="z-10 text-center lg:text-left mb-8 lg:mb-0 w-full lg:w-[45%]">
-          <p className="text-slate-300 text-sm font-medium mb-2 tracking-wide">
+        {/* Content (Left) */}
+        <div className="z-10 text-center lg:text-left mb-8 lg:mb-0 w-full lg:w-[45%] lg:pl-10">
+          <p className="text-slate-300 text-[12px] font-medium mb-3 tracking-wide">
             Planning a Laundry Setup?
           </p>
-          <h2 className="text-4xl lg:text-[44px] font-black text-white tracking-tight leading-tight">
+          <h2 className="text-4xl lg:text-[46px] font-black text-white tracking-tighter leading-[1.05]">
             Let Our Experts <br />
-            Help You <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00E1FF] to-[#E31E24]">Build It Right.</span>
+            Help You <span className="text-[#00E1FF]">Build It</span> <span className="text-[#E31E24]">Right.</span>
           </h2>
         </div>
 
-        {/* Buttons */}
-        <div className="z-10 flex flex-col sm:flex-row gap-4 w-full lg:w-auto items-center justify-center">
+        {/* Buttons (Center) */}
+        <div className="z-10 flex flex-col sm:flex-row gap-4 w-full lg:w-[35%] items-center justify-center">
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-[#E31E24] hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg text-sm tracking-widest uppercase transition-colors shadow-[0_10px_30px_rgba(227,30,36,0.3)] flex items-center gap-2"
+            className="bg-[#E31E24] hover:bg-red-700 text-white font-bold py-4 px-6 rounded-[6px] text-[11px] tracking-widest uppercase transition-colors flex items-center gap-2 whitespace-nowrap"
           >
             Get Expert Advice
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -796,21 +807,18 @@ function CtaBanner() {
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="border border-slate-500 hover:border-white text-white font-bold py-4 px-8 rounded-lg text-sm tracking-widest uppercase transition-colors flex items-center gap-2 bg-white/5 backdrop-blur-sm"
+            className="border border-slate-500 hover:border-white text-white font-bold py-4 px-6 rounded-[6px] text-[11px] tracking-widest uppercase transition-colors flex items-center gap-2 whitespace-nowrap"
           >
             Request Consultation
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
           </motion.button>
         </div>
 
-        {/* Laundry Cart Image */}
+        {/* Laundry Cart Image (Right - bleeding off edges) */}
         <motion.div 
           initial={{ opacity: 0, x: 50 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 1, delay: 0.3 }}
-          className="hidden lg:block absolute right-[-2%] bottom-[-15%] w-[350px] z-10 pointer-events-none"
+          className="hidden lg:block absolute right-[-5%] bottom-[-20%] w-[35%] z-10 pointer-events-none"
         >
           <img src="/images/consultancy/cta-cart.png" alt="Laundry Cart" className="w-full h-auto drop-shadow-2xl" />
         </motion.div>
@@ -827,25 +835,44 @@ function BrandsFooter() {
     { name: 'Kannegiesser', src: kannegiesserLogo },
     { name: 'Maestrelli', src: maestrelliLogo },
     { name: 'Maxipress', src: maxipressLogo },
-    { name: 'Sealion', src: sealionLogo }
+    { name: 'Sealion', src: sealionLogo },
+    { name: 'Kannegiesser2', src: kannegiesserLogo },
+    { name: 'Maestrelli2', src: maestrelliLogo },
+    { name: 'Maxipress2', src: maxipressLogo },
+    { name: 'Sealion2', src: sealionLogo },
+    { name: 'Kannegiesser3', src: kannegiesserLogo },
+    { name: 'Maestrelli3', src: maestrelliLogo },
+    { name: 'Maxipress3', src: maxipressLogo },
+    { name: 'Sealion3', src: sealionLogo }
   ];
 
   return (
-    <section className="py-12 bg-[#fdfdff] border-t border-slate-100 overflow-hidden">
-      <div className="max-w-[1300px] mx-auto px-6 text-center">
+    <section className="py-12 bg-[#fdfdff] border-t border-slate-100 overflow-hidden relative">
+      <div className="max-w-[1500px] mx-auto px-6 text-center">
         <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-10">
           Trusted by Leading Brands Across India
         </p>
-        <div className="flex flex-wrap justify-center items-center gap-16 md:gap-24 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-          {logos.map((logo, idx) => (
-            <motion.img 
-              key={idx} 
-              whileHover={{ scale: 1.1 }}
-              src={logo.src} 
-              alt={logo.name} 
-              className="h-10 md:h-12 object-contain cursor-pointer" 
-            />
-          ))}
+        
+        {/* Infinite Scroll Container */}
+        <div className="w-full overflow-hidden relative">
+          {/* Gradient Fades for smooth edges */}
+          <div className="absolute top-0 bottom-0 left-0 w-24 bg-gradient-to-r from-[#fdfdff] to-transparent z-10 pointer-events-none" />
+          <div className="absolute top-0 bottom-0 right-0 w-24 bg-gradient-to-l from-[#fdfdff] to-transparent z-10 pointer-events-none" />
+
+          <motion.div 
+            animate={{ x: [0, -1200] }} 
+            transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+            className="flex items-center gap-24 w-max opacity-60 grayscale hover:grayscale-0 transition-all duration-500"
+          >
+            {logos.map((logo, idx) => (
+              <img 
+                key={idx} 
+                src={logo.src} 
+                alt={logo.name} 
+                className="h-10 md:h-12 object-contain" 
+              />
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>
