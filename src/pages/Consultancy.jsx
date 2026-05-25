@@ -552,25 +552,29 @@ function DesignPerformance() {
   const isInView = useInView(ref, { once: true, margin: '-50px' });
 
   const metrics = [
-    { value: '30%', label: 'Average Reduction in Operational Costs', color: 'text-red-500', bg: 'bg-red-50', icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0v3.75C20.25 20.396 16.556 22.125 12 22.125s-8.25-1.729-8.25-3.75v-3.75" />
+    { value: '30%', label: 'Average Reduction in Operational Costs', color: 'text-[#E31E24]', bg: 'bg-[#E31E24]/10', icon: (
+      <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
+        <path d="M21 7C21 8.65685 16.9706 10 12 10C7.02944 10 3 8.65685 3 7M21 7C21 5.34315 16.9706 4 12 4C7.02944 4 3 5.34315 3 7M21 7V17C21 18.6569 16.9706 20 12 20C7.02944 20 3 18.6569 3 17V7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M21 12C21 13.6569 16.9706 15 12 15C7.02944 15 3 13.6569 3 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-red-300"/>
       </svg>
     )},
-    { value: '25%', label: 'Increase in Productivity & Efficiency', color: 'text-purple-500', bg: 'bg-purple-50', icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v2m0 8v2m-6-6h2m8 0h2M12 2a10 10 0 100 20 10 10 0 000-20z" />
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 12l3.5-3.5" />
+    { value: '25%', label: 'Increase in Productivity & Efficiency', color: 'text-purple-600', bg: 'bg-purple-100/50', icon: (
+      <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
+        <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="currentColor" strokeWidth="1.5" className="text-purple-300" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M12 12L15.5 8.5M12 12C11.4477 12 11 11.5523 11 11C11 10.4477 11.4477 10 12 10C12.5523 10 13 10.4477 13 11C13 11.5523 12.5523 12 12 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M7 12H5M19 12H17M12 7V5M7.75736 7.75736L6.34315 6.34315M16.2426 7.75736L17.6569 6.34315" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     )},
-    { value: '40%', label: 'Energy Savings with Smart Planning', color: 'text-blue-500', bg: 'bg-blue-50', icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+    { value: '40%', label: 'Energy Savings with Smart Planning', color: 'text-blue-500', bg: 'bg-blue-100/50', icon: (
+      <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
+        <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5" className="text-blue-200" strokeLinecap="round"/>
       </svg>
     )},
-    { value: '100%', label: 'Compliance with Safety & Standards', color: 'text-green-500', bg: 'bg-green-50', icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+    { value: '100%', label: 'Compliance with Safety & Standards', color: 'text-green-600', bg: 'bg-green-100/50', icon: (
+      <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
+        <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-green-300"/>
+        <path d="M9 12L11 14L15 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     )},
   ];
