@@ -12,8 +12,8 @@ import kannegiesserLogo from '../assets/brands/kannegiesser.png';
 const customFontStyles = `
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Oswald:wght@700&family=Roboto:wght@900&display=swap');
   
-  .font-kannegiesser { font-family: 'Roboto', sans-serif; }
-  .font-sealion { font-family: 'Oswald', sans-serif; }
+  .font-kannegiesser { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+  .font-sealion { font-family: 'Arial Black', Impact, sans-serif; }
   .font-maestrelli { font-family: 'Montserrat', sans-serif; }
   .font-maxipress { font-family: 'Montserrat', sans-serif; }
 `;
@@ -27,7 +27,7 @@ const BRANDS = [
     id: 'kannegiesser',
     name: 'KANNEGIESSER',
     customTitle: (
-      <h2 className="text-4xl md:text-5xl font-kannegiesser font-black text-[#1A1A1A] tracking-tighter mb-6 leading-none">
+      <h2 className="text-4xl md:text-[44px] font-kannegiesser font-black text-[#0250A0] tracking-tighter mb-6 leading-none">
         KANNEGIESSER
       </h2>
     ),
@@ -41,7 +41,7 @@ const BRANDS = [
     id: 'sea-lion',
     name: 'SEA-LION',
     customTitle: (
-      <h2 className="text-4xl md:text-6xl font-sealion font-bold text-[#00509E] tracking-normal mb-6 leading-none">
+      <h2 className="text-4xl md:text-5xl font-sealion font-black text-[#352B29] tracking-normal mb-6 leading-none" style={{ transform: 'scaleY(1.1)' }}>
         SEA-LION
       </h2>
     ),
@@ -55,7 +55,7 @@ const BRANDS = [
     id: 'maestrelli',
     name: 'MAESTRELLI',
     customTitle: (
-      <h2 className="text-4xl md:text-[42px] font-maestrelli font-extrabold text-[#003B73] tracking-[0.18em] mb-6 leading-none">
+      <h2 className="text-4xl md:text-[40px] font-maestrelli font-extrabold text-[#060672] tracking-[0.2em] mb-6 leading-none">
         MAESTRELLI
       </h2>
     ),
