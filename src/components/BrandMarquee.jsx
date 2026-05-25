@@ -56,7 +56,7 @@ function MagneticBrand({ brand }) {
         <img 
           src={brand.src} 
           alt={brand.name} 
-          className="h-10 md:h-12 lg:h-14 w-auto object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.08)]" 
+          className="h-10 md:h-12 lg:h-14 w-auto object-contain mix-blend-multiply" 
         />
       </motion.div>
     </motion.div>
