@@ -98,7 +98,7 @@ function HeroSection() {
               <img 
                 src="/images/consultancy/hero-machine-final-perfect.png" 
                 alt="Integrated Industrial Laundry setup visualization" 
-                className="w-full h-auto object-contain origin-bottom scale-[1.05]"
+                className="w-full h-auto object-contain origin-bottom scale-[0.95]"
               />
             </motion.div>
 
@@ -118,17 +118,6 @@ function HeroSection() {
             </div>
           </div>
 
-          {/* Micro Visual Accents: Floating Glassmorphic Bubbles */}
-          <motion.div 
-            animate={{ y: [-15, 15, -15], x: [-5, 5, -5] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-10 right-20 w-12 h-12 rounded-full bg-gradient-to-br from-white/60 to-white/10 border border-white/50 backdrop-blur-[4px] shadow-[inset_0_0_10px_rgba(255,255,255,0.5),0_10px_20px_rgba(0,0,0,0.05)] z-20" 
-          />
-          <motion.div 
-            animate={{ y: [15, -15, 15], x: [5, -5, 5] }}
-            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute bottom-32 left-10 w-16 h-16 rounded-full bg-gradient-to-br from-white/60 to-white/10 border border-white/50 backdrop-blur-[4px] shadow-[inset_0_0_15px_rgba(255,255,255,0.5),0_15px_30px_rgba(0,0,0,0.05)] z-20" 
-          />
         </div>
       </div>
 
@@ -429,7 +418,7 @@ function ProcessTimeline() {
       <motion.div 
         animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute left-[-15%] top-[20%] w-[600px] h-auto z-0 opacity-90 mix-blend-multiply hidden lg:block pointer-events-none"
+        className="absolute left-[-15%] top-[20%] w-[600px] h-auto z-0 opacity-20 mix-blend-multiply hidden lg:block pointer-events-none"
         style={{
           WebkitMaskImage: 'radial-gradient(circle at center, black 40%, transparent 70%)',
           maskImage: 'radial-gradient(circle at center, black 40%, transparent 70%)',
