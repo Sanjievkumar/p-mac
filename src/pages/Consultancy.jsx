@@ -683,27 +683,29 @@ function WhyChoosePromac() {
 
   return (
     <section ref={ref} className="py-24 bg-[#fdfdff] relative overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-6 relative z-10 flex flex-col lg:flex-row items-center gap-4 lg:gap-10">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10 flex flex-col lg:flex-row items-center justify-between">
         
         {/* Left: Dynamic Splashing Chaotic Composition */}
-        <div className="w-full lg:w-[35%] relative h-[500px] flex items-center justify-center pointer-events-none">
+        <div className="w-full lg:w-[30%] relative h-[500px] flex items-center justify-center pointer-events-none">
           <motion.div
             animate={{ y: [0, -15, 0] }}
             transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute z-10 w-[140%] left-[-20%] drop-shadow-2xl"
+            className="absolute z-10 w-[140%] left-[-25%] drop-shadow-2xl"
           >
             <img src="/images/consultancy/promac-dynamic-splash.png" alt="Dynamic Laundry Composition" className="w-full h-auto object-contain" />
           </motion.div>
         </div>
 
         {/* Center: Title */}
-        <div className="w-full lg:w-[20%] z-10 text-center lg:text-left pr-4">
-          <span className="text-[#E31E24] font-extrabold text-[11px] tracking-[0.15em] uppercase mb-4 block">
+        <div className="w-full lg:w-[15%] z-10 text-center lg:text-left mt-8 lg:mt-0">
+          <span className="text-[#E31E24] font-extrabold text-[10px] tracking-[0.15em] uppercase mb-2 block">
             WHY CHOOSE PROMAC
           </span>
-          <h2 className="text-3xl lg:text-[40px] font-black text-[#001F3F] tracking-tighter leading-[1.05]">
-            Your Partner in <br/>
-            Building Better <br/>
+          <h2 className="text-4xl lg:text-[42px] font-black text-[#001F3F] tracking-tighter leading-[1.05]">
+            Your Partner <br/>
+            in <br/>
+            Building <br/>
+            Better <br/>
             Laundry <br/>
             Operations
           </h2>
@@ -714,7 +716,7 @@ function WhyChoosePromac() {
           initial={{ opacity: 0, x: 50 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="w-full lg:w-[50%] bg-white rounded-[40px] shadow-[0_20px_60px_rgba(0,31,63,0.06)] p-8 lg:p-12 border border-slate-50 flex z-10"
+          className="w-full lg:w-[50%] bg-white rounded-[40px] shadow-[0_20px_60px_rgba(0,31,63,0.06)] p-8 lg:p-14 border border-slate-50 flex z-10 mt-10 lg:mt-0"
         >
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 w-full">
             {reasons.map((r, idx) => (
@@ -726,13 +728,13 @@ function WhyChoosePromac() {
               >
                 {/* Separator Lines (Hidden on last item) */}
                 {idx < reasons.length - 1 && (
-                  <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 h-1/2 w-[1px] bg-slate-100" />
+                  <div className="hidden lg:block absolute right-[-10px] top-1/2 -translate-y-1/2 h-1/2 w-[1px] bg-slate-100" />
                 )}
                 
                 <div className={`mb-6 transition-colors duration-300 ${r.color}`}>
                   {r.icon}
                 </div>
-                <p className="text-[11px] font-bold text-slate-600 leading-relaxed group-hover:text-[#001F3F] transition-colors whitespace-pre-line px-1">
+                <p className="text-[11px] font-bold text-slate-600 leading-[1.6] group-hover:text-[#001F3F] transition-colors whitespace-pre-line px-1">
                   {r.text}
                 </p>
               </motion.div>
