@@ -659,27 +659,61 @@ function CombinedWhyChooseAndCta() {
   const isInView = useInView(ref, { once: true, margin: '-50px' });
 
   const reasons = [
-    { text: '20+ Years of\nIndustry Experience', color: 'text-[#E31E24]', icon: (
-      <svg className="w-10 h-10 mb-4" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-      </svg>
-    )},
-    { text: 'Deep Understanding of\nLaundry Operations', color: 'text-[#8A2BE2]', icon: (
-      <svg className="w-10 h-10 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <circle cx="12" cy="12" r="9" />
-        <circle cx="12" cy="12" r="4" fill="currentColor" />
-      </svg>
-    )},
-    { text: 'Practical & Cost-effective\nSolutions', color: 'text-[#007BFF]', icon: (
-      <svg className="w-10 h-10 mb-4" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
-      </svg>
-    )},
-    { text: 'End-to-End Involvement\n& Support', color: 'text-[#28A745]', icon: (
-      <svg className="w-10 h-10 mb-4" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M18 4V2H2v16h2v-4h14V4zM4 12V4h12v8H4zm14 6v-2H6v2h12z" />
-      </svg>
-    )},
+    { 
+      text: '20+ Years of\nIndustry Experience', 
+      color: 'text-[#E31E24]', 
+      bgGlow: 'group-hover:bg-[#E31E24]/10',
+      icon: (
+        <div className="relative flex items-center justify-center w-16 h-16 mx-auto mb-4">
+          <div className="absolute inset-0 bg-[#E31E24]/10 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <svg className="w-10 h-10 relative z-10 drop-shadow-md" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm0 2c-3.33 0-10 1.67-10 5v2h20v-2c0-3.33-6.67-5-10-5z" />
+          </svg>
+        </div>
+      )
+    },
+    { 
+      text: 'Deep Understanding of\nLaundry Operations', 
+      color: 'text-[#8A2BE2]', 
+      bgGlow: 'group-hover:bg-[#8A2BE2]/10',
+      icon: (
+        <div className="relative flex items-center justify-center w-16 h-16 mx-auto mb-4">
+          <div className="absolute inset-0 bg-[#8A2BE2]/10 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <svg className="w-11 h-11 relative z-10 drop-shadow-md" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+            <circle cx="12" cy="12" r="8" />
+            <circle cx="12" cy="12" r="3" fill="currentColor" />
+          </svg>
+        </div>
+      )
+    },
+    { 
+      text: 'Practical & Cost-effective\nSolutions', 
+      color: 'text-[#007BFF]', 
+      bgGlow: 'group-hover:bg-[#007BFF]/10',
+      icon: (
+        <div className="relative flex items-center justify-center w-16 h-16 mx-auto mb-4">
+          <div className="absolute inset-0 bg-[#007BFF]/10 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <svg className="w-10 h-10 relative z-10 drop-shadow-md" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+          </svg>
+        </div>
+      )
+    },
+    { 
+      text: 'End-to-End Involvement\n& Support', 
+      color: 'text-[#28A745]', 
+      bgGlow: 'group-hover:bg-[#28A745]/10',
+      icon: (
+        <div className="relative flex items-center justify-center w-16 h-16 mx-auto mb-4">
+          <div className="absolute inset-0 bg-[#28A745]/10 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <svg className="w-10 h-10 relative z-10 drop-shadow-md" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 9h-2V7h-2v5H6v2h2v5h2v-5h2v-2z" />
+            <path d="M4 4h16v16H4z" fill="none" />
+            <path d="M18 10h-2V7h-5V5h7v5z" />
+          </svg>
+        </div>
+      )
+    },
   ];
 
   return (
@@ -689,10 +723,7 @@ function CombinedWhyChooseAndCta() {
       
       <div className="max-w-[1450px] mx-auto px-4 relative z-10 flex flex-col xl:flex-row items-center justify-between gap-8 mb-16">
         
-        {/* 1. Dynamic Machine (Left - 30%) 
-            Removed aggressive scaling to prevent the cropped image edges from hitting the container limits. 
-            Added a radial mask to seamlessly fade any hard edges into the background.
-        */}
+        {/* 1. Dynamic Machine */}
         <div className="w-full xl:w-[30%] relative flex items-center justify-center min-h-[350px]">
           <motion.div
             animate={{ y: [0, -8, 0] }}
@@ -708,7 +739,7 @@ function CombinedWhyChooseAndCta() {
           </motion.div>
         </div>
 
-        {/* 2. Text (Center - 25%) */}
+        {/* 2. Text */}
         <div className="w-full xl:w-[25%] z-10 text-center xl:text-left px-2">
           <span className="text-[#E31E24] font-bold text-[10px] tracking-widest uppercase mb-4 block">
             WHY CHOOSE PROMAC
@@ -721,32 +752,29 @@ function CombinedWhyChooseAndCta() {
           </h2>
         </div>
 
-        {/* 3. Premium White Card (Right - 45%) */}
+        {/* 3. Premium White Card */}
         <div className="w-full xl:w-[45%] relative z-10">
-          {/* Unique Premium Touch: A subtle, ambient rotating glow behind the card */}
           <motion.div 
             animate={{ rotate: 360 }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="absolute top-[-20px] right-[-20px] w-64 h-64 bg-gradient-to-tr from-blue-300/30 to-cyan-300/30 rounded-full blur-[60px] -z-10" 
+            className="absolute top-[-20px] right-[-20px] w-64 h-64 bg-gradient-to-tr from-blue-300/20 to-cyan-300/20 rounded-full blur-[60px] -z-10" 
           />
           
           <motion.div 
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="bg-white rounded-[32px] shadow-[0_20px_60px_rgba(4,30,66,0.04)] border border-slate-100 py-12 px-6 relative overflow-hidden"
+            className="bg-white rounded-[32px] shadow-[0_20px_60px_rgba(4,30,66,0.04)] border border-slate-100 py-12 px-2 relative overflow-hidden"
           >
-            {/* Elegant Top-Left Ornament */}
             <div className="absolute top-0 left-0 w-24 h-24 border-t-[8px] border-l-[8px] border-blue-50 rounded-tl-[32px] rounded-br-[60px] opacity-70" />
             
             <div className="flex flex-row justify-between divide-x divide-slate-100 relative z-10">
               {reasons.map((r, idx) => (
                 <motion.div 
                   key={idx} 
-                  whileHover={{ y: -5 }}
-                  className="flex-1 flex flex-col items-center text-center px-2 group cursor-pointer"
+                  className={`flex-1 flex flex-col items-center text-center px-2 group cursor-pointer rounded-2xl transition-all duration-300 ${r.bgGlow} hover:shadow-sm py-4 -my-4`}
                 >
-                  <div className={`transition-transform duration-300 group-hover:scale-110 ${r.color}`}>
+                  <div className={`transition-transform duration-500 group-hover:-translate-y-2 group-hover:scale-110 ${r.color}`}>
                     {r.icon}
                   </div>
                   <p className="text-[11px] font-bold text-slate-600 leading-[1.4] whitespace-pre-line group-hover:text-[#041E42] transition-colors">
@@ -780,10 +808,9 @@ function CombinedWhyChooseAndCta() {
             </div>
           </div>
 
-          {/* 3-COLUMN LAYOUT to prevent Cart overlapping Buttons */}
           <div className="w-full flex flex-col xl:flex-row items-center justify-between relative z-40">
             
-            {/* COL 1: Text (40%) */}
+            {/* COL 1: Text */}
             <div className="w-full xl:w-[40%] text-center xl:text-left mb-6 xl:mb-0">
               <p className="text-slate-300 text-[10px] font-semibold mb-2 tracking-widest uppercase opacity-90">
                 Planning a Laundry Setup?
@@ -794,12 +821,12 @@ function CombinedWhyChooseAndCta() {
               </h2>
             </div>
 
-            {/* COL 2: Buttons (35%) */}
+            {/* COL 2: Buttons */}
             <div className="w-full xl:w-[35%] flex flex-col sm:flex-row gap-4 justify-center xl:justify-start">
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-[#E31E24] hover:bg-red-600 text-white font-bold py-3.5 px-6 rounded-md text-[11px] tracking-widest uppercase transition-all flex items-center justify-center gap-3 whitespace-nowrap shadow-[0_10px_20px_rgba(227,30,36,0.3)]"
+                className="bg-[#E31E24] hover:bg-red-500 text-white font-bold py-3.5 px-6 rounded-md text-[11px] tracking-widest uppercase transition-all flex items-center justify-center gap-3 whitespace-nowrap shadow-[0_0_25px_rgba(227,30,36,0.5)]"
               >
                 Get Expert Advice
                 <svg className="w-3.5 h-3.5 rounded-full border border-white/40 p-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -807,29 +834,47 @@ function CombinedWhyChooseAndCta() {
                 </svg>
               </motion.button>
               
-              {/* Fixed visibility: High contrast hollow border instead of muddy blur */}
+              {/* Upgraded sleek hover transition for hollow button */}
               <motion.button 
-                whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
                 whileTap={{ scale: 0.95 }}
-                className="border border-white/50 text-white font-bold py-3.5 px-6 rounded-md text-[11px] tracking-widest uppercase transition-all flex items-center justify-center gap-3 whitespace-nowrap"
+                className="group relative border border-white/40 text-white font-bold py-3.5 px-6 rounded-md text-[11px] tracking-widest uppercase overflow-hidden transition-all flex items-center justify-center gap-3 whitespace-nowrap hover:border-white"
               >
-                Request Consultation
-                <svg className="w-4 h-4 opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out z-0" />
+                <span className="relative z-10 group-hover:text-[#0A1428] transition-colors duration-300">
+                  Request Consultation
+                </span>
+                <svg className="w-4 h-4 opacity-80 relative z-10 group-hover:text-[#0A1428] transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
                 </svg>
               </motion.button>
             </div>
 
-            {/* COL 3: Cart (25%) */}
+            {/* COL 3: Cart (Enhanced with spotlight and floating animation) */}
             <div className="w-full xl:w-[25%] relative h-[160px] hidden xl:flex items-center justify-end">
-              <motion.img 
+              {/* Spotlight to ground the cart into the dark banner */}
+              <div className="absolute right-[10%] top-[20%] w-[100%] h-[100%] bg-blue-400/20 rounded-full blur-[40px] pointer-events-none" />
+              
+              <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 1, delay: 0.3 }}
-                src="/images/consultancy/cta-cart.png" 
-                alt="Laundry Cart" 
-                className="absolute right-[-10%] top-[-30%] w-[130%] h-[160%] object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)] pointer-events-none" 
-              />
+                className="absolute right-[-10%] top-[-30%] w-[130%] h-[160%] pointer-events-none"
+              >
+                {/* Continuous floating animation */}
+                <motion.div 
+                  animate={{ y: [0, -12, 0] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                  className="w-full h-full"
+                >
+                  <img 
+                    src="/images/consultancy/cta-cart.png" 
+                    alt="Laundry Cart" 
+                    className="w-full h-full object-contain drop-shadow-[0_30px_40px_rgba(0,0,0,0.6)]" 
+                  />
+                  {/* Subtle reflection/shadow underneath the floating cart */}
+                  <div className="absolute bottom-[-10%] left-[20%] right-[20%] h-4 bg-black/40 blur-xl rounded-full" />
+                </motion.div>
+              </motion.div>
             </div>
             
           </div>
