@@ -419,13 +419,13 @@ function ProcessTimeline() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section ref={ref} className="py-24 bg-gradient-to-b from-[#fdfdff] to-[#f4f7fb] relative overflow-hidden">
+    <section ref={ref} className="pt-24 pb-12 bg-gradient-to-b from-[#fdfdff] to-[#f4f7fb] relative z-10">
       
       {/* Floating Background Assets */}
       <motion.div 
         animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute left-[-15%] top-[-5%] w-[500px] h-auto z-0 opacity-90 mix-blend-multiply hidden lg:block"
+        className="absolute left-[-15%] top-[20%] w-[600px] h-auto z-0 opacity-90 mix-blend-multiply hidden lg:block pointer-events-none"
         style={{
           WebkitMaskImage: 'radial-gradient(circle at center, black 40%, transparent 70%)',
           maskImage: 'radial-gradient(circle at center, black 40%, transparent 70%)',
@@ -438,7 +438,7 @@ function ProcessTimeline() {
       <motion.div 
         animate={{ y: [0, 20, 0], rotate: [0, -3, 0] }}
         transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute right-[-8%] top-[5%] w-[400px] h-auto z-0 opacity-90 mix-blend-multiply hidden lg:block"
+        className="absolute right-[-8%] top-[15%] w-[500px] h-auto z-0 opacity-90 mix-blend-multiply hidden lg:block pointer-events-none"
         style={{
           WebkitMaskImage: 'radial-gradient(circle at center, black 50%, transparent 85%)',
           maskImage: 'radial-gradient(circle at center, black 50%, transparent 85%)',
@@ -553,29 +553,30 @@ function DesignPerformance() {
 
   const metrics = [
     { value: '30%', label: 'Average Reduction in Operational Costs', color: 'text-red-500', bg: 'bg-red-50', icon: (
-      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" />
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0v3.75C20.25 20.396 16.556 22.125 12 22.125s-8.25-1.729-8.25-3.75v-3.75" />
       </svg>
     )},
     { value: '25%', label: 'Increase in Productivity & Efficiency', color: 'text-purple-500', bg: 'bg-purple-50', icon: (
-      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v2m0 8v2m-6-6h2m8 0h2M12 2a10 10 0 100 20 10 10 0 000-20z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 12l3.5-3.5" />
       </svg>
     )},
     { value: '40%', label: 'Energy Savings with Smart Planning', color: 'text-blue-500', bg: 'bg-blue-50', icon: (
-      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
       </svg>
     )},
     { value: '100%', label: 'Compliance with Safety & Standards', color: 'text-green-500', bg: 'bg-green-50', icon: (
-      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
       </svg>
     )},
   ];
 
   return (
-    <section ref={ref} className="py-24 bg-[#fdfdff] relative">
+    <section ref={ref} className="pb-24 pt-4 bg-transparent relative z-20">
       <div className="max-w-[1300px] mx-auto px-6 relative z-10">
         
         {/* Main Card */}
@@ -600,12 +601,16 @@ function DesignPerformance() {
             {/* Metrics */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4">
               {metrics.map((m, idx) => (
-                <div key={idx} className="flex flex-col">
-                  <div className={`w-10 h-10 rounded-full ${m.bg} flex items-center justify-center ${m.color} mb-4`}>
+                <div key={idx} className="flex flex-col group cursor-pointer">
+                  <motion.div 
+                    whileHover={{ scale: 1.15, rotate: 5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                    className={`w-12 h-12 rounded-full ${m.bg} flex items-center justify-center ${m.color} mb-4 shadow-sm border border-slate-50 transition-colors group-hover:bg-white group-hover:shadow-md`}
+                  >
                     {m.icon}
-                  </div>
-                  <h4 className={`text-3xl font-black ${m.color} mb-2 tracking-tight`}>{m.value}</h4>
-                  <p className="text-[11px] text-slate-500 leading-snug font-medium pr-2 uppercase tracking-wide">
+                  </motion.div>
+                  <h4 className={`text-3xl font-black ${m.color} mb-2 tracking-tight transition-transform origin-left group-hover:scale-105`}>{m.value}</h4>
+                  <p className="text-[11px] text-slate-500 leading-snug font-medium pr-2 uppercase tracking-wide group-hover:text-slate-700 transition-colors">
                     {m.label}
                   </p>
                 </div>
