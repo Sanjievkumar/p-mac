@@ -660,50 +660,48 @@ function CombinedWhyChooseAndCta() {
 
   const reasons = [
     { text: '20+ Years of\nIndustry Experience', color: 'text-[#E31E24]', icon: (
-      <svg className="w-10 h-10 drop-shadow-sm" fill="currentColor" viewBox="0 0 24 24">
+      <svg className="w-10 h-10 drop-shadow-md" fill="currentColor" viewBox="0 0 24 24">
         <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
       </svg>
     )},
     { text: 'Deep Understanding of\nLaundry Operations', color: 'text-[#8A2BE2]', icon: (
-      <svg className="w-10 h-10 drop-shadow-sm" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+      <svg className="w-10 h-10 drop-shadow-md" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
         <circle cx="12" cy="12" r="9" />
         <circle cx="12" cy="12" r="4" fill="currentColor" />
       </svg>
     )},
     { text: 'Practical & Cost-effective\nSolutions', color: 'text-[#007BFF]', icon: (
-      <svg className="w-10 h-10 drop-shadow-sm" fill="currentColor" viewBox="0 0 24 24">
+      <svg className="w-10 h-10 drop-shadow-md" fill="currentColor" viewBox="0 0 24 24">
         <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
       </svg>
     )},
     { text: 'End-to-End Involvement\n& Support', color: 'text-[#28A745]', icon: (
-      <svg className="w-10 h-10 drop-shadow-sm" fill="currentColor" viewBox="0 0 24 24">
+      <svg className="w-10 h-10 drop-shadow-md" fill="currentColor" viewBox="0 0 24 24">
         <path d="M18 4V2H2v16h2v-4h14V4zM4 12V4h12v8H4zm14 6v-2H6v2h12z" />
       </svg>
     )},
   ];
 
   return (
-    <section ref={ref} className="pt-24 pb-20 bg-gradient-to-b from-[#f8fbff] to-[#eaf2fc] relative z-20 font-display">
+    <section ref={ref} className="pt-24 pb-24 bg-gradient-to-b from-[#f8fbff] to-[#eaf2fc] relative z-20 font-display">
       
       {/* ──────────────── ROW 1: WHY CHOOSE PROMAC ──────────────── */}
       
-      <div className="max-w-[1450px] mx-auto px-4 relative z-10 flex flex-col xl:flex-row items-center justify-between gap-6 mb-12">
+      <div className="max-w-[1450px] mx-auto px-4 relative z-10 flex flex-col xl:flex-row items-center justify-between gap-6 mb-16">
         
-        {/* 1. Machine (Left - 25%) 
-            Removed the ugly duplicate water-splash layer. hero-machine-final-perfect contains the perfect splash. 
-        */}
-        <div className="w-full xl:w-[25%] relative flex items-center justify-center pointer-events-none">
+        {/* 1. Dynamic Splash Machine (Left - 30%) */}
+        <div className="w-full xl:w-[30%] relative flex items-center justify-center pointer-events-none min-h-[350px]">
           <motion.div
-            animate={{ y: [0, -5, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="relative z-10 w-[95%]"
+            animate={{ y: [0, -8, 0] }}
+            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute z-10 w-[140%] xl:w-[150%] left-[-20%] xl:left-[-15%]"
           >
-            <img src="/images/consultancy/hero-machine-final-perfect.png" alt="Washing Machine" className="w-full h-auto drop-shadow-2xl scale-110 xl:scale-125 xl:origin-right" />
+            <img src="/images/consultancy/promac-dynamic-splash.png" alt="Dynamic Washer Composition" className="w-full h-auto drop-shadow-2xl object-contain" />
           </motion.div>
         </div>
 
-        {/* 2. Text (Center - 25%) */}
-        <div className="w-full xl:w-[25%] z-10 text-center xl:text-left px-2">
+        {/* 2. Text (Center - 20%) */}
+        <div className="w-full xl:w-[20%] z-10 text-center xl:text-left px-2">
           <span className="text-[#E31E24] font-bold text-[9px] tracking-[0.2em] uppercase mb-3 block">
             WHY CHOOSE PROMAC
           </span>
@@ -715,120 +713,118 @@ function CombinedWhyChooseAndCta() {
           </h2>
         </div>
 
-        {/* 3. White Card (Right - 50%) */}
-        <motion.div 
-          initial={{ opacity: 0, x: 30 }}
-          animate={isInView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="w-full xl:w-[50%] bg-white rounded-[40px] shadow-[0_15px_40px_rgba(4,30,66,0.06)] py-10 px-8 relative z-10"
-        >
-          {/* Decorative faint blue circle top-left exactly like reference */}
-          <div className="absolute top-[-10px] left-[15px] w-14 h-14 rounded-full border-[6px] border-blue-50/80 opacity-60 pointer-events-none" />
+        {/* 3. Unique White Card (Right - 50%) */}
+        <div className="w-full xl:w-[50%] relative z-10">
+          {/* Subtle glowing backdrop for uniqueness */}
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-purple-400/20 blur-2xl rounded-[40px] -z-10 transform translate-y-4 scale-95" />
           
-          <div className="flex flex-row justify-between divide-x divide-slate-100">
-            {reasons.map((r, idx) => (
-              <motion.div 
-                key={idx} 
-                whileHover={{ y: -3 }}
-                className="flex-1 flex flex-col items-center text-center px-2 group cursor-pointer"
-              >
-                <div className={`mb-5 ${r.color}`}>
-                  {r.icon}
-                </div>
-                <p className="text-[10px] font-bold text-slate-600 leading-[1.4] whitespace-pre-line group-hover:text-[#041E42] transition-colors">
-                  {r.text}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="bg-gradient-to-br from-white to-slate-50/90 backdrop-blur-xl rounded-[40px] shadow-[0_20px_50px_rgba(4,30,66,0.08)] py-12 px-8 relative overflow-hidden border border-white/60"
+          >
+            {/* Unique accent styling */}
+            <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-[#E31E24] via-[#8A2BE2] to-[#007BFF]" />
+            <div className="absolute top-[-20px] right-[-20px] w-32 h-32 bg-blue-100/50 rounded-full blur-2xl pointer-events-none" />
+            
+            <div className="flex flex-col sm:flex-row justify-between divide-y sm:divide-y-0 sm:divide-x divide-slate-200 relative z-10 gap-y-8 sm:gap-y-0">
+              {reasons.map((r, idx) => (
+                <motion.div 
+                  key={idx} 
+                  whileHover={{ y: -5, scale: 1.05 }}
+                  className="flex-1 flex flex-col items-center text-center px-4 group cursor-pointer"
+                >
+                  <div className={`mb-5 p-4 rounded-full bg-slate-50 shadow-inner group-hover:shadow-md transition-all duration-300 ${r.color}`}>
+                    {r.icon}
+                  </div>
+                  <p className="text-[11px] font-bold text-slate-700 leading-[1.5] whitespace-pre-line group-hover:text-[#041E42] transition-colors">
+                    {r.text}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
       </div>
 
 
       {/* ──────────────── ROW 2: CTA BANNER ──────────────── */}
       
-      <div className="max-w-[1350px] mx-auto px-4 relative z-20">
+      <div className="max-w-[1350px] mx-auto px-4 relative z-30">
         
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative flex flex-col xl:flex-row items-center justify-between p-8 xl:p-0 xl:px-12 min-h-[160px] rounded-[16px] shadow-[0_20px_50px_rgba(10,24,45,0.3)]"
+          className="relative flex flex-col xl:flex-row items-center justify-between p-10 xl:p-0 xl:px-14 min-h-[180px] rounded-[24px] shadow-[0_30px_60px_rgba(10,24,45,0.4)] bg-[#061224]"
         >
           {/* Inner container for sleek dark background and subtle masking */}
-          <div className="absolute inset-0 bg-[#091527] rounded-[16px] overflow-hidden -z-10">
-            
+          <div className="absolute inset-0 rounded-[24px] overflow-hidden pointer-events-none">
             {/* Left side soap bubbles - subtle and masked */}
-            <div className="absolute left-0 top-[-20%] bottom-[-20%] w-[40%] opacity-[0.35] mix-blend-screen pointer-events-none">
+            <div className="absolute left-0 top-[-20%] bottom-[-20%] w-[45%] opacity-[0.25] mix-blend-screen">
               <img 
                 src="/images/consultancy/soap-bubbles.png" 
                 alt="Bubbles" 
                 className="w-full h-full object-cover" 
-                style={{
-                  WebkitMaskImage: 'linear-gradient(to right, black 20%, transparent 100%)',
-                  maskImage: 'linear-gradient(to right, black 20%, transparent 100%)'
-                }}
+                style={{ WebkitMaskImage: 'linear-gradient(to right, black 20%, transparent 100%)' }}
               />
             </div>
-
             {/* Right side water splash - subtle and masked */}
-            <div className="absolute right-0 top-[-30%] bottom-[-30%] w-[45%] opacity-[0.25] mix-blend-screen pointer-events-none">
+            <div className="absolute right-0 top-[-30%] bottom-[-30%] w-[50%] opacity-[0.15] mix-blend-screen">
               <img 
                 src="/images/consultancy/water-splash.png" 
                 alt="Water Background" 
                 className="w-full h-full object-cover" 
-                style={{
-                  WebkitMaskImage: 'linear-gradient(to left, black 20%, transparent 100%)',
-                  maskImage: 'linear-gradient(to left, black 20%, transparent 100%)'
-                }}
+                style={{ WebkitMaskImage: 'linear-gradient(to left, black 20%, transparent 100%)' }}
               />
             </div>
           </div>
 
           {/* Banner Content (Left) */}
-          <div className="z-10 text-center xl:text-left mb-6 xl:mb-0 w-full xl:w-[35%]">
-            <p className="text-slate-300 text-[10px] font-semibold mb-1.5 tracking-wider opacity-90">
+          <div className="relative z-40 text-center xl:text-left mb-8 xl:mb-0 w-full xl:w-[40%]">
+            <p className="text-slate-300 text-[11px] font-semibold mb-2 tracking-widest uppercase opacity-90">
               Planning a Laundry Setup?
             </p>
-            <h2 className="text-[28px] xl:text-[34px] font-black text-white tracking-tight leading-[1.05]">
+            <h2 className="text-[32px] xl:text-[38px] font-black text-white tracking-tight leading-[1.05]">
               Let Our Experts <br />
               Help You <span className="text-[#00E1FF]">Build It</span> <span className="text-[#E31E24]">Right.</span>
             </h2>
           </div>
 
           {/* Buttons (Center-Left) */}
-          <div className="z-10 flex flex-col sm:flex-row gap-4 w-full xl:w-[40%] justify-center xl:justify-start">
+          <div className="relative z-50 flex flex-col sm:flex-row gap-5 w-full xl:w-[40%] justify-center xl:justify-start">
             <motion.button 
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              className="bg-[#E31E24] hover:bg-red-700 text-white font-bold py-3 px-5 rounded-md text-[10px] tracking-widest uppercase transition-colors shadow-lg flex items-center justify-center gap-2 whitespace-nowrap"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-[#E31E24] hover:bg-red-600 text-white font-bold py-4 px-6 rounded-lg text-[11px] tracking-widest uppercase transition-all shadow-[0_10px_20px_rgba(227,30,36,0.3)] flex items-center justify-center gap-3 whitespace-nowrap border border-red-500"
             >
               Get Expert Advice
-              <svg className="w-3.5 h-3.5 rounded-full border border-white/40 p-0.5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-4 h-4 rounded-full border border-white/40 p-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </motion.button>
             
             <motion.button 
-              whileHover={{ scale: 1.03, backgroundColor: "rgba(255,255,255,0.05)" }}
-              whileTap={{ scale: 0.97 }}
-              className="border border-slate-500/60 hover:border-white text-white font-bold py-3 px-5 rounded-md text-[10px] tracking-widest uppercase transition-all flex items-center justify-center gap-2 whitespace-nowrap backdrop-blur-sm"
+              whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.15)" }}
+              whileTap={{ scale: 0.95 }}
+              className="border border-white/30 bg-white/5 text-white font-bold py-4 px-6 rounded-lg text-[11px] tracking-widest uppercase transition-all flex items-center justify-center gap-3 whitespace-nowrap backdrop-blur-md hover:border-white/60 shadow-lg"
             >
               Request Consultation
-              <svg className="w-3.5 h-3.5 ml-1 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-4 h-4 opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
               </svg>
             </motion.button>
           </div>
 
-          {/* Laundry Cart Image (Right - unrestricted bleeding) */}
+          {/* Laundry Cart Image (Right - Clean overhang) */}
           <motion.div 
             initial={{ opacity: 0, x: 40 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1, delay: 0.3 }}
-            className="hidden xl:block absolute right-[2%] top-[-25%] bottom-[-15%] w-[22%] z-20 pointer-events-none"
+            className="hidden xl:block absolute right-[2%] bottom-0 z-40 w-[24%] pointer-events-none transform translate-y-[20%]"
           >
-            <img src="/images/consultancy/cta-cart.png" alt="Laundry Cart" className="w-full h-full object-contain drop-shadow-2xl object-right" />
+            <img src="/images/consultancy/cta-cart.png" alt="Laundry Cart" className="w-full h-auto drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)] object-contain" />
           </motion.div>
           
         </motion.div>
