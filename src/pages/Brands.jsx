@@ -17,7 +17,7 @@ const BRANDS = [
   {
     id: 'kannegiesser',
     name: 'KANNEGIESSER',
-    cropLeft: '18%',
+    textWidth: '220px', // Width to precisely frame the text and hide the left-side icon
     origin: 'Germany',
     tagline: 'End-to-End Laundry Automation',
     logo: kannegiesserLogo,
@@ -27,7 +27,7 @@ const BRANDS = [
   {
     id: 'sea-lion',
     name: 'SEA-LION',
-    cropLeft: '28%',
+    textWidth: '160px',
     origin: 'China',
     tagline: 'Industrial Laundry Machines',
     logo: sealionLogo,
@@ -37,7 +37,7 @@ const BRANDS = [
   {
     id: 'maestrelli',
     name: 'MAESTRELLI',
-    cropLeft: '22%',
+    textWidth: '200px',
     origin: 'Italy',
     tagline: 'Dry Cleaning Systems',
     logo: maestrelliLogo,
@@ -47,7 +47,7 @@ const BRANDS = [
   {
     id: 'maxipress',
     name: 'MAXIPRESS',
-    cropLeft: '25%',
+    textWidth: '170px',
     origin: 'Spain',
     tagline: 'Garment Finishing Equipment',
     logo: maxipressLogo,
@@ -170,17 +170,17 @@ function BrandRow({ brand, reverse }) {
             </span>
           </div>
 
-          {/* Logo Cropped to Text Only using CSS Clip-Path */}
-          <div className="mb-6 h-10 md:h-12 flex justify-start overflow-hidden w-max">
+          {/* Logo Physically Cropped to Text Only */}
+          {/* We use a fixed-width hidden-overflow container and anchor the image to the right. 
+              This perfectly chops off the left side (the symbol) without breaking the layout. */}
+          <div 
+            className="mb-6 h-10 md:h-12 relative overflow-hidden" 
+            style={{ width: brand.textWidth }}
+          >
             <img 
               src={brand.logo} 
               alt={brand.name} 
-              className="h-full w-auto object-contain mix-blend-multiply origin-left" 
-              style={{ 
-                clipPath: `inset(0 0 0 ${brand.cropLeft})`, 
-                transform: `translateX(-${brand.cropLeft})`,
-                marginRight: `-${brand.cropLeft}` // Collapse the empty space on the right caused by the shift
-              }} 
+              className="absolute top-0 right-0 h-full w-auto max-w-none object-contain mix-blend-multiply" 
             />
           </div>
 
