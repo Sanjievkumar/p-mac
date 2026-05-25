@@ -764,9 +764,9 @@ function CombinedWhyChooseAndCta() {
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="bg-white rounded-[32px] shadow-[0_20px_60px_rgba(4,30,66,0.04)] border border-slate-100 py-12 px-2 relative overflow-hidden"
+            className="bg-white rounded-[32px] shadow-[0_20px_60px_rgba(4,30,66,0.04)] border border-slate-100 py-12 px-2 relative z-10"
           >
-            <div className="absolute top-0 left-0 w-24 h-24 border-t-[8px] border-l-[8px] border-blue-50 rounded-tl-[32px] rounded-br-[60px] opacity-70" />
+            {/* Removed the top-left ornament based on user feedback */}
             
             <div className="flex flex-row justify-between divide-x divide-slate-100 relative z-10">
               {reasons.map((r, idx) => (
@@ -811,7 +811,7 @@ function CombinedWhyChooseAndCta() {
           <div className="w-full flex flex-col xl:flex-row items-center justify-between relative z-40">
             
             {/* COL 1: Text */}
-            <div className="w-full xl:w-[40%] text-center xl:text-left mb-6 xl:mb-0">
+            <div className="w-full xl:w-[40%] text-center xl:text-left mb-6 xl:mb-0 py-10 xl:py-0">
               <p className="text-slate-300 text-[10px] font-semibold mb-2 tracking-widest uppercase opacity-90">
                 Planning a Laundry Setup?
               </p>
@@ -822,7 +822,7 @@ function CombinedWhyChooseAndCta() {
             </div>
 
             {/* COL 2: Buttons */}
-            <div className="w-full xl:w-[35%] flex flex-col sm:flex-row gap-4 justify-center xl:justify-start">
+            <div className="w-full xl:w-[35%] flex flex-col sm:flex-row gap-4 justify-center xl:justify-start pb-8 xl:pb-0">
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -834,7 +834,6 @@ function CombinedWhyChooseAndCta() {
                 </svg>
               </motion.button>
               
-              {/* Upgraded sleek hover transition for hollow button */}
               <motion.button 
                 whileTap={{ scale: 0.95 }}
                 className="group relative border border-white/40 text-white font-bold py-3.5 px-6 rounded-md text-[11px] tracking-widest uppercase overflow-hidden transition-all flex items-center justify-center gap-3 whitespace-nowrap hover:border-white"
@@ -849,31 +848,21 @@ function CombinedWhyChooseAndCta() {
               </motion.button>
             </div>
 
-            {/* COL 3: Cart (Enhanced with spotlight and floating animation) */}
-            <div className="w-full xl:w-[25%] relative h-[160px] hidden xl:flex items-center justify-end">
-              {/* Spotlight to ground the cart into the dark banner */}
-              <div className="absolute right-[10%] top-[20%] w-[100%] h-[100%] bg-blue-400/20 rounded-full blur-[40px] pointer-events-none" />
-              
+            {/* COL 3: Cart */}
+            <div className="w-full xl:w-[25%] relative hidden xl:block">
+              {/* No floating animation because the cart image has a baked-in white floor puddle. 
+                  We anchor it directly over the page's white background to hide the puddle seamlessly. */}
               <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 1, delay: 0.3 }}
-                className="absolute right-[-10%] top-[-30%] w-[130%] h-[160%] pointer-events-none"
+                className="absolute right-[-15px] bottom-[-45px] w-[270px] pointer-events-none z-50"
               >
-                {/* Continuous floating animation */}
-                <motion.div 
-                  animate={{ y: [0, -12, 0] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                  className="w-full h-full"
-                >
-                  <img 
-                    src="/images/consultancy/cta-cart.png" 
-                    alt="Laundry Cart" 
-                    className="w-full h-full object-contain drop-shadow-[0_30px_40px_rgba(0,0,0,0.6)]" 
-                  />
-                  {/* Subtle reflection/shadow underneath the floating cart */}
-                  <div className="absolute bottom-[-10%] left-[20%] right-[20%] h-4 bg-black/40 blur-xl rounded-full" />
-                </motion.div>
+                <img 
+                  src="/images/consultancy/cta-cart.png" 
+                  alt="Laundry Cart" 
+                  className="w-full h-auto drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]" 
+                />
               </motion.div>
             </div>
             
