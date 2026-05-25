@@ -676,46 +676,42 @@ function CombinedWhyChooseAndCta() {
       </svg>
     )},
     { text: 'End-to-End Involvement\n& Support', color: 'text-[#28A745]', icon: (
-      <svg className="w-10 h-10 drop-shadow-sm" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" fill="currentColor" />
+      <svg className="w-10 h-10 drop-shadow-sm" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M18 4V2H2v16h2v-4h14V4zM4 12V4h12v8H4zm14 6v-2H6v2h12z" />
       </svg>
     )},
   ];
 
   return (
-    <section ref={ref} className="py-20 bg-gradient-to-b from-[#f8fbff] to-[#eaf2fc] relative z-20 font-display">
+    <section ref={ref} className="pt-24 pb-20 bg-gradient-to-b from-[#f8fbff] to-[#eaf2fc] relative z-20 font-display">
       
       {/* ──────────────── ROW 1: WHY CHOOSE PROMAC ──────────────── */}
       
-      <div className="max-w-[1400px] mx-auto px-4 relative z-10 flex flex-col xl:flex-row items-center justify-between gap-6 mb-8">
+      <div className="max-w-[1450px] mx-auto px-4 relative z-10 flex flex-col xl:flex-row items-center justify-between gap-6 mb-12">
         
-        {/* 1. Machine & Splash (Left - 25%) */}
-        <div className="w-full xl:w-[25%] relative h-[350px] flex items-center justify-center pointer-events-none">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 1.2 }}
-            className="absolute bottom-[-15%] left-[-15%] w-[130%] z-0 mix-blend-multiply opacity-90"
-          >
-            <img src="/images/consultancy/water-splash.png" alt="Splash" className="w-full h-auto" />
-          </motion.div>
+        {/* 1. Machine (Left - 25%) 
+            Removed the ugly duplicate water-splash layer. hero-machine-final-perfect contains the perfect splash. 
+        */}
+        <div className="w-full xl:w-[25%] relative flex items-center justify-center pointer-events-none">
           <motion.div
             animate={{ y: [0, -5, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="relative z-10 w-[70%]"
+            className="relative z-10 w-[95%]"
           >
-            <img src="/images/consultancy/hero-machine-final-perfect.png" alt="Washing Machine" className="w-full h-auto drop-shadow-2xl" />
+            <img src="/images/consultancy/hero-machine-final-perfect.png" alt="Washing Machine" className="w-full h-auto drop-shadow-2xl scale-110 xl:scale-125 xl:origin-right" />
           </motion.div>
         </div>
 
         {/* 2. Text (Center - 25%) */}
         <div className="w-full xl:w-[25%] z-10 text-center xl:text-left px-2">
-          <span className="text-[#E31E24] font-bold text-[10px] tracking-[0.15em] uppercase mb-3 block">
+          <span className="text-[#E31E24] font-bold text-[9px] tracking-[0.2em] uppercase mb-3 block">
             WHY CHOOSE PROMAC
           </span>
-          <h2 className="text-3xl xl:text-[34px] font-black text-[#041E42] tracking-tight leading-[1.15]">
-            Your Partner in Building <br/>
-            Better Laundry Operations
+          <h2 className="text-3xl xl:text-[36px] font-black text-[#041E42] tracking-tight leading-[1.1]">
+            Your Partner in <br/>
+            Building <br/>
+            Better Laundry <br/>
+            Operations
           </h2>
         </div>
 
@@ -724,10 +720,10 @@ function CombinedWhyChooseAndCta() {
           initial={{ opacity: 0, x: 30 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="w-full xl:w-[50%] bg-white rounded-[32px] shadow-[0_15px_40px_rgba(4,30,66,0.06)] p-8 relative z-10"
+          className="w-full xl:w-[50%] bg-white rounded-[40px] shadow-[0_15px_40px_rgba(4,30,66,0.06)] py-10 px-8 relative z-10"
         >
-          {/* Decorative faint blue circle top-left like in reference */}
-          <div className="absolute top-[-12px] left-[-12px] w-12 h-12 rounded-full border-4 border-blue-50 opacity-60 pointer-events-none mix-blend-multiply" />
+          {/* Decorative faint blue circle top-left exactly like reference */}
+          <div className="absolute top-[-10px] left-[15px] w-14 h-14 rounded-full border-[6px] border-blue-50/80 opacity-60 pointer-events-none" />
           
           <div className="flex flex-row justify-between divide-x divide-slate-100">
             {reasons.map((r, idx) => (
@@ -736,7 +732,7 @@ function CombinedWhyChooseAndCta() {
                 whileHover={{ y: -3 }}
                 className="flex-1 flex flex-col items-center text-center px-2 group cursor-pointer"
               >
-                <div className={`mb-4 ${r.color}`}>
+                <div className={`mb-5 ${r.color}`}>
                   {r.icon}
                 </div>
                 <p className="text-[10px] font-bold text-slate-600 leading-[1.4] whitespace-pre-line group-hover:text-[#041E42] transition-colors">
@@ -757,58 +753,58 @@ function CombinedWhyChooseAndCta() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative flex flex-col xl:flex-row items-center p-10 xl:p-0 xl:px-12 xl:min-h-[220px] rounded-[24px] shadow-[0_20px_50px_rgba(10,24,45,0.4)]"
+          className="relative flex flex-col xl:flex-row items-center justify-between p-8 xl:p-0 xl:px-12 min-h-[160px] rounded-[16px] shadow-[0_20px_50px_rgba(10,24,45,0.3)]"
         >
-          {/* Inner container for dark background and masking to prevent overflow issues */}
-          <div className="absolute inset-0 bg-[#091527] rounded-[24px] overflow-hidden -z-10">
+          {/* Inner container for sleek dark background and subtle masking */}
+          <div className="absolute inset-0 bg-[#091527] rounded-[16px] overflow-hidden -z-10">
             
-            {/* Left side soap bubbles seamlessly masked */}
-            <div className="absolute left-[-5%] top-[-50%] bottom-[-50%] w-[60%] opacity-80 mix-blend-screen pointer-events-none">
+            {/* Left side soap bubbles - subtle and masked */}
+            <div className="absolute left-0 top-[-20%] bottom-[-20%] w-[40%] opacity-[0.35] mix-blend-screen pointer-events-none">
               <img 
                 src="/images/consultancy/soap-bubbles.png" 
                 alt="Bubbles" 
                 className="w-full h-full object-cover" 
                 style={{
-                  WebkitMaskImage: 'linear-gradient(to right, black 50%, transparent 100%)',
-                  maskImage: 'linear-gradient(to right, black 50%, transparent 100%)'
+                  WebkitMaskImage: 'linear-gradient(to right, black 20%, transparent 100%)',
+                  maskImage: 'linear-gradient(to right, black 20%, transparent 100%)'
                 }}
               />
             </div>
 
-            {/* Right side water splash perfectly contained behind the cart */}
-            <div className="absolute right-[-10%] top-[-30%] bottom-[-30%] w-[45%] opacity-40 mix-blend-screen pointer-events-none">
+            {/* Right side water splash - subtle and masked */}
+            <div className="absolute right-0 top-[-30%] bottom-[-30%] w-[45%] opacity-[0.25] mix-blend-screen pointer-events-none">
               <img 
                 src="/images/consultancy/water-splash.png" 
                 alt="Water Background" 
                 className="w-full h-full object-cover" 
                 style={{
-                  WebkitMaskImage: 'linear-gradient(to left, black 30%, transparent 100%)',
-                  maskImage: 'linear-gradient(to left, black 30%, transparent 100%)'
+                  WebkitMaskImage: 'linear-gradient(to left, black 20%, transparent 100%)',
+                  maskImage: 'linear-gradient(to left, black 20%, transparent 100%)'
                 }}
               />
             </div>
           </div>
 
           {/* Banner Content (Left) */}
-          <div className="z-10 text-center xl:text-left mb-8 xl:mb-0 w-full xl:w-[40%]">
-            <p className="text-slate-300 text-[11px] font-semibold mb-2 tracking-wide opacity-90">
+          <div className="z-10 text-center xl:text-left mb-6 xl:mb-0 w-full xl:w-[35%]">
+            <p className="text-slate-300 text-[10px] font-semibold mb-1.5 tracking-wider opacity-90">
               Planning a Laundry Setup?
             </p>
-            <h2 className="text-3xl xl:text-[42px] font-black text-white tracking-tight leading-[1.1]">
+            <h2 className="text-[28px] xl:text-[34px] font-black text-white tracking-tight leading-[1.05]">
               Let Our Experts <br />
               Help You <span className="text-[#00E1FF]">Build It</span> <span className="text-[#E31E24]">Right.</span>
             </h2>
           </div>
 
-          {/* Buttons (Center) */}
-          <div className="z-10 flex flex-col sm:flex-row gap-4 w-full xl:w-[35%] justify-center xl:justify-start">
+          {/* Buttons (Center-Left) */}
+          <div className="z-10 flex flex-col sm:flex-row gap-4 w-full xl:w-[40%] justify-center xl:justify-start">
             <motion.button 
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="bg-[#E31E24] hover:bg-red-700 text-white font-bold py-3.5 px-6 rounded-md text-[11px] tracking-widest uppercase transition-colors shadow-lg flex items-center justify-center gap-2 whitespace-nowrap"
+              className="bg-[#E31E24] hover:bg-red-700 text-white font-bold py-3 px-5 rounded-md text-[10px] tracking-widest uppercase transition-colors shadow-lg flex items-center justify-center gap-2 whitespace-nowrap"
             >
               Get Expert Advice
-              <svg className="w-4 h-4 rounded-full border border-white/40 p-0.5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-3.5 h-3.5 rounded-full border border-white/40 p-0.5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </motion.button>
@@ -816,16 +812,16 @@ function CombinedWhyChooseAndCta() {
             <motion.button 
               whileHover={{ scale: 1.03, backgroundColor: "rgba(255,255,255,0.05)" }}
               whileTap={{ scale: 0.97 }}
-              className="border border-slate-500/60 hover:border-white text-white font-bold py-3.5 px-6 rounded-md text-[11px] tracking-widest uppercase transition-all flex items-center justify-center gap-2 whitespace-nowrap backdrop-blur-sm"
+              className="border border-slate-500/60 hover:border-white text-white font-bold py-3 px-5 rounded-md text-[10px] tracking-widest uppercase transition-all flex items-center justify-center gap-2 whitespace-nowrap backdrop-blur-sm"
             >
               Request Consultation
-              <svg className="w-4 h-4 ml-1 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-3.5 h-3.5 ml-1 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
               </svg>
             </motion.button>
           </div>
 
-          {/* Laundry Cart Image (Right - overlapping top & bottom bounds dynamically) */}
+          {/* Laundry Cart Image (Right - unrestricted bleeding) */}
           <motion.div 
             initial={{ opacity: 0, x: 40 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
