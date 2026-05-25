@@ -7,6 +7,10 @@ import BrandMarquee from '../components/BrandMarquee';
 // Assets
 import showroomImg from '../assets/showroom.png';
 import ecosystemImg from '../assets/ecosystem-3d.png';
+import kannegiesserLogo from '../assets/brands/kannegiesser.png';
+import maestrelliLogo from '../assets/brands/maestrelli.png';
+import maxipressLogo from '../assets/brands/maxipress.png';
+import sealionLogo from '../assets/brands/sealion.png';
 
 /* ─────────────────────────────────────────────
    HERO SECTION
@@ -647,41 +651,200 @@ function DesignPerformance() {
 /* ─────────────────────────────────────────────
    TRUST MATRIX & CTA BANNER
 ───────────────────────────────────────────── */
-function TrustMatrix() {
+/* ─────────────────────────────────────────────
+   WHY CHOOSE PROMAC
+───────────────────────────────────────────── */
+function WhyChoosePromac() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: true, margin: '-50px' });
+
+  const reasons = [
+    { text: '20+ Years of Industry Experience', color: 'text-red-500', icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+      </svg>
+    )},
+    { text: 'Deep Understanding of Laundry Operations', color: 'text-purple-500', icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zm-7.518-.267A8.25 8.25 0 1120.25 10.5M8.288 14.212A5.25 5.25 0 1117.25 10.5" />
+      </svg>
+    )},
+    { text: 'Practical & Cost-effective Solutions', color: 'text-blue-500', icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+      </svg>
+    )},
+    { text: 'End-to-End Involvement & Support', color: 'text-green-500', icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+      </svg>
+    )},
+  ];
 
   return (
-    <section ref={ref} className="relative w-full">
-      {/* Client Marquee */}
-      <div className="py-12 bg-white">
-        <BrandMarquee />
-      </div>
-
-      {/* CTA Banner */}
-      <div className="w-full bg-gradient-to-br from-[#001F3F] to-[#0a1128] py-24 px-6 text-center relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
+    <section ref={ref} className="py-24 bg-[#fdfdff] relative overflow-hidden">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10 flex flex-col lg:flex-row items-center gap-10">
         
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="relative z-10 max-w-4xl mx-auto space-y-10"
-        >
-          <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter leading-tight">
-            Planning a Laundry Setup? <br />
-            Let Our Experts Help You Build It Right.
+        {/* Left: Machine & Splash */}
+        <div className="w-full lg:w-[25%] relative h-[400px] flex items-center justify-center pointer-events-none">
+          <motion.div
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute z-10 w-[280px]"
+          >
+            <img src="/images/consultancy/hero-machine-final-perfect.png" alt="Machine" className="w-full h-auto drop-shadow-2xl" />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 1 }}
+            className="absolute z-0 w-[450px] mix-blend-multiply opacity-80"
+          >
+            <img src="/images/consultancy/water-splash.png" alt="Splash" className="w-full h-auto" />
+          </motion.div>
+        </div>
+
+        {/* Center: Title */}
+        <div className="w-full lg:w-[20%] z-10 text-center lg:text-left">
+          <span className="text-[#E31E24] font-extrabold text-[11px] tracking-[0.15em] uppercase mb-3 block">
+            WHY CHOOSE PROMAC
+          </span>
+          <h2 className="text-3xl lg:text-[34px] font-black text-[#001F3F] tracking-tight leading-[1.15]">
+            Your Partner in Building Better Laundry Operations
           </h2>
-          
-          <div className="flex flex-wrap justify-center gap-6">
-            <button className="bg-[#E31E24] text-white px-10 py-5 font-bold tracking-widest text-[12px] uppercase hover:bg-[#c8191f] transition-all shadow-[0_10px_30px_rgba(227,30,36,0.25)] hover:scale-105">
-              Contact Consultancy Team
-            </button>
-            <button className="border-2 border-white/20 text-white px-10 py-5 font-bold tracking-widest text-[12px] uppercase hover:bg-white hover:text-[#001F3F] transition-all">
-              View Our Portfolio
-            </button>
+        </div>
+
+        {/* Right: The 4 Columns Card */}
+        <motion.div 
+          initial={{ opacity: 0, x: 50 }}
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="w-full lg:w-[55%] bg-white rounded-[32px] shadow-[0_15px_50px_rgba(0,31,63,0.06)] p-8 lg:p-10 border border-slate-50 flex z-10"
+        >
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 w-full lg:divide-x divide-slate-100">
+            {reasons.map((r, idx) => (
+              <motion.div 
+                key={idx} 
+                whileHover={{ y: -5 }}
+                className="flex flex-col items-center text-center px-4 group cursor-pointer"
+              >
+                <div className={`mb-4 transition-transform duration-300 group-hover:scale-110 ${r.color}`}>
+                  {r.icon}
+                </div>
+                <p className="text-[12px] font-semibold text-slate-600 leading-snug group-hover:text-[#001F3F] transition-colors">
+                  {r.text}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────────────────────────────────────
+   CTA BANNER SECTION
+───────────────────────────────────────────── */
+function CtaBanner() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-50px' });
+
+  return (
+    <section ref={ref} className="pb-16 bg-[#fdfdff] relative px-6">
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8 }}
+        className="max-w-[1300px] mx-auto bg-gradient-to-r from-[#061428] to-[#112a4d] rounded-[24px] relative overflow-hidden shadow-2xl flex flex-col lg:flex-row items-center justify-between p-10 lg:p-14"
+      >
+        {/* Soap Bubbles Effect */}
+        <motion.div 
+          animate={{ y: [0, -15, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute left-0 top-0 bottom-0 w-[400px] pointer-events-none mix-blend-screen opacity-70"
+        >
+          <img src="/images/consultancy/soap-bubbles.png" alt="Bubbles" className="w-full h-full object-cover opacity-80" />
+        </motion.div>
+
+        {/* Content */}
+        <div className="z-10 text-center lg:text-left mb-8 lg:mb-0 w-full lg:w-[45%]">
+          <p className="text-slate-300 text-sm font-medium mb-2 tracking-wide">
+            Planning a Laundry Setup?
+          </p>
+          <h2 className="text-4xl lg:text-[44px] font-black text-white tracking-tight leading-tight">
+            Let Our Experts <br />
+            Help You <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00E1FF] to-[#E31E24]">Build It Right.</span>
+          </h2>
+        </div>
+
+        {/* Buttons */}
+        <div className="z-10 flex flex-col sm:flex-row gap-4 w-full lg:w-auto items-center justify-center">
+          <motion.button 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-[#E31E24] hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg text-sm tracking-widest uppercase transition-colors shadow-[0_10px_30px_rgba(227,30,36,0.3)] flex items-center gap-2"
+          >
+            Get Expert Advice
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </motion.button>
+          
+          <motion.button 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="border border-slate-500 hover:border-white text-white font-bold py-4 px-8 rounded-lg text-sm tracking-widest uppercase transition-colors flex items-center gap-2 bg-white/5 backdrop-blur-sm"
+          >
+            Request Consultation
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </motion.button>
+        </div>
+
+        {/* Laundry Cart Image */}
+        <motion.div 
+          initial={{ opacity: 0, x: 50 }}
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 1, delay: 0.3 }}
+          className="hidden lg:block absolute right-[-2%] bottom-[-15%] w-[350px] z-10 pointer-events-none"
+        >
+          <img src="/images/consultancy/cta-cart.png" alt="Laundry Cart" className="w-full h-auto drop-shadow-2xl" />
+        </motion.div>
+      </motion.div>
+    </section>
+  );
+}
+
+/* ─────────────────────────────────────────────
+   BRANDS FOOTER SECTION
+───────────────────────────────────────────── */
+function BrandsFooter() {
+  const logos = [
+    { name: 'Kannegiesser', src: kannegiesserLogo },
+    { name: 'Maestrelli', src: maestrelliLogo },
+    { name: 'Maxipress', src: maxipressLogo },
+    { name: 'Sealion', src: sealionLogo }
+  ];
+
+  return (
+    <section className="py-12 bg-[#fdfdff] border-t border-slate-100 overflow-hidden">
+      <div className="max-w-[1300px] mx-auto px-6 text-center">
+        <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-10">
+          Trusted by Leading Brands Across India
+        </p>
+        <div className="flex flex-wrap justify-center items-center gap-16 md:gap-24 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+          {logos.map((logo, idx) => (
+            <motion.img 
+              key={idx} 
+              whileHover={{ scale: 1.1 }}
+              src={logo.src} 
+              alt={logo.name} 
+              className="h-10 md:h-12 object-contain cursor-pointer" 
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -698,7 +861,9 @@ export default function Consultancy() {
       <IndustrySlider />
       <ProcessTimeline />
       <DesignPerformance />
-      <TrustMatrix />
+      <WhyChoosePromac />
+      <CtaBanner />
+      <BrandsFooter />
       <Footer />
     </div>
   );
