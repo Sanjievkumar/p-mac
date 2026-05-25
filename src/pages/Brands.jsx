@@ -15,6 +15,15 @@ import kannegiesserLogo from '../assets/brands/kannegiesser.png';
 ───────────────────────────────────────────── */
 const BRANDS = [
   {
+    id: 'kannegiesser',
+    name: 'KANNEGIESSER',
+    origin: 'Germany',
+    tagline: 'End-to-End Laundry Automation',
+    logo: kannegiesserLogo,
+    desc: 'Kannegiesser has evolved from a machine manufacturer into a global technology partner for industrial laundries, delivering complete end-to-end laundry automation systems with decades of engineering expertise.',
+    products: ['Tunnel Washers', 'Powertrans Systems', 'Flatwork Ironers', 'Automated Sorting'],
+  },
+  {
     id: 'sea-lion',
     name: 'SEA-LION',
     origin: 'China',
@@ -40,16 +49,7 @@ const BRANDS = [
     logo: maxipressLogo,
     desc: 'Engineered for high-volume commercial laundries and professional garment care facilities, MAXIPRESS solutions deliver consistent finishing quality, operational reliability, and long service life.',
     products: ['Form Finishers', 'Utility Presses', 'Steam Vacuum Boards', 'Collar & Cuff Presses'],
-  },
-  {
-    id: 'kannegiesser',
-    name: 'KANNEGIESSER',
-    origin: 'Germany',
-    tagline: 'End-to-End Laundry Automation',
-    logo: kannegiesserLogo,
-    desc: 'Kannegiesser has evolved from a machine manufacturer into a global technology partner for industrial laundries, delivering complete end-to-end laundry automation systems with decades of engineering expertise.',
-    products: ['Tunnel Washers', 'Powertrans Systems', 'Flatwork Ironers', 'Automated Sorting'],
-  },
+  }
 ];
 
 /* ─── Reusable reveal helpers ──────────────── */
@@ -166,10 +166,10 @@ function BrandRow({ brand, reverse }) {
             </span>
           </div>
 
-          {/* Name */}
-          <h2 className="text-4xl md:text-5xl font-black text-[#001F3F] tracking-tighter mb-5 leading-none">
-            {brand.name}
-          </h2>
+          {/* Name / Logo as Title */}
+          <div className="mb-6 h-10 md:h-12 w-auto flex justify-start">
+            <img src={brand.logo} alt={brand.name} className="h-full w-auto object-contain mix-blend-multiply" />
+          </div>
 
           {/* Description */}
           <p className="text-slate-600 text-[15px] leading-relaxed mb-8 max-w-[420px]">
