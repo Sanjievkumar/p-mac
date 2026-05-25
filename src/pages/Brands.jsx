@@ -17,7 +17,7 @@ const BRANDS = [
   {
     id: 'kannegiesser',
     name: 'KANNEGIESSER',
-    nameStyle: 'text-slate-800 tracking-tighter font-sans font-black',
+    cropLeft: '18%',
     origin: 'Germany',
     tagline: 'End-to-End Laundry Automation',
     logo: kannegiesserLogo,
@@ -27,7 +27,7 @@ const BRANDS = [
   {
     id: 'sea-lion',
     name: 'SEA-LION',
-    nameStyle: 'text-[#005bb5] font-black tracking-wide',
+    cropLeft: '28%',
     origin: 'China',
     tagline: 'Industrial Laundry Machines',
     logo: sealionLogo,
@@ -37,7 +37,7 @@ const BRANDS = [
   {
     id: 'maestrelli',
     name: 'MAESTRELLI',
-    nameStyle: 'text-[#0f3980] font-extrabold tracking-widest',
+    cropLeft: '22%',
     origin: 'Italy',
     tagline: 'Dry Cleaning Systems',
     logo: maestrelliLogo,
@@ -47,7 +47,7 @@ const BRANDS = [
   {
     id: 'maxipress',
     name: 'MAXIPRESS',
-    nameStyle: 'text-[#e31e24] font-black italic tracking-tight',
+    cropLeft: '25%',
     origin: 'Spain',
     tagline: 'Garment Finishing Equipment',
     logo: maxipressLogo,
@@ -170,10 +170,19 @@ function BrandRow({ brand, reverse }) {
             </span>
           </div>
 
-          {/* Name stylized to match the logo */}
-          <h2 className={`text-4xl md:text-5xl mb-5 leading-none ${brand.nameStyle}`}>
-            {brand.name}
-          </h2>
+          {/* Logo Cropped to Text Only using CSS Clip-Path */}
+          <div className="mb-6 h-10 md:h-12 flex justify-start overflow-hidden w-max">
+            <img 
+              src={brand.logo} 
+              alt={brand.name} 
+              className="h-full w-auto object-contain mix-blend-multiply origin-left" 
+              style={{ 
+                clipPath: `inset(0 0 0 ${brand.cropLeft})`, 
+                transform: `translateX(-${brand.cropLeft})`,
+                marginRight: `-${brand.cropLeft}` // Collapse the empty space on the right caused by the shift
+              }} 
+            />
+          </div>
 
           {/* Description */}
           <p className="text-slate-600 text-[15px] leading-relaxed mb-8 max-w-[420px]">
