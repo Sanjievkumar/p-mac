@@ -652,65 +652,89 @@ function DesignPerformance() {
    TRUST MATRIX & CTA BANNER
 ───────────────────────────────────────────── */
 /* ─────────────────────────────────────────────
-   WHY CHOOSE PROMAC
+   COMBINED WHY CHOOSE & CTA SECTION
 ───────────────────────────────────────────── */
-function WhyChoosePromac() {
+function CombinedWhyChooseAndCta() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
 
   const reasons = [
     { text: '20+ Years of\nIndustry Experience', color: 'text-red-500', icon: (
-      <svg className="w-10 h-10 drop-shadow-sm" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <svg className="w-[42px] h-[42px] drop-shadow-sm" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
       </svg>
     )},
     { text: 'Deep Understanding of\nLaundry Operations', color: 'text-purple-500', icon: (
-      <svg className="w-10 h-10 drop-shadow-sm" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zm-7.518-.267A8.25 8.25 0 1120.25 10.5M8.288 14.212A5.25 5.25 0 1117.25 10.5" />
+      <svg className="w-[42px] h-[42px] drop-shadow-sm" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.2}>
+        <circle cx="12" cy="12" r="9" />
+        <circle cx="12" cy="12" r="5" />
+        <path d="M12 12l4.5 9-1.5-1.5-3 3-1.5-1.5 3-3-1.5-1.5 4.5-9z" fill="currentColor" />
       </svg>
     )},
     { text: 'Practical & Cost-effective\nSolutions', color: 'text-blue-500', icon: (
-      <svg className="w-10 h-10 drop-shadow-sm" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <svg className="w-[42px] h-[42px] drop-shadow-sm" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
       </svg>
     )},
     { text: 'End-to-End Involvement\n& Support', color: 'text-green-500', icon: (
-      <svg className="w-10 h-10 drop-shadow-sm" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <svg className="w-[42px] h-[42px] drop-shadow-sm" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
       </svg>
     )},
   ];
 
   return (
-    <section ref={ref} className="pt-20 pb-24 bg-[#fdfdff] relative z-20">
-      {/* Decorative Bubble floating up from CTA */}
+    <section ref={ref} className="pt-24 pb-16 bg-gradient-to-b from-[#fdfdff] to-[#f4f7fb] relative overflow-hidden z-20">
+      
+      {/* ──────────────── GLOBAL DECORATIVE ELEMENTS ──────────────── */}
+      
+      {/* Massive water splash flowing behind both sections */}
       <motion.div
-        animate={{ y: [0, -20, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-[-30px] left-[40%] w-[100px] mix-blend-multiply opacity-60 pointer-events-none z-0"
+        animate={{ y: [0, 20, 0], scale: [1, 1.02, 1] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-[10%] left-[-10%] w-[120%] h-[120%] pointer-events-none z-0 opacity-20 mix-blend-multiply"
       >
-        <img src="/images/consultancy/soap-bubbles.png" alt="floating bubble" className="w-full h-auto" />
+        <img src="/images/consultancy/water-splash.png" alt="water splash" className="w-full h-full object-cover blur-sm" />
       </motion.div>
 
-      <div className="max-w-[1500px] mx-auto px-6 relative z-10 flex flex-col xl:flex-row items-center justify-between gap-8">
+      {/* Free floating bubbles spanning the whole section */}
+      <motion.div
+        animate={{ y: [100, -100], x: [-20, 20] }}
+        transition={{ duration: 15, repeat: Infinity, ease: "linear", repeatType: "mirror" }}
+        className="absolute top-[20%] left-[5%] w-[150px] pointer-events-none z-30 opacity-60 mix-blend-multiply"
+      >
+        <img src="/images/consultancy/soap-bubbles.png" alt="bubbles" className="w-full h-auto" />
+      </motion.div>
+      <motion.div
+        animate={{ y: [50, -150], x: [20, -20] }}
+        transition={{ duration: 12, repeat: Infinity, ease: "linear", repeatType: "mirror", delay: 2 }}
+        className="absolute top-[60%] right-[10%] w-[120px] pointer-events-none z-30 opacity-40 mix-blend-multiply"
+      >
+        <img src="/images/consultancy/soap-bubbles.png" alt="bubbles" className="w-full h-auto" />
+      </motion.div>
+
+
+      {/* ──────────────── PART 1: WHY CHOOSE PROMAC ──────────────── */}
+      
+      <div className="max-w-[1500px] mx-auto px-6 relative z-10 flex flex-col xl:flex-row items-center justify-between gap-12 mb-16">
         
         {/* Left: Dynamic Splashing Chaotic Composition (Purple Ribbon Machine) */}
-        <div className="w-full xl:w-[25%] relative h-[400px] flex items-center justify-center pointer-events-none">
+        <div className="w-full xl:w-[25%] relative h-[450px] flex items-center justify-center pointer-events-none">
           <motion.div
             animate={{ y: [0, -15, 0] }}
             transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute z-10 w-[170%] left-[-20%] drop-shadow-2xl"
+            className="absolute z-10 w-[180%] left-[-30%] drop-shadow-2xl"
           >
             <img src="/images/consultancy/promac-dynamic-splash.png" alt="Dynamic Laundry Composition" className="w-full h-auto object-contain" />
           </motion.div>
         </div>
 
         {/* Center: Title */}
-        <div className="w-full xl:w-[30%] z-10 text-center xl:text-left mt-8 xl:mt-0 px-4">
-          <span className="text-[#E31E24] font-extrabold text-[10px] tracking-[0.1em] uppercase mb-2 block">
+        <div className="w-full xl:w-[25%] z-10 text-center xl:text-left pl-4">
+          <span className="text-[#E31E24] font-bold text-[11px] tracking-[0.15em] uppercase mb-4 block">
             WHY CHOOSE PROMAC
           </span>
-          <h2 className="text-3xl lg:text-[40px] font-black text-[#001F3F] tracking-tight leading-[1.2]">
+          <h2 className="text-3xl lg:text-[42px] font-black text-[#001F3F] tracking-tight leading-[1.15]">
             Your Partner in Building <br/>
             Better Laundry Operations
           </h2>
@@ -721,20 +745,23 @@ function WhyChoosePromac() {
           initial={{ opacity: 0, x: 50 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="w-full xl:w-[45%] bg-white rounded-[24px] shadow-[0_15px_40px_rgba(0,31,63,0.06)] p-8 lg:p-10 border border-slate-50 flex z-10 mt-10 xl:mt-0"
+          className="w-full xl:w-[45%] bg-white/80 backdrop-blur-xl rounded-[32px] shadow-[0_20px_60px_rgba(0,31,63,0.05)] p-8 lg:p-10 border border-white flex z-10 relative overflow-hidden"
         >
-          <div className="grid grid-cols-2 lg:grid-cols-4 w-full divide-x divide-slate-100">
+          {/* Subtle inner highlight */}
+          <div className="absolute inset-0 bg-gradient-to-b from-white/60 to-transparent pointer-events-none" />
+          
+          <div className="grid grid-cols-2 lg:grid-cols-4 w-full divide-x divide-slate-100 relative z-10">
             {reasons.map((r, idx) => (
               <motion.div 
                 key={idx} 
-                whileHover={{ y: -5, scale: 1.02 }}
+                whileHover={{ y: -5, scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className="flex flex-col items-center text-center group cursor-pointer px-3"
+                className="flex flex-col items-center text-center group cursor-pointer px-4"
               >
-                <div className={`mb-6 transition-colors duration-300 ${r.color}`}>
+                <div className={`mb-5 transition-colors duration-300 ${r.color}`}>
                   {r.icon}
                 </div>
-                <p className="text-[10px] font-bold text-slate-600 leading-[1.6] group-hover:text-[#001F3F] transition-colors whitespace-pre-line">
+                <p className="text-[11px] font-bold text-slate-600 leading-[1.5] group-hover:text-[#001F3F] transition-colors whitespace-pre-line">
                   {r.text}
                 </p>
               </motion.div>
@@ -742,83 +769,67 @@ function WhyChoosePromac() {
           </div>
         </motion.div>
       </div>
-    </section>
-  );
-}
 
-/* ─────────────────────────────────────────────
-   CTA BANNER SECTION
-───────────────────────────────────────────── */
-function CtaBanner() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-50px' });
 
-  return (
-    <section ref={ref} className="pb-20 bg-[#fdfdff] relative px-6 z-10 -mt-10">
-      {/* Decorative Splash connecting down from WhyChoosePromac */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={isInView ? { opacity: 1 } : {}}
-        transition={{ duration: 1.5 }}
-        className="absolute top-[-50px] right-[2%] w-[250px] pointer-events-none z-20 opacity-80 mix-blend-multiply"
-      >
-        <img src="/images/consultancy/water-splash.png" alt="water splash" className="w-full h-auto object-contain" />
-      </motion.div>
-
+      {/* ──────────────── PART 2: PLANNING / CTA BANNER ──────────────── */}
+      
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8 }}
-        className="max-w-[1400px] mx-auto bg-[#0a182d] rounded-[24px] relative overflow-hidden shadow-[0_20px_50px_rgba(10,24,45,0.4)] flex flex-col lg:flex-row items-center p-10 lg:p-14 min-h-[300px]"
+        transition={{ duration: 0.8, delay: 0.3 }}
+        className="max-w-[1400px] mx-auto bg-[#0a182d] rounded-[24px] relative overflow-hidden shadow-[0_30px_60px_rgba(10,24,45,0.4)] flex flex-col lg:flex-row items-center p-12 lg:p-16 min-h-[320px] z-20 mt-4"
       >
-        {/* Soap Bubbles Effect - heavily grouped on the left behind text */}
+        {/* Beautiful grouped bubbles specifically inside the dark banner */}
         <motion.div 
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute left-[-5%] top-[-30%] bottom-[-30%] w-[50%] pointer-events-none mix-blend-screen opacity-60"
+          className="absolute left-[-5%] top-[-20%] bottom-[-20%] w-[55%] pointer-events-none mix-blend-screen opacity-[0.85]"
         >
           <img src="/images/consultancy/soap-bubbles.png" alt="Bubbles" className="w-full h-full object-cover" />
         </motion.div>
 
         {/* Content (Left) */}
-        <div className="z-10 text-center lg:text-left mb-8 lg:mb-0 w-full lg:w-[45%] lg:pl-10">
-          <p className="text-slate-300 text-[12px] font-medium mb-3 tracking-wide">
+        <div className="z-10 text-center lg:text-left mb-10 lg:mb-0 w-full lg:w-[45%] lg:pl-4">
+          <p className="text-slate-300 text-[13px] font-medium mb-3 tracking-wide opacity-90">
             Planning a Laundry Setup?
           </p>
-          <h2 className="text-4xl lg:text-[46px] font-black text-white tracking-tighter leading-[1.05]">
+          <h2 className="text-4xl lg:text-[50px] font-black text-white tracking-tight leading-[1.1]">
             Let Our Experts <br />
             Help You <span className="text-[#00E1FF]">Build It</span> <span className="text-[#E31E24]">Right.</span>
           </h2>
         </div>
 
         {/* Buttons (Center) */}
-        <div className="z-10 flex flex-col sm:flex-row gap-4 w-full lg:w-[35%] items-center justify-center">
+        <div className="z-10 flex flex-col sm:flex-row gap-5 w-full lg:w-[35%] items-center justify-center pl-0 lg:pl-8">
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-[#E31E24] hover:bg-red-700 text-white font-bold py-4 px-6 rounded-[6px] text-[11px] tracking-widest uppercase transition-colors flex items-center gap-2 whitespace-nowrap"
+            className="bg-[#E31E24] hover:bg-red-700 text-white font-bold py-[18px] px-8 rounded-md text-[12px] tracking-widest uppercase transition-colors shadow-[0_10px_20px_rgba(227,30,36,0.3)] flex items-center gap-2 whitespace-nowrap"
           >
             Get Expert Advice
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
             </svg>
           </motion.button>
           
           <motion.button 
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
             whileTap={{ scale: 0.95 }}
-            className="border border-slate-500 hover:border-white text-white font-bold py-4 px-6 rounded-[6px] text-[11px] tracking-widest uppercase transition-colors flex items-center gap-2 whitespace-nowrap"
+            className="border border-slate-500/50 hover:border-white text-white font-bold py-[18px] px-8 rounded-md text-[12px] tracking-widest uppercase transition-all flex items-center gap-2 whitespace-nowrap bg-white/5 backdrop-blur-sm"
           >
             Request Consultation
+            <svg className="w-4 h-4 ml-1 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
           </motion.button>
         </div>
 
-        {/* Laundry Cart Image (Right - bleeding off edges) */}
+        {/* Laundry Cart Image (Right - bleeding heavily off edges) */}
         <motion.div 
           initial={{ opacity: 0, x: 50 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 1, delay: 0.3 }}
-          className="hidden lg:block absolute right-[-5%] bottom-[-20%] w-[35%] z-10 pointer-events-none"
+          className="hidden lg:block absolute right-[-6%] bottom-[-25%] w-[42%] z-10 pointer-events-none"
         >
           <img src="/images/consultancy/cta-cart.png" alt="Laundry Cart" className="w-full h-auto drop-shadow-2xl" />
         </motion.div>
@@ -890,8 +901,7 @@ export default function Consultancy() {
       <IndustrySlider />
       <ProcessTimeline />
       <DesignPerformance />
-      <WhyChoosePromac />
-      <CtaBanner />
+      <CombinedWhyChooseAndCta />
       <BrandsFooter />
       <Footer />
     </div>
