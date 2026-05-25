@@ -1,11 +1,21 @@
 import { useEffect, useRef } from 'react';
 import { motion, useAnimate, useSpring, useMotionValue, useTransform } from 'framer-motion';
 
-const BRANDS = ["SEA-LION", "KANNEGIESSER", "MAESTRELLI", "MAXIPRESS"];
+import kannegiesserLogo from '../assets/brands/kannegiesser.png';
+import maestrelliLogo from '../assets/brands/maestrelli.png';
+import maxipressLogo from '../assets/brands/maxipress.png';
+import sealionLogo from '../assets/brands/sealion.png';
+
+const BRANDS = [
+  { name: "SEA-LION", src: sealionLogo },
+  { name: "KANNEGIESSER", src: kannegiesserLogo },
+  { name: "MAESTRELLI", src: maestrelliLogo },
+  { name: "MAXIPRESS", src: maxipressLogo }
+];
 
 /**
  * Extracted individual brand component to isolate the mouse tracking logic 
- * necessary for the 3D Perspective Magnetic Tilt effect.
+ * necessary for the 3D Perspective Magnetic Tilt effect on the images.
  */
 function MagneticBrand({ brand }) {
   // Raw mouse coordinates relative to the center of the brand container
@@ -33,32 +43,21 @@ function MagneticBrand({ brand }) {
     mouseY.set(0);
   };
 
-  const isKannegiesser = brand === "KANNEGIESSER";
-  const defaultSpacing = isKannegiesser ? "0.05em" : "0.1em";
-
   return (
     <motion.div
-      className="px-24 text-slate-800 font-sans font-extrabold text-3xl lg:text-4xl cursor-pointer flex items-center justify-center"
+      className="px-24 flex items-center justify-center cursor-pointer"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ perspective: 1000 }}
-      
-      // Start slightly expansive
-      initial={{ letterSpacing: defaultSpacing, color: "#1e293b", textShadow: "0px 0px 0px rgba(227, 30, 36, 0)" }}
-      
-      // Ultra-Premium Interaction State
-      whileHover={{ 
-        scale: 1.25, 
-        color: "#e23028", 
-        // Multi-layered cinematic glow
-        textShadow: "0 10px 20px rgba(227, 30, 36, 0.3), 0 0 40px rgba(227, 30, 36, 0.1)",
-        // Luxury stretch
-        letterSpacing: "0.2em",
-      }}
+      whileHover={{ scale: 1.15 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
     >
       <motion.div style={{ rotateX, rotateY, display: "inline-block" }}>
-        {brand}
+        <img 
+          src={brand.src} 
+          alt={brand.name} 
+          className="h-10 md:h-12 lg:h-14 w-auto object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.08)]" 
+        />
       </motion.div>
     </motion.div>
   );
@@ -112,7 +111,7 @@ export default function BrandMarquee() {
       >
         <div ref={scope} className="flex items-center w-max">
           {multipliedBrands.map((brand, idx) => (
-            <MagneticBrand key={`${brand}-${idx}`} brand={brand} />
+            <MagneticBrand key={`${brand.name}-${idx}`} brand={brand} />
           ))}
         </div>
         
