@@ -848,38 +848,45 @@ function CombinedWhyChooseAndCta() {
               </motion.button>
             </div>
 
-            {/* COL 3: Cart (Enhanced with Premium Illuminated Stage) */}
-            <div className="w-full xl:w-[25%] relative h-[160px] hidden xl:flex items-center justify-end">
+            {/* COL 3: Cart (Deeply Integrated into Banner Environment) */}
+            <div className="w-full xl:w-[25%] relative h-[160px] hidden xl:flex items-end justify-end">
               
-              {/* THE STAGE: A brilliantly lit podium that serves as a design enhancement 
-                  AND perfectly camouflages the cart's baked-in white floor puddle by blending white-on-white. */}
-              <div className="absolute right-[0%] bottom-[-50px] w-[260px] h-[100px] z-30 pointer-events-none">
-                {/* Stage Ambient Glow */}
-                <div className="absolute inset-0 bg-blue-400/20 blur-[40px] rounded-full" />
+              <div className="absolute right-[-10px] bottom-[-20px] w-[280px] z-40 pointer-events-none flex flex-col justify-end">
                 
-                {/* The Illuminated Floor Surface (Pure white center to melt the puddle) */}
-                <div className="absolute bottom-[20px] left-[10%] right-[10%] h-[40px] bg-white rounded-[100%] shadow-[0_0_50px_rgba(255,255,255,1)] blur-[4px]" />
-                
-                {/* Stage Physical Edge (Metallic look) */}
-                <div className="absolute bottom-[18px] left-[10%] right-[10%] h-[40px] border-[2px] border-white/60 rounded-[100%] shadow-[0_15px_30px_rgba(0,0,0,0.8)]" />
-                
-                {/* Bright spotlight hitting the center of the stage */}
-                <div className="absolute bottom-[30px] left-[20%] right-[20%] h-[20px] bg-white blur-md rounded-full opacity-100" />
-              </div>
-
-              {/* The Cart sitting perfectly on the stage */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 1, delay: 0.3 }}
-                className="absolute right-[-10px] bottom-[-25px] w-[240px] pointer-events-none z-40"
-              >
+                {/* The Cart Image */}
                 <img 
                   src="/images/consultancy/cta-cart.png" 
                   alt="Laundry Cart" 
-                  className="w-full h-auto drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]" 
+                  className="w-full h-auto drop-shadow-[0_15px_30px_rgba(0,0,0,0.6)]" 
                 />
-              </motion.div>
+
+                {/* --- FOREGROUND INTEGRATION ELEMENTS --- */}
+                {/* These elements sit ON TOP of the cart to hide the white puddle and embed the cart into the scene */}
+                
+                {/* 1. Solid Dark Gradient to swallow the jagged white puddle into the banner background */}
+                <div className="absolute bottom-[5px] left-0 right-0 h-[50px] bg-gradient-to-t from-[#0A1428] via-[#0A1428]/90 to-transparent z-50 rounded-b-xl" />
+                
+                {/* 2. Foreground Water Splash wrapping around the cart wheels */}
+                <div className="absolute bottom-[-15px] left-[-20%] right-[-10%] h-[120px] z-50 mix-blend-screen opacity-50 pointer-events-none">
+                  <img 
+                    src="/images/consultancy/water-splash.png" 
+                    alt="Splash" 
+                    className="w-full h-full object-cover" 
+                    style={{ maskImage: 'linear-gradient(to top, black 60%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to top, black 60%, transparent 100%)' }} 
+                  />
+                </div>
+
+                {/* 3. Foreground Bubbles floating over the bottom of the cart */}
+                <div className="absolute bottom-[10px] right-[10%] w-[120px] h-[100px] z-50 mix-blend-screen opacity-70 pointer-events-none">
+                  <img 
+                    src="/images/consultancy/soap-bubbles.png" 
+                    alt="Bubbles" 
+                    className="w-full h-full object-cover"
+                    style={{ maskImage: 'radial-gradient(ellipse at center, black 50%, transparent 100%)', WebkitMaskImage: 'radial-gradient(ellipse at center, black 50%, transparent 100%)' }}
+                  />
+                </div>
+
+              </div>
             </div>
             
           </div>
