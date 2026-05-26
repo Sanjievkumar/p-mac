@@ -31,27 +31,7 @@
 }
 
 @layer components {
-  /* Decorative diagonal stripe used between sections */
-  .section-divider {
-    width: 100%;
-    height: 48px;
-    background: repeating-linear-gradient(
-      -45deg,
-      #0a0a0a,
-      #0a0a0a 4px,
-      transparent 4px,
-      transparent 12px
-    );
-    position: relative;
-    overflow: hidden;
-  }
-
-  .section-divider::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, #0a0a0a 0%, transparent 10%, transparent 90%, #0a0a0a 100%);
-  }
+  /* Animations */
 
   /* Glass card base */
   .glass-card {

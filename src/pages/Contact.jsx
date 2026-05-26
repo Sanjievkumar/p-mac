@@ -263,11 +263,6 @@ export default function Contact() {
       </section>
 
       {/* ══════════════════════════════════════════
-          DECORATIVE DIVIDER
-      ══════════════════════════════════════════ */}
-      <div className="section-divider mt-auto" />
-
-      {/* ══════════════════════════════════════════
           FOOTER
       ══════════════════════════════════════════ */}
       <Footer />
