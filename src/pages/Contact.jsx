@@ -168,7 +168,7 @@ export default function Contact() {
       {/* ══════════════════════════════════════════
           HERO SECTION
       ══════════════════════════════════════════ */}
-      <section className="relative w-full pt-44 pb-32 px-6 lg:px-12 flex flex-col items-center overflow-hidden">
+      <section className="relative w-full pt-44 pb-24 px-6 lg:px-12 flex flex-col items-center overflow-hidden">
         
         {/* Ambient blobs */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#E31E24]/[0.04] rounded-full blur-[180px] -mr-40 -mt-40 pointer-events-none" />
@@ -218,7 +218,7 @@ export default function Contact() {
       {/* ══════════════════════════════════════════
           CONTACT GRID (Overlapping Asymmetrical Design)
       ══════════════════════════════════════════ */}
-      <section className="relative w-full pb-32 px-6 lg:px-12 bg-[#fafafa] z-20" style={{ perspective: "1500px" }}>
+      <section className="relative w-full pb-32 px-6 lg:px-12 z-20 -mt-12 lg:-mt-24" style={{ perspective: "1500px" }}>
         <div className="max-w-[1300px] mx-auto grid lg:grid-cols-12 gap-8 lg:gap-12 relative">
           
           {/* LEFT: Solid Promac Navy Info Block with 3D Tilt */}
