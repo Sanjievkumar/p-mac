@@ -9,7 +9,7 @@ const NAV_LINKS = [
   { label: 'BRANDS', href: '/brands' },
   { label: 'SERVICE', href: '/#service' },
   { label: 'CONSULTANCY', href: '/consultancy' },
-  { label: 'CONTACT', href: '/#contact' },
+  { label: 'CONTACT', href: '/contact' },
 ];
 
 export default function Navbar() {
