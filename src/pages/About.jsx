@@ -203,7 +203,7 @@ export default function About() {
                 aria-hidden="true"
               />
               <div className="relative z-10 space-y-6">
-                <h3 className="text-2xl font-black tracking-tighter text-white group-hover:text-[#001F3F] transition-colors duration-500">
+                <h3 className="text-2xl font-black tracking-tighter text-[#E31E24] transition-colors duration-500">
                   Our Vision
                 </h3>
                 <p className="text-white/90 group-hover:text-[#001F3F]/90 text-lg leading-relaxed transition-colors duration-500">
