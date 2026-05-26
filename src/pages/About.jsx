@@ -192,7 +192,7 @@ export default function About() {
         >
           <div className="grid md:grid-cols-2 gap-16 items-stretch">
             {/* Left: Expertise */}
-            <MagneticCard className="h-full flex flex-col justify-center relative bg-[#001F3F] hover:bg-white rounded-3xl p-10 text-white overflow-hidden group shadow-lg hover:shadow-2xl transition-colors duration-500 border border-white/10 hover:border-gray-200">
+            <MagneticCard className="h-full flex flex-col justify-start relative bg-[#001F3F] hover:bg-white rounded-3xl p-10 text-white overflow-hidden group shadow-lg hover:shadow-2xl transition-colors duration-500 border border-white/10 hover:border-gray-200">
               {/* shimmer border via pseudo-gradient overlay */}
               <div
                 className="absolute inset-0 rounded-3xl pointer-events-none z-0 opacity-100 group-hover:opacity-0 transition-opacity duration-500"
@@ -214,7 +214,7 @@ export default function About() {
 
             {/* Right: Mission */}
             <MagneticCard
-              className="h-full flex flex-col justify-center relative bg-[#001F3F] hover:bg-white rounded-3xl p-10 text-white overflow-hidden group shadow-lg hover:shadow-2xl transition-colors duration-500 border border-white/10 hover:border-gray-200"
+              className="h-full flex flex-col justify-start relative bg-[#001F3F] hover:bg-white rounded-3xl p-10 text-white overflow-hidden group shadow-lg hover:shadow-2xl transition-colors duration-500 border border-white/10 hover:border-gray-200"
             >
               {/* Shimmer */}
               <div
