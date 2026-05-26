@@ -63,15 +63,20 @@ export default function Footer() {
                   <MapPin className="w-4 h-4 text-[#e31e24] group-hover:text-white transition-colors duration-300" />
                 </div>
                 <p className="leading-relaxed mt-1">
-                  Door No. 2-A, Sai Sruti Trade Centre,<br />
-                  Ramnagar, Coimbatore - 641009
+                  Ground Floor, Door No:5, Plot No:33,<br />
+                  Sapthagiri Nagar, Inner Ring Road,<br />
+                  Puludivakkam, Chennai – 600 091,<br />
+                  Tamil Nadu – INDIA.
                 </p>
               </div>
               <div className="flex items-center gap-4 group cursor-pointer hover:text-white transition-colors duration-300">
                 <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-[#e31e24] transition-colors duration-300">
                   <Phone className="w-4 h-4 text-[#e31e24] group-hover:text-white transition-colors duration-300" />
                 </div>
-                <p>+91 95663 40888</p>
+                <p>
+                  +91 95663 40888<br />
+                  +91 95663 40016
+                </p>
               </div>
               <div className="flex items-center gap-4 group cursor-pointer hover:text-white transition-colors duration-300">
                 <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-[#e31e24] transition-colors duration-300">
