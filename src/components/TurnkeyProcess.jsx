@@ -186,7 +186,7 @@ export default function TurnkeyProcess() {
     >
       {/* Mild Blue Blueprint Grid Watermark */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.05]"
+        className="absolute inset-0 pointer-events-none opacity-[0.05] animate-grid"
         style={{
           backgroundImage:
             'linear-gradient(#3b82f6 1px, transparent 1px), linear-gradient(90deg, #3b82f6 1px, transparent 1px)',

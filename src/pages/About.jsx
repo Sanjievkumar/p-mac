@@ -139,7 +139,7 @@ export default function About() {
 
         {/* Mild Blue Blueprint Grid Watermark */}
         <div
-          className="absolute inset-0 pointer-events-none opacity-[0.05]"
+          className="absolute inset-0 pointer-events-none opacity-[0.05] animate-grid"
           style={{
             backgroundImage:
               'linear-gradient(#3b82f6 1px, transparent 1px), linear-gradient(90deg, #3b82f6 1px, transparent 1px)',
@@ -260,7 +260,7 @@ export default function About() {
       <section className="py-32 bg-white relative overflow-hidden">
         {/* Blueprint grid watermark */}
         <div
-          className="absolute inset-0 pointer-events-none opacity-[0.03]"
+          className="absolute inset-0 pointer-events-none opacity-[0.03] animate-grid"
           style={{
             backgroundImage:
               'linear-gradient(#001F3F 1px, transparent 1px), linear-gradient(90deg, #001F3F 1px, transparent 1px)',
