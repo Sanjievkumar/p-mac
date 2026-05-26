@@ -203,12 +203,11 @@ export default function About() {
                 aria-hidden="true"
               />
               <div className="relative z-10 space-y-6">
-                <h2 className="text-4xl font-black tracking-tighter leading-tight text-white group-hover:text-[#001F3F] transition-colors duration-500">
-                  Decades of <br />
-                  <span className="text-[#E31E24]">Hands-on Expertise.</span>
-                </h2>
+                <h3 className="text-2xl font-black tracking-tighter text-white group-hover:text-[#001F3F] transition-colors duration-500">
+                  Our Vision
+                </h3>
                 <p className="text-white/90 group-hover:text-[#001F3F]/90 text-lg leading-relaxed transition-colors duration-500">
-                  As an experienced industrial laundry solutions provider, we support businesses with reliable equipment, expert guidance, and long-term service support. We help clients design, install, and operate efficient laundry facilities that deliver consistent performance.
+                  We envision a future where every hospitality, healthcare, and commercial laundry facility across India operates through globally advanced systems, seamless automation, and service-driven engineering excellence — transforming laundry operations from a utility into a strategic operational advantage.
                 </p>
               </div>
             </MagneticCard>
