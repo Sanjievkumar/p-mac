@@ -190,9 +190,9 @@ export default function About() {
           transition={{ duration: 1, ease: 'easeOut', delay: 0.4 }}
           className="relative max-w-[1200px] w-full rounded-[40px] overflow-visible shadow-2xl mb-32 border border-white/60 bg-white/40 backdrop-blur-2xl p-12 md:p-20"
         >
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div className="grid md:grid-cols-2 gap-16 items-stretch">
             {/* Left: Expertise */}
-            <MagneticCard className="relative bg-[#001F3F] hover:bg-white rounded-3xl p-10 text-white overflow-hidden group shadow-lg hover:shadow-2xl transition-colors duration-500 border border-white/10 hover:border-gray-200">
+            <MagneticCard className="h-full flex flex-col justify-center relative bg-[#001F3F] hover:bg-white rounded-3xl p-10 text-white overflow-hidden group shadow-lg hover:shadow-2xl transition-colors duration-500 border border-white/10 hover:border-gray-200">
               {/* shimmer border via pseudo-gradient overlay */}
               <div
                 className="absolute inset-0 rounded-3xl pointer-events-none z-0 opacity-100 group-hover:opacity-0 transition-opacity duration-500"
@@ -215,7 +215,7 @@ export default function About() {
 
             {/* Right: Mission */}
             <MagneticCard
-              className="relative bg-[#001F3F] hover:bg-white rounded-3xl p-10 text-white overflow-hidden group shadow-lg hover:shadow-2xl transition-colors duration-500 border border-white/10 hover:border-gray-200"
+              className="h-full flex flex-col justify-center relative bg-[#001F3F] hover:bg-white rounded-3xl p-10 text-white overflow-hidden group shadow-lg hover:shadow-2xl transition-colors duration-500 border border-white/10 hover:border-gray-200"
             >
               {/* Shimmer */}
               <div
