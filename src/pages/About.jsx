@@ -170,7 +170,7 @@ export default function About() {
               <SplitText text="BEYOND " className="inline" baseDelay={0.1} />
               <SplitText
                 text="EQUIPMENT."
-                className="inline text-gray-300"
+                className="inline text-[#0B4F8A]"
                 baseDelay={0.1 + 'BEYOND '.length * 0.03}
               />
             </div>
