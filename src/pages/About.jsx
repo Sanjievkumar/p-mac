@@ -137,6 +137,17 @@ export default function About() {
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#E31E24]/[0.03] rounded-full blur-[180px] -mr-40 -mt-40" />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#0B4F8A]/[0.02] rounded-full blur-[160px] -ml-40 -mb-40" />
 
+        {/* Mild Blue Blueprint Grid Watermark */}
+        <div
+          className="absolute inset-0 pointer-events-none opacity-[0.05]"
+          style={{
+            backgroundImage:
+              'linear-gradient(#3b82f6 1px, transparent 1px), linear-gradient(90deg, #3b82f6 1px, transparent 1px)',
+            backgroundSize: '48px 48px',
+          }}
+          aria-hidden="true"
+        />
+
         <div className="max-w-[1100px] w-full text-center mb-20 relative z-10">
           {/* Eyebrow pill */}
           <motion.div

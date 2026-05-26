@@ -184,13 +184,13 @@ export default function TurnkeyProcess() {
       ref={sectionRef}
       className="relative bg-slate-50 py-32 overflow-hidden"
     >
-      {/* ── Subtle background grid decoration ── */}
+      {/* Mild Blue Blueprint Grid Watermark */}
       <div
-        className="absolute inset-0 pointer-events-none"
+        className="absolute inset-0 pointer-events-none opacity-[0.05]"
         style={{
           backgroundImage:
-            'radial-gradient(circle, rgba(227,30,36,0.04) 1px, transparent 1px)',
-          backgroundSize: '40px 40px',
+            'linear-gradient(#3b82f6 1px, transparent 1px), linear-gradient(90deg, #3b82f6 1px, transparent 1px)',
+          backgroundSize: '48px 48px',
         }}
         aria-hidden="true"
       />
