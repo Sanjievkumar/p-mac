@@ -138,127 +138,128 @@ export default function Contact() {
           CONTACT GRID (Overlapping Asymmetrical Design)
       ══════════════════════════════════════════ */}
       <section className="relative w-full pb-32 px-6 lg:px-12 bg-[#fafafa] z-20">
-        <div className="max-w-[1200px] mx-auto relative">
+        <div className="max-w-[1200px] mx-auto grid lg:grid-cols-12 gap-8 lg:gap-12 relative">
           
-          {/* Main White Card Wrapper */}
+          {/* LEFT: Solid Promac Navy Info Block */}
           <motion.div 
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full bg-white rounded-[40px] shadow-[0_30px_80px_rgba(0,0,0,0.06)] border border-slate-100 flex flex-col lg:flex-row overflow-hidden"
+            className="lg:col-span-5 bg-[#001F3F] rounded-[40px] shadow-[0_30px_80px_rgba(0,0,0,0.08)] p-10 md:p-16 text-white relative overflow-hidden flex flex-col justify-center"
           >
+            {/* Subtle pattern over navy */}
+            <div className="absolute inset-0 opacity-5 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.8)_1px,transparent_1px)] bg-[length:20px_20px] pointer-events-none" />
             
-            {/* LEFT: Solid Promac Red Info Block */}
-            <div className="lg:w-[40%] bg-[#E31E24] p-10 md:p-16 text-white relative overflow-hidden">
-              {/* Subtle pattern over red */}
-              <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.8)_1px,transparent_1px)] bg-[length:20px_20px] pointer-events-none" />
+            <div className="relative z-10 space-y-16">
               
-              <div className="relative z-10 h-full flex flex-col justify-center space-y-16">
-                
-                {/* Corporate Office */}
-                <div className="group">
-                  <h3 className="text-xs font-bold tracking-[0.3em] uppercase text-white/70 mb-4 flex items-center gap-3">
-                    <span className="w-8 h-[1px] bg-white/70"></span> Corporate Office
-                  </h3>
-                  <p className="text-xl md:text-2xl font-medium leading-relaxed text-white">
-                    Ground Floor, Door No:5, Plot No:33,<br />
-                    Sapthagiri Nagar, Inner Ring Road,<br />
-                    Puludivakkam, Chennai – 600 091,<br />
-                    Tamil Nadu – INDIA.
-                  </p>
-                </div>
-
-                {/* Direct Contact */}
-                <div className="group">
-                  <h3 className="text-xs font-bold tracking-[0.3em] uppercase text-white/70 mb-4 flex items-center gap-3">
-                    <span className="w-8 h-[1px] bg-white/70"></span> Direct Line
-                  </h3>
-                  <div className="space-y-3">
-                    <a href="tel:+919566340888" className="block text-3xl font-bold text-white hover:text-white/80 transition-colors duration-300">
-                      +91 95663 40888
-                    </a>
-                    <a href="tel:+919566340016" className="block text-3xl font-bold text-white hover:text-white/80 transition-colors duration-300">
-                      +91 95663 40016
-                    </a>
-                  </div>
-                </div>
-
-                {/* Digital Contact */}
-                <div className="group">
-                  <h3 className="text-xs font-bold tracking-[0.3em] uppercase text-white/70 mb-4 flex items-center gap-3">
-                    <span className="w-8 h-[1px] bg-white/70"></span> Digital
-                  </h3>
-                  <a href="mailto:sales@promactech.com" className="text-2xl font-bold text-white hover:text-white/80 transition-colors duration-300">
-                    sales@promactech.com
-                  </a>
-                </div>
-
-              </div>
-            </div>
-
-            {/* RIGHT: Contact Form */}
-            <div className="lg:w-[60%] p-10 md:p-16 flex flex-col justify-center bg-white">
-              <div className="mb-12">
-                <h2 className="text-4xl font-black tracking-tighter text-[#001F3F] mb-3">
-                  Get in Touch
-                </h2>
-                <p className="text-slate-500 font-light tracking-wide">
-                  Kindly allow <span className="text-slate-800 font-medium">24-48 hours</span> for the team to follow up with you.
+              {/* Corporate Office */}
+              <div className="group">
+                <h3 className="text-xs font-bold tracking-[0.3em] uppercase text-[#E31E24] mb-4 flex items-center gap-3">
+                  <span className="w-8 h-[1px] bg-[#E31E24]"></span> Corporate Office
+                </h3>
+                <p className="text-xl md:text-2xl font-light leading-relaxed text-white">
+                  Ground Floor, Door No:5, Plot No:33,<br />
+                  Sapthagiri Nagar, Inner Ring Road,<br />
+                  Puludivakkam, Chennai – 600 091,<br />
+                  Tamil Nadu – INDIA.
                 </p>
               </div>
 
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-                <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-                  <FloatingInput type="text" id="firstName" label="First Name" />
-                  <FloatingInput type="tel" id="mobileNumber" label="Mobile Number" />
+              {/* Direct Contact */}
+              <div className="group">
+                <h3 className="text-xs font-bold tracking-[0.3em] uppercase text-[#E31E24] mb-4 flex items-center gap-3">
+                  <span className="w-8 h-[1px] bg-[#E31E24]"></span> Direct Line
+                </h3>
+                <div className="space-y-3">
+                  <a href="tel:+919566340888" className="block text-3xl font-light text-white hover:text-[#3b82f6] transition-colors duration-300">
+                    +91 95663 40888
+                  </a>
+                  <a href="tel:+919566340016" className="block text-3xl font-light text-white hover:text-[#3b82f6] transition-colors duration-300">
+                    +91 95663 40016
+                  </a>
                 </div>
-                
-                <FloatingInput type="email" id="emailAddress" label="Email Address" />
+              </div>
 
-                {/* Custom Styled Select Box */}
-                <div className="relative z-0 w-full mb-8 group">
-                  <select
-                    id="subject"
-                    name="subject"
-                    className="block py-3 px-0 w-full text-lg text-[#0a0a0a] bg-transparent border-0 border-b-2 border-slate-200 appearance-none focus:outline-none focus:ring-0 focus:border-[#E31E24] peer cursor-pointer"
-                    required
-                    defaultValue=""
-                  >
-                    <option value="" disabled className="text-slate-500">Select Subject</option>
-                    <option value="sales" className="text-[#0a0a0a]">Sales Inquiry</option>
-                    <option value="support" className="text-[#0a0a0a]">Technical Support</option>
-                    <option value="amc" className="text-[#0a0a0a]">AMC & Lifecycle Support</option>
-                    <option value="other" className="text-[#0a0a0a]">Other</option>
-                  </select>
-                  <label
-                    htmlFor="subject"
-                    className="peer-focus:font-bold absolute text-sm text-slate-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#E31E24]"
-                  >
-                    Subject
-                  </label>
-                  <div className="absolute right-0 bottom-4 pointer-events-none text-slate-400 peer-focus:text-[#E31E24] transition-colors">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </div>
-                </div>
+              {/* Digital Contact */}
+              <div className="group">
+                <h3 className="text-xs font-bold tracking-[0.3em] uppercase text-[#E31E24] mb-4 flex items-center gap-3">
+                  <span className="w-8 h-[1px] bg-[#E31E24]"></span> Digital
+                </h3>
+                <a href="mailto:sales@promactech.com" className="text-2xl font-light text-white hover:text-[#3b82f6] transition-colors duration-300">
+                  sales@promactech.com
+                </a>
+              </div>
 
-                <FloatingInput isTextarea={true} id="message" label="Your Message" />
-
-                <div className="pt-6">
-                  <MagneticButton className="group relative w-full overflow-hidden rounded-full bg-[#001F3F] px-8 py-5 text-center font-black tracking-widest text-white uppercase transition-all hover:bg-[#E31E24] hover:shadow-[0_10px_30px_rgba(227,30,36,0.2)] focus:outline-none">
-                    <span className="relative z-10 flex items-center justify-center gap-3">
-                      Submit Inquiry
-                      <svg className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </span>
-                  </MagneticButton>
-                </div>
-              </form>
             </div>
-            
           </motion.div>
+
+          {/* RIGHT: Contact Form Card */}
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7 bg-white rounded-[40px] shadow-[0_30px_80px_rgba(0,0,0,0.06)] border border-slate-100 p-10 md:p-16 flex flex-col justify-center"
+          >
+            <div className="mb-12">
+              <h2 className="text-4xl font-black tracking-tighter text-[#001F3F] mb-3">
+                Get in Touch
+              </h2>
+              <p className="text-slate-500 font-light tracking-wide">
+                Kindly allow <span className="text-slate-800 font-medium">24-48 hours</span> for the team to follow up with you.
+              </p>
+            </div>
+
+            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+                <FloatingInput type="text" id="firstName" label="First Name" />
+                <FloatingInput type="tel" id="mobileNumber" label="Mobile Number" />
+              </div>
+              
+              <FloatingInput type="email" id="emailAddress" label="Email Address" />
+
+              {/* Custom Styled Select Box */}
+              <div className="relative z-0 w-full mb-8 group">
+                <select
+                  id="subject"
+                  name="subject"
+                  className="block py-3 px-0 w-full text-lg text-[#0a0a0a] bg-transparent border-0 border-b-2 border-slate-200 appearance-none focus:outline-none focus:ring-0 focus:border-[#E31E24] peer cursor-pointer"
+                  required
+                  defaultValue=""
+                >
+                  <option value="" disabled className="text-slate-500">Select Subject</option>
+                  <option value="sales" className="text-[#0a0a0a]">Sales Inquiry</option>
+                  <option value="support" className="text-[#0a0a0a]">Technical Support</option>
+                  <option value="amc" className="text-[#0a0a0a]">AMC & Lifecycle Support</option>
+                  <option value="other" className="text-[#0a0a0a]">Other</option>
+                </select>
+                <label
+                  htmlFor="subject"
+                  className="peer-focus:font-bold absolute text-sm text-slate-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#E31E24]"
+                >
+                  Subject
+                </label>
+                <div className="absolute right-0 bottom-4 pointer-events-none text-slate-400 peer-focus:text-[#E31E24] transition-colors">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+              </div>
+
+              <FloatingInput isTextarea={true} id="message" label="Your Message" />
+
+              <div className="pt-6">
+                <MagneticButton className="group relative w-full overflow-hidden rounded-full bg-[#E31E24] px-8 py-5 text-center font-black tracking-widest text-white uppercase transition-all hover:bg-[#c4151b] hover:shadow-[0_10px_30px_rgba(227,30,36,0.2)] focus:outline-none">
+                  <span className="relative z-10 flex items-center justify-center gap-3">
+                    Submit Inquiry
+                    <svg className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </span>
+                </MagneticButton>
+              </div>
+            </form>
+          </motion.div>
+          
         </div>
       </section>
 
