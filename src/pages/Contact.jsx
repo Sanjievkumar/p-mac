@@ -229,15 +229,6 @@ export default function Contact() {
               transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="h-full bg-[#001F3F] rounded-[40px] shadow-[0_30px_80px_rgba(0,31,63,0.2)] p-10 md:p-14 text-white relative overflow-hidden flex flex-col justify-center"
             >
-              {/* Architectural Image Texture Overlay */}
-              <div 
-                className="absolute inset-0 opacity-[0.08] pointer-events-none mix-blend-overlay"
-                style={{ 
-                  backgroundImage: "url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop')",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center"
-                }}
-              />
               {/* Secondary geometric overlay for depth */}
               <div className="absolute inset-0 opacity-5 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.8)_1px,transparent_1px)] bg-[length:24px_24px] pointer-events-none" />
               
