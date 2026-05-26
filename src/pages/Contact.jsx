@@ -301,7 +301,7 @@ export default function Contact() {
           </TiltCard>
 
           {/* RIGHT: Contact Form Card with 3D Tilt */}
-          <TiltCard className="lg:col-span-7 h-full z-20 lg:-ml-12 mt-8 lg:mt-16">
+          <TiltCard className="lg:col-span-7 h-full z-20">
             <motion.div 
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
