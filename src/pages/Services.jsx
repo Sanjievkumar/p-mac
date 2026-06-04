@@ -182,7 +182,7 @@ function MethodologyTimeline() {
             <div className={`w-full md:w-[45%] pl-24 md:pl-0 ${isEven ? 'md:pl-16' : 'md:pr-16 text-left md:text-right'}`}>
               <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-3xl transition-all duration-500 group-hover:bg-white group-hover:-translate-y-2 group-hover:shadow-[0_15px_40px_rgba(255,255,255,0.1)] group-hover:border-white cursor-default">
                 <h4 className="text-2xl font-bold text-white group-hover:text-[#001F3F] mb-4 transition-colors duration-500">{step.title}</h4>
-                <p className="text-white/60 font-light leading-relaxed transition-colors duration-500 group-hover:text-slate-600">{step.desc}</p>
+                <p className="text-white/60 font-light leading-relaxed transition-colors duration-500 group-hover:text-[#001F3F] opacity-100 group-hover:opacity-80">{step.desc}</p>
               </div>
             </div>
           </motion.div>
@@ -271,8 +271,11 @@ export default function Services() {
                   className="h-full bg-gradient-to-br from-white to-slate-50 group-hover:from-[#001F3F] group-hover:to-[#001F3F] rounded-[32px] shadow-[0_20px_60px_rgba(0,0,0,0.06)] border border-slate-200 group-hover:border-[#001F3F] p-10 md:p-14 relative overflow-hidden transition-all duration-500 flex flex-col"
                 >
                   
+                  {/* Hover Blue Background Overlay (Bulletproof) */}
+                  <div className="absolute inset-0 bg-[#001F3F] opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none" />
+
                   {/* Subtle Technical Dot Grid Texture */}
-                  <div className="absolute inset-0 opacity-[0.03] group-hover:opacity-10 pointer-events-none transition-opacity duration-500" 
+                  <div className="absolute inset-0 opacity-[0.03] group-hover:opacity-10 pointer-events-none transition-opacity duration-500 z-0" 
                        style={{ backgroundImage: 'radial-gradient(#001F3F 1.5px, transparent 1.5px)', backgroundSize: '24px 24px' }} 
                   />
 
