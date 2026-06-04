@@ -1,36 +1,44 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { motion, useMotionValue, useSpring, useTransform, useInView } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useTransform, useMotionTemplate, useScroll } from 'framer-motion';
 import { Settings, Wrench, Package, LineChart, ArrowRight, CheckCircle2 } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 /* ─────────────────────────────────────────────
-   3D Tilt Card Component
+   3D Tilt Card with Dynamic Spotlight Component
 ───────────────────────────────────────────── */
-function TiltCard({ children, className }) {
+function SpotlightTiltCard({ children, className }) {
   const ref = useRef(null);
   
   const x = useMotionValue(0);
   const y = useMotionValue(0);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
 
   const mouseXSpring = useSpring(x, { stiffness: 150, damping: 20 });
   const mouseYSpring = useSpring(y, { stiffness: 150, damping: 20 });
 
   const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["7deg", "-7deg"]);
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-7deg", "7deg"]);
-  const glareOpacity = useTransform(mouseYSpring, [-0.5, 0.5], [0, 0.15]);
-  const glareY = useTransform(mouseYSpring, [-0.5, 0.5], ["-100%", "100%"]);
+  
+  // Spotlight
+  const background = useMotionTemplate`radial-gradient(400px circle at ${mouseX}px ${mouseY}px, rgba(227, 30, 36, 0.08), transparent 80%)`;
 
   const handleMouseMove = (e) => {
     if (!ref.current) return;
     const rect = ref.current.getBoundingClientRect();
     const width = rect.width;
     const height = rect.height;
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
+    const mX = e.clientX - rect.left;
+    const mY = e.clientY - rect.top;
     
-    x.set(mouseX / width - 0.5);
-    y.set(mouseY / height - 0.5);
+    // For Tilt
+    x.set(mX / width - 0.5);
+    y.set(mY / height - 0.5);
+
+    // For Spotlight
+    mouseX.set(mX);
+    mouseY.set(mY);
   };
 
   const handleMouseLeave = () => {
@@ -44,17 +52,14 @@ function TiltCard({ children, className }) {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ rotateX, rotateY, transformStyle: "preserve-3d", perspective: 1200 }}
-      className={`relative ${className}`}
+      className={`relative group ${className}`}
     >
-      <motion.div 
-        className="absolute inset-0 z-50 pointer-events-none rounded-[32px]"
-        style={{
-          opacity: glareOpacity,
-          background: 'linear-gradient(to bottom, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 100%)',
-          transform: `translateY(${glareY})`
-        }}
+      {/* Spotlight Overlay */}
+      <motion.div
+        className="absolute inset-0 z-0 pointer-events-none rounded-[32px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+        style={{ background }}
       />
-      <div style={{ transform: "translateZ(40px)" }} className="h-full w-full">
+      <div style={{ transform: "translateZ(40px)" }} className="h-full w-full relative z-10">
         {children}
       </div>
     </motion.div>
@@ -135,6 +140,60 @@ const METHODOLOGY = [
 ];
 
 /* ─────────────────────────────────────────────
+   Methodology Timeline Component
+───────────────────────────────────────────── */
+function MethodologyTimeline() {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start center", "end center"]
+  });
+
+  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
+  return (
+    <div ref={containerRef} className="relative max-w-[1000px] mx-auto py-20">
+      {/* Center Line Background */}
+      <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-white/10 -translate-x-1/2" />
+      
+      {/* Animated Center Line Progress */}
+      <motion.div 
+        className="absolute left-8 md:left-1/2 top-0 w-1 bg-gradient-to-b from-[#E31E24] to-[#001F3F] -translate-x-1/2 origin-top shadow-[0_0_15px_rgba(227,30,36,0.5)]"
+        style={{ height: lineHeight }}
+      />
+
+      {METHODOLOGY.map((step, index) => {
+        const isEven = index % 2 === 0;
+        return (
+          <motion.div 
+            key={index}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-150px" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className={`relative flex flex-col md:flex-row items-start md:items-center justify-between mb-24 last:mb-0 ${isEven ? 'md:flex-row-reverse' : ''}`}
+          >
+            {/* Center Node */}
+            <div className="absolute left-8 md:left-1/2 top-0 md:top-1/2 w-12 h-12 rounded-full bg-[#001F3F] border-2 border-[#E31E24] shadow-[0_0_20px_rgba(227,30,36,0.4)] -translate-x-1/2 md:-translate-y-1/2 flex items-center justify-center z-10">
+              <span className="text-[#E31E24] font-black text-lg">{step.step}</span>
+            </div>
+
+            {/* Content Card */}
+            <div className={`w-full md:w-[45%] pl-24 md:pl-0 ${isEven ? 'md:pl-16' : 'md:pr-16 text-left md:text-right'}`}>
+              <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors duration-500">
+                <h4 className="text-2xl font-bold text-white mb-4">{step.title}</h4>
+                <p className="text-white/60 font-light leading-relaxed">{step.desc}</p>
+              </div>
+            </div>
+          </motion.div>
+        );
+      })}
+    </div>
+  );
+}
+
+
+/* ─────────────────────────────────────────────
    Main Component
 ───────────────────────────────────────────── */
 export default function Services() {
@@ -195,7 +254,7 @@ export default function Services() {
       </section>
 
       {/* ══════════════════════════════════════════
-          SERVICES GRID (3D Tilt Cards)
+          SERVICES GRID (3D Tilt Cards with Spotlight)
       ══════════════════════════════════════════ */}
       <section className="relative w-full pb-32 px-6 lg:px-12 bg-[#fafafa] z-20">
         <div className="max-w-[1300px] mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 relative">
@@ -203,19 +262,18 @@ export default function Services() {
           {SERVICES.map((service, index) => {
             const Icon = service.icon;
             return (
-              <TiltCard key={service.id} className="h-full">
+              <SpotlightTiltCard key={service.id} className="h-full">
                 <motion.div 
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                  className="h-full bg-white rounded-[32px] shadow-[0_20px_60px_rgba(0,0,0,0.05)] border border-slate-100 p-10 md:p-14 relative overflow-hidden group hover:shadow-[0_40px_100px_rgba(0,31,63,0.08)] transition-shadow duration-500 flex flex-col"
+                  className="h-full bg-white rounded-[32px] shadow-[0_20px_60px_rgba(0,0,0,0.05)] border border-slate-100 p-10 md:p-14 relative overflow-hidden transition-shadow duration-500 flex flex-col"
                 >
-                  {/* Hover Graphic */}
-                  <div className="absolute -top-32 -right-32 w-64 h-64 bg-[#E31E24]/5 rounded-full blur-[80px] group-hover:bg-[#E31E24]/10 transition-colors duration-700 pointer-events-none" />
                   
                   <div className="flex items-center gap-6 mb-8 relative z-10">
-                    <div className="w-16 h-16 rounded-2xl bg-[#001F3F]/5 border border-[#001F3F]/10 flex items-center justify-center shrink-0 group-hover:bg-[#001F3F] group-hover:border-[#001F3F] transition-all duration-500 shadow-sm">
+                    {/* Upgraded Glowing Icon Container */}
+                    <div className="w-16 h-16 rounded-2xl bg-[#001F3F]/5 border border-[#001F3F]/10 flex items-center justify-center shrink-0 group-hover:bg-[#E31E24] group-hover:border-[#E31E24] group-hover:shadow-[0_0_30px_rgba(227,30,36,0.4)] group-hover:scale-110 transition-all duration-500">
                       <Icon className="w-8 h-8 text-[#001F3F] group-hover:text-white transition-colors duration-500" />
                     </div>
                     <h3 className="text-3xl font-black tracking-tight text-[#001F3F]">
@@ -237,7 +295,7 @@ export default function Services() {
                   </div>
 
                 </motion.div>
-              </TiltCard>
+              </SpotlightTiltCard>
             );
           })}
 
@@ -251,32 +309,12 @@ export default function Services() {
         <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.8)_1px,transparent_1px)] bg-[length:24px_24px] pointer-events-none" />
         
         <div className="max-w-[1300px] mx-auto relative z-10">
-          <div className="mb-20 text-center md:text-left">
+          <div className="mb-24 text-center">
             <h2 className="text-sm font-bold tracking-[0.3em] uppercase text-[#E31E24] mb-4">The Promac Way</h2>
             <h3 className="text-4xl md:text-6xl font-black tracking-tighter">Our Methodology.</h3>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 relative">
-            {/* Connecting line for desktop */}
-            <div className="hidden lg:block absolute top-[40px] left-0 right-0 h-[1px] bg-white/10" />
-
-            {METHODOLOGY.map((step, index) => (
-              <motion.div 
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8, delay: index * 0.15 }}
-                className="relative"
-              >
-                <div className="w-20 h-20 rounded-full bg-[#E31E24] flex items-center justify-center text-2xl font-black mb-8 relative z-10 shadow-[0_0_30px_rgba(227,30,36,0.3)]">
-                  {step.step}
-                </div>
-                <h4 className="text-2xl font-bold mb-4">{step.title}</h4>
-                <p className="text-white/60 font-light leading-relaxed">{step.desc}</p>
-              </motion.div>
-            ))}
-          </div>
+          <MethodologyTimeline />
         </div>
       </section>
 
