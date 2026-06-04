@@ -1,9 +1,16 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail } from 'lucide-react';
 import promacLogo from '../assets/promac-logo.png';
 
 export default function Footer() {
-  const quickLinks = ['Home', 'About Us', 'Strategic Partners', 'Ecosystem Services', 'Contact'];
+  const quickLinks = [
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/about' },
+    { name: 'Services', path: '/services' },
+    { name: 'Brands', path: '/brands' },
+    { name: 'Contact', path: '/contact' }
+  ];
 
   return (
     <footer id="contact" className="relative w-full bg-[#001A33] text-white overflow-hidden border-t-[4px] border-[#e31e24] font-sans">
@@ -41,12 +48,12 @@ export default function Footer() {
             </h3>
             <ul className="flex flex-col gap-4">
               {quickLinks.map((link) => (
-                <li key={link}>
-                  <a href={`#${link.toLowerCase().replace(/ /g, '-')}`} className="group relative inline-block text-gray-300 hover:text-white transition-colors duration-300 font-medium">
-                    {link}
+                <li key={link.name}>
+                  <Link to={link.path} onClick={() => window.scrollTo(0, 0)} className="group relative inline-block text-gray-300 hover:text-white transition-colors duration-300 font-medium">
+                    {link.name}
                     {/* Animated Underline expanding from center */}
                     <span className="absolute left-1/2 bottom-0 w-0 h-[2px] bg-[#e31e24] transition-all duration-300 group-hover:w-full group-hover:left-0 -mb-1" />
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
