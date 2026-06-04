@@ -310,7 +310,10 @@ export default function Services() {
       {/* ══════════════════════════════════════════
           METHODOLOGY TIMELINE
       ══════════════════════════════════════════ */}
-      <section className="relative w-full py-32 px-6 lg:px-12 bg-gradient-to-b from-[#001F3F] via-[#00152b] to-[#020817] text-white overflow-hidden">
+      <section 
+        className="relative w-full py-32 px-6 lg:px-12 text-white overflow-hidden"
+        style={{ background: "linear-gradient(to bottom, #001F3F 0%, #00152b 50%, #020817 100%)" }}
+      >
         <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.8)_1px,transparent_1px)] bg-[length:24px_24px] pointer-events-none" />
         
         <div className="max-w-[1300px] mx-auto relative z-10">
