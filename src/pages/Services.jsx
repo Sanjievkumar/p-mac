@@ -256,7 +256,7 @@ export default function Services() {
       {/* ══════════════════════════════════════════
           SERVICES GRID (3D Tilt Cards with Spotlight)
       ══════════════════════════════════════════ */}
-      <section className="relative w-full pb-32 px-6 lg:px-12 bg-[#fafafa] z-20">
+      <section className="relative w-full pb-32 px-6 lg:px-12 bg-slate-50 z-20">
         <div className="max-w-[1300px] mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 relative">
           
           {SERVICES.map((service, index) => {
@@ -268,7 +268,7 @@ export default function Services() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                  className="h-full bg-white rounded-[32px] shadow-[0_20px_60px_rgba(0,0,0,0.05)] border border-slate-100 p-10 md:p-14 relative overflow-hidden transition-shadow duration-500 flex flex-col"
+                  className="h-full bg-gradient-to-br from-white to-slate-50 rounded-[32px] shadow-[0_20px_60px_rgba(0,0,0,0.06)] border border-slate-200 p-10 md:p-14 relative overflow-hidden transition-shadow duration-500 flex flex-col"
                 >
                   
                   {/* Subtle Technical Dot Grid Texture */}
@@ -290,7 +290,7 @@ export default function Services() {
                     {service.description}
                   </p>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6 relative z-10 mt-auto pt-8 border-t border-slate-100">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6 relative z-10 mt-auto pt-8 border-t border-slate-200">
                     {service.features.map((feat, i) => (
                       <div key={i} className="flex items-center gap-3">
                         <CheckCircle2 className="w-4 h-4 text-[#E31E24]" />
@@ -310,7 +310,7 @@ export default function Services() {
       {/* ══════════════════════════════════════════
           METHODOLOGY TIMELINE
       ══════════════════════════════════════════ */}
-      <section className="relative w-full py-32 px-6 lg:px-12 bg-[#001F3F] text-white overflow-hidden">
+      <section className="relative w-full py-32 px-6 lg:px-12 bg-gradient-to-b from-[#001F3F] via-[#00152b] to-[#020817] text-white overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.8)_1px,transparent_1px)] bg-[length:24px_24px] pointer-events-none" />
         
         <div className="max-w-[1300px] mx-auto relative z-10">
