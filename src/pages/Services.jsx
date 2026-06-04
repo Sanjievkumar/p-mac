@@ -289,7 +289,7 @@ export default function Services() {
                     </h3>
                   </div>
                   
-                  <p className="text-slate-600 group-hover:text-slate-100 font-light text-lg leading-relaxed mb-10 relative z-10 flex-grow transition-colors duration-500">
+                  <p className="text-slate-600 group-hover:!text-white font-light text-lg leading-relaxed mb-10 relative z-10 flex-grow transition-colors duration-500">
                     {service.description}
                   </p>
 
