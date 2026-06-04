@@ -171,18 +171,18 @@ function MethodologyTimeline() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-150px" }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className={`relative flex flex-col md:flex-row items-start md:items-center justify-between mb-24 last:mb-0 ${isEven ? 'md:flex-row-reverse' : ''}`}
+            className={`relative flex flex-col md:flex-row items-start md:items-center justify-between mb-24 last:mb-0 group ${isEven ? 'md:flex-row-reverse' : ''}`}
           >
-            {/* Center Node */}
-            <div className="absolute left-8 md:left-1/2 top-0 md:top-1/2 w-12 h-12 rounded-full bg-[#001F3F] border-2 border-[#E31E24] shadow-[0_0_20px_rgba(227,30,36,0.4)] -translate-x-1/2 md:-translate-y-1/2 flex items-center justify-center z-10">
-              <span className="text-[#E31E24] font-black text-lg">{step.step}</span>
+            {/* Center Node with Hover Micro-interactions */}
+            <div className="absolute left-8 md:left-1/2 top-0 md:top-1/2 w-12 h-12 rounded-full bg-[#001F3F] border-2 border-[#E31E24] shadow-[0_0_20px_rgba(227,30,36,0.4)] -translate-x-1/2 md:-translate-y-1/2 flex items-center justify-center z-10 transition-transform duration-500 group-hover:scale-125 group-hover:shadow-[0_0_30px_rgba(227,30,36,0.8)]">
+              <span className="text-[#E31E24] font-black text-lg transition-colors duration-500 group-hover:text-white">{step.step}</span>
             </div>
 
-            {/* Content Card */}
+            {/* Content Card with Hover Micro-interactions */}
             <div className={`w-full md:w-[45%] pl-24 md:pl-0 ${isEven ? 'md:pl-16' : 'md:pr-16 text-left md:text-right'}`}>
-              <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors duration-500">
-                <h4 className="text-2xl font-bold text-white mb-4">{step.title}</h4>
-                <p className="text-white/60 font-light leading-relaxed">{step.desc}</p>
+              <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-3xl transition-all duration-500 group-hover:bg-white/10 group-hover:-translate-y-2 group-hover:shadow-[0_15px_40px_rgba(0,0,0,0.3)] group-hover:border-white/30 cursor-default">
+                <h4 className="text-2xl font-bold text-white mb-4 transition-colors duration-500">{step.title}</h4>
+                <p className="text-white/60 font-light leading-relaxed transition-colors duration-500 group-hover:text-white/90">{step.desc}</p>
               </div>
             </div>
           </motion.div>
@@ -271,6 +271,11 @@ export default function Services() {
                   className="h-full bg-white rounded-[32px] shadow-[0_20px_60px_rgba(0,0,0,0.05)] border border-slate-100 p-10 md:p-14 relative overflow-hidden transition-shadow duration-500 flex flex-col"
                 >
                   
+                  {/* Subtle Technical Dot Grid Texture */}
+                  <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+                       style={{ backgroundImage: 'radial-gradient(#001F3F 1.5px, transparent 1.5px)', backgroundSize: '24px 24px' }} 
+                  />
+
                   <div className="flex items-center gap-6 mb-8 relative z-10">
                     {/* Upgraded Glowing Icon Container */}
                     <div className="w-16 h-16 rounded-2xl bg-[#001F3F]/5 border border-[#001F3F]/10 flex items-center justify-center shrink-0 group-hover:bg-[#E31E24] group-hover:border-[#E31E24] group-hover:shadow-[0_0_30px_rgba(227,30,36,0.4)] group-hover:scale-110 transition-all duration-500">
