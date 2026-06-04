@@ -178,11 +178,11 @@ function MethodologyTimeline() {
               <span className="text-[#E31E24] font-black text-lg transition-colors duration-500 group-hover:text-white">{step.step}</span>
             </div>
 
-            {/* Content Card with Hover Micro-interactions */}
+            {/* Content Card with Hover Color Inversion */}
             <div className={`w-full md:w-[45%] pl-24 md:pl-0 ${isEven ? 'md:pl-16' : 'md:pr-16 text-left md:text-right'}`}>
-              <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-3xl transition-all duration-500 group-hover:bg-white/10 group-hover:-translate-y-2 group-hover:shadow-[0_15px_40px_rgba(0,0,0,0.3)] group-hover:border-white/30 cursor-default">
-                <h4 className="text-2xl font-bold text-white mb-4 transition-colors duration-500">{step.title}</h4>
-                <p className="text-white/60 font-light leading-relaxed transition-colors duration-500 group-hover:text-white/90">{step.desc}</p>
+              <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-3xl transition-all duration-500 group-hover:bg-white group-hover:-translate-y-2 group-hover:shadow-[0_15px_40px_rgba(255,255,255,0.1)] group-hover:border-white cursor-default">
+                <h4 className="text-2xl font-bold text-white group-hover:text-[#001F3F] mb-4 transition-colors duration-500">{step.title}</h4>
+                <p className="text-white/60 font-light leading-relaxed transition-colors duration-500 group-hover:text-slate-600">{step.desc}</p>
               </div>
             </div>
           </motion.div>
@@ -268,11 +268,11 @@ export default function Services() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                  className="h-full bg-gradient-to-br from-white to-slate-50 rounded-[32px] shadow-[0_20px_60px_rgba(0,0,0,0.06)] border border-slate-200 p-10 md:p-14 relative overflow-hidden transition-shadow duration-500 flex flex-col"
+                  className="h-full bg-gradient-to-br from-white to-slate-50 group-hover:from-[#001F3F] group-hover:to-[#001F3F] rounded-[32px] shadow-[0_20px_60px_rgba(0,0,0,0.06)] border border-slate-200 group-hover:border-[#001F3F] p-10 md:p-14 relative overflow-hidden transition-all duration-500 flex flex-col"
                 >
                   
                   {/* Subtle Technical Dot Grid Texture */}
-                  <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+                  <div className="absolute inset-0 opacity-[0.03] group-hover:opacity-10 pointer-events-none transition-opacity duration-500" 
                        style={{ backgroundImage: 'radial-gradient(#001F3F 1.5px, transparent 1.5px)', backgroundSize: '24px 24px' }} 
                   />
 
@@ -281,20 +281,20 @@ export default function Services() {
                     <div className="w-16 h-16 rounded-2xl bg-[#001F3F]/5 border border-[#001F3F]/10 flex items-center justify-center shrink-0 group-hover:bg-[#E31E24] group-hover:border-[#E31E24] group-hover:shadow-[0_0_30px_rgba(227,30,36,0.4)] group-hover:scale-110 transition-all duration-500">
                       <Icon className="w-8 h-8 text-[#001F3F] group-hover:text-white transition-colors duration-500" />
                     </div>
-                    <h3 className="text-3xl font-black tracking-tight text-[#001F3F]">
+                    <h3 className="text-3xl font-black tracking-tight text-[#001F3F] group-hover:text-white transition-colors duration-500">
                       {service.title}
                     </h3>
                   </div>
                   
-                  <p className="text-slate-500 font-light text-lg leading-relaxed mb-10 relative z-10 flex-grow">
+                  <p className="text-slate-500 group-hover:text-slate-300 font-light text-lg leading-relaxed mb-10 relative z-10 flex-grow transition-colors duration-500">
                     {service.description}
                   </p>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6 relative z-10 mt-auto pt-8 border-t border-slate-200">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6 relative z-10 mt-auto pt-8 border-t border-slate-200 group-hover:border-white/10 transition-colors duration-500">
                     {service.features.map((feat, i) => (
                       <div key={i} className="flex items-center gap-3">
                         <CheckCircle2 className="w-4 h-4 text-[#E31E24]" />
-                        <span className="text-sm font-medium text-slate-700">{feat}</span>
+                        <span className="text-sm font-medium text-slate-700 group-hover:text-white transition-colors duration-500">{feat}</span>
                       </div>
                     ))}
                   </div>
