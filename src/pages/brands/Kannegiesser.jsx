@@ -43,33 +43,30 @@ export default function Kannegiesser() {
       <Navbar />
 
       {/* ── 1. Hero Section (Video Placeholder) ── */}
-      <section className="relative w-full h-[85vh] min-h-[600px] flex flex-col justify-center overflow-hidden bg-[#0A0A0A]">
+      <section className="relative w-full h-[85vh] min-h-[600px] flex flex-col justify-center overflow-hidden bg-[#0A0A0A] pt-20">
         {/* Background Image (Acts as Video Thumbnail) */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-80"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroBg})` }}
         />
-        {/* Heavy Gradient Overlay for Text Readability - focused on the left */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent" />
+        {/* Gradient Overlay for Text Readability - focused on the left */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent" />
         
-        {/* Top Header Row - Fixed to top to prevent clashing */}
-        <div className="absolute top-10 left-0 w-full px-8 lg:px-20 flex justify-between items-start z-20">
-          {/* Logo inverted to pure white */}
-          <img 
-            src={kannegiesserLogo} 
-            alt="Kannegiesser" 
-            className="h-6 md:h-8 object-contain brightness-0 invert opacity-90"
-          />
+        {/* Top Header Row - Fixed to top, safely below Navbar */}
+        <div className="absolute top-28 md:top-32 left-0 w-full px-8 lg:px-20 flex justify-between items-start z-20">
+          <h2 className="text-white text-2xl md:text-3xl font-black italic tracking-tighter drop-shadow-md">
+            Kannegiesser
+          </h2>
           <div className="flex items-center gap-3 mt-1">
-            <span className="text-white text-[10px] md:text-xs tracking-wide font-medium opacity-80 capitalize">
+            <span className="text-white text-[10px] md:text-xs tracking-wide font-medium opacity-90 capitalize drop-shadow-md">
               A Promac Technologies Partner
             </span>
-            <div className="w-4 md:w-6 h-[1px] bg-[#E31E24]" />
+            <div className="w-4 md:w-6 h-[2px] bg-[#E31E24]" />
           </div>
         </div>
 
         {/* Main Content - Vertically centered but aligned strictly with header's left padding */}
-        <div className="relative z-20 w-full px-8 lg:px-20">
+        <div className="relative z-20 w-full px-8 lg:px-20 mt-16 md:mt-24">
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
