@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import GlobeSection from '../components/GlobeSection';
@@ -131,8 +132,9 @@ function MagneticWrapper({ children, className }) {
   );
 }
 
-function MagneticButton({ children, href, className }) {
+function MagneticButton({ children, href, to, className }) {
   const ref = useRef(null);
+  const navigate = useNavigate();
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
   const handleMouse = (e) => {
@@ -147,10 +149,19 @@ function MagneticButton({ children, href, className }) {
     setPosition({ x: 0, y: 0 });
   };
 
+  const handleClick = (e) => {
+    if (to) {
+      e.preventDefault();
+      navigate(to);
+      window.scrollTo(0, 0);
+    }
+  };
+
   return (
     <motion.a
       ref={ref}
-      href={href}
+      href={href || to}
+      onClick={handleClick}
       onMouseMove={handleMouse}
       onMouseLeave={reset}
       animate={{ x: position.x, y: position.y }}
@@ -162,7 +173,6 @@ function MagneticButton({ children, href, className }) {
   );
 }
 
-/* ─── Single brand row ──────────────────────── */
 /* ─── Single brand row ──────────────────────── */
 function BrandRow({ brand, reverse }) {
   return (
@@ -224,8 +234,8 @@ function BrandRow({ brand, reverse }) {
           {/* CTA */}
           <div>
             <MagneticButton
-              href={`#${brand.id}`}
-              className="group/btn inline-flex items-center gap-4 text-[10px] font-bold tracking-[0.2em] uppercase text-[#E31E24] border border-[#E31E24] px-7 py-3.5 rounded-md transition-colors duration-300 hover:bg-[#E31E24] hover:text-white hover:shadow-[0_0_15px_rgba(227,30,36,0.4)] bg-white"
+              to={`/brands/${brand.id}`}
+              className="group/btn inline-flex items-center gap-4 text-[10px] font-bold tracking-[0.2em] uppercase text-[#E31E24] border border-[#E31E24] px-7 py-3.5 rounded-md transition-colors duration-300 hover:bg-[#E31E24] hover:text-white hover:shadow-[0_0_15px_rgba(227,30,36,0.4)] bg-white cursor-pointer"
             >
               VIEW PRODUCTS
               <span className="w-5 h-5 rounded-full border border-current flex items-center justify-center transition-transform duration-300 group-hover/btn:translate-x-1">
