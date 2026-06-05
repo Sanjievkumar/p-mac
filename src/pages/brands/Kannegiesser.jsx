@@ -42,46 +42,48 @@ export default function Kannegiesser() {
       <Navbar />
 
       {/* ── 1. Hero Section (Video Placeholder) ── */}
-      <section className="relative w-full h-[90vh] min-h-[600px] flex flex-col justify-center overflow-hidden bg-black">
+      <section className="relative w-full h-[90vh] min-h-[600px] flex flex-col justify-center overflow-hidden bg-[#0A0A0A]">
         {/* Background Image (Acts as Video Thumbnail) */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-80"
           style={{ backgroundImage: `url(${heroBg})` }}
         />
-        {/* Heavy Gradient Overlay for Text Readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/70 to-transparent" />
+        {/* Heavy Gradient Overlay for Text Readability - focused on the left */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent" />
         
         {/* Top Header Row */}
-        <div className="absolute top-32 left-0 w-full px-8 md:px-16 flex justify-between items-center z-20">
-          <h2 className="text-white text-3xl font-black italic tracking-tighter">Kannegiesser</h2>
+        <div className="absolute top-12 md:top-20 left-0 w-full px-8 md:px-16 flex justify-between items-center z-20">
+          <h2 className="text-white text-2xl md:text-3xl font-black italic tracking-tighter">Kannegiesser</h2>
           <div className="flex items-center gap-3">
-            <span className="text-white text-sm tracking-widest font-medium opacity-80 uppercase hidden sm:block">
+            <span className="text-white text-[10px] md:text-xs tracking-widest font-bold opacity-90 uppercase">
               A Promac Technologies Partner
             </span>
-            <div className="w-8 h-[2px] bg-[#E31E24]" />
+            <div className="w-6 md:w-8 h-[2px] bg-[#E31E24]" />
           </div>
         </div>
 
         {/* Main Content */}
-        <div className="relative z-20 max-w-7xl w-full mx-auto px-8 md:px-16 mt-20">
+        <div className="relative z-20 max-w-7xl w-full mx-auto px-8 md:px-16 mt-16 md:mt-24">
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tight mb-6 max-w-4xl drop-shadow-2xl"
+            className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-bold leading-[1.2] tracking-tight mb-8 max-w-2xl drop-shadow-xl"
           >
             GERMAN ENGINEERING.<br />
             GLOBAL LAUNDRY LEADERSHIP.
           </motion.h1>
           
-          <motion.p 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-white/90 text-lg md:text-xl font-light mb-12 max-w-md leading-relaxed drop-shadow-lg"
           >
-            75+ Years of Innovation in<br />Industrial Laundry Technology.
-          </motion.p>
+            <div className="w-8 h-[2px] bg-[#E31E24] mb-6" />
+            <p className="text-white/90 text-base md:text-lg font-light mb-12 max-w-md leading-relaxed drop-shadow-md">
+              75+ Years of Innovation in<br />Industrial Laundry Technology.
+            </p>
+          </motion.div>
 
           <motion.button 
             initial={{ opacity: 0, x: -20 }}
@@ -89,10 +91,10 @@ export default function Kannegiesser() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="group flex items-center gap-4 text-white hover:text-white transition-colors duration-300"
           >
-            <div className="w-14 h-14 rounded-full border border-white/50 bg-white/10 backdrop-blur-sm flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:bg-[#E31E24] group-hover:border-[#E31E24] group-hover:shadow-[0_0_30px_rgba(227,30,36,0.5)]">
-              <Play className="w-5 h-5 ml-1 fill-current" />
+            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/80 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:border-white group-hover:bg-white/10">
+              <Play className="w-3 h-3 md:w-4 md:h-4 ml-1 text-white fill-transparent group-hover:fill-white transition-colors duration-300" />
             </div>
-            <span className="text-xs font-bold tracking-[0.2em] uppercase opacity-90 group-hover:opacity-100 transition-opacity">
+            <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase opacity-90 group-hover:opacity-100 transition-opacity">
               DISCOVER KANNEGIESSER
             </span>
           </motion.button>
