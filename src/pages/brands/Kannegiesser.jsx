@@ -5,6 +5,7 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
 // Asset Imports
+import kannegiesserLogo from '../../assets/brands/kannegiesser.png';
 import heroBg from '../../assets/brands/kannegiesser/kannegiesser_video_thumbnail_1780671618796.png';
 import buildingBg from '../../assets/brands/kannegiesser/kannegiesser_building_1780671039860.png';
 import mapBg from '../../assets/brands/kannegiesser/kannegiesser_map_1780671051559.png';
@@ -42,7 +43,7 @@ export default function Kannegiesser() {
       <Navbar />
 
       {/* ── 1. Hero Section (Video Placeholder) ── */}
-      <section className="relative w-full h-[90vh] min-h-[600px] flex flex-col justify-center overflow-hidden bg-[#0A0A0A]">
+      <section className="relative w-full h-[85vh] min-h-[600px] flex flex-col justify-center overflow-hidden bg-[#0A0A0A]">
         {/* Background Image (Acts as Video Thumbnail) */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-80"
@@ -51,24 +52,29 @@ export default function Kannegiesser() {
         {/* Heavy Gradient Overlay for Text Readability - focused on the left */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent" />
         
-        {/* Top Header Row */}
-        <div className="absolute top-12 md:top-20 left-0 w-full px-8 md:px-16 flex justify-between items-center z-20">
-          <h2 className="text-white text-2xl md:text-3xl font-black italic tracking-tighter">Kannegiesser</h2>
-          <div className="flex items-center gap-3">
-            <span className="text-white text-[10px] md:text-xs tracking-widest font-bold opacity-90 uppercase">
+        {/* Top Header Row - Fixed to top to prevent clashing */}
+        <div className="absolute top-10 left-0 w-full px-8 lg:px-20 flex justify-between items-start z-20">
+          {/* Logo inverted to pure white */}
+          <img 
+            src={kannegiesserLogo} 
+            alt="Kannegiesser" 
+            className="h-6 md:h-8 object-contain brightness-0 invert opacity-90"
+          />
+          <div className="flex items-center gap-3 mt-1">
+            <span className="text-white text-[10px] md:text-xs tracking-wide font-medium opacity-80 capitalize">
               A Promac Technologies Partner
             </span>
-            <div className="w-6 md:w-8 h-[2px] bg-[#E31E24]" />
+            <div className="w-4 md:w-6 h-[1px] bg-[#E31E24]" />
           </div>
         </div>
 
-        {/* Main Content */}
-        <div className="relative z-20 max-w-7xl w-full mx-auto px-8 md:px-16 mt-16 md:mt-24">
+        {/* Main Content - Vertically centered but aligned strictly with header's left padding */}
+        <div className="relative z-20 w-full px-8 lg:px-20">
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-bold leading-[1.2] tracking-tight mb-8 max-w-2xl drop-shadow-xl"
+            className="text-white text-3xl md:text-4xl lg:text-[42px] font-semibold leading-[1.3] tracking-normal mb-8 max-w-xl drop-shadow-xl"
           >
             GERMAN ENGINEERING.<br />
             GLOBAL LAUNDRY LEADERSHIP.
@@ -80,7 +86,7 @@ export default function Kannegiesser() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div className="w-8 h-[2px] bg-[#E31E24] mb-6" />
-            <p className="text-white/90 text-base md:text-lg font-light mb-12 max-w-md leading-relaxed drop-shadow-md">
+            <p className="text-white/80 text-sm md:text-base font-normal mb-12 max-w-sm leading-relaxed drop-shadow-md">
               75+ Years of Innovation in<br />Industrial Laundry Technology.
             </p>
           </motion.div>
@@ -89,12 +95,12 @@ export default function Kannegiesser() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="group flex items-center gap-4 text-white hover:text-white transition-colors duration-300"
+            className="group flex items-center gap-4 text-white/90 hover:text-white transition-colors duration-300"
           >
-            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/80 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:border-white group-hover:bg-white/10">
-              <Play className="w-3 h-3 md:w-4 md:h-4 ml-1 text-white fill-transparent group-hover:fill-white transition-colors duration-300" />
+            <div className="w-10 h-10 rounded-full border border-white/60 flex items-center justify-center transition-all duration-300 group-hover:border-white">
+              <Play className="w-3 h-3 ml-1 text-white fill-transparent transition-colors duration-300" />
             </div>
-            <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase opacity-90 group-hover:opacity-100 transition-opacity">
+            <span className="text-[11px] font-bold tracking-[0.15em] uppercase opacity-90">
               DISCOVER KANNEGIESSER
             </span>
           </motion.button>
