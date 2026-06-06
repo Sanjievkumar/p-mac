@@ -79,10 +79,10 @@ export default function Kannegiesser() {
               Kannegiesser
             </h2>
             <h1 className="text-white text-4xl md:text-5xl lg:text-[64px] font-semibold leading-[1.1] tracking-tight mb-6 drop-shadow-lg">
-            GERMAN ENGINEERING.<br />
-            GLOBAL LAUNDRY LEADERSHIP.
-          </h1
->
+              GERMAN ENGINEERING.<br />
+              GLOBAL LAUNDRY LEADERSHIP.
+            </h1>
+          </motion.div>
           
           <motion.div
             initial={{ opacity: 0 }}

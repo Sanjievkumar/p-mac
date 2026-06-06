@@ -65,10 +65,11 @@ export default function SeaLion() {
             </div>
             
             <h1 className="text-white text-4xl md:text-5xl lg:text-[64px] font-bold leading-[1.1] tracking-tight mb-8 drop-shadow-lg">
-            Industrial<br />
-            Laundry<br />
-            Excellence<span className="text-[#E31E24]">.</span>
-          </motion.h1>
+              Industrial<br />
+              Laundry<br />
+              Excellence<span className="text-[#E31E24]">.</span>
+            </h1>
+          </motion.div>
           
           <motion.div
             initial={{ opacity: 0 }}
