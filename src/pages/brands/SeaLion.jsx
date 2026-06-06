@@ -5,7 +5,7 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
 // Asset Imports
-import sealionLogo from '../../assets/brands/sea-lion.png';
+import sealionLogo from '../../assets/brands/sealion.png';
 import heroBg from '../../assets/brands/sea-lion/sealion_hero_1780727361346.png';
 import buildingBg from '../../assets/brands/sea-lion/sealion_building_1780727375255.png';
 import ecosystemBg from '../../assets/brands/sea-lion/sealion_ecosystem_1780727389170.png';
