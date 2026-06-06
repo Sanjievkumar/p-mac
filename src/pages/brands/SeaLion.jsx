@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Play, ArrowRight, Calendar, Globe2, Building2, Layers } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Play, ArrowRight, ArrowLeft, Calendar, Globe2, Building2, Layers } from 'lucide-react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
@@ -49,7 +50,12 @@ export default function SeaLion() {
         </div>
 
         {/* Main Content */}
-        <div className="relative z-20 w-full px-8 lg:px-20 mt-24">
+        <div className="relative z-20 w-full px-8 lg:px-20 mt-16 md:mt-24">
+          <Link to="/brands" className="inline-flex items-center gap-2 text-white/70 hover:text-white mb-6 transition-colors group">
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+            <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase">Back to Brands</span>
+          </Link>
+
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
