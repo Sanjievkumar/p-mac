@@ -8,6 +8,7 @@ import Contact from './pages/Contact';
 import Services from './pages/Services';
 import Kannegiesser from './pages/brands/Kannegiesser';
 import SeaLion from './pages/brands/SeaLion';
+import MaxiPress from './pages/brands/MaxiPress';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/brands" element={<Brands />} />
         <Route path="/brands/kannegiesser" element={<Kannegiesser />} />
         <Route path="/brands/sea-lion" element={<SeaLion />} />
+        <Route path="/brands/maxipress" element={<MaxiPress />} />
         <Route path="/consultancy" element={<Consultancy />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Services />} />
