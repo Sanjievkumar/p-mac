@@ -53,11 +53,12 @@ export default function Kannegiesser() {
         {/* Gradient Overlay for Text Readability - focused on the left */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent" />
         
-        {/* Top Header Row - Fixed to top, safely below Navbar */}
-        <div className="absolute top-28 md:top-32 left-0 w-full px-8 lg:px-20 flex justify-between items-start z-20">
-          <h2 className="text-white text-2xl md:text-3xl font-black italic tracking-tighter drop-shadow-md">
-            Kannegiesser
-          </h2>
+        {/* Top Floating Elements - Fixed to top, safely below Navbar */}
+        <div className="absolute top-28 md:top-32 left-0 w-full px-8 lg:px-20 flex justify-between items-start z-30">
+          <Link to="/brands" className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors group">
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+            <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase">Back to Brands</span>
+          </Link>
           <div className="flex items-center gap-3 mt-1">
             <span className="text-white text-[10px] md:text-xs tracking-wide font-medium opacity-90 capitalize drop-shadow-md">
               A Promac Technologies Partner
@@ -67,21 +68,21 @@ export default function Kannegiesser() {
         </div>
 
         {/* Main Content - Vertically centered but aligned strictly with header's left padding */}
-        <div className="relative z-20 w-full px-8 lg:px-20 mt-16 md:mt-24">
-          <Link to="/brands" className="inline-flex items-center gap-2 text-white/70 hover:text-white mb-6 transition-colors group">
-            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-            <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase">Back to Brands</span>
-          </Link>
-          
-          <motion.h1 
+        <div className="relative z-20 w-full px-8 lg:px-20 mt-8 md:mt-16">
+          <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-white text-3xl md:text-4xl lg:text-[42px] font-semibold leading-[1.3] tracking-normal mb-8 max-w-xl drop-shadow-xl"
+            className="max-w-3xl"
           >
+            <h2 className="text-white text-2xl md:text-3xl font-black italic tracking-tighter drop-shadow-md mb-8">
+              Kannegiesser
+            </h2>
+            <h1 className="text-white text-4xl md:text-5xl lg:text-[64px] font-semibold leading-[1.1] tracking-tight mb-6 drop-shadow-lg">
             GERMAN ENGINEERING.<br />
             GLOBAL LAUNDRY LEADERSHIP.
-          </motion.h1>
+          </h1
+>
           
           <motion.div
             initial={{ opacity: 0 }}

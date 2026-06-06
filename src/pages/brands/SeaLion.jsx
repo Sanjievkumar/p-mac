@@ -37,31 +37,34 @@ export default function SeaLion() {
         {/* Gradient Overlay for Text Readability - focused on the left */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent" />
         
-        {/* Top Header Row - Fixed to top, safely below Navbar */}
-        <div className="absolute top-28 md:top-32 left-0 w-full px-8 lg:px-20 flex flex-col items-start z-20 gap-2">
-          <img 
-            src={sealionLogo} 
-            alt="SEA-LION" 
-            className="h-8 md:h-10 object-contain"
-          />
-          <span className="text-white/80 text-xs tracking-wider font-semibold">
-            Industrial Laundry Excellence
-          </span>
-        </div>
-
-        {/* Main Content */}
-        <div className="relative z-20 w-full px-8 lg:px-20 mt-16 md:mt-24">
-          <Link to="/brands" className="inline-flex items-center gap-2 text-white/70 hover:text-white mb-6 transition-colors group">
+        {/* Top Floating Elements - Fixed to top, safely below Navbar */}
+        <div className="absolute top-28 md:top-32 left-0 w-full px-8 lg:px-20 flex justify-between items-start z-30">
+          <Link to="/brands" className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors group">
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
             <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase">Back to Brands</span>
           </Link>
+        </div>
 
-          <motion.h1 
+        {/* Main Content */}
+        <div className="relative z-20 w-full px-8 lg:px-20 mt-8 md:mt-16">
+          <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-white text-4xl md:text-5xl lg:text-[64px] font-bold leading-[1.1] tracking-tight mb-8 max-w-2xl drop-shadow-lg"
+            className="max-w-2xl"
           >
+            <div className="flex flex-col items-start gap-2 mb-8">
+              <img 
+                src={sealionLogo} 
+                alt="SEA-LION" 
+                className="h-8 md:h-10 object-contain"
+              />
+              <span className="text-white/80 text-xs tracking-wider font-semibold">
+                Industrial Laundry Excellence
+              </span>
+            </div>
+            
+            <h1 className="text-white text-4xl md:text-5xl lg:text-[64px] font-bold leading-[1.1] tracking-tight mb-8 drop-shadow-lg">
             Industrial<br />
             Laundry<br />
             Excellence<span className="text-[#E31E24]">.</span>

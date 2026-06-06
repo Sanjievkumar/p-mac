@@ -47,12 +47,15 @@ export default function MaxiPress() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent" />
         
-        <div className="relative z-20 w-full px-8 lg:px-20 mt-16 md:mt-24">
-          <Link to="/brands" className="inline-flex items-center gap-2 text-slate-500 hover:text-[#E31E24] mb-12 transition-colors group">
+        {/* Top Floating Elements */}
+        <div className="absolute top-28 md:top-32 left-0 w-full px-8 lg:px-20 flex justify-between items-start z-30">
+          <Link to="/brands" className="inline-flex items-center gap-2 text-slate-500 hover:text-[#E31E24] transition-colors group">
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
             <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase">Back to Brands</span>
           </Link>
+        </div>
 
+        <div className="relative z-20 w-full px-8 lg:px-20 mt-8 md:mt-16">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-2xl">
             <img src={maxipressLogo} alt="MAXIPRESS" className="h-8 md:h-10 object-contain mb-10" />
             

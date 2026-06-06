@@ -47,12 +47,15 @@ export default function Maestrelli() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent" />
         
-        <div className="relative z-20 w-full px-8 lg:px-20 mt-16 md:mt-24">
-          <Link to="/brands" className="inline-flex items-center gap-2 text-slate-500 hover:text-[#CC141A] mb-8 transition-colors group">
+        {/* Top Floating Elements */}
+        <div className="absolute top-28 md:top-32 left-0 w-full px-8 lg:px-20 flex justify-between items-start z-30">
+          <Link to="/brands" className="inline-flex items-center gap-2 text-slate-500 hover:text-[#CC141A] transition-colors group">
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
             <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase">Back to Brands</span>
           </Link>
+        </div>
 
+        <div className="relative z-20 w-full px-8 lg:px-20 mt-8 md:mt-16">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-2xl">
             <img src={maestrelliLogo} alt="MAESTRELLI" className="h-10 md:h-12 object-contain mb-8" />
             
