@@ -175,13 +175,12 @@ export default function Maestrelli() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {PRODUCTS.map((item, idx) => (
               <Link to={`/brands/maestrelli/${item.id}`} key={idx} className="block group">
-                <motion.div whileHover={{ y: -5 }} className="h-full border border-slate-100 rounded-lg overflow-hidden bg-white flex flex-col xl:flex-row cursor-pointer hover:shadow-xl shadow-sm transition-all duration-300">
-                  <div className="w-full xl:w-2/5 h-64 p-6 flex items-center justify-center bg-[#FAFAFA] overflow-hidden shrink-0">
+                <motion.div whileHover={{ y: -5 }} className="h-full border border-slate-100 rounded-lg overflow-hidden bg-white flex flex-col cursor-pointer hover:shadow-xl shadow-sm transition-all duration-300">
+                  <div className="w-full h-64 p-6 flex items-center justify-center bg-[#FAFAFA] overflow-hidden shrink-0">
                     <img src={item.img} alt={item.title} className="w-full h-full object-contain mix-blend-multiply transform group-hover:scale-105 transition-transform duration-500" />
                   </div>
-                  <div className="w-full xl:w-3/5 p-8 flex flex-col justify-center border-t xl:border-t-0 xl:border-l border-slate-100">
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-[#CC141A] transition-colors">{item.title}</h3>
-                    <p className="text-slate-500 text-sm leading-relaxed mb-6 flex-grow">{item.desc}</p>
+                  <div className="w-full p-8 flex flex-col items-center justify-center border-t border-slate-100 text-center">
+                    <h3 className="text-lg font-bold text-slate-900 mb-6 group-hover:text-[#CC141A] transition-colors">{item.title}</h3>
                     <div className="flex items-center gap-2 text-[#CC141A] text-xs font-bold tracking-widest uppercase">
                       VIEW DETAILS <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
                     </div>
