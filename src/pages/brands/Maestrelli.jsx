@@ -5,10 +5,13 @@ import { ArrowRight, ArrowLeft, Calendar, Globe2, ShieldCheck, Layers, Headphone
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
-// Asset Imports
 import maestrelliLogo from '../../assets/brands/maestrelli.png';
 
-// Temporary Image Placeholders (Quota limit reached for Image Generation)
+// Product Images
+import energyCompactImg from '../../assets/brands/maestrelli/energy-compact.png';
+import dreamCleanImg from '../../assets/brands/maestrelli/dream-clean.png';
+
+// Temporary Image Placeholders for workflow
 import heroBg from '../../assets/brands/kannegiesser/kannegiesser_video_thumbnail_1780671618796.png';
 import buildingBg from '../../assets/brands/sea-lion/sealion_building_1780727375255.png';
 import wf1 from '../../assets/brands/sea-lion/sealion_washer_1780727413794.png';
@@ -26,12 +29,18 @@ const WORKFLOW = [
 ];
 
 const PRODUCTS = [
-  { title: 'PERC Dry-Cleaning Machines', img: wf2 },
-  { title: 'Multi-Solvent Systems', img: wf2 },
-  { title: 'Washer Extractors', img: wf1 },
-  { title: 'Tumble Dryers', img: wf2 },
-  { title: 'Barrier Washers', img: wf5 },
-  { title: 'Flatwork Ironers', img: wf4 }
+  { 
+    id: 'energy-compact',
+    title: 'ENERGY-COMPACT-PERC-dry-Cleaning', 
+    desc: 'The ENERGY line was named and developed taking into high consideration the "energy saving" issue. Energy COMPACT series are a slim version with 2 tanks and 1 filter, featuring a HIGH EFFICIENCY SOLVENT DISTILLER.', 
+    img: energyCompactImg 
+  },
+  { 
+    id: 'dream-clean',
+    title: 'DREAM CLEAN -MULTOSOLVENT-SOFT-MOUNT', 
+    desc: 'Maestrelli exploits again its experience innovating the sector with the DREAMCLEAN series, multi-solvent machines capable of using all new-generation solvents, from the isoparaffin to the silicone ones. The range consists of machines with still (HS & RS series) or without still (H & R series).', 
+    img: dreamCleanImg 
+  }
 ];
 
 export default function Maestrelli() {
@@ -64,13 +73,9 @@ export default function Maestrelli() {
               Perfected Since <span className="text-[#CC141A]">1935</span><span className="text-slate-900">.</span>
             </h1>
             
-            <p className="text-slate-600 text-lg font-medium mb-10 max-w-sm">
+            <p className="text-slate-600 text-lg font-medium mb-4 max-w-sm">
               Advanced Dry-Cleaning & Fabric Care Solutions.
             </p>
-
-            <button className="bg-[#CC141A] hover:bg-red-700 text-white px-8 py-4 text-xs font-bold tracking-widest uppercase transition-colors duration-300 flex items-center gap-3">
-              EXPLORE PRODUCTS <ArrowRight className="w-4 h-4" />
-            </button>
           </motion.div>
         </div>
       </section>
@@ -167,19 +172,22 @@ export default function Maestrelli() {
             Our Garment Care Solutions<span className="text-[#CC141A]">.</span>
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {PRODUCTS.map((item, idx) => (
-              <motion.div key={idx} whileHover={{ y: -5 }} className="group border border-slate-100 rounded-lg overflow-hidden bg-[#FAFAFA] flex flex-col cursor-pointer hover:shadow-lg transition-all duration-300">
-                <div className="h-40 p-4 flex items-center justify-center bg-white overflow-hidden">
-                  <img src={item.img} alt={item.title} className="w-full h-full object-contain mix-blend-multiply transform group-hover:scale-110 transition-transform duration-500" />
-                </div>
-                <div className="p-4 flex flex-col justify-between bg-white border-t border-slate-100 flex-grow">
-                  <h3 className="text-xs font-bold text-slate-800 leading-snug mb-2 pr-4">{item.title}</h3>
-                  <div className="flex justify-end">
-                    <ArrowRight className="w-3 h-3 text-[#CC141A] opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
+              <Link to={`/brands/maestrelli/${item.id}`} key={idx} className="block group">
+                <motion.div whileHover={{ y: -5 }} className="h-full border border-slate-100 rounded-lg overflow-hidden bg-white flex flex-col xl:flex-row cursor-pointer hover:shadow-xl shadow-sm transition-all duration-300">
+                  <div className="w-full xl:w-2/5 h-64 p-6 flex items-center justify-center bg-[#FAFAFA] overflow-hidden shrink-0">
+                    <img src={item.img} alt={item.title} className="w-full h-full object-contain mix-blend-multiply transform group-hover:scale-105 transition-transform duration-500" />
                   </div>
-                </div>
-              </motion.div>
+                  <div className="w-full xl:w-3/5 p-8 flex flex-col justify-center border-t xl:border-t-0 xl:border-l border-slate-100">
+                    <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-[#CC141A] transition-colors">{item.title}</h3>
+                    <p className="text-slate-500 text-sm leading-relaxed mb-6 flex-grow">{item.desc}</p>
+                    <div className="flex items-center gap-2 text-[#CC141A] text-xs font-bold tracking-widest uppercase">
+                      VIEW DETAILS <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
+                    </div>
+                  </div>
+                </motion.div>
+              </Link>
             ))}
           </div>
           
