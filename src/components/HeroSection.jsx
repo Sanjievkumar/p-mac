@@ -7,22 +7,13 @@ export default function HeroSection() {
   return (
     <section id="hero" className="relative w-full h-[calc(100vh-68px)] min-h-[650px] bg-white overflow-hidden flex flex-col justify-between">
       {/* Background Image determining the natural height */}
-      <motion.div 
-        className="absolute inset-0 overflow-hidden"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.5 }}
-      >
-        <motion.img 
+      <div className="absolute inset-0 overflow-hidden">
+        <img 
           src={heroImage} 
           alt="Industrial Laundry Machines" 
-          className="w-full h-full object-cover object-right mix-blend-multiply pointer-events-none" 
-          style={{ filter: 'contrast(1.05) saturate(1.05) brightness(1.02)' }}
-          initial={{ scale: 1.0 }}
-          animate={{ scale: 1.03 }}
-          transition={{ duration: 25, repeat: Infinity, repeatType: 'reverse', ease: 'linear' }}
+          className="w-full h-full object-cover object-right pointer-events-none" 
         />
-      </motion.div>
+      </div>
       
       {/* Gradient Overlay for text readability on smaller screens */}
       <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent lg:w-1/2 pointer-events-none md:hidden lg:block mix-blend-normal" />
