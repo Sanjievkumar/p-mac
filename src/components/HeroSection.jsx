@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Globe2, Settings, ShieldCheck, Users } from 'lucide-react';
-import heroImage from '../assets/hero-bg-v2.jpg';
+import heroImage from '../assets/hero-bg-hq.png';
 import { Link } from 'react-router-dom';
 
 export default function HeroSection() {
