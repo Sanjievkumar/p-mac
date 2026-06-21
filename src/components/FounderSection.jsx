@@ -3,19 +3,19 @@ import founderBg from '../assets/founder-bg.png';
 
 export default function FounderSection() {
   return (
-    <section id="about" className="relative w-full bg-white overflow-hidden flex flex-col justify-center">
-      {/* Background Image determining the natural height */}
+    <section id="about" className="relative w-full min-h-[550px] py-16 md:py-24 bg-white overflow-hidden flex flex-col justify-center">
+      {/* Background Image */}
       <img 
         src={founderBg} 
         alt="Tunnel Washer Showroom" 
-        className="w-full h-auto min-h-[550px] object-cover object-right pointer-events-none" 
+        className="absolute inset-0 w-full h-full object-cover object-right pointer-events-none" 
       />
       
       {/* Gradient Overlay for text readability on smaller screens */}
       <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent lg:w-1/2 pointer-events-none mix-blend-normal" />
 
       {/* Main Content */}
-      <div className="absolute inset-0 z-10 w-full flex flex-col">
+      <div className="relative z-10 w-full flex flex-col">
         <div className="max-w-7xl mx-auto px-8 lg:px-16 w-full h-full flex items-center">
           <motion.div 
             className="max-w-xl lg:max-w-2xl mt-12 md:mt-0"

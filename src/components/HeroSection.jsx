@@ -11,7 +11,7 @@ export default function HeroSection() {
         <img 
           src={heroImage} 
           alt="Industrial Laundry Machines" 
-          className="w-full h-full object-cover object-right pointer-events-none" 
+          className="absolute inset-0 w-full h-full object-cover object-right pointer-events-none" 
         />
       </div>
       
