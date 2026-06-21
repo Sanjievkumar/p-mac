@@ -43,9 +43,19 @@ export default function HeroSection() {
             </p>
             
             <Link to="/brands">
-              <button className="bg-[#CC141A] hover:bg-red-700 text-white px-6 md:px-8 py-3 md:py-4 text-xs font-bold tracking-widest uppercase transition-colors duration-300 shadow-xl flex items-center gap-3 rounded-sm group">
-                EXPLORE SOLUTIONS <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-              </button>
+              <motion.button 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-[#CC141A] hover:bg-[#A31015] text-white px-6 md:px-8 py-3 md:py-4 text-xs font-bold tracking-[0.2em] uppercase transition-all duration-300 hover:shadow-[0_8px_25px_rgba(204,20,26,0.4)] flex items-center gap-3 rounded-sm group relative overflow-hidden"
+              >
+                <span className="relative z-10 flex items-center gap-3">
+                  EXPLORE SOLUTIONS 
+                  <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform duration-300" />
+                </span>
+                
+                {/* Subtle hover overlay */}
+                <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+              </motion.button>
             </Link>
           </motion.div>
         </div>
