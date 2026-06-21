@@ -10,16 +10,18 @@ import sealionLogo from '../../assets/brands/sealion.png';
 import heroBg from '../../assets/brands/sea-lion/sealion_hero_1780727361346.png';
 import buildingBg from '../../assets/brands/sea-lion/sealion_building_1780727375255.png';
 import ecosystemBg from '../../assets/brands/sea-lion/sealion_ecosystem_1780727389170.png';
-import washerImg from '../../assets/brands/sea-lion/sealion_washer_1780727413794.png';
-import dryerImg from '../../assets/brands/sea-lion/sealion_dryer_1780727427054.png';
-import barrierImg from '../../assets/brands/sea-lion/sealion_barrier_1780727439836.png';
-import ironerImg from '../../assets/brands/sea-lion/sealion_ironer_1780727455295.png';
 
 const PRODUCTS = [
-  { title: 'Washer Extractors', img: washerImg },
-  { title: 'Tumble Dryers', img: dryerImg },
-  { title: 'Barrier Washers', img: barrierImg },
-  { title: 'Flatwork Ironers', img: ironerImg },
+  { id: 'sea-lion-tunnel-continuous-batch-washer-systems', title: 'TUNNEL CONTINUOUS BATCH WASHER SYSTEMS', img: 'https://promactech.com/wp-content/uploads/2024/07/Pin-Merge-1024x819.png' },
+  { id: 'sea-lion-washer-extractor', title: 'WASHER EXTRACTOR', img: 'https://promactech.com/wp-content/uploads/2024/07/01.-WASHER-EXTRACTOR-1024x819.png' },
+  { id: 'sea-lion-open-pocket-washer-extractor', title: 'OPEN POCKET WASHER EXTRACTOR', img: 'https://promactech.com/wp-content/uploads/2024/07/OPEN-POCKET-WASHER-EXTRACTOR-4-1024x819.png' },
+  { id: 'sea-lion-barrier-washer', title: 'BARRIER WASHER', img: 'https://promactech.com/wp-content/uploads/2024/07/BARRIER-WASHER-6-1024x819.png' },
+  { id: 'sea-lion-tumble-dryer', title: 'TUMBLE DRYER', img: 'https://promactech.com/wp-content/uploads/2024/07/Tumble-Dryer-2-1024x819.png' },
+  { id: 'sea-lion-automatic-feeder', title: 'AUTOMATIC FEEDER', img: 'https://promactech.com/wp-content/uploads/2024/07/AUTOMATIC-FEEDER-2-1024x819.png' },
+  { id: 'sea-lion-flatwork-roller-ironer', title: 'FLATWORK ROLLER IRONER', img: 'https://promactech.com/wp-content/uploads/2024/07/FLATWORK-IRONER-ROLLER-1024x819.png' },
+  { id: 'sea-lion-high-speed-serpentine-flatwork-ironer', title: 'HIGH SPEED SERPENTINE FLATWORK IRONER', img: 'https://promactech.com/wp-content/uploads/2024/07/HIGH-SPEED-SERPENTINE-FLATWORK-IRONER-1024x819.png' },
+  { id: 'sea-lion-high-speed-chest-ironer', title: 'HIGH SPEED CHEST IRONER', img: 'https://promactech.com/wp-content/uploads/2024/07/HIGH-SPEED-CHEST-IRONER-2-1024x819.png' },
+  { id: 'sea-lion-automatic-high-speed-folder-with-stacker', title: 'AUTOMATIC HIGH SPEED FOLDER WITH STACKER', img: 'https://promactech.com/wp-content/uploads/2024/07/AUTOMATIC-LINEN-FOLDER-WITH-STACKER-1-1024x819.png' },
 ];
 
 export default function SeaLion() {
@@ -224,29 +226,30 @@ export default function SeaLion() {
             Explore Our Solutions<span className="text-[#E31E24]">.</span>
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {PRODUCTS.map((item, idx) => (
-              <motion.div 
-                key={idx}
-                whileHover={{ y: -5 }}
-                className="group border border-slate-100 rounded-lg overflow-hidden bg-[#FAFAFA] flex flex-col cursor-pointer hover:shadow-lg transition-all duration-300"
-              >
-                {/* Image Area */}
-                <div className="h-48 p-6 flex items-center justify-center bg-[#F3F4F6] overflow-hidden relative">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <img 
-                    src={item.img} 
-                    alt={item.title} 
-                    className="w-full h-full object-contain mix-blend-multiply transform group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
+              <Link to={`/brands/sea-lion/${item.id}`} key={idx} className="block group">
+                <motion.div 
+                  whileHover={{ y: -5 }}
+                  className="h-full border border-slate-100 rounded-lg overflow-hidden bg-[#FAFAFA] flex flex-col cursor-pointer hover:shadow-lg transition-all duration-300"
+                >
+                  {/* Image Area */}
+                  <div className="h-48 p-6 flex items-center justify-center bg-[#F3F4F6] overflow-hidden relative">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <img 
+                      src={item.img} 
+                      alt={item.title} 
+                      className="w-full h-full object-contain mix-blend-multiply transform group-hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
 
-                {/* Content Area */}
-                <div className="p-5 flex items-center justify-between bg-white border-t border-slate-100 group-hover:border-[#E31E24]/20 transition-colors duration-300">
-                  <h3 className="text-sm font-bold text-slate-800">{item.title}</h3>
-                  <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-[#E31E24] group-hover:translate-x-1 transition-all duration-300" />
-                </div>
-              </motion.div>
+                  {/* Content Area */}
+                  <div className="p-5 flex items-center justify-between bg-white border-t border-slate-100 group-hover:border-[#E31E24]/20 transition-colors duration-300 flex-1">
+                    <h3 className="text-sm font-bold text-slate-800 line-clamp-2 pr-4">{item.title}</h3>
+                    <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-[#E31E24] group-hover:translate-x-1 transition-all duration-300 shrink-0" />
+                  </div>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </div>

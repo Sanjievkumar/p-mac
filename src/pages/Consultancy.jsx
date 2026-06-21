@@ -5,7 +5,6 @@ import Footer from '../components/Footer';
 import BrandMarquee from '../components/BrandMarquee';
 
 // Assets
-import showroomImg from '../assets/showroom.png';
 import ecosystemImg from '../assets/ecosystem-3d.png';
 import kannegiesserLogo from '../assets/brands/kannegiesser.png';
 import maestrelliLogo from '../assets/brands/maestrelli.png';

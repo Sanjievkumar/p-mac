@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowLeft, Calendar, Globe2, ShieldCheck, Layers, HeadphonesIcon } from 'lucide-react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import { PRODUCT_DATA } from './MaxiPressProduct';
 
 // Asset Imports
 import maxipressLogo from '../../assets/brands/maxipress.png';
@@ -16,8 +17,6 @@ import wf2 from '../../assets/brands/maxipress/maxi_wf_2_1780728144691.png';
 import wf3 from '../../assets/brands/maxipress/maxi_wf_3_1780728158285.png';
 import wf4 from '../../assets/brands/maxipress/maxi_wf_4_1780728185911.png';
 import wf5 from '../../assets/brands/maxipress/maxi_wf_5_1780728197642.png';
-import prod1 from '../../assets/brands/maxipress/maxi_prod_1_1780728210737.png';
-import prod4 from '../../assets/brands/maxipress/maxi_prod_4_1780728223507.png';
 
 const WORKFLOW = [
   { step: '01', title: 'Pressing', img: wf1 },
@@ -25,13 +24,6 @@ const WORKFLOW = [
   { step: '03', title: 'Finishing', img: wf3 },
   { step: '04', title: 'Quality Check', img: wf4 },
   { step: '05', title: 'Ready for Delivery', img: wf5 }
-];
-
-const PRODUCTS = [
-  { title: 'Shirt Finishers', img: prod1 },
-  { title: 'Form Finishers', img: wf2 }, // Reuse forming
-  { title: 'Garment Presses', img: wf1 }, // Reuse pressing
-  { title: 'Specialty Finishing Equipment', img: prod4 }
 ];
 
 export default function MaxiPress() {
@@ -70,9 +62,9 @@ export default function MaxiPress() {
               Advanced pressing and finishing solutions for professional laundries worldwide.
             </p>
 
-            <button className="bg-[#E31E24] hover:bg-red-700 text-white px-8 py-4 text-xs font-bold tracking-widest uppercase transition-colors duration-300 flex items-center gap-3">
+            <a href="#products" className="inline-flex bg-[#E31E24] hover:bg-red-700 text-white px-8 py-4 text-xs font-bold tracking-widest uppercase transition-colors duration-300 items-center gap-3 w-fit">
               EXPLORE PRODUCTS <ArrowRight className="w-4 h-4" />
-            </button>
+            </a>
           </motion.div>
         </div>
       </section>
@@ -158,23 +150,37 @@ export default function MaxiPress() {
       </section>
 
       {/* ── 4. Solutions Grid ── */}
-      <section className="w-full py-24 bg-white">
+      <section className="w-full py-24 bg-white" id="products">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <h4 className="text-[#E31E24] text-[10px] font-bold tracking-[0.2em] uppercase mb-2">EXPLORE PRODUCTS</h4>
           <h2 className="text-3xl font-bold text-slate-900 mb-12 tracking-tight">
             Our Finishing Solutions<span className="text-[#E31E24]">.</span>
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {PRODUCTS.map((item, idx) => (
-              <motion.div key={idx} whileHover={{ y: -5 }} className="group border border-slate-100 rounded-lg overflow-hidden bg-[#FAFAFA] flex flex-col cursor-pointer hover:shadow-lg transition-all duration-300">
-                <div className="h-48 p-6 flex items-center justify-center bg-white overflow-hidden">
-                  <img src={item.img} alt={item.title} className="w-full h-full object-contain mix-blend-multiply transform group-hover:scale-110 transition-transform duration-500" />
-                </div>
-                <div className="p-5 flex items-center justify-between bg-[#F8F9FA] border-t border-slate-100">
-                  <h3 className="text-sm font-bold text-slate-800">{item.title}</h3>
-                  <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-[#E31E24] group-hover:translate-x-1 transition-all duration-300" />
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            {Object.entries(PRODUCT_DATA).map(([id, product], idx) => (
+              <motion.div 
+                key={id}
+                initial={{ opacity: 0, y: 30 }} 
+                whileInView={{ opacity: 1, y: 0 }} 
+                transition={{ duration: 0.6, delay: Math.min(idx * 0.1, 0.5) }}
+                viewport={{ once: true }}
+              >
+                <Link to={`/brands/maxipress/${id}`} className="block h-full group border border-slate-100 rounded-xl overflow-hidden bg-[#FAFAFA] flex flex-col cursor-pointer hover:shadow-xl transition-all duration-300">
+                  <div className="h-56 p-6 flex items-center justify-center bg-white overflow-hidden relative">
+                    <div className="absolute inset-0 bg-gradient-to-tr from-[#E31E24]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                    <img src={product.img} alt={product.title} className="w-full h-full object-contain mix-blend-multiply transform group-hover:scale-105 transition-transform duration-500 relative z-10" />
+                  </div>
+                  <div className="p-6 flex flex-col justify-between flex-grow bg-[#F8F9FA] border-t border-slate-100">
+                    <div>
+                      <h3 className="text-sm font-bold text-slate-900 mb-2 leading-snug line-clamp-2">{product.title}</h3>
+                      <p className="text-xs text-slate-500 line-clamp-2 mb-4">{product.description}</p>
+                    </div>
+                    <div className="flex items-center text-[#E31E24] text-[10px] font-bold tracking-wider uppercase mt-auto">
+                      View Product <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </Link>
               </motion.div>
             ))}
           </div>

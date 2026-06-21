@@ -30,9 +30,9 @@ const WORKFLOW = [
 
 const PRODUCTS = [
   { 
-    id: 'energy-compact',
-    title: 'ENERGY-COMPACT-PERC-dry-Cleaning', 
-    desc: 'The ENERGY line was named and developed taking into high consideration the "energy saving" issue. Energy COMPACT series are a slim version with 2 tanks and 1 filter, featuring a HIGH EFFICIENCY SOLVENT DISTILLER.', 
+    id: 'perc-dry-cleaning-machines',
+    title: 'PERC DRY-CLEANING MACHINES', 
+    desc: 'The ENERGY line was named and developed taking into high consideration the "energy saving" issue. Available in COMPACT series (2 tanks) and PLUS series (3 tanks), featuring a HIGH EFFICIENCY SOLVENT DISTILLER.', 
     img: energyCompactImg 
   },
   { 
@@ -102,8 +102,9 @@ export default function Maestrelli() {
             </h2>
             
             <div className="text-slate-600 font-normal text-sm leading-relaxed space-y-6 mb-12">
-              <p>Founded in Italy in 1935, Maestrelli has become a globally respected name in professional garment care, dry-cleaning technology, and textile treatment systems.</p>
-              <p>From boutique garment specialists to high-volume commercial cleaning facilities, Maestrelli solutions are engineered to preserve fabric quality while maximizing operational efficiency.</p>
+              <p>MAESTRELLI S.r.l is one of the most important producers in the dry-cleaning sector, with more than 40.000 machines sold and having major clients anywhere in the world, from Europe to Middle east and from South-east to the Americas.</p>
+              <p>The Company was also the first Italian producer ever: being born back in 1935, during all these years of successful activity Maestrelli has been building and consolidating its reputation in almost any country. Furthermore, throughout this period, countless have been the innovations introduced by the firm, such as front loading, electrical machines, and self-cleaning filter.</p>
+              <p>The Company has been always capable of growing and renovating itself, adding to its core business of dry-cleaning machines a wide range of products that goes from washing machines, dryers to barrier washer extractors, hydroextractors and ironing tables. As of today, Maestrelli can confidently assert to be a major and reliable representative for anyone who wants to create a modern and high-end laundry.</p>
             </div>
 
             <div className="grid grid-cols-4 gap-6 pt-8 border-t border-slate-100">

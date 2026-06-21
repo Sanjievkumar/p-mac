@@ -1,197 +1,188 @@
-import { useState, useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+import sealionLogo from '../assets/brands/sealion.png';
+import kannegiesserLogo from '../assets/brands/kannegiesser.png';
+import maestrelliLogo from '../assets/brands/maestrelli.png';
+import maxipressLogo from '../assets/brands/maxipress.png';
 
 const MACHINES = [
   { 
     id: 1, 
     label: 'SEA-LION', 
+    name: 'Industrial Washer Extractor',
+    desc: 'High-performance washing technology designed for massive throughput and ultimate energy efficiency.',
     img: '/Brands/sea-lion brand/WASHER-EXTRACTOR.png', 
-    logo: '/Brands/sea-lion brand/sea-lion-logo.png' 
+    logo: sealionLogo,
+    link: '/brands/sea-lion/washer-extractors',
+    color: 'from-blue-900/40 to-blue-600/10'
   },
   { 
     id: 2, 
     label: 'KANNEGIESSER', 
+    name: 'Powertrans SBW 11',
+    desc: 'The ultimate continuous batch washer system, setting the global standard for industrial laundry automation.',
     img: '/Brands/Kannegiesser brand/301868_Powertrans_SBW_11_persp04.jpg', 
-    logo: '/Brands/Kannegiesser brand/Kannegiesser_Logo.jpg' 
+    logo: kannegiesserLogo,
+    link: '/brands/kannegiesser',
+    color: 'from-orange-900/40 to-orange-600/10'
   },
   { 
     id: 3, 
     label: 'MAESTRELLI', 
+    name: 'Dreamclean Multisolvent',
+    desc: 'Next-generation dry cleaning technology offering unparalleled garment care and solvent versatility.',
     img: '/Brands/MAESTRELLI brand/DREAMCLEAN MULTISOLVENT SOFT MOUNT.png', 
-    logo: '/Brands/MAESTRELLI brand/Maestrelli_Logo.png' 
+    logo: maestrelliLogo,
+    link: '/brands/maestrelli/dream-clean',
+    color: 'from-sky-900/40 to-sky-600/10'
   },
   { 
     id: 4, 
     label: 'MAXIPRESS', 
-    img: '/Brands/maxipress brand/MPCAFF-FORM FINISHER.png', 
-    logo: '/Brands/maxipress brand/Maxipress_Logo.png' 
+    name: 'MPCAFF Form Finisher',
+    desc: 'Precision form finishing equipment guaranteeing perfectly pressed garments with absolute reliability.',
+    img: 'https://promactech.com/wp-content/uploads/2024/07/MPCAFF-FORM-FINISHER-640x640.png', 
+    logo: maxipressLogo,
+    link: '/brands/maxipress/mpcaff-form-finisher',
+    color: 'from-red-900/40 to-red-600/10'
   },
 ];
 
 export default function CarouselSection() {
   const [activeIndex, setActiveIndex] = useState(0); 
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-60px' });
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const activeMachine = MACHINES[activeIndex];
 
-  const goLeft  = () => setActiveIndex((p) => (p - 1 + MACHINES.length) % MACHINES.length);
-  const goRight = () => setActiveIndex((p) => (p + 1) % MACHINES.length);
-
-  /* ─── Layout constants ────────────────────────────────────────
-     CARD_W       : base card width (px)
-     CENTER_SCALE : scale of the active centre card
-     SIDE_SCALE   : scale of the adjacent cards
-     SIDE_OFFSET  : horizontal distance from centre (px)
-                    must be large enough so side cards don't
-                    overlap the scaled-up centre card.
-
-     Centre card effective half-width = (CARD_W * CENTER_SCALE) / 2
-                                      = (220 * 1.1)  / 2 = 121px
-     Side card left edge              = SIDE_OFFSET - (CARD_W * SIDE_SCALE) / 2
-                                      = 320          - (220 * 0.75) / 2 = 320 - 82.5 = 237px
-     Gap between edges                = 237 - 121 = 116px  ✓ no overlap
-  ─────────────────────────────────────────────────────────────── */
-  const CARD_W       = 220;
-  const CENTER_SCALE = 1.1;
-  const SIDE_SCALE   = 0.75;
-  const SIDE_OFFSET  = 320;
-
-  const getItemStyle = (index) => {
-    const total = MACHINES.length;
-    let diff = index - activeIndex;
-    if (diff >  Math.floor(total / 2)) diff -= total;
-    if (diff < -Math.floor(total / 2)) diff += total;
-
-    const absDiff = Math.abs(diff);
-
-    if (diff === 0) {
-      return { scale: CENTER_SCALE, opacity: 1,   zIndex: 20, x: 0,                    filter: 'blur(0px)'  };
-    } else if (absDiff === 1) {
-      return { scale: SIDE_SCALE,   opacity: 0.45, zIndex: 10, x: diff * SIDE_OFFSET,   filter: 'blur(3px)'  };
-    } else {
-      return { scale: 0.5,          opacity: 0,    zIndex: 0,  x: diff * (SIDE_OFFSET + 80), filter: 'blur(6px)'  };
-    }
-  };
+  // Auto-cycle
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveIndex((p) => (p + 1) % MACHINES.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <section
       ref={ref}
-      className="relative w-full bg-[#f8f9fa] overflow-hidden font-display border-y border-gray-200"
+      className="relative w-full bg-[#050505] overflow-hidden font-display py-24 lg:py-32"
     >
-      {/* ── "OUR BEST SELLERS" heading — FIXED at top, never moves ── */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className="pt-16 pb-2 flex flex-col items-center"
-      >
-        <h2 className="text-4xl font-extrabold text-[#001F3F] font-display tracking-tighter uppercase inline-block border-b-[3px] border-[#E31E24] pb-3">
-          OUR BEST SELLERS
-        </h2>
-      </motion.div>
+      {/* Background Ambience */}
+      <div className="absolute inset-0 w-full h-full">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[length:24px_24px]" />
+        <AnimatePresence mode="popLayout">
+          <motion.div
+            key={activeMachine.id}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+            className={`absolute inset-0 bg-gradient-to-br ${activeMachine.color} opacity-40 mix-blend-screen blur-3xl`}
+          />
+        </AnimatePresence>
+      </div>
 
-      {/* ── Carousel stage ── */}
-      <div className="relative max-w-[1200px] mx-auto pb-16">
-
-        {/* Fixed-height stage so text below never jumps */}
-        <div className="relative w-full h-[420px] flex items-end justify-center">
-
-          {/* ── Left arrow ── */}
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={goLeft}
-            className="absolute left-4 md:left-10 bottom-[120px] z-50 w-12 h-12 bg-white border-[2px] border-[#E31E24] rounded-full flex items-center justify-center hover:bg-[#E31E24] hover:text-white transition-colors duration-200 group shadow-[0_10px_20px_rgba(227,30,36,0.15)]"
-            aria-label="Previous machine"
+      <div className="relative max-w-[1400px] mx-auto px-6 lg:px-16 flex flex-col lg:flex-row items-center lg:items-stretch gap-16 lg:gap-24">
+        
+        {/* ── Left side: Titles & Tabs ── */}
+        <div className="w-full lg:w-5/12 flex flex-col justify-center z-10">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8 }}
           >
-            <svg className="w-5 h-5 text-[#E31E24] group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-            </svg>
-          </motion.button>
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-12 h-[1px] bg-[#E31E24]" />
+              <h4 className="text-[#E31E24] text-xs font-bold tracking-[0.3em] uppercase">Featured Flagships</h4>
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-12 leading-[1.1]">
+              Our Best<br/>Sellers<span className="text-[#E31E24]">.</span>
+            </h2>
 
-          {/* ── Right arrow ── */}
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={goRight}
-            className="absolute right-4 md:right-10 bottom-[120px] z-50 w-12 h-12 bg-white border-[2px] border-[#E31E24] rounded-full flex items-center justify-center hover:bg-[#E31E24] hover:text-white transition-colors duration-200 group shadow-[0_10px_20px_rgba(227,30,36,0.15)]"
-            aria-label="Next machine"
-          >
-            <svg className="w-5 h-5 text-[#E31E24] group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-            </svg>
-          </motion.button>
-
-          {/* ── Cards ── */}
-          {MACHINES.map((machine, index) => {
-            const style   = getItemStyle(index);
-            const isCenter = index === activeIndex;
-
-            return (
-              <motion.div
-                key={machine.id}
-                animate={{ x: style.x, scale: style.scale, opacity: style.opacity, filter: style.filter }}
-                transition={{ type: 'spring', stiffness: 160, damping: 26, mass: 0.8 }}
-                onClick={() => setActiveIndex(index)}
-                className="absolute cursor-pointer flex flex-col items-center justify-end"
-                style={{ zIndex: style.zIndex, bottom: '16px', width: `${CARD_W}px` }}
-              >
-                {/* Brand logo */}
-                <div className="h-10 md:h-12 w-full mb-6 flex justify-center items-end px-4 drop-shadow-md">
-                  <img
-                    src={machine.logo}
-                    alt={`${machine.label} Logo`}
-                    className="max-h-full max-w-full object-contain mix-blend-multiply"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      if (e.target.nextElementSibling) e.target.nextElementSibling.style.display = 'block';
-                    }}
-                  />
-                  <h3
-                    className="text-lg font-extrabold text-[#001F3F] tracking-widest uppercase font-display"
-                    style={{ display: 'none' }}
+            {/* Brand Tabs */}
+            <div className="flex flex-col gap-4">
+              {MACHINES.map((machine, index) => {
+                const isActive = index === activeIndex;
+                return (
+                  <button
+                    key={machine.id}
+                    onClick={() => setActiveIndex(index)}
+                    className={`group relative flex items-center justify-between p-5 rounded-2xl transition-all duration-500 overflow-hidden ${
+                      isActive ? 'bg-white/10 shadow-[0_0_40px_rgba(255,255,255,0.05)] border border-white/20' : 'hover:bg-white/5 border border-transparent'
+                    }`}
                   >
-                    {machine.label}
-                  </h3>
-                </div>
+                    {isActive && (
+                      <motion.div 
+                        layoutId="activeTabIndicator"
+                        className="absolute left-0 top-0 bottom-0 w-1 bg-[#E31E24]" 
+                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                      />
+                    )}
+                    <div className="flex items-center gap-6 relative z-10">
+                      <div className={`w-16 h-12 bg-white rounded-lg p-2 flex items-center justify-center shadow-lg transition-transform duration-500 ${isActive ? 'scale-110' : 'group-hover:scale-105'}`}>
+                        <img 
+                          src={machine.logo} 
+                          alt={machine.label} 
+                          className="max-w-full max-h-full object-contain mix-blend-multiply"
+                        />
+                      </div>
+                      <span className={`font-bold tracking-wider text-sm transition-colors duration-300 ${isActive ? 'text-white' : 'text-slate-400 group-hover:text-white'}`}>
+                        {machine.label}
+                      </span>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </motion.div>
+        </div>
 
-                {/* Machine image — fixed uniform height */}
-                <div
-                  className="w-full flex justify-center items-end"
-                  style={{ height: '220px' }}
-                >
-                  <img
-                    src={machine.img}
-                    alt={machine.label}
-                    className="max-w-full max-h-full object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.18)] mix-blend-multiply"
-                  />
-                </div>
-
-                {/* Floor shadow */}
-                <div
-                  className={`rounded-[50%] bg-black/15 mt-3 transition-all duration-500 ${
-                    isCenter ? 'w-44 h-5 blur-md' : 'w-20 h-3 blur-sm'
-                  }`}
+        {/* ── Right side: 3D Showcase ── */}
+        <div className="w-full lg:w-7/12 relative min-h-[500px] lg:min-h-[600px] flex items-center justify-center perspective-1000">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeMachine.id}
+              initial={{ opacity: 0, rotateY: 15, x: 50, scale: 0.95 }}
+              animate={{ opacity: 1, rotateY: 0, x: 0, scale: 1 }}
+              exit={{ opacity: 0, rotateY: -15, x: -50, scale: 0.95 }}
+              transition={{ duration: 0.6, type: 'spring', bounce: 0.3 }}
+              className="relative w-full h-full flex flex-col items-center justify-center group"
+            >
+              {/* Glass Card Backdrop */}
+              <div className="absolute inset-0 w-full h-[80%] mt-auto bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-3xl -z-10 shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]" />
+              
+              {/* Image */}
+              <div className="relative w-full h-[60%] lg:h-[70%] flex justify-center items-end px-8 mb-8 z-20">
+                <img 
+                  src={activeMachine.img} 
+                  alt={activeMachine.name} 
+                  className="max-w-full max-h-full object-contain drop-shadow-[0_30px_40px_rgba(0,0,0,0.4)] mix-blend-screen"
                 />
-              </motion.div>
-            );
-          })}
+              </div>
+
+              {/* Text Info */}
+              <div className="relative z-20 text-center px-8 lg:px-12 pb-10">
+                <h3 className="text-2xl lg:text-3xl font-bold text-white mb-3">
+                  {activeMachine.name}
+                </h3>
+                <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-md mx-auto">
+                  {activeMachine.desc}
+                </p>
+                
+                <Link 
+                  to={activeMachine.link}
+                  className="inline-flex items-center gap-2 text-white text-xs font-bold tracking-widest uppercase bg-white/10 hover:bg-[#E31E24] px-6 py-3 rounded-full transition-all duration-300 border border-white/20 hover:border-[#E31E24]"
+                >
+                  Explore Details <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
 
-        {/* Dot indicators */}
-        <div className="flex justify-center gap-2 pt-4">
-          {MACHINES.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setActiveIndex(i)}
-              className={`rounded-full transition-all duration-300 ${
-                i === activeIndex
-                  ? 'w-6 h-2 bg-[#E31E24]'
-                  : 'w-2 h-2 bg-gray-300 hover:bg-gray-400'
-              }`}
-              aria-label={`Go to slide ${i + 1}`}
-            />
-          ))}
-        </div>
       </div>
     </section>
   );

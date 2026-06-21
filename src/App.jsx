@@ -9,8 +9,10 @@ import Services from './pages/Services';
 import Kannegiesser from './pages/brands/Kannegiesser';
 import SeaLion from './pages/brands/SeaLion';
 import MaxiPress from './pages/brands/MaxiPress';
+import MaxiPressProduct from './pages/brands/MaxiPressProduct';
 import Maestrelli from './pages/brands/Maestrelli';
 import MaestrelliProduct from './pages/brands/MaestrelliProduct';
+import SeaLionProduct from './pages/brands/SeaLionProduct';
 
 function App() {
   return (
@@ -22,9 +24,12 @@ function App() {
         <Route path="/brands" element={<Brands />} />
         <Route path="/brands/kannegiesser" element={<Kannegiesser />} />
         <Route path="/brands/sea-lion" element={<SeaLion />} />
+        <Route path="/brands/sea-lion/:productId" element={<SeaLionProduct />} />
         <Route path="/brands/maxipress" element={<MaxiPress />} />
+        <Route path="/brands/maxipress/:productId" element={<MaxiPressProduct />} />
         <Route path="/brands/maestrelli" element={<Maestrelli />} />
         <Route path="/brands/maestrelli/:productId" element={<MaestrelliProduct />} />
+
         <Route path="/consultancy" element={<Consultancy />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Services />} />
