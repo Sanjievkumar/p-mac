@@ -128,10 +128,10 @@ export default function Kannegiesser() {
             
             <div className="text-slate-500 font-light text-lg leading-relaxed space-y-6 mb-12">
               <p>
-                For over seven decades, Kannegiesser has set global benchmarks in industrial laundry technology. From washing and finishing to logistics and automation, we deliver fully integrated systems trusted by leading industries worldwide.
+                For over seven decades, <span className="text-[#0B4F8A] font-bold">Kannegiesser</span> has set global benchmarks in industrial laundry technology. From washing and finishing to logistics and automation, we deliver fully integrated systems trusted by leading industries worldwide.
               </p>
               <p>
-                As Kannegiesser's strategic partner in India, Promac Technologies brings these globally proven solutions closer to businesses through consultation, implementation, commissioning, and long-term support.
+                As <span className="text-[#0B4F8A] font-bold">Kannegiesser's</span> strategic partner in India, Promac Technologies brings these globally proven solutions closer to businesses through consultation, implementation, commissioning, and long-term support.
               </p>
             </div>
 

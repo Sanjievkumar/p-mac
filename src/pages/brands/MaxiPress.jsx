@@ -87,7 +87,7 @@ export default function MaxiPress() {
             </h2>
             
             <div className="text-slate-600 font-normal text-sm leading-relaxed space-y-6 mb-12">
-              <p>MaxiPress delivers advanced finishing and pressing equipment designed to achieve superior garment presentation, operational efficiency, and consistent quality across hospitality, healthcare, and textile service operations.</p>
+              <p><span className="text-[#D3261C] font-bold">MaxiPress</span> delivers advanced finishing and pressing equipment designed to achieve superior garment presentation, operational efficiency, and consistent quality across hospitality, healthcare, and textile service operations.</p>
               <p>Engineered for reliability and performance, our solutions help laundries of all sizes enhance productivity and maintain the highest standards of fabric care.</p>
             </div>
 
@@ -116,14 +116,14 @@ export default function MaxiPress() {
         <div className="max-w-[1400px] mx-auto px-8 lg:px-16 flex flex-col xl:flex-row gap-16 items-center">
           
           <div className="w-full xl:w-1/3 flex-shrink-0">
-            <h4 className="text-[#E31E24] text-[10px] font-bold tracking-[0.2em] uppercase mb-4">FINISHING WORKFLOW</h4>
+            <h4 className="text-[#D3261C] text-[10px] font-bold tracking-[0.2em] uppercase mb-4">FINISHING WORKFLOW</h4>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 leading-tight tracking-tight">
-              Complete Finishing<br />Workflow<span className="text-[#E31E24]">.</span>
+              Complete Finishing<br />Workflow<span className="text-[#D3261C]">.</span>
             </h2>
-            <p className="text-slate-600 font-normal text-sm leading-relaxed mb-8">
-              From pressing to perfect presentation, MaxiPress ensures every garment meets the highest standards.
-            </p>
-            <button className="flex items-center gap-2 text-[#E31E24] text-xs font-bold tracking-widest uppercase hover:text-red-700 transition-colors">
+            <div className="text-slate-600 text-sm leading-relaxed max-w-xl">
+              From pressing to perfect presentation, <span className="text-[#D3261C] font-bold">MaxiPress</span> ensures every garment meets the highest standards.
+            </div>
+            <button className="flex items-center gap-2 text-[#D3261C] text-xs font-bold tracking-widest uppercase hover:text-red-700 transition-colors">
               LEARN MORE <ArrowRight className="w-4 h-4" />
             </button>
           </div>
@@ -152,10 +152,15 @@ export default function MaxiPress() {
       {/* ── 4. Solutions Grid ── */}
       <section className="w-full py-24 bg-white" id="products">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
-          <h4 className="text-[#E31E24] text-[10px] font-bold tracking-[0.2em] uppercase mb-2">EXPLORE PRODUCTS</h4>
-          <h2 className="text-3xl font-bold text-slate-900 mb-12 tracking-tight">
-            Our Finishing Solutions<span className="text-[#E31E24]">.</span>
-          </h2>
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+            <div>
+              <h4 className="text-[#E31E24] text-[10px] font-bold tracking-[0.2em] uppercase mb-2">EXPLORE PRODUCTS</h4>
+              <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight leading-none">
+                Our Finishing Solutions<span className="text-[#E31E24]">.</span>
+              </h2>
+            </div>
+            <div className="h-[2px] w-16 bg-[#E31E24] mb-2 hidden md:block" />
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {Object.entries(PRODUCT_DATA).map(([id, product], idx) => (
@@ -163,22 +168,42 @@ export default function MaxiPress() {
                 key={id}
                 initial={{ opacity: 0, y: 30 }} 
                 whileInView={{ opacity: 1, y: 0 }} 
-                transition={{ duration: 0.6, delay: Math.min(idx * 0.1, 0.5) }}
-                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: Math.min(idx * 0.1, 0.4) }}
+                viewport={{ once: true, margin: "-50px" }}
               >
-                <Link to={`/brands/maxipress/${id}`} className="block h-full group border border-slate-100 rounded-xl overflow-hidden bg-[#FAFAFA] flex flex-col cursor-pointer hover:shadow-xl transition-all duration-300">
-                  <div className="h-56 p-6 flex items-center justify-center bg-white overflow-hidden relative">
-                    <div className="absolute inset-0 bg-gradient-to-tr from-[#E31E24]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                    <img src={product.img} alt={product.title} className="w-full h-full object-contain mix-blend-multiply transform group-hover:scale-105 transition-transform duration-500 relative z-10" />
-                  </div>
-                  <div className="p-6 flex flex-col justify-between flex-grow bg-[#F8F9FA] border-t border-slate-100">
-                    <div>
-                      <h3 className="text-sm font-bold text-slate-900 mb-2 leading-snug line-clamp-2">{product.title}</h3>
-                      <p className="text-xs text-slate-500 line-clamp-2 mb-4">{product.description}</p>
+                <Link to={`/brands/maxipress/${id}`} className="block h-full group">
+                  <div className="h-full rounded-2xl overflow-hidden bg-[#fafafa] flex flex-col cursor-pointer border border-slate-100 hover:border-transparent relative shadow-sm hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] transition-all duration-500">
+                    
+                    {/* Animated Border Gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#E31E24]/0 via-transparent to-[#E31E24]/0 group-hover:from-[#E31E24]/20 group-hover:to-[#0B4F8A]/20 transition-all duration-700 opacity-0 group-hover:opacity-100" />
+
+                    {/* Image Area */}
+                    <div className="h-56 p-8 flex items-center justify-center bg-white relative overflow-hidden rounded-t-2xl m-[2px]">
+                      {/* Grid background */}
+                      <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                      
+                      <img 
+                        src={product.img} 
+                        alt={product.title} 
+                        className="w-full h-full object-contain mix-blend-multiply transform group-hover:scale-[1.15] group-hover:-translate-y-2 transition-transform duration-700 relative z-10 drop-shadow-sm group-hover:drop-shadow-xl"
+                      />
                     </div>
-                    <div className="flex items-center text-[#E31E24] text-[10px] font-bold tracking-wider uppercase mt-auto">
-                      View Product <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+
+                    {/* Content Area */}
+                    <div className="p-6 flex flex-col flex-grow justify-between bg-[#fafafa] relative z-10 m-[2px] mt-0 rounded-b-2xl border-t border-slate-100/50">
+                      <div>
+                        <h3 className="text-sm font-bold text-slate-800 leading-snug mb-2 transition-colors duration-300 group-hover:text-[#E31E24] line-clamp-2">
+                          {product.title}
+                        </h3>
+                        <p className="text-xs text-slate-500 line-clamp-2 mb-4">{product.description}</p>
+                      </div>
+                      
+                      <div className="mt-auto flex items-center text-[10px] font-bold tracking-widest uppercase text-slate-400 group-hover:text-[#E31E24] transition-colors duration-300">
+                        View Product 
+                        <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-2 transition-transform duration-500" />
+                      </div>
                     </div>
+                    
                   </div>
                 </Link>
               </motion.div>

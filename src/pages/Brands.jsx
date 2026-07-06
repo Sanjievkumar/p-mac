@@ -74,7 +74,7 @@ const BRANDS = [
         <span className="font-maxipress text-[#808285] text-[10px] md:text-[11px] font-bold tracking-[0.25em] mb-1.5 leading-none">
           MAXIMUM MAXIBILITY
         </span>
-        <h2 className="text-4xl md:text-[52px] font-maxipress font-black text-[#F26522] tracking-tight leading-none">
+        <h2 className="text-4xl md:text-[52px] font-maxipress font-black text-[#D3261C] tracking-tight leading-none">
           MAXI-PRESS
         </h2>
       </div>

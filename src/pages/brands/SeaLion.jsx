@@ -133,10 +133,10 @@ export default function SeaLion() {
             
             <div className="text-slate-600 font-normal text-sm leading-relaxed space-y-6 mb-12 max-w-md">
               <p>
-                SEA-LION is a globally recognized manufacturer of industrial laundry equipment, delivering reliable and automation-ready solutions trusted by commercial laundries worldwide.
+                <span className="text-[#E31E24] font-bold">SEA-LION</span> is a globally recognized manufacturer of industrial laundry equipment, delivering reliable and automation-ready solutions trusted by commercial laundries worldwide.
               </p>
               <p>
-                Through continuous innovation and large-scale manufacturing capabilities, SEA-LION provides a complete range of washer extractors, tumble dryers, barrier washers, and flatwork ironing systems designed for long-term performance.
+                Through continuous innovation and large-scale manufacturing capabilities, <span className="text-[#E31E24] font-bold">SEA-LION</span> provides a complete range of washer extractors, tumble dryers, barrier washers, and flatwork ironing systems designed for long-term performance.
               </p>
             </div>
 
@@ -208,7 +208,7 @@ export default function SeaLion() {
               One Ecosystem.<br />Every Process<span className="text-[#E31E24]">.</span>
             </h2>
             <p className="text-slate-600 font-normal text-sm leading-relaxed mb-10 max-w-md">
-              From washing and drying to finishing and automation, SEA-LION delivers a complete industrial laundry workflow built for efficiency, reliability, and scale.
+              From washing and drying to finishing and automation, <span className="text-[#E31E24] font-bold">SEA-LION</span> delivers a complete industrial laundry workflow built for efficiency, reliability, and scale.
             </p>
             <button className="flex items-center gap-2 text-[#E31E24] text-xs font-bold tracking-widest uppercase hover:text-red-700 transition-colors">
               EXPLORE SOLUTIONS <ArrowRight className="w-4 h-4" />
@@ -219,37 +219,60 @@ export default function SeaLion() {
       </section>
 
       {/* ── 4. Explore Solutions Grid ── */}
-      <section className="w-full py-24 bg-white">
+      <section className="w-full py-24 bg-white" id="products">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
-          <h4 className="text-[#E31E24] text-[10px] font-bold tracking-[0.2em] uppercase mb-2">EXPLORE PRODUCTS</h4>
-          <h2 className="text-3xl font-bold text-slate-900 mb-12 tracking-tight">
-            Explore Our Solutions<span className="text-[#E31E24]">.</span>
-          </h2>
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+            <div>
+              <h4 className="text-[#E31E24] text-[10px] font-bold tracking-[0.2em] uppercase mb-2">EXPLORE PRODUCTS</h4>
+              <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight leading-none">
+                Industrial Solutions<span className="text-[#E31E24]">.</span>
+              </h2>
+            </div>
+            <div className="h-[2px] w-16 bg-[#E31E24] mb-2 hidden md:block" />
+          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {PRODUCTS.map((item, idx) => (
-              <Link to={`/brands/sea-lion/${item.id}`} key={idx} className="block group">
-                <motion.div 
-                  whileHover={{ y: -5 }}
-                  className="h-full border border-slate-100 rounded-lg overflow-hidden bg-[#FAFAFA] flex flex-col cursor-pointer hover:shadow-lg transition-all duration-300"
-                >
-                  {/* Image Area */}
-                  <div className="h-48 p-6 flex items-center justify-center bg-[#F3F4F6] overflow-hidden relative">
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <img 
-                      src={item.img} 
-                      alt={item.title} 
-                      className="w-full h-full object-contain mix-blend-multiply transform group-hover:scale-110 transition-transform duration-500"
-                    />
-                  </div>
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, y: 30 }} 
+                whileInView={{ opacity: 1, y: 0 }} 
+                transition={{ duration: 0.6, delay: Math.min(idx * 0.1, 0.4) }}
+                viewport={{ once: true, margin: "-50px" }}
+              >
+                <Link to={`/brands/sea-lion/${item.id}`} className="block h-full group">
+                  <div className="h-full rounded-2xl overflow-hidden bg-[#fafafa] flex flex-col cursor-pointer border border-slate-100 hover:border-transparent relative shadow-sm hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] transition-all duration-500">
+                    
+                    {/* Animated Border Gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#E31E24]/0 via-transparent to-[#E31E24]/0 group-hover:from-[#E31E24]/20 group-hover:to-[#0B4F8A]/20 transition-all duration-700 opacity-0 group-hover:opacity-100" />
 
-                  {/* Content Area */}
-                  <div className="p-5 flex items-center justify-between bg-white border-t border-slate-100 group-hover:border-[#E31E24]/20 transition-colors duration-300 flex-1">
-                    <h3 className="text-sm font-bold text-slate-800 line-clamp-2 pr-4">{item.title}</h3>
-                    <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-[#E31E24] group-hover:translate-x-1 transition-all duration-300 shrink-0" />
+                    {/* Image Area */}
+                    <div className="h-56 p-8 flex items-center justify-center bg-white relative overflow-hidden rounded-t-2xl m-[2px]">
+                      {/* Grid background */}
+                      <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                      
+                      <img 
+                        src={item.img} 
+                        alt={item.title} 
+                        className="w-full h-full object-contain mix-blend-multiply transform group-hover:scale-[1.15] group-hover:-translate-y-2 transition-transform duration-700 relative z-10 drop-shadow-sm group-hover:drop-shadow-xl"
+                      />
+                    </div>
+
+                    {/* Content Area */}
+                    <div className="p-6 flex flex-col flex-grow justify-between bg-[#fafafa] relative z-10 m-[2px] mt-0 rounded-b-2xl border-t border-slate-100/50">
+                      <h3 className="text-sm font-bold text-slate-800 leading-snug pr-6 transition-colors duration-300 group-hover:text-[#E31E24]">
+                        {item.title}
+                      </h3>
+                      
+                      <div className="mt-6 flex items-center text-[10px] font-bold tracking-widest uppercase text-slate-400 group-hover:text-[#E31E24] transition-colors duration-300">
+                        View Machine 
+                        <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-2 transition-transform duration-500" />
+                      </div>
+                    </div>
+                    
                   </div>
-                </motion.div>
-              </Link>
+                </Link>
+              </motion.div>
             ))}
           </div>
         </div>

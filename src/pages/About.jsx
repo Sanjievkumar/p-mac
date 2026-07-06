@@ -214,10 +214,10 @@ export default function About() {
                 aria-hidden="true"
               />
               <div className="relative z-10 space-y-6">
-                <h3 className="text-2xl font-black tracking-tighter text-[#E31E24] transition-colors duration-500">
+                <h3 className="text-3xl md:text-4xl font-black tracking-tighter text-[#E31E24] transition-colors duration-500">
                   Our Vision
                 </h3>
-                <p className="text-white/90 group-hover:text-[#001F3F]/90 text-lg leading-relaxed transition-colors duration-500">
+                <p className="text-white/90 group-hover:text-[#001F3F]/90 text-xl md:text-2xl leading-relaxed transition-colors duration-500">
                   We envision a future where every hospitality, healthcare, and commercial laundry facility across India operates through globally advanced systems, seamless automation, and service-driven engineering excellence — transforming laundry operations from a utility into a strategic operational advantage.
                 </p>
               </div>
@@ -244,8 +244,8 @@ export default function About() {
                 </svg>
               </div>
               <div className="relative z-10 space-y-6">
-                <h3 className="text-2xl font-black tracking-tighter text-white group-hover:text-[#001F3F] transition-colors duration-500">Our Mission</h3>
-                <p className="text-white/90 group-hover:text-[#001F3F]/90 leading-relaxed text-lg transition-colors duration-500">
+                <h3 className="text-3xl md:text-4xl font-black tracking-tighter text-white group-hover:text-[#001F3F] transition-colors duration-500">Our Mission</h3>
+                <p className="text-white/90 group-hover:text-[#001F3F]/90 leading-relaxed text-xl md:text-2xl transition-colors duration-500">
                   To empower the hospitality and healthcare sectors with sustainable, high-efficiency laundry technologies that redefine operational excellence across India.
                 </p>
               </div>

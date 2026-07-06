@@ -102,9 +102,9 @@ export default function Maestrelli() {
             </h2>
             
             <div className="text-slate-600 font-normal text-sm leading-relaxed space-y-6 mb-12">
-              <p>MAESTRELLI S.r.l is one of the most important producers in the dry-cleaning sector, with more than 40.000 machines sold and having major clients anywhere in the world, from Europe to Middle east and from South-east to the Americas.</p>
-              <p>The Company was also the first Italian producer ever: being born back in 1935, during all these years of successful activity Maestrelli has been building and consolidating its reputation in almost any country. Furthermore, throughout this period, countless have been the innovations introduced by the firm, such as front loading, electrical machines, and self-cleaning filter.</p>
-              <p>The Company has been always capable of growing and renovating itself, adding to its core business of dry-cleaning machines a wide range of products that goes from washing machines, dryers to barrier washer extractors, hydroextractors and ironing tables. As of today, Maestrelli can confidently assert to be a major and reliable representative for anyone who wants to create a modern and high-end laundry.</p>
+              <p><span className="text-[#001F3F] font-bold">MAESTRELLI</span> S.r.l is one of the most important producers in the dry-cleaning sector, with more than 40.000 machines sold and having major clients anywhere in the world, from Europe to Middle east and from South-east to the Americas.</p>
+              <p>The Company was also the first Italian producer ever: being born back in 1935, during all these years of successful activity <span className="text-[#001F3F] font-bold">Maestrelli</span> has been building and consolidating its reputation in almost any country. Furthermore, throughout this period, countless have been the innovations introduced by the firm, such as front loading, electrical machines, and self-cleaning filter.</p>
+              <p>The Company has been always capable of growing and renovating itself, adding to its core business of dry-cleaning machines a wide range of products that goes from washing machines, dryers to barrier washer extractors, hydroextractors and ironing tables. As of today, <span className="text-[#001F3F] font-bold">Maestrelli</span> can confidently assert to be a major and reliable representative for anyone who wants to create a modern and high-end laundry.</p>
             </div>
 
             <div className="grid grid-cols-4 gap-6 pt-8 border-t border-slate-100">
@@ -137,7 +137,7 @@ export default function Maestrelli() {
               Care In Every Step<span className="text-[#CC141A]">.</span>
             </h2>
             <p className="text-slate-600 font-normal text-sm leading-relaxed mb-8">
-              Maestrelli delivers complete solutions to ensure superior results, fabric care and customer satisfaction.
+              <span className="text-[#001F3F] font-bold">Maestrelli</span> delivers complete solutions to ensure superior results, fabric care and customer satisfaction.
             </p>
             <button className="flex items-center gap-2 text-[#CC141A] text-xs font-bold tracking-widest uppercase hover:text-red-700 transition-colors">
               LEARN MORE <ArrowRight className="w-4 h-4" />
@@ -166,35 +166,63 @@ export default function Maestrelli() {
       </section>
 
       {/* ── 4. Solutions Grid ── */}
-      <section className="w-full py-24 bg-white">
+      <section className="w-full py-24 bg-white" id="products">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
-          <h4 className="text-[#CC141A] text-[10px] font-bold tracking-[0.2em] uppercase mb-2">EXPLORE PRODUCTS</h4>
-          <h2 className="text-3xl font-bold text-slate-900 mb-12 tracking-tight">
-            Our Garment Care Solutions<span className="text-[#CC141A]">.</span>
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {PRODUCTS.map((item, idx) => (
-              <Link to={`/brands/maestrelli/${item.id}`} key={idx} className="block group">
-                <motion.div whileHover={{ y: -5 }} className="h-full border border-slate-100 rounded-lg overflow-hidden bg-white flex flex-col cursor-pointer hover:shadow-xl shadow-sm transition-all duration-300">
-                  <div className="w-full h-64 p-6 flex items-center justify-center bg-[#FAFAFA] overflow-hidden shrink-0">
-                    <img src={item.img} alt={item.title} className="w-full h-full object-contain mix-blend-multiply transform group-hover:scale-105 transition-transform duration-500" />
-                  </div>
-                  <div className="w-full p-8 flex flex-col items-center justify-center border-t border-slate-100 text-center">
-                    <h3 className="text-lg font-bold text-slate-900 mb-6 group-hover:text-[#CC141A] transition-colors">{item.title}</h3>
-                    <div className="flex items-center gap-2 text-[#CC141A] text-xs font-bold tracking-widest uppercase">
-                      VIEW DETAILS <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
-                    </div>
-                  </div>
-                </motion.div>
-              </Link>
-            ))}
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+            <div>
+              <h4 className="text-[#CC141A] text-[10px] font-bold tracking-[0.2em] uppercase mb-2">EXPLORE PRODUCTS</h4>
+              <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight leading-none">
+                Our Garment Care Solutions<span className="text-[#CC141A]">.</span>
+              </h2>
+            </div>
+            <div className="h-[2px] w-16 bg-[#CC141A] mb-2 hidden md:block" />
           </div>
-          
-          <div className="flex justify-center gap-1.5 mt-8">
-            <div className="w-6 h-1.5 bg-[#CC141A] rounded-full" />
-            <div className="w-1.5 h-1.5 bg-slate-200 rounded-full" />
-            <div className="w-1.5 h-1.5 bg-slate-200 rounded-full" />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            {PRODUCTS.map((item, idx) => (
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, y: 30 }} 
+                whileInView={{ opacity: 1, y: 0 }} 
+                transition={{ duration: 0.6, delay: Math.min(idx * 0.1, 0.4) }}
+                viewport={{ once: true, margin: "-50px" }}
+              >
+                <Link to={`/brands/maestrelli/${item.id}`} className="block h-full group">
+                  <div className="h-full rounded-2xl overflow-hidden bg-[#fafafa] flex flex-col cursor-pointer border border-slate-100 hover:border-transparent relative shadow-sm hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] transition-all duration-500">
+                    
+                    {/* Animated Border Gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#CC141A]/0 via-transparent to-[#CC141A]/0 group-hover:from-[#CC141A]/20 group-hover:to-[#1c1c1c]/20 transition-all duration-700 opacity-0 group-hover:opacity-100" />
+
+                    {/* Image Area */}
+                    <div className="h-56 p-8 flex items-center justify-center bg-white relative overflow-hidden rounded-t-2xl m-[2px]">
+                      {/* Grid background */}
+                      <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                      
+                      <img 
+                        src={item.img} 
+                        alt={item.title} 
+                        className="w-full h-full object-contain mix-blend-multiply transform group-hover:scale-[1.15] group-hover:-translate-y-2 transition-transform duration-700 relative z-10 drop-shadow-sm group-hover:drop-shadow-xl"
+                      />
+                    </div>
+
+                    {/* Content Area */}
+                    <div className="p-6 flex flex-col flex-grow justify-between bg-[#fafafa] relative z-10 m-[2px] mt-0 rounded-b-2xl border-t border-slate-100/50">
+                      <div>
+                        <h3 className="text-sm font-bold text-slate-800 leading-snug mb-2 transition-colors duration-300 group-hover:text-[#CC141A] line-clamp-2">
+                          {item.title}
+                        </h3>
+                      </div>
+                      
+                      <div className="mt-auto flex items-center text-[10px] font-bold tracking-widest uppercase text-slate-400 group-hover:text-[#CC141A] transition-colors duration-300">
+                        View Product 
+                        <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-2 transition-transform duration-500" />
+                      </div>
+                    </div>
+                    
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

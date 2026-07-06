@@ -15,8 +15,8 @@ export default {
         'promac-dark': '#0a0a0a',
       },
       fontFamily: {
-        'display': ['"Plus Jakarta Sans"', 'sans-serif'],
-        'body': ['"Plus Jakarta Sans"', 'sans-serif'],
+        'display': ['"Montserrat"', 'sans-serif'],
+        'body': ['"Montserrat"', 'sans-serif'],
       },
       letterSpacing: {
         'tightest': '-0.04em',

@@ -4,7 +4,6 @@ import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 import sealionLogo from '../assets/brands/sealion.png';
-import kannegiesserLogo from '../assets/brands/kannegiesser.png';
 import maestrelliLogo from '../assets/brands/maestrelli.png';
 import maxipressLogo from '../assets/brands/maxipress.png';
 
@@ -18,16 +17,6 @@ const MACHINES = [
     logo: sealionLogo,
     link: '/brands/sea-lion/washer-extractors',
     color: 'from-blue-900/40 to-blue-600/10'
-  },
-  { 
-    id: 2, 
-    label: 'KANNEGIESSER', 
-    name: 'Powertrans SBW 11',
-    desc: 'The ultimate continuous batch washer system, setting the global standard for industrial laundry automation.',
-    img: '/Brands/Kannegiesser brand/301868_Powertrans_SBW_11_persp04.jpg', 
-    logo: kannegiesserLogo,
-    link: '/brands/kannegiesser',
-    color: 'from-orange-900/40 to-orange-600/10'
   },
   { 
     id: 3, 
