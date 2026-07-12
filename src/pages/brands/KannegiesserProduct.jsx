@@ -396,13 +396,12 @@ export default function KannegiesserProduct() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
-              className="relative w-full flex justify-center"
+              className="relative w-full h-full min-h-[400px] flex items-center justify-center rounded-3xl overflow-hidden shadow-2xl border border-slate-100"
             >
-              <div className="absolute inset-0 bg-[#001F3F]/5 rounded-full blur-3xl scale-150 -z-10" />
               <img 
                 src={product.img} 
                 alt={product.title}
-                className="w-full h-auto max-h-[500px] object-contain drop-shadow-2xl"
+                className="absolute inset-0 w-full h-full object-cover object-center"
               />
             </motion.div>
           </div>
