@@ -139,9 +139,11 @@ export default function Maestrelli() {
             <p className="text-slate-600 font-normal text-sm leading-relaxed mb-8">
               <span className="text-[#001F3F] font-bold">Maestrelli</span> delivers complete solutions to ensure superior results, fabric care and customer satisfaction.
             </p>
-            <button className="flex items-center gap-2 text-[#CC141A] text-xs font-bold tracking-widest uppercase hover:text-red-700 transition-colors">
-              LEARN MORE <ArrowRight className="w-4 h-4" />
-            </button>
+            <a href="#products">
+              <button className="flex items-center gap-2 text-[#CC141A] text-xs font-bold tracking-widest uppercase hover:text-red-700 transition-colors">
+                LEARN MORE <ArrowRight className="w-4 h-4" />
+              </button>
+            </a>
           </div>
 
           <div className="w-full xl:w-3/4 relative">
@@ -246,9 +248,11 @@ export default function Maestrelli() {
               </p>
             </div>
           </div>
-          <button className="bg-white hover:bg-slate-50 text-[#CC141A] px-8 py-4 text-xs font-bold tracking-widest uppercase transition-colors duration-300 shadow-xl flex items-center gap-3 shrink-0 rounded-sm">
-            TALK TO OUR EXPERTS <ArrowRight className="w-4 h-4" />
-          </button>
+          <Link to="/contact">
+            <button className="bg-white hover:bg-slate-50 text-[#CC141A] px-8 py-4 text-xs font-bold tracking-widest uppercase transition-colors duration-300 shadow-xl flex items-center gap-3 shrink-0 rounded-sm">
+              TALK TO OUR EXPERTS <ArrowRight className="w-4 h-4" />
+            </button>
+          </Link>
         </div>
       </section>
 

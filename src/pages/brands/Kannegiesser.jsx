@@ -141,19 +141,21 @@ export default function Kannegiesser() {
             </p>
           </motion.div>
 
-          <motion.button 
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="group flex items-center gap-4 text-white/90 hover:text-white transition-colors duration-300"
-          >
-            <div className="w-10 h-10 rounded-full border border-white/60 flex items-center justify-center transition-all duration-300 group-hover:border-white">
-              <Play className="w-3 h-3 ml-1 text-white fill-transparent transition-colors duration-300" />
-            </div>
-            <span className="text-[11px] font-bold tracking-[0.15em] uppercase opacity-90">
-              DISCOVER KANNEGIESSER
-            </span>
-          </motion.button>
+          <a href="#products">
+            <motion.button 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="group flex items-center gap-4 text-white/90 hover:text-white transition-colors duration-300"
+            >
+              <div className="w-10 h-10 rounded-full border border-white/60 flex items-center justify-center transition-all duration-300 group-hover:border-white">
+                <Play className="w-3 h-3 ml-1 text-white fill-transparent transition-colors duration-300" />
+              </div>
+              <span className="text-[11px] font-bold tracking-[0.15em] uppercase opacity-90">
+                DISCOVER KANNEGIESSER
+              </span>
+            </motion.button>
+          </a>
         </div>
       </section>
 
@@ -212,7 +214,7 @@ export default function Kannegiesser() {
       </section>
 
       {/* ── 3. Product Catalog ── */}
-      <section className="w-full py-24 bg-[#F8F9FA] relative border-t border-slate-200/50">
+      <section id="products" className="w-full py-24 bg-[#F8F9FA] relative border-t border-slate-200/50">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
             <div>

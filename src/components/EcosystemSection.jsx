@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import ecosystem3d from '../assets/ecosystem-3d.png';
 
 export default function EcosystemSection() {
@@ -134,14 +135,16 @@ export default function EcosystemSection() {
 
               {/* Replica Button */}
               <motion.div custom={5} variants={textVariants}>
-                <button className="border border-[#E31E24] text-[#E31E24] text-[10px] font-bold tracking-[0.15em] px-8 py-3.5 flex items-center gap-4 hover:bg-[#E31E24] hover:text-white transition-all duration-300 rounded-[3px] group">
-                  EXPLORE THE ECOSYSTEM
-                  <span className="w-5 h-5 rounded-full border border-current flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1">
-                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </span>
-                </button>
+                <Link to="/services">
+                  <button className="border border-[#E31E24] text-[#E31E24] text-[10px] font-bold tracking-[0.15em] px-8 py-3.5 flex items-center gap-4 hover:bg-[#E31E24] hover:text-white transition-all duration-300 rounded-[3px] group">
+                    EXPLORE THE ECOSYSTEM
+                    <span className="w-5 h-5 rounded-full border border-current flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1">
+                      <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </span>
+                  </button>
+                </Link>
               </motion.div>
             </motion.div>
           </div>
