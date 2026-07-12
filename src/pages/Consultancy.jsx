@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import BrandMarquee from '../components/BrandMarquee';
@@ -61,22 +62,26 @@ function HeroSection() {
 
           {/* CTA BUTTONS */}
           <div className="flex flex-wrap gap-4 pt-4">
-            <button className="bg-[#E31E24] hover:bg-gradient-to-r hover:from-pink-600 hover:to-[#E31E24] text-white font-bold tracking-widest text-[11px] uppercase px-8 py-4 rounded-[8px] flex items-center gap-3 transition-all duration-300 shadow-md shadow-[#E31E24]/20 hover:shadow-lg hover:-translate-y-1 group">
-              Request Consultation
-              <span className="group-hover:translate-x-1 transition-transform border border-white rounded-full p-1 bg-white/10">
-                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                </svg>
-              </span>
-            </button>
-            <button className="bg-white hover:bg-[#001F3F] text-[#001F3F] hover:text-white font-bold tracking-widest text-[11px] uppercase px-8 py-4 rounded-[8px] border border-slate-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex items-center gap-3 group">
-              Talk to an Expert
-              <span className="text-slate-400 group-hover:text-white transition-colors">
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
-                </svg>
-              </span>
-            </button>
+            <Link to="/contact">
+              <button className="bg-[#E31E24] hover:bg-gradient-to-r hover:from-pink-600 hover:to-[#E31E24] text-white font-bold tracking-widest text-[11px] uppercase px-8 py-4 rounded-[8px] flex items-center gap-3 transition-all duration-300 shadow-md shadow-[#E31E24]/20 hover:shadow-lg hover:-translate-y-1 group">
+                Request Consultation
+                <span className="group-hover:translate-x-1 transition-transform border border-white rounded-full p-1 bg-white/10">
+                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </button>
+            </Link>
+            <Link to="/contact">
+              <button className="bg-white hover:bg-[#001F3F] text-[#001F3F] hover:text-white font-bold tracking-widest text-[11px] uppercase px-8 py-4 rounded-[8px] border border-slate-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex items-center gap-3 group">
+                Talk to an Expert
+                <span className="text-slate-400 group-hover:text-white transition-colors">
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
+                  </svg>
+                </span>
+              </button>
+            </Link>
           </div>
         </motion.div>
 
@@ -297,12 +302,14 @@ function IndustrySlider() {
             <p className="text-slate-500 text-[15px] font-medium leading-relaxed mb-8 max-w-[280px]">
               Our consultancy services are trusted by a wide range of industries.
             </p>
-            <button className="bg-transparent border border-slate-300 hover:border-[#001F3F] text-[#001F3F] font-bold tracking-widest text-[11px] uppercase px-6 py-3.5 rounded-full flex items-center gap-3 transition-all duration-300 hover:bg-[#001F3F] hover:text-white">
-              EXPLORE ALL INDUSTRIES
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </button>
+            <Link to="/contact">
+              <button className="bg-transparent border border-slate-300 hover:border-[#001F3F] text-[#001F3F] font-bold tracking-widest text-[11px] uppercase px-6 py-3.5 rounded-full flex items-center gap-3 transition-all duration-300 hover:bg-[#001F3F] hover:text-white">
+                EXPLORE ALL INDUSTRIES
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </button>
+            </Link>
           </motion.div>
 
           {/* Right Carousel Area */}
@@ -803,29 +810,33 @@ function CombinedWhyChooseAndCta() {
 
             {/* COL 2: Buttons */}
             <div className="w-full xl:w-[35%] flex flex-col sm:flex-row gap-4 justify-center xl:justify-start pb-8 xl:pb-0">
-              <motion.button 
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-[#E31E24] hover:bg-red-500 text-white font-bold py-3.5 px-6 rounded-md text-[11px] tracking-widest uppercase transition-all flex items-center justify-center gap-3 whitespace-nowrap shadow-[0_0_25px_rgba(227,30,36,0.5)]"
-              >
-                Get Expert Advice
-                <svg className="w-3.5 h-3.5 rounded-full border border-white/40 p-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </motion.button>
+              <Link to="/contact">
+                <motion.button 
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-full bg-[#E31E24] hover:bg-red-500 text-white font-bold py-3.5 px-6 rounded-md text-[11px] tracking-widest uppercase transition-all flex items-center justify-center gap-3 whitespace-nowrap shadow-[0_0_25px_rgba(227,30,36,0.5)]"
+                >
+                  Get Expert Advice
+                  <svg className="w-3.5 h-3.5 rounded-full border border-white/40 p-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </motion.button>
+              </Link>
               
-              <motion.button 
-                whileTap={{ scale: 0.95 }}
-                className="group relative border border-white/40 text-white font-bold py-3.5 px-6 rounded-md text-[11px] tracking-widest uppercase overflow-hidden transition-all flex items-center justify-center gap-3 whitespace-nowrap hover:border-white"
-              >
-                <div className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out z-0" />
-                <span className="relative z-10 group-hover:text-[#0A1428] transition-colors duration-300">
-                  Request Consultation
-                </span>
-                <svg className="w-4 h-4 opacity-80 relative z-10 group-hover:text-[#0A1428] transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                </svg>
-              </motion.button>
+              <Link to="/contact">
+                <motion.button 
+                  whileTap={{ scale: 0.95 }}
+                  className="w-full group relative border border-white/40 text-white font-bold py-3.5 px-6 rounded-md text-[11px] tracking-widest uppercase overflow-hidden transition-all flex items-center justify-center gap-3 whitespace-nowrap hover:border-white"
+                >
+                  <div className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out z-0" />
+                  <span className="relative z-10 group-hover:text-[#0A1428] transition-colors duration-300">
+                    Request Consultation
+                  </span>
+                  <svg className="w-4 h-4 opacity-80 relative z-10 group-hover:text-[#0A1428] transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
+                </motion.button>
+              </Link>
             </div>
 
             {/* COL 3: Cart */}

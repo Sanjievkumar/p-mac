@@ -343,7 +343,7 @@ export default function Services() {
           <div className="flex justify-center">
             <MagneticButton 
               className="group relative overflow-hidden rounded-full bg-[#E31E24] px-10 py-6 text-center font-black tracking-widest text-white uppercase transition-all hover:bg-[#c4151b] hover:shadow-[0_15px_40px_rgba(227,30,36,0.3)] focus:outline-none"
-              onClick={() => window.location.href = '/contact'}
+              onClick={() => { window.scrollTo(0, 0); window.location.href = '/contact'; }}
             >
               <span className="relative z-10 flex items-center justify-center gap-3 text-lg">
                 Book a Consultation
