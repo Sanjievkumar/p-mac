@@ -828,44 +828,15 @@ function CombinedWhyChooseAndCta() {
               </motion.button>
             </div>
 
-            {/* COL 3: Cart (Deeply Integrated into Banner Environment) */}
+            {/* COL 3: Cart */}
             <div className="w-full xl:w-[25%] relative h-[160px] hidden xl:flex items-end justify-end">
-              
-              <div className="absolute right-[-10px] bottom-[-20px] w-[280px] z-40 pointer-events-none flex flex-col justify-end">
-                
-                {/* The Cart Image */}
+              <div className="absolute right-0 bottom-0 w-[260px] z-40 pointer-events-none">
                 <img 
                   src="/images/consultancy/cta-cart.png" 
                   alt="Laundry Cart" 
-                  className="w-full h-auto drop-shadow-[0_15px_30px_rgba(0,0,0,0.6)]" 
+                  className="w-full h-auto drop-shadow-2xl" 
+                  style={{ maskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)' }}
                 />
-
-                {/* --- FOREGROUND INTEGRATION ELEMENTS --- */}
-                {/* These elements sit ON TOP of the cart to hide the white puddle and embed the cart into the scene */}
-                
-                {/* 1. Solid Dark Gradient to swallow the jagged white puddle into the banner background */}
-                <div className="absolute bottom-[5px] left-0 right-0 h-[50px] bg-gradient-to-t from-[#0A1428] via-[#0A1428]/90 to-transparent z-50 rounded-b-xl" />
-                
-                {/* 2. Foreground Water Splash wrapping around the cart wheels */}
-                <div className="absolute bottom-[-15px] left-[-20%] right-[-10%] h-[120px] z-50 mix-blend-screen opacity-50 pointer-events-none">
-                  <img 
-                    src="/images/consultancy/water-splash.png" 
-                    alt="Splash" 
-                    className="w-full h-full object-cover" 
-                    style={{ maskImage: 'linear-gradient(to top, black 60%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to top, black 60%, transparent 100%)' }} 
-                  />
-                </div>
-
-                {/* 3. Foreground Bubbles floating over the bottom of the cart */}
-                <div className="absolute bottom-[10px] right-[10%] w-[120px] h-[100px] z-50 mix-blend-screen opacity-70 pointer-events-none">
-                  <img 
-                    src="/images/consultancy/soap-bubbles.png" 
-                    alt="Bubbles" 
-                    className="w-full h-full object-cover"
-                    style={{ maskImage: 'radial-gradient(ellipse at center, black 50%, transparent 100%)', WebkitMaskImage: 'radial-gradient(ellipse at center, black 50%, transparent 100%)' }}
-                  />
-                </div>
-
               </div>
             </div>
             
