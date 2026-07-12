@@ -7,6 +7,7 @@ import Consultancy from './pages/Consultancy';
 import Contact from './pages/Contact';
 import Services from './pages/Services';
 import Kannegiesser from './pages/brands/Kannegiesser';
+import KannegiesserProduct from './pages/brands/KannegiesserProduct';
 import SeaLion from './pages/brands/SeaLion';
 import MaxiPress from './pages/brands/MaxiPress';
 import MaxiPressProduct from './pages/brands/MaxiPressProduct';
@@ -23,6 +24,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/brands" element={<Brands />} />
         <Route path="/brands/kannegiesser" element={<Kannegiesser />} />
+        <Route path="/brands/kannegiesser/:id" element={<KannegiesserProduct />} />
         <Route path="/brands/sea-lion" element={<SeaLion />} />
         <Route path="/brands/sea-lion/:productId" element={<SeaLionProduct />} />
         <Route path="/brands/maxipress" element={<MaxiPress />} />
