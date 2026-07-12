@@ -830,12 +830,11 @@ function CombinedWhyChooseAndCta() {
 
             {/* COL 3: Cart */}
             <div className="w-full xl:w-[25%] relative h-[160px] hidden xl:flex items-end justify-end">
-              <div className="absolute right-0 bottom-0 w-[260px] z-40 pointer-events-none">
+              <div className="absolute right-[30px] bottom-[15px] w-[200px] z-40 pointer-events-none">
                 <img 
                   src="/images/consultancy/cta-cart.png" 
                   alt="Laundry Cart" 
-                  className="w-full h-auto drop-shadow-2xl" 
-                  style={{ maskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)' }}
+                  className="w-full h-auto drop-shadow-[0_20px_30px_rgba(0,0,0,0.8)]" 
                 />
               </div>
             </div>
