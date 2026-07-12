@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 export default function HeroSection() {
   return (
-    <section id="hero" className="relative w-full h-[calc(100vh-68px)] min-h-[650px] bg-white overflow-hidden flex flex-col justify-between">
+    <section id="hero" className="relative w-full h-[calc(100vh-80px)] mt-[80px] min-h-[650px] bg-white overflow-hidden flex flex-col justify-between">
       {/* Background Image determining the natural height */}
       <div className="absolute inset-0 overflow-hidden">
         <img 
