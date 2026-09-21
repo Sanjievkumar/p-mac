@@ -189,8 +189,10 @@ export default function About() {
             Promac Technologies is India's premier turnkey partner for world-class industrial laundry systems.
           </motion.p>
         </div>
+      </section>
 
-        {/* ── Glass Content Console ── */}
+      {/* ── Glass Content Console ── */}
+      <section className="relative w-full px-6 lg:px-12 flex flex-col items-center bg-[#fafafa] pb-20 pt-10">
         <motion.div
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
