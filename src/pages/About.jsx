@@ -192,7 +192,17 @@ export default function About() {
       </section>
 
       {/* ── Glass Content Console ── */}
-      <section className="relative w-full px-6 lg:px-12 flex flex-col items-center bg-[#fafafa] pb-20 pt-10">
+      <section className="relative w-full px-6 lg:px-12 flex flex-col items-center bg-[#fafafa] pb-20 pt-10 overflow-hidden">
+        {/* Mild Blue Blueprint Grid Watermark */}
+        <div
+          className="absolute inset-0 pointer-events-none opacity-[0.15] animate-grid"
+          style={{
+            backgroundImage:
+              'linear-gradient(#3b82f6 1px, transparent 1px), linear-gradient(90deg, #3b82f6 1px, transparent 1px)',
+            backgroundSize: '48px 48px',
+          }}
+          aria-hidden="true"
+        />
         <motion.div
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
