@@ -395,25 +395,59 @@ export const FLATWORK_DATA = {
     "title": "EMH / EMV",
     "subtitle": "Feeding machines",
     "description": "High-capacity feeding machines designed for perfect leading edge presentation.",
-    "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_EMH.jpg",
+    "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_EMV.jpg",
     "tabs": {
-      "overview": { "introTitle": "EMH / EMV FEEDERS", "introText": "Kannegiesser EMH and EMV feeding machines ensure rapid and perfectly straight presentation of large flatwork items to the ironer.", "summaryBlocks": [] },
-      "benefits": { "blocks": [] },
-      "technologies": { "blocks": [] },
-      "specs": { "table": [{ "label": "Type", "value": "Feeder" }] }
+      "overview": {
+        "introTitle": "EMH / EMV FEEDERS",
+        "introText": "Kannegiesser EMH and EMV feeding machines ensure rapid and perfectly straight presentation of large flatwork items to the ironer. They guarantee maximum ironer utilization through consistent high-speed feeding.",
+        "applicationsTitle": "High-Speed Flatwork",
+        "summaryBlocks": [
+          { "title": "Ergonomic Feeding", "text": "Designed to minimize operator fatigue while maintaining high pieces-per-hour output." },
+          { "title": "Perfect Leading Edge", "text": "Advanced spreading belts and vacuum technology ensure the linen enters the ironer completely flat and square." }
+        ]
+      },
+      "benefits": {
+        "blocks": [
+          { "title": "Maximized Ironer Width", "text": "Spreads large items like sheets and duvet covers to their full width, maximizing the evaporative capacity of the ironer." },
+          { "title": "Versatility", "text": "Handles varying types of linen seamlessly, adapting to different weights and dimensions." }
+        ]
+      },
+      "technologies": {
+        "blocks": [
+          { "title": "Vacuum Laydown", "text": "Powerful vacuum suction under the feed belts grips the trailing edge, providing necessary tension for a wrinkle-free finish." }
+        ]
+      },
+      "specs": { "table": [ { "label": "Function", "value": "Automatic Spreading and Feeding" }, { "label": "Target Items", "value": "Sheets, Duvets, Tablecloths" } ] }
     }
   },
   "cfm-new": {
     "category": "Flatwork",
     "title": "CFM",
     "subtitle": "Folding machines",
-    "description": "Cross folding machine ensuring clean edges and tight stacking.",
+    "description": "High-precision cross folding machine ensuring clean edges and tight stacking.",
     "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_CFM.jpg",
     "tabs": {
-      "overview": { "introTitle": "CFM FOLDER", "introText": "The CFM provides highly accurate cross folding for large and small pieces alike.", "summaryBlocks": [] },
-      "benefits": { "blocks": [] },
-      "technologies": { "blocks": [] },
-      "specs": { "table": [{ "label": "Type", "value": "Folder" }] }
+      "overview": {
+        "introTitle": "CFM FOLDER",
+        "introText": "The CFM provides highly accurate cross folding for large and small pieces alike. Operating downstream of the ironer and primary folder, it executes precise folds and stacks the finished linen for immediate dispatch.",
+        "applicationsTitle": "Finishing Precision",
+        "summaryBlocks": [
+          { "title": "Clean Edges", "text": "Mechanical blade folding ensures crisp, sharp edges on every item." },
+          { "title": "High-Speed Stacking", "text": "Integrated stackers handle the output pace of modern high-speed ironer lines." }
+        ]
+      },
+      "benefits": {
+        "blocks": [
+          { "title": "Consistent Quality", "text": "Maintains fold accuracy regardless of linen thickness or processing speed." },
+          { "title": "Compact Footprint", "text": "Maximizes floor space while delivering full folding functionality." }
+        ]
+      },
+      "technologies": {
+        "blocks": [
+          { "title": "Reversing Conveyor Folding", "text": "Advanced belt reversing actions combined with air blasts and mechanical blades for perfect geometric folds." }
+        ]
+      },
+      "specs": { "table": [ { "label": "Function", "value": "Cross Folding and Stacking" }, { "label": "Operation", "value": "Blade / Air Blast" } ] }
     }
   },
   "dry-work": {
@@ -423,10 +457,28 @@ export const FLATWORK_DATA = {
     "description": "Advanced dry work folding encompassing robotic handling and specialized blanket processing.",
     "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_XFM.jpg",
     "tabs": {
-      "overview": { "introTitle": "DRY WORK FOLDING", "introText": "The ultimate dry work solutions including Robotic sorting, Blanket Master for large heavy items, and Speedline XFM for rapid towel folding.", "summaryBlocks": [] },
-      "benefits": { "blocks": [] },
-      "technologies": { "blocks": [] },
-      "specs": { "table": [{ "label": "Type", "value": "Dry Work Folder" }] }
+      "overview": {
+        "introTitle": "DRY WORK FOLDING",
+        "introText": "Kannegiesser offers the ultimate dry work solutions. The Robotic Dry Work Line automates sorting and feeding. The Blanket Master tackles large, heavy items like blankets and comforters. The Speedline XFM delivers ultra-rapid towel and garment folding.",
+        "applicationsTitle": "Towels, Blankets & Garments",
+        "summaryBlocks": [
+          { "title": "Robotic Automation", "text": "Reduces manual labor dependencies by automatically picking, identifying, and feeding dry items." },
+          { "title": "Speedline XFM", "text": "Unmatched processing speed for terry towels and small dry goods, utilizing dynamic sorting." }
+        ]
+      },
+      "benefits": {
+        "blocks": [
+          { "title": "Labor Efficiency", "text": "Dramatically cuts the number of operators needed for the dry work department." },
+          { "title": "Perfect Presentation", "text": "Consistent fold quality enhances the appearance of stacked towels and blankets." }
+        ]
+      },
+      "technologies": {
+        "blocks": [
+          { "title": "Blanket Master Spreading", "text": "Heavy-duty clamps and tensioning systems designed specifically for the weight and bulk of wet/dry blankets." },
+          { "title": "Vision Systems", "text": "Robotic lines use advanced cameras and AI to identify edges and corners for automated feeding." }
+        ]
+      },
+      "specs": { "table": [ { "label": "Machines", "value": "Robotic Line, Blanket Master, XFM" }, { "label": "Focus", "value": "Labor reduction & Speed" } ] }
     }
   }
 };

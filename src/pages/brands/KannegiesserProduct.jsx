@@ -209,21 +209,31 @@ const WASHING_TECH_DATA = {
     category: "Washing Technology",
     title: "Futura",
     subtitle: "Washer Extractors",
-    description: "The Kannegiesser Futura is a series of industrial open-pocket washer-extractors designed for high-performance laundry processing.",
-    img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_Futura.jpg",
+    description: "Industrial open-pocket washer-extractors designed for high-performance laundry processing.",
+    img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_FAVORIT.jpg",
     tabs: {
       overview: {
         introTitle: "FUTURA WASHER EXTRACTOR",
-        introText: "The Kannegiesser Futura open-pocket washer-extractors are designed for high-performance laundry processing. Available in capacities from 110 kg to 250 kg, they support both manual and automatic loading and unloading. They operate at an efficient 300 to 350 G-factor with JET-rinsing technology to minimize fresh water consumption.",
+        introText: "The Kannegiesser Futura open-pocket washer-extractors are designed for high-performance laundry processing. Available in capacities from 110 kg to 250 kg, they support both manual and automatic loading and unloading. Engineered for high mechanical action and superior wash quality, they operate at an efficient 300 to 350 G-factor.",
         applicationsTitle: "Tailored to your needs",
         summaryBlocks: [
-          { title: "High G-Factor", text: "Operates at 300 to 350 G for efficient extraction." },
-          { title: "JET-Rinsing", text: "Minimizes fresh water consumption while maximizing output." }
+          { title: "High Extraction Efficiency", text: "Operates at 300 to 350 G for maximum moisture removal, reducing drying time." },
+          { title: "JET-Rinsing Technology", text: "Minimizes fresh water consumption while maximizing output, utilizing innovations from tunnel washers." }
         ]
       },
-      benefits: { blocks: [ { title: "Barrier-Wall Options", text: "Suitable for hygiene-critical environments such as healthcare laundries." } ] },
-      technologies: { blocks: [ { title: "Carewash", text: "Uses a specific cylinder perforation designed to be gentle on textiles." } ] },
-      specs: { table: [ { label: "Capacity", value: "110 kg to 250 kg" }, { label: "Extraction", value: "300 - 350 G" } ] }
+      benefits: {
+        blocks: [
+          { title: "Barrier-Wall Options", text: "Models available in barrier-wall configurations, ensuring complete separation between soiled and clean linen for healthcare hygiene." },
+          { title: "Noise Reduction", text: "Precision suspension and balancing keep noise levels below 70 dB(A) even during high-speed extraction." }
+        ]
+      },
+      technologies: {
+        blocks: [
+          { title: "Carewash Perforation", text: "Uses a highly specific cylinder perforation pattern designed to be exceptionally gentle on textiles while maintaining wash mechanical action." },
+          { title: "Advanced SPS Control", text: "Equipped with an intelligent SPS control system capable of storing and managing up to 99 customized washing programs." }
+        ]
+      },
+      specs: { table: [ { label: "Nominal Capacity", value: "110 kg to 250 kg" }, { label: "Extraction Force", value: "300 - 350 G" }, { label: "Control System", value: "99-Program SPS" } ] }
     }
   },
   "favorit-vario-highclean": {
@@ -231,51 +241,96 @@ const WASHING_TECH_DATA = {
     title: "Favorit Vario HighClean",
     subtitle: "Clean Room Technology",
     description: "Cleanroom barrier washer tailored for high particle control and sterilization.",
-    img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_FavoritVario.jpg",
+    img: "https://www.kannegiesser.com/fileadmin/_processed_/f/c/csm_Keyvisual_Reinraum_a71515775d.jpg",
     tabs: {
-      overview: { introTitle: "FAVORIT VARIO HIGHCLEAN", introText: "Specialized clean room technology ensuring complete particle control and absolute barrier separation for sensitive healthcare and microelectronics applications.", summaryBlocks: [] },
-      benefits: { blocks: [{ title: "Absolute Barrier Separation", text: "Prevents cross-contamination." }] },
-      technologies: { blocks: [] },
-      specs: { table: [{ label: "Application", value: "Clean Room" }] }
+      overview: {
+        introTitle: "FAVORIT VARIO HIGHCLEAN",
+        introText: "The Favorit Vario HighClean is specialized clean room technology ensuring complete particle control and absolute barrier separation. Designed for sensitive microelectronics, pharmaceuticals, and highly sterile healthcare applications.",
+        applicationsTitle: "Cleanroom Applications",
+        summaryBlocks: [
+          { title: "Absolute Barrier Separation", text: "Physically separates loading (soiled) and unloading (clean) sides to eliminate cross-contamination." },
+          { title: "Particle Control", text: "Engineered with specialized seals and airflow management to prevent particle generation in clean environments." }
+        ]
+      },
+      benefits: {
+        blocks: [
+          { title: "Hygienic Design", text: "Constructed with premium electro-polished stainless steel to prevent bacterial growth and simplify sterilization." },
+          { title: "Process Reliability", text: "Complete monitoring of temperature, chemical dosing, and water levels ensures every batch meets stringent cleanroom standards." }
+        ]
+      },
+      technologies: {
+        blocks: [
+          { title: "HEPA Filtration Integration", text: "Compatible with cleanroom ventilation systems, maintaining positive pressure to protect clean linen." }
+        ]
+      },
+      specs: { table: [ { label: "Application", value: "ISO Clean Room Environments" }, { label: "Design", value: "Barrier Washer Extractor" }, { label: "Material", value: "Electro-polished Stainless Steel" } ] }
     }
   },
   "cwd-cd": {
     category: "Washing Technology",
     title: "CWD / CD",
     subtitle: "Disinfection Sluices",
-    description: "Reliable disinfection sluices ensuring separation of soiled and clean linen.",
-    img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_Disinfection.jpg",
+    description: "Reliable disinfection sluices ensuring strict separation of soiled and clean carts and linen.",
+    img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_Krankenhaus.jpg",
     tabs: {
-      overview: { introTitle: "DISINFECTION SLUICES", introText: "CWD and CD units provide essential disinfection layers for healthcare laundries, safely separating soiled and clean linen environments.", summaryBlocks: [] },
-      benefits: { blocks: [] },
-      technologies: { blocks: [] },
-      specs: { table: [{ label: "Application", value: "Disinfection" }] }
+      overview: {
+        introTitle: "CWD / CD DISINFECTION SLUICES",
+        introText: "CWD and CD units provide the essential disinfection layers for healthcare laundries. They safely and automatically disinfect transport carts and containers, ensuring complete isolation of soiled and clean linen environments.",
+        applicationsTitle: "Hospital & Healthcare",
+        summaryBlocks: [
+          { title: "Automated Disinfection", text: "Reliable and repeatable thermal/chemical disinfection processes for carts and trolleys." },
+          { title: "Barrier Integrity", text: "Serves as the physical pass-through barrier between the unclean sorting area and the clean finishing area." }
+        ]
+      },
+      benefits: {
+        blocks: [
+          { title: "Compliance", text: "Meets strict healthcare and hospital laundry regulations for infection control." },
+          { title: "High Throughput", text: "Fast cycle times ensure cart logistics do not become a bottleneck in the laundry workflow." }
+        ]
+      },
+      technologies: {
+        blocks: [
+          { title: "Precision Dosing", text: "Accurate injection of disinfection chemicals to guarantee efficacy while minimizing waste." }
+        ]
+      },
+      specs: { table: [ { label: "Function", value: "Cart and Trolley Disinfection" }, { label: "Type", value: "Pass-through Sluice" } ] }
     }
   }
 };
-
-
 
 const DATA_INFO_DATA = {
   "system-overviews": {
     category: "Data Information System",
     title: "Systems Overview",
     subtitle: "SmartLaundry & Dashboard",
-    description: "Complete overview of the entire laundry facility with real-time data.",
-    img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_Dashboard.jpg",
+    description: "Complete overview of the entire laundry facility with real-time data and tracking.",
+    img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_System.jpg",
     tabs: {
       overview: {
         introTitle: "DATA INFORMATION SYSTEMS",
-        introText: "Kannegiesser Data Information Systems, including the Central System Overview and Laundry Dashboard, connect your entire facility to provide real-time metrics, bottleneck identification, and operational transparency.",
-        summaryBlocks: [{ title: "SmartLaundry", text: "Connecting machines for an automated flow." }]
+        introText: "Kannegiesser Data Information Systems connect your entire facility to provide real-time metrics, bottleneck identification, and operational transparency. The Central System Overview and Laundry Dashboard work together to optimize your production flow.",
+        applicationsTitle: "Laundry Intelligence",
+        summaryBlocks: [
+          { title: "SmartLaundry Integration", text: "Connecting individual machines into one automated, intelligent workflow." },
+          { title: "Central System Overview", text: "Visualizes the entire plant floor, tracking linen batches from sorting to dispatch." }
+        ]
       },
-      benefits: { blocks: [{ title: "Real-time Metrics", text: "View live data for every single machine on the floor." }] },
-      technologies: { blocks: [{ title: "Laundry Dashboard", text: "A central hub for machine learning and reporting." }] },
-      specs: { table: [{ label: "Software", value: "Cloud-based & On-premise options" }] }
+      benefits: {
+        blocks: [
+          { title: "Real-time Metrics", text: "View live data for every single machine on the floor to instantly identify bottlenecks." },
+          { title: "Historical Reporting", text: "Track efficiency, utility consumption, and operator performance over time to drive continuous improvement." }
+        ]
+      },
+      technologies: {
+        blocks: [
+          { title: "Laundry Dashboard", text: "A modern, cloud-enabled central hub for machine telemetry, predictive maintenance, and operational reporting." },
+          { title: "Batch Tracking", text: "Seamless tracking of customer batches across different machine centers using RFID and barcode integration." }
+        ]
+      },
+      specs: { table: [ { label: "Platform", value: "Cloud-based & On-premise options" }, { label: "Compatibility", value: "All modern Kannegiesser equipment" } ] }
     }
   }
 };
-
 const PRODUCT_DATA = { ...WASHING_TECH_DATA, ...FLATWORK_DATA, ...DATA_INFO_DATA };
 
 export default function KannegiesserProduct() {
