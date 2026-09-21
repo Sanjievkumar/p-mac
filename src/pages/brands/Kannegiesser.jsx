@@ -82,10 +82,63 @@ const PRODUCTS = [
     desc: 'Folding machines',
     img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_SFM.jpg'
   }
+,
+  {
+    // NEW
+
+    id: 'futura',
+    category: 'Washing Technology',
+    name: 'Futura',
+    desc: 'Washer Extractors',
+    img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_Futura.jpg'
+  },
+  {
+    id: 'favorit-vario-highclean',
+    category: 'Washing Technology',
+    name: 'Favorit Vario HighClean',
+    desc: 'Clean Room Technology',
+    img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_FavoritVario.jpg'
+  },
+  {
+    id: 'cwd-cd',
+    category: 'Washing Technology',
+    name: 'CWD / CD',
+    desc: 'Disinfection Sluices',
+    img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_Disinfection.jpg'
+  },
+  {
+    id: 'emh-emv',
+    category: 'Flatwork',
+    name: 'EMH / EMV',
+    desc: 'Feeding machines',
+    img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_EMH.jpg'
+  },
+  {
+    id: 'cfm-new',
+    category: 'Flatwork',
+    name: 'CFM',
+    desc: 'Folding machines',
+    img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_CFM.jpg'
+  },
+  {
+    id: 'dry-work',
+    category: 'Flatwork',
+    name: 'Robotic Dry Work Line / Blanket Master / Speedline XFM',
+    desc: 'Dry work folding machines',
+    img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_XFM.jpg'
+  },
+  {
+    id: 'system-overviews',
+    category: 'Data Information System',
+    name: 'Systems Overview',
+    desc: 'SmartLaundry & Dashboard',
+    img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_Dashboard.jpg'
+  }
 ];
 
 export default function Kannegiesser() {
   const [activeTab, setActiveTab] = useState('Washing Technology');
+  const TABS = ['Washing Technology', 'Flatwork', 'Garment', 'Logistics', 'Data Information System'];
   
   const filteredProducts = PRODUCTS.filter(p => p.category === activeTab);
 
@@ -225,8 +278,8 @@ export default function Kannegiesser() {
             </div>
             
             {/* Category Tabs */}
-            <div className="flex bg-white rounded-xl p-2 shadow-sm border border-slate-200">
-              {['Washing Technology', 'Flatwork'].map(tab => (
+            <div className="flex flex-wrap gap-2 bg-white rounded-xl p-2 shadow-sm border border-slate-200">
+              {TABS.map(tab => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}

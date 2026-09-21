@@ -389,4 +389,44 @@ export const FLATWORK_DATA = {
       }
     }
   }
+,
+  "emh-emv": {
+    "category": "Flatwork",
+    "title": "EMH / EMV",
+    "subtitle": "Feeding machines",
+    "description": "High-capacity feeding machines designed for perfect leading edge presentation.",
+    "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_EMH.jpg",
+    "tabs": {
+      "overview": { "introTitle": "EMH / EMV FEEDERS", "introText": "Kannegiesser EMH and EMV feeding machines ensure rapid and perfectly straight presentation of large flatwork items to the ironer.", "summaryBlocks": [] },
+      "benefits": { "blocks": [] },
+      "technologies": { "blocks": [] },
+      "specs": { "table": [{ "label": "Type", "value": "Feeder" }] }
+    }
+  },
+  "cfm-new": {
+    "category": "Flatwork",
+    "title": "CFM",
+    "subtitle": "Folding machines",
+    "description": "Cross folding machine ensuring clean edges and tight stacking.",
+    "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_CFM.jpg",
+    "tabs": {
+      "overview": { "introTitle": "CFM FOLDER", "introText": "The CFM provides highly accurate cross folding for large and small pieces alike.", "summaryBlocks": [] },
+      "benefits": { "blocks": [] },
+      "technologies": { "blocks": [] },
+      "specs": { "table": [{ "label": "Type", "value": "Folder" }] }
+    }
+  },
+  "dry-work": {
+    "category": "Flatwork",
+    "title": "Robotic Dry Work Line / Blanket Master / Speedline XFM",
+    "subtitle": "Dry work folding machines",
+    "description": "Advanced dry work folding encompassing robotic handling and specialized blanket processing.",
+    "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_XFM.jpg",
+    "tabs": {
+      "overview": { "introTitle": "DRY WORK FOLDING", "introText": "The ultimate dry work solutions including Robotic sorting, Blanket Master for large heavy items, and Speedline XFM for rapid towel folding.", "summaryBlocks": [] },
+      "benefits": { "blocks": [] },
+      "technologies": { "blocks": [] },
+      "specs": { "table": [{ "label": "Type", "value": "Dry Work Folder" }] }
+    }
+  }
 };
