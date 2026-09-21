@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import ecosystem3d from '../assets/ecosystem-3d.png';
+import factoryImage from '../assets/industrial-laundry-factory.jpg';
 
 export default function EcosystemSection() {
   // Precision-crafted icons matching the design references
@@ -96,12 +96,10 @@ export default function EcosystemSection() {
                 When hovered, it scales up and rotates slightly to feel physical.
               */}
               <motion.img 
-                src={ecosystem3d} 
-                alt="3D Industrial Laundry Ecosystem" 
-                className="w-full h-auto object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.08)] mix-blend-multiply cursor-pointer"
-                animate={{ y: [-15, 10, -15] }}
-                transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-                whileHover={{ scale: 1.05, rotate: -1.5, filter: "brightness(1.05)" }}
+                src={factoryImage} 
+                alt="Industrial Laundry Factory Production" 
+                className="w-full h-auto object-cover shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-xl border border-slate-200/60 cursor-pointer"
+                whileHover={{ scale: 1.02, filter: "brightness(1.05)" }}
               />
             </motion.div>
           </div>

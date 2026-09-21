@@ -4,8 +4,6 @@ import HeroSection from '../components/HeroSection';
 import FounderSection from '../components/FounderSection';
 import SectionDivider from '../components/SectionDivider';
 import EcosystemSection from '../components/EcosystemSection';
-import CarouselSection from '../components/CarouselSection';
-
 import Footer from '../components/Footer';
 import BrandMarquee from '../components/BrandMarquee';
 
@@ -22,8 +20,6 @@ export default function Home() {
       <FounderSection />
       <SectionDivider />
       <EcosystemSection />
-      <SectionDivider />
-      <CarouselSection />
       <SectionDivider />
       <BrandMarquee />
       <Footer />
