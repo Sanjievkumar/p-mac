@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import TurnkeyProcess from '../components/TurnkeyProcess';
 import MissionSection from '../components/MissionSection';
+import heroBg from '../assets/about-hero-collage.jpg';
 
 /* ─────────────────────────────────────────────
    Letter-by-letter stagger helper
@@ -133,20 +134,16 @@ export default function About() {
           SECTION 1 — HERO
       ══════════════════════════════════════════ */}
       <section className="relative w-full pt-44 pb-20 px-6 lg:px-12 flex flex-col items-center overflow-hidden">
-        {/* Ambient blobs */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#E31E24]/[0.03] rounded-full blur-[180px] -mr-40 -mt-40" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#0B4F8A]/[0.02] rounded-full blur-[160px] -ml-40 -mb-40" />
-
-        {/* Mild Blue Blueprint Grid Watermark */}
-        <div
-          className="absolute inset-0 pointer-events-none opacity-[0.15] animate-grid"
-          style={{
-            backgroundImage:
-              'linear-gradient(#3b82f6 1px, transparent 1px), linear-gradient(90deg, #3b82f6 1px, transparent 1px)',
-            backgroundSize: '48px 48px',
-          }}
-          aria-hidden="true"
-        />
+        {/* Background Image Collage */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={heroBg} 
+            alt="Promac Industrial Laundry Machinery Collage" 
+            className="w-full h-full object-cover object-bottom mix-blend-multiply opacity-60"
+          />
+          {/* Gradient overlay to ensure text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#fafafa]/95 via-[#fafafa]/80 to-[#fafafa]" />
+        </div>
 
         <div className="max-w-[1100px] w-full text-center mb-20 relative z-10">
           {/* Eyebrow pill */}
