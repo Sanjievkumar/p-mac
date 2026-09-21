@@ -10,15 +10,6 @@ import maestrelliLogo from '../assets/brands/maestrelli.png';
 import maxipressLogo from '../assets/brands/maxipress.png';
 import kannegiesserLogo from '../assets/brands/kannegiesser.png';
 
-const customFontStyles = `
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Oswald:wght@700&family=Roboto:wght@900&display=swap');
-  
-  .font-kannegiesser { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
-  .font-sealion { font-family: 'Arial Black', Impact, sans-serif; }
-  .font-maestrelli { font-family: 'Montserrat', sans-serif; }
-  .font-maxipress { font-family: 'Montserrat', sans-serif; }
-`;
-
 /* ─────────────────────────────────────────────
    Brand catalog data
    logo → brand logo (white bg, mix-blend-multiply)
@@ -28,9 +19,7 @@ const BRANDS = [
     id: 'kannegiesser',
     name: 'KANNEGIESSER',
     customTitle: (
-      <h2 className="text-4xl md:text-[44px] font-kannegiesser font-black text-[#0250A0] tracking-tighter mb-6 leading-none">
-        KANNEGIESSER
-      </h2>
+      <img src={kannegiesserLogo} alt="Kannegiesser" className="h-10 md:h-12 object-contain mix-blend-multiply mb-6" style={{ objectPosition: 'left' }} />
     ),
     origin: 'Germany',
     tagline: 'End-to-End Laundry Automation',
@@ -42,9 +31,7 @@ const BRANDS = [
     id: 'sea-lion',
     name: 'SEA-LION',
     customTitle: (
-      <h2 className="text-4xl md:text-5xl font-sealion font-black text-[#352B29] tracking-normal mb-6 leading-none" style={{ transform: 'scaleY(1.1)' }}>
-        SEA-LION
-      </h2>
+      <img src={sealionLogo} alt="Sea-Lion" className="h-10 md:h-12 object-contain mix-blend-multiply mb-6" style={{ objectPosition: 'left' }} />
     ),
     origin: 'China',
     tagline: 'Industrial Laundry Machines',
@@ -56,9 +43,7 @@ const BRANDS = [
     id: 'maestrelli',
     name: 'MAESTRELLI',
     customTitle: (
-      <h2 className="text-4xl md:text-[40px] font-maestrelli font-extrabold text-[#060672] tracking-[0.2em] mb-6 leading-none">
-        MAESTRELLI
-      </h2>
+      <img src={maestrelliLogo} alt="Maestrelli" className="h-8 md:h-10 object-contain mix-blend-multiply mb-6" style={{ objectPosition: 'left' }} />
     ),
     origin: 'Italy',
     tagline: 'Dry Cleaning Systems',
@@ -70,14 +55,7 @@ const BRANDS = [
     id: 'maxipress',
     name: 'MAXIPRESS',
     customTitle: (
-      <div className="mb-6 flex flex-col justify-end">
-        <span className="font-maxipress text-[#808285] text-[10px] md:text-[11px] font-bold tracking-[0.25em] mb-1.5 leading-none">
-          MAXIMUM MAXIBILITY
-        </span>
-        <h2 className="text-4xl md:text-[52px] font-maxipress font-black text-[#D3261C] tracking-tight leading-none">
-          MAXI-PRESS
-        </h2>
-      </div>
+      <img src={maxipressLogo} alt="Maxipress" className="h-12 md:h-14 object-contain mix-blend-multiply mb-6" style={{ objectPosition: 'left' }} />
     ),
     origin: 'Spain',
     tagline: 'Garment Finishing Equipment',
@@ -255,7 +233,6 @@ function BrandRow({ brand, reverse }) {
 export default function Brands() {
   return (
     <div className="w-full min-h-screen bg-white font-display flex flex-col">
-      <style>{customFontStyles}</style>
       <Navbar />
 
       {/* ── Hero Banner ── */}
