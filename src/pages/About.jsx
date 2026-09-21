@@ -135,14 +135,14 @@ export default function About() {
       ══════════════════════════════════════════ */}
       <section className="relative w-full pt-44 pb-20 px-6 lg:px-12 flex flex-col items-center overflow-hidden">
         {/* Background Image Collage */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 bg-[#fafafa]">
           <img 
             src={heroBg} 
             alt="Promac Industrial Laundry Machinery Collage" 
-            className="w-full h-full object-cover object-bottom mix-blend-multiply opacity-60"
+            className="w-full h-full object-cover object-bottom opacity-100 mix-blend-multiply"
           />
           {/* Gradient overlay to ensure text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#fafafa]/95 via-[#fafafa]/80 to-[#fafafa]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#fafafa]/80 via-[#fafafa]/40 to-[#fafafa]" />
         </div>
 
         <div className="max-w-[1100px] w-full text-center mb-20 relative z-10">
@@ -192,7 +192,7 @@ export default function About() {
       </section>
 
       {/* ── Glass Content Console ── */}
-      <section className="relative w-full px-6 lg:px-12 flex flex-col items-center bg-[#fafafa] pb-20 pt-10 overflow-hidden">
+      <section className="relative w-full px-6 lg:px-12 flex flex-col items-center bg-[#fafafa] pb-32 pt-10 overflow-hidden">
         {/* Mild Blue Blueprint Grid Watermark */}
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.15] animate-grid"
@@ -208,7 +208,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: 'easeOut', delay: 0.4 }}
-          className="relative max-w-[1200px] w-full rounded-[40px] overflow-visible shadow-2xl mb-32 border border-white/60 bg-white/40 backdrop-blur-2xl p-12 md:p-20"
+          className="relative max-w-[1200px] w-full rounded-[40px] overflow-visible shadow-2xl mb-32 border border-white/60 bg-white/40 backdrop-blur-2xl p-12 md:p-20 z-10"
         >
           <div className="grid md:grid-cols-2 gap-16 items-stretch">
             {/* Left: Expertise */}
@@ -261,24 +261,11 @@ export default function About() {
             </MagneticCard>
           </div>
         </motion.div>
-      </section>
 
-      {/* ══════════════════════════════════════════
-          SECTION 2 — CORE PILLARS
-      ══════════════════════════════════════════ */}
-      <section className="py-32 bg-white relative overflow-hidden">
-        {/* Blueprint grid watermark */}
-        <div
-          className="absolute inset-0 pointer-events-none opacity-[0.08] animate-grid"
-          style={{
-            backgroundImage:
-              'linear-gradient(#001F3F 1px, transparent 1px), linear-gradient(90deg, #001F3F 1px, transparent 1px)',
-            backgroundSize: '48px 48px',
-          }}
-          aria-hidden="true"
-        />
-
-        <div className="max-w-[1200px] mx-auto px-6 relative z-10">
+        {/* ══════════════════════════════════════════
+            SECTION 2 — CORE PILLARS
+        ══════════════════════════════════════════ */}
+        <div className="max-w-[1100px] w-full mx-auto relative z-10">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-6xl font-black text-[#0a0a0a] tracking-tighter mb-6 uppercase">
               The Promac <span className="text-[#E31E24]">Pillars.</span>
