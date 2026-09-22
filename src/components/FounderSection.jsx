@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import founderBg from '../assets/founder-bg.png';
+import founderBg from '../assets/hero-bg-hq.png';
 
 export default function FounderSection() {
   return (
