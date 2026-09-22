@@ -620,7 +620,7 @@ export default function SeaLionProduct() {
             initial={{ opacity: 0, x: -30 }} 
             animate={{ opacity: 1, x: 0 }} 
             transition={{ duration: 0.6 }}
-            className="rounded-2xl shadow-2xl overflow-hidden p-8 lg:p-12 flex flex-col items-center justify-center aspect-square border border-slate-200 relative group bg-gradient-to-br from-white via-slate-50 to-slate-100/80"
+            className="rounded-2xl shadow-2xl overflow-hidden p-8 lg:p-12 flex flex-col items-center justify-center aspect-square border border-slate-200 relative group bg-gradient-to-br from-white via-slate-50 to-slate-100/80 lg:sticky lg:top-32"
           >
             {/* Subtle inner glow */}
             <div className="absolute inset-0 bg-gradient-to-tr from-[#E31E24]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -673,7 +673,7 @@ export default function SeaLionProduct() {
             animate={{ opacity: 1, x: 0 }} 
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h4 className="text-[#E31E24] text-[10px] font-bold tracking-[0.2em] uppercase mb-4">PRODUCT DETAILS</h4>
+            <h4 className="text-[#E31E24] text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-4">PRODUCT DETAILS</h4>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 tracking-tight leading-tight">
               {product.title}
             </h1>

@@ -72,7 +72,7 @@ export default function SeaLion() {
           <div className="order-2 lg:order-1 lg:col-span-5">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-[2px] bg-[#E31E24]" />
-              <h4 className="text-[#E31E24] text-xs font-bold tracking-[0.2em] uppercase">ABOUT SEA-LION</h4>
+              <h4 className="text-[#E31E24] text-base md:text-lg font-bold tracking-[0.2em] uppercase">ABOUT SEA-LION</h4>
             </div>
             
             <h2 className="text-4xl md:text-[42px] font-bold text-slate-900 mb-8 leading-tight tracking-tight max-w-md">
@@ -81,13 +81,13 @@ export default function SeaLion() {
             
             <div className="text-slate-600 font-normal text-sm leading-relaxed space-y-6 mb-12 max-w-md">
               <p>
-                <span className="text-[#E31E24] font-bold">Established in 1969</span>, Jiangsu Sea-lion Machinery Co., Ltd. (formerly Sea-lion Machinery Group) is the oldest manufacturer of industrial laundry machines in China, gaining a wealth of experiences on R&D and manufacture with laundry machines.
+                <span className="text-[#E31E24] font-bold">Established in 1969</span>, Jiangsu <span className="text-[#E31E24] font-bold">Sea-lion</span> Machinery Co., Ltd. (formerly <span className="text-[#E31E24] font-bold">Sea-lion</span> Machinery Group) is the oldest manufacturer of industrial laundry machines in China, gaining a wealth of experiences on R&D and manufacture with laundry machines.
               </p>
               <p>
-                Sea-lion has a area of 166,000㎡ and building area of 116,800㎡ and possesses the total assets of 620 million RMB. Sea-lion’s annual domestic sales can reach 510 million RMB and annual export amount to 10 million USD dollars.
+                <span className="text-[#E31E24] font-bold">Sea-lion</span> has a area of 166,000㎡ and building area of 116,800㎡ and possesses the total assets of 620 million RMB. <span className="text-[#E31E24] font-bold">Sea-lion</span>’s annual domestic sales can reach 510 million RMB and annual export amount to 10 million USD dollars.
               </p>
               <p>
-                Sea-lion has the biggest product scale and the most comprehensive variety in the line of washing machinery in China, including 10 series, 20 varieties and more than 100 types with annual production capacity of 12,000 sets.
+                <span className="text-[#E31E24] font-bold">Sea-lion</span> has the biggest product scale and the most comprehensive variety in the line of washing machinery in China, including 10 series, 20 varieties and more than 100 types with annual production capacity of 12,000 sets.
               </p>
             </div>
 
@@ -159,7 +159,7 @@ export default function SeaLion() {
       </section>
 
       {/* ── 3. Ecosystem Section ── */}
-      <section className="w-full py-24 bg-[#FAFAFA] relative border-t border-slate-100">
+      <section className="w-full py-24 bg-gradient-to-br from-[#0B4F8A] to-[#042848] relative">
         <div className="max-w-7xl mx-auto px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           
           {/* Graphic Content */}
@@ -174,10 +174,10 @@ export default function SeaLion() {
           {/* Text Content */}
           <div className="flex flex-col justify-center">
             <div className="w-8 h-[2px] bg-[#E31E24] mb-8" />
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight tracking-tight">
               One Ecosystem.<br />Every Process<span className="text-[#E31E24]">.</span>
             </h2>
-            <p className="text-slate-600 font-normal text-sm leading-relaxed mb-10 max-w-md">
+            <p className="text-blue-50 font-normal text-sm md:text-base leading-relaxed mb-10 max-w-md">
               From washing and drying to finishing and automation, <span className="text-[#E31E24] font-bold">SEA-LION</span> delivers a complete industrial laundry workflow built for efficiency, reliability, and scale.
             </p>
           </div>
@@ -190,7 +190,7 @@ export default function SeaLion() {
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div>
-              <h4 className="text-[#E31E24] text-[10px] font-bold tracking-[0.2em] uppercase mb-2">EXPLORE PRODUCTS</h4>
+              <h4 className="text-[#E31E24] text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2">EXPLORE PRODUCTS</h4>
               <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight leading-none">
                 Industrial Solutions<span className="text-[#E31E24]">.</span>
               </h2>
