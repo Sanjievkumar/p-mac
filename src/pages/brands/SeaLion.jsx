@@ -118,10 +118,10 @@ export default function SeaLion() {
 
       {/* ── 2. About Section ── */}
       <section className="w-full py-24 bg-white relative">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="max-w-7xl mx-auto px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-center">
           
           {/* Text Content */}
-          <div className="order-2 lg:order-1">
+          <div className="order-2 lg:order-1 lg:col-span-5">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-[2px] bg-[#E31E24]" />
               <h4 className="text-[#E31E24] text-xs font-bold tracking-[0.2em] uppercase">ABOUT SEA-LION</h4>
@@ -144,7 +144,7 @@ export default function SeaLion() {
             </div>
 
             {/* Stats Row */}
-            <div className="grid grid-cols-4 gap-6 pt-8 border-t border-slate-100">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-slate-100">
               <div className="flex flex-col items-start gap-3">
                 <Calendar className="w-6 h-6 text-[#E31E24] stroke-[1.5]" />
                 <div>
@@ -177,7 +177,7 @@ export default function SeaLion() {
           </div>
 
           {/* Image Content */}
-          <div className="order-1 lg:order-2 relative">
+          <div className="order-1 lg:order-2 relative lg:col-span-7 w-full scale-100 lg:scale-110 lg:translate-x-4">
             <div className="rounded-sm overflow-hidden shadow-2xl relative z-10">
               <img 
                 src={buildingBg} 
