@@ -180,9 +180,6 @@ export default function SeaLion() {
             <p className="text-slate-600 font-normal text-sm leading-relaxed mb-10 max-w-md">
               From washing and drying to finishing and automation, <span className="text-[#E31E24] font-bold">SEA-LION</span> delivers a complete industrial laundry workflow built for efficiency, reliability, and scale.
             </p>
-            <button className="flex items-center gap-2 text-[#E31E24] text-xs font-bold tracking-widest uppercase hover:text-red-700 transition-colors">
-              EXPLORE SOLUTIONS <ArrowRight className="w-4 h-4" />
-            </button>
           </div>
 
         </div>
