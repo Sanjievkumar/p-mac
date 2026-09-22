@@ -37,8 +37,8 @@ export default function Navbar() {
       >
         <div className="max-w-[1100px] mx-auto px-6 flex items-center justify-between h-[80px]">
           {/* Logo — left side */}
-          <Link to="/">
-            <img src={promacLogo} alt="Promac Logo" className="h-10 md:h-12 w-auto object-contain cursor-pointer -ml-2 md:-ml-6" />
+          <Link to="/" className="flex items-center">
+            <img src={promacLogo} alt="Promac Logo" className="h-12 md:h-16 w-auto object-contain cursor-pointer -ml-4 md:-ml-12 lg:-ml-16 origin-left transition-transform hover:scale-105" />
           </Link>
 
           {/* Desktop Nav Links */}

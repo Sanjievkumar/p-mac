@@ -240,15 +240,16 @@ export default function Contact() {
                     <MapPin className="w-5 h-5 text-[#E31E24] group-hover:text-white transition-colors duration-500" />
                   </div>
                   <div>
-                    <h3 className="text-xs font-bold tracking-[0.2em] uppercase text-white/50 mb-2">
-                      Corporate Office
-                    </h3>
-                    <p className="text-lg md:text-xl font-light leading-relaxed text-white group-hover:text-gray-200 transition-colors">
-                      Ground Floor, Door No:5, Plot No:33,<br />
-                      Sapthagiri Nagar, Inner Ring Road,<br />
-                      Puludivakkam, Chennai – 600 091,<br />
-                      Tamil Nadu – INDIA.
-                    </p>
+                      <h3 className="text-xs font-bold tracking-[0.2em] uppercase text-white/50 mb-2">
+                        Corporate Office
+                      </h3>
+                      <p className="text-lg md:text-xl font-light leading-relaxed text-white group-hover:text-gray-200 transition-colors">
+                        Promac Tech Pvt Ltd,<br />
+                        Ground Floor, Door No:5, Plot No:33,<br />
+                        Sapthagiri Nagar, Inner Ring Road,<br />
+                        Puludivakkam, Chennai — 600 091,<br />
+                        Tamil Nadu — INDIA.
+                      </p>
                   </div>
                 </div>
 
@@ -265,9 +266,6 @@ export default function Contact() {
                       <a href="tel:+919566340888" className="block text-2xl font-light text-white hover:text-[#3b82f6] transition-colors duration-300">
                         +91 95663 40888
                       </a>
-                      <a href="tel:+919566340016" className="block text-2xl font-light text-white hover:text-[#3b82f6] transition-colors duration-300">
-                        +91 95663 40016
-                      </a>
                     </div>
                   </div>
                 </div>
@@ -281,8 +279,8 @@ export default function Contact() {
                     <h3 className="text-xs font-bold tracking-[0.2em] uppercase text-white/50 mb-2">
                       Digital
                     </h3>
-                    <a href="mailto:sales@promactech.com" className="block text-2xl font-light text-white hover:text-[#3b82f6] transition-colors duration-300">
-                      sales@promactech.com
+                    <a href="mailto:senthil@cleanpromac.com" className="block text-2xl font-light text-white hover:text-[#3b82f6] transition-colors duration-300">
+                      senthil@cleanpromac.com
                     </a>
                   </div>
                 </div>

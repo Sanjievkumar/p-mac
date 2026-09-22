@@ -4,43 +4,38 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowLeft, Calendar, Globe2, ShieldCheck, Layers, HeadphonesIcon } from 'lucide-react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
-import { PRODUCT_DATA } from './MaxiPressProduct';
 
-// Asset Imports
 import maxipressLogo from '../../assets/brands/maxipress.png';
-
-// Images
-import heroBg from '../../assets/brands/maxipress/maxi_hero_1780728104366.png';
-import buildingBg from '../../assets/brands/maxipress/maxi_building_1780728119159.png';
-import wf1 from '../../assets/brands/maxipress/maxi_wf_1_1780728132369.png';
-import wf2 from '../../assets/brands/maxipress/maxi_wf_2_1780728144691.png';
-import wf3 from '../../assets/brands/maxipress/maxi_wf_3_1780728158285.png';
-import wf4 from '../../assets/brands/maxipress/maxi_wf_4_1780728185911.png';
-import wf5 from '../../assets/brands/maxipress/maxi_wf_5_1780728197642.png';
+import maxipressHero from '../../assets/brands/maxipress_hero_actual.jpg';
+import heroBg from '../../assets/brands/kannegiesser/kannegiesser_video_thumbnail_1780671618796.png';
+import buildingBg from '../../assets/brands/sea-lion/sealion_building_1780727375255.png';
+import wf1 from '../../assets/brands/sea-lion/sealion_washer_1780727413794.png';
+import wf2 from '../../assets/brands/sea-lion/sealion_dryer_1780727427054.png';
+import wf3 from '../../assets/brands/kannegiesser/kannegiesser_finishing_1780671087290.png';
+import wf4 from '../../assets/brands/sea-lion/sealion_ironer_1780727455295.png';
+import wf5 from '../../assets/brands/kannegiesser/kannegiesser_washing_1780671064949.png';
 
 const WORKFLOW = [
   { step: '01', title: 'Pressing', img: wf1 },
   { step: '02', title: 'Forming', img: wf2 },
   { step: '03', title: 'Finishing', img: wf3 },
-  { step: '04', title: 'Quality Check', img: wf4 },
-  { step: '05', title: 'Ready for Delivery', img: wf5 }
+  { step: '04', title: 'Folding', img: wf4 },
+  { step: '05', title: 'Inspection', img: wf5 }
 ];
+
+import { PRODUCT_DATA } from './MaxiPressProduct';
 
 export default function MaxiPress() {
   return (
     <div className="w-full min-h-screen bg-[#F8F9FA] font-sans text-slate-800">
       <Navbar />
 
-      {/* ── 1. Hero Section ── */}
-      <section className="relative w-full h-[85vh] min-h-[600px] flex flex-col justify-center overflow-hidden bg-white pt-20">
-        <div 
-          className="absolute inset-0 bg-cover bg-right bg-no-repeat opacity-90"
-          style={{ backgroundImage: `url(${heroBg})` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent" />
+      {/* ✨ 1. Hero Section ✨ */}
+      <section className="relative w-full min-h-[70vh] flex flex-col justify-center overflow-hidden bg-white pt-24 pb-12 border-b border-slate-100">
+        <div className="absolute inset-0 bg-slate-50/50" />
         
         {/* Top Floating Elements */}
-        <div className="absolute top-28 md:top-32 left-0 w-full px-8 lg:px-20 flex justify-between items-start z-30">
+        <div className="absolute top-8 left-0 w-full px-8 lg:px-20 flex justify-between items-start z-30">
           <Link to="/brands" className="inline-flex items-center gap-2 text-slate-500 hover:text-[#E31E24] transition-colors group">
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
             <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase">Back to Brands</span>
@@ -48,84 +43,97 @@ export default function MaxiPress() {
         </div>
 
         <div className="relative z-20 w-full px-8 lg:px-20 mt-8 md:mt-16">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-2xl">
-            <img src={maxipressLogo} alt="MAXIPRESS" className="h-8 md:h-10 object-contain mb-10" />
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             
-            <div className="w-12 h-1 bg-[#E31E24] mb-6" />
-            
-            <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold leading-[1.1] tracking-tight mb-6 text-slate-900">
-              Finishing Excellence<span className="text-[#E31E24]">.</span><br />
-              Perfected<span className="text-[#E31E24]">.</span>
-            </h1>
-            
-            <p className="text-slate-600 text-lg font-medium mb-12 max-w-md">
-              Advanced pressing and finishing solutions for professional laundries worldwide.
-            </p>
+            {/* Left side: Logo & Text */}
+            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-xl">
+              <img src={maxipressLogo} alt="MAXIPRESS" className="h-16 md:h-24 object-contain mb-10 origin-left hover:scale-105 transition-transform" />
+              
+              <div className="w-12 h-1 bg-[#E31E24] mb-8" />
+              
+              <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold leading-[1.1] tracking-tight mb-6 text-slate-900">
+                Finishing Excellence<span className="text-[#E31E24]">.</span><br />
+                Perfected<span className="text-[#E31E24]">.</span>
+              </h1>
+              
+              <p className="text-slate-600 text-lg font-medium mb-12 max-w-md">
+                Advanced pressing and finishing solutions for professional laundries worldwide.
+              </p>
 
-            <a href="#products" className="inline-flex bg-[#E31E24] hover:bg-red-700 text-white px-8 py-4 text-xs font-bold tracking-widest uppercase transition-colors duration-300 items-center gap-3 w-fit">
-              EXPLORE PRODUCTS <ArrowRight className="w-4 h-4" />
-            </a>
-          </motion.div>
+              <a href="#products" className="inline-flex bg-[#E31E24] hover:bg-red-700 text-white px-8 py-4 text-xs font-bold tracking-widest uppercase transition-colors duration-300 items-center gap-3 w-fit shadow-lg shadow-red-500/20">
+                EXPLORE PRODUCTS <ArrowRight className="w-4 h-4" />
+              </a>
+            </motion.div>
+
+            {/* Right side: Product Collage Display */}
+            <div className="relative w-full h-[450px] lg:h-[600px] flex items-center justify-center rounded-3xl overflow-hidden shadow-2xl border border-slate-200 group">
+              <img 
+                src={maxipressHero} 
+                alt="MaxiPress Products" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+
+          </div>
         </div>
       </section>
 
       {/* ── 2. About Section ── */}
-      <section className="w-full py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          <div className="order-2 lg:order-1 relative">
-            <div className="rounded-xl overflow-hidden shadow-2xl">
-              <img src={buildingBg} alt="MaxiPress Building" className="w-full h-auto object-cover" />
-            </div>
+      <section className="relative w-full py-32 bg-[#FAFAFA] overflow-hidden">
+        {/* Animated Grid Background */}
+        <div
+          className="absolute inset-0 pointer-events-none opacity-[0.10] animate-grid"
+          style={{
+            backgroundImage: 'linear-gradient(#E31E24 1px, transparent 1px), linear-gradient(90deg, #E31E24 1px, transparent 1px)',
+            backgroundSize: '48px 48px',
+          }}
+          aria-hidden="true"
+        />
+        
+        <div className="max-w-4xl mx-auto px-8 lg:px-16 text-center relative z-10">
+          <h4 className="text-[#E31E24] text-base md:text-lg font-bold tracking-[0.2em] uppercase mb-4">ABOUT MAXIPRESS</h4>
+          <div className="w-12 h-[2px] bg-[#E31E24] mx-auto mb-8" />
+          
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-10 leading-tight tracking-tight">
+            Precision Finishing<br />For Professional Laundries<span className="text-[#E31E24]">.</span>
+          </h2>
+          
+          <div className="text-slate-600 font-normal text-base md:text-lg leading-relaxed space-y-6 mb-16">
+            <p><span className="text-[#D3261C] font-bold">MaxiPress</span> delivers advanced finishing and pressing equipment designed to achieve superior garment presentation, operational efficiency, and consistent quality across hospitality, healthcare, and textile service operations.</p>
+            <p>Engineered for reliability and performance, our solutions help laundries of all sizes enhance productivity and maintain the highest standards of fabric care.</p>
           </div>
 
-          <div className="order-1 lg:order-2">
-            <h4 className="text-[#E31E24] text-[10px] font-bold tracking-[0.2em] uppercase mb-4">ABOUT MAXIPRESS</h4>
-            <div className="w-8 h-[2px] bg-slate-200 mb-6" />
-            
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-8 leading-tight tracking-tight">
-              Precision Finishing<br />For Professional Laundries<span className="text-[#E31E24]">.</span>
-            </h2>
-            
-            <div className="text-slate-600 font-normal text-sm leading-relaxed space-y-6 mb-12">
-              <p><span className="text-[#D3261C] font-bold">MaxiPress</span> delivers advanced finishing and pressing equipment designed to achieve superior garment presentation, operational efficiency, and consistent quality across hospitality, healthcare, and textile service operations.</p>
-              <p>Engineered for reliability and performance, our solutions help laundries of all sizes enhance productivity and maintain the highest standards of fabric care.</p>
-            </div>
-
-            <div className="grid grid-cols-4 gap-6 pt-8 border-t border-slate-100">
-              {[
-                { icon: Calendar, num: '30+', label: 'Years of Expertise' },
-                { icon: Globe2, num: '100+', label: 'Countries Served' },
-                { icon: ShieldCheck, num: 'Reliable', label: 'Global Support' },
-                { icon: Layers, num: 'Complete', label: 'Finishing Solutions' }
-              ].map((stat, i) => (
-                <div key={i} className="flex flex-col items-center text-center gap-3">
-                  <stat.icon className="w-6 h-6 text-[#E31E24] stroke-[1.5]" />
-                  <div>
-                    <h3 className="text-base font-bold text-slate-900">{stat.num}</h3>
-                    <p className="text-[10px] text-slate-500 font-medium leading-tight">{stat.label}</p>
-                  </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-10 border-t border-slate-200/60">
+            {[
+              { icon: Calendar, num: '30+', label: 'Years of Expertise' },
+              { icon: Globe2, num: '100+', label: 'Countries Served' },
+              { icon: ShieldCheck, num: 'Reliable', label: 'Global Support' },
+              { icon: Layers, num: 'Complete', label: 'Finishing Solutions' }
+            ].map((stat, i) => (
+              <div key={i} className="flex flex-col items-center text-center gap-3">
+                <stat.icon className="w-8 h-8 text-[#E31E24] stroke-[1.5]" />
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900">{stat.num}</h3>
+                  <p className="text-xs text-slate-500 font-medium leading-tight mt-1">{stat.label}</p>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* ── 3. Workflow Section ── */}
-      <section className="w-full py-24 bg-[#FAFAFA] border-y border-slate-100 overflow-hidden">
+      <section className="w-full py-24 bg-white border-y border-slate-100 overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-8 lg:px-16 flex flex-col xl:flex-row gap-16 items-center">
           
           <div className="w-full xl:w-1/3 flex-shrink-0">
-            <h4 className="text-[#D3261C] text-[10px] font-bold tracking-[0.2em] uppercase mb-4">FINISHING WORKFLOW</h4>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 leading-tight tracking-tight">
+            <h4 className="text-[#D3261C] text-base md:text-lg font-bold tracking-[0.2em] uppercase mb-4">FINISHING WORKFLOW</h4>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight tracking-tight">
               Complete Finishing<br />Workflow<span className="text-[#D3261C]">.</span>
             </h2>
-            <div className="text-slate-600 text-sm leading-relaxed max-w-xl">
+            <div className="text-slate-600 text-base leading-relaxed max-w-xl">
               From pressing to perfect presentation, <span className="text-[#D3261C] font-bold">MaxiPress</span> ensures every garment meets the highest standards.
             </div>
-            <button className="flex items-center gap-2 text-[#D3261C] text-xs font-bold tracking-widest uppercase hover:text-red-700 transition-colors">
-              LEARN MORE <ArrowRight className="w-4 h-4" />
-            </button>
           </div>
 
           <div className="w-full xl:w-2/3 relative">
@@ -150,16 +158,25 @@ export default function MaxiPress() {
       </section>
 
       {/* ── 4. Solutions Grid ── */}
-      <section className="w-full py-24 bg-white" id="products">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16">
+      <section className="relative w-full py-24 bg-slate-50 overflow-hidden" id="products">
+        {/* Animated Grid Background */}
+        <div
+          className="absolute inset-0 pointer-events-none opacity-[0.10] animate-grid"
+          style={{
+            backgroundImage: 'linear-gradient(#E31E24 1px, transparent 1px), linear-gradient(90deg, #E31E24 1px, transparent 1px)',
+            backgroundSize: '48px 48px',
+          }}
+          aria-hidden="true"
+        />
+        
+        <div className="max-w-7xl mx-auto px-8 lg:px-16 relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div>
-              <h4 className="text-[#E31E24] text-[10px] font-bold tracking-[0.2em] uppercase mb-2">EXPLORE PRODUCTS</h4>
+              <h4 className="text-[#E31E24] text-base md:text-lg font-bold tracking-[0.2em] uppercase mb-2">EXPLORE PRODUCTS</h4>
               <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight leading-none">
                 Our Finishing Solutions<span className="text-[#E31E24]">.</span>
               </h2>
             </div>
-            <div className="h-[2px] w-16 bg-[#E31E24] mb-2 hidden md:block" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
@@ -172,25 +189,25 @@ export default function MaxiPress() {
                 viewport={{ once: true, margin: "-50px" }}
               >
                 <Link to={`/brands/maxipress/${id}`} className="block h-full group">
-                  <div className="h-full rounded-2xl overflow-hidden bg-[#fafafa] flex flex-col cursor-pointer border border-slate-100 hover:border-transparent relative shadow-sm hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] transition-all duration-500">
+                  <div className="h-full rounded-2xl overflow-hidden bg-white flex flex-col cursor-pointer border border-slate-200 hover:border-transparent relative shadow-sm hover:shadow-xl transition-all duration-500">
                     
                     {/* Animated Border Gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#E31E24]/0 via-transparent to-[#E31E24]/0 group-hover:from-[#E31E24]/20 group-hover:to-[#0B4F8A]/20 transition-all duration-700 opacity-0 group-hover:opacity-100" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#E31E24]/0 via-transparent to-[#E31E24]/0 group-hover:from-[#E31E24]/10 group-hover:to-[#1c1c1c]/10 transition-all duration-700 opacity-0 group-hover:opacity-100" />
 
                     {/* Image Area */}
-                    <div className="h-56 p-8 flex items-center justify-center bg-white relative overflow-hidden rounded-t-2xl m-[2px]">
+                    <div className="h-56 p-8 flex items-center justify-center bg-slate-50 relative overflow-hidden rounded-t-2xl m-[2px]">
                       {/* Grid background */}
-                      <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                      <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, black 1px, transparent 0)', backgroundSize: '16px 16px' }} />
                       
                       <img 
                         src={product.img} 
                         alt={product.title} 
-                        className="w-full h-full object-contain mix-blend-multiply transform group-hover:scale-[1.15] group-hover:-translate-y-2 transition-transform duration-700 relative z-10 drop-shadow-sm group-hover:drop-shadow-xl"
+                        className="w-full h-full object-contain filter drop-shadow-xl group-hover:scale-110 group-hover:-translate-y-4 transition-all duration-500 ease-out relative z-10"
                       />
                     </div>
 
                     {/* Content Area */}
-                    <div className="p-6 flex flex-col flex-grow justify-between bg-[#fafafa] relative z-10 m-[2px] mt-0 rounded-b-2xl border-t border-slate-100/50">
+                    <div className="p-6 flex flex-col flex-grow justify-between bg-white relative z-10 m-[2px] mt-0 rounded-b-2xl border-t border-slate-100/50">
                       <div>
                         <h3 className="text-sm font-bold text-slate-800 leading-snug mb-2 transition-colors duration-300 group-hover:text-[#E31E24] line-clamp-2">
                           {product.title}
@@ -209,24 +226,6 @@ export default function MaxiPress() {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ── 5. CTA Banner ── */}
-      <section className="w-full bg-[#CC141A] py-16">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16 flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="flex items-start gap-6 text-white">
-            <HeadphonesIcon className="w-10 h-10 stroke-1" />
-            <div>
-              <h3 className="text-xl font-bold mb-2 tracking-wide">Need Help Choosing The Right Solution?</h3>
-              <p className="text-white/80 text-sm max-w-md leading-relaxed">
-                Our experts are here to help you find the perfect finishing equipment for your laundry.
-              </p>
-            </div>
-          </div>
-          <button className="bg-white hover:bg-slate-50 text-[#CC141A] px-8 py-4 text-xs font-bold tracking-widest uppercase transition-colors duration-300 shadow-lg flex items-center gap-3 shrink-0 rounded-sm">
-            TALK TO OUR EXPERTS <ArrowRight className="w-4 h-4" />
-          </button>
         </div>
       </section>
 

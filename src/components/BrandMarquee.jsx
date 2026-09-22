@@ -45,7 +45,7 @@ function MagneticBrand({ brand }) {
 
   return (
     <motion.div
-      className="px-24 flex items-center justify-center cursor-pointer"
+      className="px-8 md:px-24 flex items-center justify-center cursor-pointer"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ perspective: 1000 }}

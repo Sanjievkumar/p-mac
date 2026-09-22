@@ -1,59 +1,28 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import Globe from 'react-globe.gl';
 
-/* ─────────────────────────────────────────────
-   Map Pins Data
-───────────────────────────────────────────── */
-const PINS = [
-  { lat: 30.5728, lng: 104.0668, label: 'SEA-LION',      country: 'China' },
-  { lat: 45.4654, lng:   9.1859, label: 'MAESTRELLI',    country: 'Italy' },
-  { lat: 52.1205, lng:   8.7946, label: 'KANNEGIESSER',  country: 'Germany' },
-  { lat: 40.4168, lng:  -3.7038, label: 'MAXIPRESS',     country: 'Spain' },
+import kannegiesserBuilding from '../assets/brands/kannegiesser/kannegiesser_actual_factory.jpg';
+import sealionBuilding from '../assets/brands/sealion-real-factory.jpg';
+import maestrelliBuilding from '../assets/brands/maestrelli_building.png';
+import maxipressBuilding from '../assets/brands/maxipress/maxi_building_1780728119159.png';
+import imesaBuilding from '../assets/industrial-laundry-factory.jpg'; // Using a placeholder until real is provided
+
+const FACTORIES = [
+  { id: 'kannegiesser', name: 'KANNEGIESSER', country: 'Germany', img: kannegiesserBuilding },
+  { id: 'sealion', name: 'SEA-LION', country: 'China', img: sealionBuilding },
+  { id: 'imesa', name: 'IMESA', country: 'Italy', img: imesaBuilding },
+  { id: 'maestrelli', name: 'MAESTRELLI', country: 'Italy', img: maestrelliBuilding },
+  { id: 'maxipress', name: 'MAXIPRESS', country: 'Spain', img: maxipressBuilding },
 ];
 
 export default function GlobeSection() {
-  const containerRef = useRef(null);
-  const globeRef = useRef(null);
-  const [size, setSize] = useState({ w: 0, h: 0 });
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  /* Responsive size based on container */
-  useEffect(() => {
-    const measure = () => {
-      if (!containerRef.current) return;
-      setSize({
-        w: containerRef.current.offsetWidth,
-        h: containerRef.current.offsetHeight
-      });
-    };
-    measure();
-    window.addEventListener('resize', measure);
-    // Add a slight delay measure to catch late layout shifts
-    const to = setTimeout(measure, 300);
-    return () => {
-      window.removeEventListener('resize', measure);
-      clearTimeout(to);
-    };
-  }, [isClient]);
-
-  /* Globe Init */
-  useEffect(() => {
-    if (globeRef.current) {
-      globeRef.current.controls().autoRotate = true;
-      globeRef.current.controls().autoRotateSpeed = 0.5;
-      globeRef.current.pointOfView({ lat: 35, lng: 55, altitude: 2.2 }, 0);
-    }
-  }, [isClient, size.w]);
-
   return (
-    <section className="relative w-full bg-[#000814] pt-24 overflow-hidden flex flex-col">
+    <section className="relative w-full bg-[#000814] pt-24 pb-32 overflow-hidden flex flex-col">
+      {/* Decorative Grid Background */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)', backgroundSize: '48px 48px' }} />
+
       {/* Section header */}
-      <div className="max-w-[1200px] mx-auto px-6 mb-16 text-center">
+      <div className="max-w-[1200px] mx-auto px-6 mb-16 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -62,7 +31,7 @@ export default function GlobeSection() {
         >
           <div className="w-8 h-[1px] bg-[#E31E24]" />
           <p className="text-[#E31E24] text-[10px] font-bold tracking-[0.4em] uppercase">
-            Global Technology Network
+            Global Facilities
           </p>
           <div className="w-8 h-[1px] bg-[#E31E24]" />
         </motion.div>
@@ -87,69 +56,46 @@ export default function GlobeSection() {
         </motion.p>
       </div>
 
-      {/* Globe Container */}
-      <div className="max-w-[1200px] mx-auto w-full px-6 flex flex-col items-center justify-center relative z-10">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.92 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          ref={containerRef}
-          className="w-full h-[600px] rounded-3xl overflow-hidden shadow-[0_0_120px_rgba(0,30,80,0.5)] border border-white/10 bg-[#000814] flex justify-center relative z-10"
-        >
-          {isClient && size.w > 0 && (
-            <Globe
-              ref={globeRef}
-              width={size.w}
-              height={size.h}
-              globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
-              backgroundColor="rgba(0,0,0,0)"
+      {/* Horizontal Gallery */}
+      <div className="w-full relative z-10 px-6 md:px-12 mx-auto max-w-[1600px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-6">
+          {FACTORIES.map((factory, idx) => (
+            <motion.div
+              key={factory.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 + 0.2, duration: 0.6 }}
+              className="group relative h-[300px] lg:h-[420px] rounded-2xl overflow-hidden cursor-pointer"
+            >
+              {/* Image */}
+              <img 
+                src={factory.img} 
+                alt={`${factory.name} Factory in ${factory.country}`} 
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
               
-              /* Red Pulsing Rings for Pins */
-              ringsData={PINS}
-              ringLat="lat"
-              ringLng="lng"
-              ringColor={() => '#E31E24'}
-              ringMaxRadius={5}
-              ringPropagationSpeed={3}
-              ringRepeatPeriod={800}
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
               
-              /* Solid Red Inner Dot */
-              pointsData={PINS}
-              pointLat="lat"
-              pointLng="lng"
-              pointColor={() => '#E31E24'}
-              pointAltitude={0.01}
-              pointRadius={0.5}
-              atmosphereColor="#0077ff"
-              atmosphereAltitude={0.3}
-              
-              /* HTML Labels on top */
-              htmlElementsData={PINS}
-              htmlLat="lat"
-              htmlLng="lng"
-              htmlElement={d => {
-                const el = document.createElement('div');
-                el.innerHTML = `
-                  <div class="relative flex flex-col items-center group cursor-pointer" style="transform: translate(-50%, -50%); pointer-events: auto;">
-                    <!-- Tooltip -->
-                    <div class="absolute bottom-full mb-3 bg-white px-3 py-1.5 rounded text-xs font-bold text-[#001F3F] shadow-xl whitespace-nowrap transition-opacity duration-300 z-50 flex items-center gap-2 border border-slate-100 pointer-events-none">
-                      <span class="text-[#E31E24] text-lg leading-none">•</span>
-                      ${d.label} - ${d.country}
-                    </div>
-                    <!-- Hit Area -->
-                    <div class="w-8 h-8 rounded-full transparent absolute z-20"></div>
+              {/* Text Content */}
+              <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="w-2 h-2 rounded-full bg-[#E31E24]" />
+                    <span className="text-white/80 text-[10px] font-bold tracking-widest uppercase">
+                      {factory.country}
+                    </span>
                   </div>
-                `;
-                return el;
-              }}
-            />
-          )}
-        </motion.div>
+                  <h3 className="text-xl md:text-2xl font-black text-white tracking-tight">
+                    {factory.name}
+                  </h3>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
-      
-      {/* Footer Seamless Gradient Transition */}
-      <div className="w-full h-32 bg-gradient-to-b from-[#000814] to-black mt-16 pointer-events-none" />
     </section>
   );
 }

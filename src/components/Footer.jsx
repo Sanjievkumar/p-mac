@@ -64,34 +64,34 @@ export default function Footer() {
             <h3 className="text-lg font-bold tracking-widest text-white mb-6 font-display uppercase">
               DIRECT CONTACT
             </h3>
-            <div className="flex flex-col gap-5 text-gray-300 text-[15px]">
-              <div className="flex items-start gap-4 group cursor-pointer hover:text-white transition-colors duration-300">
-                <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-[#e31e24] transition-colors duration-300">
-                  <MapPin className="w-4 h-4 text-[#e31e24] group-hover:text-white transition-colors duration-300" />
+              <div className="flex flex-col gap-5 text-sm text-gray-300 font-light tracking-wide">
+                <div className="flex items-start gap-4 group cursor-pointer hover:text-white transition-colors duration-300">
+                  <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-[#e31e24] transition-colors duration-300 mt-1">
+                    <MapPin className="w-4 h-4 text-[#e31e24] group-hover:text-white transition-colors duration-300" />
+                  </div>
+                  <p className="leading-relaxed mt-1">
+                    Promac Tech Pvt Ltd,<br />
+                    Ground Floor, Door No:5, Plot No:33,<br />
+                    Sapthagiri Nagar, Inner Ring Road,<br />
+                    Puludivakkam, Chennai — 600 091,<br />
+                    Tamil Nadu — INDIA.
+                  </p>
                 </div>
-                <p className="leading-relaxed mt-1">
-                  Ground Floor, Door No:5, Plot No:33,<br />
-                  Sapthagiri Nagar, Inner Ring Road,<br />
-                  Puludivakkam, Chennai – 600 091,<br />
-                  Tamil Nadu – INDIA.
-                </p>
-              </div>
-              <div className="flex items-center gap-4 group cursor-pointer hover:text-white transition-colors duration-300">
-                <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-[#e31e24] transition-colors duration-300">
-                  <Phone className="w-4 h-4 text-[#e31e24] group-hover:text-white transition-colors duration-300" />
+                <div className="flex items-center gap-4 group cursor-pointer hover:text-white transition-colors duration-300">
+                  <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-[#e31e24] transition-colors duration-300">
+                    <Phone className="w-4 h-4 text-[#e31e24] group-hover:text-white transition-colors duration-300" />
+                  </div>
+                  <p>
+                    +91 95663 40888
+                  </p>
                 </div>
-                <p>
-                  +91 95663 40888<br />
-                  +91 95663 40016
-                </p>
-              </div>
-              <div className="flex items-center gap-4 group cursor-pointer hover:text-white transition-colors duration-300">
-                <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-[#e31e24] transition-colors duration-300">
-                  <Mail className="w-4 h-4 text-[#e31e24] group-hover:text-white transition-colors duration-300" />
+                <div className="flex items-center gap-4 group cursor-pointer hover:text-white transition-colors duration-300">
+                  <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-[#e31e24] transition-colors duration-300">
+                    <Mail className="w-4 h-4 text-[#e31e24] group-hover:text-white transition-colors duration-300" />
+                  </div>
+                  <p>senthil@cleanpromac.com</p>
                 </div>
-                <p>sales@promactech.com</p>
               </div>
-            </div>
           </div>
 
           {/* ── Column 4: Newsletter ── */}

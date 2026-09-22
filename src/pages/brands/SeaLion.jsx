@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Play, ArrowRight, ArrowLeft, Calendar, Globe2, Building2, Layers } from 'lucide-react';
+import { Play, ArrowRight, ArrowLeft, Calendar, Globe2, Building2, Layers, Volume2, VolumeX } from 'lucide-react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
@@ -33,6 +33,8 @@ const FACTORY_IMAGES = [buildingBg, sealionFactory1, sealionFactory3, sealionFac
 
 export default function SeaLion() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -41,14 +43,23 @@ export default function SeaLion() {
     return () => clearInterval(timer);
   }, []);
 
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted;
+      setIsMuted(videoRef.current.muted);
+    }
+  };
+
+
   return (
     <div className="w-full min-h-screen bg-white font-sans text-slate-800">
       <Navbar />
 
       {/* ── 1. Hero Section ── */}
-      <section className="relative w-full h-[85vh] min-h-[600px] flex flex-col justify-center overflow-hidden bg-[#0A0A0A] pt-20">
+      <section className="relative w-full h-[85vh] min-h-[600px] flex flex-col justify-center overflow-hidden bg-[#0A0A0A] pt-20 group">
         {/* Background Video */}
         <video 
+          ref={videoRef}
           autoPlay 
           loop 
           muted 
@@ -58,9 +69,14 @@ export default function SeaLion() {
           <source src={sealionCorporateVideo} type="video/mp4" />
         </video>
 
-
-
-
+        {/* Mute Toggle Button */}
+        <button
+          onClick={toggleMute}
+          className="absolute bottom-8 right-8 z-20 p-4 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-sm border border-white/20 text-white shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100"
+          aria-label={isMuted ? "Unmute video" : "Mute video"}
+        >
+          {isMuted ? <VolumeX className="w-6 h-6" /> : <Volume2 className="w-6 h-6" />}
+        </button>
         
       </section>
 
@@ -185,9 +201,19 @@ export default function SeaLion() {
         </div>
       </section>
 
-      {/* ── 4. Explore Solutions Grid ── */}
-      <section className="w-full py-24 bg-white" id="products">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16">
+      {/* ✨ 4. Explore Solutions Grid ✨ */}
+      <section className="w-full py-24 bg-white relative overflow-hidden" id="products">
+        {/* Animated Grid Background */}
+        <div
+          className="absolute inset-0 pointer-events-none opacity-[0.10] animate-grid"
+          style={{
+            backgroundImage: 'linear-gradient(#0B4F8A 1px, transparent 1px), linear-gradient(90deg, #0B4F8A 1px, transparent 1px)',
+            backgroundSize: '48px 48px',
+          }}
+          aria-hidden="true"
+        />
+
+        <div className="max-w-7xl mx-auto px-8 lg:px-16 relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div>
               <h4 className="text-[#E31E24] text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2">EXPLORE PRODUCTS</h4>

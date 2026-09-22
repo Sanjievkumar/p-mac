@@ -1,257 +1,129 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Play, ArrowRight, ArrowLeft, WashingMachine } from 'lucide-react';
+import { Play, ArrowRight, ArrowLeft, Volume2, VolumeX, History, Target, Factory } from 'lucide-react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
 // Asset Imports
 import kannegiesserLogo from '../../assets/brands/kannegiesser.png';
-import heroBg from '../../assets/brands/kannegiesser/kannegiesser_video_thumbnail_1780671618796.png';
-import buildingBg from '../../assets/brands/kannegiesser/kannegiesser_building_1780671039860.png';
-import mapBg from '../../assets/brands/kannegiesser/kannegiesser_map_1780671051559.png';
+import kannegiesserVideo from '../../assets/brands/kannegiesser-hero.mp4';
+import buildingBg from '../../assets/brands/kannegiesser/kannegiesser_actual_factory.jpg';
 
 const PRODUCTS = [
-  {
-    id: 'powertrans-vario',
-    category: 'Washing Technology',
-    name: 'PowerTrans Vario',
-    desc: 'Tunnel Washers',
-    img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_PT_VARIO.jpg'
-  },
-  {
-    id: 'powerpress',
-    category: 'Washing Technology',
-    name: 'PowerPress',
-    desc: 'Extraction Technology',
-    img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_PowerPress.jpg'
-  },
-  {
-    id: 'powerdry',
-    category: 'Washing Technology',
-    name: 'PowerDry',
-    desc: 'Dryers',
-    img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_PowerDry.jpg'
-  },
-  {
-    id: 'synchro',
-    category: 'Flatwork',
-    name: 'Synchro EMT / EMQ',
-    desc: 'Feeding machines',
-    img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_EMQ_EMT.jpg'
-  },
-  {
-    id: 'emv',
-    category: 'Flatwork',
-    name: 'EMV',
-    desc: 'Feeding machines',
-    img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_EMV.jpg'
-  },
-  {
-    id: 'emc',
-    category: 'Flatwork',
-    name: 'EMC',
-    desc: 'Feeding machines',
-    img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_EMC.jpg'
-  },
-  {
-    id: 'xfm',
-    category: 'Flatwork',
-    name: 'XFM',
-    desc: 'Dry work folding machines',
-    img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_XFM.jpg'
-  },
-  {
-    id: 'shm-gas',
-    category: 'Flatwork',
-    name: 'SHM / SHM gas',
-    desc: 'Ironer',
-    img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_SHM.png'
-  },
-  {
-    id: 'cfm',
-    category: 'Flatwork',
-    name: 'CFM',
-    desc: 'Folding machines',
-    img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_CFM.jpg'
-  },
-  {
-    id: 'sfm',
-    category: 'Flatwork',
-    name: 'SFM',
-    desc: 'Folding machines',
-    img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_SFM.jpg'
-  }
-,
-  {
-    // NEW
+  // Washing Technology
+  { id: 'kannegiesser-powertrans-vario', category: 'Washing Technology', name: 'Tunnel Washers', desc: 'PowerTrans Vario', img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_PT_VARIO.png' },
+  { id: 'kannegiesser-powerpress', category: 'Washing Technology', name: 'Extraction Technology', desc: 'PowerPress', img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_PowerPress.png' },
+  { id: 'kannegiesser-powerdry', category: 'Washing Technology', name: 'Dryers', desc: 'PowerDry', img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_PowerDry.png' },
+  { id: 'kannegiesser-powerswing', category: 'Washing Technology', name: 'Washer Extractors', desc: 'PowerSwing', img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_PowerSwing.png' },
+  { id: 'kannegiesser-cleanroom', category: 'Washing Technology', name: 'Clean Room Technology', desc: 'HighClean', img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_Cleanroom.png' },
+  { id: 'kannegiesser-disinfection', category: 'Washing Technology', name: 'Disinfection Sluices', desc: 'CWD / CD', img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_CD_Desi.png' },
 
-    id: 'futura',
-    category: 'Washing Technology',
-    name: 'Futura',
-    desc: 'Washer Extractors',
-    img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_Futura.jpg'
-  },
-  {
-    id: 'favorit-vario-highclean',
-    category: 'Washing Technology',
-    name: 'Favorit Vario HighClean',
-    desc: 'Clean Room Technology',
-    img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_FavoritVario.jpg'
-  },
-  {
-    id: 'cwd-cd',
-    category: 'Washing Technology',
-    name: 'CWD / CD',
-    desc: 'Disinfection Sluices',
-    img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_Disinfection.jpg'
-  },
-  {
-    id: 'emh-emv',
-    category: 'Flatwork',
-    name: 'EMH / EMV',
-    desc: 'Feeding machines',
-    img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_EMH.jpg'
-  },
-  {
-    id: 'cfm-new',
-    category: 'Flatwork',
-    name: 'CFM',
-    desc: 'Folding machines',
-    img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_CFM.jpg'
-  },
-  {
-    id: 'dry-work',
-    category: 'Flatwork',
-    name: 'Robotic Dry Work Line / Blanket Master / Speedline XFM',
-    desc: 'Dry work folding machines',
-    img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_XFM.jpg'
-  },
-  {
-    id: 'system-overviews',
-    category: 'Data Information System',
-    name: 'Systems Overview',
-    desc: 'SmartLaundry & Dashboard',
-    img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_Dashboard.jpg'
-  }
+  // Flatwork
+  { id: 'kannegiesser-separating', category: 'Flatwork', name: 'Separating and Feeding Systems', desc: 'CSP', img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_CSP_NEU.jpg' },
+  { id: 'kannegiesser-feeding', category: 'Flatwork', name: 'Feeding machines', desc: 'EMQ / EMT', img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_EMQ_EMT.png' },
+  { id: 'kannegiesser-ironers', category: 'Flatwork', name: 'Ironers', desc: 'HPM', img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_HPM.png' },
+  { id: 'kannegiesser-folding', category: 'Flatwork', name: 'Folding machines', desc: 'RFM', img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_RFM.png' },
+  { id: 'kannegiesser-drywork', category: 'Flatwork', name: 'Dry work folding machines', desc: 'XFM', img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_XFM.png' },
+
+  // Data Information Systems
+  { id: 'kannegiesser-process-control', category: 'Data Information Systems', name: 'Process Control', desc: 'Smart Process Control', img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Category_Process-Control.png' },
+  { id: 'kannegiesser-monitoring', category: 'Data Information Systems', name: 'Monitoring', desc: 'Data Analytics', img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_DataInfoSystems.png' },
+];
+
+const CATEGORIES = [
+  { id: 'Washing Technology', name: 'Washing Technology', icon: Factory, color: 'bg-blue-500' },
+  { id: 'Flatwork', name: 'Flatwork', icon: Target, color: 'bg-indigo-500' },
+  { id: 'Data Information Systems', name: 'Data Information Systems', icon: History, color: 'bg-sky-500' }
+];
+
+const TIMELINE = [
+  { year: 1948, title: 'Founded', text: 'The company was founded in 1948 by Herbert Kannegiesser Dipl. Eng. in a wooden shed near Vlotho, starting with ironing machines for the garment industry.', img: '/images/kannegiesser/timeline/01_csm_image021_ca8d23610b.jpg' },
+  { year: 1961, title: 'Diversification', text: 'Following a crisis in the shirt market, Kannegiesser evolved into the finishing specialist for modern laundries and expanded its production range.', img: '/images/kannegiesser/timeline/02_csm_AlteMaschine_74f47f4e9d.jpg' },
+  { year: 1970, title: 'Generational Change', text: 'Martin Kannegiesser took over management, continuing internationalisation and devotion to complete system solutions.', img: '/images/kannegiesser/timeline/03_csm_WeltlandkarteOhne_b8e1288a6c.jpg' },
+  { year: 1983, title: 'Ironer Lines from One Source', text: 'Kannegiesser presented the "Ironer line from one source", ending the concept of piecemeal equipment procurement.', img: '/images/kannegiesser/timeline/04_csm_KAN_554012_Mangel_angesetzt_CMYK_2bcfc43855.jpg' },
+  { year: 1996, title: 'Logistics Expansion', text: 'Kleindienst WA schereitechnik GmbH was acquired, specialising in the transport and conveying sector.', img: '/images/kannegiesser/timeline/05_logistics_expansion.jpg' },
+  { year: 1998, title: 'Wetwork Area', text: 'The purchase of Passat and Pharmagg represented the decisive step into the wetwork area, making Kannegiesser a full-range manufacturer.', img: '/images/kannegiesser/timeline/06_wetwork_area.jpg' },
+  { year: 2005, title: 'UK Expansion', text: 'Kannegiesser took over 100% of the British company Ducker Engineering Limited.', img: '/images/kannegiesser/timeline/07_uk_expansion.jpg' },
+  { year: 2014, title: 'Family Foundation', text: 'Martin Kannegiesser transfers his shares to the newly founded Kannegiesser Family Foundation to ensure company continuity.', img: '/images/kannegiesser/timeline/08_family_foundation.png' },
+  { year: 2017, title: 'North American Expansion', text: 'Kannegiesser acquired E-Tech, Inc., forming Kannegiesser ETECH to focus on the North American market.', img: '/images/kannegiesser/timeline/09_na_expansion.png' },
+  { year: 2020, title: 'New Leadership', text: 'Tina Kannegiesser becomes Chairwoman of the Management Board.', img: '/images/kannegiesser/timeline/10_new_leadership.jpg' },
+  { year: 2022, title: 'Robotics', text: 'Robotics enters the laundry with the Robofeed feeding robot and Speedline folding machine.', img: '/images/kannegiesser/timeline/11_robotics.jpg' },
+  { year: 2024, title: 'Management Updates', text: 'Tina Kannegiesser leads the company alongside co-executives Engelbert Heinz, Michael Harre, and Thorsten Malzer.', img: '/images/kannegiesser/timeline/12_management_updates.jpg' },
+  { year: 2025, title: 'CTO Transition', text: 'Dr. Matthias Schopp takes over the position of Chief Technology Officer (CTO).', img: '/images/kannegiesser/timeline/13_cto_transition.jpg' }
 ];
 
 export default function Kannegiesser() {
-  const [activeTab, setActiveTab] = useState('Washing Technology');
-  const TABS = ['Washing Technology', 'Flatwork', 'Garment', 'Logistics', 'Data Information System'];
-  
-  const filteredProducts = PRODUCTS.filter(p => p.category === activeTab);
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef(null);
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted;
+      setIsMuted(videoRef.current.muted);
+    }
+  };
+
+  const wrapKannegiesser = (text) => {
+    const parts = text.split(/(Kannegiesser's|Kannegiesser)/i);
+    return parts.map((part, i) => 
+      part.toLowerCase().includes('kannegiesser') ? 
+        <span key={i} className="text-[#00509B] font-bold">{part}</span> : part
+    );
+  };
 
   return (
     <div className="w-full min-h-screen bg-white font-sans text-slate-800">
       <Navbar />
 
-      {/* ── 1. Hero Section (Video Placeholder) ── */}
-      <section className="relative w-full h-[85vh] min-h-[600px] flex flex-col justify-center overflow-hidden bg-[#0A0A0A] pt-20">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroBg})` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent" />
-        
-        <div className="absolute top-28 md:top-32 left-0 w-full px-8 lg:px-20 flex justify-between items-start z-30">
-          <Link to="/brands" className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors group">
-            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-            <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase">Back to Brands</span>
-          </Link>
-          <div className="flex items-center gap-3 mt-1">
-            <span className="text-white text-[10px] md:text-xs tracking-wide font-medium opacity-90 capitalize drop-shadow-md">
-              A Promac Technologies Partner
-            </span>
-            <div className="w-4 md:w-6 h-[2px] bg-[#E31E24]" />
-          </div>
-        </div>
+      {/* ── 1. Hero Section ── */}
+      <section className="relative w-full h-[85vh] min-h-[600px] flex flex-col justify-center overflow-hidden bg-[#0A0A0A] pt-20 group">
+        <video 
+          ref={videoRef}
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="absolute inset-0 w-full h-full object-cover opacity-90"
+        >
+          <source src={kannegiesserVideo} type="video/mp4" />
+        </video>
 
-        <div className="relative z-20 w-full px-8 lg:px-20 mt-8 md:mt-16">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-3xl"
-          >
-            <h2 className="text-white text-2xl md:text-3xl font-black italic tracking-tighter drop-shadow-md mb-8">
-              Kannegiesser
-            </h2>
-            <h1 className="text-white text-4xl md:text-5xl lg:text-[64px] font-semibold leading-[1.1] tracking-tight mb-6 drop-shadow-lg">
-              GERMAN ENGINEERING.<br />
-              GLOBAL LAUNDRY LEADERSHIP.
-            </h1>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <div className="w-8 h-[2px] bg-[#E31E24] mb-6" />
-            <p className="text-white/80 text-sm md:text-base font-normal mb-12 max-w-sm leading-relaxed drop-shadow-md">
-              75+ Years of Innovation in<br />Industrial Laundry Technology.
-            </p>
-          </motion.div>
-
-          <a href="#products">
-            <motion.button 
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="group flex items-center gap-4 text-white/90 hover:text-white transition-colors duration-300"
-            >
-              <div className="w-10 h-10 rounded-full border border-white/60 flex items-center justify-center transition-all duration-300 group-hover:border-white">
-                <Play className="w-3 h-3 ml-1 text-white fill-transparent transition-colors duration-300" />
-              </div>
-              <span className="text-[11px] font-bold tracking-[0.15em] uppercase opacity-90">
-                DISCOVER KANNEGIESSER
-              </span>
-            </motion.button>
-          </a>
-        </div>
+        {/* Mute Toggle Button */}
+        <button
+          onClick={toggleMute}
+          className="absolute bottom-8 right-8 z-20 p-4 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-sm border border-white/20 text-white shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100"
+          aria-label={isMuted ? "Unmute video" : "Mute video"}
+        >
+          {isMuted ? <VolumeX className="w-6 h-6" /> : <Volume2 className="w-6 h-6" />}
+        </button>
       </section>
 
       {/* ── 2. About Kannegiesser ── */}
       <section className="w-full py-24 bg-white relative">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="max-w-7xl mx-auto px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center mb-24">
           
           <div>
             <div className="flex items-center gap-4 mb-6">
-              <h4 className="text-[#E31E24] text-xs font-bold tracking-[0.2em] uppercase">ABOUT KANNEGIESSER</h4>
+              <h4 className="text-[#00509B] text-base md:text-lg font-bold tracking-[0.2em] uppercase">ABOUT KANNEGIESSER</h4>
             </div>
-            <div className="w-12 h-[2px] bg-[#E31E24] mb-8" />
+            <div className="w-12 h-[2px] bg-[#00509B] mb-8" />
             
             <h2 className="text-4xl md:text-5xl font-bold text-[#001F3F] mb-8 leading-tight tracking-tight">
-              75+ Years of<br />Laundry Innovation<span className="text-[#E31E24]">.</span>
+              Our Goals<span className="text-[#00509B]">.</span>
             </h2>
             
             <div className="text-slate-500 font-light text-lg leading-relaxed space-y-6 mb-12">
               <p>
-                For over seven decades, <span className="text-[#0B4F8A] font-bold">Kannegiesser</span> has set global benchmarks in industrial laundry technology. From washing and finishing to logistics and automation, we deliver fully integrated systems trusted by leading industries worldwide.
+                {wrapKannegiesser("For over 70 years, Kannegiesser has been the partner of textile service providers regarding industrial laundry technology. Successful companies in the laundry industry are obliged to offer their customers complete solutions with an overall scope of system integration, instead of leaving the customer to deal with the solution of complex detailed problems.")}
               </p>
               <p>
-                As <span className="text-[#0B4F8A] font-bold">Kannegiesser's</span> strategic partner in India, Promac Technologies brings these globally proven solutions closer to businesses through consultation, implementation, commissioning, and long-term support.
+                {wrapKannegiesser("In this regard Kannegiesser is increasingly seen as the Technical Partner, who responsibly designs complete laundry solutions and further develops a unique structure, which eventually elevates machinery systems to their highest efficiency and availability.")}
               </p>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-slate-200 pt-8">
-              <div>
-                <h3 className="text-2xl font-bold text-[#E31E24] mb-1">1948</h3>
-                <p className="text-xs text-slate-500 uppercase tracking-wider font-bold">Founded</p>
-              </div>
-              <div className="border-l border-slate-200 pl-8">
-                <h3 className="text-2xl font-bold text-[#E31E24] mb-1">Germany</h3>
-                <p className="text-xs text-slate-500 uppercase tracking-wider font-bold">Origin</p>
-              </div>
-              <div className="border-l border-slate-200 pl-8">
-                <h3 className="text-2xl font-bold text-[#E31E24] mb-1">50+</h3>
-                <p className="text-xs text-slate-500 uppercase tracking-wider font-bold">Countries</p>
-              </div>
-              <div className="border-l border-slate-200 pl-8">
-                <h3 className="text-2xl font-bold text-[#E31E24] mb-1">Complete</h3>
-                <p className="text-xs text-slate-500 uppercase tracking-wider font-bold">Ecosystem</p>
-              </div>
+              <ul className="list-disc pl-5 space-y-2 mt-4 font-normal text-slate-700">
+                <li>Responsibly develop and deliver the complete industrial laundry technology – from washing to drying to finishing and sorting.</li>
+                <li>Cross-link the complete laundry technology via one uniform control architecture with open logistic concepts, company data management and a complete support and customer service organization.</li>
+              </ul>
             </div>
           </div>
 
@@ -261,94 +133,115 @@ export default function Kannegiesser() {
               alt="Kannegiesser Headquarters" 
               className="w-full h-auto object-cover shadow-2xl rounded-2xl"
             />
-            <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-[#E31E24] -z-10" style={{ clipPath: 'polygon(100% 0, 0% 100%, 100% 100%)' }} />
+            <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-[#00509B] -z-10" style={{ clipPath: 'polygon(100% 0, 0% 100%, 100% 100%)' }} />
           </div>
         </div>
       </section>
 
-      {/* ── 3. Product Catalog ── */}
-      <section id="products" className="w-full py-24 bg-[#F8F9FA] relative border-t border-slate-200/50">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-            <div>
-              <h4 className="text-[#E31E24] text-xs font-bold tracking-[0.2em] uppercase mb-4">PRODUCT CATALOG</h4>
-              <h2 className="text-4xl md:text-5xl font-bold text-[#001F3F] tracking-tight">
-                Explore Kannegiesser<span className="text-[#E31E24]">.</span>
-              </h2>
-            </div>
-            
-            {/* Category Tabs */}
-            <div className="flex flex-wrap gap-2 bg-white rounded-xl p-2 shadow-sm border border-slate-200">
-              {TABS.map(tab => (
-                <button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
-                  className={`px-8 py-3 rounded-lg text-sm font-bold transition-all duration-300 ${
-                    activeTab === tab 
-                      ? 'bg-[#001F3F] text-white shadow-md' 
-                      : 'text-slate-500 hover:text-[#001F3F] hover:bg-slate-50'
-                  }`}
-                >
-                  {tab}
-                </button>
-              ))}
-            </div>
+      {/* ── 2b. History Timeline ── */}
+      <section className="w-full py-24 bg-slate-50 relative border-t border-slate-200 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-8 lg:px-16 mb-16 text-center">
+          <h4 className="text-[#00509B] text-sm font-bold tracking-[0.2em] uppercase mb-4">OUR HISTORY</h4>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#001F3F]">
+            From the woodshed to the world
+          </h2>
+        </div>
+        
+        <div className="flex overflow-x-auto snap-x snap-mandatory gap-8 pb-12 px-8 lg:px-16 hide-scrollbar max-w-[100vw]">
+          <div className="flex gap-8 w-max">
+            {TIMELINE.map((item, idx) => (
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="snap-center shrink-0 w-[300px] md:w-[400px] flex flex-col relative"
+              >
+                <div className="w-full h-2 bg-[#00509B]/20 mb-8 relative rounded-full">
+                  <div className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 md:w-6 md:h-6 rounded-full bg-[#00509B] border-4 border-white shadow-md flex items-center justify-center" />
+                </div>
+                
+                {item.img && (
+                  <div className="w-full h-48 md:h-56 mb-6 rounded-2xl overflow-hidden shadow-md">
+                    <img src={item.img} alt={`Kannegiesser in ${item.year}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                  </div>
+                )}
+                
+                <div className={`bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200 flex-1 ${!item.img ? 'mt-[13rem] md:mt-[15.5rem]' : ''}`}>
+                  <span className="text-[#00509B] font-black text-2xl md:text-3xl tracking-tight block mb-2">{item.year}</span>
+                  <h3 className="text-lg md:text-xl font-bold text-slate-800 mb-3">{item.title}</h3>
+                  <p className="text-slate-600 leading-relaxed text-sm md:text-base">{wrapKannegiesser(item.text)}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ✨ 3. Product Catalog (Category First) ✨ */}
+      <section id="products" className="w-full py-24 bg-white relative border-t border-slate-200/50 overflow-hidden">
+        {/* Animated Grid Background */}
+        <div
+          className="absolute inset-0 pointer-events-none opacity-[0.10] animate-grid"
+          style={{
+            backgroundImage: 'linear-gradient(#0B4F8A 1px, transparent 1px), linear-gradient(90deg, #0B4F8A 1px, transparent 1px)',
+            backgroundSize: '48px 48px',
+          }}
+          aria-hidden="true"
+        />
+
+        <div className="max-w-7xl mx-auto px-8 lg:px-16 relative z-10">
+          <div className="text-center mb-16">
+            <h4 className="text-[#00509B] text-base md:text-lg font-bold tracking-[0.2em] uppercase mb-4">PRODUCT CATALOG</h4>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#001F3F] tracking-tight">
+              Explore Kannegiesser<span className="text-[#00509B]">.</span>
+            </h2>
           </div>
 
-          <AnimatePresence mode="wait">
-            <motion.div 
-              key={activeTab}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.4 }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-            >
-              {filteredProducts.length > 0 ? (
-                filteredProducts.map((product) => (
-                  <Link 
-                    key={product.id}
-                    to={`/brands/kannegiesser/${product.id}`}
-                    className="group bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col hover:-translate-y-2"
-                  >
-                    <div className="h-64 bg-slate-50 p-6 relative flex items-center justify-center overflow-hidden">
-                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,31,63,0.03)_0%,transparent_100%)] pointer-events-none" />
-                      <img 
-                        src={product.img} 
-                        alt={product.name}
-                        className="max-h-full max-w-full object-contain drop-shadow-md group-hover:scale-110 transition-transform duration-700"
-                      />
-                    </div>
-                    <div className="p-8 flex flex-col flex-1 bg-white">
-                      <h4 className="text-[#E31E24] text-[10px] font-bold tracking-widest uppercase mb-2">
-                        {product.desc}
-                      </h4>
-                      <h3 className="text-2xl font-bold text-[#001F3F] mb-6">
-                        {product.name}
-                      </h3>
-                      
-                      <div className="mt-auto flex items-center justify-between">
-                        <span className="text-sm font-bold text-slate-400 group-hover:text-[#001F3F] transition-colors">
-                          View Details
-                        </span>
-                        <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-[#E31E24] transition-colors duration-300">
-                          <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-white transition-colors" />
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                ))
-              ) : (
-                <div className="col-span-full py-20 text-center flex flex-col items-center">
-                  <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mb-6">
-                    <span className="text-slate-400 font-bold text-2xl">?</span>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            {CATEGORIES.map(cat => {
+              const catProducts = PRODUCTS.filter(p => p.category === cat.name);
+              return (
+                <div key={cat.id} className="flex flex-col">
+                  {/* Category Header */}
+                  <div className={`w-full p-8 rounded-t-3xl ${cat.color} text-white flex flex-col items-center text-center shadow-md relative overflow-hidden`}>
+                    <div className="absolute inset-0 bg-black/10 opacity-0 hover:opacity-100 transition-opacity" />
+                    <cat.icon className="w-12 h-12 mb-4 drop-shadow-md" />
+                    <h3 className="text-2xl font-bold">{cat.name}</h3>
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-800 mb-2">Products Coming Soon</h3>
-                  <p className="text-slate-500">We are currently updating our {activeTab} catalogue.</p>
+
+                  {/* Category Products */}
+                  <div className="flex-1 bg-slate-50 border border-t-0 border-slate-200 rounded-b-3xl p-6 flex flex-col gap-4">
+                    {catProducts.map(product => (
+                      <Link 
+                        key={product.id}
+                        to={`/brands/kannegiesser/${product.id}`}
+                        className="group bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex items-center p-4 hover:-translate-y-1"
+                      >
+                        <div className="w-20 h-20 bg-slate-50 rounded-xl flex-shrink-0 flex items-center justify-center overflow-hidden border border-slate-100 mr-4">
+                          <img 
+                            src={product.img} 
+                            alt={product.name}
+                            className="max-h-full max-w-full object-contain group-hover:scale-110 transition-transform duration-500"
+                          />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h4 className="text-[#00509B] text-[9px] font-bold tracking-widest uppercase mb-1 truncate">
+                            {product.desc}
+                          </h4>
+                          <h3 className="text-sm font-bold text-[#001F3F] leading-snug truncate">
+                            {product.name}
+                          </h3>
+                        </div>
+                        <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-[#00509B] transition-colors ml-2 flex-shrink-0" />
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-              )}
-            </motion.div>
-          </AnimatePresence>
+              );
+            })}
+          </div>
         </div>
       </section>
 

@@ -763,7 +763,7 @@ export default function SeaLionProduct() {
                     <h3 className="text-2xl font-extrabold text-slate-900 mb-6 tracking-wide">{sp.title}</h3>
                     {sp.description && <p className="text-slate-600 mb-8 text-lg leading-relaxed">{sp.description}</p>}
                     {sp.features && sp.features.length > 0 && (
-                      <div className="bg-slate-50 rounded-2xl p-8 border border-slate-100">
+                      <div className="bg-white rounded-2xl p-8 border border-slate-100">
                         <ul className="space-y-4">
                           {sp.features.map((feature, fIdx) => (
                             <li key={fIdx} className="flex items-start text-slate-700">

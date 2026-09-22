@@ -15,6 +15,7 @@ export default {
         'promac-dark': '#0a0a0a',
       },
       fontFamily: {
+        'sans': ['"Montserrat"', 'sans-serif'],
         'display': ['"Montserrat"', 'sans-serif'],
         'body': ['"Montserrat"', 'sans-serif'],
       },

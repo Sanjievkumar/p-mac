@@ -7,12 +7,12 @@ import Footer from '../../components/Footer';
 import { FLATWORK_DATA } from './flatworkData';
 
 const WASHING_TECH_DATA = {
-  "powertrans-vario": {
+  "kannegiesser-powertrans-vario": {
     category: "Washing Technology",
-    title: "PowerTrans Vario",
-    subtitle: "Tunnel Washers",
+    "title": "Tunnel Washers",
+    "subtitle": "PowerTrans Vario",
     description: "Combining high productivity with great variety of article range and batches.",
-    img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_PT_VARIO.jpg",
+    "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_PT_VARIO.png",
     tabs: {
       overview: {
         introTitle: "THE TOP OF TODAY’S WASHING TECHNOLOGY",
@@ -81,12 +81,12 @@ const WASHING_TECH_DATA = {
       }
     }
   },
-  "powerpress": {
+  "kannegiesser-powerpress": {
     category: "Washing Technology",
-    title: "PowerPress",
-    subtitle: "Extraction Technology",
+    "title": "Extraction Technology",
+    "subtitle": "PowerPress",
     description: "High moisture extraction performance combined with fatigue strength.",
-    img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_PowerPress.jpg",
+    "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_PowerPress.png",
     tabs: {
       overview: {
         introTitle: "HIGH PERFORMANCE MEETS MINIMUM RESIDUAL MOISTURE",
@@ -141,12 +141,12 @@ const WASHING_TECH_DATA = {
       }
     }
   },
-  "powerdry": {
+  "kannegiesser-powerdry": {
     category: "Washing Technology",
-    title: "PowerDry",
-    subtitle: "Dryers",
+    "title": "Dryers",
+    "subtitle": "PowerDry",
     description: "The most powerful dryer on the market.",
-    img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_PowerDry.jpg",
+    "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_PowerDry.png",
     tabs: {
       overview: {
         introTitle: "THE MOST POWERFUL DRYER ON THE MARKET",
@@ -205,12 +205,12 @@ const WASHING_TECH_DATA = {
     }
   }
 ,
-  "futura": {
+  "kannegiesser-powerswing": {
     category: "Washing Technology",
-    title: "Futura",
-    subtitle: "Washer Extractors",
+    "title": "Washer Extractors",
+    "subtitle": "PowerSwing",
     description: "Industrial open-pocket washer-extractors designed for high-performance laundry processing.",
-    img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_FAVORIT.jpg",
+    "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_PowerSwing.png",
     tabs: {
       overview: {
         introTitle: "FUTURA WASHER EXTRACTOR",
@@ -236,12 +236,12 @@ const WASHING_TECH_DATA = {
       specs: { table: [ { label: "Nominal Capacity", value: "110 kg to 250 kg" }, { label: "Extraction Force", value: "300 - 350 G" }, { label: "Control System", value: "99-Program SPS" } ] }
     }
   },
-  "favorit-vario-highclean": {
+  "kannegiesser-cleanroom": {
     category: "Washing Technology",
-    title: "Favorit Vario HighClean",
-    subtitle: "Clean Room Technology",
+    "title": "Clean Room Technology",
+    "subtitle": "HighClean",
     description: "Cleanroom barrier washer tailored for high particle control and sterilization.",
-    img: "https://www.kannegiesser.com/fileadmin/_processed_/f/c/csm_Keyvisual_Reinraum_a71515775d.jpg",
+    "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_Cleanroom.png",
     tabs: {
       overview: {
         introTitle: "FAVORIT VARIO HIGHCLEAN",
@@ -266,12 +266,12 @@ const WASHING_TECH_DATA = {
       specs: { table: [ { label: "Application", value: "ISO Clean Room Environments" }, { label: "Design", value: "Barrier Washer Extractor" }, { label: "Material", value: "Electro-polished Stainless Steel" } ] }
     }
   },
-  "cwd-cd": {
+  "kannegiesser-disinfection": {
     category: "Washing Technology",
-    title: "CWD / CD",
-    subtitle: "Disinfection Sluices",
+    "title": "Disinfection Sluices",
+    "subtitle": "CWD / CD",
     description: "Reliable disinfection sluices ensuring strict separation of soiled and clean carts and linen.",
-    img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_Krankenhaus.jpg",
+    "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_CD_Desi.png",
     tabs: {
       overview: {
         introTitle: "CWD / CD DISINFECTION SLUICES",
@@ -299,35 +299,60 @@ const WASHING_TECH_DATA = {
 };
 
 const DATA_INFO_DATA = {
-  "system-overviews": {
-    category: "Data Information System",
-    title: "Systems Overview",
-    subtitle: "SmartLaundry & Dashboard",
-    description: "Complete overview of the entire laundry facility with real-time data and tracking.",
-    img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_System.jpg",
+  "kannegiesser-process-control": {
+    category: "Data Information Systems",
+    title: "Process Control",
+    subtitle: "IMPROVING PERFORMANCE WITH SMARTER PROCESSES",
+    description: "Process control optimizes laundry logistics by using batch data.",
+    img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Category_Process-Control.png",
     tabs: {
       overview: {
-        introTitle: "DATA INFORMATION SYSTEMS",
-        introText: "Kannegiesser Data Information Systems connect your entire facility to provide real-time metrics, bottleneck identification, and operational transparency. The Central System Overview and Laundry Dashboard work together to optimize your production flow.",
-        applicationsTitle: "Laundry Intelligence",
+        introTitle: "PROCESS CONTROL",
+        introText: "One key to premium laundry services at competitive rates is efficiency. Process control optimizes laundry logistics by using batch data to improve throughput.",
+        applicationsTitle: "Smart Logistics",
         summaryBlocks: [
-          { title: "SmartLaundry Integration", text: "Connecting individual machines into one automated, intelligent workflow." },
-          { title: "Central System Overview", text: "Visualizes the entire plant floor, tracking linen batches from sorting to dispatch." }
+          { title: "Batch Management", text: "Seamless integration between sorting, washing, and finishing." }
         ]
       },
       benefits: {
         blocks: [
-          { title: "Real-time Metrics", text: "View live data for every single machine on the floor to instantly identify bottlenecks." },
-          { title: "Historical Reporting", text: "Track efficiency, utility consumption, and operator performance over time to drive continuous improvement." }
+          { title: "Continuous Flow", text: "Prevents bottlenecks and starvation of finishing equipment." }
         ]
       },
       technologies: {
         blocks: [
-          { title: "Laundry Dashboard", text: "A modern, cloud-enabled central hub for machine telemetry, predictive maintenance, and operational reporting." },
-          { title: "Batch Tracking", text: "Seamless tracking of customer batches across different machine centers using RFID and barcode integration." }
+          { title: "Centralized Routing", text: "Automatically routes batches based on category and priority." }
         ]
       },
-      specs: { table: [ { label: "Platform", value: "Cloud-based & On-premise options" }, { label: "Compatibility", value: "All modern Kannegiesser equipment" } ] }
+      specs: { table: [ { label: "Integration", value: "Full System Compatibility" } ] }
+    }
+  },
+  "kannegiesser-monitoring": {
+    category: "Data Information Systems",
+    title: "Monitoring",
+    subtitle: "ANALYZE AND IMPROVE YOUR PRODUCTION",
+    description: "Complete overview and analytics of your laundry operations.",
+    img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_DataInfoSystems.png",
+    tabs: {
+      overview: {
+        introTitle: "MONITORING",
+        introText: "Analyze and improve your production with real-time data insights and historical analytics.",
+        applicationsTitle: "Smart Laundry Dashboard",
+        summaryBlocks: [
+          { title: "Real-Time Tracking", text: "Monitor every machine and batch in real time." }
+        ]
+      },
+      benefits: {
+        blocks: [
+          { title: "Efficiency Gains", text: "Identify bottlenecks and optimize utility consumption." }
+        ]
+      },
+      technologies: {
+        blocks: [
+          { title: "Dashboard Analytics", text: "Cloud-based or local dashboards for deep management insights." }
+        ]
+      },
+      specs: { table: [ { label: "Integration", value: "All Kannegiesser Equipment" } ] }
     }
   }
 };
@@ -387,7 +412,7 @@ export default function KannegiesserProduct() {
             {/* Summary Blocks */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               {product.tabs.overview?.summaryBlocks?.map((block, idx) => (
-                <div key={idx} className="bg-slate-50 rounded-3xl p-10 border border-slate-100 shadow-sm">
+                <div key={idx} className="bg-white rounded-3xl p-10 border border-slate-100 shadow-sm">
                   {block.title && <h3 className="text-2xl font-bold text-[#E31E24] mb-2">{block.title}</h3>}
                   {block.subtitle && <h4 className="text-lg font-bold text-[#001F3F] mb-6">{block.subtitle}</h4>}
                   {block.text && <p className="text-slate-600 leading-relaxed whitespace-pre-line">{block.text}</p>}
@@ -454,16 +479,18 @@ export default function KannegiesserProduct() {
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-[#001F3F] mb-8 uppercase border-b-4 border-[#E31E24] inline-block pb-2">Technical Data</h2>
             <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
-              <table className="w-full text-left border-collapse">
-                <tbody>
-                  {product.tabs.specs?.table?.map((row, idx) => (
-                    <tr key={idx} className="border-b border-slate-100 last:border-0 hover:bg-slate-50 transition-colors">
-                      <th className="py-6 px-8 text-[#001F3F] font-bold w-1/2 align-top">{row.label}</th>
-                      <td className="py-6 px-8 text-slate-600">{row.value}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left border-collapse min-w-[400px]">
+                  <tbody>
+                    {product.tabs.specs?.table?.map((row, idx) => (
+                      <tr key={idx} className="border-b border-slate-100 last:border-0 hover:bg-slate-50 transition-colors">
+                        <th className="py-6 px-6 md:px-8 text-[#001F3F] font-bold w-1/3 md:w-1/2 align-top">{row.label}</th>
+                        <td className="py-6 px-6 md:px-8 text-slate-600 break-words">{row.value}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </motion.div>
         );
@@ -478,34 +505,33 @@ export default function KannegiesserProduct() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-white border-b border-slate-200">
+      <section className="relative pt-24 pb-12 lg:pt-32 lg:pb-20 overflow-hidden bg-[#00509B] border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-6 lg:px-16">
           <Link 
             to="/brands/kannegiesser" 
-            className="inline-flex items-center gap-2 text-slate-500 hover:text-[#E31E24] transition-colors mb-12 group font-bold tracking-widest text-xs uppercase"
+            className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors mb-12 group font-bold tracking-widest text-xs uppercase"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
             Back to Kannegiesser
           </Link>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
             <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               className="flex flex-col"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-[2px] bg-[#E31E24]" />
-                <h4 className="text-[#E31E24] text-xs font-bold tracking-[0.2em] uppercase">
+                <div className="w-12 h-[2px] bg-white" />
+                <h4 className="text-white text-base md:text-lg font-bold tracking-[0.2em] uppercase">
                   {product.category}
                 </h4>
               </div>
               
-              <h1 className="text-4xl lg:text-6xl font-extrabold text-[#001F3F] leading-tight mb-4 tracking-tight">
+              <h1 className="text-4xl lg:text-6xl font-extrabold text-white leading-tight mb-4 tracking-tight">
                 {product.title}
               </h1>
-              <h3 className="text-2xl text-slate-500 font-semibold mb-8">
+              <h3 className="text-2xl text-white/80 font-semibold mb-8">
                 {product.subtitle}
               </h3>
               

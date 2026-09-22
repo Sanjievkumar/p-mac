@@ -213,7 +213,7 @@ export default function TurnkeyProcess() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-5xl font-black text-[#001F3F] leading-tight"
+            className="text-3xl md:text-5xl font-black text-[#001F3F] leading-tight"
           >
             Our Turnkey Process
           </motion.h2>

@@ -9,6 +9,7 @@ import sealionLogo from '../assets/brands/sealion.png';
 import maestrelliLogo from '../assets/brands/maestrelli.png';
 import maxipressLogo from '../assets/brands/maxipress.png';
 import kannegiesserLogo from '../assets/brands/kannegiesser.png';
+import imesaLogo from '../assets/brands/imesa.png';
 import engineeringBg from '../assets/engineering-brands-bg.jpg';
 const customFontStyles = `
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap');
@@ -19,6 +20,21 @@ const customFontStyles = `
    logo → brand logo (white bg, mix-blend-multiply)
 ───────────────────────────────────────────── */
 const BRANDS = [
+    {
+      id: 'imesa',
+      name: 'IMESA',
+      customTitle: (
+        <h2 className="text-4xl md:text-5xl font-black text-[#00A3E0] tracking-tighter mb-6 leading-none">
+          IMESA
+        </h2>
+      ),
+      origin: 'Italy',
+      tagline: 'Custom Solutions and Made in Italy',
+      logo: imesaLogo,
+      desc: 'IMESA is a leading company in the production of commercial and industrial laundry equipment. They constantly innovate, personalize, and communicate through emotions, spreading Made in Italy worldwide.',
+      products: ['Washing Machines', 'Dryers', 'IMConnect Dashboard', 'Flatwork Ironers'],
+    },
+
   {
     id: 'kannegiesser',
     name: 'KANNEGIESSER',

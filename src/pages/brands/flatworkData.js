@@ -1,10 +1,10 @@
 export const FLATWORK_DATA = {
-  "synchro": {
+  "kannegiesser-separating": {
     "category": "Flatwork",
-    "title": "Synchro EMT / EMQ",
-    "subtitle": "Feeding machines",
+    "title": "Separating and Feeding Systems",
+    "subtitle": "CSP",
     "description": "",
-    "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_EMQ_EMT.jpg",
+    "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_CSP_NEU.jpg",
     "tabs": {
       "overview": {
         "introTitle": "UNBEATABLE IN SPEED, PRECISION AND DIVERSITY",
@@ -218,12 +218,12 @@ export const FLATWORK_DATA = {
       }
     }
   },
-  "shm-gas": {
+  "kannegiesser-ironers": {
     "category": "Flatwork",
-    "title": "SHM / SHM gas",
-    "subtitle": "Ironer",
+    "title": "Ironers",
+    "subtitle": "HPM",
     "description": "",
-    "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_SHM.png",
+    "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_HPM.png",
     "tabs": {
       "overview": {
         "introTitle": "SHM / SHM Gas",
@@ -390,12 +390,12 @@ export const FLATWORK_DATA = {
     }
   }
 ,
-  "emh-emv": {
+  "kannegiesser-feeding": {
     "category": "Flatwork",
-    "title": "EMH / EMV",
-    "subtitle": "Feeding machines",
+    "title": "Feeding machines",
+    "subtitle": "EMQ / EMT",
     "description": "High-capacity feeding machines designed for perfect leading edge presentation.",
-    "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_EMV.jpg",
+    "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_EMQ_EMT.png",
     "tabs": {
       "overview": {
         "introTitle": "EMH / EMV FEEDERS",
@@ -420,12 +420,12 @@ export const FLATWORK_DATA = {
       "specs": { "table": [ { "label": "Function", "value": "Automatic Spreading and Feeding" }, { "label": "Target Items", "value": "Sheets, Duvets, Tablecloths" } ] }
     }
   },
-  "cfm-new": {
+  "kannegiesser-folding": {
     "category": "Flatwork",
-    "title": "CFM",
-    "subtitle": "Folding machines",
+    "title": "Folding machines",
+    "subtitle": "RFM",
     "description": "High-precision cross folding machine ensuring clean edges and tight stacking.",
-    "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_CFM.jpg",
+    "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_RFM.png",
     "tabs": {
       "overview": {
         "introTitle": "CFM FOLDER",
@@ -450,12 +450,12 @@ export const FLATWORK_DATA = {
       "specs": { "table": [ { "label": "Function", "value": "Cross Folding and Stacking" }, { "label": "Operation", "value": "Blade / Air Blast" } ] }
     }
   },
-  "dry-work": {
+  "kannegiesser-drywork": {
     "category": "Flatwork",
-    "title": "Robotic Dry Work Line / Blanket Master / Speedline XFM",
-    "subtitle": "Dry work folding machines",
+    "title": "Dry work folding machines",
+    "subtitle": "XFM",
     "description": "Advanced dry work folding encompassing robotic handling and specialized blanket processing.",
-    "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_XFM.jpg",
+    "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_XFM.png",
     "tabs": {
       "overview": {
         "introTitle": "DRY WORK FOLDING",
