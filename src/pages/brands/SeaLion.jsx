@@ -57,77 +57,9 @@ export default function SeaLion() {
         >
           <source src={sealionCorporateVideo} type="video/mp4" />
         </video>
-        {/* Gradient Overlay for Text Readability - focused on the left */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent" />
-        
-        {/* Top Floating Elements - Fixed to top, safely below Navbar */}
-        <div className="absolute top-28 md:top-32 left-0 w-full px-8 lg:px-20 flex justify-between items-start z-30">
-          <Link to="/brands" className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors group">
-            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-            <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase">Back to Brands</span>
-          </Link>
-        </div>
 
-        {/* Main Content */}
-        <div className="relative z-20 w-full px-8 lg:px-20 mt-8 md:mt-16">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-2xl"
-          >
-            <div className="flex flex-col items-start gap-2 mb-8">
-              <img 
-                src={sealionLogo} 
-                alt="SEA-LION" 
-                className="h-8 md:h-10 object-contain"
-              />
-              <span className="text-white/80 text-xs tracking-wider font-semibold">
-                Industrial Laundry Excellence
-              </span>
-            </div>
-            
-            <h1 className="text-white text-4xl md:text-5xl lg:text-[64px] font-bold leading-[1.1] tracking-tight mb-8 drop-shadow-lg">
-              Industrial<br />
-              Laundry<br />
-              Excellence<span className="text-[#E31E24]">.</span>
-            </h1>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <p className="text-white text-lg md:text-xl font-bold mb-8 max-w-md tracking-wide drop-shadow-md">
-              Trusted Across The World.
-            </p>
-            
-            {/* Red dash and feature list */}
-            <div className="w-12 h-[2px] bg-[#E31E24] mb-6" />
-            <div className="flex items-center gap-3 text-white/80 text-sm font-medium mb-12">
-              <span>Reliable</span>
-              <div className="w-1 h-1 rounded-full bg-[#E31E24]" />
-              <span>Efficient</span>
-              <div className="w-1 h-1 rounded-full bg-[#E31E24]" />
-              <span>Automation Ready</span>
-            </div>
-          </motion.div>
 
-          <motion.button 
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="group flex items-center gap-4 text-white hover:text-white transition-colors duration-300"
-          >
-            <div className="w-10 h-10 rounded-full border border-white/60 flex items-center justify-center transition-all duration-300 group-hover:border-white group-hover:scale-105">
-              <Play className="w-3 h-3 ml-1 text-white fill-transparent transition-colors duration-300" />
-            </div>
-            <span className="text-xs font-bold tracking-[0.1em] uppercase opacity-90 group-hover:opacity-100 flex items-center gap-2">
-              EXPLORE SOLUTIONS <ArrowRight className="w-4 h-4 opacity-70 group-hover:opacity-100 transition-opacity" />
-            </span>
-          </motion.button>
-        </div>
+
 
         
       </section>
