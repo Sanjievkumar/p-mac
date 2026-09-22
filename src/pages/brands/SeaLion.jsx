@@ -8,7 +8,7 @@ import Footer from '../../components/Footer';
 // Asset Imports
 import sealionLogo from '../../assets/brands/sealion.png';
 import heroBg from '../../assets/brands/sea-lion/sealion_hero_1780727361346.png';
-import buildingBg from '../../assets/brands/sea-lion/sealion_building_1780727375255.png';
+import buildingBg from '../../assets/brands/sealion-campus.jpg';
 import ecosystemBg from '../../assets/brands/sea-lion/sealion_ecosystem_1780727389170.png';
 
 const PRODUCTS = [
@@ -128,15 +128,18 @@ export default function SeaLion() {
             </div>
             
             <h2 className="text-4xl md:text-[42px] font-bold text-slate-900 mb-8 leading-tight tracking-tight max-w-md">
-              30+ Years of<br />Manufacturing Excellence<span className="text-[#E31E24]">.</span>
+              55+ Years of<br />Manufacturing Excellence<span className="text-[#E31E24]">.</span>
             </h2>
             
             <div className="text-slate-600 font-normal text-sm leading-relaxed space-y-6 mb-12 max-w-md">
               <p>
-                <span className="text-[#E31E24] font-bold">SEA-LION</span> is a globally recognized manufacturer of industrial laundry equipment, delivering reliable and automation-ready solutions trusted by commercial laundries worldwide.
+                <span className="text-[#E31E24] font-bold">Established in 1969</span>, Jiangsu Sea-lion Machinery Co., Ltd. (formerly Sea-lion Machinery Group) is the oldest manufacturer of industrial laundry machines in China, gaining a wealth of experiences on R&D and manufacture with laundry machines.
               </p>
               <p>
-                Through continuous innovation and large-scale manufacturing capabilities, <span className="text-[#E31E24] font-bold">SEA-LION</span> provides a complete range of washer extractors, tumble dryers, barrier washers, and flatwork ironing systems designed for long-term performance.
+                Sea-lion has a area of 166,000㎡ and building area of 116,800㎡ and possesses the total assets of 620 million RMB. Sea-lion’s annual domestic sales can reach 510 million RMB and annual export amount to 10 million USD dollars.
+              </p>
+              <p>
+                Sea-lion has the biggest product scale and the most comprehensive variety in the line of washing machinery in China, including 10 series, 20 varieties and more than 100 types with annual production capacity of 12,000 sets.
               </p>
             </div>
 
@@ -145,7 +148,7 @@ export default function SeaLion() {
               <div className="flex flex-col items-start gap-3">
                 <Calendar className="w-6 h-6 text-[#E31E24] stroke-[1.5]" />
                 <div>
-                  <h3 className="text-lg font-bold text-slate-900">30+</h3>
+                  <h3 className="text-lg font-bold text-slate-900">55+</h3>
                   <p className="text-xs text-slate-500 font-medium">Years</p>
                 </div>
               </div>
