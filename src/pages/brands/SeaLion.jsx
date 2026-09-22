@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Play, ArrowRight, ArrowLeft, Calendar, Globe2, Building2, Layers } from 'lucide-react';
@@ -9,6 +9,11 @@ import Footer from '../../components/Footer';
 import sealionLogo from '../../assets/brands/sealion.png';
 import heroBg from '../../assets/brands/sea-lion/sealion_hero_1780727361346.png';
 import buildingBg from '../../assets/brands/sealion-campus.jpg';
+import sealionCorporateVideo from '../../assets/brands/sealion-corporate.mp4';
+import sealionFactory1 from '../../assets/brands/sealion-factory-1.jpg';
+import sealionFactory3 from '../../assets/brands/sealion-factory-3.jpg';
+import sealionFactory4 from '../../assets/brands/sealion-factory-4.jpg';
+
 import ecosystemBg from '../../assets/brands/sea-lion/sealion_ecosystem_1780727389170.png';
 
 const PRODUCTS = [
@@ -24,18 +29,34 @@ const PRODUCTS = [
   { id: 'sea-lion-automatic-high-speed-folder-with-stacker', title: 'AUTOMATIC HIGH SPEED FOLDER WITH STACKER', img: 'https://promactech.com/wp-content/uploads/2024/07/AUTOMATIC-LINEN-FOLDER-WITH-STACKER-1-1024x819.png' },
 ];
 
+const FACTORY_IMAGES = [buildingBg, sealionFactory1, sealionFactory3, sealionFactory4];
+
 export default function SeaLion() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % FACTORY_IMAGES.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div className="w-full min-h-screen bg-white font-sans text-slate-800">
       <Navbar />
 
       {/* ── 1. Hero Section ── */}
       <section className="relative w-full h-[85vh] min-h-[600px] flex flex-col justify-center overflow-hidden bg-[#0A0A0A] pt-20">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-90"
-          style={{ backgroundImage: `url(${heroBg})` }}
-        />
+        {/* Background Video */}
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="absolute inset-0 w-full h-full object-cover opacity-90"
+        >
+          <source src={sealionCorporateVideo} type="video/mp4" />
+        </video>
         {/* Gradient Overlay for Text Readability - focused on the left */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent" />
         
@@ -108,12 +129,7 @@ export default function SeaLion() {
           </motion.button>
         </div>
 
-        {/* Slider Dots */}
-        <div className="absolute bottom-8 left-0 w-full flex justify-center gap-2 z-20">
-          <div className="w-6 h-1.5 rounded-full bg-[#E31E24]" />
-          <div className="w-1.5 h-1.5 rounded-full bg-white/50" />
-          <div className="w-1.5 h-1.5 rounded-full bg-white/50" />
-        </div>
+        
       </section>
 
       {/* ── 2. About Section ── */}
@@ -179,11 +195,30 @@ export default function SeaLion() {
           {/* Image Content */}
           <div className="order-1 lg:order-2 relative lg:col-span-7 w-full scale-100 lg:scale-110 lg:translate-x-4">
             <div className="rounded-sm overflow-hidden shadow-2xl relative z-10">
-              <img 
-                src={buildingBg} 
-                alt="SEA-LION Headquarters" 
-                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
-              />
+              <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] lg:aspect-auto lg:h-[600px] overflow-hidden">
+                {FACTORY_IMAGES.map((img, idx) => (
+                  <motion.img 
+                    key={idx}
+                    src={img} 
+                    alt={`SEA-LION Factory ${idx + 1}`} 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: currentSlide === idx ? 1 : 0, scale: currentSlide === idx ? 1.05 : 1 }}
+                    transition={{ duration: 1.2, ease: 'easeInOut' }}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                ))}
+                
+                {/* Slideshow Controls */}
+                <div className="absolute bottom-4 left-0 w-full flex justify-center gap-2 z-20">
+                  {FACTORY_IMAGES.map((_, idx) => (
+                    <button 
+                      key={idx}
+                      onClick={() => setCurrentSlide(idx)}
+                      className={`h-1.5 rounded-full transition-all duration-300 ${currentSlide === idx ? 'w-6 bg-[#E31E24]' : 'w-2 bg-white/60 hover:bg-white'}`}
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
             {/* Red Geometric Accent */}
             <div className="absolute -bottom-6 -right-6 w-1/2 h-1/2 bg-[#E31E24] z-0" style={{ clipPath: 'polygon(100% 0, 0% 100%, 100% 100%)' }} />
