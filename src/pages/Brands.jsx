@@ -9,7 +9,7 @@ import sealionLogo from '../assets/brands/sealion.png';
 import maestrelliLogo from '../assets/brands/maestrelli.png';
 import maxipressLogo from '../assets/brands/maxipress.png';
 import kannegiesserLogo from '../assets/brands/kannegiesser.png';
-
+import engineeringBg from '../assets/engineering-brands-bg.jpg';
 const customFontStyles = `
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap');
 `;
@@ -255,6 +255,16 @@ export default function Brands() {
 
       {/* ── Hero Banner ── */}
       <section className="relative pt-40 pb-20 px-6 bg-[#001F3F] overflow-hidden text-center">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={engineeringBg} 
+            alt="Engineering Background" 
+            className="w-full h-full object-cover opacity-30 mix-blend-luminosity"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#001F3F]/80 via-[#001F3F]/50 to-[#001F3F]" />
+        </div>
+
         {/* Animated Blueprint Grid */}
         <motion.div
           className="absolute inset-0 pointer-events-none"
