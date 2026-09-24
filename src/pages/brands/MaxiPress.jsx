@@ -28,7 +28,7 @@ import { PRODUCT_DATA } from './MaxiPressProduct';
 export default function MaxiPress() {
   return (
     <div className="w-full min-h-screen bg-[#F8F9FA] font-sans text-slate-800">
-      <Navbar />
+      <Navbar /><div className="absolute top-[100px] left-8 lg:left-16 z-50"><Link to="/brands" className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors font-medium text-sm bg-black/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/10"><ArrowLeft className="w-4 h-4" /> Back to Brands</Link></div>
 
       {/* ✨ 1. Hero Section ✨ */}
       <section className="relative w-full min-h-[70vh] flex flex-col justify-center overflow-hidden bg-white pt-24 pb-12 border-b border-slate-100">
@@ -111,10 +111,10 @@ export default function MaxiPress() {
               { icon: Layers, num: 'Complete', label: 'Finishing Solutions' }
             ].map((stat, i) => (
               <div key={i} className="flex flex-col items-center text-center gap-3">
-                <stat.icon className="w-8 h-8 text-[#E31E24] stroke-[1.5]" />
+                <stat.icon className="w-12 h-12 text-[#E31E24] stroke-[1.5]" />
                 <div>
-                  <h3 className="text-xl font-bold text-slate-900">{stat.num}</h3>
-                  <p className="text-xs text-slate-500 font-medium leading-tight mt-1">{stat.label}</p>
+                  <h3 className="text-3xl font-bold text-slate-900">{stat.num}</h3>
+                  <p className="text-base text-slate-500 font-medium leading-tight mt-1">{stat.label}</p>
                 </div>
               </div>
             ))}
@@ -195,7 +195,7 @@ export default function MaxiPress() {
                     <div className="absolute inset-0 bg-gradient-to-br from-[#E31E24]/0 via-transparent to-[#E31E24]/0 group-hover:from-[#E31E24]/10 group-hover:to-[#1c1c1c]/10 transition-all duration-700 opacity-0 group-hover:opacity-100" />
 
                     {/* Image Area */}
-                    <div className="h-56 p-8 flex items-center justify-center bg-slate-50 relative overflow-hidden rounded-t-2xl m-[2px]">
+                    <div className="h-[300px] p-2 flex items-center justify-center bg-slate-50 relative overflow-hidden rounded-t-2xl m-[2px]">
                       {/* Grid background */}
                       <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, black 1px, transparent 0)', backgroundSize: '16px 16px' }} />
                       

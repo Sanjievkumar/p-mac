@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import factoryImage from '../assets/industrial-laundry-factory.jpg';
+import factoryImage from '../assets/ecosystem-factory.jpg';
 
 export default function EcosystemSection() {
   // Precision-crafted icons matching the design references

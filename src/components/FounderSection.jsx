@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import founderBg from '../assets/hero-bg-hq.png';
+import founderBg from '../assets/founder-bg-new.png';
 
 export default function FounderSection() {
   return (
@@ -7,12 +7,12 @@ export default function FounderSection() {
       {/* Background Image */}
       <img 
         src={founderBg} 
-        alt="Tunnel Washer Showroom" 
+        alt="Kannegiesser PowerTrans Showroom" 
         className="absolute inset-0 w-full h-full object-cover object-right pointer-events-none" 
       />
       
       {/* Gradient Overlay for text readability on smaller screens */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent lg:w-1/2 pointer-events-none mix-blend-normal" />
+      <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent lg:w-[60%] pointer-events-none mix-blend-normal z-0" />
 
       {/* Main Content */}
       <div className="relative z-10 w-full flex flex-col">

@@ -5,12 +5,14 @@ import kannegiesserLogo from '../assets/brands/kannegiesser.png';
 import maestrelliLogo from '../assets/brands/maestrelli.png';
 import maxipressLogo from '../assets/brands/maxipress.png';
 import sealionLogo from '../assets/brands/sealion.png';
+import imesaLogo from '../assets/brands/imesa.png';
 
 const BRANDS = [
-  { name: "SEA-LION", src: sealionLogo },
-  { name: "KANNEGIESSER", src: kannegiesserLogo },
-  { name: "MAESTRELLI", src: maestrelliLogo },
-  { name: "MAXIPRESS", src: maxipressLogo }
+  { name: "SEA-LION", src: sealionLogo, customClass: "scale-[1.2]" },
+  { name: "KANNEGIESSER", src: kannegiesserLogo, customClass: "scale-[0.8]" },
+  { name: "MAESTRELLI", src: maestrelliLogo, customClass: "scale-[0.85]" },
+  { name: "MAXIPRESS", src: maxipressLogo, customClass: "scale-[1.1]" },
+  { name: "IMESA", src: imesaLogo, customClass: "scale-[0.6]" }
 ];
 
 /**
@@ -56,7 +58,7 @@ function MagneticBrand({ brand }) {
         <img 
           src={brand.src} 
           alt={brand.name} 
-          className="h-10 md:h-12 lg:h-14 w-auto object-contain mix-blend-multiply" 
+          className={`h-10 md:h-12 lg:h-14 w-auto object-contain mix-blend-multiply ${brand.customClass || ''}`} 
         />
       </motion.div>
     </motion.div>

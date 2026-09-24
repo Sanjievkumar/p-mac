@@ -56,11 +56,19 @@ const TIMELINE = [
 export default function Kannegiesser() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef(null);
+  const timelineScrollRef = useRef(null);
 
   const toggleMute = () => {
     if (videoRef.current) {
       videoRef.current.muted = !videoRef.current.muted;
       setIsMuted(videoRef.current.muted);
+    }
+  };
+
+  const scrollTimeline = (direction) => {
+    if (timelineScrollRef.current) {
+      const scrollAmount = direction === 'left' ? -400 : 400;
+      timelineScrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
   };
 
@@ -74,7 +82,7 @@ export default function Kannegiesser() {
 
   return (
     <div className="w-full min-h-screen bg-white font-sans text-slate-800">
-      <Navbar />
+      <Navbar /><div className="absolute top-[100px] left-8 lg:left-16 z-50"><Link to="/brands" className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors font-medium text-sm bg-black/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/10"><ArrowLeft className="w-4 h-4" /> Back to Brands</Link></div>
 
       {/* ── 1. Hero Section ── */}
       <section className="relative w-full h-[85vh] min-h-[600px] flex flex-col justify-center overflow-hidden bg-[#0A0A0A] pt-20 group">
@@ -140,14 +148,13 @@ export default function Kannegiesser() {
 
       {/* ── 2b. History Timeline ── */}
       <section className="w-full py-24 bg-slate-50 relative border-t border-slate-200 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16 mb-16 text-center">
+        <div className="max-w-7xl mx-auto px-8 lg:px-16 mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6"><div>
           <h4 className="text-[#00509B] text-sm font-bold tracking-[0.2em] uppercase mb-4">OUR HISTORY</h4>
           <h2 className="text-3xl md:text-4xl font-bold text-[#001F3F]">
-            From the woodshed to the world
-          </h2>
+            From the woodshed to the world</h2></div><div className="flex items-center gap-4"><button onClick={() => scrollTimeline('left')} className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center text-[#00509B] hover:bg-[#00509B] hover:text-white transition-colors"><ArrowLeft className="w-5 h-5" /></button><button onClick={() => scrollTimeline('right')} className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center text-[#00509B] hover:bg-[#00509B] hover:text-white transition-colors"><ArrowRight className="w-5 h-5" /></button></div>
         </div>
         
-        <div className="flex overflow-x-auto snap-x snap-mandatory gap-8 pb-12 px-8 lg:px-16 hide-scrollbar max-w-[100vw]">
+        <div ref={timelineScrollRef} className="flex overflow-x-auto snap-x snap-mandatory gap-8 pb-12 px-8 lg:px-16 hide-scrollbar max-w-[100vw]">
           <div className="flex gap-8 w-max">
             {TIMELINE.map((item, idx) => (
               <motion.div 
@@ -249,3 +256,4 @@ export default function Kannegiesser() {
     </div>
   );
 }
+

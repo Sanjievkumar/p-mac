@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Globe2, Settings, ShieldCheck, Users } from 'lucide-react';
-import heroImage from '../assets/founder-bg.png';
+import heroImage from '../assets/hero-bg-new.png';
 import { Link } from 'react-router-dom';
 
 export default function HeroSection() {
@@ -16,7 +16,7 @@ export default function HeroSection() {
       </div>
       
       {/* Gradient Overlay for text readability on smaller screens */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent lg:w-1/2 pointer-events-none md:hidden lg:block mix-blend-normal" />
+      <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent lg:w-[55%] pointer-events-none mix-blend-normal z-0" />
 
       {/* Main Hero Content */}
       <div className="absolute inset-0 z-10 w-full flex flex-col pb-0 lg:pb-[88px]">
