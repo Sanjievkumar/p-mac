@@ -31,8 +31,8 @@ const BRANDS = [
       origin: 'Italy',
       tagline: 'Custom Solutions and Made in Italy',
       logo: imesaLogo,
-      desc: 'IMESA is a leading company in the production of commercial and industrial laundry equipment. They constantly innovate, personalize, and communicate through emotions, spreading Made in Italy worldwide.',
-      products: ['Washing Machines', 'Dryers', 'IMConnect Dashboard', 'Flatwork Ironers'],
+      desc: 'With 50 years of history, IMESA is a leading Italian manufacturer whose core vocation is washing, drying, and ironing of all types of fabric, designing sustainable laundry solutions that simplify people\'s lives.',
+      products: ['Washing Machines', 'Dryers'],
     },
 
   {
@@ -46,8 +46,8 @@ const BRANDS = [
     origin: 'Germany',
     tagline: 'End-to-End Laundry Automation',
     logo: kannegiesserLogo,
-    desc: 'Kannegiesser has evolved from a machine manufacturer into a global technology partner for industrial laundries, delivering complete end-to-end laundry automation systems with decades of engineering expertise.',
-    products: ['Tunnel Washers', 'Powertrans Systems', 'Flatwork Ironers', 'Automated Sorting'],
+    desc: 'Founded in 1948, Kannegiesser has evolved into the finishing specialist for modern laundries, delivering complete end-to-end laundry automation systems with decades of engineering expertise.',
+    products: ['Washing Technology', 'Flatwork', 'Data Information Systems'],
   },
   {
     id: 'sea-lion',
@@ -60,8 +60,8 @@ const BRANDS = [
     origin: 'China',
     tagline: 'Industrial Laundry Machines',
     logo: sealionLogo,
-    desc: 'SEA-LION is a globally established manufacturer of industrial laundry machines, offering reliable, energy-efficient, and automation-ready solutions.',
-    products: ['Washer Extractors', 'Tumble Dryers', 'Flatwork Ironers', 'Barrier Washers'],
+    desc: 'Established in 1969, Sea-lion is the oldest manufacturer of industrial laundry machines in China, gaining a wealth of experience on R&D and manufacture with laundry machines.',
+    products: ['Tunnel Washer Systems', 'Washer Extractors', 'Barrier Washers', 'Tumble Dryers', 'Flatwork Ironers'],
   },
   {
     id: 'maestrelli',
@@ -74,8 +74,8 @@ const BRANDS = [
     origin: 'Italy',
     tagline: 'Dry Cleaning Systems',
     logo: maestrelliLogo,
-    desc: 'Designed for reliability, fabric protection, and operational efficiency, Maestrelli systems help commercial laundries and dry cleaners achieve consistent cleaning quality with reduced solvent usage.',
-    products: ['Multisolvent Dry Cleaning', 'Perc Machines', 'Soft-Mount Systems'],
+    desc: 'Born in 1935, Maestrelli is a major and reliable Italian producer in the dry-cleaning sector, providing a wide range of products from dry-cleaning machines to washing machines and dryers.',
+    products: ['Dry-Cleaning Machines', 'Washing Machines', 'Dryers', 'Ironing Tables'],
   },
   {
     id: 'maxipress',
@@ -93,8 +93,8 @@ const BRANDS = [
     origin: 'Spain',
     tagline: 'Garment Finishing Equipment',
     logo: maxipressLogo,
-    desc: 'Engineered for high-volume commercial laundries and professional garment care facilities, MAXIPRESS solutions deliver consistent finishing quality, operational reliability, and long service life.',
-    products: ['Form Finishers', 'Utility Presses', 'Steam Vacuum Boards', 'Collar & Cuff Presses'],
+    desc: 'MaxiPress delivers advanced finishing and pressing equipment designed to achieve superior garment presentation, operational efficiency, and consistent quality across professional operations.',
+    products: ['Utility Presses', 'Collar & Cuff Presses', 'Form Finishers', 'Vacuum Boards', 'Spotting Boards'],
   }
 ];
 
