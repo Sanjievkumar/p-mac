@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronRight, Droplets, Factory, ShieldCheck, HeartHandshake, Lightbulb, UserCheck, Settings, Megaphone, Globe } from 'lucide-react';
+import { ChevronRight, ArrowLeft, Droplets, Factory, ShieldCheck, HeartHandshake, Lightbulb, UserCheck, Settings, Megaphone, Globe } from 'lucide-react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import { Link } from 'react-router-dom';
