@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Play, ArrowRight, ArrowLeft, Volume2, VolumeX, History, Target, Factory } from 'lucide-react';
+import { Play, ArrowRight, ArrowLeft, Volume2, VolumeX, Droplets, Layers, Cpu } from 'lucide-react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
@@ -32,9 +32,9 @@ const PRODUCTS = [
 ];
 
 const CATEGORIES = [
-  { id: 'Washing Technology', name: 'Washing Technology', icon: Factory, color: 'bg-blue-500' },
-  { id: 'Flatwork', name: 'Flatwork', icon: Target, color: 'bg-indigo-500' },
-  { id: 'Data Information Systems', name: 'Data Information Systems', icon: History, color: 'bg-sky-500' }
+  { id: 'Washing Technology', name: 'Washing Technology', icon: Droplets, color: 'bg-gradient-to-br from-[#00509B] to-[#003A70]' },
+  { id: 'Flatwork', name: 'Flatwork', icon: Layers, color: 'bg-gradient-to-br from-[#003A70] to-[#002B50]' },
+  { id: 'Data Information Systems', name: 'Data Information Systems', icon: Cpu, color: 'bg-gradient-to-br from-[#002B50] to-[#001F3F]' }
 ];
 
 const TIMELINE = [
@@ -212,14 +212,15 @@ export default function Kannegiesser() {
               return (
                 <div key={cat.id} className="flex flex-col">
                   {/* Category Header */}
-                  <div className={`w-full p-8 rounded-t-3xl ${cat.color} text-white flex flex-col items-center text-center shadow-md relative overflow-hidden`}>
-                    <div className="absolute inset-0 bg-black/10 opacity-0 hover:opacity-100 transition-opacity" />
-                    <cat.icon className="w-12 h-12 mb-4 drop-shadow-md" />
-                    <h3 className="text-2xl font-bold">{cat.name}</h3>
+                  <div className={`w-full p-8 rounded-t-xl ${cat.color} text-white flex flex-col items-center text-center shadow-md relative overflow-hidden group/header`}>
+                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover/header:opacity-100 transition-opacity duration-500" />
+                    <cat.icon className="w-12 h-12 mb-5 opacity-90 stroke-[1.2] transition-transform duration-500 group-hover/header:scale-110" />
+                    <h3 className="text-xl font-bold tracking-wide uppercase text-white/95">{cat.name}</h3>
+                    <div className="w-12 h-1 bg-white/20 mt-4 rounded-full" />
                   </div>
 
                   {/* Category Products */}
-                  <div className="flex-1 bg-slate-50 border border-t-0 border-slate-200 rounded-b-3xl p-6 flex flex-col gap-4">
+                  <div className="flex-1 bg-slate-50 border border-t-0 border-slate-200 rounded-b-xl p-6 flex flex-col gap-4">
                     {catProducts.map(product => (
                       <Link 
                         key={product.id}
