@@ -4,7 +4,6 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import TurnkeyProcess from '../components/TurnkeyProcess';
 import MissionSection from '../components/MissionSection';
-import heroBg from '../assets/about-hero-collage.jpg';
 
 /* ─────────────────────────────────────────────
    Letter-by-letter stagger helper
@@ -134,14 +133,7 @@ export default function About() {
           SECTION 1 — HERO
       ══════════════════════════════════════════ */}
       <section className="relative w-full pt-44 pb-20 px-6 lg:px-12 flex flex-col items-center overflow-hidden">
-        {/* Background Image Collage */}
         <div className="absolute inset-0 z-0 bg-[#fafafa]">
-          <img 
-            src={heroBg} 
-            alt="Promac Industrial Laundry Machinery Collage" 
-            className="w-full h-full object-cover object-bottom opacity-100 mix-blend-multiply"
-          />
-          {/* Gradient overlay to ensure text readability */}
           <div className="absolute inset-0 bg-gradient-to-b from-[#fafafa]/80 via-[#fafafa]/40 to-[#fafafa]" />
         </div>
 
@@ -160,22 +152,17 @@ export default function About() {
 
           {/* Staggered hero headline */}
           <h1
-            className="text-5xl md:text-8xl font-black text-[#0a0a0a] tracking-tighter mb-8 leading-[0.95] relative overflow-hidden"
-            aria-label="BEYOND EQUIPMENT. PURE PERFORMANCE."
+            className="text-5xl md:text-7xl lg:text-8xl font-black text-[#0a0a0a] tracking-tighter mb-8 leading-[0.95] relative overflow-hidden"
+            aria-label="EVERY CLEANING CHALLENGE. ONE SOLUTION."
           >
             <div className="block">
-              <SplitText text="BEYOND " className="inline" baseDelay={0.1} />
-              <SplitText
-                text="EQUIPMENT."
-                className="inline text-[#0B4F8A]"
-                baseDelay={0.1 + 'BEYOND '.length * 0.03}
-              />
+              <SplitText text="EVERY CLEANING CHALLENGE. " className="inline" baseDelay={0.1} />
             </div>
-            <div className="block">
+            <div className="block mt-2">
               <SplitText
-                text="PURE PERFORMANCE."
+                text="ONE SOLUTION."
                 className="inline text-[#E31E24]"
-                baseDelay={0.1 + 'BEYOND EQUIPMENT.'.length * 0.03}
+                baseDelay={0.1 + 'EVERY CLEANING CHALLENGE. '.length * 0.03}
               />
             </div>
           </h1>
