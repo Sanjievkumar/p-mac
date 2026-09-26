@@ -121,7 +121,7 @@ export default function EcosystemSection() {
                 <div className="w-10 h-[1px] bg-[#E31E24]" />
               </motion.div>
 
-              <h2 className="text-5xl md:text-6xl lg:text-[64px] text-[#001F3F] leading-[1.05] tracking-tight mb-8">
+              <h2 className="text-4xl md:text-6xl lg:text-[64px] text-[#001F3F] leading-[1.05] tracking-tight mb-8">
                 <motion.div custom={1} variants={textVariants} className="font-display font-bold text-[#001F3F]">One Partner.</motion.div>
                 <motion.div custom={2} variants={textVariants} className="font-display font-bold text-[#E31E24]">Every Aspect.</motion.div>
                 <motion.div custom={3} variants={textVariants} className="font-display font-normal italic text-[#001F3F] mt-2">Complete Confidence.</motion.div>

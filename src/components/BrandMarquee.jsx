@@ -118,8 +118,8 @@ export default function BrandMarquee() {
         </div>
         
         {/* Soft edge masks to conceal spawning elements gracefully */}
-        <div className="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-white via-white/80 to-transparent pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-white via-white/80 to-transparent pointer-events-none" />
+        <div className="absolute inset-y-0 left-0 w-16 md:w-40 bg-gradient-to-r from-white via-white/80 to-transparent pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-16 md:w-40 bg-gradient-to-l from-white via-white/80 to-transparent pointer-events-none" />
       </div>
 
     </section>
