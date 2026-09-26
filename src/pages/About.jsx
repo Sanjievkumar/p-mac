@@ -156,8 +156,21 @@ export default function About() {
           SECTION 1 — HERO
       ══════════════════════════════════════════ */}
       <section className="relative w-full pt-44 pb-20 px-6 lg:px-12 flex flex-col items-center overflow-hidden">
-        <div className="absolute inset-0 z-0 bg-[#fafafa]">
-          <div className="absolute inset-0 bg-gradient-to-b from-[#fafafa]/80 via-[#fafafa]/40 to-[#fafafa]" />
+        <div className="absolute inset-0 z-0 bg-[#fafafa] overflow-hidden">
+          {/* Subtle Animated Grid */}
+          <div
+            className="absolute inset-0 pointer-events-none opacity-[0.04] animate-grid"
+            style={{
+              backgroundImage: 'linear-gradient(#1e293b 1px, transparent 1px), linear-gradient(90deg, #1e293b 1px, transparent 1px)',
+              backgroundSize: '40px 40px',
+            }}
+          />
+          {/* Radial mask to fade grid at edges */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#fafafa_100%)]" />
+          
+          {/* Subtle glowing brand accents */}
+          <div className="absolute top-[10%] left-[10%] w-[400px] h-[400px] bg-[#E31E24]/[0.025] rounded-full blur-[80px]" />
+          <div className="absolute bottom-[10%] right-[10%] w-[500px] h-[500px] bg-[#0B4F8A]/[0.03] rounded-full blur-[100px]" />
         </div>
 
         <div className="max-w-[1100px] w-full text-center mb-20 relative z-10">
