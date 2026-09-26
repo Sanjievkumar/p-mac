@@ -9,23 +9,46 @@ import MissionSection from '../components/MissionSection';
    Letter-by-letter stagger helper
 ───────────────────────────────────────────── */
 function SplitText({ text, className, staggerDelay = 0.03, baseDelay = 0 }) {
+  const chars = text.split('');
+  const words = [];
+  chars.forEach((c, i) => {
+    if (c === ' ') {
+      words.push({ type: 'space', char: '\u00A0', globalIndex: i });
+    } else {
+      if (words.length === 0 || words[words.length - 1].type === 'space') {
+        words.push({ type: 'word', chars: [{ char: c, globalIndex: i }] });
+      } else {
+        words[words.length - 1].chars.push({ char: c, globalIndex: i });
+      }
+    }
+  });
+
   return (
     <span className={className} aria-label={text}>
-      {text.split('').map((char, i) => (
-        <motion.span
-          key={i}
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.5,
-            delay: baseDelay + i * staggerDelay,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          style={{ display: char === ' ' ? 'inline' : 'inline-block' }}
-        >
-          {char === ' ' ? '\u00A0' : char}
-        </motion.span>
-      ))}
+      {words.map((item, idx) => {
+        if (item.type === 'space') {
+          return <span key={idx} className="inline">&nbsp;</span>;
+        }
+        return (
+          <span key={idx} className="inline-block whitespace-nowrap">
+            {item.chars.map((c) => (
+              <motion.span
+                key={c.globalIndex}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.5,
+                  delay: baseDelay + c.globalIndex * staggerDelay,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="inline-block"
+              >
+                {c.char}
+              </motion.span>
+            ))}
+          </span>
+        );
+      })}
     </span>
   );
 }
