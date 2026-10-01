@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import BrandEcosystemBackground from '../components/BrandEcosystemBackground';
+import BrandsHero from '../components/BrandsHero';
 
 
 import sealionLogo from '../assets/brands/sealion.png';
