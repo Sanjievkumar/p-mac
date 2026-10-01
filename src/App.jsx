@@ -6,6 +6,7 @@ import Brands from './pages/Brands';
 import Consultancy from './pages/Consultancy';
 import Contact from './pages/Contact';
 import Services from './pages/Services';
+import ProParts from './pages/ProParts';
 import Kannegiesser from './pages/brands/Kannegiesser';
 import KannegiesserProduct from './pages/brands/KannegiesserProduct';
 import SeaLion from './pages/brands/SeaLion';
@@ -38,6 +39,7 @@ function App() {
           <Route path="/consultancy" element={<Consultancy />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/pro-parts" element={<ProParts />} />
         
           <Route path="/brands/imesa" element={<Imesa />} />
           <Route path="/brands/imesa/:id" element={<ImesaProduct />} />
