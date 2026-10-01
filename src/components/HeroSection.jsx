@@ -17,7 +17,7 @@ export default function HeroSection() {
       
       {/* Gradient Overlay for text readability on smaller screens */}
       <div className="absolute inset-0 bg-white/60 lg:hidden pointer-events-none z-0" />
-      <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/70 lg:to-transparent lg:w-[65%] pointer-events-none mix-blend-normal z-0" />
+      <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/70 lg:to-transparent lg:w-[75%] pointer-events-none mix-blend-normal z-0" />
 
       {/* Main Hero Content */}
       <div className="absolute inset-0 z-10 w-full flex flex-col pb-0 lg:pb-[88px]">
@@ -37,7 +37,7 @@ export default function HeroSection() {
               BUILT FOR THE FUTURE.
             </h1>
             
-            <p className="text-slate-600 text-base md:text-lg lg:text-xl font-medium leading-relaxed mb-8 md:mb-10 max-w-lg">
+            <p className="text-slate-600 text-base md:text-lg lg:text-xl font-medium leading-relaxed mb-8 md:mb-10 max-w-[420px]">
               Advanced laundry and garment care solutions built on trust, innovation and global partnerships.
             </p>
             

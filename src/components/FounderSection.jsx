@@ -13,7 +13,7 @@ export default function FounderSection() {
       
       {/* Gradient Overlay for text readability on smaller screens */}
       <div className="absolute inset-0 bg-white/60 lg:hidden pointer-events-none z-0" />
-      <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/70 lg:to-transparent lg:w-[65%] pointer-events-none mix-blend-normal z-0" />
+      <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/70 lg:to-transparent lg:w-[75%] pointer-events-none mix-blend-normal z-0" />
 
       {/* Main Content */}
       <div className="relative z-10 w-full flex flex-col">
@@ -34,7 +34,7 @@ export default function FounderSection() {
               <span className="text-[#CC141A] italic font-serif tracking-normal">Always.</span>
             </h2>
             
-            <div className="text-slate-600 text-sm md:text-base font-medium leading-relaxed max-w-lg space-y-5">
+            <div className="text-slate-600 text-sm md:text-base font-medium leading-relaxed max-w-[460px] space-y-5">
               <p>
                 At Promac Technologies, our journey has always been about solving real challenges with practical, reliable and future-ready solutions. We believe in engineering excellence, long-term partnerships, and creating value that lasts.
               </p>
