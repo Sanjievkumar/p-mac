@@ -250,27 +250,30 @@ export default function Brands() {
 
       {/* ── Hero Banner ── */}
       <section className="relative pt-40 pb-20 px-6 bg-[#001F3F] overflow-hidden text-center">
-        {/* Floating Brand Logos Background */}
+        {/* Bubble Shaped Floating Logos Background */}
         <div className="absolute inset-0 z-0 overflow-hidden bg-[#001F3F]">
+          {/* Subtle gradient orb in center */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-[#E31E24]/10 rounded-full blur-[100px] pointer-events-none" />
+          
           {[
-            { img: kannegiesserLogo, w: 200, top: '10%', left: '5%', dur: 25, delay: 0 },
-            { img: sealionLogo, w: 120, top: '65%', left: '10%', dur: 35, delay: 2 },
-            { img: imesaLogo, w: 100, top: '30%', left: '80%', dur: 28, delay: 1 },
-            { img: maestrelliLogo, w: 130, top: '75%', left: '80%', dur: 32, delay: 3 },
-            { img: maxipressLogo, w: 140, top: '25%', left: '40%', dur: 40, delay: 4 },
-            { img: kannegiesserLogo, w: 160, top: '80%', left: '35%', dur: 30, delay: 5 },
-            { img: sealionLogo, w: 90, top: '15%', left: '60%', dur: 20, delay: 6 },
-            { img: imesaLogo, w: 80, top: '10%', left: '35%', dur: 22, delay: 2.5 },
-            { img: maxipressLogo, w: 110, top: '55%', left: '60%', dur: 38, delay: 1.5 },
+            { img: kannegiesserLogo, size: 220, top: '15%', left: '8%', dur: 25, delay: 0 },
+            { img: sealionLogo, size: 160, top: '65%', left: '12%', dur: 35, delay: 2 },
+            { img: imesaLogo, size: 140, top: '25%', left: '75%', dur: 28, delay: 1 },
+            { img: maestrelliLogo, size: 180, top: '70%', left: '80%', dur: 32, delay: 3 },
+            { img: maxipressLogo, size: 190, top: '35%', left: '35%', dur: 40, delay: 4 },
+            { img: kannegiesserLogo, size: 140, top: '80%', left: '40%', dur: 30, delay: 5 },
+            { img: sealionLogo, size: 120, top: '10%', left: '55%', dur: 20, delay: 6 },
+            { img: imesaLogo, size: 100, top: '15%', left: '30%', dur: 22, delay: 2.5 },
+            { img: maxipressLogo, size: 150, top: '55%', left: '60%', dur: 38, delay: 1.5 },
           ].map((item, idx) => (
             <motion.div
               key={idx}
-              className="absolute opacity-[0.08]"
-              style={{ top: item.top, left: item.left }}
+              className="absolute flex items-center justify-center rounded-full bg-white/[0.03] border border-white/[0.05] backdrop-blur-[2px] shadow-[0_8px_32px_rgba(0,0,0,0.2)]"
+              style={{ top: item.top, left: item.left, width: item.size, height: item.size }}
               animate={{ 
-                y: [0, -30, 0], 
-                x: [0, 20, 0],
-                rotate: [0, 5, -5, 0]
+                y: [0, -40, 0], 
+                x: [0, 25, 0],
+                rotate: [0, 10, -10, 0]
               }}
               transition={{ 
                 duration: item.dur, 
@@ -282,12 +285,11 @@ export default function Brands() {
               <img 
                 src={item.img} 
                 alt="bg-logo" 
-                style={{ width: item.w, height: 'auto' }} 
-                className="filter grayscale invert opacity-20 mix-blend-screen" 
+                className="w-[65%] h-[65%] object-contain filter grayscale invert opacity-50 mix-blend-screen" 
               />
             </motion.div>
           ))}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#001F3F]/40 to-[#001F3F]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#001F3F]/60 to-[#001F3F]" />
         </div>
 
         {/* Animated Blueprint Grid */}
