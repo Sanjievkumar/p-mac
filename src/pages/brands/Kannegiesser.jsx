@@ -8,7 +8,7 @@ import Footer from '../../components/Footer';
 // Asset Imports
 import kannegiesserLogo from '../../assets/brands/kannegiesser.png';
 import kannegiesserVideo from '../../assets/brands/kannegiesser-hero.mp4';
-import buildingBg from '../../assets/brands/kannegiesser/kannegiesser_actual_factory.jpg';
+import buildingBg from '../../assets/brands/kannegiesser/kannegiesser_factory_new.jpg';
 
 const PRODUCTS = [
   // Washing Technology
