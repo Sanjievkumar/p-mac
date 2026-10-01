@@ -1,13 +1,13 @@
 import React, { useRef, useState, useCallback } from 'react';
-import { motion, useAnimationControls, animate } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import TurnkeyProcess from '../components/TurnkeyProcess';
 import MissionSection from '../components/MissionSection';
 
-/* ─────────────────────────────────────────────
+/* ============================================================================
    Letter-by-letter stagger helper
-───────────────────────────────────────────── */
+============================================================================ */
 function SplitText({ text, className, staggerDelay = 0.03, baseDelay = 0 }) {
   const chars = text.split('');
   const words = [];
@@ -53,61 +53,9 @@ function SplitText({ text, className, staggerDelay = 0.03, baseDelay = 0 }) {
   );
 }
 
-/* ─────────────────────────────────────────────
-   Magnetic tilt card
-───────────────────────────────────────────── */
-function MagneticCard({ children, className = '', glowRed = false }) {
-  const ref = useRef(null);
-  const [transform, setTransform] = useState({ rotateX: 0, rotateY: 0, scale: 1 });
-  const [glowPos, setGlowPos] = useState({ x: 50, y: 50 });
-
-  const handleMouseMove = useCallback((e) => {
-    const rect = ref.current.getBoundingClientRect();
-    const cx = rect.left + rect.width / 2;
-    const cy = rect.top + rect.height / 2;
-    const dx = (e.clientX - cx) / (rect.width / 2);
-    const dy = (e.clientY - cy) / (rect.height / 2);
-    setTransform({ rotateX: -dy * 7, rotateY: dx * 7, scale: 1.05 });
-    if (glowRed) {
-      const px = ((e.clientX - rect.left) / rect.width) * 100;
-      const py = ((e.clientY - rect.top) / rect.height) * 100;
-      setGlowPos({ x: px, y: py });
-    }
-  }, [glowRed]);
-
-  const handleMouseLeave = useCallback(() => {
-    setTransform({ rotateX: 0, rotateY: 0, scale: 1 });
-    setGlowPos({ x: 50, y: 50 });
-  }, []);
-
-  return (
-    <div
-      ref={ref}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{
-        transform: `perspective(800px) rotateX(${transform.rotateX}deg) rotateY(${transform.rotateY}deg) scale(${transform.scale})`,
-        transition: 'transform 0.15s ease-out',
-      }}
-      className={className}
-    >
-      {glowRed && (
-        <div
-          className="absolute inset-0 rounded-3xl pointer-events-none z-0 transition-all duration-75"
-          style={{
-            background: `radial-gradient(circle at ${glowPos.x}% ${glowPos.y}%, rgba(212,43,43,0.18) 0%, transparent 70%)`,
-          }}
-          aria-hidden="true"
-        />
-      )}
-      {children}
-    </div>
-  );
-}
-
-/* ─────────────────────────────────────────────
+/* ============================================================================
    Pulsing icon wrapper
-───────────────────────────────────────────── */
+============================================================================ */
 function PulseIcon({ children }) {
   return (
     <motion.div
@@ -120,31 +68,46 @@ function PulseIcon({ children }) {
   );
 }
 
-/* ─────────────────────────────────────────────
+/* ============================================================================
    Main Page
-───────────────────────────────────────────── */
+============================================================================ */
 export default function About() {
-  const pillars = [
+  const coreStrengths = [
     {
       id: '01',
-      title: 'Global Expertise',
-      desc: 'Bridging the gap between international innovation and Indian industrial requirements with curated technology.',
-      icon: '🌐',
-      float: '-translate-y-2',
+      title: 'Turnkey Laundry Engineering',
+      desc: 'End-to-end project execution — from feasibility study and plant layout design to installation, commissioning, and operator training — engineered for productivity, scalability, and long-term stability.',
+      icon: '⚙️',
     },
     {
       id: '02',
-      title: 'Lifecycle Support',
-      desc: 'From initial blueprint to daily maintenance, we ensure your operations never face a moment of downtime.',
-      icon: '⚙️',
-      float: 'translate-y-3',
+      title: 'Exclusive International Technology Access',
+      desc: 'Direct representation of globally respected manufacturers ensures authentic systems, genuine spare parts, and factory-backed technical support.',
+      icon: '🌍',
     },
     {
       id: '03',
-      title: 'Operational ROI',
-      desc: 'Engineering solutions that maximize output while minimizing resource consumption and overhead costs.',
-      icon: '📈',
-      float: '-translate-y-1',
+      title: 'Large-Scale Institutional Expertise',
+      desc: 'Demonstrated capability in high-capacity railway laundries, centralized hospital laundries, hospitality groups, and institutional processing plants where uptime and output are critical.',
+      icon: '🏗️',
+    },
+    {
+      id: '04',
+      title: 'Technical Depth & Lifecycle Support',
+      desc: 'Experienced service engineers ensure preventive maintenance planning, rapid breakdown response, warranty coordination, and sustained performance optimization.',
+      icon: '🔧',
+    },
+    {
+      id: '05',
+      title: 'National Reach with Structured Service Network',
+      desc: 'Pan-India operational capability enabling fast deployment, technical coordination, and reliable after-sales support.',
+      icon: '🗺️',
+    },
+    {
+      id: '06',
+      title: 'Performance-Oriented Engineering Approach',
+      desc: 'With global technology partners, specialised expertise and end-to-end project capability, we deliver complete laundry systems designed around real operational needs.',
+      icon: '⚡',
     },
   ];
 
@@ -152,9 +115,9 @@ export default function About() {
     <div className="w-full min-h-screen bg-[#fafafa] font-display flex flex-col">
       <Navbar />
 
-      {/* ══════════════════════════════════════════
+      {/* ============================================================================
           SECTION 1 — HERO
-      ══════════════════════════════════════════ */}
+      ============================================================================ */}
       <section className="relative w-full pt-44 pb-20 px-6 lg:px-12 flex flex-col items-center overflow-hidden">
         <div className="absolute inset-0 z-0 bg-[#fafafa] overflow-hidden">
           {/* Subtle Animated Grid */}
@@ -214,8 +177,55 @@ export default function About() {
         </div>
       </section>
 
-      {/* ── Glass Content Console ── */}
-      <section className="relative w-full px-6 lg:px-12 flex flex-col items-center bg-[#fafafa] pb-32 pt-10 overflow-hidden">
+      {/* ============================================================================
+          SECTION 2 — ABOUT PROMAC
+      ============================================================================ */}
+      <section className="relative w-full px-6 lg:px-12 py-24 flex flex-col items-center bg-white border-y border-gray-100">
+        <div className="max-w-[900px] w-full relative z-10">
+          <div className="mb-16">
+            <h2 className="text-4xl md:text-5xl font-black text-[#0a0a0a] tracking-tighter mb-6 uppercase border-l-4 border-[#E31E24] pl-6">
+              About <span className="text-[#E31E24]">Promac</span>
+            </h2>
+          </div>
+          
+          <div className="space-y-6 text-slate-700 text-lg leading-relaxed font-medium">
+            <p className="text-xl md:text-2xl font-bold text-[#001F3F] leading-tight mb-8">
+              At Promac Technologies Pvt. Ltd., machines are not merely supplied — systems are engineered, performance is optimized, and long-term operational reliability is built into every solution.
+            </p>
+            <p>
+              Established in 2022, Promac is built on more than 15 years of industry experience in industrial laundry engineering, dry-cleaning technology and professional cleaning systems. The company brings together seasoned technical expertise, project execution capability and established industry relationships under one focused, project-driven organization.
+            </p>
+            <p>
+              With a deep understanding of India’s institutional and high-capacity laundry landscape, Promac combines proven international technologies with strong local execution expertise to develop solutions suited to demanding operating environments.
+            </p>
+            <p>
+              These strategic partnerships enable Promac to deliver advanced laundry solutions across Indian Railways, star-category hospitality, healthcare institutions, commercial laundries and facility management sectors.
+            </p>
+            <p>
+              Though incorporated in 2022, Promac's leadership and technical team bring more than 15 years of hands-on project experience, covering plant planning, equipment selection, high-capacity system integration, installation, commissioning, automation coordination and lifecycle service management across India.
+            </p>
+            <p>
+              Promac operates beyond the conventional equipment-supply model. We work as a solution and project partner — focusing on throughput, resource efficiency, automation, reliability and measurable operational performance.
+            </p>
+            
+            <div className="mt-12 bg-[#fafafa] p-8 rounded-2xl border border-gray-200 shadow-sm">
+              <p className="font-bold text-[#001F3F] mb-6">As exclusive partners in India, Promac represents internationally respected manufacturers including:</p>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <li className="flex items-center gap-3"><div className="w-2 h-2 bg-[#E31E24] rounded-full"/> <span className="font-bold text-gray-900">Kannegiesser</span> <span className="text-gray-500">— Germany</span></li>
+                <li className="flex items-center gap-3"><div className="w-2 h-2 bg-[#E31E24] rounded-full"/> <span className="font-bold text-gray-900">Sea-Lion</span> <span className="text-gray-500">— China</span></li>
+                <li className="flex items-center gap-3"><div className="w-2 h-2 bg-[#E31E24] rounded-full"/> <span className="font-bold text-gray-900">Maestrelli</span> <span className="text-gray-500">— Italy</span></li>
+                <li className="flex items-center gap-3"><div className="w-2 h-2 bg-[#E31E24] rounded-full"/> <span className="font-bold text-gray-900">Maxi Press</span> <span className="text-gray-500">— USA</span></li>
+                <li className="flex items-center gap-3"><div className="w-2 h-2 bg-[#E31E24] rounded-full"/> <span className="font-bold text-gray-900">Andrew Industries</span> <span className="text-gray-500">— UK</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================================
+          SECTION 3 — CORE STRENGTHS
+      ============================================================================ */}
+      <section className="relative w-full px-6 lg:px-12 flex flex-col items-center bg-[#fafafa] py-32 overflow-hidden">
         {/* Mild Blue Blueprint Grid Watermark */}
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.15] animate-grid"
@@ -226,109 +236,77 @@ export default function About() {
           }}
           aria-hidden="true"
         />
-        <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: 'easeOut', delay: 0.4 }}
-          className="relative max-w-[1200px] w-full rounded-[40px] overflow-visible shadow-2xl mb-32 border border-white/60 bg-white/40 backdrop-blur-2xl p-12 md:p-20 z-10"
-        >
-          <div className="grid md:grid-cols-2 gap-16 items-stretch">
-            {/* Left: Expertise */}
-            <MagneticCard className="h-full flex flex-col justify-start relative bg-[#001F3F] hover:bg-white rounded-3xl p-10 text-white overflow-hidden group shadow-lg hover:shadow-2xl transition-colors duration-500 border border-white/10 hover:border-gray-200">
-              {/* shimmer border via pseudo-gradient overlay */}
-              <div
-                className="absolute inset-0 rounded-3xl pointer-events-none z-0 opacity-100 group-hover:opacity-0 transition-opacity duration-500"
-                style={{
-                  background:
-                    'linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%, rgba(255,255,255,0.05) 100%)',
-                }}
-                aria-hidden="true"
-              />
-              <div className="relative z-10 space-y-6">
-                <h3 className="text-3xl md:text-4xl font-black tracking-tighter text-[#E31E24] transition-colors duration-500">
-                  Our Vision
-                </h3>
-                <p className="text-white/90 group-hover:text-[#001F3F]/90 text-xl md:text-2xl leading-relaxed transition-colors duration-500">
-                  We envision a future where every hospitality, healthcare, and commercial laundry facility across India operates through globally advanced systems, seamless automation, and service-driven engineering excellence — transforming laundry operations from a utility into a strategic operational advantage.
-                </p>
-              </div>
-            </MagneticCard>
-
-            {/* Right: Mission */}
-            <MagneticCard
-              className="h-full flex flex-col justify-start relative bg-[#001F3F] hover:bg-white rounded-3xl p-10 text-white overflow-hidden group shadow-lg hover:shadow-2xl transition-colors duration-500 border border-white/10 hover:border-gray-200"
-            >
-              {/* Shimmer */}
-              <div
-                className="absolute inset-0 rounded-3xl pointer-events-none z-0 opacity-100 group-hover:opacity-0 transition-opacity duration-500"
-                style={{
-                  background:
-                    'linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%, rgba(255,255,255,0.05) 100%)',
-                }}
-                aria-hidden="true"
-              />
-              {/* Decorative crosshair */}
-              <div className="absolute top-0 right-0 p-8 opacity-20 transition-transform duration-700 group-hover:scale-150 z-0" aria-hidden="true">
-                <svg className="w-32 h-32 stroke-white group-hover:stroke-[#E31E24] transition-colors duration-500" viewBox="0 0 100 100" fill="none">
-                  <circle cx="50" cy="50" r="40" strokeWidth="0.5" />
-                  <path d="M50 10V90M10 50H90" strokeWidth="0.5" />
-                </svg>
-              </div>
-              <div className="relative z-10 space-y-6">
-                <h3 className="text-3xl md:text-4xl font-black tracking-tighter text-white group-hover:text-[#001F3F] transition-colors duration-500">Our Mission</h3>
-                <p className="text-white/90 group-hover:text-[#001F3F]/90 leading-relaxed text-xl md:text-2xl transition-colors duration-500">
-                  To empower the hospitality and healthcare sectors with sustainable, high-efficiency laundry technologies that redefine operational excellence across India.
-                </p>
-              </div>
-            </MagneticCard>
-          </div>
-        </motion.div>
-
-        {/* ══════════════════════════════════════════
-            SECTION 2 — CORE PILLARS
-        ══════════════════════════════════════════ */}
-        <div className="max-w-[1100px] w-full mx-auto relative z-10">
+        
+        <div className="max-w-[1200px] w-full mx-auto relative z-10">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-6xl font-black text-[#0a0a0a] tracking-tighter mb-6 uppercase">
-              The Promac <span className="text-[#E31E24]">Pillars.</span>
+              Core <span className="text-[#E31E24]">Strengths.</span>
             </h2>
-            <p className="text-slate-600 text-lg max-w-xl mx-auto leading-relaxed">
-              Our foundation is built on three core principles that drive every project we undertake.
+            <p className="text-slate-600 text-lg max-w-xl mx-auto leading-relaxed font-medium">
+              The foundational capabilities that set Promac apart as a leader in industrial laundry engineering.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 items-start">
-            {pillars.map((pillar, idx) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch mb-20">
+            {coreStrengths.map((strength, idx) => (
               <motion.div
-                key={pillar.id}
+                key={strength.id}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.18, duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-                /* Floating offset per card */
-                className={`${pillar.float} p-10 rounded-[32px]
-                  bg-white/40 backdrop-blur-md
-                  border border-white/70
-                  shadow-[0_8px_40px_rgba(0,0,0,0.07)]
-                  hover:shadow-[0_20px_60px_rgba(0,0,0,0.13)]
-                  hover:border-[#E31E24]/20
-                  transition-all duration-500 group cursor-pointer`}
+                transition={{ delay: idx * 0.1, duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+                className="p-8 md:p-10 rounded-[32px]
+                  bg-white/70 backdrop-blur-md
+                  border border-white
+                  shadow-[0_8px_30px_rgba(0,0,0,0.04)]
+                  hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)]
+                  hover:border-[#E31E24]/30
+                  transition-all duration-500 group flex flex-col h-full"
               >
-                <PulseIcon>{pillar.icon}</PulseIcon>
-                <span className="text-[#E31E24] font-bold text-[10px] tracking-widest mb-4 block">{pillar.id}</span>
-                <h3 className="text-2xl font-black text-[#0a0a0a] mb-4 tracking-tighter">{pillar.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{pillar.desc}</p>
+                <div className="mb-6">
+                  <PulseIcon>{strength.icon}</PulseIcon>
+                </div>
+                <span className="text-[#E31E24] font-bold text-[10px] tracking-widest mb-3 block">{strength.id}</span>
+                <h3 className="text-xl md:text-2xl font-black text-[#001F3F] mb-4 tracking-tight leading-tight">{strength.title}</h3>
+                <p className="text-slate-600 text-sm md:text-base leading-relaxed font-medium flex-grow">{strength.desc}</p>
               </motion.div>
             ))}
           </div>
+          
+          {/* Summary Banner */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="w-full bg-[#001F3F] rounded-[32px] p-10 md:p-16 text-center text-white shadow-2xl relative overflow-hidden"
+          >
+            <div
+              className="absolute inset-0 pointer-events-none opacity-20"
+              style={{
+                background: 'linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%, rgba(255,255,255,0.05) 100%)',
+              }}
+            />
+            <h3 className="text-2xl md:text-4xl font-black tracking-wider text-white leading-tight mb-8">
+              GLOBAL TECHNOLOGY.<br className="md:hidden"/>
+              <span className="text-[#E31E24]"> LOCAL INTELLIGENCE.</span><br/>
+              COMPLETE LAUNDRY SOLUTIONS.
+            </h3>
+            <p className="text-white/80 text-lg md:text-xl max-w-3xl mx-auto font-medium">
+              With global technology partners, specialised expertise and end-to-end project capability, we deliver complete laundry systems designed around real operational needs.
+            </p>
+          </motion.div>
         </div>
       </section>
 
-      {/* ── SECTION 4: TURNKEY PROCESS ── */}
+      {/* ============================================================================
+          SECTION 4: TURNKEY PROCESS
+      ============================================================================ */}
       <TurnkeyProcess />
 
-      {/* ── SECTION 5: MISSION ── */}
+      {/* ============================================================================
+          SECTION 5: MISSION
+      ============================================================================ */}
       <MissionSection />
 
       <Footer />

@@ -69,9 +69,9 @@ export default function MissionSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-[#E31E24] text-[10px] font-bold tracking-[0.5em] uppercase mb-8"
+            className="text-white text-[11px] font-bold tracking-[0.5em] uppercase mb-8"
           >
-            Our Purpose
+            OUR PURPOSE
           </motion.p>
 
           {/* ── Main Quote ── */}
@@ -82,7 +82,7 @@ export default function MissionSection() {
             transition={{ duration: 0.75, delay: 0.32 }}
             className="text-white text-4xl md:text-5xl font-bold italic leading-tight"
           >
-            "Our mission is to bridge the gap between industrial necessity and technological elegance."
+            "To transform complex laundry requirements into efficient, reliable, and scalable operations."
           </motion.p>
 
           {/* ── Decorative divider ── */}
@@ -100,9 +100,9 @@ export default function MissionSection() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="text-white/50 text-[11px] font-semibold tracking-[0.4em] uppercase"
+            className="text-white text-[11px] font-bold tracking-[0.4em] uppercase"
           >
-            Promac Technologies &mdash; Est.&nbsp;2010
+            PROMAC TECHNOLOGIES &mdash; ESTD 2022.
           </motion.p>
         </motion.div>
       </div>
