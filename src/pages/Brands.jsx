@@ -10,6 +10,10 @@ import maestrelliLogo from '../assets/brands/maestrelli.png';
 import maxipressLogo from '../assets/brands/maxipress.png';
 import kannegiesserLogo from '../assets/brands/kannegiesser.png';
 import imesaLogo from '../assets/brands/imesa.png';
+import sealionTextLogo from '../assets/brands/sealion-text.png';
+import maestrelliTextLogo from '../assets/brands/maestrelli-text.png';
+import imesaTextLogo from '../assets/brands/imesa-text.png';
+
 import engineeringBg from '../assets/engineering-brands-bg.jpg';
 const customFontStyles = `
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap');
@@ -20,29 +24,10 @@ const customFontStyles = `
    logo → brand logo (white bg, mix-blend-multiply)
 ───────────────────────────────────────────── */
 const BRANDS = [
-    {
-      id: 'imesa',
-      name: 'IMESA',
-      customTitle: (
-        <h2 className="text-4xl md:text-5xl font-black text-[#00A3E0] tracking-tighter mb-6 leading-none">
-          IMESA
-        </h2>
-      ),
-      origin: 'Italy',
-      tagline: 'Custom Solutions and Made in Italy',
-      logo: imesaLogo,
-      desc: 'With 50 years of history, IMESA is a leading Italian manufacturer whose core vocation is washing, drying, and ironing of all types of fabric, designing sustainable laundry solutions that simplify people\'s lives.',
-      products: ['Washing Machines', 'Dryers'],
-    },
-
   {
     id: 'kannegiesser',
     name: 'KANNEGIESSER',
-    customTitle: (
-      <h2 className="text-[2.75rem] md:text-[3.5rem] font-sans font-black italic text-[#0250A0] tracking-tighter mb-6 leading-none" style={{ transform: 'skewX(-8deg)' }}>
-        Kannegiesser
-      </h2>
-    ),
+    nameImg: <img src={kannegiesserLogo} alt="KANNEGIESSER" className="h-10 md:h-14 w-auto object-contain mb-6 mix-blend-multiply" />,
     origin: 'Germany',
     tagline: 'End-to-End Laundry Automation',
     logo: kannegiesserLogo,
@@ -52,11 +37,7 @@ const BRANDS = [
   {
     id: 'sea-lion',
     name: 'SEA-LION',
-    customTitle: (
-      <h2 className="text-4xl md:text-5xl font-black text-[#111111] tracking-tighter mb-6 leading-none" style={{ fontFamily: 'Arial Black, Impact, sans-serif', transform: 'scaleY(1.15) scaleX(1.05)' }}>
-        SEA-LION
-      </h2>
-    ),
+    nameImg: <img src={sealionTextLogo} alt="SEA-LION" className="h-6 md:h-8 w-auto object-contain mb-6 mix-blend-multiply opacity-90" />,
     origin: 'China',
     tagline: 'Industrial Laundry Machines',
     logo: sealionLogo,
@@ -64,13 +45,19 @@ const BRANDS = [
     products: ['Tunnel Washer Systems', 'Washer Extractors', 'Barrier Washers', 'Tumble Dryers', 'Flatwork Ironers'],
   },
   {
+    id: 'imesa',
+    name: 'IMESA',
+    nameImg: <img src={imesaTextLogo} alt="IMESA" className="h-8 md:h-12 w-auto object-contain mb-6 mix-blend-multiply opacity-80" />,
+    origin: 'Italy',
+    tagline: 'Custom Solutions and Made in Italy',
+    logo: imesaLogo,
+    desc: 'With 50 years of history, IMESA is a leading Italian manufacturer whose core vocation is washing, drying, and ironing of all types of fabric, designing sustainable laundry solutions that simplify people\'s lives.',
+    products: ['Washing Machines', 'Dryers'],
+  },
+  {
     id: 'maestrelli',
     name: 'MAESTRELLI',
-    customTitle: (
-      <h2 className="text-3xl md:text-[2.5rem] font-bold text-[#060672] tracking-[0.25em] mb-6 leading-none" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-        MAESTRELLI
-      </h2>
-    ),
+    nameImg: <img src={maestrelliTextLogo} alt="MAESTRELLI" className="h-8 md:h-10 w-auto object-contain mb-6 mix-blend-multiply" />,
     origin: 'Italy',
     tagline: 'Dry Cleaning Systems',
     logo: maestrelliLogo,
@@ -80,16 +67,7 @@ const BRANDS = [
   {
     id: 'maxipress',
     name: 'MAXIPRESS',
-    customTitle: (
-      <div className="mb-6 flex flex-col justify-end">
-        <span className="text-[#808285] text-[10px] md:text-[11px] font-bold tracking-[0.25em] mb-1.5 leading-none" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-          MAXIMUM MAXIBILITY
-        </span>
-        <h2 className="text-4xl md:text-[3.25rem] font-black text-[#D3261C] tracking-tight leading-none" style={{ fontFamily: 'Montserrat, sans-serif', transform: 'scaleY(1.1)' }}>
-          MAXI-PRESS
-        </h2>
-      </div>
-    ),
+    nameImg: <img src={maxipressLogo} alt="MAXIPRESS" className="h-14 md:h-20 w-auto object-contain mb-6 mix-blend-multiply" />,
     origin: 'Spain',
     tagline: 'Garment Finishing Equipment',
     logo: maxipressLogo,
@@ -223,7 +201,7 @@ function BrandRow({ brand, reverse }) {
 
           {/* Logo Physically Cropped to Text Only */}
           {/* Custom Styled Brand Name (HTML/CSS Recreations) */}
-          {brand.customTitle}
+          {brand.nameImg}
 
           {/* Description */}
           <p className="text-slate-600 text-[15px] leading-relaxed mb-8 max-w-[420px]">
