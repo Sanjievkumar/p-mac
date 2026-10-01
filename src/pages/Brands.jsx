@@ -250,7 +250,7 @@ export default function Brands() {
       <Navbar />
 
       {/* ── Hero Banner ── */}
-      <section className="relative pt-40 pb-20 px-6 bg-[#001F3F] overflow-hidden text-center">
+      <section className="relative pt-40 pb-20 px-6 bg-[#050505] overflow-hidden text-center">
         <BrandEcosystemBackground />
 
         {/* Animated Blueprint Grid */}

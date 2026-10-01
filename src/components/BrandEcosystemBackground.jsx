@@ -60,11 +60,11 @@ export default function BrandEcosystemBackground() {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="absolute inset-0 z-0 overflow-hidden bg-[#001F3F]"
+      className="absolute inset-0 z-0 overflow-hidden bg-[#050505]"
     >
       {/* Ambient Lighting / Depth Atmosphere */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#E31E24]/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#0B4F8A]/20 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#E31E24]/20 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute top-[40%] left-[-10%] w-[400px] h-[400px] bg-white/[0.08] rounded-full blur-[80px] pointer-events-none" />
 
       {/* Desktop Bubbles */}
