@@ -98,7 +98,7 @@ export default function MaxiPress() {
             Precision Finishing<br />For Professional Laundries<span className="text-[#E31E24]">.</span>
           </h2>
           
-          <div className="text-slate-600 font-normal text-base md:text-lg leading-relaxed space-y-6 mb-16 text-justify">
+          <div className="text-slate-800 font-medium text-base md:text-lg leading-relaxed space-y-6 mb-16 text-justify">
             <p>
               <span className="text-[#E31E24] font-bold">MAXIPRESS</span> is a leading supplier of laundry pressing in the industry for many decades. MAXIPRESS pressing machines are designed to meet the needs of various industries, such as dry cleaning, laundry, hospitality, and garment manufacturing.
             </p>
