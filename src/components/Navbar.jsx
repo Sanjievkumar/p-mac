@@ -36,10 +36,10 @@ export default function Navbar() {
             : 'bg-[#f5f5f5]'
         }`}
       >
-        <div className="max-w-[1100px] mx-auto px-6 flex items-center justify-between h-[80px]">
+        <div className="max-w-[1400px] mx-auto px-8 lg:px-16 flex items-center justify-between h-[80px]">
           {/* Logo — left side */}
           <Link to="/" className="flex items-center">
-            <img src={promacLogo} alt="Promac Logo" className="h-12 md:h-16 w-auto object-contain cursor-pointer -ml-4 md:-ml-12 lg:-ml-16 origin-left transition-transform hover:scale-105" />
+            <img src={promacLogo} alt="Promac Logo" className="h-12 md:h-16 w-auto object-contain cursor-pointer origin-left transition-transform hover:scale-105" />
           </Link>
 
           {/* Desktop Nav Links */}
