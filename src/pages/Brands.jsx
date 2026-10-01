@@ -13,6 +13,7 @@ import imesaLogo from '../assets/brands/imesa.png';
 import sealionTextLogo from '../assets/brands/sealion-text.png';
 import maestrelliTextLogo from '../assets/brands/maestrelli-text.png';
 import imesaTextLogo from '../assets/brands/imesa-text.png';
+import maxipressTextLogo from '../assets/brands/maxipress-text.png';
 
 import engineeringBg from '../assets/engineering-brands-bg.jpg';
 const customFontStyles = `
@@ -27,7 +28,7 @@ const BRANDS = [
   {
     id: 'kannegiesser',
     name: 'KANNEGIESSER',
-    nameImg: <img src={kannegiesserLogo} alt="KANNEGIESSER" className="h-10 md:h-14 w-auto object-contain mb-6 mix-blend-multiply" />,
+    nameImg: <img src={kannegiesserLogo} alt="KANNEGIESSER" className="h-16 md:h-24 w-auto object-contain object-left mb-6 mix-blend-multiply" />,
     origin: 'Germany',
     tagline: 'End-to-End Laundry Automation',
     logo: kannegiesserLogo,
@@ -37,7 +38,7 @@ const BRANDS = [
   {
     id: 'sea-lion',
     name: 'SEA-LION',
-    nameImg: <img src={sealionTextLogo} alt="SEA-LION" className="h-6 md:h-8 w-auto object-contain mb-6 mix-blend-multiply opacity-90" />,
+    nameImg: <img src={sealionTextLogo} alt="SEA-LION" className="h-10 md:h-16 w-auto object-contain object-left mb-6 mix-blend-multiply opacity-90" />,
     origin: 'China',
     tagline: 'Industrial Laundry Machines',
     logo: sealionLogo,
@@ -47,7 +48,7 @@ const BRANDS = [
   {
     id: 'imesa',
     name: 'IMESA',
-    nameImg: <img src={imesaTextLogo} alt="IMESA" className="h-8 md:h-12 w-auto object-contain mb-6 mix-blend-multiply opacity-80" />,
+    nameImg: <img src={imesaTextLogo} alt="IMESA" className="h-12 md:h-20 w-auto object-contain object-left mb-6 mix-blend-multiply opacity-80" />,
     origin: 'Italy',
     tagline: 'Custom Solutions and Made in Italy',
     logo: imesaLogo,
@@ -57,7 +58,7 @@ const BRANDS = [
   {
     id: 'maestrelli',
     name: 'MAESTRELLI',
-    nameImg: <img src={maestrelliTextLogo} alt="MAESTRELLI" className="h-8 md:h-10 w-auto object-contain mb-6 mix-blend-multiply" />,
+    nameImg: <img src={maestrelliTextLogo} alt="MAESTRELLI" className="h-12 md:h-20 w-auto object-contain object-left mb-6 mix-blend-multiply" />,
     origin: 'Italy',
     tagline: 'Dry Cleaning Systems',
     logo: maestrelliLogo,
@@ -67,7 +68,7 @@ const BRANDS = [
   {
     id: 'maxipress',
     name: 'MAXIPRESS',
-    nameImg: <img src={maxipressLogo} alt="MAXIPRESS" className="h-14 md:h-20 w-auto object-contain mb-6 mix-blend-multiply" />,
+    nameImg: <img src={maxipressTextLogo} alt="MAXIPRESS" className="h-16 md:h-24 w-auto object-contain object-left mb-6 mix-blend-multiply" />,
     origin: 'Spain',
     tagline: 'Garment Finishing Equipment',
     logo: maxipressLogo,
