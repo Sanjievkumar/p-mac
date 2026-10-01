@@ -9,18 +9,12 @@ import maxipressLogo from '../../assets/brands/maxipress.png';
 import maxipressHero from '../../assets/brands/maxipress_hero_actual.jpg';
 import heroBg from '../../assets/brands/kannegiesser/kannegiesser_video_thumbnail_1780671618796.png';
 import buildingBg from '../../assets/brands/sea-lion/sealion_building_1780727375255.png';
-import wf1 from '../../assets/brands/sea-lion/sealion_washer_1780727413794.png';
-import wf2 from '../../assets/brands/sea-lion/sealion_dryer_1780727427054.png';
-import wf3 from '../../assets/brands/kannegiesser/kannegiesser_finishing_1780671087290.png';
-import wf4 from '../../assets/brands/sea-lion/sealion_ironer_1780727455295.png';
-import wf5 from '../../assets/brands/kannegiesser/kannegiesser_washing_1780671064949.png';
-
 const WORKFLOW = [
-  { step: '01', title: 'Pressing', img: wf1 },
-  { step: '02', title: 'Forming', img: wf2 },
-  { step: '03', title: 'Finishing', img: wf3 },
-  { step: '04', title: 'Folding', img: wf4 },
-  { step: '05', title: 'Inspection', img: wf5 }
+  { step: '01', title: 'Spotting', img: 'https://promactech.com/wp-content/uploads/2024/07/MPSB-1024x819.png' },
+  { step: '02', title: 'Collar & Cuff', img: 'https://promactech.com/wp-content/uploads/2024/07/MPCY-1024x819.png' },
+  { step: '03', title: 'Body Pressing', img: 'https://promactech.com/wp-content/uploads/2024/07/MPBBP-1024x819.png' },
+  { step: '04', title: 'Utility Pressing', img: 'https://promactech.com/wp-content/uploads/2024/07/MP51-1024x819.png' },
+  { step: '05', title: 'Form Finishing', img: 'https://promactech.com/wp-content/uploads/2024/07/MPCAFF-FORM-FINISHER-640x640.png' }
 ];
 
 import { PRODUCT_DATA } from './MaxiPressProduct';
