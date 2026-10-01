@@ -221,25 +221,14 @@ export default function About() {
             <p>
               Promac operates beyond the conventional equipment-supply model. We work as a solution and project partner — focusing on throughput, resource efficiency, automation, reliability and measurable operational performance.
             </p>
-            
-            <div className="mt-12 bg-[#001F3F] rounded-[32px] overflow-hidden shadow-2xl relative w-[100vw] left-1/2 -translate-x-1/2 border-y border-white/10">
-              <div className="max-w-[1200px] mx-auto px-6 lg:px-12 pt-16">
-                <div className="text-center mb-12 relative z-10">
-                  <h3 className="text-3xl md:text-5xl font-black text-white tracking-tighter mb-4 uppercase">
-                    Partners Across the <span className="text-[#E31E24]">Globe.</span>
-                  </h3>
-                  <p className="text-white/70 max-w-2xl mx-auto font-medium text-sm md:text-base">
-                    As exclusive partners in India, Promac represents internationally respected manufacturers from across the world.
-                  </p>
-                </div>
-              </div>
-              <div className="w-full h-[500px]">
-                <GlobeSection />
-              </div>
-            </div>
           </div>
         </div>
       </section>
+
+      {/* ============================================================================
+          SECTION 2.5 — GLOBE SECTION (Partners)
+      ============================================================================ */}
+      <GlobeSection />
 
       {/* ============================================================================
           SECTION 3 — CORE STRENGTHS
