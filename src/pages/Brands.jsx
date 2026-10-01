@@ -250,71 +250,8 @@ export default function Brands() {
       <Navbar />
 
       {/* ── Hero Banner ── */}
-      <section className="relative pt-40 pb-20 px-6 bg-[#050505] overflow-hidden text-center">
-        <BrandEcosystemBackground />
+      <BrandsHero />
 
-        {/* Animated Blueprint Grid */}
-        <motion.div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage: 'linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)',
-            backgroundSize: '48px 48px',
-          }}
-          animate={{ 
-            backgroundPosition: ['0px 0px', '48px 48px'],
-            opacity: [0.005, 0.02, 0.005]
-          }}
-          transition={{ 
-            backgroundPosition: { repeat: Infinity, duration: 8, ease: 'linear' },
-            opacity: { repeat: Infinity, duration: 4, ease: 'easeInOut' }
-          }}
-        />
-        {/* Ambient glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[#E31E24]/10 rounded-full blur-[120px] pointer-events-none" />
-
-        <div className="relative z-10 max-w-[800px] mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="inline-flex items-center gap-3 mb-6 animate-pulse"
-          >
-            <div className="w-6 h-[1px] bg-[#E31E24]" />
-            <p className="text-[#E31E24] text-[10px] font-bold tracking-[0.4em] uppercase">
-              Strategic Partners
-            </p>
-            <div className="w-6 h-[1px] bg-[#E31E24]" />
-          </motion.div>
-
-          <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-6 leading-[0.95] overflow-hidden flex flex-col items-center">
-            <motion.span
-              initial={{ opacity: 0, x: -100 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ type: "spring", bounce: 0.4, duration: 1 }}
-              className="inline-block"
-            >
-              PARTNERSHIPS THAT
-            </motion.span>
-            <motion.span
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, type: "spring", bounce: 0.6, duration: 1 }}
-              className="text-[#E31E24] inline-block pb-2"
-            >
-              POWER PERFORMANCE.
-            </motion.span>
-          </h1>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 0.8 }}
-            className="text-slate-300 text-lg max-w-lg mx-auto leading-relaxed"
-          >
-            We work with established technology manufacturers to bring specialised equipment and proven solutions to India's professional laundry industry.
-          </motion.p>
-        </div>
-      </section>
 
       {/* ── Brand Catalog ── */}
       <section className="relative w-full py-24 bg-gradient-to-b from-white to-slate-100 overflow-hidden">
