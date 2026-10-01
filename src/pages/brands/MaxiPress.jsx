@@ -98,9 +98,19 @@ export default function MaxiPress() {
             Precision Finishing<br />For Professional Laundries<span className="text-[#E31E24]">.</span>
           </h2>
           
-          <div className="text-slate-600 font-normal text-base md:text-lg leading-relaxed space-y-6 mb-16">
-            <p><span className="text-[#D3261C] font-bold">MaxiPress</span> delivers advanced finishing and pressing equipment designed to achieve superior garment presentation, operational efficiency, and consistent quality across hospitality, healthcare, and textile service operations.</p>
-            <p>Engineered for reliability and performance, our solutions help laundries of all sizes enhance productivity and maintain the highest standards of fabric care.</p>
+          <div className="text-slate-600 font-normal text-base md:text-lg leading-relaxed space-y-6 mb-16 text-justify">
+            <p>
+              <span className="text-[#E31E24] font-bold">MAXIPRESS</span> is a leading supplier of laundry pressing in the industry for many decades. MAXIPRESS pressing machines are designed to meet the needs of various industries, such as dry cleaning, laundry, hospitality, and garment manufacturing.
+            </p>
+            <p>
+              Laundry pressing machines are designed to remove wrinkles and creases from fabrics, using heat, steam, and pressure. Laundry pressing machines can improve the quality and appearance of the finished products, as well as save time and energy.
+            </p>
+            <p>
+              MAXIPRESS offers a wide range of laundry and drycleaning pressing machines, from manual to automatic, from small to large, and from single to multi-station. MAXIPRESS pressing machines are known for their durability, efficiency, and quality. They offer a range of features, such as adjustable steam pressure, vacuum suction, air blowing, and automatic timers.
+            </p>
+            <p>
+              MAXIPRESS pressing machines can handle different types of fabrics, from delicate silk to heavy denim. They can also press various garments, such as shirts, pants, jackets, and dresses. MAXIPRESS pressing machines are easy to operate and maintain. They have ergonomic controls, safety devices, and self-cleaning systems. MAXIPRESS pressing machines are the ideal choice for anyone looking for a reliable and professional pressing solution.
+            </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-10 border-t border-slate-200/60">
