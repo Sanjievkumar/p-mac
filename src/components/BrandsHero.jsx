@@ -7,23 +7,14 @@ import maxipressLogo from '../assets/brands/maxipress-text.png';
 import kannegiesserLogo from '../assets/brands/kannegiesser.png'; 
 import imesaLogo from '../assets/brands/imesa-text.png';
 
-// 5 Unique Strategic Partner Brands. EXACTLY 5. NO DUPLICATES.
-// We use a carefully art-directed asymmetrical orbit composition.
+// Exactly 5 Unique Partner Brands
+// Using perfect circles ("premium translucent technology nodes")
 const BUBBLES = [
-  // Brand 1: Maestrelli (Foreground - Top Left)
-  { id: 'maestrelli', logo: maestrelliLogo, size: 200, top: '20%', left: '14%', depth: 2.5, dur: 18, rot: -3, driftX: -15, driftY: 20 },
-  
-  // Brand 2: Kannegiesser (Midground - Top Center/Right)
-  { id: 'kannegiesser', logo: kannegiesserLogo, size: 160, top: '15%', left: '62%', depth: 1.5, dur: 22, rot: 2, driftX: 12, driftY: -15 },
-  
-  // Brand 3: Imesa (Background - Far Right Edge)
-  { id: 'imesa', logo: imesaLogo, size: 130, top: '45%', left: '86%', depth: 0.8, dur: 25, rot: 4, driftX: -10, driftY: -10 },
-  
-  // Brand 4: Sea-Lion (Midground - Bottom Left)
-  { id: 'sealion', logo: sealionLogo, size: 170, top: '75%', left: '22%', depth: 1.8, dur: 20, rot: -5, driftX: 20, driftY: -15 },
-  
-  // Brand 5: Maxipress (Foreground - Bottom Right)
-  { id: 'maxipress', logo: maxipressLogo, size: 220, top: '78%', left: '72%', depth: 3.0, dur: 16, rot: 3, driftX: -20, driftY: 25 },
+  { id: 'maestrelli', logo: maestrelliLogo, size: 180, top: '15%', left: '15%', depth: 2.0, dur: 18, rot: 0, driftX: -10, driftY: 15 }, // Upper-Left
+  { id: 'kannegiesser', logo: kannegiesserLogo, size: 160, top: '18%', left: '75%', depth: 1.5, dur: 22, rot: 0, driftX: 10, driftY: -10 }, // Upper-Right
+  { id: 'imesa', logo: imesaLogo, size: 140, top: '48%', left: '85%', depth: 0.8, dur: 25, rot: 0, driftX: -8, driftY: -8 }, // Right-Middle
+  { id: 'sealion', logo: sealionLogo, size: 170, top: '75%', left: '18%', depth: 1.8, dur: 20, rot: 0, driftX: 12, driftY: -12 }, // Lower-Left
+  { id: 'maxipress', logo: maxipressLogo, size: 200, top: '78%', left: '70%', depth: 2.5, dur: 16, rot: 0, driftX: -15, driftY: 15 }, // Lower-Right
 ];
 
 export default function BrandsHero() {
@@ -52,14 +43,13 @@ export default function BrandsHero() {
     mouseY.set(y);
   };
   
-  // Hand-crafted mobile layout to ensure all 5 brands wrap the text beautifully
   const getMobilePos = (index) => {
     const positions = [
-      { top: '12%', left: '15%', size: 110 }, // TL
-      { top: '8%', left: '68%', size: 90 }, // TR
-      { top: '45%', left: '82%', size: 80 }, // R edge
-      { top: '85%', left: '20%', size: 100 }, // BL
-      { top: '80%', left: '65%', size: 120 }, // BR
+      { top: '12%', left: '15%', size: 100 }, // TL
+      { top: '10%', left: '72%', size: 90 }, // TR
+      { top: '45%', left: '85%', size: 80 }, // RM
+      { top: '85%', left: '18%', size: 100 }, // BL
+      { top: '82%', left: '70%', size: 110 }, // BR
     ];
     return positions[index];
   };
@@ -69,48 +59,39 @@ export default function BrandsHero() {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={() => { mouseX.set(0); mouseY.set(0); }}
-      className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#02050A]"
+      className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#0A1222]" // Lighter premium navy background
     >
       {/* 1. Atmospheric Background & Minimal Grid */}
       <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#02050A] via-[#050A14] to-[#02050A]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0F172A] via-[#0A1222] to-[#0B152A]" />
         
         {/* Extremely subtle grid texture */}
         <div 
-          className="absolute inset-0 opacity-[0.015]"
+          className="absolute inset-0 opacity-[0.008]"
           style={{
             backgroundImage: 'linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)',
             backgroundSize: '48px 48px',
           }}
         />
 
-        {/* Soft Burgundy/Red Radial Atmosphere (orbiting behind text) */}
-        <div className="absolute top-[30%] left-[30%] w-[600px] h-[600px] bg-[#E31E24]/[0.03] rounded-full blur-[140px]" />
-        <div className="absolute bottom-[20%] right-[30%] w-[700px] h-[500px] bg-[#E31E24]/[0.025] rounded-full blur-[150px]" />
+        {/* Subtle Blue Atmospheric Lighting (Outer edges) */}
+        <div className="absolute top-[10%] left-[10%] w-[500px] h-[500px] bg-[#3B82F6]/[0.03] rounded-full blur-[120px]" />
+        <div className="absolute bottom-[10%] right-[10%] w-[600px] h-[600px] bg-[#2563EB]/[0.025] rounded-full blur-[130px]" />
         
-        {/* Very subtle deep blue depth */}
-        <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] bg-[#0B4F8A]/[0.03] rounded-full blur-[120px]" />
+        {/* Very subtle red ambient lighting behind "POWER" */}
+        <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#E31E24]/[0.04] rounded-full blur-[140px]" />
       </div>
 
-      {/* 2. The 5 Brand Ecosystem Bubbles */}
+      {/* 2. The 5 Perfect Circle Brand Nodes */}
       {BUBBLES.map((bubble, i) => {
         const xOffset = useTransform(smoothX, [-1, 1], [-15 * bubble.depth, 15 * bubble.depth]);
         const yOffset = useTransform(smoothY, [-1, 1], [-15 * bubble.depth, 15 * bubble.depth]);
 
+        // Clean, slow floating animation (No rotation, no aggressive scaling)
         const animationProps = prefersReducedMotion ? {} : {
           x: [0, bubble.driftX, 0],
           y: [0, bubble.driftY, 0],
-          rotate: [0, bubble.rot, -bubble.rot, 0],
-          scale: [1, 1.03, 0.97, 1]
-        };
-
-        const shapeAnimationProps = prefersReducedMotion ? {} : {
-          borderRadius: [
-            "40% 60% 70% 30% / 40% 50% 60% 50%",
-            "60% 40% 30% 70% / 60% 30% 70% 40%",
-            "50% 50% 40% 60% / 30% 60% 40% 70%",
-            "40% 60% 70% 30% / 40% 50% 60% 50%"
-          ]
+          scale: [1, 1.02, 0.98, 1]
         };
 
         const activeSize = isMobile ? getMobilePos(i).size : bubble.size;
@@ -133,31 +114,30 @@ export default function BrandsHero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.5, delay: i * 0.15 + 0.2 }}
           >
-            {/* Translucent Dark Glass Container */}
+            {/* Perfect Circle Translucent Navy Glass Node */}
             <motion.div
-              className="absolute inset-0 bg-[#0A121F]/50 border border-white/[0.04] backdrop-blur-[6px] shadow-[inset_0_1px_1px_rgba(255,255,255,0.08),_0_15px_40px_rgba(0,0,0,0.6)] will-change-transform"
-              style={{ borderRadius: "40% 60% 70% 30% / 40% 50% 60% 50%" }}
-              animate={shapeAnimationProps}
+              className="absolute inset-0 bg-gradient-to-br from-[#1E293B]/40 to-[#0F172A]/20 border border-white/[0.08] rounded-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),_0_10px_30px_rgba(0,0,0,0.3)] will-change-transform"
+              animate={animationProps}
               transition={{ duration: bubble.dur, repeat: Infinity, ease: "easeInOut" }}
             />
-            {/* Soft Edge Light Highlight */}
+            
+            {/* Soft Inner Highlight */}
             <motion.div 
-              className="absolute top-[10%] left-[15%] w-[35%] h-[35%] rounded-full bg-white/[0.04] blur-[12px] pointer-events-none will-change-transform"
-              animate={shapeAnimationProps}
+              className="absolute top-[15%] left-[20%] w-[30%] h-[30%] rounded-full bg-white/[0.05] blur-[8px] pointer-events-none will-change-transform"
+              animate={animationProps}
               transition={{ duration: bubble.dur, repeat: Infinity, ease: "easeInOut" }}
             />
 
             {/* Logo Image */}
             <motion.div
-              className="relative w-[75%] h-[75%] flex items-center justify-center will-change-transform"
+              className="relative w-[65%] h-[65%] flex items-center justify-center will-change-transform"
               animate={animationProps}
-              transition={{ duration: bubble.dur * 1.1, repeat: Infinity, ease: "easeInOut" }}
+              transition={{ duration: bubble.dur, repeat: Infinity, ease: "easeInOut" }}
             >
-              {/* Every single logo is guaranteed visible, sharp, and perfectly readable */}
               <img 
                 src={bubble.logo} 
                 alt={`${bubble.id} strategic partner logo`}
-                className="w-full h-full object-contain filter grayscale contrast-[100] invert mix-blend-screen opacity-[0.95] pointer-events-none drop-shadow-[0_2px_10px_rgba(255,255,255,0.15)]"
+                className="w-full h-full object-contain filter grayscale contrast-[100] invert mix-blend-screen opacity-100 pointer-events-none drop-shadow-[0_2px_4px_rgba(255,255,255,0.2)]"
               />
             </motion.div>
           </motion.div>
@@ -165,7 +145,7 @@ export default function BrandsHero() {
       })}
 
       {/* 3. Central Typography / Editorial Content */}
-      <div className="relative z-20 flex flex-col items-center justify-center w-full max-w-[800px] px-6 mt-16">
+      <div className="relative z-20 flex flex-col items-center justify-center w-full max-w-[800px] px-6 mt-16 pointer-events-none">
         
         {/* Eyebrow Label */}
         <motion.div
@@ -188,7 +168,7 @@ export default function BrandsHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-            className="text-white/70 text-lg md:text-2xl lg:text-[28px] mb-3 tracking-[0.1em] font-semibold"
+            className="text-white/80 text-lg md:text-2xl lg:text-[28px] mb-3 tracking-[0.1em] font-semibold"
           >
             PARTNERSHIPS THAT
           </motion.span>
@@ -217,7 +197,7 @@ export default function BrandsHero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="text-slate-400 text-sm md:text-base lg:text-lg max-w-[600px] mx-auto leading-relaxed text-center font-medium opacity-90"
+          className="text-slate-300 text-sm md:text-base lg:text-lg max-w-[600px] mx-auto leading-relaxed text-center font-medium opacity-90"
         >
           We work with established technology manufacturers to bring specialised equipment and proven solutions to India's professional laundry industry.
         </motion.p>
