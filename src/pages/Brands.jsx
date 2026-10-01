@@ -28,7 +28,7 @@ const BRANDS = [
   {
     id: 'kannegiesser',
     name: 'KANNEGIESSER',
-    nameImg: <img src={kannegiesserLogo} alt="KANNEGIESSER" className="h-10 md:h-14 w-auto object-contain object-left mb-6 mix-blend-multiply" />,
+    nameImg: <img src={kannegiesserLogo} alt="KANNEGIESSER" className="w-[180px] md:w-[280px] h-auto object-contain object-left mb-6 mix-blend-multiply" />,
     origin: 'Germany',
     tagline: 'End-to-End Laundry Automation',
     logo: kannegiesserLogo,
@@ -38,7 +38,7 @@ const BRANDS = [
   {
     id: 'sea-lion',
     name: 'SEA-LION',
-    nameImg: <img src={sealionTextLogo} alt="SEA-LION" className="h-10 md:h-14 w-auto object-contain object-left mb-6 mix-blend-multiply opacity-90" />,
+    nameImg: <img src={sealionTextLogo} alt="SEA-LION" className="w-[180px] md:w-[280px] h-auto object-contain object-left mb-6 mix-blend-multiply opacity-90" />,
     origin: 'China',
     tagline: 'Industrial Laundry Machines',
     logo: sealionLogo,
@@ -48,7 +48,7 @@ const BRANDS = [
   {
     id: 'imesa',
     name: 'IMESA',
-    nameImg: <img src={imesaTextLogo} alt="IMESA" className="h-10 md:h-14 w-auto object-contain object-left mb-6 mix-blend-multiply opacity-80" />,
+    nameImg: <img src={imesaTextLogo} alt="IMESA" className="w-[180px] md:w-[280px] h-auto object-contain object-left mb-6 mix-blend-multiply opacity-80" />,
     origin: 'Italy',
     tagline: 'Custom Solutions and Made in Italy',
     logo: imesaLogo,
@@ -58,7 +58,7 @@ const BRANDS = [
   {
     id: 'maestrelli',
     name: 'MAESTRELLI',
-    nameImg: <img src={maestrelliTextLogo} alt="MAESTRELLI" className="h-10 md:h-14 w-auto object-contain object-left mb-6 mix-blend-multiply" />,
+    nameImg: <img src={maestrelliTextLogo} alt="MAESTRELLI" className="w-[180px] md:w-[280px] h-auto object-contain object-left mb-6 mix-blend-multiply" />,
     origin: 'Italy',
     tagline: 'Dry Cleaning Systems',
     logo: maestrelliLogo,
@@ -68,7 +68,7 @@ const BRANDS = [
   {
     id: 'maxipress',
     name: 'MAXIPRESS',
-    nameImg: <img src={maxipressTextLogo} alt="MAXIPRESS" className="h-10 md:h-14 w-auto object-contain object-left mb-6 mix-blend-multiply" />,
+    nameImg: <img src={maxipressTextLogo} alt="MAXIPRESS" className="w-[180px] md:w-[280px] h-auto object-contain object-left mb-6 mix-blend-multiply" />,
     origin: 'Spain',
     tagline: 'Garment Finishing Equipment',
     logo: maxipressLogo,
