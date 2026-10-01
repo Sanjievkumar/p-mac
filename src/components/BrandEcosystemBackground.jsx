@@ -1,11 +1,11 @@
 import React, { useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 
-import sealionLogo from '../assets/brands/sealion.png';
-import maestrelliLogo from '../assets/brands/maestrelli.png';
-import maxipressLogo from '../assets/brands/maxipress.png';
+import sealionLogo from '../assets/brands/sealion-text.png';
+import maestrelliLogo from '../assets/brands/maestrelli-text.png';
+import maxipressLogo from '../assets/brands/maxipress-text.png';
 import kannegiesserLogo from '../assets/brands/kannegiesser.png';
-import imesaLogo from '../assets/brands/imesa.png';
+import imesaLogo from '../assets/brands/imesa-text.png';
 
 // Configuration for bubbles across depth layers
 // Depth > 2: Foreground (large, blurred, fast parallax)
@@ -13,19 +13,19 @@ import imesaLogo from '../assets/brands/imesa.png';
 // Depth < 1: Background (small, heavy blur, slow parallax)
 const BUBBLES = [
   // Foreground
-  { logo: kannegiesserLogo, size: 280, top: '5%', left: '-5%', depth: 3, blur: 'blur-[8px]', opacity: 0.12, dur: 22 },
-  { logo: sealionLogo, size: 320, top: '65%', left: '85%', depth: 3.5, blur: 'blur-[12px]', opacity: 0.10, dur: 28 },
+  { logo: kannegiesserLogo, size: 280, top: '5%', left: '-5%', depth: 3, blur: 'blur-[8px]', opacity: 0.8, dur: 22 },
+  { logo: sealionLogo, size: 320, top: '65%', left: '85%', depth: 3.5, blur: 'blur-[12px]', opacity: 0.6, dur: 28 },
   
   // Midground
-  { logo: maestrelliLogo, size: 150, top: '20%', left: '80%', depth: 1.5, blur: 'blur-none', opacity: 0.25, dur: 35 },
-  { logo: maxipressLogo, size: 170, top: '65%', left: '15%', depth: 1.2, blur: 'blur-[1px]', opacity: 0.2, dur: 32 },
-  { logo: imesaLogo, size: 130, top: '30%', left: '10%', depth: 1.8, blur: 'blur-none', opacity: 0.28, dur: 29 },
-  { logo: kannegiesserLogo, size: 160, top: '80%', left: '45%', depth: 1.4, blur: 'blur-[2px]', opacity: 0.22, dur: 34 },
+  { logo: maestrelliLogo, size: 150, top: '20%', left: '80%', depth: 1.5, blur: 'blur-none', opacity: 0.9, dur: 35 },
+  { logo: maxipressLogo, size: 170, top: '65%', left: '15%', depth: 1.2, blur: 'blur-[1px]', opacity: 0.85, dur: 32 },
+  { logo: imesaLogo, size: 130, top: '30%', left: '10%', depth: 1.8, blur: 'blur-none', opacity: 0.858, dur: 29 },
+  { logo: kannegiesserLogo, size: 160, top: '80%', left: '45%', depth: 1.4, blur: 'blur-[2px]', opacity: 0.852, dur: 34 },
 
   // Background
-  { logo: sealionLogo, size: 90, top: '15%', left: '40%', depth: 0.5, blur: 'blur-[6px]', opacity: 0.08, dur: 40 },
-  { logo: maxipressLogo, size: 100, top: '50%', left: '75%', depth: 0.7, blur: 'blur-[5px]', opacity: 0.09, dur: 38 },
-  { logo: imesaLogo, size: 80, top: '40%', left: '25%', depth: 0.4, blur: 'blur-[8px]', opacity: 0.05, dur: 45 },
+  { logo: sealionLogo, size: 90, top: '15%', left: '40%', depth: 0.5, blur: 'blur-[6px]', opacity: 0.5, dur: 40 },
+  { logo: maxipressLogo, size: 100, top: '50%', left: '75%', depth: 0.7, blur: 'blur-[5px]', opacity: 0.55, dur: 38 },
+  { logo: imesaLogo, size: 80, top: '40%', left: '25%', depth: 0.4, blur: 'blur-[8px]', opacity: 0.4, dur: 45 },
 ];
 
 export default function BrandEcosystemBackground() {
@@ -65,7 +65,7 @@ export default function BrandEcosystemBackground() {
       {/* Ambient Lighting / Depth Atmosphere */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#E31E24]/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#0B4F8A]/20 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute top-[40%] left-[-10%] w-[400px] h-[400px] bg-white/[0.02] rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute top-[40%] left-[-10%] w-[400px] h-[400px] bg-white/[0.08] rounded-full blur-[80px] pointer-events-none" />
 
       {/* Desktop Bubbles */}
       {BUBBLES.map((bubble, i) => {
@@ -91,7 +91,7 @@ export default function BrandEcosystemBackground() {
           >
             {/* Soft Organic Glassmorphism Bubble Shape */}
             <motion.div
-              className="absolute inset-0 bg-white/[0.015] border border-white/[0.04] backdrop-blur-[4px] shadow-[0_8px_32px_rgba(0,0,0,0.15)]"
+              className="absolute inset-0 bg-white/[0.06] border border-white/[0.15] backdrop-blur-[4px] shadow-[0_8px_32px_rgba(0,0,0,0.15)]"
               animate={{
                 borderRadius: [
                   "40% 60% 70% 30% / 40% 50% 60% 50%",
@@ -112,7 +112,7 @@ export default function BrandEcosystemBackground() {
             <motion.img 
               src={bubble.logo} 
               alt="Brand Logo" 
-              className="relative w-[55%] h-[55%] object-contain filter grayscale invert mix-blend-screen pointer-events-none z-10 opacity-75"
+              className="relative w-[55%] h-[55%] object-contain filter brightness-0 invert pointer-events-none z-10 opacity-90"
               animate={{
                 y: [0, -8, 0],
                 rotate: [0, -3, 3, 0]
@@ -144,7 +144,7 @@ export default function BrandEcosystemBackground() {
         >
           {/* Simpler shape animation for mobile */}
           <motion.div
-            className="absolute inset-0 bg-white/[0.02] border border-white/[0.04] backdrop-blur-[2px] rounded-[45%_55%_65%_35%]"
+            className="absolute inset-0 bg-white/[0.08] border border-white/[0.15] backdrop-blur-[2px] rounded-[45%_55%_65%_35%]"
             animate={{
               y: [0, -10, 0]
             }}
@@ -157,7 +157,7 @@ export default function BrandEcosystemBackground() {
           <img 
             src={bubble.logo} 
             alt="Brand Logo" 
-            className="relative w-[50%] h-[50%] object-contain filter grayscale invert opacity-70 mix-blend-screen pointer-events-none z-10"
+            className="relative w-[50%] h-[50%] object-contain filter brightness-0 invert pointer-events-none z-10 opacity-90"
           />
         </motion.div>
       ))}
