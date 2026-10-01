@@ -14,7 +14,7 @@ import sealionFactory1 from '../../assets/brands/sealion-factory-1.jpg';
 import sealionFactory3 from '../../assets/brands/sealion-factory-3.jpg';
 import sealionFactory4 from '../../assets/brands/sealion-factory-4.jpg';
 
-import ecosystemBg from '../../assets/brands/sea-lion/sealion_ecosystem_1780727389170.png';
+import ecosystemBg from '../../assets/ecosystem-factory.jpg';
 
 const PRODUCTS = [
   // Washing Technology
