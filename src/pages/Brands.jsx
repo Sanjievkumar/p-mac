@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import GlobeSection from '../components/GlobeSection';
+
 
 import sealionLogo from '../assets/brands/sealion.png';
 import maestrelliLogo from '../assets/brands/maestrelli.png';
@@ -366,7 +366,7 @@ export default function Brands() {
       <div className="w-full h-32 bg-gradient-to-b from-slate-100 to-[#000814]" />
 
       {/* ── 3D Globe ── */}
-      <GlobeSection />
+      
 
       <Footer />
     </div>

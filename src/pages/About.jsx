@@ -4,6 +4,8 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import TurnkeyProcess from '../components/TurnkeyProcess';
 import MissionSection from '../components/MissionSection';
+import GlobeSection from '../components/GlobeSection';
+import engineeringBg from '../assets/engineering-brands-bg.jpg';
 
 /* ============================================================================
    Letter-by-letter stagger helper
@@ -118,23 +120,35 @@ export default function About() {
       {/* ============================================================================
           SECTION 1 — HERO
       ============================================================================ */}
-      <section className="relative w-full pt-44 pb-20 px-6 lg:px-12 flex flex-col items-center overflow-hidden">
-        <div className="absolute inset-0 z-0 bg-[#fafafa] overflow-hidden">
-          {/* Subtle Animated Grid */}
-          <div
-            className="absolute inset-0 pointer-events-none opacity-[0.04] animate-grid"
+      <section className="relative w-full pt-44 pb-20 px-6 lg:px-12 flex flex-col items-center overflow-hidden bg-[#001F3F]">
+          {/* Background Image */}
+          <div className="absolute inset-0 z-0">
+            <img 
+              src={engineeringBg} 
+              alt="Engineering Background" 
+              className="w-full h-full object-cover opacity-30 mix-blend-luminosity"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#001F3F]/80 via-[#001F3F]/50 to-[#001F3F]" />
+          </div>
+  
+          {/* Animated Blueprint Grid */}
+          <motion.div
+            className="absolute inset-0 pointer-events-none"
             style={{
-              backgroundImage: 'linear-gradient(#1e293b 1px, transparent 1px), linear-gradient(90deg, #1e293b 1px, transparent 1px)',
-              backgroundSize: '40px 40px',
+              backgroundImage: 'linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)',
+              backgroundSize: '48px 48px',
+            }}
+            animate={{ 
+              backgroundPosition: ['0px 0px', '48px 48px'],
+              opacity: [0.03, 0.09, 0.03]
+            }}
+            transition={{ 
+              backgroundPosition: { repeat: Infinity, duration: 8, ease: 'linear' },
+              opacity: { repeat: Infinity, duration: 4, ease: 'easeInOut' }
             }}
           />
-          {/* Radial mask to fade grid at edges */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#fafafa_100%)]" />
-          
-          {/* Subtle glowing brand accents */}
-          <div className="absolute top-[10%] left-[10%] w-[400px] h-[400px] bg-[#E31E24]/[0.025] rounded-full blur-[80px]" />
-          <div className="absolute bottom-[10%] right-[10%] w-[500px] h-[500px] bg-[#0B4F8A]/[0.03] rounded-full blur-[100px]" />
-        </div>
+          {/* Ambient glow */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[#E31E24]/10 rounded-full blur-[120px] pointer-events-none z-0" />
 
         <div className="max-w-[1100px] w-full text-center mb-20 relative z-10">
           {/* Eyebrow pill */}
@@ -144,14 +158,14 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="mb-8"
           >
-            <span className="text-[#E31E24] font-bold text-[10px] tracking-[0.4em] uppercase bg-[#E31E24]/5 px-6 py-2 rounded-full border border-[#E31E24]/10">
+            <span className="text-white font-bold text-[10px] tracking-[0.4em] uppercase bg-white/10 px-6 py-2 rounded-full border border-white/20">
               Engineering the Future
             </span>
           </motion.div>
 
           {/* Staggered hero headline */}
           <h1
-            className="text-5xl md:text-7xl lg:text-8xl font-black text-[#0a0a0a] tracking-tighter mb-8 leading-[0.95] relative overflow-hidden"
+            className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-8 leading-[0.95] relative overflow-hidden"
             aria-label="EVERY CLEANING CHALLENGE. ONE SOLUTION."
           >
             <div className="block">
@@ -170,7 +184,7 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
-            className="text-lg md:text-xl text-slate-800 font-bold max-w-2xl mx-auto leading-relaxed drop-shadow-sm bg-white/40 p-2 rounded-xl backdrop-blur-sm"
+            className="text-lg md:text-xl text-white/90 font-bold max-w-2xl mx-auto leading-relaxed drop-shadow-sm bg-white/5 p-2 rounded-xl backdrop-blur-sm border border-white/10"
           >
             Promac Technologies is India's premier turnkey partner for world-class industrial laundry systems.
           </motion.p>
@@ -208,15 +222,20 @@ export default function About() {
               Promac operates beyond the conventional equipment-supply model. We work as a solution and project partner — focusing on throughput, resource efficiency, automation, reliability and measurable operational performance.
             </p>
             
-            <div className="mt-12 bg-[#fafafa] p-8 rounded-2xl border border-gray-200 shadow-sm">
-              <p className="font-bold text-[#001F3F] mb-6">As exclusive partners in India, Promac represents internationally respected manufacturers including:</p>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <li className="flex items-center gap-3"><div className="w-2 h-2 bg-[#E31E24] rounded-full"/> <span className="font-bold text-gray-900">Kannegiesser</span> <span className="text-gray-500">— Germany</span></li>
-                <li className="flex items-center gap-3"><div className="w-2 h-2 bg-[#E31E24] rounded-full"/> <span className="font-bold text-gray-900">Sea-Lion</span> <span className="text-gray-500">— China</span></li>
-                <li className="flex items-center gap-3"><div className="w-2 h-2 bg-[#E31E24] rounded-full"/> <span className="font-bold text-gray-900">Maestrelli</span> <span className="text-gray-500">— Italy</span></li>
-                <li className="flex items-center gap-3"><div className="w-2 h-2 bg-[#E31E24] rounded-full"/> <span className="font-bold text-gray-900">Maxi Press</span> <span className="text-gray-500">— USA</span></li>
-                <li className="flex items-center gap-3"><div className="w-2 h-2 bg-[#E31E24] rounded-full"/> <span className="font-bold text-gray-900">Andrew Industries</span> <span className="text-gray-500">— UK</span></li>
-              </ul>
+            <div className="mt-12 bg-[#001F3F] rounded-[32px] overflow-hidden shadow-2xl relative w-[100vw] left-1/2 -translate-x-1/2 border-y border-white/10">
+              <div className="max-w-[1200px] mx-auto px-6 lg:px-12 pt-16">
+                <div className="text-center mb-12 relative z-10">
+                  <h3 className="text-3xl md:text-5xl font-black text-white tracking-tighter mb-4 uppercase">
+                    Partners Across the <span className="text-[#E31E24]">Globe.</span>
+                  </h3>
+                  <p className="text-white/70 max-w-2xl mx-auto font-medium text-sm md:text-base">
+                    As exclusive partners in India, Promac represents internationally respected manufacturers from across the world.
+                  </p>
+                </div>
+              </div>
+              <div className="w-full h-[500px]">
+                <GlobeSection />
+              </div>
             </div>
           </div>
         </div>
@@ -313,3 +332,4 @@ export default function About() {
     </div>
   );
 }
+
