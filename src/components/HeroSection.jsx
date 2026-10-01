@@ -16,7 +16,8 @@ export default function HeroSection() {
       </div>
       
       {/* Gradient Overlay for text readability on smaller screens */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent lg:w-[55%] pointer-events-none mix-blend-normal z-0" />
+      <div className="absolute inset-0 bg-white/60 lg:hidden pointer-events-none z-0" />
+      <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/70 lg:to-transparent lg:w-[65%] pointer-events-none mix-blend-normal z-0" />
 
       {/* Main Hero Content */}
       <div className="absolute inset-0 z-10 w-full flex flex-col pb-0 lg:pb-[88px]">
