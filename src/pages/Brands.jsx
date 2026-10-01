@@ -283,7 +283,7 @@ export default function Brands() {
                 src={item.img} 
                 alt="bg-logo" 
                 style={{ width: item.w, height: 'auto' }} 
-                className="filter brightness-0 invert opacity-60 mix-blend-screen" 
+                className="filter grayscale invert opacity-20 mix-blend-screen" 
               />
             </motion.div>
           ))}
