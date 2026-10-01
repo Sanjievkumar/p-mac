@@ -321,7 +321,7 @@ export default function Brands() {
               transition={{ type: "spring", bounce: 0.4, duration: 1 }}
               className="inline-block"
             >
-              World-Class
+              PARTNERSHIPS THAT
             </motion.span>
             <motion.span
               initial={{ opacity: 0, y: -50 }}
@@ -329,7 +329,7 @@ export default function Brands() {
               transition={{ delay: 0.3, type: "spring", bounce: 0.6, duration: 1 }}
               className="text-[#E31E24] inline-block pb-2"
             >
-              Brand Partners.
+              POWER PERFORMANCE.
             </motion.span>
           </h1>
 
@@ -339,7 +339,7 @@ export default function Brands() {
             transition={{ delay: 1, duration: 0.8 }}
             className="text-slate-300 text-lg max-w-lg mx-auto leading-relaxed"
           >
-            Promac is the authorised Indian representative for globally recognised industrial laundry technology manufacturers.
+            We work with established technology manufacturers to bring specialised equipment and proven solutions to India's professional laundry industry.
           </motion.p>
         </div>
       </section>
