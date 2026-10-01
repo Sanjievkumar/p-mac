@@ -31,15 +31,13 @@ export default function HeroSection() {
             <div className="w-12 h-1 bg-[#CC141A] mb-8" />
             
             <h1 className="text-4xl md:text-5xl lg:text-[64px] xl:text-[72px] font-bold leading-[1.1] tracking-tight mb-6 md:mb-8 text-[#1A233A]">
-              ENGINEERING<br/>
-              <span className="text-[#CC141A]">EXCELLENCE.</span><br/>
-              DELIVERING TRUST.
+              ENGINEERED FOR<br/>
+              <span className="text-[#CC141A]">PERFORMANCE.</span><br/>
+              BUILT FOR THE FUTURE.
             </h1>
             
             <p className="text-slate-600 text-base md:text-lg lg:text-xl font-medium leading-relaxed mb-8 md:mb-10 max-w-lg">
-              Advanced laundry and garment care solutions<br className="hidden md:block" />
-              built on trust, innovation and<br className="hidden md:block" />
-              global partnerships.
+              Advanced laundry and garment care solutions built on trust, innovation and global partnerships.
             </p>
             
             <Link to="/brands">

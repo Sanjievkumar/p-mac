@@ -25,12 +25,7 @@ export default function FounderSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             {/* Eyebrow */}
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-8 h-[1px] bg-[#CC141A]" />
-              <p className="text-[#CC141A] text-xs font-bold tracking-[0.2em] uppercase m-0">
-                A Few Words From Our Founder
-              </p>
-            </div>
+
             
             <h2 className="text-4xl md:text-5xl lg:text-[56px] font-bold leading-[1.15] tracking-tight mb-8 text-[#1A233A]">
               Building Solutions.<br/>

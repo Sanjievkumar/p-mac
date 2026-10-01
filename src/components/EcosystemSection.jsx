@@ -115,7 +115,7 @@ export default function EcosystemSection() {
               viewport={{ once: false, amount: 0.2 }}
             >
               <motion.div custom={0} variants={textVariants} className="flex items-center gap-4 mb-6">
-                <p className="text-[#E31E24] font-bold tracking-[0.4em] text-[10px] uppercase">
+                <p className="text-[#E31E24] font-bold tracking-[0.2em] text-[10px] uppercase">
                   THE PROMAC ECOSYSTEM
                 </p>
                 <div className="w-10 h-[1px] bg-[#E31E24]" />
@@ -127,8 +127,10 @@ export default function EcosystemSection() {
                 <motion.div custom={3} variants={textVariants} className="font-display font-normal italic text-[#001F3F] mt-2">Complete Confidence.</motion.div>
               </h2>
 
-              <motion.p custom={4} variants={textVariants} className="text-gray-500 font-display text-sm md:text-[15px] leading-relaxed max-w-sm mb-10">
-                An integrated ecosystem of expertise, technology and support that powers your laundry operations — today and tomorrow.
+              <motion.p custom={4} variants={textVariants} className="text-gray-500 font-display text-sm md:text-[15px] leading-relaxed max-w-xl mb-10">
+                From individual equipment to complete high-capacity laundry systems, we bring together the right technology, expertise and support to deliver an efficient operation from start to finish.<br/><br/>
+                <strong className="text-[#001F3F]">GLOBAL TECHNOLOGY. CONNECTED EXPERTISE. COMPLETE SOLUTIONS.</strong><br/>
+                An integrated ecosystem bringing together global technology, connected expertise and end-to-end support to deliver complete laundry solutions.
               </motion.p>
 
               {/* Replica Button */}
