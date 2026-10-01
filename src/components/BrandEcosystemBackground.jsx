@@ -112,7 +112,7 @@ export default function BrandEcosystemBackground() {
             <motion.img 
               src={bubble.logo} 
               alt="Brand Logo" 
-              className="relative w-[55%] h-[55%] object-contain filter brightness-0 invert pointer-events-none z-10 opacity-90"
+              className="relative w-[55%] h-[55%] object-contain grayscale contrast-[100] invert mix-blend-screen pointer-events-none z-10 opacity-[0.85]"
               animate={{
                 y: [0, -8, 0],
                 rotate: [0, -3, 3, 0]
@@ -157,7 +157,7 @@ export default function BrandEcosystemBackground() {
           <img 
             src={bubble.logo} 
             alt="Brand Logo" 
-            className="relative w-[50%] h-[50%] object-contain filter brightness-0 invert pointer-events-none z-10 opacity-90"
+            className="relative w-[50%] h-[50%] object-contain grayscale contrast-[100] invert mix-blend-screen pointer-events-none z-10 opacity-[0.85]"
           />
         </motion.div>
       ))}
