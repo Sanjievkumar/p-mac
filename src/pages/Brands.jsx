@@ -250,14 +250,44 @@ export default function Brands() {
 
       {/* ── Hero Banner ── */}
       <section className="relative pt-40 pb-20 px-6 bg-[#001F3F] overflow-hidden text-center">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src={engineeringBg} 
-            alt="Engineering Background" 
-            className="w-full h-full object-cover opacity-30 mix-blend-luminosity"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#001F3F]/80 via-[#001F3F]/50 to-[#001F3F]" />
+        {/* Floating Brand Logos Background */}
+        <div className="absolute inset-0 z-0 overflow-hidden bg-[#001F3F]">
+          {[
+            { img: kannegiesserLogo, w: 200, top: '10%', left: '5%', dur: 25, delay: 0 },
+            { img: sealionLogo, w: 120, top: '65%', left: '10%', dur: 35, delay: 2 },
+            { img: imesaLogo, w: 100, top: '30%', left: '80%', dur: 28, delay: 1 },
+            { img: maestrelliLogo, w: 130, top: '75%', left: '80%', dur: 32, delay: 3 },
+            { img: maxipressLogo, w: 140, top: '25%', left: '40%', dur: 40, delay: 4 },
+            { img: kannegiesserLogo, w: 160, top: '80%', left: '35%', dur: 30, delay: 5 },
+            { img: sealionLogo, w: 90, top: '15%', left: '60%', dur: 20, delay: 6 },
+            { img: imesaLogo, w: 80, top: '10%', left: '35%', dur: 22, delay: 2.5 },
+            { img: maxipressLogo, w: 110, top: '55%', left: '60%', dur: 38, delay: 1.5 },
+          ].map((item, idx) => (
+            <motion.div
+              key={idx}
+              className="absolute opacity-[0.08]"
+              style={{ top: item.top, left: item.left }}
+              animate={{ 
+                y: [0, -30, 0], 
+                x: [0, 20, 0],
+                rotate: [0, 5, -5, 0]
+              }}
+              transition={{ 
+                duration: item.dur, 
+                repeat: Infinity, 
+                ease: 'easeInOut',
+                delay: item.delay
+              }}
+            >
+              <img 
+                src={item.img} 
+                alt="bg-logo" 
+                style={{ width: item.w, height: 'auto' }} 
+                className="filter brightness-0 invert opacity-60 mix-blend-screen" 
+              />
+            </motion.div>
+          ))}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#001F3F]/40 to-[#001F3F]" />
         </div>
 
         {/* Animated Blueprint Grid */}
