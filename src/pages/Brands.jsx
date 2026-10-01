@@ -262,7 +262,7 @@ export default function Brands() {
           }}
           animate={{ 
             backgroundPosition: ['0px 0px', '48px 48px'],
-            opacity: [0.03, 0.09, 0.03]
+            opacity: [0.005, 0.02, 0.005]
           }}
           transition={{ 
             backgroundPosition: { repeat: Infinity, duration: 8, ease: 'linear' },
