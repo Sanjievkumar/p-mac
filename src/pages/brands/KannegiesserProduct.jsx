@@ -565,6 +565,13 @@ export default function KannegiesserProduct() {
                   <h2 className="text-3xl lg:text-4xl font-bold text-[#001F3F] mb-4 uppercase">{block.title}</h2>
                   {block.subtitle && <h3 className="text-xl font-bold text-[#00509B] mb-6">{block.subtitle}</h3>}
                   <p className="text-lg text-slate-600 leading-relaxed whitespace-pre-line">{block.text}</p>
+                    {block.boxBullets && (
+                      <ul className="list-disc pl-6 mt-6 text-lg text-slate-600 leading-relaxed space-y-3 font-light">
+                        {block.boxBullets.map((bullet, bIdx) => (
+                          <li key={bIdx} className="pl-2">{bullet}</li>
+                        ))}
+                      </ul>
+                    )}
                 </div>
                 {block.img && (
                   <div className="flex-1 w-full relative">
@@ -591,6 +598,13 @@ export default function KannegiesserProduct() {
                     {block.title && <h2 className="text-3xl lg:text-4xl font-bold text-[#001F3F] mb-4 uppercase">{block.title}</h2>}
                     {block.subtitle && <h3 className="text-xl font-bold text-[#00509B] mb-6">{block.subtitle}</h3>}
                     {block.text && <p className="text-lg text-slate-600 leading-relaxed whitespace-pre-line">{block.text}</p>}
+                    {block.boxBullets && (
+                      <ul className="list-disc pl-6 mt-6 text-lg text-slate-600 leading-relaxed space-y-3 font-light">
+                        {block.boxBullets.map((bullet, bIdx) => (
+                          <li key={bIdx} className="pl-2">{bullet}</li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                   {block.img && (
                     <div className="flex-1 w-full bg-white p-8 rounded-3xl shadow-xl border border-slate-100 flex items-center justify-center">
@@ -724,4 +738,5 @@ export default function KannegiesserProduct() {
     </div>
   );
 }
+
 
