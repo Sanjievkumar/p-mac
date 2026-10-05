@@ -16,7 +16,7 @@ const PRODUCTS = [
   { id: 'kannegiesser-powerpress', category: 'Washing Technology', name: 'Extraction Technology', desc: 'PowerPress', img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_PowerPress.png' },
   { id: 'kannegiesser-powerdry', category: 'Washing Technology', name: 'Dryers', desc: 'PowerDry', img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_PowerDry.png' },
   { id: 'kannegiesser-powerswing', category: 'Washing Technology', name: 'Washer Extractors', desc: 'PowerSwing', img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_PowerSwing.png' },
-  { id: 'kannegiesser-cleanroom', category: 'Washing Technology', name: 'Clean Room Technology', desc: 'Favorit Vario HighClean', img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_HighClean.png' },
+  { id: 'kannegiesser-cleanroom', category: 'Washing Technology', name: 'Clean Room Technology', desc: 'Favorit Vario HighClean', img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_Cleanroom.png' },
   { id: 'kannegiesser-cwd', category: 'Washing Technology', name: 'Disinfection Sluices', desc: 'CWD', img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_CWD_Desi.png' },
     { id: 'kannegiesser-cd', category: 'Washing Technology', name: 'Disinfection Sluices', desc: 'CD', img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_CD_Desi.png' },
 
