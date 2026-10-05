@@ -18,28 +18,45 @@ const WASHING_TECH_DATA = {
     "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_PT_VARIO.png",
     tabs: {
       overview: {
-        introTitle: "THE TOP OF TODAY’S WASHING TECHNOLOGY",
-        introText: "The PowerTrans Vario – combining high productivity with great variety of article range and batches. The PowerTrans Vario serves exactly the demands of your daily business now and in future. We designed this machine to enable you to provide hygiene and diversity. With the PowerTrans Vario at your side, you are more than prepared for the upcoming demands in the years to come.",
-        applicationsTitle: "Fully tailored to your application",
+        introTitle: "THE TOP OF TODAY'S WASHING TECHNOLOGY.",
+        introSubtitle: "The PowerTrans Vario – combining high productivity with great variety of article range and batches.",
+        introText: "The PowerTrans Vario serves exactly the demands of your daily business now and in future. We designed this machine to enable you to provide hygiene and diversity. With the PowerTrans Vario at your side, you are more than prepared for the upcoming demands in the years to come.",
+        applicationsTitle: "FULLY TAILORED TO YOUR APPLICATION",
         applications: [
-          { name: "Cruise Ships", img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Kreuzfahrtschiff.jpg" },
-          { name: "Workwear", img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Schutzkleidung.jpg" },
-          { name: "Healthcare", img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Krankenhaus.jpg" },
-          { name: "Hospitality & Restaurant", img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Hotel.jpg" },
-          { name: "Airlines", img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Fluglinien.jpg" },
-          { name: "Mats", img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Matten.jpg" },
-          { name: "Residental", img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Bewohner.jpg" }
+          { name: "Cruise Ships", img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Kreuzfahrtschiff.jpg", text: "Floating cities where nothing is left to be desired! The textiles are processed in a minimum space with the lowest possible use of resources – with innovative laundry technology from Kannegiesser." },
+          { name: "Workwear", img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Schutzkleidung.jpg", text: "High pollution loads. Preservation of the protective function. Textile variety in a modern design. These requirements are handled daily! Kannegiesser solutions help you to provide your customers with fresh workwear punctually and reliably." },
+          { name: "Healthcare", img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Krankenhaus.jpg", text: "Do you handle a wide range of linen for the healthcare sector? The professional preparation of those textiles requires a reproducible hygiene process. With Kannegiesser you are on the safe side!" },
+          { name: "Hospitality & Restaurant", img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Hotel.jpg", text: "The variety of articles is constantly growing. Customers expect their individual selection of linen. With Kannegiesser machines, you can offer the highest quality, which is particularly gentle on the textile and resources!" },
+          { name: "Airlines", img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Fluglinien.jpg", text: "Above the clouds you want to ensure the best results for every passenger. With Kannegiesser machine you can perfectly handle your customer’s wide range of Airline Blankets." },
+          { name: "Mats", img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Matten.jpg", text: "The first positive impression left in the entrance area of buildings. With dirt trapping mats that have been professionally and resource-friendly processed using Kannegiesser machines!" },
+          { name: "Residental", img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Bewohner.jpg", text: "Respectful dealing with people and their textiles. Hygienically and gently processed, clean and completely back at the resident – that’s your core business. Kannegiesser supports you with the right machine and data technology!" }
         ],
+        bannerTitle: "DESIGNED FOR YOUR PROFESSIONAL DAILY LAUNDRY BUSINESS.",
+        bannerSubtitle: "The Batch Washer System demands a well-rounded and integrative long-term approach.",
+        summaryTitle: "SUMMARY",
         summaryBlocks: [
           {
             title: "Hygiene & Diversity",
-            subtitle: "The main future tasks for Textile Service Providers",
-            text: "Global business trends show that hygiene and diversity in particular will become the main tasks for Textile Service Providers in future. Hygiene is the core business of a textile service company. Diversity is the second challenge and offers a chance to differentiate from the competition. New textiles, articles and colors will have an impact on the whole process and will require machines to cope with these elements."
+            subtitle: "THE MAIN FUTURE TASKS FOR TEXTILE SERVICE PROVIDERS",
+            text: "Global business trends show that hygiene and diversity in particular will become the main tasks for Textile Service Providers in future. Hygiene is the core business of a textile service company. Diversity is the second challenge and offers a chance to differentiate from the competition. New textiles, articles and colors will have an impact on the whole process and will require machines to cope with these elements.",
+            boxTitle: "THE POWERTRANS VARIO AT A GLANCE",
+            boxBullets: [
+              "Individual processing of each batch with regards to water levels, chemicals, temperatures etc.",
+              "No counterflow, no liquor mixing guaranteeing wash quality, hygiene and color fastness"
+            ]
           },
           {
             title: "Cost-effectiveness, Performance and Availability",
-            subtitle: "The key success factors for your daily business",
-            text: "The PowerTrans Vario minimizes the consumption of water, energy and chemicals. The principle of the straight drum wall design enables high loading ratios and overload safety without any restrictions on the wash and finish quality. To ensure that your daily laundry processes run smoothly and steadily, you have a long-lasting, resilient partner by your side."
+            subtitle: "THE KEY SUCCESS FACTORS FOR YOUR DAILY BUSINESS",
+            text: "The PowerTrans Vario minimizes the consumption of water, energy and chemicals. The principle of the straight drum wall design enables high loading ratios and overload safety without any restrictions on the wash and finish quality. To ensure that your daily laundry processes run smoothly and steadily, you have a long-lasting, resilient partner by your side.",
+            boxTitle: "THE POWERTRANS VARIO AT A GLANCE",
+            boxBullets: [
+              "Highest possible output within the available space",
+              "Water and energy savings by design",
+              "Best wash performance with lowest consumption",
+              "Low lifecycle costs",
+              "Excellent textile care"
+            ]
           }
         ]
       },
@@ -385,45 +402,96 @@ export default function KannegiesserProduct() {
   const renderTabContent = () => {
     switch (activeTab) {
       case 'overview':
-        return (
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}
-            className="space-y-24"
-          >
-            {/* Intro */}
-            <div className="max-w-4xl">
-              <h2 className="text-3xl lg:text-4xl font-bold text-[#001F3F] mb-6">{product.tabs.overview.introTitle}</h2>
-              <p className="text-lg text-slate-600 leading-relaxed whitespace-pre-line">{product.tabs.overview.introText}</p>
-            </div>
-
-            {/* Applications */}
-            <div>
-              <h3 className="text-2xl font-bold text-[#001F3F] mb-8">{product.tabs.overview.applicationsTitle}</h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {product.tabs.overview?.applications?.map((app, idx) => (
-                  <div key={idx} className="relative group rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow aspect-square">
-                    <img src={app.img} alt={app.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#001F3F]/90 via-[#001F3F]/20 to-transparent" />
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <span className="text-white font-bold text-sm tracking-wide">{app.name}</span>
-                    </div>
-                  </div>
-                ))}
+          return (
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}
+              className="w-full pb-24"
+            >
+              {/* Intro Title & Text */}
+              <div className="max-w-7xl mx-auto px-6 lg:px-16 mb-16">
+                <h2 className="text-[32px] lg:text-[40px] font-bold text-[#00509B] mb-6 uppercase tracking-tight">{product.tabs.overview.introTitle}</h2>
+                {product.tabs.overview.introSubtitle && (
+                  <p className="text-[20px] lg:text-[24px] text-slate-500 font-light leading-relaxed mb-6">
+                    {product.tabs.overview.introSubtitle}
+                  </p>
+                )}
+                <p className="text-sm lg:text-[15px] text-slate-700 leading-relaxed font-normal max-w-5xl">
+                  {product.tabs.overview.introText}
+                </p>
               </div>
-            </div>
 
-            {/* Summary Blocks */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              {product.tabs.overview?.summaryBlocks?.map((block, idx) => (
-                <div key={idx} className="bg-white rounded-3xl p-10 border border-slate-100 shadow-sm">
-                  {block.title && <h3 className="text-2xl font-bold text-[#E31E24] mb-2">{block.title}</h3>}
-                  {block.subtitle && <h4 className="text-lg font-bold text-[#001F3F] mb-6">{block.subtitle}</h4>}
-                  {block.text && <p className="text-slate-600 leading-relaxed whitespace-pre-line">{block.text}</p>}
+              {/* Light Divider */}
+              <div className="w-full max-w-7xl mx-auto px-6 lg:px-16 mb-16">
+                 <div className="h-[1px] w-full bg-slate-200"></div>
+              </div>
+
+              {/* Applications Carousel */}
+              <div className="max-w-[100vw] overflow-hidden mb-16">
+                <div className="max-w-7xl mx-auto px-6 lg:px-16">
+                  <h2 className="text-[24px] lg:text-[28px] font-bold text-[#00509B] mb-8 uppercase tracking-tight">{product.tabs.overview.applicationsTitle}</h2>
                 </div>
-              ))}
-            </div>
-          </motion.div>
-        );
+                {/* Horizontal Scrolling Carousel to emulate the slider */}
+                <div className="flex overflow-x-auto gap-6 px-6 lg:px-16 pb-8 snap-x snap-mandatory scrollbar-hide" style={{ scrollbarWidth: 'none' }}>
+                  {product.tabs.overview?.applications?.map((app, idx) => (
+                    <div key={idx} className="w-[85vw] md:w-[400px] lg:w-[450px] shrink-0 snap-start bg-white border border-slate-100 shadow-sm flex flex-col group cursor-pointer hover:shadow-lg transition-shadow">
+                      <div className="w-full h-[220px] md:h-[250px] overflow-hidden bg-slate-100">
+                        <img src={app.img} alt={app.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                      </div>
+                      <div className="p-6 md:p-8 flex-1">
+                        <h3 className="text-[18px] md:text-[20px] font-bold text-slate-800 mb-4">{app.name}</h3>
+                        <p className="text-slate-600 text-[14px] leading-relaxed">{app.text}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Full Width Blue Banner */}
+              {product.tabs.overview.bannerTitle && (
+                <div className="w-full bg-[#00509B] text-white py-16 px-6 lg:px-16 my-16">
+                  <div className="max-w-7xl mx-auto">
+                    <h2 className="text-[24px] lg:text-[32px] font-bold uppercase mb-2 leading-tight">{product.tabs.overview.bannerTitle}</h2>
+                    <h3 className="text-[18px] lg:text-[22px] font-light text-white/90 leading-relaxed">{product.tabs.overview.bannerSubtitle}</h3>
+                    <div className="w-full h-[1px] bg-white/20 mt-10"></div>
+                  </div>
+                </div>
+              )}
+
+              {/* Summary Blocks */}
+              <div className="max-w-7xl mx-auto px-6 lg:px-16">
+                {product.tabs.overview.summaryTitle && (
+                  <h2 className="text-[24px] lg:text-[28px] font-bold text-[#00509B] mb-12 uppercase">{product.tabs.overview.summaryTitle}</h2>
+                )}
+                
+                <div className="flex flex-col gap-16">
+                  {product.tabs.overview?.summaryBlocks?.map((block, idx) => (
+                    <div key={idx} className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-stretch">
+                      
+                      {/* Left Text */}
+                      <div className="flex-1 py-4">
+                        {block.title && <h3 className="text-[20px] lg:text-[24px] font-bold text-slate-800 mb-2">{block.title}</h3>}
+                        {block.subtitle && <h4 className="text-[14px] font-bold text-slate-500 mb-6 uppercase tracking-wider">{block.subtitle}</h4>}
+                        {block.text && <p className="text-slate-600 leading-relaxed font-light text-[15px]">{block.text}</p>}
+                      </div>
+                      
+                      {/* Right Grey Box */}
+                      {block.boxTitle && block.boxBullets && (
+                        <div className="flex-1 bg-[#EBEBEB] p-8 lg:p-12">
+                          <p className="text-[14px] text-slate-500 mb-6 uppercase tracking-widest">{block.boxTitle}</p>
+                          <ul className="list-disc pl-5 text-[15px] text-slate-700 leading-relaxed space-y-2 font-light">
+                            {block.boxBullets.map((bullet, bIdx) => (
+                              <li key={bIdx} className="pl-2">{bullet}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          );
+
       
       case 'benefits':
         return (
@@ -561,7 +629,11 @@ export default function KannegiesserProduct() {
         </div>
 
         {/* Bottom Blue Bar (Product Name + Tabs) */}
-        <div className="relative z-20 w-full bg-[#00509B] text-white flex flex-col lg:flex-row items-center justify-between px-6 lg:px-16 min-h-[80px]">
+        </section>
+      
+      {/* Sticky Bottom Blue Bar (Product Name + Tabs) */}
+      <div className="sticky top-[68px] z-50 w-full bg-[#00509B] text-white flex flex-col lg:flex-row items-center justify-between px-6 lg:px-16 min-h-[80px] shadow-lg">
+        
           
           {/* Left: Product Name */}
           <div className="flex items-center gap-4 py-4 lg:py-0">
@@ -593,11 +665,11 @@ export default function KannegiesserProduct() {
               </button>
             ))}
           </div>
-        </div>
-      </section>
+        
+      </div>
 
       {/* Dynamic Content */}
-      <section className="py-20 bg-slate-50 flex-1">
+      <section className="py-20 bg-white flex-1">
         <div className="max-w-7xl mx-auto px-6 lg:px-16">
           <AnimatePresence mode="wait">
             {renderTabContent()}
