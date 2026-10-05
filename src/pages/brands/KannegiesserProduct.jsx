@@ -380,59 +380,100 @@ const WASHING_TECH_DATA = {
 
 const DATA_INFO_DATA = {
   "kannegiesser-process-control": {
-    category: "Data Information Systems",
-    title: "Process Control",
-    subtitle: "IMPROVING PERFORMANCE WITH SMARTER PROCESSES",
-    description: "Process control optimizes laundry logistics by using batch data.",
-    img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Category_Process-Control.png",
-    tabs: {
-      overview: {
-        introTitle: "PROCESS CONTROL",
-        introText: "One key to premium laundry services at competitive rates is efficiency. Process control optimizes laundry logistics by using batch data to improve throughput.",
-        applicationsTitle: "Smart Logistics",
-        summaryBlocks: [
-          { title: "Batch Management", text: "Seamless integration between sorting, washing, and finishing." }
+    "category": "Data Information Systems",
+    "title": "Process Control",
+    "subtitle": "PROCESS CONTROL",
+    "description": "Smart Process Control",
+    "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Category_Process-Control.png",
+    "heroImg": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_DataInfoSystems.jpg",
+    "tabs": {
+      "overview": {
+        "introTitle": "IMPROVING PERFORMANCE WITH SMARTER PROCESSES",
+        "introText": "Efficiency through process automation.\n\nOne key to premium laundry services at competitive rates is efficiency. Process control optimizes laundry logistics by using batch data to control sequences and machines automatically.",
+        "applicationsTitle": "Fully tailored to your application",
+        "applications": [
+          {
+            "name": "Airlines",
+            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Fluglinien.jpg",
+            "text": "Above the clouds you want to ensure the best results for every passenger. With Kannegiesser machine you can perfectly handle your customer’s wide range of Airline Blankets."
+          },
+          {
+            "name": "Hospitality & Restaurant",
+            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Hotel.jpg",
+            "text": "The variety of articles is constantly growing. Customers expect their individual selection of linen. With Kannegiesser machines, you can offer the highest quality, which is particularly gentle on the textile and resources!"
+          },
+          {
+            "name": "Healthcare",
+            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Krankenhaus.jpg",
+            "text": "Do you handle a wide range of linen for the healthcare sector? The professional preparation of those textiles requires a reproducible hygiene process. With Kannegiesser you are on the safe side!"
+          }
+        ],
+        "summaryBlocks": [
+          {
+            "title": "SMART UP YOUR LAUNDRY!",
+            "subtitle": "Consistency and continuity of production, processes and related logistics."
+          },
+          {
+            "title": "Monitor and control processes",
+            "text": "Process control optimizes production and enables higher performance. Processing sequences and machine parameters are automatically controlled and visualized up to expedition.",
+            "bullets": [
+              "Process Monitoring",
+              "Batch visualization",
+              "Process Control",
+              "Automatic Program Selection",
+              "TrackView"
+            ]
+          }
         ]
-      },
-      benefits: {
-        blocks: [
-          { title: "Continuous Flow", text: "Prevents bottlenecks and starvation of finishing equipment." }
-        ]
-      },
-      technologies: {
-        blocks: [
-          { title: "Centralized Routing", text: "Automatically routes batches based on category and priority." }
-        ]
-      },
-      specs: { table: [ { label: "Integration", value: "Full System Compatibility" } ] }
+      }
     }
   },
   "kannegiesser-monitoring": {
-    category: "Data Information Systems",
-    title: "Monitoring",
-    subtitle: "ANALYZE AND IMPROVE YOUR PRODUCTION",
-    description: "Complete overview and analytics of your laundry operations.",
-    img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_DataInfoSystems.png",
-    tabs: {
-      overview: {
-        introTitle: "MONITORING",
-        introText: "Analyze and improve your production with real-time data insights and historical analytics.",
-        applicationsTitle: "Smart Laundry Dashboard",
-        summaryBlocks: [
-          { title: "Real-Time Tracking", text: "Monitor every machine and batch in real time." }
+    "category": "Data Information Systems",
+    "title": "Monitoring",
+    "subtitle": "MONITORING",
+    "description": "Data Analytics",
+    "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_DataInfoSystems.png",
+    "heroImg": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_DataInfoSystems.jpg",
+    "tabs": {
+      "overview": {
+        "introTitle": "ANALYZE AND IMPROVE YOUR PRODUCTION",
+        "introText": "Continuous monitoring and analysis of your production data.\n\nCast some light into the black box called laundry with our monitoring and reporting functions. Identify production issues fast and take action immediatly to guarantee high output at all times.",
+        "applicationsTitle": "Fully tailored to your application",
+        "applications": [
+          {
+            "name": "Airlines",
+            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Fluglinien.jpg",
+            "text": "Above the clouds you want to ensure the best results for every passenger. With Kannegiesser machine you can perfectly handle your customer’s wide range of Airline Blankets."
+          },
+          {
+            "name": "Hospitality & Restaurant",
+            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Hotel.jpg",
+            "text": "The variety of articles is constantly growing. Customers expect their individual selection of linen. With Kannegiesser machines, you can offer the highest quality, which is particularly gentle on the textile and resources!"
+          },
+          {
+            "name": "Healthcare",
+            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Krankenhaus.jpg",
+            "text": "Do you handle a wide range of linen for the healthcare sector? The professional preparation of those textiles requires a reproducible hygiene process. With Kannegiesser you are on the safe side!"
+          }
+        ],
+        "summaryBlocks": [
+          {
+            "title": "VISUALIZE YOUR PERFORMANCE",
+            "subtitle": "With Area Monitoring, performance data is illustrated on large screens for control and motivation."
+          },
+          {
+            "title": "Live Monitoring and Reporting",
+            "text": "Monitoring allows you to stay up to date with KPIs such as performance, availability, consumption and quality for your entire laundry, specific laundry areas or single machines. Office Reporting provides comprehensive and interactive evaluation of laundry data over time, indluding graphs.",
+            "bullets": [
+              "Area Monitoring",
+              "Office Monitoring",
+              "Office Reporting",
+              "Monitoring and Reporting of KPIs"
+            ]
+          }
         ]
-      },
-      benefits: {
-        blocks: [
-          { title: "Efficiency Gains", text: "Identify bottlenecks and optimize utility consumption." }
-        ]
-      },
-      technologies: {
-        blocks: [
-          { title: "Dashboard Analytics", text: "Cloud-based or local dashboards for deep management insights." }
-        ]
-      },
-      specs: { table: [ { label: "Integration", value: "All Kannegiesser Equipment" } ] }
+      }
     }
   }
 };
