@@ -267,47 +267,92 @@ const WASHING_TECH_DATA = {
       }
     },
 "kannegiesser-cwd": {
-      category: "Washing Technology",
-      "title": "Disinfection Sluices",
-      "subtitle": "CWD",
-      description: "Porta CONTAINER WASH- AND DISINFECTION SLUICE",
-      "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_CWD_Desi.png",
-      heroImg: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_CWD_Desi.jpg",
-      tabs: {
-        overview: {
-          introTitle: "Porta CONTAINER WASH- AND DISINFECTION SLUICE",
-          
-          introText: "Our custom-made Porta systems are ideal for processing laundry trolleys, transport carts, containers and wheeled shelves. Depending on its equipment, the process includes soaking, washing, rinsing, steaming, chemical disinfection and vapour exhaust in optimal sequence.",
-          applicationsTitle: "Fully tailored to your application",
-          applications: [{"name":"Healthcare","img":"https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Krankenhaus.jpg","text":"Do you handle a wide range of linen for the healthcare sector' The professional preparation of those textiles requires a reproducible hygiene process. With Kannegiesser you are on the safe side!"},{"name":"Residental","img":"https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Bewohner.jpg","text":"Respectful dealing with people and their textiles. Hygienically and gently processed, clean and completely back at the resident – that’s your core business. Kannegiesser supports you with the right machine and data technology!"}],
-          
-          
-          
-          summaryBlocks: []
+        category: "Washing Technology",
+        "title": "Disinfection Sluices",
+        "subtitle": "CWD",
+        description: "Porta CONTAINER WASH- AND DISINFECTION SLUICE",
+        "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_CWD_Desi.png",
+        heroImg: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_CWD_Desi.jpg",
+        tabs: {
+          overview: {
+            introTitle: "Porta CONTAINER WASH- AND DISINFECTION SLUICE",
+            introText: "Our custom-made Porta systems are ideal for processing laundry trolleys, transport carts, containers and wheeled shelves. Depending on its equipment, the process includes soaking, washing, rinsing, steaming, chemical disinfection and vapour exhaust in optimal sequence.",
+            applicationsTitle: "Fully tailored to your application",
+            applications: [{"name":"Healthcare","img":"https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Krankenhaus.jpg","text":"Do you handle a wide range of linen for the healthcare sector' The professional preparation of those textiles requires a reproducible hygiene process. With Kannegiesser you are on the safe side!"},{"name":"Residental","img":"https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Bewohner.jpg","text":"Respectful dealing with people and their textiles. Hygienically and gently processed, clean and completely back at the resident – that’s your core business. Kannegiesser supports you with the right machine and data technology!"}]
+          },
+          benefits: {
+            blocks: [
+              {
+                title: "Specialties and functions",
+                text: "The CWD Porta System offers robust features designed for high-efficiency processing and uncompromising hygiene:",
+                boxBullets: [
+                  "Closed cabin for real barrier-wall application",
+                  "Above-floor or in-floor installation possible",
+                  "Average cycle time per charge (2 containers) 5-6 min dependent on degree of soiling and program",
+                  "Chain driven nozzle facilities spray water, chemicals and steam on each trolley",
+                  "For high-pressure and medium-pressure washing procedures (6 resp 20 bar spray pressure)",
+                  "Recovery tank for reduction of water consumption by 50 - 60 % optionally available",
+                  "Nozzle systems for washing of bottom and top optionally available",
+                  "Internal tilting device optionally available",
+                  "Hot air drying system optionally available",
+                  "SPS control for up to 99 individual programs"
+                ]
+              }
+            ]
+          },
+          technologies: {
+            blocks: [
+              {
+                title: "Sluice Integration",
+                subtitle: "Safe separation",
+                text: "The Porta Container Wash- and Disinfection Sluice ensures complete physical separation between the soiled and clean sides of the laundry, vital for preventing nosocomial infections."
+              }
+            ]
+          }
         }
-      }
-    },
+      },
 "kannegiesser-cd": {
-      category: "Washing Technology",
-      "title": "Disinfection Sluices",
-      "subtitle": "CD",
-      description: "DISINFECTION TUNNEL PORTA MODEL CD",
-      "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_CD_Desi.png",
-      heroImg: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_CD_Desi.jpg",
-      tabs: {
-        overview: {
-          introTitle: "DISINFECTION TUNNEL PORTA MODEL CD",
-          
-          introText: "The disinfection cabinet Porta CD for chemical disinfection of laundry trolleys, transport carts, containers etc.",
-          applicationsTitle: "Fully tailored to your application",
-          applications: [{"name":"Healthcare","img":"https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Krankenhaus.jpg","text":"Do you handle a wide range of linen for the healthcare sector' The professional preparation of those textiles requires a reproducible hygiene process. With Kannegiesser you are on the safe side!"},{"name":"Residental","img":"https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Bewohner.jpg","text":"Respectful dealing with people and their textiles. Hygienically and gently processed, clean and completely back at the resident – that’s your core business. Kannegiesser supports you with the right machine and data technology!"},{"name":"Workwear","img":"https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Schutzkleidung.jpg","text":"High pollution loads. Preservation of the protective function. Textile variety in a modern design.\nThese requirements are handled daily! Kannegiesser solutions help you to provide your customers with fresh workwear punctually and reliably."}],
-          
-          
-          
-          summaryBlocks: []
+        category: "Washing Technology",
+        "title": "Disinfection Sluices",
+        "subtitle": "CD",
+        description: "DISINFECTION TUNNEL PORTA MODEL CD",
+        "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_CD_Desi.png",
+        heroImg: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_CD_Desi.jpg",
+        tabs: {
+          overview: {
+            introTitle: "DISINFECTION TUNNEL PORTA MODEL CD",
+            introText: "The disinfection cabinet Porta CD for chemical disinfection of laundry trolleys, transport carts, containers etc.",
+            applicationsTitle: "Fully tailored to your application",
+            applications: [{"name":"Healthcare","img":"https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Krankenhaus.jpg","text":"Do you handle a wide range of linen for the healthcare sector' The professional preparation of those textiles requires a reproducible hygiene process. With Kannegiesser you are on the safe side!"},{"name":"Residental","img":"https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Bewohner.jpg","text":"Respectful dealing with people and their textiles. Hygienically and gently processed, clean and completely back at the resident – that’s your core business. Kannegiesser supports you with the right machine and data technology!"},{"name":"Workwear","img":"https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Schutzkleidung.jpg","text":"High pollution loads. Preservation of the protective function. Textile variety in a modern design.\nThese requirements are handled daily! Kannegiesser solutions help you to provide your customers with fresh workwear punctually and reliably."}]
+          },
+          benefits: {
+            blocks: [
+              {
+                title: "Specialties and functions",
+                text: "The CD Disinfection Tunnel provides critical continuous hygiene with these key features:",
+                boxBullets: [
+                  "Cabinet body made of aluminium",
+                  "Inner cabinet walls made of stainless steel",
+                  "Counter-locked automatic aluminium roller doors",
+                  "Automatic dosing with membrane dosing pump",
+                  "Disinfections are sprayed on the objects by spraying heads",
+                  "Ventilator exhausts vapours from the cabin afterwards",
+                  "Stainless steel floor optionally available"
+                ]
+              }
+            ]
+          },
+          technologies: {
+            blocks: [
+              {
+                title: "Disinfection Tunnel Porta",
+                subtitle: "Continuous hygiene",
+                text: "The CD Disinfection Tunnel provides continuous, validated decontamination of items passing through the hygienic barrier."
+              }
+            ]
+          }
         }
-      }
-    },
+      },
 
 };
 
