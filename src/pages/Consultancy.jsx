@@ -876,7 +876,7 @@ export default function Consultancy() {
       <ProcessTimeline />
       <DesignPerformance />
       <CombinedWhyChooseAndCta />
-      <BrandsFooter />
+      <BrandMarquee title="Trusted by Leading Brands Across India" />
       <Footer />
     </div>
   );

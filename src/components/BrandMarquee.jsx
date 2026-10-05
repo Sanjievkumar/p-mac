@@ -8,11 +8,11 @@ import sealionLogo from '../assets/brands/sealion.png';
 import imesaLogo from '../assets/brands/imesa.png';
 
 const BRANDS = [
-  { name: "SEA-LION", src: sealionLogo, customClass: "scale-[1.2]" },
-  { name: "KANNEGIESSER", src: kannegiesserLogo, customClass: "scale-[0.8]" },
-  { name: "MAESTRELLI", src: maestrelliLogo, customClass: "scale-[0.85]" },
-  { name: "MAXIPRESS", src: maxipressLogo, customClass: "scale-[1.1]" },
-  { name: "IMESA", src: imesaLogo, customClass: "scale-[0.6]" }
+  { name: "SEA-LION", src: sealionLogo },
+  { name: "KANNEGIESSER", src: kannegiesserLogo },
+  { name: "MAESTRELLI", src: maestrelliLogo },
+  { name: "MAXIPRESS", src: maxipressLogo },
+  { name: "IMESA", src: imesaLogo }
 ];
 
 /**
@@ -47,25 +47,25 @@ function MagneticBrand({ brand }) {
 
   return (
     <motion.div
-      className="px-8 md:px-24 flex items-center justify-center cursor-pointer"
+      className="px-8 md:px-16 flex items-center justify-center cursor-pointer h-24"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ perspective: 1000 }}
       whileHover={{ scale: 1.15 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
     >
-      <motion.div style={{ rotateX, rotateY, display: "inline-block" }}>
+      <motion.div style={{ rotateX, rotateY, display: "flex", alignItems: "center", justifyContent: "center" }} className="w-32 h-16 md:w-40 md:h-20">
         <img 
           src={brand.src} 
           alt={brand.name} 
-          className={`h-10 md:h-12 lg:h-14 w-auto object-contain mix-blend-multiply ${brand.customClass || ''}`} 
+          className="w-full h-full object-contain mix-blend-multiply drop-shadow-sm" 
         />
       </motion.div>
     </motion.div>
   );
 }
 
-export default function BrandMarquee() {
+export default function BrandMarquee({ title = "Strategic Partners" }) {
   const [scope, animate] = useAnimate();
   const animationRef = useRef(null);
   
@@ -99,7 +99,7 @@ export default function BrandMarquee() {
     <section className="w-full bg-white py-16 border-y border-slate-200 overflow-hidden flex flex-col items-center">
       
       <p className="text-gray-400 text-xs font-bold tracking-[0.3em] uppercase mb-12 font-display">
-        Strategic Partners
+        {title}
       </p>
 
       {/* 
