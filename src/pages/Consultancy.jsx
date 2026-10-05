@@ -85,11 +85,9 @@ function HeroSection() {
             </Link>
           </div>
         </motion.div>
+        </div>
 
-                </div>
-      </div>
-
-      {/* FOOTER STATS */}
+        {/* FOOTER STATS */}
       <div className="relative z-20 w-full max-w-7xl mx-auto mt-20 border-t border-slate-200 pt-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center">
           {/* Feature 1 */}
