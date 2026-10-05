@@ -11,6 +11,7 @@ import kannegiesserLogo from '../assets/brands/kannegiesser.png';
 import maestrelliLogo from '../assets/brands/maestrelli.png';
 import maxipressLogo from '../assets/brands/maxipress.png';
 import sealionLogo from '../assets/brands/sealion.png';
+import imesaLogo from '../assets/brands/imesa.png';
 
 /* ─────────────────────────────────────────────
    HERO SECTION
@@ -42,7 +43,7 @@ function HeroSection() {
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="lg:col-span-6 space-y-6 text-left"
+          className="lg:col-span-12 space-y-6 text-center flex flex-col items-center"
         >
           <span className="text-xs font-bold tracking-[0.2em] text-[#E31E24] uppercase block">
             Consultancy
@@ -56,12 +57,12 @@ function HeroSection() {
             </span>
           </h1>
 
-          <p className="text-slate-500 text-lg md:text-xl max-w-lg font-medium leading-relaxed">
+          <p className="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed">
             Expert consultancy for industrial laundry setups that reduce costs, improve efficiency and drive long term success.
           </p>
 
           {/* CTA BUTTONS */}
-          <div className="flex flex-wrap gap-4 pt-4">
+          <div className="flex flex-wrap gap-4 pt-4 justify-center">
             <Link to="/contact">
               <button className="bg-[#E31E24] hover:bg-gradient-to-r hover:from-pink-600 hover:to-[#E31E24] text-white font-bold tracking-widest text-[11px] uppercase px-8 py-4 rounded-[8px] flex items-center gap-3 transition-all duration-300 shadow-md shadow-[#E31E24]/20 hover:shadow-lg hover:-translate-y-1 group">
                 Request Consultation
@@ -85,44 +86,7 @@ function HeroSection() {
           </div>
         </motion.div>
 
-        {/* RIGHT COLUMN: RENDER IMAGE & LIGHTING ENVIRONMENT */}
-        <div className="lg:col-span-6 flex justify-center items-center relative h-[500px] lg:h-[600px]">
-          
-          <div className="relative flex flex-col items-center justify-center w-full max-w-[650px] mt-10">
-            {/* Main Floating Washing Machine & Integrated Elements Container */}
-            <motion.div 
-              animate={{ y: [0, -15, 0] }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-              className="relative z-10 w-[110%] mx-auto drop-shadow-[0_40px_40px_rgba(0,0,0,0.3)]"
-            >
-              <img 
-                src="/images/consultancy/hero-machine-final-perfect.png" 
-                alt="Integrated Industrial Laundry setup visualization" 
-                className="w-full h-auto object-contain origin-bottom scale-[0.95]"
-              />
-            </motion.div>
-
-            {/* Photorealistic AI-Rendered Glass Podium */}
-            <div 
-              className="absolute bottom-[-35%] w-[140%] z-0 flex justify-center pointer-events-none mix-blend-multiply opacity-90"
-              style={{
-                WebkitMaskImage: 'radial-gradient(ellipse at center, black 40%, transparent 70%)',
-                maskImage: 'radial-gradient(ellipse at center, black 40%, transparent 70%)'
-              }}
-            >
-              <img 
-                src="/images/consultancy/glass-podium.jpg" 
-                alt="Glass stage" 
-                className="w-full h-auto object-contain scale-y-[0.75]" 
-              />
-            </div>
-          </div>
-
-        </div>
+                </div>
       </div>
 
       {/* FOOTER STATS */}
@@ -798,7 +762,7 @@ function CombinedWhyChooseAndCta() {
           <div className="w-full flex flex-col xl:flex-row items-center justify-between relative z-40">
             
             {/* COL 1: Text */}
-            <div className="w-full xl:w-[40%] text-center xl:text-left mb-6 xl:mb-0 py-10 xl:py-0">
+            <div className="w-full xl:w-[50%] text-center xl:text-left mb-6 xl:mb-0 py-10 xl:py-0">
               <p className="text-slate-300 text-[10px] font-semibold mb-2 tracking-widest uppercase opacity-90">
                 Planning a Laundry Setup?
               </p>
@@ -809,7 +773,7 @@ function CombinedWhyChooseAndCta() {
             </div>
 
             {/* COL 2: Buttons */}
-            <div className="w-full xl:w-[35%] flex flex-col sm:flex-row gap-4 justify-center xl:justify-start pb-8 xl:pb-0">
+            <div className="w-full xl:w-[50%] flex flex-col sm:flex-row gap-4 justify-center xl:justify-start pb-8 xl:pb-0">
               <Link to="/contact">
                 <motion.button 
                   whileHover={{ scale: 1.05 }}
@@ -839,16 +803,7 @@ function CombinedWhyChooseAndCta() {
               </Link>
             </div>
 
-            {/* COL 3: Cart */}
-            <div className="w-full xl:w-[25%] relative h-[160px] hidden xl:flex items-end justify-end">
-              <div className="absolute right-[30px] bottom-[15px] w-[200px] z-40 pointer-events-none">
-                <img 
-                  src="/images/consultancy/cta-cart.png" 
-                  alt="Laundry Cart" 
-                  className="w-full h-auto drop-shadow-[0_20px_30px_rgba(0,0,0,0.8)]" 
-                />
-              </div>
-            </div>
+            
             
           </div>
           
@@ -864,15 +819,15 @@ function CombinedWhyChooseAndCta() {
 ───────────────────────────────────────────── */
 function BrandsFooter() {
   const logos = [
-    { name: 'Kannegiesser', src: kannegiesserLogo },
+    { name: 'Imesa', src: imesaLogo }, { name: 'Kannegiesser', src: kannegiesserLogo },
     { name: 'Maestrelli', src: maestrelliLogo },
     { name: 'Maxipress', src: maxipressLogo },
     { name: 'Sealion', src: sealionLogo },
-    { name: 'Kannegiesser2', src: kannegiesserLogo },
+    { name: 'Imesa2', src: imesaLogo }, { name: 'Kannegiesser2', src: kannegiesserLogo },
     { name: 'Maestrelli2', src: maestrelliLogo },
     { name: 'Maxipress2', src: maxipressLogo },
     { name: 'Sealion2', src: sealionLogo },
-    { name: 'Kannegiesser3', src: kannegiesserLogo },
+    { name: 'Imesa3', src: imesaLogo }, { name: 'Kannegiesser3', src: kannegiesserLogo },
     { name: 'Maestrelli3', src: maestrelliLogo },
     { name: 'Maxipress3', src: maxipressLogo },
     { name: 'Sealion3', src: sealionLogo }
