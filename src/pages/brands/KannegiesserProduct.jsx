@@ -103,35 +103,50 @@ const WASHING_TECH_DATA = {
     }
   },
   "kannegiesser-powerpress": {
-    category: "Washing Technology",
-    "title": "Extraction Technology",
-    "subtitle": "PowerPress",
-    description: "High moisture extraction performance combined with fatigue strength.",
-    "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_PowerPress.png",
-    tabs: {
-      overview: {
-        introTitle: "HIGH PERFORMANCE MEETS MINIMUM RESIDUAL MOISTURE",
-        introText: "Lower Residual Moisture Leads to Energy Savings in the Finishing Process. One of the most important development objectives of a modern moisture extraction press is optimum performance with all types of laundry, even for very short wash cycles and delicate articles. The subsequent energy savings during drying and ironing are considerable and high performance hydraulics and control system ensure gentle treatment of all textiles.",
-        applicationsTitle: "Fully tailored to your application",
-        applications: [
-          { name: "Cruise Ships", img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Kreuzfahrtschiff.jpg" },
-          { name: "Airlines", img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Fluglinien.jpg" },
-          { name: "Hospitality & Restaurant", img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Hotel.jpg" },
-          { name: "Healthcare", img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Krankenhaus.jpg" }
-        ],
-        summaryBlocks: [
-          {
-            title: "PowerPress - The output maximizer",
-            subtitle: "Redefining moisture extraction",
-            text: "The Kannegiesser PowerPress redefines moisture extraction in batch washer systems."
-          },
-          {
-            title: "High moisture extraction performance",
-            subtitle: "Reliability in the field",
-            text: "There is no such thing as standard operation in the field. Overloading, bulky items, batches that fall apart easily are the norm. The PowerPress is optimally designed for this type of operation in the field. A high degree of reliability, even if the press is overloaded or when processing types of laundry liable to fall apart, is vital for the practical operation of the equipment."
-          }
-        ]
-      },
+      category: "Washing Technology",
+      "title": "Extraction Technology",
+      "subtitle": "PowerPress",
+      description: "High moisture extraction performance combined with fatigue strength.",
+      "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_PowerPress.png",
+      heroImg: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_PowerPress.jpg",
+      tabs: {
+        overview: {
+          introTitle: "HIGH PERFORMANCE MEETS MINIMUM RESIDUAL MOISTURE",
+          introSubtitle: "Lower Residual Moisture Leads to Energy Savings in the Finishing Process.",
+          introText: "One of the most important development objectives of a modern moisture extraction press is optimum performance with all types of laundry, even for very short wash cycles and delicate articles. The subsequent energy savings during drying and ironing are considerable and high performance hydraulics and control system ensure gentle treatment of all textiles.",
+          applicationsTitle: "FULLY TAILORED TO YOUR APPLICATION",
+          applications: [
+            { name: "Cruise Ships", img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Kreuzfahrtschiff.jpg", text: "Floating cities where nothing is left to be desired! The textiles are processed in a minimum space with the lowest possible use of resources – with innovative laundry technology from Kannegiesser." },
+            { name: "Airlines", img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Fluglinien.jpg", text: "Above the clouds you want to ensure the best results for every passenger. With Kannegiesser machine you can perfectly handle your customer’s wide range of Airline Blankets." },
+            { name: "Hospitality & Restaurant", img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Hotel.jpg", text: "The variety of articles is constantly growing. Customers expect their individual selection of linen. With Kannegiesser machines, you can offer the highest quality, which is particularly gentle on the textile and resources!" },
+            { name: "Healthcare", img: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Krankenhaus.jpg", text: "Do you handle a wide range of linen for the healthcare sector? The professional preparation of those textiles requires a reproducible hygiene process. With Kannegiesser you are on the safe side!" }
+          ],
+          bannerTitle: "POWERPRESS - THE OUTPUT MAXIMIZER",
+          bannerSubtitle: "The Kannegiesser PowerPress redefines moisture extraction in batch washer systems.",
+          summaryTitle: "SUMMARY",
+          summaryBlocks: [
+            {
+              title: "High moisture extraction performance",
+              text: "There is no such thing as standard operation in the field. Overloading, bulky items, batches that fall apart easily are the norm. The PowerPress is optimally designed for this type of operation in the field. A high degree of reliability, even if the press is overloaded or when processing types of laundry liable to fall apart, is vital for the practical operation of the equipment.",
+              boxBullets: [
+                "Fast pressure build-up",
+                "Maximum high pressure time",
+                "Rapid water drainage",
+                "Belt unloading – guarantee for safety and hygiene"
+              ]
+            },
+            {
+              title: "Simple operation, easy maintenance",
+              text: "These two features are inextricably linked. A clearly designed machine construction with highest material standards and a completely newly designed collection tank makes maintenance very simple. The system remains clean and, therefore, perfectly hygienic and requires minimum maintenance. The PowerPress is controlled by a high performance yet easy to operate control system.",
+              boxBullets: [
+                "Large, fully viewable collection tank",
+                "Cover panels in stainless steel",
+                "Structural strength without compromise"
+              ]
+            }
+          ]
+        },
+
       benefits: {
         blocks: [
           {
@@ -586,25 +601,6 @@ export default function KannegiesserProduct() {
               <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/40 to-white/80" />
             </>
           )}
-        </div>
-
-        {/* Top Kannegiesser Blue Navigation Bar (Replicating the official UI) */}
-        <div className="relative z-20 w-full h-14 bg-[#00509B] text-white flex items-center justify-between px-6 lg:px-12 shadow-md">
-          <div className="flex items-center gap-4">
-            <span className="font-bold tracking-wide text-[15px]">myKannegiesser</span>
-            <Globe className="w-4 h-4" />
-          </div>
-          
-          <div className="flex items-center gap-6">
-            <Link to="/contact" className="hover:text-slate-200 transition-colors text-sm font-semibold">Contact</Link>
-            <Search className="w-4 h-4 cursor-pointer hover:text-slate-200" />
-            <Menu className="w-5 h-5 cursor-pointer hover:text-slate-200" />
-          </div>
-
-          {/* Center Floating Logo Box */}
-          <div className="absolute left-1/2 -translate-x-1/2 top-0 bg-white px-8 lg:px-12 py-5 shadow-lg z-30 flex items-center justify-center min-w-[200px] h-[72px]">
-            <img src={kannegiesserLogo} alt="Kannegiesser" className="h-6 lg:h-7 object-contain filter invert grayscale contrast-[200] brightness-0" />
-          </div>
         </div>
 
         {/* Back Button */}
