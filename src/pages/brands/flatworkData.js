@@ -194,12 +194,6 @@ export const FLATWORK_DATA = {
             ]
           }
         ]
-      },
-      "benefits": {
-        "blocks": []
-      },
-      "technologies": {
-        "blocks": []
       }
     }
   },
@@ -483,12 +477,6 @@ export const FLATWORK_DATA = {
             ]
           }
         ]
-      },
-      "benefits": {
-        "blocks": []
-      },
-      "technologies": {
-        "blocks": []
       }
     }
   },
@@ -532,12 +520,6 @@ export const FLATWORK_DATA = {
             "subtitle": "Speedline"
           }
         ]
-      },
-      "benefits": {
-        "blocks": []
-      },
-      "technologies": {
-        "blocks": []
       }
     }
   }
