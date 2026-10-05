@@ -532,6 +532,13 @@ export default function KannegiesserProduct() {
                         {block.title && <h3 className="text-[20px] lg:text-[24px] font-bold text-slate-800 mb-2">{block.title}</h3>}
                         {block.subtitle && <h4 className="text-[14px] font-bold text-slate-500 mb-6 uppercase tracking-wider">{block.subtitle}</h4>}
                         {block.text && <p className="text-slate-600 leading-relaxed font-light text-[15px]">{block.text}</p>}
+                          {block.bullets && (
+                            <ul className="list-disc pl-5 text-[15px] text-slate-700 leading-relaxed space-y-2 font-light mt-4">
+                              {block.bullets.map((bullet, bIdx) => (
+                                <li key={bIdx} className="pl-2">{bullet}</li>
+                              ))}
+                            </ul>
+                          )}
                       </div>
                       
                       {/* Right Grey Box */}

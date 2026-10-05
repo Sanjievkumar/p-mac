@@ -183,7 +183,7 @@ export const FLATWORK_DATA = {
         ],
         "summaryBlocks": [
           {
-            "boxBullets": [
+            "bullets": [
               "For the hotel, hospital, and table linen range",
               "Electro-polished, flexible stainless steel heating band (particularly smooth ironing surface for a gentle ironer process with excellent thermal conductivity)",
               "New Ironer Springs \"Kanpress\" made of high-strength stainless steel for uniform surface area pressure and packing of local partial thickness transitions",
@@ -191,7 +191,7 @@ export const FLATWORK_DATA = {
               "Flexi Care Package (Heating band temperature, adaptable to individual programs, and various items, selective roll pressure adjustment)",
               "Practical machine design"
             ],
-            "boxTitle": "Features"
+            "title": "Specialties and functions"
           }
         ]
       }
@@ -460,7 +460,7 @@ export const FLATWORK_DATA = {
         ],
         "summaryBlocks": [
           {
-            "boxBullets": [
+            "bullets": [
               "Reverse Folding Operation (Half, Third or M Folding Possible)",
               "Kannegiesser roller-belt principle for automatic adaptation for different article thickness",
               "Up to 3 primary folds; 1 - 6 lane operation",
@@ -474,7 +474,7 @@ export const FLATWORK_DATA = {
               "Precise folding results by special guide tapes for light and heavy articles",
               "Open bypass for processing of special articles"
             ],
-            "boxTitle": "Features"
+            "title": "Specialties and functions"
           }
         ]
       }
