@@ -354,54 +354,120 @@ export const FLATWORK_DATA = {
   "kannegiesser-feeding": {
     "category": "Flatwork",
     "title": "Feeding machines",
-    "subtitle": "EMQ / EMT",
-    "description": "High-capacity feeding machines designed for perfect leading edge presentation.",
+    "subtitle": "Synchro (EMT / EMQ)",
+    "description": "The feeding machine for the entire range of flatwork",
     "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_EMQ_EMT.png",
+    "heroImg": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_Synchro.jpg",
     "tabs": {
       "overview": {
-        "introTitle": "EMH / EMV FEEDERS",
-        "introText": "Kannegiesser EMH and EMV feeding machines ensure rapid and perfectly straight presentation of large flatwork items to the ironer. They guarantee maximum ironer utilization through consistent high-speed feeding.",
-        "applicationsTitle": "High-Speed Flatwork",
-        "summaryBlocks": [
+        "introTitle": "UNBEATABLE IN SPEED, PRECISION AND DIVERSITY",
+        "introText": "The feeding machine for the entire range of flatwork\n\nThe Synchro has been designed to be the perfect answer to the rising daily demands of your customers. The feeding machine allows you to offer your customers high quality and diversity at the same time.\n\nIf you have to handle a wide range of different articles it gives you the opportunity to fulfil those requests. With the Synchro you can process healthcare sheets and heavy bed linen as well as high-quality tablecloths - and it couldn't be easier to operate.",
+        "applicationsTitle": "Fully tailored to your application",
+        "applications": [
           {
-            "title": "Ergonomic Feeding",
-            "text": "Designed to minimize operator fatigue while maintaining high pieces-per-hour output."
+            "name": "Cruise Ships",
+            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Kreuzfahrtschiff.jpg"
           },
           {
-            "title": "Perfect Leading Edge",
-            "text": "Advanced spreading belts and vacuum technology ensure the linen enters the ironer completely flat and square."
+            "name": "Hospitality & Restaurant",
+            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Hotel.jpg"
+          },
+          {
+            "name": "Healthcare",
+            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Krankenhaus.jpg"
+          },
+          {
+            "name": "Residental",
+            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Bewohner.jpg"
+          }
+        ],
+        "summaryBlocks": [
+          {
+            "title": "If you want to combine productivity and diversity, this machine is a perfect match.",
+            "text": "The Synchro quite simply offers you more\n\nThis feeding machine combines experience of many years together with innovative functions in order to keep up with the requirements of your customer."
           }
         ]
       },
       "benefits": {
         "blocks": [
           {
-            "title": "Maximized Ironer Width",
-            "text": "Spreads large items like sheets and duvet covers to their full width, maximizing the evaporative capacity of the ironer."
+            "title": "THE ALL-IN-ONE SOLUTION",
+            "text": "The feeding machine EMQ Synchro is most suitable for the efficient and high quality processing of a wide range of articles.\n\nThe Synchro is the ideal feeding machine for efficient and high-quality processing of a wide product range. Both the EMT Synchro with three stations and the EMQ Synchro with four stations can process articles in 1 - and 2-lane operation."
           },
           {
-            "title": "Versatility",
-            "text": "Handles varying types of linen seamlessly, adapting to different weights and dimensions."
+            "title": "ONE MACHINE TO FEED THEM ALL",
+            "text": "With the Synchro you get one feeding machine to process everything. From small to large pieces!",
+            "img": "https://www.kannegiesser.com/fileadmin/_processed_/5/b/csm_Stapel_shutterstock_1128093479_2ed0942d74.jpg",
+            "boxBullets": [
+              "Sheets",
+              "Duvets",
+              "Table linen",
+              "Napkins",
+              "Pillowcases",
+              "King size, queen size, standard size"
+            ]
+          },
+          {
+            "title": "THE FASTEST WAY TO FEED IT ALL",
+            "text": "High performance and a wide range of diversity go hand in hand when processing your articles.",
+            "img": "https://www.kannegiesser.com/fileadmin/_processed_/2/e/csm_shutterstock_286023770_8503e01e1c.png",
+            "boxBullets": [
+              "ServoTronic",
+              "SynchroClamp"
+            ]
+          },
+          {
+            "title": "KEEP THE PACE: FOCUS ON THE OPERATOR",
+            "text": "The operators feeding performance determines the output of the feeding machine. A time saving of only one second per piece can increase the overall performance by approx. 10 %. The Synchro workstations are designed with a clear focus on ergonomics, with the aim of achieving a constantly high output throughout the day.",
+            "img": "https://www.kannegiesser.com/fileadmin/_processed_/1/3/csm_shutterstock_130622120_4c_d920875ee1.jpg",
+            "boxBullets": [
+              "Smooth operation without interruption",
+              "Ergonomic working conditions for consistent feeding rate"
+            ]
           }
         ]
       },
       "technologies": {
         "blocks": [
           {
-            "title": "Vacuum Laydown",
-            "text": "Powerful vacuum suction under the feed belts grips the trailing edge, providing necessary tension for a wrinkle-free finish."
+            "title": "ServoTronic - A masterpiece in precision dynamics",
+            "text": "",
+            "img": "https://www.kannegiesser.com/fileadmin/_processed_/6/8/csm_ServoTronic_df8d089cff.jpg"
+          },
+          {
+            "title": "",
+            "text": "The core task of a feeding machine is the spreading of linen. To allow more dynamic and precise work than ever before we developed ServoTronic. The combination of servo electronics, servo drive and sensor technology enables high acceleration and a precise approach to the end position, thus shortening cycle times and at the same time providing gentle linen treatment."
+          },
+          {
+            "title": "EasyFeed",
+            "text": "",
+            "img": "https://www.kannegiesser.com/fileadmin/_processed_/a/e/csm_20140325_2018_layout_46d77bc6be.png"
+          },
+          {
+            "title": "SynchroClamp",
+            "text": "",
+            "img": "https://www.kannegiesser.com/fileadmin/_processed_/0/b/csm_IMG_4866_1db66b120f.png"
+          },
+          {
+            "title": "",
+            "text": "The innovative design of the SynchroClamp allows reliable spreading and depositing of a wide variety of articles.\n\nThe synchronic process of handling the textile articles is the key to quality and process reliability.",
+            "img": "https://www.kannegiesser.com/fileadmin/_processed_/c/4/csm_Margarita-Stuckenbrok_01_33e28dbc99.jpg"
           }
         ]
       },
       "specs": {
         "table": [
           {
-            "label": "Function",
-            "value": "Automatic Spreading and Feeding"
+            "label": "Feeding stations",
+            "value": "3 (Synchro EMT) 4 (Synchro EMQ)"
           },
           {
-            "label": "Target Items",
-            "value": "Sheets, Duvets, Tablecloths"
+            "label": "Working widths",
+            "value": "3,000 mm to 4,200 mm (118\" to 165\")"
+          },
+          {
+            "label": "Number of lanes",
+            "value": "Single-lane Single / double-lane Multi-lane (in case of manual feeding)"
           }
         ]
       }
