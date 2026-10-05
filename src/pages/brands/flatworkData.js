@@ -142,44 +142,6 @@ export const FLATWORK_DATA = {
       }
     }
   },
-  "xfm": {
-    "category": "Flatwork",
-    "title": "XFM",
-    "subtitle": "Dry work folding machines",
-    "description": "",
-    "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_XFM.jpg",
-    "tabs": {
-      "overview": {
-        "introTitle": "Speedline XFM",
-        "introText": "THE FASTEST FOLDING MACHINE IN THE WORLD\n\nFolding in continuous flow.\n\nThe range of dry work applications is becoming increasingly varied - while customers demand ever-higher quality standards. The challenge for textile service providers is to meet these demands while keeping costs down. And to do that, they need to increase productivity. Speedline offers the perfect solution: a fast, reliable dry work folding machine with outstanding performance and results that's also incredibly easy to operate. Nothing else on the market even comes close.",
-        "applicationsTitle": "Fully tailored to your application",
-        "applications": [
-          {
-            "name": "Cruise Ships",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Kreuzfahrtschiff.jpg"
-          },
-          {
-            "name": "Airlines",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Fluglinien.jpg"
-          },
-          {
-            "name": "Hospitality & Restaurant",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Hotel.jpg"
-          },
-          {
-            "name": "Healthcare",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Krankenhaus.jpg"
-          }
-        ],
-        "summaryBlocks": [
-          {
-            "title": "YOU WON'T SEE ANOTHER ONE FOLDING, SORTING AND STACKING LIKE THIS.",
-            "text": "Speedline"
-          }
-        ]
-      }
-    }
-  },
   "kannegiesser-ironers": {
     "category": "Flatwork",
     "title": "Ironers",
@@ -536,57 +498,46 @@ export const FLATWORK_DATA = {
     "subtitle": "XFM",
     "description": "Advanced dry work folding encompassing robotic handling and specialized blanket processing.",
     "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_XFM.png",
+    "heroImg": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_XFM.jpg",
     "tabs": {
       "overview": {
-        "introTitle": "DRY WORK FOLDING",
-        "introText": "Kannegiesser offers the ultimate dry work solutions. The Robotic Dry Work Line automates sorting and feeding. The Blanket Master tackles large, heavy items like blankets and comforters. The Speedline XFM delivers ultra-rapid towel and garment folding.",
-        "applicationsTitle": "Towels, Blankets & Garments",
-        "summaryBlocks": [
+        "introTitle": "THE FASTEST FOLDING MACHINE IN THE WORLD",
+        "introText": "Folding in continuous flow.\n\nThe range of dry work applications is becoming increasingly varied - while customers demand ever-higher quality standards. The challenge for textile service providers is to meet these demands while keeping costs down. And to do that, they need to increase productivity. Speedline offers the perfect solution: a fast, reliable dry work folding machine with outstanding performance and results that's also incredibly easy to operate. Nothing else on the market even comes close.",
+        "applicationsTitle": "Fully tailored to your application",
+        "applications": [
           {
-            "title": "Robotic Automation",
-            "text": "Reduces manual labor dependencies by automatically picking, identifying, and feeding dry items."
+            "name": "Hospitality & Restaurant",
+            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Hotel.jpg",
+            "text": "The variety of articles is constantly growing. Customers expect their individual selection of linen. With Kannegiesser machines, you can offer the highest quality, which is particularly gentle on the textile and resources!"
           },
           {
-            "title": "Speedline XFM",
-            "text": "Unmatched processing speed for terry towels and small dry goods, utilizing dynamic sorting."
+            "name": "Healthcare",
+            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Krankenhaus.jpg",
+            "text": "Do you handle a wide range of linen for the healthcare sector? The professional preparation of those textiles requires a reproducible hygiene process. With Kannegiesser you are on the safe side!"
+          },
+          {
+            "name": "Cruise Ships",
+            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Kreuzfahrtschiff.jpg",
+            "text": "Floating cities where nothing is left to be desired! The textiles are processed in a minimum space with the lowest possible use of resources – with innovative laundry technology from Kannegiesser."
+          },
+          {
+            "name": "Airlines",
+            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Fluglinien.jpg",
+            "text": "Above the clouds you want to ensure the best results for every passenger. With Kannegiesser machine you can perfectly handle your customer’s wide range of Airline Blankets."
+          }
+        ],
+        "summaryBlocks": [
+          {
+            "title": "YOU WON'T SEE ANOTHER ONE FOLDING, SORTING AND STACKING LIKE THIS.",
+            "subtitle": "Speedline"
           }
         ]
       },
       "benefits": {
-        "blocks": [
-          {
-            "title": "Labor Efficiency",
-            "text": "Dramatically cuts the number of operators needed for the dry work department."
-          },
-          {
-            "title": "Perfect Presentation",
-            "text": "Consistent fold quality enhances the appearance of stacked towels and blankets."
-          }
-        ]
+        "blocks": []
       },
       "technologies": {
-        "blocks": [
-          {
-            "title": "Blanket Master Spreading",
-            "text": "Heavy-duty clamps and tensioning systems designed specifically for the weight and bulk of wet/dry blankets."
-          },
-          {
-            "title": "Vision Systems",
-            "text": "Robotic lines use advanced cameras and AI to identify edges and corners for automated feeding."
-          }
-        ]
-      },
-      "specs": {
-        "table": [
-          {
-            "label": "Machines",
-            "value": "Robotic Line, Blanket Master, XFM"
-          },
-          {
-            "label": "Focus",
-            "value": "Labor reduction & Speed"
-          }
-        ]
+        "blocks": []
       }
     }
   }
