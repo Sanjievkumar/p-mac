@@ -3,102 +3,64 @@ export const FLATWORK_DATA = {
     "category": "Flatwork",
     "title": "Separating and Feeding Systems",
     "subtitle": "CSP",
-    "description": "",
+    "description": "Clipmaster CSP ensures maximum separation performance.",
     "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_CSP_NEU.jpg",
+    "heroImg": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_CSP_NEU.jpg",
     "tabs": {
       "overview": {
-        "introTitle": "UNBEATABLE IN SPEED, PRECISION AND DIVERSITY",
-        "introText": "The feeding machine for the entire range of flatwork\n\nThe Synchro has been designed to be the perfect answer to the rising daily demands of your customers. The feeding machine allows you to offer your customers high quality and diversity at the same time.\n\nIf you have to handle a wide range of different articles it gives you the opportunity to fulfil those requests. With the Synchro you can process healthcare sheets and heavy bed linen as well as high-quality tablecloths - and it couldn't be easier to operate.",
+        "introTitle": "GREAT QUANTITIES NEED A GREAT SOLUTION",
+        "introSubtitle": "If highest performances are required, then pre-selection of the items is an effective way of fulfilling these requirements.",
+        "introText": "Especially in combination with the Pick-UP, the CSP ensures maximum separation performance and increases the effectiveness of your overall process. But also with individual use for processing small pieces and terry cloth, you are on the right side with the CSP.",
         "applicationsTitle": "Fully tailored to your application",
         "applications": [
           {
-            "name": "Cruise Ships",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Kreuzfahrtschiff.jpg"
-          },
-          {
-            "name": "Hospitality & Restaurant",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Hotel.jpg"
-          },
-          {
-            "name": "Healthcare",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Krankenhaus.jpg"
+            "name": "Airlines",
+            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Fluglinien.jpg",
+            "text": "Above the clouds you want to ensure the best results for every passenger. With Kannegiesser machine you can perfectly handle your customer's wide range of Airline Blankets."
           },
           {
             "name": "Residental",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Bewohner.jpg"
+            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Bewohner.jpg",
+            "text": "Respectful dealing with people and their textiles. Hygienically and gently processed, clean and completely back at the resident – that's your core business. Kannegiesser supports you with the right machine and data technology!"
+          },
+          {
+            "name": "Hospitality & Restaurant",
+            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Hotel.jpg",
+            "text": "The variety of articles is constantly growing. Customers expect their individual selection of linen. With Kannegiesser machines, you can offer the highest quality, which is particularly gentle on the textile and resources!"
+          },
+          {
+            "name": "Healthcare",
+            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Krankenhaus.jpg",
+            "text": "Do you handle a wide range of linen for the healthcare sector? The professional preparation of those textiles requires a reproducible hygiene process. With Kannegiesser you are on the safe side!"
+          },
+          {
+            "name": "Workwear",
+            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Schutzkleidung.jpg",
+            "text": "High pollution loads. Preservation of the protective function. Textile variety in a modern design. These requirements are handled daily! Kannegiesser solutions help you to provide your customers with fresh workwear punctually and reliably."
           }
         ],
-        "summaryBlocks": [
-          {
-            "title": "If you want to combine productivity and diversity, this machine is a perfect match.",
-            "text": "The Synchro quite simply offers you more\n\nThis feeding machine combines experience of many years together with innovative functions in order to keep up with the requirements of your customer."
-          }
-        ]
+        "summaryBlocks": []
       },
       "benefits": {
         "blocks": [
           {
-            "title": "THE ALL-IN-ONE SOLUTION",
-            "text": "The feeding machine EMQ Synchro is most suitable for the efficient and high quality processing of a wide range of articles.\n\nThe Synchro is the ideal feeding machine for efficient and high-quality processing of a wide product range. Both the EMT Synchro with three stations and the EMQ Synchro with four stations can process articles in 1 - and 2-lane operation."
-          },
-          {
-            "title": "ONE MACHINE TO FEED THEM ALL",
-            "text": "With the Synchro you get one feeding machine to process everything. From small to large pieces!",
-            "img": "https://www.kannegiesser.com/fileadmin/_processed_/5/b/csm_Stapel_shutterstock_1128093479_2ed0942d74.jpg"
-          },
-          {
-            "title": "THE FASTEST WAY TO FEED IT ALL",
-            "text": "High performance and a wide range of diversity go hand in hand when processing your articles.",
-            "img": "https://www.kannegiesser.com/fileadmin/_processed_/2/e/csm_shutterstock_286023770_8503e01e1c.png"
-          },
-          {
-            "title": "KEEP THE PACE: FOCUS ON THE OPERATOR",
-            "text": "The operators feeding performance determines the output of the feeding machine. A time saving of only one second per piece can increase the overall performance by approx. 10 %. The Synchro workstations are designed with a clear focus on ergonomics, with the aim of achieving a constantly high output throughout the day.",
-            "img": "https://www.kannegiesser.com/fileadmin/_processed_/1/3/csm_shutterstock_130622120_4c_d920875ee1.jpg"
+            "title": "Maximum Separation Performance",
+            "text": "The CSP (Clipmaster) acts as an effective pre-selection system for high-volume flatwork operations.",
+            "boxBullets": [
+              "Effectively pre-selects items for maximum line throughput",
+              "Increases the effectiveness of the overall flatwork process",
+              "Ideal in combination with the Pick-UP system",
+              "Highly effective for individual use on small pieces and terry cloth"
+            ]
           }
         ]
       },
       "technologies": {
         "blocks": [
           {
-            "title": "ServoTronic - A masterpiece in precision dynamics",
-            "text": "",
-            "img": "https://www.kannegiesser.com/fileadmin/_processed_/6/8/csm_ServoTronic_df8d089cff.jpg"
-          },
-          {
-            "title": "",
-            "text": "The core task of a feeding machine is the spreading of linen. To allow more dynamic and precise work than ever before we developed ServoTronic. The combination of servo electronics, servo drive and sensor technology enables high acceleration and a precise approach to the end position, thus shortening cycle times and at the same time providing gentle linen treatment."
-          },
-          {
-            "title": "EasyFeed",
-            "text": "",
-            "img": "https://www.kannegiesser.com/fileadmin/_processed_/a/e/csm_20140325_2018_layout_46d77bc6be.png"
-          },
-          {
-            "title": "SynchroClamp",
-            "text": "",
-            "img": "https://www.kannegiesser.com/fileadmin/_processed_/0/b/csm_IMG_4866_1db66b120f.png"
-          },
-          {
-            "title": "",
-            "text": "The innovative design of the SynchroClamp allows reliable spreading and depositing of a wide variety of articles.\n\nThe synchronic process of handling the textile articles is the key to quality and process reliability.",
-            "img": "https://www.kannegiesser.com/fileadmin/_processed_/c/4/csm_Margarita-Stuckenbrok_01_33e28dbc99.jpg"
-          }
-        ]
-      },
-      "specs": {
-        "table": [
-          {
-            "label": "Feeding stations",
-            "value": "  3 (Synchro EMT) 4 (Synchro EMQ)  "
-          },
-          {
-            "label": "Working widths",
-            "value": "3,000 mm to 4,200 mm (118\" to 165\")"
-          },
-          {
-            "label": "Number of lanes",
-            "value": "  Single-lane Single / double-lane Multi-lane (in case of manual feeding)  "
+            "title": "Continuous Flow Technology",
+            "subtitle": "Handling Great Quantities",
+            "text": "Designed to handle great quantities, the CSP automates the tedious task of item separation, delivering a continuous stream of separated linen to the operators."
           }
         ]
       }
@@ -388,8 +350,7 @@ export const FLATWORK_DATA = {
         "summaryBlocks": []
       }
     }
-  }
-,
+  },
   "kannegiesser-feeding": {
     "category": "Flatwork",
     "title": "Feeding machines",
@@ -402,22 +363,48 @@ export const FLATWORK_DATA = {
         "introText": "Kannegiesser EMH and EMV feeding machines ensure rapid and perfectly straight presentation of large flatwork items to the ironer. They guarantee maximum ironer utilization through consistent high-speed feeding.",
         "applicationsTitle": "High-Speed Flatwork",
         "summaryBlocks": [
-          { "title": "Ergonomic Feeding", "text": "Designed to minimize operator fatigue while maintaining high pieces-per-hour output." },
-          { "title": "Perfect Leading Edge", "text": "Advanced spreading belts and vacuum technology ensure the linen enters the ironer completely flat and square." }
+          {
+            "title": "Ergonomic Feeding",
+            "text": "Designed to minimize operator fatigue while maintaining high pieces-per-hour output."
+          },
+          {
+            "title": "Perfect Leading Edge",
+            "text": "Advanced spreading belts and vacuum technology ensure the linen enters the ironer completely flat and square."
+          }
         ]
       },
       "benefits": {
         "blocks": [
-          { "title": "Maximized Ironer Width", "text": "Spreads large items like sheets and duvet covers to their full width, maximizing the evaporative capacity of the ironer." },
-          { "title": "Versatility", "text": "Handles varying types of linen seamlessly, adapting to different weights and dimensions." }
+          {
+            "title": "Maximized Ironer Width",
+            "text": "Spreads large items like sheets and duvet covers to their full width, maximizing the evaporative capacity of the ironer."
+          },
+          {
+            "title": "Versatility",
+            "text": "Handles varying types of linen seamlessly, adapting to different weights and dimensions."
+          }
         ]
       },
       "technologies": {
         "blocks": [
-          { "title": "Vacuum Laydown", "text": "Powerful vacuum suction under the feed belts grips the trailing edge, providing necessary tension for a wrinkle-free finish." }
+          {
+            "title": "Vacuum Laydown",
+            "text": "Powerful vacuum suction under the feed belts grips the trailing edge, providing necessary tension for a wrinkle-free finish."
+          }
         ]
       },
-      "specs": { "table": [ { "label": "Function", "value": "Automatic Spreading and Feeding" }, { "label": "Target Items", "value": "Sheets, Duvets, Tablecloths" } ] }
+      "specs": {
+        "table": [
+          {
+            "label": "Function",
+            "value": "Automatic Spreading and Feeding"
+          },
+          {
+            "label": "Target Items",
+            "value": "Sheets, Duvets, Tablecloths"
+          }
+        ]
+      }
     }
   },
   "kannegiesser-folding": {
@@ -432,22 +419,48 @@ export const FLATWORK_DATA = {
         "introText": "The CFM provides highly accurate cross folding for large and small pieces alike. Operating downstream of the ironer and primary folder, it executes precise folds and stacks the finished linen for immediate dispatch.",
         "applicationsTitle": "Finishing Precision",
         "summaryBlocks": [
-          { "title": "Clean Edges", "text": "Mechanical blade folding ensures crisp, sharp edges on every item." },
-          { "title": "High-Speed Stacking", "text": "Integrated stackers handle the output pace of modern high-speed ironer lines." }
+          {
+            "title": "Clean Edges",
+            "text": "Mechanical blade folding ensures crisp, sharp edges on every item."
+          },
+          {
+            "title": "High-Speed Stacking",
+            "text": "Integrated stackers handle the output pace of modern high-speed ironer lines."
+          }
         ]
       },
       "benefits": {
         "blocks": [
-          { "title": "Consistent Quality", "text": "Maintains fold accuracy regardless of linen thickness or processing speed." },
-          { "title": "Compact Footprint", "text": "Maximizes floor space while delivering full folding functionality." }
+          {
+            "title": "Consistent Quality",
+            "text": "Maintains fold accuracy regardless of linen thickness or processing speed."
+          },
+          {
+            "title": "Compact Footprint",
+            "text": "Maximizes floor space while delivering full folding functionality."
+          }
         ]
       },
       "technologies": {
         "blocks": [
-          { "title": "Reversing Conveyor Folding", "text": "Advanced belt reversing actions combined with air blasts and mechanical blades for perfect geometric folds." }
+          {
+            "title": "Reversing Conveyor Folding",
+            "text": "Advanced belt reversing actions combined with air blasts and mechanical blades for perfect geometric folds."
+          }
         ]
       },
-      "specs": { "table": [ { "label": "Function", "value": "Cross Folding and Stacking" }, { "label": "Operation", "value": "Blade / Air Blast" } ] }
+      "specs": {
+        "table": [
+          {
+            "label": "Function",
+            "value": "Cross Folding and Stacking"
+          },
+          {
+            "label": "Operation",
+            "value": "Blade / Air Blast"
+          }
+        ]
+      }
     }
   },
   "kannegiesser-drywork": {
@@ -462,23 +475,52 @@ export const FLATWORK_DATA = {
         "introText": "Kannegiesser offers the ultimate dry work solutions. The Robotic Dry Work Line automates sorting and feeding. The Blanket Master tackles large, heavy items like blankets and comforters. The Speedline XFM delivers ultra-rapid towel and garment folding.",
         "applicationsTitle": "Towels, Blankets & Garments",
         "summaryBlocks": [
-          { "title": "Robotic Automation", "text": "Reduces manual labor dependencies by automatically picking, identifying, and feeding dry items." },
-          { "title": "Speedline XFM", "text": "Unmatched processing speed for terry towels and small dry goods, utilizing dynamic sorting." }
+          {
+            "title": "Robotic Automation",
+            "text": "Reduces manual labor dependencies by automatically picking, identifying, and feeding dry items."
+          },
+          {
+            "title": "Speedline XFM",
+            "text": "Unmatched processing speed for terry towels and small dry goods, utilizing dynamic sorting."
+          }
         ]
       },
       "benefits": {
         "blocks": [
-          { "title": "Labor Efficiency", "text": "Dramatically cuts the number of operators needed for the dry work department." },
-          { "title": "Perfect Presentation", "text": "Consistent fold quality enhances the appearance of stacked towels and blankets." }
+          {
+            "title": "Labor Efficiency",
+            "text": "Dramatically cuts the number of operators needed for the dry work department."
+          },
+          {
+            "title": "Perfect Presentation",
+            "text": "Consistent fold quality enhances the appearance of stacked towels and blankets."
+          }
         ]
       },
       "technologies": {
         "blocks": [
-          { "title": "Blanket Master Spreading", "text": "Heavy-duty clamps and tensioning systems designed specifically for the weight and bulk of wet/dry blankets." },
-          { "title": "Vision Systems", "text": "Robotic lines use advanced cameras and AI to identify edges and corners for automated feeding." }
+          {
+            "title": "Blanket Master Spreading",
+            "text": "Heavy-duty clamps and tensioning systems designed specifically for the weight and bulk of wet/dry blankets."
+          },
+          {
+            "title": "Vision Systems",
+            "text": "Robotic lines use advanced cameras and AI to identify edges and corners for automated feeding."
+          }
         ]
       },
-      "specs": { "table": [ { "label": "Machines", "value": "Robotic Line, Blanket Master, XFM" }, { "label": "Focus", "value": "Labor reduction & Speed" } ] }
+      "specs": {
+        "table": [
+          {
+            "label": "Machines",
+            "value": "Robotic Line, Blanket Master, XFM"
+          },
+          {
+            "label": "Focus",
+            "value": "Labor reduction & Speed"
+          }
+        ]
+      }
     }
   }
 };
