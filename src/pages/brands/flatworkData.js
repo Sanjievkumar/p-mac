@@ -190,7 +190,8 @@ export const FLATWORK_DATA = {
               "Fully steam heated bridge",
               "Flexi Care Package (Heating band temperature, adaptable to individual programs, and various items, selective roll pressure adjustment)",
               "Practical machine design"
-            ]
+            ],
+            "boxTitle": "Features"
           }
         ]
       }
@@ -472,7 +473,8 @@ export const FLATWORK_DATA = {
               "Automatic folding gap adaptation for a broad work spectrum from sheets to table linen, aprons and small piece folding (multiple sizes)",
               "Precise folding results by special guide tapes for light and heavy articles",
               "Open bypass for processing of special articles"
-            ]
+            ],
+            "boxTitle": "Features"
           }
         ]
       }
