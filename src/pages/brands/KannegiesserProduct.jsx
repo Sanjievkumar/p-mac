@@ -176,7 +176,113 @@ const WASHING_TECH_DATA = {
         ]
       }
     }
-  }
+  },
+"kannegiesser-powerdry": {
+      category: "Washing Technology",
+      "title": "Dryers",
+      "subtitle": "PowerDry",
+      description: "Optimized airflow within a dryer determines efficiency, performance and energy savings of a drying process.",
+      "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_PowerDry.png",
+      heroImg: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_PowerDry.jpg",
+      tabs: {
+        overview: {
+          introTitle: "THE MOST POWERFUL DRYER ON THE MARKET",
+          introSubtitle: "Optimized airflow within a dryer determines efficiency, performance and energy savings of a drying process.",
+          introText: "The construction of the PowerDry, especially the intelligent air recirculation, the inner cylinder construction and efficient heating units determine the optimized airflow. Innovative process control and heating management methods secure a low energy consumption while shortening overall process times. This combination is the reason for the PowerDry being the most efficient batch dryer on the market.",
+          applicationsTitle: "Fully tailored to your application",
+          applications: [{"name":"Cruise Ships","img":"https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Kreuzfahrtschiff.jpg","text":"Floating cities where nothing is left to be desired! The textiles are processed in a minimum space with the lowest possible use of resources – with innovative laundry technology from Kannegiesser."},{"name":"Workwear","img":"https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Schutzkleidung.jpg","text":"High pollution loads. Preservation of the protective function. Textile variety in a modern design.\nThese requirements are handled daily! Kannegiesser solutions help you to provide your customers with fresh workwear punctually and reliably."},{"name":"Healthcare","img":"https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Krankenhaus.jpg","text":"Do you handle a wide range of linen for the healthcare sector' The professional preparation of those textiles requires a reproducible hygiene process. With Kannegiesser you are on the safe side!"},{"name":"Hospitality & Restaurant","img":"https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Hotel.jpg","text":"The variety of articles is constantly growing. Customers expect their individual selection of linen. With Kannegiesser machines, you can offer the highest quality, which is particularly gentle on the textile and resources!"},{"name":"Airlines","img":"https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Fluglinien.jpg","text":"Above the clouds you want to ensure the best results for every passenger. With Kannegiesser machine you can perfectly handle your customer’s wide range of Airline Blankets."},{"name":"Mats","img":"https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Matten.jpg","text":"The first positive impression left in the entrance area of buildings. With dirt trapping mats that have been professionally and resource-friendly processed using Kannegiesser machines!"},{"name":"Residental","img":"https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Bewohner.jpg","text":"Respectful dealing with people and their textiles. Hygienically and gently processed, clean and completely back at the resident – that’s your core business. Kannegiesser supports you with the right machine and data technology!"}],
+          bannerTitle: "The PowerDry - Combination of Low Energy Consumption and High Capacity",
+          bannerSubtitle: "This combination is the reason for the PowerDry being the most efficient batch dryer on the market.",
+          summaryTitle: "SUMMARY",
+          summaryBlocks: [{"title":"Universal Application Possibilities for a Wide Range of Items","text":"The increasing amount of processed good is also creating an increased diversity of items and materials. The PowerDry covers this diversity with its high flexibility. Possible applications for the PowerDry series include cotton, blended fabrics, laminates and even micro fibre textiles.","boxBullets":["Highest performance up to four batches/h","Eco2Power – lowest consumption and shortest drying time","Highest flexibility – independent of batch size, material and moisture content","Maximum availability due to innovative engineering"]}]
+        }
+      }
+    },
+"kannegiesser-powerswing": {
+      category: "Washing Technology",
+      "title": "Extraction Technology",
+      "subtitle": "PowerSwing",
+      description: "The PowerSwing achieves Lowest Ancillary Times Due to Automatic Loading and Unloading.",
+      "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_PowerSwing.png",
+      heroImg: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_PowerSwing.jpg",
+      tabs: {
+        overview: {
+          introTitle: "SIMPLE PRINCIPLE, PHENOMENAL RESULT",
+          introSubtitle: "The PowerSwing achieves Lowest Ancillary Times Due to Automatic Loading and Unloading.",
+          introText: "Since the inception of large sized open-pocket washer extractors, all designs have faced the common question of loading and unloading: How to load and unload the wash cylinder with a minimum effort and time expended' Kannegiesser answers these questions with the PowerSwing. The entire cylinder assembly, consisting of inner and outer drum, can be rotated. For loading, washing, extracting and unloading, the PowerSwing rotates its drum unit to the ideal position.",
+          applicationsTitle: "Fully tailored to your application",
+          applications: [{"name":"Airlines","img":"https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Fluglinien.jpg","text":"Above the clouds you want to ensure the best results for every passenger. With Kannegiesser machine you can perfectly handle your customer’s wide range of Airline Blankets."},{"name":"Workwear","img":"https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Schutzkleidung.jpg","text":"High pollution loads. Preservation of the protective function. Textile variety in a modern design.\nThese requirements are handled daily! Kannegiesser solutions help you to provide your customers with fresh workwear punctually and reliably."},{"name":"Healthcare","img":"https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Krankenhaus.jpg","text":"Do you handle a wide range of linen for the healthcare sector' The professional preparation of those textiles requires a reproducible hygiene process. With Kannegiesser you are on the safe side!"},{"name":"Hospitality & Restaurant","img":"https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Hotel.jpg","text":"The variety of articles is constantly growing. Customers expect their individual selection of linen. With Kannegiesser machines, you can offer the highest quality, which is particularly gentle on the textile and resources!"},{"name":"Mats","img":"https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Matten.jpg","text":"The first positive impression left in the entrance area of buildings. With dirt trapping mats that have been professionally and resource-friendly processed using Kannegiesser machines!"},{"name":"Residental","img":"https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Bewohner.jpg","text":"Respectful dealing with people and their textiles. Hygienically and gently processed, clean and completely back at the resident – that’s your core business. Kannegiesser supports you with the right machine and data technology!"}],
+          bannerTitle: "The ideal loading position takes full advantage of gravity assistance.",
+          bannerSubtitle: "For loading, the drum unit with oversized door opening is in a full vertical position, facilitating loading from the top",
+          summaryTitle: "SUMMARY",
+          summaryBlocks: [{"title":"Maximum use of drum volume due to unique loading principle","text":"The drum unit is always in the optimum position for loading, washing, spinning and, of course, unloading. On loading, the drum opening is vertical and already rotating at item distribution speed. As a result, loading can take place very quickly and with larger loading quantities.","boxBullets":["Maximum Use of Drum Volume With Vertical Loading","The inner drum rotates while it is being loaded","Laundry items are pressed against the drum wall by centrifugal force"]},{"title":"Seamless integration into your logistics due to various layout options","text":"The PowerSwing loading principle provides a large number of loading options. The washer can be integrated in the best way possible into all sorts of different laundry layouts. Loading can be done semiautomatically via simple inclined conveyor, with cart dumpers, bag systems or many other system suited to your space requirements.","boxBullets":["Automatic loading with monorail system","Loading with loading conveyor","Loading with lift shuttle conveyor","Unloading on a conveyor belt for automatic transport to a batch dryer"]}]
+        }
+      }
+    },
+"kannegiesser-cleanroom": {
+      category: "Washing Technology",
+      "title": "Washer Extractors",
+      "subtitle": "Favorit Vario HighClean",
+      description: "HYGIENIC QUALITY AND VALIDATED WASHING PROCESSES",
+      "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_HighClean.png",
+      heroImg: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_FAV_HC.png",
+      tabs: {
+        overview: {
+          introTitle: "HYGIENIC QUALITY AND VALIDATED WASHING PROCESSES",
+          
+          introText: "For hygienic quality and validated washing processes, the Favorit Vario HighClean is the first choice. The water and chemicals are added for each batch based on the weight and program, always based on the real loading weight. ActiveProcessControl even considers the adsorbed liquor during the filling process – a true precision washing that no other machine on the market can perform! This achieves 100% reproducibility and documentation of your hygiene processes.",
+          applicationsTitle: "Fully tailored to your application",
+          applications: [{"name":"Clean Room","img":"https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Reinraum.jpg","text":"Highest demands on washing quality and particle freedom. Rely on clean room technology from Kannegiesser!"},{"name":"Healthcare","img":"https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Krankenhaus.jpg","text":"Do you handle a wide range of linen for the healthcare sector' The professional preparation of those textiles requires a reproducible hygiene process. With Kannegiesser you are on the safe side!"}],
+          
+          
+          
+          summaryBlocks: []
+        }
+      }
+    },
+"kannegiesser-cwd": {
+      category: "Washing Technology",
+      "title": "Disinfection Sluices",
+      "subtitle": "CWD",
+      description: "Porta CONTAINER WASH- AND DISINFECTION SLUICE",
+      "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_CWD.png",
+      heroImg: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_CWD_Desi.jpg",
+      tabs: {
+        overview: {
+          introTitle: "Porta CONTAINER WASH- AND DISINFECTION SLUICE",
+          
+          introText: "Our custom-made Porta systems are ideal for processing laundry trolleys, transport carts, containers and wheeled shelves. Depending on its equipment, the process includes soaking, washing, rinsing, steaming, chemical disinfection and vapour exhaust in optimal sequence.",
+          applicationsTitle: "Fully tailored to your application",
+          applications: [{"name":"Healthcare","img":"https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Krankenhaus.jpg","text":"Do you handle a wide range of linen for the healthcare sector' The professional preparation of those textiles requires a reproducible hygiene process. With Kannegiesser you are on the safe side!"},{"name":"Residental","img":"https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Bewohner.jpg","text":"Respectful dealing with people and their textiles. Hygienically and gently processed, clean and completely back at the resident – that’s your core business. Kannegiesser supports you with the right machine and data technology!"}],
+          
+          
+          
+          summaryBlocks: []
+        }
+      }
+    },
+"kannegiesser-cd": {
+      category: "Washing Technology",
+      "title": "Disinfection Sluices",
+      "subtitle": "CD",
+      description: "DISINFECTION TUNNEL PORTA MODEL CD",
+      "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_CD.png",
+      heroImg: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_CD_Desi.jpg",
+      tabs: {
+        overview: {
+          introTitle: "DISINFECTION TUNNEL PORTA MODEL CD",
+          
+          introText: "The disinfection cabinet Porta CD for chemical disinfection of laundry trolleys, transport carts, containers etc.",
+          applicationsTitle: "Fully tailored to your application",
+          applications: [{"name":"Healthcare","img":"https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Krankenhaus.jpg","text":"Do you handle a wide range of linen for the healthcare sector' The professional preparation of those textiles requires a reproducible hygiene process. With Kannegiesser you are on the safe side!"},{"name":"Residental","img":"https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Bewohner.jpg","text":"Respectful dealing with people and their textiles. Hygienically and gently processed, clean and completely back at the resident – that’s your core business. Kannegiesser supports you with the right machine and data technology!"},{"name":"Workwear","img":"https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Schutzkleidung.jpg","text":"High pollution loads. Preservation of the protective function. Textile variety in a modern design.\nThese requirements are handled daily! Kannegiesser solutions help you to provide your customers with fresh workwear punctually and reliably."}],
+          
+          
+          
+          summaryBlocks: []
+        }
+      }
+    },
+
 };
 
 const DATA_INFO_DATA = {
