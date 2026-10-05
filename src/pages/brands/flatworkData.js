@@ -152,7 +152,7 @@ export const FLATWORK_DATA = {
     "tabs": {
       "overview": {
         "introTitle": "THE MOST POWERFUL IRONER IN THE WORLD",
-        "introText": "Maximum performance at minimum space\n\nSpecialties and functions:",
+        "introText": "Maximum performance at minimum space",
         "applicationsTitle": "Fully tailored to your application",
         "applications": [
           {
@@ -183,7 +183,6 @@ export const FLATWORK_DATA = {
         ],
         "summaryBlocks": [
           {
-            "title": "Specialties and functions",
             "boxBullets": [
               "For the hotel, hospital, and table linen range",
               "Electro-polished, flexible stainless steel heating band (particularly smooth ironing surface for a gentle ironer process with excellent thermal conductivity)",
@@ -460,7 +459,6 @@ export const FLATWORK_DATA = {
         ],
         "summaryBlocks": [
           {
-            "title": "Specialties and functions",
             "boxBullets": [
               "Reverse Folding Operation (Half, Third or M Folding Possible)",
               "Kannegiesser roller-belt principle for automatic adaptation for different article thickness",

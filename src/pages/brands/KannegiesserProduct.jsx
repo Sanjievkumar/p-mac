@@ -535,14 +535,16 @@ export default function KannegiesserProduct() {
                       </div>
                       
                       {/* Right Grey Box */}
-                      {block.boxTitle && block.boxBullets && (
+                      {(block.boxTitle || block.boxBullets) && (
                         <div className="flex-1 bg-[#EBEBEB] p-8 lg:p-12">
-                          <p className="text-[14px] text-slate-500 mb-6 uppercase tracking-widest">{block.boxTitle}</p>
-                          <ul className="list-disc pl-5 text-[15px] text-slate-700 leading-relaxed space-y-2 font-light">
-                            {block.boxBullets.map((bullet, bIdx) => (
-                              <li key={bIdx} className="pl-2">{bullet}</li>
-                            ))}
-                          </ul>
+                          {block.boxTitle && <p className="text-[14px] text-slate-500 mb-6 uppercase tracking-widest">{block.boxTitle}</p>}
+                          {block.boxBullets && (
+                                <ul className="list-disc pl-5 text-[15px] text-slate-700 leading-relaxed space-y-2 font-light">
+                                  {block.boxBullets.map((bullet, bIdx) => (
+                                    <li key={bIdx} className="pl-2">{bullet}</li>
+                                  ))}
+                                </ul>
+                              )}
                         </div>
                       )}
                     </div>
