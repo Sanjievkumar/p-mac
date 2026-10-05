@@ -246,26 +246,48 @@ const WASHING_TECH_DATA = {
         }
       },
 "kannegiesser-cleanroom": {
-      category: "Washing Technology",
-      "title": "Washer Extractors",
-      "subtitle": "Favorit Vario HighClean",
-      description: "HYGIENIC QUALITY AND VALIDATED WASHING PROCESSES",
-      "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_Cleanroom.png",
-      heroImg: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_FAV_HC.png",
-      tabs: {
-        overview: {
-          introTitle: "HYGIENIC QUALITY AND VALIDATED WASHING PROCESSES",
-          
-          introText: "For hygienic quality and validated washing processes, the Favorit Vario HighClean is the first choice. The water and chemicals are added for each batch based on the weight and program, always based on the real loading weight. ActiveProcessControl even considers the adsorbed liquor during the filling process – a true precision washing that no other machine on the market can perform! This achieves 100% reproducibility and documentation of your hygiene processes.",
-          applicationsTitle: "Fully tailored to your application",
-          applications: [{"name":"Clean Room","img":"https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Reinraum.jpg","text":"Highest demands on washing quality and particle freedom. Rely on clean room technology from Kannegiesser!"},{"name":"Healthcare","img":"https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Krankenhaus.jpg","text":"Do you handle a wide range of linen for the healthcare sector' The professional preparation of those textiles requires a reproducible hygiene process. With Kannegiesser you are on the safe side!"}],
-          
-          
-          
-          summaryBlocks: []
+        category: "Washing Technology",
+        "title": "Clean Room Technology",
+        "subtitle": "Favorit Vario HighClean",
+        description: "HYGIENIC QUALITY AND VALIDATED WASHING PROCESSES",
+        "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_Cleanroom.png",
+        heroImg: "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_FAV_HC.png",
+        tabs: {
+          overview: {
+            introTitle: "HYGIENIC QUALITY AND VALIDATED WASHING PROCESSES",
+            introText: "For hygienic quality and validated washing processes, the Favorit Vario HighClean is the first choice. The water and chemicals are added for each batch based on the weight and program, always based on the real loading weight. ActiveProcessControl even considers the adsorbed liquor during the filling process - a true precision washing that no other machine on the market can perform! This achieves 100% reproducibility and documentation of your hygiene processes.",
+            applicationsTitle: "Fully tailored to your application",
+            applications: [{"name":"Clean Room","img":"https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Reinraum.jpg","text":"Highest demands on washing quality and particle freedom. Rely on clean room technology from Kannegiesser!"},{"name":"Healthcare","img":"https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Krankenhaus.jpg","text":"Do you handle a wide range of linen for the healthcare sector' The professional preparation of those textiles requires a reproducible hygiene process. With Kannegiesser you are on the safe side!"}]
+          },
+          benefits: {
+            blocks: [
+              {
+                title: "Maximum Hygiene Security",
+                text: "The Favorit Vario HighClean eliminates cross-contamination risks and provides completely validated washing processes with these key features:",
+                boxBullets: [
+                  "Barrier wall design with loading on the unclean side and unloading in the clean room - so no dirty laundry gets into the clean room!",
+                  "Large drum openings for quick and gentle loading and unloading of articles",
+                  "Indirect steam heating to prevent contamination and keep the concentration of chemicals at a constant level",
+                  "Exceptionally careful CareWash cylinder perforation to reduce the friction",
+                  "Water and steam valves made from stainless steel",
+                  "Airtight connecting parts for barrier wall integration",
+                  "Membrane sealed keypad without edges and fissure suitable for a clean room",
+                  "Additionally sealed covering to the clean side"
+                ]
+              }
+            ]
+          },
+          technologies: {
+            blocks: [
+              {
+                title: "Clean Room Specifications",
+                subtitle: "Highest hygiene standards",
+                text: "Designed to meet strict clean room regulations. By combining precise mechanical engineering with specialized sealing, it prevents any cross-contamination."
+              }
+            ]
+          }
         }
-      }
-    },
+      },
 "kannegiesser-cwd": {
         category: "Washing Technology",
         "title": "Disinfection Sluices",
@@ -702,3 +724,4 @@ export default function KannegiesserProduct() {
     </div>
   );
 }
+
