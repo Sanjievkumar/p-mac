@@ -183,51 +183,61 @@ export const FLATWORK_DATA = {
   "kannegiesser-ironers": {
     "category": "Flatwork",
     "title": "Ironers",
-    "subtitle": "HPM",
-    "description": "",
+    "subtitle": "HPM / HPM Gas",
+    "description": "High performance ironers",
     "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_HPM.png",
+    "heroImg": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_HPM.jpg",
     "tabs": {
       "overview": {
-        "introTitle": "SHM / SHM Gas",
-        "introText": "THE UNIVERSAL HIGH PERFORMANCE IRONER\n\nRely on its long ironing path for additional evaporation performance combined with its consistently high contact pressure.\n\nSpecialties and functions:",
+        "introTitle": "THE MOST POWERFUL IRONER IN THE WORLD",
+        "introText": "Maximum performance at minimum space\n\nSpecialties and functions:",
         "applicationsTitle": "Fully tailored to your application",
         "applications": [
           {
             "name": "Cruise Ships",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Kreuzfahrtschiff.jpg"
+            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Kreuzfahrtschiff.jpg",
+            "text": "Floating cities where nothing is left to be desired! The textiles are processed in a minimum space with the lowest possible use of resources – with innovative laundry technology from Kannegiesser."
           },
           {
             "name": "Airlines",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Fluglinien.jpg"
+            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Fluglinien.jpg",
+            "text": "Above the clouds you want to ensure the best results for every passenger. With Kannegiesser machine you can perfectly handle your customer’s wide range of Airline Blankets."
           },
           {
             "name": "Hospitality & Restaurant",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Hotel.jpg"
+            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Hotel.jpg",
+            "text": "The variety of articles is constantly growing. Customers expect their individual selection of linen. With Kannegiesser machines, you can offer the highest quality, which is particularly gentle on the textile and resources!"
           },
           {
             "name": "Healthcare",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Krankenhaus.jpg"
+            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Krankenhaus.jpg",
+            "text": "Do you handle a wide range of linen for the healthcare sector? The professional preparation of those textiles requires a reproducible hygiene process. With Kannegiesser you are on the safe side!"
+          },
+          {
+            "name": "Residental",
+            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Bewohner.jpg",
+            "text": "Respectful dealing with people and their textiles. Hygienically and gently processed, clean and completely back at the resident – that’s your core business. Kannegiesser supports you with the right machine and data technology!"
           }
         ],
-        "summaryBlocks": []
+        "summaryBlocks": [
+          {
+            "title": "Specialties and functions",
+            "boxBullets": [
+              "For the hotel, hospital, and table linen range",
+              "Electro-polished, flexible stainless steel heating band (particularly smooth ironing surface for a gentle ironer process with excellent thermal conductivity)",
+              "New Ironer Springs \"Kanpress\" made of high-strength stainless steel for uniform surface area pressure and packing of local partial thickness transitions",
+              "Fully steam heated bridge",
+              "Flexi Care Package (Heating band temperature, adaptable to individual programs, and various items, selective roll pressure adjustment)",
+              "Practical machine design"
+            ]
+          }
+        ]
       },
       "benefits": {
-        "blocks": [
-          {
-            "title": "SHM / SHM Gas",
-            "text": "",
-            "img": "https://www.kannegiesser.com/fileadmin/_processed_/c/4/csm_Margarita-Stuckenbrok_01_33e28dbc99.jpg"
-          }
-        ]
+        "blocks": []
       },
       "technologies": {
-        "blocks": [
-          {
-            "title": "SHM / SHM Gas",
-            "text": "",
-            "img": "https://www.kannegiesser.com/fileadmin/_processed_/c/4/csm_Margarita-Stuckenbrok_01_33e28dbc99.jpg"
-          }
-        ]
+        "blocks": []
       }
     }
   },
@@ -357,7 +367,7 @@ export const FLATWORK_DATA = {
     "subtitle": "Synchro (EMT / EMQ)",
     "description": "The feeding machine for the entire range of flatwork",
     "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_EMQ_EMT.png",
-    "heroImg": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_Synchro.jpg",
+    "heroImg": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_EMQ_EMT.jpg",
     "tabs": {
       "overview": {
         "introTitle": "UNBEATABLE IN SPEED, PRECISION AND DIVERSITY",
@@ -479,53 +489,44 @@ export const FLATWORK_DATA = {
     "subtitle": "RFM",
     "description": "High-precision cross folding machine ensuring clean edges and tight stacking.",
     "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_RFM.png",
+    "heroImg": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_RFM.jpg",
     "tabs": {
       "overview": {
-        "introTitle": "CFM FOLDER",
-        "introText": "The CFM provides highly accurate cross folding for large and small pieces alike. Operating downstream of the ironer and primary folder, it executes precise folds and stacks the finished linen for immediate dispatch.",
-        "applicationsTitle": "Finishing Precision",
+        "introTitle": "DIVERSITY MEETS HIGH QUALITY DEMANDS",
+        "introText": "The model RFM is the ideal folder for processing large items applying length and cross folds with high quality demands.",
+        "applicationsTitle": "Fully tailored to your application",
+        "applications": [
+          {
+            "name": "Hospitality & Restaurant",
+            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Hotel.jpg",
+            "text": "The variety of articles is constantly growing. Customers expect their individual selection of linen. With Kannegiesser machines, you can offer the highest quality, which is particularly gentle on the textile and resources!"
+          }
+        ],
         "summaryBlocks": [
           {
-            "title": "Clean Edges",
-            "text": "Mechanical blade folding ensures crisp, sharp edges on every item."
-          },
-          {
-            "title": "High-Speed Stacking",
-            "text": "Integrated stackers handle the output pace of modern high-speed ironer lines."
+            "title": "Specialties and functions",
+            "boxBullets": [
+              "Reverse Folding Operation (Half, Third or M Folding Possible)",
+              "Kannegiesser roller-belt principle for automatic adaptation for different article thickness",
+              "Up to 3 primary folds; 1 - 6 lane operation",
+              "Up to 3 cross folds (depending on lanes)",
+              "All cross folds with sword",
+              "Optional \"open fold\" for 3 cross folds (corners on outside)",
+              "Stacker via roll stacking; high flexibility by optional sorting stackers (plain or lifting version)",
+              "Quiet operation; service friendly flat belt drives",
+              "Automatic Small Piece Folding in Cross Fold Section",
+              "Automatic folding gap adaptation for a broad work spectrum from sheets to table linen, aprons and small piece folding (multiple sizes)",
+              "Precise folding results by special guide tapes for light and heavy articles",
+              "Open bypass for processing of special articles"
+            ]
           }
         ]
       },
       "benefits": {
-        "blocks": [
-          {
-            "title": "Consistent Quality",
-            "text": "Maintains fold accuracy regardless of linen thickness or processing speed."
-          },
-          {
-            "title": "Compact Footprint",
-            "text": "Maximizes floor space while delivering full folding functionality."
-          }
-        ]
+        "blocks": []
       },
       "technologies": {
-        "blocks": [
-          {
-            "title": "Reversing Conveyor Folding",
-            "text": "Advanced belt reversing actions combined with air blasts and mechanical blades for perfect geometric folds."
-          }
-        ]
-      },
-      "specs": {
-        "table": [
-          {
-            "label": "Function",
-            "value": "Cross Folding and Stacking"
-          },
-          {
-            "label": "Operation",
-            "value": "Blade / Air Blast"
-          }
-        ]
+        "blocks": []
       }
     }
   },
