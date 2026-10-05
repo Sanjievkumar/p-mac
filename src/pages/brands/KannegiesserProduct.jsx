@@ -373,6 +373,137 @@ export default function KannegiesserProduct() {
 
   if (!product) {
     return (
+      <div className="min-h-screen flex flex-col items-center justify-center bg-white">
+        <h1 className="text-4xl font-bold text-[#001F3F] mb-4">Product Not Found</h1>
+        <Link to="/brands/kannegiesser" className="text-[#E31E24] hover:underline font-bold">
+          Return to Kannegiesser
+        </Link>
+      </div>
+    );
+  }
+
+  const renderTabContent = () => {
+    switch (activeTab) {
+      case 'overview':
+        return (
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}
+            className="space-y-24"
+          >
+            {/* Intro */}
+            <div className="max-w-4xl">
+              <h2 className="text-3xl lg:text-4xl font-bold text-[#001F3F] mb-6">{product.tabs.overview.introTitle}</h2>
+              <p className="text-lg text-slate-600 leading-relaxed whitespace-pre-line">{product.tabs.overview.introText}</p>
+            </div>
+
+            {/* Applications */}
+            <div>
+              <h3 className="text-2xl font-bold text-[#001F3F] mb-8">{product.tabs.overview.applicationsTitle}</h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {product.tabs.overview?.applications?.map((app, idx) => (
+                  <div key={idx} className="relative group rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow aspect-square">
+                    <img src={app.img} alt={app.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#001F3F]/90 via-[#001F3F]/20 to-transparent" />
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <span className="text-white font-bold text-sm tracking-wide">{app.name}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Summary Blocks */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              {product.tabs.overview?.summaryBlocks?.map((block, idx) => (
+                <div key={idx} className="bg-white rounded-3xl p-10 border border-slate-100 shadow-sm">
+                  {block.title && <h3 className="text-2xl font-bold text-[#E31E24] mb-2">{block.title}</h3>}
+                  {block.subtitle && <h4 className="text-lg font-bold text-[#001F3F] mb-6">{block.subtitle}</h4>}
+                  {block.text && <p className="text-slate-600 leading-relaxed whitespace-pre-line">{block.text}</p>}
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        );
+      
+      case 'benefits':
+        return (
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}
+            className="space-y-24"
+          >
+            {product.tabs.benefits?.blocks?.map((block, idx) => (
+              <div key={idx} className={`flex flex-col ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 lg:gap-20`}>
+                <div className="flex-1">
+                  <h2 className="text-3xl lg:text-4xl font-bold text-[#001F3F] mb-4 uppercase">{block.title}</h2>
+                  {block.subtitle && <h3 className="text-xl font-bold text-[#E31E24] mb-6">{block.subtitle}</h3>}
+                  <p className="text-lg text-slate-600 leading-relaxed whitespace-pre-line">{block.text}</p>
+                </div>
+                {block.img && (
+                  <div className="flex-1 w-full relative">
+                    <div className="absolute inset-0 bg-[#E31E24]/5 rounded-3xl transform -rotate-3 scale-105 -z-10" />
+                    <img src={block.img} alt={block.title} className="w-full h-auto rounded-3xl shadow-2xl border border-slate-100" />
+                  </div>
+                )}
+              </div>
+            ))}
+          </motion.div>
+        );
+
+      case 'technologies':
+        return (
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}
+            className="space-y-24"
+          >
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#001F3F] mb-12 uppercase border-b-4 border-[#E31E24] inline-block pb-2">Technical Overview</h2>
+            
+            {product.tabs.technologies?.blocks?.map((block, idx) => (
+              <div key={idx} className={`flex flex-col ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 lg:gap-20`}>
+                <div className="flex-1">
+                  {block.title && <h2 className="text-3xl lg:text-4xl font-bold text-[#001F3F] mb-4 uppercase">{block.title}</h2>}
+                  {block.subtitle && <h3 className="text-xl font-bold text-[#E31E24] mb-6">{block.subtitle}</h3>}
+                  {block.text && <p className="text-lg text-slate-600 leading-relaxed whitespace-pre-line">{block.text}</p>}
+                </div>
+                {block.img && (
+                  <div className="flex-1 w-full bg-white p-8 rounded-3xl shadow-xl border border-slate-100 flex items-center justify-center">
+                    <img src={block.img} alt={block.title || "Technology image"} className="max-h-[300px] w-auto object-contain drop-shadow-md" />
+                  </div>
+                )}
+              </div>
+            ))}
+          </motion.div>
+        );
+
+      case 'specs':
+        return (
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}
+            className="space-y-12 max-w-4xl mx-auto"
+          >
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#001F3F] mb-8 uppercase border-b-4 border-[#E31E24] inline-block pb-2">Technical Data</h2>
+            <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
+              <div className="overflow-x-auto">
+                <table className="w-full text-left border-collapse min-w-[400px]">
+                  <tbody>
+                    {product.tabs.specs?.table?.map((row, idx) => (
+                      <tr key={idx} className="border-b border-slate-100 last:border-0 hover:bg-slate-50 transition-colors">
+                        <th className="py-6 px-6 md:px-8 text-[#001F3F] font-bold w-1/3 md:w-1/2 align-top">{row.label}</th>
+                        <td className="py-6 px-6 md:px-8 text-slate-600 break-words">{row.value}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </motion.div>
+        );
+      
+      default:
+        return null;
+    }
+  };
+
+  return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-800 flex flex-col">
       <Navbar />
 
@@ -477,5 +608,4 @@ export default function KannegiesserProduct() {
       <Footer />
     </div>
   );
-}
 }
