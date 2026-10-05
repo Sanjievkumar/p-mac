@@ -176,7 +176,10 @@ const WASHING_TECH_DATA = {
         ]
       }
     }
-  },
+  }
+};
+
+const DATA_INFO_DATA = {
   "kannegiesser-process-control": {
     category: "Data Information Systems",
     title: "Process Control",
