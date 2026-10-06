@@ -1,11 +1,11 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useMotionValue, useSpring, useTransform, useReducedMotion, useMotionTemplate } from 'framer-motion';
 
-import sealionLogo from '../assets/brands/sealion-text.png';
-import maestrelliLogo from '../assets/brands/maestrelli-text.png';
-import maxipressLogo from '../assets/brands/maxipress-text.png';
+import sealionLogo from '../assets/brands/sealion.png';
+import maestrelliLogo from '../assets/brands/maestrelli.png';
+import maxipressLogo from '../assets/brands/maxipress.png';
 import kannegiesserLogo from '../assets/brands/kannegiesser.png'; 
-import imesaLogo from '../assets/brands/imesa-text.png';
+import imesaLogo from '../assets/brands/imesa.png';
 
 // 5 Perfect Circles
 const BUBBLES = [
