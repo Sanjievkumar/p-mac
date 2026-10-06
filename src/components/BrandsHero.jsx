@@ -71,35 +71,35 @@ export default function BrandsHero() {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={() => { mouseX.set(0); mouseY.set(0); }}
-      className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#0A1222]"
+      className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#fdfdff]"
     >
       {/* 1. Base Atmospheric Background */}
       <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0F172A] via-[#0A1222] to-[#0B152A]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-white via-slate-50 to-slate-100" />
         
         <div 
           className="absolute inset-0 opacity-[0.008]"
           style={{
-            backgroundImage: 'linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)',
+            backgroundImage: 'linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)',
             backgroundSize: '48px 48px',
           }}
         />
 
-        <div className="absolute top-[10%] left-[10%] w-[500px] h-[500px] bg-[#3B82F6]/[0.03] rounded-full blur-[120px]" />
-        <div className="absolute bottom-[10%] right-[10%] w-[600px] h-[600px] bg-[#2563EB]/[0.025] rounded-full blur-[130px]" />
+        <div className="absolute top-[10%] left-[10%] w-[500px] h-[500px] bg-[#0B4F8A]/[0.05] rounded-full blur-[120px]" />
+        <div className="absolute bottom-[10%] right-[10%] w-[600px] h-[600px] bg-[#001F3F]/[0.04] rounded-full blur-[130px]" />
         
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 2, delay: 0.5 }}
-          className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#E31E24]/[0.04] rounded-full blur-[140px]" 
+          className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#E31E24]/[0.05] rounded-full blur-[140px]" 
         />
       </div>
 
       {/* 2. Dynamic Mouse Spotlight */}
       {!isMobile && !prefersReducedMotion && (
         <motion.div
-          className="absolute inset-0 pointer-events-none z-0 mix-blend-overlay"
+          className="absolute inset-0 pointer-events-none z-0 mix-blend-multiply opacity-50"
           style={{ background: spotlightGradient }}
         />
       )}
@@ -113,18 +113,18 @@ export default function BrandsHero() {
           transition={{ duration: 2, delay: 1.5 }}
         >
           {/* Maestrelli to Kannegiesser */}
-          <line x1="15%" y1="15%" x2="75%" y2="18%" stroke="rgba(255,255,255,0.02)" strokeWidth="1" strokeDasharray="4 4" />
+          <line x1="15%" y1="15%" x2="75%" y2="18%" stroke="rgba(0,0,0,0.06)" strokeWidth="1" strokeDasharray="4 4" />
           {/* Kannegiesser to Imesa */}
-          <line x1="75%" y1="18%" x2="85%" y2="48%" stroke="rgba(255,255,255,0.02)" strokeWidth="1" strokeDasharray="4 4" />
+          <line x1="75%" y1="18%" x2="85%" y2="48%" stroke="rgba(0,0,0,0.06)" strokeWidth="1" strokeDasharray="4 4" />
           {/* Imesa to Maxipress */}
-          <line x1="85%" y1="48%" x2="70%" y2="78%" stroke="rgba(255,255,255,0.02)" strokeWidth="1" strokeDasharray="4 4" />
+          <line x1="85%" y1="48%" x2="70%" y2="78%" stroke="rgba(0,0,0,0.06)" strokeWidth="1" strokeDasharray="4 4" />
           {/* Maxipress to Sealion */}
-          <line x1="70%" y1="78%" x2="18%" y2="75%" stroke="rgba(255,255,255,0.02)" strokeWidth="1" strokeDasharray="4 4" />
+          <line x1="70%" y1="78%" x2="18%" y2="75%" stroke="rgba(0,0,0,0.06)" strokeWidth="1" strokeDasharray="4 4" />
           {/* Sealion to Maestrelli */}
-          <line x1="18%" y1="75%" x2="15%" y2="15%" stroke="rgba(255,255,255,0.02)" strokeWidth="1" strokeDasharray="4 4" />
+          <line x1="18%" y1="75%" x2="15%" y2="15%" stroke="rgba(0,0,0,0.06)" strokeWidth="1" strokeDasharray="4 4" />
           {/* Cross lines for depth */}
-          <line x1="15%" y1="15%" x2="85%" y2="48%" stroke="rgba(255,255,255,0.015)" strokeWidth="1" />
-          <line x1="75%" y1="18%" x2="18%" y2="75%" stroke="rgba(255,255,255,0.015)" strokeWidth="1" />
+          <line x1="15%" y1="15%" x2="85%" y2="48%" stroke="rgba(0,0,0,0.04)" strokeWidth="1" />
+          <line x1="75%" y1="18%" x2="18%" y2="75%" stroke="rgba(0,0,0,0.04)" strokeWidth="1" />
         </motion.svg>
       )}
 
@@ -161,18 +161,18 @@ export default function BrandsHero() {
             transition={{ duration: 1.2, delay: 1.0 + (i * 0.15), type: "spring", bounce: 0.4 }}
           >
             {/* Interactive Outer Glow on Hover */}
-            <div className="absolute inset-[-20%] rounded-full bg-white/[0.0] group-hover:bg-white/[0.04] blur-[15px] transition-colors duration-500 pointer-events-none" />
+            <div className="absolute inset-[-20%] rounded-full bg-[#0B4F8A]/[0.0] group-hover:bg-[#0B4F8A]/[0.04] blur-[15px] transition-colors duration-500 pointer-events-none" />
 
             {/* Perfect Circle Node Background */}
             <motion.div
-              className="absolute inset-0 bg-gradient-to-br from-[#1E293B]/40 to-[#0F172A]/20 border border-white/[0.08] rounded-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),_0_10px_30px_rgba(0,0,0,0.3)] group-hover:border-white/[0.2] transition-colors duration-500 will-change-transform"
+              className="absolute inset-0 bg-white border border-slate-200 rounded-full shadow-[0_15px_40px_rgba(0,0,0,0.08)] group-hover:border-slate-300 transition-colors duration-500 will-change-transform"
               animate={animationProps}
               transition={{ duration: bubble.dur, repeat: Infinity, ease: "easeInOut" }}
             />
             
             {/* Soft Inner Highlight */}
             <motion.div 
-              className="absolute top-[15%] left-[20%] w-[30%] h-[30%] rounded-full bg-white/[0.05] group-hover:bg-white/[0.15] blur-[8px] transition-colors duration-500 pointer-events-none will-change-transform"
+              className="absolute top-[15%] left-[20%] w-[30%] h-[30%] rounded-full bg-slate-50/[0.8] group-hover:bg-slate-100/[0.8] blur-[8px] transition-colors duration-500 pointer-events-none will-change-transform"
               animate={animationProps}
               transition={{ duration: bubble.dur, repeat: Infinity, ease: "easeInOut" }}
             />
@@ -186,7 +186,7 @@ export default function BrandsHero() {
               <img 
                 src={bubble.logo} 
                 alt={`${bubble.id} strategic partner logo`}
-                className="w-full h-full object-contain filter grayscale contrast-[100] invert mix-blend-screen opacity-100 pointer-events-none drop-shadow-[0_2px_4px_rgba(255,255,255,0.2)]"
+                className="w-full h-[70%] object-contain pointer-events-none drop-shadow-sm"
               />
             </motion.div>
           </motion.button>
@@ -217,7 +217,7 @@ export default function BrandsHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-            className="text-white/80 text-lg md:text-2xl lg:text-[28px] mb-3 tracking-[0.1em] font-semibold"
+            className="text-[#001F3F]/70 text-lg md:text-2xl lg:text-[28px] mb-3 tracking-[0.1em] font-semibold"
           >
             PARTNERSHIPS THAT
           </motion.span>
@@ -235,7 +235,7 @@ export default function BrandsHero() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
-            className="text-white text-[40px] md:text-[70px] lg:text-[85px] leading-[1] tracking-tighter mt-3 md:mt-4 drop-shadow-lg"
+            className="text-[#001F3F] text-[40px] md:text-[70px] lg:text-[85px] leading-[1] tracking-tighter mt-3 md:mt-4 drop-shadow-sm"
           >
             PERFORMANCE.
           </motion.span>
@@ -246,7 +246,7 @@ export default function BrandsHero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.0 }}
-          className="text-slate-300 text-sm md:text-base lg:text-lg max-w-[600px] mx-auto leading-relaxed text-center font-medium opacity-90"
+          className="text-slate-600 text-sm md:text-base lg:text-lg max-w-[600px] mx-auto leading-relaxed text-center font-medium opacity-90"
         >
           We work with established technology manufacturers to bring specialised equipment and proven solutions to India's professional laundry industry.
         </motion.p>
