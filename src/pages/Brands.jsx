@@ -17,9 +17,7 @@ import imesaTextLogo from '../assets/brands/imesa-text.png';
 import maxipressTextLogo from '../assets/brands/maxipress-text.png';
 
 import engineeringBg from '../assets/engineering-brands-bg.jpg';
-const customFontStyles = `
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap');
-`;
+
 
 /* ─────────────────────────────────────────────
    Brand catalog data
@@ -246,7 +244,7 @@ function BrandRow({ brand, reverse }) {
 export default function Brands() {
   return (
     <div className="w-full min-h-screen bg-white font-display flex flex-col">
-      <style>{customFontStyles}</style>
+      
       <Navbar />
 
       {/* ── Hero Banner ── */}
