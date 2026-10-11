@@ -18,6 +18,7 @@ export default {
         'sans': ['"Montserrat"', 'sans-serif'],
         'display': ['"Montserrat"', 'sans-serif'],
         'body': ['"Montserrat"', 'sans-serif'],
+        'roboto': ['"Roboto"', 'sans-serif'],
       },
       letterSpacing: {
         'tightest': '-0.04em',

@@ -33,9 +33,9 @@ const PRODUCTS = [
 ];
 
 const CATEGORIES = [
-  { id: 'Washing Technology', name: 'Washing Technology', icon: Droplets, color: 'bg-gradient-to-br from-[#00509B] to-[#003A70]' },
-  { id: 'Flatwork', name: 'Flatwork', icon: Layers, color: 'bg-gradient-to-br from-[#003A70] to-[#002B50]' },
-  { id: 'Data Information Systems', name: 'Data Information Systems', icon: Cpu, color: 'bg-gradient-to-br from-[#002B50] to-[#001F3F]' }
+  { id: 'Washing Technology', name: 'Washing Technology', icon: Droplets, color: 'bg-gradient-to-br from-[#0080DB] to-[#005EA6]' },
+  { id: 'Flatwork', name: 'Flatwork', icon: Layers, color: 'bg-gradient-to-br from-[#00509B] to-[#003366]' },
+  { id: 'Data Information Systems', name: 'Data Information Systems', icon: Cpu, color: 'bg-gradient-to-br from-[#002244] to-[#001020]' }
 ];
 
 const TIMELINE = [
@@ -82,7 +82,12 @@ export default function Kannegiesser() {
   };
 
   return (
-    <div className="w-full min-h-screen bg-white font-sans text-slate-800">
+    <div className="kannegiesser-page w-full min-h-screen bg-white font-roboto text-slate-800">
+      <style>{`
+        .kannegiesser-page, .kannegiesser-page * {
+          font-family: 'Roboto', sans-serif !important;
+        }
+      `}</style>
       <Navbar /><div className="absolute top-[100px] left-8 lg:left-16 z-50"><Link to="/brands" className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors font-medium text-sm bg-black/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/10"><ArrowLeft className="w-4 h-4" /> Back to Brands</Link></div>
 
       {/* ── 1. Hero Section ── */}
@@ -122,7 +127,7 @@ export default function Kannegiesser() {
               Our Goals<span className="text-[#00509B]">.</span>
             </h2>
             
-            <div className="text-slate-500 font-light text-lg leading-relaxed space-y-6 mb-12 text-justify">
+            <div className="text-slate-700 font-normal text-lg leading-relaxed space-y-6 mb-12 text-justify">
               <p>
                 {wrapKannegiesser("For over 70 years, Kannegiesser has been the partner of textile service providers regarding industrial laundry technology. Successful companies in the laundry industry are obliged to offer their customers complete solutions with an overall scope of system integration, instead of leaving the customer to deal with the solution of complex detailed problems.")}
               </p>
@@ -166,11 +171,7 @@ export default function Kannegiesser() {
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 className="snap-center shrink-0 w-[300px] md:w-[400px] flex flex-col relative"
               >
-                <div className="w-full h-2 bg-[#00509B]/20 mb-8 relative rounded-full">
-                  <div className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 md:w-6 md:h-6 rounded-full bg-[#00509B] border-4 border-white shadow-md flex items-center justify-center" />
-                </div>
-                
-                {item.img && (
+                                {item.img && (
                   <div className="w-full h-48 md:h-56 mb-6 rounded-2xl overflow-hidden shadow-md">
                     <img src={item.img} alt={`Kannegiesser in ${item.year}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
                   </div>

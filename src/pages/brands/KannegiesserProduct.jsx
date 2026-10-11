@@ -693,7 +693,12 @@ export default function KannegiesserProduct() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 font-sans text-slate-800 flex flex-col">
+    <div className="kannegiesser-product-page min-h-screen bg-slate-50 font-roboto text-slate-800 flex flex-col">
+      <style>{`
+        .kannegiesser-product-page, .kannegiesser-product-page * {
+          font-family: 'Roboto', sans-serif !important;
+        }
+      `}</style>
       <Navbar />
 
       {/* Immersive Hero Section (Matching Official Kannegiesser UI) */}
