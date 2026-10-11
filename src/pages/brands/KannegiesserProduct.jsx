@@ -512,7 +512,7 @@ export default function KannegiesserProduct() {
               <div className="max-w-7xl mx-auto px-6 lg:px-16 mb-16">
                 <h2 className="text-[32px] lg:text-[40px] font-bold text-[#00509B] mb-6 uppercase tracking-tight">{product.tabs.overview.introTitle}</h2>
                 {product.tabs.overview.introSubtitle && (
-                  <p className="text-[20px] lg:text-[24px] text-slate-500 font-light leading-relaxed mb-6">
+                  <p className="text-[20px] lg:text-[24px] text-slate-700 font-normal leading-relaxed mb-6">
                     {product.tabs.overview.introSubtitle}
                   </p>
                 )}
@@ -540,7 +540,7 @@ export default function KannegiesserProduct() {
                       </div>
                       <div className="p-6 md:p-8 flex-1">
                         <h3 className="text-[18px] md:text-[20px] font-bold text-slate-800 mb-4">{app.name}</h3>
-                        <p className="text-slate-600 text-[14px] leading-relaxed">{app.text}</p>
+                        <p className="text-slate-700 text-[14px] leading-relaxed">{app.text}</p>
                       </div>
                     </div>
                   ))}
@@ -571,10 +571,10 @@ export default function KannegiesserProduct() {
                       {/* Left Text */}
                       <div className="flex-1 py-4">
                         {block.title && <h3 className="text-[20px] lg:text-[24px] font-bold text-slate-800 mb-2">{block.title}</h3>}
-                        {block.subtitle && <h4 className="text-[14px] font-bold text-slate-500 mb-6 uppercase tracking-wider">{block.subtitle}</h4>}
-                        {block.text && <p className="text-slate-600 leading-relaxed font-light text-[15px]">{block.text}</p>}
+                        {block.subtitle && <h4 className="text-[14px] font-bold text-slate-700 mb-6 uppercase tracking-wider">{block.subtitle}</h4>}
+                        {block.text && <p className="text-slate-700 leading-relaxed font-normal text-[15px]">{block.text}</p>}
                           {block.bullets && (
-                            <ul className="list-disc pl-5 text-[15px] text-slate-700 leading-relaxed space-y-2 font-light mt-4">
+                            <ul className="list-disc pl-5 text-[15px] text-slate-700 leading-relaxed space-y-2 font-normal mt-4">
                               {block.bullets.map((bullet, bIdx) => (
                                 <li key={bIdx} className="pl-2">{bullet}</li>
                               ))}
@@ -585,9 +585,9 @@ export default function KannegiesserProduct() {
                       {/* Right Grey Box */}
                       {(block.boxTitle || block.boxBullets) && (
                         <div className="flex-1 bg-[#EBEBEB] p-8 lg:p-12">
-                          {block.boxTitle && <p className="text-[14px] text-slate-500 mb-6 uppercase tracking-widest">{block.boxTitle}</p>}
+                          {block.boxTitle && <p className="text-[14px] text-slate-700 font-bold mb-6 uppercase tracking-widest">{block.boxTitle}</p>}
                           {block.boxBullets && (
-                                <ul className="list-disc pl-5 text-[15px] text-slate-700 leading-relaxed space-y-2 font-light">
+                                <ul className="list-disc pl-5 text-[15px] text-slate-700 leading-relaxed space-y-2 font-normal">
                                   {block.boxBullets.map((bullet, bIdx) => (
                                     <li key={bIdx} className="pl-2">{bullet}</li>
                                   ))}
@@ -614,9 +614,9 @@ export default function KannegiesserProduct() {
                 <div className="flex-1">
                   <h2 className="text-3xl lg:text-4xl font-bold text-[#001F3F] mb-4 uppercase">{block.title}</h2>
                   {block.subtitle && <h3 className="text-xl font-bold text-[#00509B] mb-6">{block.subtitle}</h3>}
-                  <p className="text-lg text-slate-600 leading-relaxed whitespace-pre-line">{block.text}</p>
+                  <p className="text-lg text-slate-700 leading-relaxed whitespace-pre-line">{block.text}</p>
                     {block.boxBullets && (
-                      <ul className="list-disc pl-6 mt-6 text-lg text-slate-600 leading-relaxed space-y-3 font-light">
+                      <ul className="list-disc pl-6 mt-6 text-lg text-slate-700 leading-relaxed space-y-3 font-normal">
                         {block.boxBullets.map((bullet, bIdx) => (
                           <li key={bIdx} className="pl-2">{bullet}</li>
                         ))}
@@ -647,9 +647,9 @@ export default function KannegiesserProduct() {
                   <div className="flex-1">
                     {block.title && <h2 className="text-3xl lg:text-4xl font-bold text-[#001F3F] mb-4 uppercase">{block.title}</h2>}
                     {block.subtitle && <h3 className="text-xl font-bold text-[#00509B] mb-6">{block.subtitle}</h3>}
-                    {block.text && <p className="text-lg text-slate-600 leading-relaxed whitespace-pre-line">{block.text}</p>}
+                    {block.text && <p className="text-lg text-slate-700 leading-relaxed whitespace-pre-line">{block.text}</p>}
                     {block.boxBullets && (
-                      <ul className="list-disc pl-6 mt-6 text-lg text-slate-600 leading-relaxed space-y-3 font-light">
+                      <ul className="list-disc pl-6 mt-6 text-lg text-slate-700 leading-relaxed space-y-3 font-normal">
                         {block.boxBullets.map((bullet, bIdx) => (
                           <li key={bIdx} className="pl-2">{bullet}</li>
                         ))}
@@ -675,7 +675,7 @@ export default function KannegiesserProduct() {
                           {product.tabs.specs.table?.map((row, idx) => (
                             <tr key={idx} className="border-b border-slate-100 last:border-0 hover:bg-slate-50 transition-colors">
                               <th className="py-6 px-6 md:px-8 text-[#001F3F] font-bold w-1/3 md:w-1/2 align-top">{row.label}</th>
-                              <td className="py-6 px-6 md:px-8 text-slate-600 break-words">{row.value}</td>
+                              <td className="py-6 px-6 md:px-8 text-slate-700 break-words">{row.value}</td>
                             </tr>
                           ))}
                         </tbody>
