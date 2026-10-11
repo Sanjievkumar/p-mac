@@ -108,7 +108,7 @@ export default function Maestrelli() {
               90 Years Of<br />Textile Expertise<span className="text-[#CC141A]">.</span>
             </h2>
             
-            <div className="text-slate-600 font-normal text-sm md:text-base leading-relaxed space-y-6 mb-12">
+            <div className="text-slate-600 font-normal text-sm md:text-base leading-relaxed space-y-6 mb-12 text-justify">
               <p><span className="text-[#001F3F] font-bold">MAESTRELLI</span> S.r.l is one of the most important producers in the dry-cleaning sector, with more than 40.000 machines sold and having major clients anywhere in the world, from Europe to Middle east and from South-east to the Americas.</p>
               <p>The Company was also the first Italian producer ever: being born back in 1935, during all these years of successful activity <span className="text-[#001F3F] font-bold">Maestrelli</span> has been building and consolidating its reputation in almost any country. Furthermore, throughout this period, countless have been the innovations introduced by the firm, such as front loading, electrical machines, and self-cleaning filter.</p>
               <p>The Company has been always capable of growing and renovating itself, adding to its core business of dry-cleaning machines a wide range of products that goes from washing machines, dryers to barrier washer extractors, hydroextractors and ironing tables. As of today, <span className="text-[#001F3F] font-bold">Maestrelli</span> can confidently assert to be a major and reliable representative for anyone who wants to create a modern and high-end laundry.</p>

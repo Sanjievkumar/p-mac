@@ -22,6 +22,11 @@
     overflow-x: hidden;
   }
 
+  p {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+
   ::selection {
     background-color: #0B4F8A;
     color: #fff;

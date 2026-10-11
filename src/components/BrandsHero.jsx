@@ -9,10 +9,10 @@ import imesaLogo from '../assets/brands/imesa.png';
 
 // 5 Perfect Circles
 const BUBBLES = [
-  { id: 'maestrelli', logo: maestrelliLogo, size: 180, top: '15%', left: '15%', depth: 2.0, dur: 18, rot: 0, driftX: -10, driftY: 15 },
-  { id: 'kannegiesser', logo: kannegiesserLogo, size: 160, top: '18%', left: '75%', depth: 1.5, dur: 22, rot: 0, driftX: 10, driftY: -10 },
+  { id: 'kannegiesser', logo: kannegiesserLogo, size: 180, top: '15%', left: '15%', depth: 2.0, dur: 18, rot: 0, driftX: -10, driftY: 15 },
+  { id: 'sealion', logo: sealionLogo, size: 160, top: '18%', left: '75%', depth: 1.5, dur: 22, rot: 0, driftX: 10, driftY: -10 },
   { id: 'imesa', logo: imesaLogo, size: 140, top: '48%', left: '85%', depth: 0.8, dur: 25, rot: 0, driftX: -8, driftY: -8 },
-  { id: 'sealion', logo: sealionLogo, size: 170, top: '75%', left: '18%', depth: 1.8, dur: 20, rot: 0, driftX: 12, driftY: -12 },
+  { id: 'maestrelli', logo: maestrelliLogo, size: 170, top: '75%', left: '18%', depth: 1.8, dur: 20, rot: 0, driftX: 12, driftY: -12 },
   { id: 'maxipress', logo: maxipressLogo, size: 200, top: '78%', left: '70%', depth: 2.5, dur: 16, rot: 0, driftX: -15, driftY: 15 },
 ];
 
@@ -204,7 +204,7 @@ export default function BrandsHero() {
           className="inline-flex items-center gap-4 mb-10"
         >
           <div className="w-8 h-[1px] bg-[#E31E24]/60" />
-          <p className="text-[#E31E24] text-[11px] md:text-xs font-bold tracking-[0.3em] uppercase">
+          <p className="text-[#E31E24] text-xs md:text-sm font-bold tracking-[0.25em] uppercase">
             Strategic Partners
           </p>
           <div className="w-8 h-[1px] bg-[#E31E24]/60" />

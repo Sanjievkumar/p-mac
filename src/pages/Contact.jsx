@@ -192,7 +192,7 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             className="mb-6"
           >
-            <span className="text-[#E31E24] font-bold text-[10px] tracking-[0.4em] uppercase bg-[#E31E24]/5 px-6 py-2 rounded-full border border-[#E31E24]/10 shadow-[0_0_20px_rgba(227,30,36,0.1)] inline-flex items-center gap-2">
+            <span className="text-[#E31E24] font-bold text-xs md:text-sm tracking-[0.25em] uppercase bg-[#E31E24]/5 px-6 py-2 rounded-full border border-[#E31E24]/10 shadow-[0_0_20px_rgba(227,30,36,0.1)] inline-flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#E31E24] animate-pulse" /> Reach Out
             </span>
           </motion.div>

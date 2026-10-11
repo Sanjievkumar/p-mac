@@ -98,7 +98,7 @@ export default function BrandMarquee({ title = "Strategic Partners" }) {
   return (
     <section className="w-full bg-white py-16 border-y border-slate-200 overflow-hidden flex flex-col items-center">
       
-      <p className="text-gray-400 text-xs font-bold tracking-[0.3em] uppercase mb-12 font-display">
+      <p className="text-gray-400 text-xs md:text-sm font-bold tracking-[0.25em] uppercase mb-12 font-display">
         {title}
       </p>
 

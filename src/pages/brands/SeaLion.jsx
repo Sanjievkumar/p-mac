@@ -106,7 +106,7 @@ export default function SeaLion() {
               55+ Years of<br />Manufacturing Excellence<span className="text-[#E31E24]">.</span>
             </h2>
             
-            <div className="text-slate-600 font-normal text-sm leading-relaxed space-y-6 mb-12 max-w-md">
+            <div className="text-slate-600 font-normal text-sm leading-relaxed space-y-6 mb-12 max-w-md text-justify">
               <p>
                 <span className="text-[#E31E24] font-bold">Established in 1969</span>, Jiangsu <span className="text-[#E31E24] font-bold">Sea-lion</span> Machinery Co., Ltd. (formerly <span className="text-[#E31E24] font-bold">Sea-lion</span> Machinery Group) is the oldest manufacturer of industrial laundry machines in China, gaining a wealth of experiences on R&D and manufacture with laundry machines.
               </p>

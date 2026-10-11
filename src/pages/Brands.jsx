@@ -194,7 +194,7 @@ function BrandRow({ brand, reverse }) {
           {/* Origin badge */}
           <div className="flex items-center gap-3 mb-6">
             <div className="w-6 h-[1px] bg-[#E31E24]" />
-            <span className="text-[#E31E24] text-[9px] font-bold tracking-[0.4em] uppercase">
+            <span className="text-[#E31E24] text-xs font-bold tracking-[0.25em] uppercase">
               {brand.origin} — {brand.tagline}
             </span>
           </div>
@@ -204,7 +204,7 @@ function BrandRow({ brand, reverse }) {
           {brand.nameImg}
 
           {/* Description */}
-          <p className="text-slate-600 text-[15px] leading-relaxed mb-8 max-w-[420px]">
+          <p className="text-slate-600 text-[15px] leading-relaxed mb-8 max-w-[420px] text-justify">
             {brand.desc}
           </p>
 
@@ -213,7 +213,7 @@ function BrandRow({ brand, reverse }) {
             {brand.products.map((p) => (
               <span
                 key={p}
-                className="text-[10px] font-bold tracking-widest uppercase text-[#001F3F] bg-white border border-slate-200 px-3 py-1.5 rounded-md shadow-sm"
+                className="text-xs font-bold tracking-wider uppercase text-[#001F3F] bg-white border border-slate-200 px-3.5 py-1.5 rounded-md shadow-sm"
               >
                 {p}
               </span>
@@ -224,7 +224,7 @@ function BrandRow({ brand, reverse }) {
           <div>
             <MagneticButton
               to={`/brands/${brand.id}`}
-              className="group/btn inline-flex items-center gap-4 text-[10px] font-bold tracking-[0.2em] uppercase text-[#E31E24] border border-[#E31E24] px-7 py-3.5 rounded-md transition-colors duration-300 hover:bg-[#E31E24] hover:text-white hover:shadow-[0_0_15px_rgba(227,30,36,0.4)] bg-white cursor-pointer"
+              className="group/btn inline-flex items-center gap-4 text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-[#E31E24] border border-[#E31E24] px-7 py-3.5 rounded-md transition-colors duration-300 hover:bg-[#E31E24] hover:text-white hover:shadow-[0_0_15px_rgba(227,30,36,0.4)] bg-white cursor-pointer"
             >
               VIEW PRODUCTS
               <span className="w-5 h-5 rounded-full border border-current flex items-center justify-center transition-transform duration-300 group-hover/btn:translate-x-1">

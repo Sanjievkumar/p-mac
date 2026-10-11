@@ -4,7 +4,6 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import TurnkeyProcess from '../components/TurnkeyProcess';
 import MissionSection from '../components/MissionSection';
-import GlobeSection from '../components/GlobeSection';
 import engineeringBg from '../assets/engineering-brands-bg.jpg';
 
 /* ============================================================================
@@ -158,7 +157,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="mb-8"
           >
-            <span className="text-white font-bold text-[10px] tracking-[0.4em] uppercase bg-white/10 px-6 py-2 rounded-full border border-white/20">
+            <span className="text-white font-bold text-xs md:text-sm tracking-[0.25em] uppercase bg-white/10 px-6 py-2 rounded-full border border-white/20">
               Engineering the Future
             </span>
           </motion.div>
@@ -202,7 +201,7 @@ export default function About() {
             </h2>
           </div>
           
-          <div className="space-y-6 text-slate-700 text-lg leading-relaxed font-medium">
+          <div className="space-y-6 text-slate-700 text-lg leading-relaxed font-medium text-justify">
             <p className="text-xl md:text-2xl font-bold text-[#001F3F] leading-tight mb-8">
               At Promac Technologies Pvt. Ltd., machines are not merely supplied — systems are engineered, performance is optimized, and long-term operational reliability is built into every solution.
             </p>
@@ -224,11 +223,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
-      {/* ============================================================================
-          SECTION 2.5 — GLOBE SECTION (Partners)
-      ============================================================================ */}
-      <GlobeSection />
 
       {/* ============================================================================
           SECTION 3 — CORE STRENGTHS

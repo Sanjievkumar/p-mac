@@ -34,7 +34,7 @@ export default function FounderSection() {
               <span className="text-[#CC141A] italic font-serif tracking-normal">Always.</span>
             </h2>
             
-            <div className="text-slate-600 text-sm md:text-base font-medium leading-relaxed max-w-[460px] space-y-5">
+            <div className="text-slate-600 text-sm md:text-base font-medium leading-relaxed max-w-[460px] space-y-5 text-justify">
               <p>
                 At Promac Technologies, our journey has always been about solving real challenges with practical, reliable and future-ready solutions. We believe in engineering excellence, long-term partnerships, and creating value that lasts.
               </p>

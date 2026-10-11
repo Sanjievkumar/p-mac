@@ -37,7 +37,7 @@ export default function HeroSection() {
               BUILT FOR THE FUTURE.
             </h1>
             
-            <p className="text-slate-600 text-base md:text-lg lg:text-xl font-medium leading-relaxed mb-8 md:mb-10 max-w-[460px]">
+            <p className="text-slate-600 text-base md:text-lg lg:text-xl font-medium leading-relaxed mb-8 md:mb-10 max-w-[460px] text-justify">
               Complete laundry solutions engineered for efficiency, reliability and scale — from individual machines to fully integrated industrial laundry systems.
             </p>
             

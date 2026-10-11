@@ -122,7 +122,7 @@ export default function Kannegiesser() {
               Our Goals<span className="text-[#00509B]">.</span>
             </h2>
             
-            <div className="text-slate-500 font-light text-lg leading-relaxed space-y-6 mb-12">
+            <div className="text-slate-500 font-light text-lg leading-relaxed space-y-6 mb-12 text-justify">
               <p>
                 {wrapKannegiesser("For over 70 years, Kannegiesser has been the partner of textile service providers regarding industrial laundry technology. Successful companies in the laundry industry are obliged to offer their customers complete solutions with an overall scope of system integration, instead of leaving the customer to deal with the solution of complex detailed problems.")}
               </p>

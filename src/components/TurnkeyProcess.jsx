@@ -144,7 +144,7 @@ function Card({ step }) {
       </span>
 
       {/* Step number pill */}
-      <span className="inline-block mb-3 text-xs font-bold tracking-widest text-[#E31E24] uppercase">
+      <span className="inline-block mb-3 text-sm font-bold tracking-widest text-[#E31E24] uppercase">
         Step {step.number}
       </span>
 
@@ -154,12 +154,12 @@ function Card({ step }) {
       </h3>
 
       {/* Description */}
-      <p className="text-slate-500 text-sm leading-relaxed mb-5">
+      <p className="text-slate-500 text-sm leading-relaxed mb-5 text-justify">
         {step.description}
       </p>
 
       {/* Badge */}
-      <span className="inline-flex items-center gap-1.5 bg-red-50 text-[#E31E24] text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-full border border-red-100">
+      <span className="inline-flex items-center gap-1.5 bg-red-50 text-[#E31E24] text-xs font-bold tracking-wider uppercase px-3.5 py-1.5 rounded-full border border-red-100">
         <span className="w-1.5 h-1.5 rounded-full bg-[#E31E24] inline-block" />
         {step.badge}
       </span>
@@ -203,7 +203,7 @@ export default function TurnkeyProcess() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-[#E31E24] text-xs font-bold tracking-widest uppercase mb-3"
+            className="text-[#E31E24] text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-3"
           >
             The Promac Method
           </motion.p>

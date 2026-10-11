@@ -230,7 +230,7 @@ export default function Services() {
             transition={{ duration: 0.8 }}
             className="mb-6"
           >
-            <span className="text-[#E31E24] font-bold text-[10px] tracking-[0.4em] uppercase bg-[#E31E24]/5 px-6 py-2 rounded-full border border-[#E31E24]/10 shadow-[0_0_20px_rgba(227,30,36,0.1)] inline-flex items-center gap-2">
+            <span className="text-[#E31E24] font-bold text-xs md:text-sm tracking-[0.25em] uppercase bg-[#E31E24]/5 px-6 py-2 rounded-full border border-[#E31E24]/10 shadow-[0_0_20px_rgba(227,30,36,0.1)] inline-flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#E31E24] animate-pulse" /> Engineering Excellence
             </span>
           </motion.div>
@@ -289,7 +289,7 @@ export default function Services() {
                     </h3>
                   </div>
                   
-                  <p className="text-slate-600 group-hover:text-white font-light text-lg leading-relaxed mb-10 relative z-10 flex-grow transition-colors duration-500">
+                  <p className="text-slate-600 group-hover:text-white font-light text-lg leading-relaxed mb-10 relative z-10 flex-grow transition-colors duration-500 text-justify">
                     {service.description}
                   </p>
 

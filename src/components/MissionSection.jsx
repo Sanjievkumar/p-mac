@@ -69,7 +69,7 @@ export default function MissionSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-white text-[11px] font-bold tracking-[0.5em] uppercase mb-8"
+            className="text-white text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-8"
           >
             OUR PURPOSE
           </motion.p>
@@ -100,7 +100,7 @@ export default function MissionSection() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="text-white text-[11px] font-bold tracking-[0.4em] uppercase"
+            className="text-white text-xs md:text-sm font-bold tracking-[0.25em] uppercase"
           >
             PROMAC TECHNOLOGIES &mdash; ESTD 2022.
           </motion.p>

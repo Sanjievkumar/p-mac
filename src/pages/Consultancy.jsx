@@ -45,7 +45,7 @@ function HeroSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="lg:col-span-12 space-y-6 text-center flex flex-col items-center"
         >
-          <span className="text-xs font-bold tracking-[0.2em] text-[#E31E24] uppercase block">
+          <span className="text-sm font-bold tracking-[0.25em] text-[#E31E24] uppercase block">
             Consultancy
           </span>
           
@@ -64,7 +64,7 @@ function HeroSection() {
           {/* CTA BUTTONS */}
           <div className="flex flex-wrap gap-4 pt-4 justify-center">
             <Link to="/contact">
-              <button className="bg-[#E31E24] hover:bg-gradient-to-r hover:from-pink-600 hover:to-[#E31E24] text-white font-bold tracking-widest text-[11px] uppercase px-8 py-4 rounded-[8px] flex items-center gap-3 transition-all duration-300 shadow-md shadow-[#E31E24]/20 hover:shadow-lg hover:-translate-y-1 group">
+              <button className="bg-[#E31E24] hover:bg-gradient-to-r hover:from-pink-600 hover:to-[#E31E24] text-white font-bold tracking-wider text-xs md:text-sm uppercase px-8 py-4 rounded-[8px] flex items-center gap-3 transition-all duration-300 shadow-md shadow-[#E31E24]/20 hover:shadow-lg hover:-translate-y-1 group">
                 Request Consultation
                 <span className="group-hover:translate-x-1 transition-transform border border-white rounded-full p-1 bg-white/10">
                   <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -74,7 +74,7 @@ function HeroSection() {
               </button>
             </Link>
             <Link to="/contact">
-              <button className="bg-white hover:bg-[#001F3F] text-[#001F3F] hover:text-white font-bold tracking-widest text-[11px] uppercase px-8 py-4 rounded-[8px] border border-slate-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex items-center gap-3 group">
+              <button className="bg-white hover:bg-[#001F3F] text-[#001F3F] hover:text-white font-bold tracking-wider text-xs md:text-sm uppercase px-8 py-4 rounded-[8px] border border-slate-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex items-center gap-3 group">
                 Talk to an Expert
                 <span className="text-slate-400 group-hover:text-white transition-colors">
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -257,7 +257,7 @@ function IndustrySlider() {
             transition={{ duration: 0.6 }}
             className="w-full lg:w-[30%] flex flex-col items-start"
           >
-            <span className="text-[#E31E24] font-bold text-[10px] tracking-[0.2em] uppercase mb-4 block">WHO WE HELP</span>
+            <span className="text-[#E31E24] font-bold text-xs md:text-sm tracking-[0.2em] uppercase mb-4 block">WHO WE HELP</span>
             <h2 className="text-4xl md:text-5xl lg:text-[42px] font-extrabold text-[#001F3F] tracking-tighter leading-[1.1] mb-6">
               Solutions for<br />Every Industry
             </h2>
@@ -265,7 +265,7 @@ function IndustrySlider() {
               Our consultancy services are trusted by a wide range of industries.
             </p>
             <Link to="/contact">
-              <button className="bg-transparent border border-slate-300 hover:border-[#001F3F] text-[#001F3F] font-bold tracking-widest text-[11px] uppercase px-6 py-3.5 rounded-full flex items-center gap-3 transition-all duration-300 hover:bg-[#001F3F] hover:text-white">
+              <button className="bg-transparent border border-slate-300 hover:border-[#001F3F] text-[#001F3F] font-bold tracking-wider text-xs md:text-sm uppercase px-6 py-3.5 rounded-full flex items-center gap-3 transition-all duration-300 hover:bg-[#001F3F] hover:text-white">
                 EXPLORE ALL INDUSTRIES
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -418,7 +418,7 @@ function ProcessTimeline() {
           transition={{ duration: 0.6 }}
           className="mb-24"
         >
-          <span className="text-[#E31E24] font-bold text-[11px] tracking-[0.2em] uppercase mb-4 block">
+          <span className="text-[#E31E24] font-bold text-xs md:text-sm tracking-[0.2em] uppercase mb-4 block">
             OUR PROCESS
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-[44px] font-extrabold text-[#001F3F] tracking-tighter">
@@ -553,7 +553,7 @@ function DesignPerformance() {
         >
           {/* Left Column: Content */}
           <div className="w-full lg:w-[45%] p-10 lg:p-14 flex flex-col justify-center">
-            <span className="text-[#E31E24] font-bold text-[11px] tracking-[0.2em] uppercase mb-4 block">
+            <span className="text-[#E31E24] font-bold text-xs md:text-sm tracking-[0.2em] uppercase mb-4 block">
               FROM PLAN TO PERFORMANCE
             </span>
             <h2 className="text-4xl md:text-[42px] font-black text-[#001F3F] tracking-tighter leading-[1.1] mb-6">
@@ -690,7 +690,7 @@ function CombinedWhyChooseAndCta() {
 
         {/* 2. Text */}
         <div className="w-full xl:w-[25%] z-10 text-center xl:text-left px-2">
-          <span className="text-[#E31E24] font-bold text-[10px] tracking-widest uppercase mb-4 block">
+          <span className="text-[#E31E24] font-bold text-xs md:text-sm tracking-widest uppercase mb-4 block">
             WHY CHOOSE PROMAC
           </span>
           <h2 className="text-3xl xl:text-[38px] font-black text-[#041E42] tracking-tight leading-[1.15]">
@@ -761,7 +761,7 @@ function CombinedWhyChooseAndCta() {
             
             {/* COL 1: Text */}
             <div className="w-full xl:w-[50%] text-center xl:text-left mb-6 xl:mb-0 py-10 xl:py-0">
-              <p className="text-slate-300 text-[10px] font-semibold mb-2 tracking-widest uppercase opacity-90">
+              <p className="text-slate-300 text-xs md:text-sm font-bold mb-2 tracking-widest uppercase opacity-90">
                 Planning a Laundry Setup?
               </p>
               <h2 className="text-[30px] xl:text-[36px] font-black text-white tracking-tight leading-[1.05]">
@@ -776,7 +776,7 @@ function CombinedWhyChooseAndCta() {
                 <motion.button 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-full bg-[#E31E24] hover:bg-red-500 text-white font-bold py-3.5 px-6 rounded-md text-[11px] tracking-widest uppercase transition-all flex items-center justify-center gap-3 whitespace-nowrap shadow-[0_0_25px_rgba(227,30,36,0.5)]"
+                  className="w-full bg-[#E31E24] hover:bg-red-500 text-white font-bold py-3.5 px-6 rounded-md text-xs md:text-sm tracking-widest uppercase transition-all flex items-center justify-center gap-3 whitespace-nowrap shadow-[0_0_25px_rgba(227,30,36,0.5)]"
                 >
                   Get Expert Advice
                   <svg className="w-3.5 h-3.5 rounded-full border border-white/40 p-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -788,7 +788,7 @@ function CombinedWhyChooseAndCta() {
               <Link to="/contact">
                 <motion.button 
                   whileTap={{ scale: 0.95 }}
-                  className="w-full group relative border border-white/40 text-white font-bold py-3.5 px-6 rounded-md text-[11px] tracking-widest uppercase overflow-hidden transition-all flex items-center justify-center gap-3 whitespace-nowrap hover:border-white"
+                  className="w-full group relative border border-white/40 text-white font-bold py-3.5 px-6 rounded-md text-xs md:text-sm tracking-widest uppercase overflow-hidden transition-all flex items-center justify-center gap-3 whitespace-nowrap hover:border-white"
                 >
                   <div className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out z-0" />
                   <span className="relative z-10 group-hover:text-[#0A1428] transition-colors duration-300">
