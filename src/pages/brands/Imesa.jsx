@@ -422,53 +422,62 @@ export default function Imesa() {
 
           {/* Product Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 lg:gap-10 max-w-6xl mx-auto">
-            {filteredProducts.map((product) => {
+            {filteredProducts.map((product, idx) => {
               const IconComp = product.icon || Droplets;
               return (
-                <Link 
-                  to={`/brands/imesa/${product.id}`} 
+                <motion.div
                   key={product.id}
-                  className="group flex flex-col h-full bg-white rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-30px" }}
+                  transition={{ duration: 0.5, delay: (idx % 2) * 0.1 }}
+                  whileHover={{ y: -6 }}
+                  className="h-full"
                 >
-                  {/* Card Top Meta Bar - Dedicated bar prevents any clashing with image */}
-                  <div className="px-8 pt-7 pb-2 flex items-center justify-between z-20 relative bg-white">
-                    <span className="inline-flex items-center gap-1.5 bg-[#001F3F] text-white text-[11px] font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
-                      {product.badge}
-                    </span>
-                    <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">
-                      {product.categoryName}
-                    </span>
-                  </div>
-
-                  {/* Dedicated Large Image Container */}
-                  <div className="px-8 py-6 flex items-center justify-center bg-white border-b border-slate-100 min-h-[320px] relative">
-                    <img 
-                      src={product.img} 
-                      alt={product.name} 
-                      className="w-full h-64 md:h-72 object-contain transform group-hover:scale-105 transition-transform duration-500" 
-                    />
-                  </div>
-                  
-                  {/* Content Container */}
-                  <div className="p-8 flex flex-col gap-3 flex-1 relative">
-                    <div className="text-[#00A3E0] text-xs font-bold uppercase tracking-widest">
-                      {product.series}
+                  <Link 
+                    to={`/brands/imesa/${product.id}`} 
+                    className="group flex flex-col h-full bg-white rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
+                  >
+                    {/* Card Top Meta Bar - Dedicated bar prevents any clashing with image */}
+                    <div className="px-8 pt-7 pb-2 flex items-center justify-between z-20 relative bg-white">
+                      <span className="inline-flex items-center gap-1.5 bg-[#001F3F] text-white text-[11px] font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
+                        {product.badge}
+                      </span>
+                      <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">
+                        {product.categoryName}
+                      </span>
                     </div>
 
-                    <h3 className="text-xl md:text-2xl font-bold text-[#001F3F] group-hover:text-[#00A3E0] transition-colors leading-snug">
-                      {product.name}
-                    </h3>
-                    
-                    <p className="text-slate-500 text-sm leading-relaxed flex-1">
-                      {product.desc}
-                    </p>
-                    
-                    <div className="flex items-center gap-2 text-[#00A3E0] font-bold text-sm mt-4 pt-4 border-t border-slate-100 group-hover:text-[#001F3F] transition-colors tracking-wide">
-                      View Technical Details
-                      <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    {/* Dedicated Large Image Container */}
+                    <div className="px-8 py-6 flex items-center justify-center bg-white border-b border-slate-100 min-h-[320px] relative overflow-hidden">
+                      <img 
+                        src={product.img} 
+                        alt={product.name} 
+                        className="w-full h-64 md:h-72 object-contain transform group-hover:scale-108 group-hover:-translate-y-1.5 transition-transform duration-500 will-change-transform" 
+                      />
                     </div>
-                  </div>
-                </Link>
+                    
+                    {/* Content Container */}
+                    <div className="p-8 flex flex-col gap-3 flex-1 relative">
+                      <div className="text-[#00A3E0] text-xs font-bold uppercase tracking-widest">
+                        {product.series}
+                      </div>
+
+                      <h3 className="text-xl md:text-2xl font-bold text-[#001F3F] group-hover:text-[#00A3E0] transition-colors leading-snug">
+                        {product.name}
+                      </h3>
+                      
+                      <p className="text-slate-500 text-sm leading-relaxed flex-1">
+                        {product.desc}
+                      </p>
+                      
+                      <div className="flex items-center gap-2 text-[#00A3E0] font-bold text-sm mt-4 pt-4 border-t border-slate-100 group-hover:text-[#001F3F] transition-colors tracking-wide">
+                        View Technical Details
+                        <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </div>
+                  </Link>
+                </motion.div>
               );
             })}
           </div>

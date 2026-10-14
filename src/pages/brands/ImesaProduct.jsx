@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import { ArrowLeft, Cpu, Droplets, Wind, Layers, RefreshCw, ShieldCheck, CheckCircle2, Award, Sparkles } from 'lucide-react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
@@ -718,6 +718,7 @@ const SLUG_ALIASES = {
 
 export default function ImesaProduct() {
   const { id } = useParams();
+  const detailsRef = useRef(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -729,6 +730,17 @@ export default function ImesaProduct() {
     : SLUG_ALIASES[rawId] || "imesa-lm-series";
 
   const product = IMESA_PRODUCTS[resolvedKey] || IMESA_PRODUCTS["imesa-lm-series"];
+
+  // Scroll-driven interactive image animation
+  const { scrollYProgress } = useScroll({
+    target: detailsRef,
+    offset: ["start start", "end end"]
+  });
+
+  const smoothProgress = useSpring(scrollYProgress, { stiffness: 100, damping: 25, restDelta: 0.001 });
+  const imageScale = useTransform(smoothProgress, [0, 0.5, 1], [0.96, 1.05, 0.98]);
+  const imageY = useTransform(smoothProgress, [0, 1], [-20, 20]);
+  const imageRotate = useTransform(smoothProgress, [0, 0.5, 1], [-1.2, 0, 1.2]);
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-800">
@@ -772,8 +784,8 @@ export default function ImesaProduct() {
         </div>
       </section>
 
-      {/* ── 2. Content & Large Machine Showcase Layout ── */}
-      <section className="py-16 lg:py-24 bg-slate-50">
+      {/* ── 2. Content & Large Machine Showcase Layout with Scroll Animation ── */}
+      <section ref={detailsRef} className="py-16 lg:py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             
@@ -792,13 +804,18 @@ export default function ImesaProduct() {
                     </span>
                   </div>
 
-                  {/* Greatly Enlarged Machine Image Container */}
-                  <div className="relative flex items-center justify-center min-h-[380px] md:min-h-[460px] lg:min-h-[520px] w-full p-2 bg-white rounded-2xl">
-                    <img 
-                      src={product.img} 
-                      alt={product.title}
-                      className="w-full h-full max-h-[480px] lg:max-h-[540px] object-contain transform group-hover:scale-105 transition-transform duration-700 drop-shadow-xl"
-                    />
+                  {/* Greatly Enlarged Machine Image Container with Real-time Scroll Animation */}
+                  <div className="relative flex items-center justify-center min-h-[380px] md:min-h-[460px] lg:min-h-[520px] w-full p-2 bg-white rounded-2xl overflow-hidden">
+                    <motion.div 
+                      style={{ scale: imageScale, y: imageY, rotate: imageRotate }}
+                      className="w-full h-full flex items-center justify-center will-change-transform"
+                    >
+                      <img 
+                        src={product.img} 
+                        alt={product.title}
+                        className="w-full h-full max-h-[480px] lg:max-h-[540px] object-contain drop-shadow-xl"
+                      />
+                    </motion.div>
                   </div>
 
                   {/* Action Buttons */}
