@@ -5,23 +5,25 @@ import { Link } from 'react-router-dom';
 
 export default function HeroSection() {
   return (
-    <section id="hero" className="relative w-full h-[calc(100vh-80px)] mt-[80px] min-h-[650px] bg-white overflow-hidden flex flex-col justify-between">
-      {/* Background Image determining the natural height */}
-      <div className="absolute inset-0 overflow-hidden">
-        <img 
-          src={heroImage} 
-          alt="Industrial Laundry Machines" 
-          className="absolute inset-0 w-full h-full object-cover object-right pointer-events-none" 
-        />
-      </div>
-      
-      {/* Gradient Overlay for text readability on smaller screens */}
-      <div className="absolute inset-0 bg-white/60 lg:hidden pointer-events-none z-0" />
-      <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/70 lg:to-transparent lg:w-[75%] pointer-events-none mix-blend-normal z-0" />
+    <section id="hero" className="relative w-full min-h-[650px] h-[calc(100vh-80px)] max-h-[920px] mt-[80px] bg-white overflow-hidden flex flex-col justify-between">
+      {/* Centered Master Stage matching Navbar max-width for ultra-wide / zoom coherence */}
+      <div className="relative w-full max-w-[1600px] mx-auto h-full flex-grow flex flex-col justify-between">
+        
+        {/* Background Image scoped inside the stage frame */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <img 
+            src={heroImage} 
+            alt="Industrial Laundry Machines" 
+            className="w-full h-full object-cover object-right" 
+          />
+        </div>
+        
+        {/* Gradient Overlay for text readability on smaller screens */}
+        <div className="absolute inset-0 bg-white/60 lg:hidden pointer-events-none z-0" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/70 lg:to-transparent lg:w-[65%] pointer-events-none mix-blend-normal z-0" />
 
-      {/* Main Hero Content */}
-      <div className="absolute inset-0 z-10 w-full flex flex-col pb-0 lg:pb-[88px]">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16 w-full flex-grow flex items-center">
+        {/* Main Hero Content - aligned with Navbar container */}
+        <div className="relative z-10 w-full flex-grow flex items-center max-w-[1400px] mx-auto px-8 lg:px-16 pb-0 lg:pb-[88px]">
           <motion.div 
             className="max-w-2xl mt-12 md:mt-0"
             initial={{ opacity: 0, x: -30 }}
@@ -58,36 +60,37 @@ export default function HeroSection() {
             </Link>
           </motion.div>
         </div>
-      </div>
 
-      {/* Bottom Bar Features */}
-      <div className="absolute bottom-0 inset-x-0 z-20 w-full bg-white/95 backdrop-blur-md py-6 shadow-[0_-4px_20px_rgba(0,0,0,0.03)] hidden lg:block">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16">
-          <div className="grid grid-cols-4 gap-4 divide-x divide-slate-100">
-            {[
-              { icon: Globe2, title: 'GLOBAL PARTNERSHIPS', desc: 'World-Class Solutions' },
-              { icon: Settings, title: 'ADVANCED TECHNOLOGY', desc: 'Maximum Efficiency' },
-              { icon: ShieldCheck, title: 'RELIABLE SUPPORT', desc: 'Lifetime Partnership' },
-              { icon: Users, title: 'EXPERT GUIDANCE', desc: 'Tailored For You' }
-            ].map((feature, idx) => (
-              <motion.div 
-                key={idx} 
-                className="flex items-center gap-4 pl-8 first:pl-0"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.5 + (idx * 0.1) }}
-              >
-                <div className="text-[#CC141A] shrink-0">
-                  <feature.icon className="w-8 h-8 stroke-[1.5]" />
-                </div>
-                <div>
-                  <h3 className="text-xs font-bold text-[#1A233A] tracking-wider mb-1">{feature.title}</h3>
-                  <p className="text-[10px] text-slate-500 font-medium">{feature.desc}</p>
-                </div>
-              </motion.div>
-            ))}
+        {/* Bottom Bar Features - aligned with Navbar container */}
+        <div className="relative z-20 w-full bg-white/95 backdrop-blur-md py-6 shadow-[0_-4px_20px_rgba(0,0,0,0.03)] hidden lg:block border-t border-slate-100/80">
+          <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
+            <div className="grid grid-cols-4 gap-4 divide-x divide-slate-100">
+              {[
+                { icon: Globe2, title: 'GLOBAL PARTNERSHIPS', desc: 'World-Class Solutions' },
+                { icon: Settings, title: 'ADVANCED TECHNOLOGY', desc: 'Maximum Efficiency' },
+                { icon: ShieldCheck, title: 'RELIABLE SUPPORT', desc: 'Lifetime Partnership' },
+                { icon: Users, title: 'EXPERT GUIDANCE', desc: 'Tailored For You' }
+              ].map((feature, idx) => (
+                <motion.div 
+                  key={idx} 
+                  className="flex items-center gap-4 pl-8 first:pl-0"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.5 + (idx * 0.1) }}
+                >
+                  <div className="text-[#CC141A] shrink-0">
+                    <feature.icon className="w-8 h-8 stroke-[1.5]" />
+                  </div>
+                  <div>
+                    <h3 className="text-xs font-bold text-[#1A233A] tracking-wider mb-1">{feature.title}</h3>
+                    <p className="text-[10px] text-slate-500 font-medium">{feature.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
+
       </div>
     </section>
   );

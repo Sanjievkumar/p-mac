@@ -71,7 +71,7 @@ export default function BrandsHero() {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={() => { mouseX.set(0); mouseY.set(0); }}
-      className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#F0F7FF]"
+      className="relative w-full min-h-[90vh] max-h-[950px] flex items-center justify-center overflow-hidden bg-[#F0F7FF]"
     >
       {/* 1. Base Atmospheric Background */}
       <div className="absolute inset-0 pointer-events-none z-0">
@@ -104,14 +104,16 @@ export default function BrandsHero() {
         />
       )}
 
-      {/* 3. Subtle Constellation Network (SVG) */}
-      {!isMobile && (
-        <motion.svg 
-          className="absolute inset-0 w-full h-full pointer-events-none z-0"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 2, delay: 1.5 }}
-        >
+      {/* Interactive Brand Stage: max-w-[1400px] matching master layout */}
+      <div className="relative w-full max-w-[1400px] h-full min-h-[90vh] max-h-[950px] mx-auto flex items-center justify-center">
+        {/* 3. Subtle Constellation Network (SVG) */}
+        {!isMobile && (
+          <motion.svg 
+            className="absolute inset-0 w-full h-full pointer-events-none z-0"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 2, delay: 1.5 }}
+          >
           {/* Maestrelli to Kannegiesser */}
           <line x1="15%" y1="15%" x2="75%" y2="18%" stroke="rgba(11,79,138,0.08)" strokeWidth="1" strokeDasharray="4 4" />
           {/* Kannegiesser to Imesa */}
@@ -250,6 +252,7 @@ export default function BrandsHero() {
         >
           We work with established technology manufacturers to bring specialised equipment and proven solutions to India's professional laundry industry.
         </motion.p>
+      </div>
       </div>
     </section>
   );
