@@ -254,9 +254,7 @@ export default function MaestrelliProduct() {
   });
 
   const smoothProgress = useSpring(scrollYProgress, { stiffness: 100, damping: 25, restDelta: 0.001 });
-  const imageY = useTransform(smoothProgress, [0, 1], [-45, 45]);
-  const imageScale = useTransform(smoothProgress, [0, 0.5, 1], [0.96, 1.05, 0.96]);
-  const imageRotate = useTransform(smoothProgress, [0, 0.5, 1], [-2.5, 0, 2.5]);
+  const imageScale = useTransform(smoothProgress, [0, 0.5, 1], [0.98, 1.02, 0.98]);
 
   useEffect(() => {
     if (PRODUCT_DATA[productId]) {
@@ -287,17 +285,19 @@ export default function MaestrelliProduct() {
           <span className="text-xs font-bold tracking-[0.2em] uppercase">Back to Maestrelli</span>
         </Link>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          <div className="lg:col-span-5 sticky top-32 z-10">
-            <motion.div 
-              style={{ y: imageY, scale: imageScale, rotateZ: imageRotate }}
-              initial={{ opacity: 0, x: -30 }} 
-              animate={{ opacity: 1, x: 0 }} 
-              transition={{ duration: 0.6 }}
-              className="bg-white rounded-xl shadow-xl overflow-hidden p-8 flex items-center justify-center border border-slate-100"
-            >
-              <img src={product.img} alt={product.title} className="w-full h-full object-contain mix-blend-multiply drop-shadow-md" />
-            </motion.div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+          <div className="lg:col-span-5 h-full">
+            <div className="sticky top-32 z-10">
+              <motion.div 
+                style={{ scale: imageScale }}
+                initial={{ opacity: 0, x: -30 }} 
+                animate={{ opacity: 1, x: 0 }} 
+                transition={{ duration: 0.6 }}
+                className="bg-white rounded-xl shadow-xl overflow-hidden p-8 flex items-center justify-center border border-slate-100"
+              >
+                <img src={product.img} alt={product.title} className="w-full h-full object-contain mix-blend-multiply drop-shadow-md" />
+              </motion.div>
+            </div>
           </div>
 
           <motion.div

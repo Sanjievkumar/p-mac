@@ -213,16 +213,20 @@ export default function MaxiPressProduct() {
           <span className="text-xs font-bold tracking-[0.2em] uppercase">Back to MaxiPress</span>
         </Link>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }} 
-            animate={{ opacity: 1, x: 0 }} 
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-5 bg-white rounded-2xl shadow-xl overflow-hidden p-8 flex items-center justify-center border border-slate-200 sticky top-32 aspect-square relative group bg-gradient-to-br from-white via-slate-50 to-slate-100/80"
-          >
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#E31E24]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-            <img src={product.img} alt={product.title} className="w-full h-full object-contain mix-blend-multiply relative z-10 drop-shadow-lg" />
-          </motion.div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+          <div className="lg:col-span-5 h-full">
+            <div className="sticky top-32 z-10">
+              <motion.div 
+                initial={{ opacity: 0, x: -30 }} 
+                animate={{ opacity: 1, x: 0 }} 
+                transition={{ duration: 0.6 }}
+                className="bg-white rounded-2xl shadow-xl overflow-hidden p-8 flex items-center justify-center border border-slate-200 aspect-square relative group bg-gradient-to-br from-white via-slate-50 to-slate-100/80"
+              >
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#E31E24]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                <img src={product.img} alt={product.title} className="w-full h-full object-contain mix-blend-multiply relative z-10 drop-shadow-lg" />
+              </motion.div>
+            </div>
+          </div>
 
           <motion.div
             initial={{ opacity: 0, x: 30 }} 

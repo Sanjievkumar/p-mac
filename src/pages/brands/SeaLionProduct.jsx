@@ -628,9 +628,7 @@ export default function SeaLionProduct() {
   });
 
   const smoothProgress = useSpring(scrollYProgress, { stiffness: 100, damping: 25, restDelta: 0.001 });
-  const imageY = useTransform(smoothProgress, [0, 1], [-45, 45]);
-  const imageScale = useTransform(smoothProgress, [0, 0.5, 1], [0.96, 1.05, 0.96]);
-  const imageRotate = useTransform(smoothProgress, [0, 0.5, 1], [-2.5, 0, 2.5]);
+  const imageScale = useTransform(smoothProgress, [0, 0.5, 1], [0.98, 1.02, 0.98]);
 
   // Dynamically scrub through product angles/images as page is scrolled up and down!
   useEffect(() => {
@@ -690,18 +688,19 @@ export default function SeaLionProduct() {
       </div>
 
       <div ref={detailsRef} className="max-w-7xl mx-auto px-6 pb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           
           {/* Left Column: Image Slideshow */}
-          <div className="lg:sticky lg:top-32 z-10">
-            <motion.div 
-              style={{ y: imageY, scale: imageScale, rotateZ: imageRotate }}
-              onWheel={handleImageWheel}
-              initial={{ opacity: 0, x: -30 }} 
-              animate={{ opacity: 1, x: 0 }} 
-              transition={{ duration: 0.6 }}
-              className="rounded-2xl shadow-2xl overflow-hidden p-8 lg:p-12 flex flex-col items-center justify-center aspect-square border border-slate-200 relative group bg-gradient-to-br from-white via-slate-50 to-slate-100/80 cursor-ns-resize"
-            >
+          <div className="h-full">
+            <div className="sticky top-32 z-10">
+              <motion.div 
+                style={{ scale: imageScale }}
+                onWheel={handleImageWheel}
+                initial={{ opacity: 0, x: -30 }} 
+                animate={{ opacity: 1, x: 0 }} 
+                transition={{ duration: 0.6 }}
+                className="rounded-2xl shadow-2xl overflow-hidden p-8 lg:p-12 flex flex-col items-center justify-center aspect-square border border-slate-200 relative group bg-gradient-to-br from-white via-slate-50 to-slate-100/80 cursor-ns-resize"
+              >
             {/* Subtle inner glow */}
             <div className="absolute inset-0 bg-gradient-to-tr from-[#E31E24]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
@@ -755,7 +754,8 @@ export default function SeaLionProduct() {
               </>
             )}
           </motion.div>
-        </div>
+            </div>
+          </div>
 
           <motion.div
             initial={{ opacity: 0, x: 30 }} 

@@ -22,7 +22,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="overflow-x-hidden w-full min-h-screen">
+      <div className="overflow-x-clip w-full min-h-screen">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
