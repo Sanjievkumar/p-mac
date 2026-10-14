@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useTransform, useSpring } from 'framer-motion';
 import { ArrowLeft, ChevronLeft, ChevronRight, CheckCircle2 } from 'lucide-react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
@@ -568,10 +568,68 @@ const PRODUCT_DATA = {
   }
 };
 
+function SubProductCard({ sp, idx }) {
+  const cardRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: cardRef,
+    offset: ["start end", "end start"]
+  });
+  const smoothY = useSpring(
+    useTransform(scrollYProgress, [0, 1], [25, -25]),
+    { stiffness: 100, damping: 20 }
+  );
+  const smoothScale = useSpring(
+    useTransform(scrollYProgress, [0, 0.5, 1], [0.96, 1.02, 0.96]),
+    { stiffness: 100, damping: 20 }
+  );
+
+  return (
+    <div ref={cardRef} className={`flex flex-col ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 items-center bg-white rounded-3xl shadow-sm border border-slate-100 p-8 lg:p-12 hover:shadow-lg transition-all duration-300`}>
+      <div className="w-full lg:w-5/12 flex items-center justify-center p-8 bg-slate-50/80 rounded-2xl overflow-hidden">
+        <motion.img 
+          style={{ y: smoothY, scale: smoothScale }}
+          src={sp.img} 
+          alt={sp.title} 
+          className="max-w-full h-auto object-contain hover:scale-105 transition-transform duration-500" 
+        />
+      </div>
+      <div className="w-full lg:w-7/12">
+        <h3 className="text-2xl font-extrabold text-slate-900 mb-6 tracking-wide">{sp.title}</h3>
+        {sp.description && <p className="text-slate-600 mb-8 text-lg leading-relaxed">{sp.description}</p>}
+        {sp.features && sp.features.length > 0 && (
+          <div className="bg-white rounded-2xl p-8 border border-slate-100">
+            <ul className="space-y-4">
+              {sp.features.map((feature, fIdx) => (
+                <li key={fIdx} className="flex items-start text-slate-700">
+                  <span className="text-[#E31E24] mr-4 mt-2 shrink-0">
+                    <div className="w-2 h-2 rounded-full bg-[#E31E24] shadow-sm" />
+                  </span>
+                  <span className="leading-relaxed font-medium">{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export default function SeaLionProduct() {
   const { productId } = useParams();
   const product = PRODUCT_DATA[productId];
   const [currentImageIdx, setCurrentImageIdx] = useState(0);
+  const detailsRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: detailsRef,
+    offset: ["start start", "end end"]
+  });
+
+  const smoothProgress = useSpring(scrollYProgress, { stiffness: 100, damping: 25, restDelta: 0.001 });
+  const imageY = useTransform(smoothProgress, [0, 1], [-25, 25]);
+  const imageScale = useTransform(smoothProgress, [0, 0.5, 1], [0.98, 1.04, 0.98]);
+  const imageRotate = useTransform(smoothProgress, [0, 0.5, 1], [-1.2, 0, 1.2]);
 
   // Reset image index when switching products
   useEffect(() => {
@@ -612,16 +670,18 @@ export default function SeaLionProduct() {
         </Link>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 pb-24">
+      <div ref={detailsRef} className="max-w-7xl mx-auto px-6 pb-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           
           {/* Left Column: Image Slideshow */}
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }} 
-            animate={{ opacity: 1, x: 0 }} 
-            transition={{ duration: 0.6 }}
-            className="rounded-2xl shadow-2xl overflow-hidden p-8 lg:p-12 flex flex-col items-center justify-center aspect-square border border-slate-200 relative group bg-gradient-to-br from-white via-slate-50 to-slate-100/80 lg:sticky lg:top-32"
-          >
+          <div className="lg:sticky lg:top-32 z-10">
+            <motion.div 
+              style={{ y: imageY, scale: imageScale, rotateZ: imageRotate }}
+              initial={{ opacity: 0, x: -30 }} 
+              animate={{ opacity: 1, x: 0 }} 
+              transition={{ duration: 0.6 }}
+              className="rounded-2xl shadow-2xl overflow-hidden p-8 lg:p-12 flex flex-col items-center justify-center aspect-square border border-slate-200 relative group bg-gradient-to-br from-white via-slate-50 to-slate-100/80"
+            >
             {/* Subtle inner glow */}
             <div className="absolute inset-0 bg-gradient-to-tr from-[#E31E24]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
@@ -667,6 +727,7 @@ export default function SeaLionProduct() {
               </>
             )}
           </motion.div>
+        </div>
 
           <motion.div
             initial={{ opacity: 0, x: 30 }} 
@@ -755,29 +816,7 @@ export default function SeaLionProduct() {
             </h2>
             <div className="flex flex-col gap-12">
               {product.subProducts.map((sp, idx) => (
-                <div key={idx} className={`flex flex-col ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 items-center bg-white rounded-3xl shadow-sm border border-slate-100 p-8 lg:p-12 hover:shadow-lg transition-all duration-300`}>
-                  <div className="w-full lg:w-5/12 flex items-center justify-center p-8 bg-slate-50/80 rounded-2xl">
-                    <img src={sp.img} alt={sp.title} className="max-w-full h-auto object-contain hover:scale-105 transition-transform duration-500" />
-                  </div>
-                  <div className="w-full lg:w-7/12">
-                    <h3 className="text-2xl font-extrabold text-slate-900 mb-6 tracking-wide">{sp.title}</h3>
-                    {sp.description && <p className="text-slate-600 mb-8 text-lg leading-relaxed">{sp.description}</p>}
-                    {sp.features && sp.features.length > 0 && (
-                      <div className="bg-white rounded-2xl p-8 border border-slate-100">
-                        <ul className="space-y-4">
-                          {sp.features.map((feature, fIdx) => (
-                            <li key={fIdx} className="flex items-start text-slate-700">
-                              <span className="text-[#E31E24] mr-4 mt-2 shrink-0">
-                                <div className="w-2 h-2 rounded-full bg-[#E31E24] shadow-sm" />
-                              </span>
-                              <span className="leading-relaxed font-medium">{feature}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                  </div>
-                </div>
+                <SubProductCard key={idx} sp={sp} idx={idx} />
               ))}
             </div>
           </div>

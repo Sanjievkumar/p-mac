@@ -144,9 +144,9 @@ export default function MaxiPress() {
             <div className="absolute top-1/2 left-0 w-full h-[1px] border-t border-dashed border-[#E31E24]/30 -z-10" />
             <div className="flex justify-between items-center w-full gap-4 overflow-x-auto pb-8 snap-x">
               {WORKFLOW.map((item, idx) => (
-                <div key={idx} className="flex flex-col items-center flex-1 min-w-[140px] snap-center">
-                  <div className="bg-white rounded-lg p-4 shadow-sm border border-slate-100 w-full aspect-square flex flex-col items-center justify-center relative mb-6 group hover:-translate-y-2 transition-transform duration-300">
-                    <img src={item.img} alt={item.title} className="w-24 h-24 object-contain mix-blend-multiply" />
+                <div key={idx} className="flex flex-col items-center flex-1 min-w-[180px] md:min-w-[200px] snap-center">
+                  <div className="bg-white rounded-2xl p-4 shadow-md border border-slate-100 w-full aspect-square flex flex-col items-center justify-center relative mb-6 group hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                    <img src={item.img} alt={item.title} className="w-36 h-36 md:w-44 md:h-44 object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500" />
                     {idx !== WORKFLOW.length - 1 && (
                       <ArrowRight className="absolute -right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#E31E24] z-10 hidden md:block" />
                     )}
@@ -183,7 +183,7 @@ export default function MaxiPress() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {Object.entries(PRODUCT_DATA).map(([id, product], idx) => (
               <motion.div 
                 key={id}

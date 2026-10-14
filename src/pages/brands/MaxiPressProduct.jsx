@@ -319,16 +319,27 @@ export default function MaxiPressProduct() {
                       </thead>
                       <tbody className="divide-y divide-slate-100">
                         {table.rows.map((row, rIdx) => {
-                          const isCategoryHeader = row[1] === '';
+                          const isCategoryHeader = row[1] === '' || (row.length > 1 && row.slice(1).every(c => !c));
+                          if (isCategoryHeader) {
+                            return (
+                              <tr key={rIdx} className="bg-slate-100 hover:bg-slate-100 border-y border-slate-200">
+                                <td 
+                                  colSpan={table.headers.length} 
+                                  className="px-6 py-4 pl-8 font-bold text-slate-900 uppercase tracking-wider text-xs"
+                                >
+                                  {row[0]}
+                                </td>
+                              </tr>
+                            );
+                          }
                           return (
-                            <tr key={rIdx} className={`${isCategoryHeader ? 'bg-slate-100' : 'even:bg-slate-50/50'} hover:bg-slate-100 transition-colors duration-150`}>
+                            <tr key={rIdx} className="even:bg-slate-50/50 hover:bg-slate-100 transition-colors duration-150">
                               {row.map((cell, cIdx) => (
                                 <td 
                                   key={cIdx} 
-                                  className={`px-6 py-4 whitespace-nowrap first:pl-8 last:pr-8 ${isCategoryHeader ? 'font-bold text-slate-900 uppercase tracking-wider py-5' : cIdx === 0 ? 'font-bold text-slate-900 border-r border-slate-100 bg-white/50' : 'text-slate-600'}`}
-                                  colSpan={isCategoryHeader && cIdx === 0 ? table.headers.length : 1}
+                                  className={`px-6 py-4 whitespace-nowrap first:pl-8 last:pr-8 ${cIdx === 0 ? 'font-bold text-slate-900 border-r border-slate-100 bg-white/50' : 'text-slate-600'}`}
                                 >
-                                  {isCategoryHeader && cIdx !== 0 ? null : (cell || '-')}
+                                  {cell || '-'}
                                 </td>
                               ))}
                             </tr>

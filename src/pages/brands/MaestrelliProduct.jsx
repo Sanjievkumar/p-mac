@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { ArrowLeft, CheckCircle2 } from 'lucide-react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
@@ -246,6 +246,17 @@ const PRODUCT_DATA = {
 export default function MaestrelliProduct() {
   const { productId } = useParams();
   const [product, setProduct] = useState(null);
+  const containerRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
+
+  const smoothProgress = useSpring(scrollYProgress, { stiffness: 100, damping: 25, restDelta: 0.001 });
+  const imageY = useTransform(smoothProgress, [0, 1], [-25, 25]);
+  const imageScale = useTransform(smoothProgress, [0, 0.5, 1], [0.98, 1.04, 0.98]);
+  const imageRotate = useTransform(smoothProgress, [0, 0.5, 1], [-1.2, 0, 1.2]);
 
   useEffect(() => {
     if (PRODUCT_DATA[productId]) {
@@ -270,21 +281,24 @@ export default function MaestrelliProduct() {
     <div className="w-full min-h-screen bg-[#F8F9FA] font-sans text-slate-800">
       <Navbar />
 
-      <div className="pt-32 pb-24 px-8 lg:px-16 max-w-7xl mx-auto">
+      <div ref={containerRef} className="pt-32 pb-24 px-8 lg:px-16 max-w-7xl mx-auto">
         <Link to="/brands/maestrelli" className="inline-flex items-center gap-2 text-slate-500 hover:text-[#CC141A] transition-colors group mb-12">
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
           <span className="text-xs font-bold tracking-[0.2em] uppercase">Back to Maestrelli</span>
         </Link>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }} 
-            animate={{ opacity: 1, x: 0 }} 
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-5 bg-white rounded-xl shadow-xl overflow-hidden p-8 flex items-center justify-center border border-slate-100 sticky top-32"
-          >
-            <img src={product.img} alt={product.title} className="w-full h-full object-contain mix-blend-multiply" />
-          </motion.div>
+          <div className="lg:col-span-5 sticky top-32 z-10">
+            <motion.div 
+              style={{ y: imageY, scale: imageScale, rotateZ: imageRotate }}
+              initial={{ opacity: 0, x: -30 }} 
+              animate={{ opacity: 1, x: 0 }} 
+              transition={{ duration: 0.6 }}
+              className="bg-white rounded-xl shadow-xl overflow-hidden p-8 flex items-center justify-center border border-slate-100"
+            >
+              <img src={product.img} alt={product.title} className="w-full h-full object-contain mix-blend-multiply drop-shadow-md" />
+            </motion.div>
+          </div>
 
           <motion.div
             initial={{ opacity: 0, x: 30 }} 
@@ -359,16 +373,27 @@ export default function MaestrelliProduct() {
                       </thead>
                       <tbody className="divide-y divide-slate-100">
                         {table.rows.map((row, rIdx) => {
-                          const isCategoryHeader = row[1] === '';
+                          const isCategoryHeader = row[1] === '' || (row.length > 1 && row.slice(1).every(c => !c));
+                          if (isCategoryHeader) {
+                            return (
+                              <tr key={rIdx} className="bg-slate-100 hover:bg-slate-100 border-y border-slate-200">
+                                <td 
+                                  colSpan={table.headers.length} 
+                                  className="px-6 py-4 pl-8 font-bold text-slate-900 uppercase tracking-wider text-xs"
+                                >
+                                  {row[0]}
+                                </td>
+                              </tr>
+                            );
+                          }
                           return (
-                            <tr key={rIdx} className={`${isCategoryHeader ? 'bg-slate-100' : 'even:bg-slate-50/50'} hover:bg-slate-100 transition-colors duration-150`}>
+                            <tr key={rIdx} className="even:bg-slate-50/50 hover:bg-slate-100 transition-colors duration-150">
                               {row.map((cell, cIdx) => (
                                 <td 
                                   key={cIdx} 
-                                  className={`px-6 py-4 whitespace-nowrap first:pl-8 last:pr-8 ${isCategoryHeader ? 'font-bold text-slate-900 uppercase tracking-wider py-5' : cIdx === 0 ? 'font-bold text-slate-900 border-r border-slate-100 bg-white/50' : 'text-slate-600'}`}
-                                  colSpan={isCategoryHeader && cIdx === 0 ? table.headers.length : 1}
+                                  className={`px-6 py-4 whitespace-nowrap first:pl-8 last:pr-8 ${cIdx === 0 ? 'font-bold text-slate-900 border-r border-slate-100 bg-white/50' : 'text-slate-600'}`}
                                 >
-                                  {isCategoryHeader && cIdx !== 0 ? null : (cell || '-')}
+                                  {cell || '-'}
                                 </td>
                               ))}
                             </tr>

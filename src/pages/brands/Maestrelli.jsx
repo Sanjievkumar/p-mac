@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowLeft, Calendar, Globe2, ShieldCheck, Layers, HeadphonesIcon } from 'lucide-react';
 import Navbar from '../../components/Navbar';
@@ -40,6 +40,68 @@ const PRODUCTS = [
   }
 ];
 
+function ProductCard({ item, idx }) {
+  const cardRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: cardRef,
+    offset: ['start end', 'end start']
+  });
+  const smoothY = useSpring(
+    useTransform(scrollYProgress, [0, 1], [25, -25]),
+    { stiffness: 100, damping: 20 }
+  );
+  const smoothScale = useSpring(
+    useTransform(scrollYProgress, [0, 0.5, 1], [0.97, 1.03, 0.97]),
+    { stiffness: 100, damping: 20 }
+  );
+
+  return (
+    <motion.div 
+      ref={cardRef}
+      initial={{ opacity: 0, y: 30 }} 
+      whileInView={{ opacity: 1, y: 0 }} 
+      transition={{ duration: 0.6, delay: Math.min(idx * 0.1, 0.4) }}
+      viewport={{ once: true, margin: '-50px' }}
+      className="w-full sm:w-[calc(50%-16px)] lg:w-[calc(33.333%-21px)] xl:w-[calc(25%-24px)] min-w-[280px]"
+    >
+      <Link to={`/brands/maestrelli/${item.id}`} className="block h-full group">
+        <div className="h-full rounded-2xl overflow-hidden bg-[#fafafa] flex flex-col cursor-pointer border border-slate-100 hover:border-transparent relative shadow-sm hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] transition-all duration-500">
+          
+          {/* Animated Border Gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#CC141A]/0 via-transparent to-[#CC141A]/0 group-hover:from-[#CC141A]/20 group-hover:to-[#1c1c1c]/20 transition-all duration-700 opacity-0 group-hover:opacity-100" />
+
+          {/* Image Area */}
+          <div className="h-[300px] p-2 flex items-center justify-center bg-white relative overflow-hidden rounded-t-2xl m-[2px]">
+            {/* Grid background */}
+            <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, black 1px, transparent 0)', backgroundSize: '16px 16px' }} />
+            
+            <motion.img 
+              style={{ y: smoothY, scale: smoothScale }}
+              src={item.img} 
+              alt={item.name} 
+              className="w-full h-full object-contain filter drop-shadow-xl relative z-10" 
+            />
+          </div>
+
+          {/* Content Area */}
+          <div className="p-6 relative z-10 bg-white m-[2px] mt-0 rounded-b-2xl flex-1 flex flex-col">
+            <span className="text-[10px] font-bold tracking-widest text-[#CC141A] uppercase mb-2 block">
+              {item.category}
+            </span>
+            <h3 className="text-xl font-bold text-slate-900 mb-2">{item.name}</h3>
+            <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed mb-4 flex-1">
+              {item.desc}
+            </p>
+            <div className="flex items-center text-xs font-bold text-[#CC141A] uppercase tracking-wider group-hover:translate-x-2 transition-transform duration-300">
+              View Details <ArrowRight className="w-4 h-4 ml-2" />
+            </div>
+          </div>
+        </div>
+      </Link>
+    </motion.div>
+  );
+}
+
 export default function Maestrelli() {
   return (
     <div className="w-full min-h-screen bg-[#F8F9FA] font-sans text-slate-800">
@@ -61,12 +123,12 @@ export default function Maestrelli() {
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             
             {/* Left side: Logo & Text */}
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-xl">
+            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-2xl">
               <img src={maestrelliLogo} alt="MAESTRELLI" className="h-16 md:h-24 object-contain mb-8 origin-left hover:scale-105 transition-transform" />
               
-              <h1 className="text-4xl md:text-5xl lg:text-[60px] font-bold leading-[1.1] tracking-tight mb-6 text-slate-900">
-                Italian Garment Care<span className="text-[#CC141A]">.</span><br />
-                Perfected Since <span className="text-[#CC141A]">1935</span><span className="text-slate-900">.</span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[46px] xl:text-[52px] font-bold leading-[1.15] tracking-tight mb-6 text-slate-900">
+                <span className="block whitespace-nowrap">Italian Garment Care<span className="text-[#CC141A]">.</span></span>
+                <span className="block whitespace-nowrap">Perfected Since <span className="text-[#CC141A]">1935</span><span className="text-slate-900">.</span></span>
               </h1>
               
               <p className="text-slate-600 text-lg font-medium mb-4 max-w-sm">
@@ -188,48 +250,7 @@ export default function Maestrelli() {
 
           <div className="flex flex-wrap justify-center gap-8">
             {PRODUCTS.map((item, idx) => (
-              <motion.div 
-                key={idx}
-                initial={{ opacity: 0, y: 30 }} 
-                whileInView={{ opacity: 1, y: 0 }} 
-                transition={{ duration: 0.6, delay: Math.min(idx * 0.1, 0.4) }}
-                viewport={{ once: true, margin: "-50px" }}
-                className="w-full sm:w-[calc(50%-16px)] lg:w-[calc(33.333%-21px)] xl:w-[calc(25%-24px)] min-w-[280px]"
-              >
-                <Link to={`/brands/maestrelli/${item.id}`} className="block h-full group">
-                  <div className="h-full rounded-2xl overflow-hidden bg-[#fafafa] flex flex-col cursor-pointer border border-slate-100 hover:border-transparent relative shadow-sm hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] transition-all duration-500">
-                    
-                    {/* Animated Border Gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#CC141A]/0 via-transparent to-[#CC141A]/0 group-hover:from-[#CC141A]/20 group-hover:to-[#1c1c1c]/20 transition-all duration-700 opacity-0 group-hover:opacity-100" />
-
-                    {/* Image Area */}
-                    <div className="h-[300px] p-2 flex items-center justify-center bg-white relative overflow-hidden rounded-t-2xl m-[2px]">
-                      {/* Grid background */}
-                      <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, black 1px, transparent 0)', backgroundSize: '16px 16px' }} />
-                      
-                      <img 
-                        src={item.img} 
-                        alt={item.name} 
-                        className="w-full h-full object-contain filter drop-shadow-xl group-hover:scale-110 group-hover:-translate-y-4 transition-all duration-500 ease-out relative z-10"
-                      />
-                    </div>
-
-                    {/* Content Area */}
-                    <div className="p-6 relative z-10 bg-white m-[2px] mt-0 rounded-b-2xl flex-1 flex flex-col">
-                      <span className="text-[10px] font-bold tracking-widest text-[#CC141A] uppercase mb-2 block">
-                        {item.category}
-                      </span>
-                      <h3 className="text-xl font-bold text-slate-900 mb-2">{item.name}</h3>
-                      <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed mb-4 flex-1">
-                        {item.desc}
-                      </p>
-                      <div className="flex items-center text-xs font-bold text-[#CC141A] uppercase tracking-wider group-hover:translate-x-2 transition-transform duration-300">
-                        View Details <ArrowRight className="w-4 h-4 ml-2" />
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
+              <ProductCard key={idx} item={item} idx={idx} />
             ))}
           </div>
         </div>

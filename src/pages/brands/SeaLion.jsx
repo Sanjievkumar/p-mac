@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Play, ArrowRight, ArrowLeft, Calendar, Globe2, Building2, Layers, Volume2, VolumeX, Droplets, Wind, Settings } from 'lucide-react';
 import Navbar from '../../components/Navbar';
@@ -41,6 +41,66 @@ const CATEGORIES = [
 ];
 
 const FACTORY_IMAGES = [buildingBg, sealionFactory1, sealionFactory3, sealionFactory4];
+
+function ProductCard({ item, idx }) {
+  const cardRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: cardRef,
+    offset: ['start end', 'end start']
+  });
+  const smoothY = useSpring(
+    useTransform(scrollYProgress, [0, 1], [25, -25]),
+    { stiffness: 100, damping: 20 }
+  );
+  const smoothScale = useSpring(
+    useTransform(scrollYProgress, [0, 0.5, 1], [0.97, 1.03, 0.97]),
+    { stiffness: 100, damping: 20 }
+  );
+
+  return (
+    <motion.div 
+      ref={cardRef}
+      initial={{ opacity: 0, y: 30 }} 
+      whileInView={{ opacity: 1, y: 0 }} 
+      transition={{ duration: 0.6, delay: Math.min(idx * 0.1, 0.4) }}
+      viewport={{ once: true, margin: '-50px' }}
+    >
+      <Link to={`/brands/sea-lion/${item.id}`} className="block h-full group">
+        <div className="h-full rounded-2xl overflow-hidden bg-[#fafafa] flex flex-col cursor-pointer border border-slate-100 hover:border-transparent relative shadow-sm hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] transition-all duration-500">
+          
+          {/* Animated Border Gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#E31E24]/0 via-transparent to-[#E31E24]/0 group-hover:from-[#E31E24]/20 group-hover:to-[#0B4F8A]/20 transition-all duration-700 opacity-0 group-hover:opacity-100" />
+
+          {/* Image Area */}
+          <div className="h-[300px] p-2 flex items-center justify-center bg-white relative overflow-hidden rounded-t-2xl m-[2px]">
+            {/* Grid background */}
+            <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+            
+            <motion.img 
+              style={{ y: smoothY, scale: smoothScale }}
+              src={item.img} 
+              alt={item.title} 
+              className="w-full h-full object-contain mix-blend-multiply relative z-10 drop-shadow-sm group-hover:drop-shadow-xl transition-shadow duration-500" 
+            />
+          </div>
+
+          {/* Content Area */}
+          <div className="p-6 flex flex-col flex-grow justify-between bg-[#fafafa] relative z-10 m-[2px] mt-0 rounded-b-2xl border-t border-slate-100/50">
+            <h3 className="text-sm font-bold text-slate-800 leading-snug pr-6 transition-colors duration-300 group-hover:text-[#E31E24]">
+              {item.title}
+            </h3>
+            
+            <div className="mt-6 flex items-center text-[10px] font-bold tracking-widest uppercase text-slate-400 group-hover:text-[#E31E24] transition-colors duration-300">
+              View Machine 
+              <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-2 transition-transform duration-500" />
+            </div>
+          </div>
+          
+        </div>
+      </Link>
+    </motion.div>
+  );
+}
 
 export default function SeaLion() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -237,46 +297,7 @@ export default function SeaLion() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {PRODUCTS.map((item, idx) => (
-              <motion.div 
-                key={idx}
-                initial={{ opacity: 0, y: 30 }} 
-                whileInView={{ opacity: 1, y: 0 }} 
-                transition={{ duration: 0.6, delay: Math.min(idx * 0.1, 0.4) }}
-                viewport={{ once: true, margin: "-50px" }}
-              >
-                <Link to={`/brands/sea-lion/${item.id}`} className="block h-full group">
-                  <div className="h-full rounded-2xl overflow-hidden bg-[#fafafa] flex flex-col cursor-pointer border border-slate-100 hover:border-transparent relative shadow-sm hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] transition-all duration-500">
-                    
-                    {/* Animated Border Gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#E31E24]/0 via-transparent to-[#E31E24]/0 group-hover:from-[#E31E24]/20 group-hover:to-[#0B4F8A]/20 transition-all duration-700 opacity-0 group-hover:opacity-100" />
-
-                    {/* Image Area */}
-                    <div className="h-[300px] p-2 flex items-center justify-center bg-white relative overflow-hidden rounded-t-2xl m-[2px]">
-                      {/* Grid background */}
-                      <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                      
-                      <img 
-                        src={item.img} 
-                        alt={item.title} 
-                        className="w-full h-full object-contain mix-blend-multiply transform group-hover:scale-[1.15] group-hover:-translate-y-2 transition-transform duration-700 relative z-10 drop-shadow-sm group-hover:drop-shadow-xl"
-                      />
-                    </div>
-
-                    {/* Content Area */}
-                    <div className="p-6 flex flex-col flex-grow justify-between bg-[#fafafa] relative z-10 m-[2px] mt-0 rounded-b-2xl border-t border-slate-100/50">
-                      <h3 className="text-sm font-bold text-slate-800 leading-snug pr-6 transition-colors duration-300 group-hover:text-[#E31E24]">
-                        {item.title}
-                      </h3>
-                      
-                      <div className="mt-6 flex items-center text-[10px] font-bold tracking-widest uppercase text-slate-400 group-hover:text-[#E31E24] transition-colors duration-300">
-                        View Machine 
-                        <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-2 transition-transform duration-500" />
-                      </div>
-                    </div>
-                    
-                  </div>
-                </Link>
-              </motion.div>
+              <ProductCard key={idx} item={item} idx={idx} />
             ))}
           </div>
         </div>
