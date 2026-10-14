@@ -9,6 +9,7 @@ import Footer from '../../components/Footer';
 import kannegiesserLogo from '../../assets/brands/kannegiesser.png';
 import kannegiesserVideo from '../../assets/brands/kannegiesser-hero.mp4';
 import buildingBg from '../../assets/brands/kannegiesser/kannegiesser_showroom_facility.jpg';
+import { formatKannegiesserTitle } from './kannegiesserUtils';
 
 const PRODUCTS = [
   // Washing Technology
@@ -237,8 +238,8 @@ export default function Kannegiesser() {
                           />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <h4 className="text-[#00509B] text-[9px] font-bold tracking-widest uppercase mb-1 truncate">
-                            {product.desc}
+                          <h4 className="text-[#00509B] text-[10px] tracking-wide uppercase mb-1 truncate">
+                            {formatKannegiesserTitle(product.id, product.desc)}
                           </h4>
                           <h3 className="text-sm font-bold text-[#001F3F] leading-snug truncate">
                             {product.name}

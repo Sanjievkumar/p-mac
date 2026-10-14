@@ -8,6 +8,7 @@ import { FLATWORK_DATA } from './flatworkData';
 import factoryBg from '../../assets/brands/kannegiesser/kannegiesser_factory_new.jpg';
 import kannegiesserLogo from '../../assets/brands/kannegiesser.png';
 import { Globe, Search, Menu } from 'lucide-react';
+import { formatKannegiesserTitle } from './kannegiesserUtils';
 
 const WASHING_TECH_DATA = {
   "kannegiesser-powertrans-vario": {
@@ -34,9 +35,8 @@ const WASHING_TECH_DATA = {
         ],
         bannerTitle: "DESIGNED FOR YOUR PROFESSIONAL DAILY LAUNDRY BUSINESS.",
         bannerSubtitle: "The Batch Washer System demands a well-rounded and integrative long-term approach.",
-        }
-        },
-        benefits: {
+      },
+      benefits: {
           blocks: [
           {
             title: "Hygiene & Diversity",
@@ -60,11 +60,7 @@ const WASHING_TECH_DATA = {
               "Low lifecycle costs",
               "Excellent textile care"
             ]
-          }
-        ]
-      },
-      benefits: {
-        blocks: [
+          },
           {
             title: "YOU CAN FEEL IT WHEN IT GOES DEEP INTO THE FIBERS.",
             subtitle: "Due to the ActiveDrop system.",
@@ -101,8 +97,9 @@ const WASHING_TECH_DATA = {
           { label: "Nominal batch sizes (based on cotton sheets):", value: "40/50/60/85/110/130 kg (88/110/132/187/242/287 lb)" },
           { label: "Hourly output (depending on the model):", value: "300 to 5,000 kg (700 to 11,000 lb)" }
         ]
-        }
-      },
+      }
+    }
+  },
   "kannegiesser-powerpress": {
       category: "Washing Technology",
       "title": "Extraction Technology",
@@ -747,15 +744,10 @@ export default function KannegiesserProduct() {
       <div className="sticky top-[68px] z-50 w-full bg-[#00509B] text-white flex flex-col lg:flex-row items-center justify-between px-6 lg:px-16 min-h-[80px] shadow-lg">
         
           
-          {/* Left: Product Name */}
-          <div className="flex items-center gap-4 py-4 lg:py-0">
-             <div className="w-10 h-10 bg-[#222] rounded-full flex items-center justify-center shrink-0 shadow-inner">
-                <div className="w-4 h-4 border-2 border-white rounded-full flex items-center justify-center">
-                  <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
-                </div>
-             </div>
-             <h1 className="text-xl md:text-2xl lg:text-[28px] font-extrabold uppercase tracking-tight">
-               {product.subtitle}
+          {/* Left: Product Name (Official Kannegiesser Typography) */}
+          <div className="flex items-center py-4 lg:py-0">
+             <h1 className="text-xl md:text-2xl lg:text-[28px] uppercase tracking-wide text-white">
+               {formatKannegiesserTitle(productId, product.subtitle)}
              </h1>
           </div>
 
