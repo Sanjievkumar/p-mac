@@ -254,9 +254,9 @@ export default function MaestrelliProduct() {
   });
 
   const smoothProgress = useSpring(scrollYProgress, { stiffness: 100, damping: 25, restDelta: 0.001 });
-  const imageY = useTransform(smoothProgress, [0, 1], [-25, 25]);
-  const imageScale = useTransform(smoothProgress, [0, 0.5, 1], [0.98, 1.04, 0.98]);
-  const imageRotate = useTransform(smoothProgress, [0, 0.5, 1], [-1.2, 0, 1.2]);
+  const imageY = useTransform(smoothProgress, [0, 1], [-45, 45]);
+  const imageScale = useTransform(smoothProgress, [0, 0.5, 1], [0.96, 1.05, 0.96]);
+  const imageRotate = useTransform(smoothProgress, [0, 0.5, 1], [-2.5, 0, 2.5]);
 
   useEffect(() => {
     if (PRODUCT_DATA[productId]) {

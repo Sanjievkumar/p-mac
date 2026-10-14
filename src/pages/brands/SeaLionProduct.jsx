@@ -618,6 +618,7 @@ function SubProductCard({ sp, idx }) {
 export default function SeaLionProduct() {
   const { productId } = useParams();
   const product = PRODUCT_DATA[productId];
+  const images = product?.images && product.images.length > 0 ? product.images : (product ? [product.img] : []);
   const [currentImageIdx, setCurrentImageIdx] = useState(0);
   const detailsRef = useRef(null);
 
@@ -627,15 +628,35 @@ export default function SeaLionProduct() {
   });
 
   const smoothProgress = useSpring(scrollYProgress, { stiffness: 100, damping: 25, restDelta: 0.001 });
-  const imageY = useTransform(smoothProgress, [0, 1], [-25, 25]);
-  const imageScale = useTransform(smoothProgress, [0, 0.5, 1], [0.98, 1.04, 0.98]);
-  const imageRotate = useTransform(smoothProgress, [0, 0.5, 1], [-1.2, 0, 1.2]);
+  const imageY = useTransform(smoothProgress, [0, 1], [-45, 45]);
+  const imageScale = useTransform(smoothProgress, [0, 0.5, 1], [0.96, 1.05, 0.96]);
+  const imageRotate = useTransform(smoothProgress, [0, 0.5, 1], [-2.5, 0, 2.5]);
+
+  // Dynamically scrub through product angles/images as page is scrolled up and down!
+  useEffect(() => {
+    if (images.length <= 1) return;
+    const unsubscribe = scrollYProgress.on("change", (latest) => {
+      const idx = Math.min(Math.floor(latest * images.length), images.length - 1);
+      setCurrentImageIdx(idx);
+    });
+    return () => unsubscribe();
+  }, [images.length, scrollYProgress]);
 
   // Reset image index when switching products
   useEffect(() => {
     setCurrentImageIdx(0);
     window.scrollTo(0, 0);
   }, [productId]);
+
+  // Enable mouse wheel scrubbing over the image
+  const handleImageWheel = (e) => {
+    if (images.length <= 1) return;
+    if (e.deltaY > 15) {
+      setCurrentImageIdx((prev) => (prev + 1) % images.length);
+    } else if (e.deltaY < -15) {
+      setCurrentImageIdx((prev) => (prev - 1 + images.length) % images.length);
+    }
+  };
 
   if (!product) {
     return (
@@ -649,8 +670,6 @@ export default function SeaLionProduct() {
       </div>
     );
   }
-
-  const images = product.images && product.images.length > 0 ? product.images : [product.img];
 
   const nextImage = () => setCurrentImageIdx((prev) => (prev + 1) % images.length);
   const prevImage = () => setCurrentImageIdx((prev) => (prev - 1 + images.length) % images.length);
@@ -677,13 +696,22 @@ export default function SeaLionProduct() {
           <div className="lg:sticky lg:top-32 z-10">
             <motion.div 
               style={{ y: imageY, scale: imageScale, rotateZ: imageRotate }}
+              onWheel={handleImageWheel}
               initial={{ opacity: 0, x: -30 }} 
               animate={{ opacity: 1, x: 0 }} 
               transition={{ duration: 0.6 }}
-              className="rounded-2xl shadow-2xl overflow-hidden p-8 lg:p-12 flex flex-col items-center justify-center aspect-square border border-slate-200 relative group bg-gradient-to-br from-white via-slate-50 to-slate-100/80"
+              className="rounded-2xl shadow-2xl overflow-hidden p-8 lg:p-12 flex flex-col items-center justify-center aspect-square border border-slate-200 relative group bg-gradient-to-br from-white via-slate-50 to-slate-100/80 cursor-ns-resize"
             >
             {/* Subtle inner glow */}
             <div className="absolute inset-0 bg-gradient-to-tr from-[#E31E24]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+            {/* Scroll Indicator Badge */}
+            {images.length > 1 && (
+              <div className="absolute top-4 right-4 z-20 bg-slate-900/80 backdrop-blur-md px-3 py-1.5 rounded-full text-white text-[10px] font-bold tracking-wider flex items-center gap-2 border border-white/10 shadow-lg pointer-events-none">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#E31E24] animate-pulse" />
+                <span>SCROLL TO VIEW ({currentImageIdx + 1}/{images.length})</span>
+              </div>
+            )}
 
             <AnimatePresence mode="wait">
               <motion.img 

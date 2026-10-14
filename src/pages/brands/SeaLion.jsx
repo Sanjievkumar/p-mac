@@ -49,11 +49,11 @@ function ProductCard({ item, idx }) {
     offset: ['start end', 'end start']
   });
   const smoothY = useSpring(
-    useTransform(scrollYProgress, [0, 1], [25, -25]),
+    useTransform(scrollYProgress, [0, 1], [40, -40]),
     { stiffness: 100, damping: 20 }
   );
   const smoothScale = useSpring(
-    useTransform(scrollYProgress, [0, 0.5, 1], [0.97, 1.03, 0.97]),
+    useTransform(scrollYProgress, [0, 0.5, 1], [0.94, 1.08, 0.94]),
     { stiffness: 100, damping: 20 }
   );
 
