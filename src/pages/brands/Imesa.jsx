@@ -430,18 +430,22 @@ export default function Imesa() {
                   key={product.id}
                   className="group flex flex-col h-full bg-white rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
                 >
-                  {/* Image Container with Soft Shadow */}
-                  <div className="bg-slate-50 p-8 border-b border-slate-100 relative flex items-center justify-center min-h-[300px]">
-                    <span className="absolute top-6 left-6 inline-flex items-center gap-1.5 bg-[#001F3F] text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                  {/* Card Top Meta Bar - Dedicated bar prevents any clashing with image */}
+                  <div className="px-8 pt-7 pb-2 flex items-center justify-between z-20 relative bg-white">
+                    <span className="inline-flex items-center gap-1.5 bg-[#001F3F] text-white text-[11px] font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
                       {product.badge}
                     </span>
-                    <span className="absolute top-6 right-6 text-xs font-semibold text-slate-400 uppercase tracking-widest">
+                    <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">
                       {product.categoryName}
                     </span>
+                  </div>
+
+                  {/* Dedicated Large Image Container */}
+                  <div className="px-8 py-6 flex items-center justify-center bg-white border-b border-slate-100 min-h-[320px] relative">
                     <img 
                       src={product.img} 
                       alt={product.name} 
-                      className="w-full h-56 object-contain transform group-hover:scale-105 transition-transform duration-500" 
+                      className="w-full h-64 md:h-72 object-contain transform group-hover:scale-105 transition-transform duration-500" 
                     />
                   </div>
                   
