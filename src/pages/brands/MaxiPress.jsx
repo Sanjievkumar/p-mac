@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowLeft, Calendar, Globe2, ShieldCheck, Layers, HeadphonesIcon } from 'lucide-react';
 import Navbar from '../../components/Navbar';
@@ -19,12 +19,76 @@ const WORKFLOW = [
 
 import { PRODUCT_DATA } from './MaxiPressProduct';
 
+function ProductCard({ id, product, idx }) {
+  const cardRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: cardRef,
+    offset: ['start end', 'end start']
+  });
+  const smoothY = useSpring(
+    useTransform(scrollYProgress, [0, 1], [35, -35]),
+    { stiffness: 100, damping: 20 }
+  );
+  const smoothScale = useSpring(
+    useTransform(scrollYProgress, [0, 0.5, 1], [0.94, 1.08, 0.94]),
+    { stiffness: 100, damping: 20 }
+  );
+
+  return (
+    <motion.div 
+      ref={cardRef}
+      initial={{ opacity: 0, y: 30 }} 
+      whileInView={{ opacity: 1, y: 0 }} 
+      transition={{ duration: 0.6, delay: Math.min(idx * 0.1, 0.4) }}
+      viewport={{ once: true, margin: "-50px" }}
+      className="h-full"
+    >
+      <Link to={`/brands/maxipress/${id}`} className="block h-full group">
+        <div className="h-full rounded-2xl overflow-hidden bg-white flex flex-col cursor-pointer border border-slate-200 hover:border-transparent relative shadow-sm hover:shadow-xl transition-all duration-500">
+          
+          {/* Animated Border Gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#E31E24]/0 via-transparent to-[#E31E24]/0 group-hover:from-[#E31E24]/10 group-hover:to-[#1c1c1c]/10 transition-all duration-700 opacity-0 group-hover:opacity-100" />
+
+          {/* Image Area with Scroll Parallax */}
+          <div className="h-[300px] p-2 flex items-center justify-center bg-slate-50 relative overflow-hidden rounded-t-2xl m-[2px]">
+            {/* Grid background */}
+            <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, black 1px, transparent 0)', backgroundSize: '16px 16px' }} />
+            
+            <motion.img 
+              style={{ y: smoothY, scale: smoothScale }}
+              src={product.img} 
+              alt={product.title} 
+              className="w-full h-full object-contain filter drop-shadow-xl relative z-10 will-change-transform"
+            />
+          </div>
+
+          {/* Content Area */}
+          <div className="p-6 flex flex-col flex-grow justify-between bg-white relative z-10 m-[2px] mt-0 rounded-b-2xl border-t border-slate-100/50">
+            <div>
+              <h3 className="text-sm font-bold text-slate-800 leading-snug mb-2 transition-colors duration-300 group-hover:text-[#E31E24] line-clamp-2">
+                {product.title}
+              </h3>
+              <p className="text-xs text-slate-500 line-clamp-2 mb-4">{product.description}</p>
+            </div>
+            
+            <div className="mt-auto flex items-center text-[10px] font-bold tracking-widest uppercase text-slate-400 group-hover:text-[#E31E24] transition-colors duration-300">
+              View Product 
+              <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-2 transition-transform duration-500" />
+            </div>
+          </div>
+          
+        </div>
+      </Link>
+    </motion.div>
+  );
+}
+
 export default function MaxiPress() {
   return (
     <div className="w-full min-h-screen bg-[#F8F9FA] font-sans text-slate-800">
       <Navbar /><div className="absolute top-[100px] left-8 lg:left-16 z-50"><Link to="/brands" className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors font-medium text-sm bg-black/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/10"><ArrowLeft className="w-4 h-4" /> Back to Brands</Link></div>
 
-      {/* ✨ 1. Hero Section ✨ */}
+      {/* ── 1. Hero Section ── */}
       <section className="relative w-full min-h-[70vh] flex flex-col justify-center overflow-hidden bg-white pt-24 pb-12 border-b border-slate-100">
         <div className="absolute inset-0 bg-slate-50/50" />
         
@@ -185,49 +249,7 @@ export default function MaxiPress() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {Object.entries(PRODUCT_DATA).map(([id, product], idx) => (
-              <motion.div 
-                key={id}
-                initial={{ opacity: 0, y: 30 }} 
-                whileInView={{ opacity: 1, y: 0 }} 
-                transition={{ duration: 0.6, delay: Math.min(idx * 0.1, 0.4) }}
-                viewport={{ once: true, margin: "-50px" }}
-              >
-                <Link to={`/brands/maxipress/${id}`} className="block h-full group">
-                  <div className="h-full rounded-2xl overflow-hidden bg-white flex flex-col cursor-pointer border border-slate-200 hover:border-transparent relative shadow-sm hover:shadow-xl transition-all duration-500">
-                    
-                    {/* Animated Border Gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#E31E24]/0 via-transparent to-[#E31E24]/0 group-hover:from-[#E31E24]/10 group-hover:to-[#1c1c1c]/10 transition-all duration-700 opacity-0 group-hover:opacity-100" />
-
-                    {/* Image Area */}
-                    <div className="h-[300px] p-2 flex items-center justify-center bg-slate-50 relative overflow-hidden rounded-t-2xl m-[2px]">
-                      {/* Grid background */}
-                      <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, black 1px, transparent 0)', backgroundSize: '16px 16px' }} />
-                      
-                      <img 
-                        src={product.img} 
-                        alt={product.title} 
-                        className="w-full h-full object-contain filter drop-shadow-xl group-hover:scale-110 group-hover:-translate-y-4 transition-all duration-500 ease-out relative z-10"
-                      />
-                    </div>
-
-                    {/* Content Area */}
-                    <div className="p-6 flex flex-col flex-grow justify-between bg-white relative z-10 m-[2px] mt-0 rounded-b-2xl border-t border-slate-100/50">
-                      <div>
-                        <h3 className="text-sm font-bold text-slate-800 leading-snug mb-2 transition-colors duration-300 group-hover:text-[#E31E24] line-clamp-2">
-                          {product.title}
-                        </h3>
-                        <p className="text-xs text-slate-500 line-clamp-2 mb-4">{product.description}</p>
-                      </div>
-                      
-                      <div className="mt-auto flex items-center text-[10px] font-bold tracking-widest uppercase text-slate-400 group-hover:text-[#E31E24] transition-colors duration-300">
-                        View Product 
-                        <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-2 transition-transform duration-500" />
-                      </div>
-                    </div>
-                    
-                  </div>
-                </Link>
-              </motion.div>
+              <ProductCard key={id} id={id} product={product} idx={idx} />
             ))}
           </div>
         </div>

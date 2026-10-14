@@ -739,8 +739,7 @@ export default function ImesaProduct() {
 
   const smoothProgress = useSpring(scrollYProgress, { stiffness: 100, damping: 25, restDelta: 0.001 });
   const imageScale = useTransform(smoothProgress, [0, 0.5, 1], [0.96, 1.05, 0.98]);
-  const imageY = useTransform(smoothProgress, [0, 1], [-20, 20]);
-  const imageRotate = useTransform(smoothProgress, [0, 0.5, 1], [-1.2, 0, 1.2]);
+  const imageY = useTransform(smoothProgress, [0, 1], [-25, 25]);
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-800">
@@ -787,11 +786,11 @@ export default function ImesaProduct() {
       {/* ── 2. Content & Large Machine Showcase Layout with Scroll Animation ── */}
       <section ref={detailsRef} className="py-16 lg:py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             
             {/* Left Sticky Column: Large Prominent Machine Image & Actions */}
-            <div className="lg:col-span-5 xl:col-span-5">
-              <div className="sticky top-28 space-y-6">
+            <div className="lg:col-span-5 xl:col-span-5 h-full">
+              <div className="sticky top-28 z-10 space-y-6">
                 {/* Big Studio Machine Showcase Card */}
                 <div className="bg-white rounded-3xl p-6 lg:p-8 border border-slate-200/80 shadow-xl overflow-hidden group">
                   {/* Top Meta Bar */}
@@ -807,7 +806,7 @@ export default function ImesaProduct() {
                   {/* Greatly Enlarged Machine Image Container with Real-time Scroll Animation */}
                   <div className="relative flex items-center justify-center min-h-[380px] md:min-h-[460px] lg:min-h-[520px] w-full p-2 bg-white rounded-2xl overflow-hidden">
                     <motion.div 
-                      style={{ scale: imageScale, y: imageY, rotate: imageRotate }}
+                      style={{ scale: imageScale, y: imageY }}
                       className="w-full h-full flex items-center justify-center will-change-transform"
                     >
                       <img 
