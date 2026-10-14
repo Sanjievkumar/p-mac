@@ -478,7 +478,16 @@ const PRODUCT_DATA = { ...WASHING_TECH_DATA, ...FLATWORK_DATA, ...DATA_INFO_DATA
 
 export default function KannegiesserProduct() {
   const { id } = useParams();
-  const product = PRODUCT_DATA[id];
+  const normalizedId = (id || '').toLowerCase().replace(/\s+/g, '-');
+  const product = PRODUCT_DATA[id] || 
+    PRODUCT_DATA[normalizedId] || 
+    Object.values(PRODUCT_DATA).find(p => 
+      p.subtitle?.toLowerCase() === id?.toLowerCase() ||
+      p.title?.toLowerCase() === id?.toLowerCase() ||
+      p.subtitle?.toLowerCase().replace(/\s+/g, '-') === normalizedId ||
+      (p.subtitle && normalizedId.includes(p.subtitle.toLowerCase().replace(/\s+/g, '-')))
+    );
+
   const [activeTab, setActiveTab] = useState('overview');
 
   useEffect(() => {
@@ -507,15 +516,19 @@ export default function KannegiesserProduct() {
             >
               {/* Intro Title & Text */}
               <div className="max-w-7xl mx-auto px-6 lg:px-16 mb-16">
-                <h2 className="text-[32px] lg:text-[40px] font-bold text-[#00509B] mb-6 uppercase tracking-tight">{product.tabs.overview.introTitle}</h2>
-                {product.tabs.overview.introSubtitle && (
+                {product.tabs?.overview?.introTitle && (
+                  <h2 className="text-[32px] lg:text-[40px] font-bold text-[#00509B] mb-6 uppercase tracking-tight">{product.tabs.overview.introTitle}</h2>
+                )}
+                {product.tabs?.overview?.introSubtitle && (
                   <p className="text-[20px] lg:text-[24px] text-slate-700 font-normal leading-relaxed mb-6">
                     {product.tabs.overview.introSubtitle}
                   </p>
                 )}
-                <p className="text-sm lg:text-[15px] text-slate-700 leading-relaxed font-normal max-w-5xl">
-                  {product.tabs.overview.introText}
-                </p>
+                {product.tabs?.overview?.introText && (
+                  <p className="text-sm lg:text-[15px] text-slate-700 leading-relaxed font-normal max-w-5xl">
+                    {product.tabs.overview.introText}
+                  </p>
+                )}
               </div>
 
               {/* Light Divider */}
@@ -545,7 +558,7 @@ export default function KannegiesserProduct() {
               </div>
 
               {/* Full Width Blue Banner */}
-              {product.tabs.overview.bannerTitle && (
+              {product.tabs?.overview?.bannerTitle && (
                 <div className="w-full bg-[#00509B] text-white py-16 px-6 lg:px-16 my-16">
                   <div className="max-w-7xl mx-auto">
                     <h2 className="text-[24px] lg:text-[32px] font-bold uppercase mb-2 leading-tight">{product.tabs.overview.bannerTitle}</h2>
@@ -557,7 +570,7 @@ export default function KannegiesserProduct() {
 
               {/* Summary Blocks */}
               <div className="max-w-7xl mx-auto px-6 lg:px-16">
-                {product.tabs.overview.summaryTitle && (
+                {product.tabs?.overview?.summaryTitle && (
                   <h2 className="text-[24px] lg:text-[28px] font-bold text-[#00509B] mb-12 uppercase">{product.tabs.overview.summaryTitle}</h2>
                 )}
                 
@@ -662,7 +675,7 @@ export default function KannegiesserProduct() {
               ))}
 
               {/* Injected Specs Table */}
-              {product.tabs.specs && (
+              {product.tabs?.specs && (
                 <div className="mt-24">
                   <h2 className="text-3xl lg:text-4xl font-bold text-[#001F3F] mb-8 uppercase border-b-4 border-[#00509B] inline-block pb-2">Technical Data</h2>
                   <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
@@ -747,13 +760,13 @@ export default function KannegiesserProduct() {
           {/* Left: Product Name (Official Kannegiesser Typography) */}
           <div className="flex items-center py-4 lg:py-0">
              <h1 className="text-xl md:text-2xl lg:text-[28px] uppercase tracking-wide text-white">
-               {formatKannegiesserTitle(productId, product.subtitle)}
+               {formatKannegiesserTitle(id, product.subtitle)}
              </h1>
           </div>
 
           {/* Right: Tabs */}
           <div className="flex flex-wrap items-center justify-center gap-6 lg:gap-10 h-full">
-            {['overview', ...(product.tabs.benefits ? ['benefits'] : []), ...(product.tabs.technologies ? ['technologies'] : [])].map(tab => (
+            {['overview', ...(product.tabs?.benefits ? ['benefits'] : []), ...(product.tabs?.technologies ? ['technologies'] : [])].map(tab => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
