@@ -47,12 +47,12 @@ const BRANDS = [
   {
     id: 'imesa',
     name: 'IMESA',
-    nameImg: <img src={imesaTextLogo} alt="IMESA" className="w-[180px] md:w-[280px] h-auto object-contain object-left mb-6 mix-blend-multiply opacity-80" />,
+    nameImg: <img src={imesaTextLogo} alt="IMESA" className="h-7 md:h-9 w-auto object-contain object-left mb-6" />,
     origin: 'Italy',
     tagline: 'Custom Solutions and Made in Italy',
     logo: imesaLogo,
     desc: 'With 50 years of history, IMESA is a leading Italian manufacturer whose core vocation is washing, drying, and ironing of all types of fabric, designing sustainable laundry solutions that simplify people\'s lives.',
-    products: ['Washing Machines', 'Dryers'],
+    products: ['High Spin Washing Machines', 'Hygiene Barrier Washers', 'Tumble Dryers', 'Flatwork & Drying Ironers'],
   },
   {
     id: 'maestrelli',
