@@ -498,7 +498,7 @@ export default function KannegiesserProduct() {
   if (!product) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-white">
-        <h1 className="text-4xl font-bold text-[#001F3F] mb-4">Product Not Found</h1>
+        <h1 className="text-4xl font-bold text-[#00509B] mb-4">Product Not Found</h1>
         <Link to="/brands/kannegiesser" className="text-[#00509B] hover:underline font-bold">
           Return to Kannegiesser
         </Link>
@@ -622,7 +622,7 @@ export default function KannegiesserProduct() {
             {product.tabs.benefits?.blocks?.map((block, idx) => (
               <div key={idx} className={`flex flex-col ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 lg:gap-20`}>
                 <div className="flex-1">
-                  <h2 className={`text-3xl lg:text-4xl font-bold uppercase mb-4 ${block.subtitle ? 'text-[#001F3F]' : 'text-[#00509B]'}`}>{block.title}</h2>
+                  <h2 className="text-3xl lg:text-4xl font-bold uppercase mb-4 text-[#00509B]">{block.title}</h2>
                   {block.subtitle && <h3 className="text-xl font-bold text-[#00509B] mb-6">{block.subtitle}</h3>}
                   <p className="text-lg text-slate-700 leading-relaxed whitespace-pre-line">{block.text}</p>
                     {block.boxBullets && (
@@ -650,12 +650,12 @@ export default function KannegiesserProduct() {
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}
               className="space-y-24"
             >
-              <h2 className="text-3xl lg:text-4xl font-bold text-[#001F3F] mb-12 uppercase border-b-4 border-[#00509B] inline-block pb-2">Technical Overview</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold text-[#00509B] mb-12 uppercase border-b-4 border-[#00509B] inline-block pb-2">Technical Overview</h2>
               
               {product.tabs.technologies?.blocks?.map((block, idx) => (
                 <div key={idx} className={`flex flex-col ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 lg:gap-20`}>
                   <div className="flex-1">
-                    {block.title && <h2 className={`text-3xl lg:text-4xl font-bold uppercase mb-4 ${block.subtitle ? 'text-[#001F3F]' : 'text-[#00509B]'}`}>{block.title}</h2>}
+                    {block.title && <h2 className="text-3xl lg:text-4xl font-bold uppercase mb-4 text-[#00509B]">{block.title}</h2>}
                     {block.subtitle && <h3 className="text-xl font-bold text-[#00509B] mb-6">{block.subtitle}</h3>}
                     {block.text && <p className="text-lg text-slate-700 leading-relaxed whitespace-pre-line">{block.text}</p>}
                     {block.boxBullets && (
@@ -677,14 +677,14 @@ export default function KannegiesserProduct() {
               {/* Injected Specs Table */}
               {product.tabs?.specs && (
                 <div className="mt-24">
-                  <h2 className="text-3xl lg:text-4xl font-bold text-[#001F3F] mb-8 uppercase border-b-4 border-[#00509B] inline-block pb-2">Technical Data</h2>
+                  <h2 className="text-3xl lg:text-4xl font-bold text-[#00509B] mb-8 uppercase border-b-4 border-[#00509B] inline-block pb-2">Technical Data</h2>
                   <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
                     <div className="overflow-x-auto">
                       <table className="w-full text-left border-collapse min-w-[400px]">
                         <tbody>
                           {product.tabs.specs.table?.map((row, idx) => (
                             <tr key={idx} className="border-b border-slate-100 last:border-0 hover:bg-slate-50 transition-colors">
-                              <th className="py-6 px-6 md:px-8 text-[#001F3F] font-bold w-1/3 md:w-1/2 align-top">{row.label}</th>
+                              <th className="py-6 px-6 md:px-8 text-[#00509B] font-bold w-1/3 md:w-1/2 align-top">{row.label}</th>
                               <td className="py-6 px-6 md:px-8 text-slate-700 break-words">{row.value}</td>
                             </tr>
                           ))}

@@ -180,7 +180,7 @@ export default function Kannegiesser() {
                 
                 <div className={`bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200 flex-1 ${!item.img ? 'mt-[13rem] md:mt-[15.5rem]' : ''}`}>
                   <span className="text-[#00509B] font-black text-2xl md:text-3xl tracking-tight block mb-2">{item.year}</span>
-                  <h3 className="text-lg md:text-xl font-bold text-slate-800 mb-3">{item.title}</h3>
+                  <h3 className="text-lg md:text-xl font-bold text-[#00509B] mb-3">{item.title}</h3>
                   <p className="text-slate-700 font-normal leading-relaxed text-sm md:text-base">{wrapKannegiesser(item.text)}</p>
                 </div>
               </motion.div>
@@ -241,7 +241,7 @@ export default function Kannegiesser() {
                           <h4 className="text-[#00509B] text-[10px] tracking-wide uppercase mb-1 truncate">
                             {formatKannegiesserTitle(product.id, product.desc)}
                           </h4>
-                          <h3 className="text-sm font-bold text-[#001F3F] group-hover:text-[#00509B] transition-colors leading-snug truncate">
+                          <h3 className="text-sm font-bold text-[#00509B] leading-snug truncate">
                             {product.name}
                           </h3>
                         </div>
