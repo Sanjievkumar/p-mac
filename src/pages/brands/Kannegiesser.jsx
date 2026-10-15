@@ -241,7 +241,7 @@ export default function Kannegiesser() {
                           <h4 className="text-[#00509B] text-[10px] tracking-wide uppercase mb-1 truncate">
                             {formatKannegiesserTitle(product.id, product.desc)}
                           </h4>
-                          <h3 className="text-sm font-bold text-[#001F3F] leading-snug truncate">
+                          <h3 className="text-sm font-bold text-[#001F3F] group-hover:text-[#00509B] transition-colors leading-snug truncate">
                             {product.name}
                           </h3>
                         </div>

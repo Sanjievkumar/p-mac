@@ -520,7 +520,7 @@ export default function KannegiesserProduct() {
                   <h2 className="text-[32px] lg:text-[40px] font-bold text-[#00509B] mb-6 uppercase tracking-tight">{product.tabs.overview.introTitle}</h2>
                 )}
                 {product.tabs?.overview?.introSubtitle && (
-                  <p className="text-[20px] lg:text-[24px] text-slate-700 font-normal leading-relaxed mb-6">
+                  <p className="text-[20px] lg:text-[24px] text-[#00509B] font-bold leading-relaxed mb-6">
                     {product.tabs.overview.introSubtitle}
                   </p>
                 )}
@@ -549,7 +549,7 @@ export default function KannegiesserProduct() {
                         <img src={app.img} alt={app.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                       </div>
                       <div className="p-6 md:p-8 flex-1">
-                        <h3 className="text-[18px] md:text-[20px] font-bold text-slate-800 mb-4">{app.name}</h3>
+                        <h3 className="text-[18px] md:text-[20px] font-bold text-[#00509B] mb-4">{app.name}</h3>
                         <p className="text-slate-700 text-[14px] leading-relaxed">{app.text}</p>
                       </div>
                     </div>
@@ -580,8 +580,8 @@ export default function KannegiesserProduct() {
                       
                       {/* Left Text */}
                       <div className="flex-1 py-4">
-                        {block.title && <h3 className="text-[20px] lg:text-[24px] font-bold text-slate-800 mb-2">{block.title}</h3>}
-                        {block.subtitle && <h4 className="text-[14px] font-bold text-slate-700 mb-6 uppercase tracking-wider">{block.subtitle}</h4>}
+                        {block.title && <h3 className="text-[20px] lg:text-[24px] font-bold text-[#00509B] mb-2">{block.title}</h3>}
+                        {block.subtitle && <h4 className="text-[14px] font-bold text-[#00509B] mb-6 uppercase tracking-wider">{block.subtitle}</h4>}
                         {block.text && <p className="text-slate-700 leading-relaxed font-normal text-[15px]">{block.text}</p>}
                           {block.bullets && (
                             <ul className="list-disc pl-5 text-[15px] text-slate-700 leading-relaxed space-y-2 font-normal mt-4">
@@ -595,7 +595,7 @@ export default function KannegiesserProduct() {
                       {/* Right Grey Box */}
                       {(block.boxTitle || block.boxBullets) && (
                         <div className="flex-1 bg-[#EBEBEB] p-8 lg:p-12">
-                          {block.boxTitle && <p className="text-[14px] text-slate-700 font-bold mb-6 uppercase tracking-widest">{block.boxTitle}</p>}
+                          {block.boxTitle && <p className="text-[14px] text-[#00509B] font-bold mb-6 uppercase tracking-widest">{block.boxTitle}</p>}
                           {block.boxBullets && (
                                 <ul className="list-disc pl-5 text-[15px] text-slate-700 leading-relaxed space-y-2 font-normal">
                                   {block.boxBullets.map((bullet, bIdx) => (
@@ -622,7 +622,7 @@ export default function KannegiesserProduct() {
             {product.tabs.benefits?.blocks?.map((block, idx) => (
               <div key={idx} className={`flex flex-col ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 lg:gap-20`}>
                 <div className="flex-1">
-                  <h2 className="text-3xl lg:text-4xl font-bold text-[#001F3F] mb-4 uppercase">{block.title}</h2>
+                  <h2 className={`text-3xl lg:text-4xl font-bold uppercase mb-4 ${block.subtitle ? 'text-[#001F3F]' : 'text-[#00509B]'}`}>{block.title}</h2>
                   {block.subtitle && <h3 className="text-xl font-bold text-[#00509B] mb-6">{block.subtitle}</h3>}
                   <p className="text-lg text-slate-700 leading-relaxed whitespace-pre-line">{block.text}</p>
                     {block.boxBullets && (
@@ -655,7 +655,7 @@ export default function KannegiesserProduct() {
               {product.tabs.technologies?.blocks?.map((block, idx) => (
                 <div key={idx} className={`flex flex-col ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 lg:gap-20`}>
                   <div className="flex-1">
-                    {block.title && <h2 className="text-3xl lg:text-4xl font-bold text-[#001F3F] mb-4 uppercase">{block.title}</h2>}
+                    {block.title && <h2 className={`text-3xl lg:text-4xl font-bold uppercase mb-4 ${block.subtitle ? 'text-[#001F3F]' : 'text-[#00509B]'}`}>{block.title}</h2>}
                     {block.subtitle && <h3 className="text-xl font-bold text-[#00509B] mb-6">{block.subtitle}</h3>}
                     {block.text && <p className="text-lg text-slate-700 leading-relaxed whitespace-pre-line">{block.text}</p>}
                     {block.boxBullets && (
