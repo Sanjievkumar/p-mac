@@ -31,10 +31,33 @@ const SLUG_ALIASES = {
   "imesa-washing-machines": "imesa-lm-series",
   "lm-series": "imesa-lm-series",
   "high-spin-industrial-washing-machines": "imesa-lm-series",
+  "lm-8-11": "imesa-lm-8-11",
+  "lm-8-11-kg": "imesa-lm-8-11",
+  "imesa-lm-8-11": "imesa-lm-8-11",
   "lm-14-18-23": "imesa-lm-series",
+  "lm-14-18-23-kg": "imesa-lm-series",
+  "lm-14-23": "imesa-lm-series",
+  "lm-14-23-kg": "imesa-lm-series",
+  "imesa-lm-14-23": "imesa-lm-series",
+  "imesa-lm-series": "imesa-lm-series",
+  "lm-26-32": "imesa-lm-26-32",
+  "lm-26-32-kg": "imesa-lm-26-32",
+  "imesa-lm-26-32": "imesa-lm-26-32",
+  "lm-40-85": "imesa-lm-40-85",
+  "lm-40-85-kg": "imesa-lm-40-85",
+  "lm-40-55-70-85-kg": "imesa-lm-40-85",
+  "imesa-lm-40-85": "imesa-lm-40-85",
+  "lm-100-125": "imesa-lm-100-125",
+  "lm-100-125-kg": "imesa-lm-100-125",
+  "imesa-lm-100-125": "imesa-lm-100-125",
   "d2w-barrier": "imesa-d2w-barrier",
   "hygiene-barrier-washers": "imesa-d2w-barrier",
   "d2w-18-23": "imesa-d2w-barrier",
+  "d2w-18-23-kg": "imesa-d2w-barrier",
+  "imesa-d2w-barrier": "imesa-d2w-barrier",
+  "d2w-30-55": "imesa-d2w-30-55",
+  "d2w-30-55-kg": "imesa-d2w-30-55",
+  "imesa-d2w-30-55": "imesa-d2w-30-55",
   "imesa-dryers": "imesa-es-smart",
   "es-smart": "imesa-es-smart",
   "es-smart-line": "imesa-es-smart",
@@ -105,6 +128,35 @@ export default function ImesaProduct() {
           <span className="text-[#0D447B] font-semibold truncate max-w-xs md:max-w-md">{product.title}</span>
         </div>
       </nav>
+
+      {/* ── 1.1 Official IMESA Series Capacity Switcher ── */}
+      {product.seriesSiblings && product.seriesSiblings.length > 1 && (
+        <div className="w-full bg-[#f1f5f9]/70 border-b border-slate-200/80 py-3.5 px-6 lg:px-16">
+          <div className="max-w-7xl mx-auto flex items-center flex-wrap gap-2.5">
+            <span className="text-[11px] font-black text-[#0D447B] uppercase tracking-wider mr-2 shrink-0 flex items-center gap-1.5">
+              Available Models:
+            </span>
+            <div className="flex items-center flex-wrap gap-2">
+              {product.seriesSiblings.map(s => {
+                const isCurrent = resolvedKey === s.id;
+                return (
+                  <Link
+                    key={s.id}
+                    to={`/brands/imesa/${s.id}`}
+                    className={`px-4 py-1.5 rounded-full text-xs font-bold tracking-wide transition-all shrink-0 ${
+                      isCurrent
+                        ? 'bg-[#0D447B] text-white shadow-md shadow-[#0D447B]/20 scale-105'
+                        : 'bg-white text-slate-600 hover:text-[#0D447B] border border-slate-200 hover:border-[#0D447B]/40'
+                    }`}
+                  >
+                    {s.label}
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* ── 2. Hero / Product Presentation Section (Exact 2-Column IMESA Layout) ── */}
       <section className="w-full py-12 lg:py-16 bg-white border-b border-slate-100">

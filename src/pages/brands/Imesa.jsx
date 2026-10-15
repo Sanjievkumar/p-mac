@@ -50,7 +50,8 @@ const PRODUCTS = [
     desc: 'Freestanding high spin industrial washing machines with IM11 7" touch screen computer, G-Factor up to 400 G, and Wet Cleaning compatibility.',
     img: lmSeriesImg,
     badge: 'High Spin 400 G',
-    icon: Droplets
+    icon: Droplets,
+    subModels: ['LM 8-11 kg', 'LM 14-23 kg', 'LM 26-32 kg', 'LM 40-85 kg', 'LM 100-125 kg']
   },
   {
     id: 'imesa-d2w-barrier',
@@ -61,7 +62,8 @@ const PRODUCTS = [
     desc: 'Pass-through aseptic barrier washers with opposed dual-door system designed to eliminate contamination risks according to EN 14065 (RABC).',
     img: d2wBarrierImg,
     badge: 'EN 14065 / RABC',
-    icon: ShieldCheck
+    icon: ShieldCheck,
+    subModels: ['D2W 18-23 kg', 'D2W 30-55 kg']
   },
 
   // ── 2. Dryers (https://imesa.it/en/dryers/) ──
@@ -74,7 +76,8 @@ const PRODUCTS = [
     desc: 'Commercial tumble dryers featuring the patented D-FLOW axial airflow system, standard reversing drum rotation, and IM10 touchscreen computer.',
     img: esSmartImg,
     badge: 'D-FLOW System',
-    icon: Wind
+    icon: Wind,
+    subModels: ['11 kg', '14 kg', '18 kg', '23 kg', '26 kg', '32 kg', '36 kg']
   },
   {
     id: 'imesa-es-premium',
@@ -85,7 +88,8 @@ const PRODUCTS = [
     desc: 'Top-of-the-range industrial tumble dryers with Dual Power staged heating, residual humidity control, DSC/FSC speed control, and capacities up to 75 kg.',
     img: esPremiumImg,
     badge: 'Up to 75 kg',
-    icon: Sparkles
+    icon: Sparkles,
+    subModels: ['11 kg', '14 kg', '18 kg', '23 kg', '26 kg', '32 kg', '36 kg', '55-75 kg']
   },
 
   // ── 3. Flatwork Ironers (https://imesa.it/en/flatwork-ironers-easy-and-smart-fi/) ──
@@ -98,7 +102,8 @@ const PRODUCTS = [
     desc: 'Simple, robust flatwork ironer with digital thermostat, uniform pressure mechanical torsion bar, and ergonomic 930 mm work height.',
     img: fiEasyImg,
     badge: 'Torsion Bar',
-    icon: Layers
+    icon: Layers,
+    subModels: ['FI 100/25', 'FI 120/25', 'FI 150/25', 'FI 160/33', 'FI 180/33', 'FI 200/33']
   },
   {
     id: 'imesa-fi-smart',
@@ -109,7 +114,8 @@ const PRODUCTS = [
     desc: 'Top-of-the-range full-optional flatwork ironer with IM10 touchscreen, electronic chest pressure, inverter speed control, Nomex coating, and Cool-Down.',
     img: fiSmartImg,
     badge: 'IM10 Touch',
-    icon: Cpu
+    icon: Cpu,
+    subModels: ['FI 100/25', 'FI 120/25', 'FI 150/25', 'FI 160/33', 'FI 180/33', 'FI 200/33']
   },
 
   // ── 4. Drying Ironers (https://imesa.it/en/drying-ironers/) ──
@@ -122,7 +128,8 @@ const PRODUCTS = [
     desc: 'Compact drying ironers enabling direct drying and ironing of damp linen (up to 50% moisture) in a single operation with front return for wall installation.',
     img: mcaIronerImg,
     badge: 'Single Pass Dry & Iron',
-    icon: RefreshCw
+    icon: RefreshCw,
+    subModels: ['MCA 150', 'MCA 180', 'MCA 210']
   },
   {
     id: 'imesa-mcm-ironer',
@@ -133,7 +140,8 @@ const PRODUCTS = [
     desc: 'High-productivity industrial drying ironer with 82% roller contact, output up to 140 kg/h, IM10 touch control, and modular feeder and folder units.',
     img: mcmIronerImg,
     badge: 'Up to 140 kg/h',
-    icon: Award
+    icon: Award,
+    subModels: ['MCM 2500', 'MCM 2800', 'MCM 3200']
   }
 ];
 
@@ -198,6 +206,20 @@ function ImesaProductCard({ product, idx }) {
           <p className="text-slate-500 text-sm leading-relaxed flex-1">
             {product.desc}
           </p>
+          
+          {/* Official Series Capacity Badges */}
+          {product.subModels && product.subModels.length > 0 && (
+            <div className="flex flex-wrap gap-1.5 pt-2">
+              {product.subModels.map((sm, i) => (
+                <span 
+                  key={i}
+                  className="bg-slate-100 group-hover:bg-[#001F3F]/10 text-slate-700 group-hover:text-[#001F3F] text-[11px] font-bold px-2.5 py-0.5 rounded-full transition-colors"
+                >
+                  {sm}
+                </span>
+              ))}
+            </div>
+          )}
           
           <div className="flex items-center gap-2 text-[#00A3E0] font-bold text-sm mt-4 pt-4 border-t border-slate-100 group-hover:text-[#001F3F] transition-colors tracking-wide">
             View Technical Details
