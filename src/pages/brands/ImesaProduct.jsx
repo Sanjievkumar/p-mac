@@ -5,10 +5,23 @@ import {
   ArrowLeft, ChevronRight, CheckCircle2, ShieldCheck, 
   FileText, Download, Mail, ExternalLink, Sparkles,
   Info, Cpu, Layers, Wind, Droplets, ArrowRight,
-  Maximize2
+  Maximize2, Tablet, Wifi, RotateCw, Flame, Thermometer
 } from 'lucide-react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+
+function getFeatureIcon(title = '') {
+  const t = title.toLowerCase();
+  if (t.includes('touch') || t.includes('im11') || t.includes('im10') || t.includes('screen')) return <Tablet className="w-7 h-7 text-[#0D447B]" />;
+  if (t.includes('wi-fi') || t.includes('iot') || t.includes('connect') || t.includes('app')) return <Wifi className="w-7 h-7 text-[#0D447B]" />;
+  if (t.includes('inox') || t.includes('steel') || t.includes('drum')) return <ShieldCheck className="w-7 h-7 text-[#0D447B]" />;
+  if (t.includes('g-factor') || t.includes('spin') || t.includes('rotation') || t.includes('inverter') || t.includes('alternating')) return <RotateCw className="w-7 h-7 text-[#0D447B]" />;
+  if (t.includes('d-flow') || t.includes('flow') || t.includes('air') || t.includes('cool')) return <Wind className="w-7 h-7 text-[#0D447B]" />;
+  if (t.includes('chest') || t.includes('iron') || t.includes('roller') || t.includes('torsion')) return <Layers className="w-7 h-7 text-[#0D447B]" />;
+  if (t.includes('heat') || t.includes('steam') || t.includes('gas') || t.includes('temperature')) return <Flame className="w-7 h-7 text-[#0D447B]" />;
+  return <Sparkles className="w-7 h-7 text-[#0D447B]" />;
+}
+
 
 // Official IMESA Products Database (Extracted directly from imesa.it)
 import { IMESA_OFFICIAL_PRODUCTS } from './imesaProductData';
@@ -101,7 +114,7 @@ export default function ImesaProduct() {
             {/* Left Column: Generous Product Image Showcase + Interactive Gallery Thumbnails */}
             <div className="lg:col-span-6 flex flex-col items-center">
               {/* Main Machine Container */}
-              <div className="relative w-full bg-white rounded-2xl p-6 lg:p-10 border border-slate-200/70 shadow-sm flex items-center justify-center min-h-[380px] md:min-h-[480px] overflow-hidden group">
+              <div className="relative w-full bg-white rounded-2xl p-6 lg:p-10 border border-slate-200/70 shadow-sm flex items-center justify-center min-h-[440px] md:min-h-[540px] overflow-hidden group">
                 {/* Official IMESA Badge */}
                 <div className="absolute top-4 left-4 z-10 flex items-center gap-2">
                   <span className="bg-[#0D447B] text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
@@ -117,30 +130,42 @@ export default function ImesaProduct() {
                   transition={{ duration: 0.4 }}
                   src={currentImg} 
                   alt={product.title}
-                  className="w-full h-auto max-h-[460px] object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-500"
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    e.currentTarget.src = product.primaryImg;
+                  }}
+                  className="w-full h-auto max-h-[500px] object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
 
               {/* Gallery Thumbnails Strip (if available) */}
               {product.galleryImages && product.galleryImages.length > 0 && (
-                <div className="flex items-center gap-3 mt-4 overflow-x-auto w-full py-2">
+                <div className="flex items-center gap-3 mt-5 overflow-x-auto w-full py-2">
                   <button 
                     onClick={() => setActiveImage(product.primaryImg)}
-                    className={`w-16 h-16 rounded-xl border-2 p-1 bg-white overflow-hidden shrink-0 transition-all ${
-                      currentImg === product.primaryImg ? 'border-[#0D447B] shadow-md scale-105' : 'border-slate-200 opacity-70 hover:opacity-100'
+                    className={`w-20 h-20 rounded-xl border-2 p-1.5 bg-white overflow-hidden shrink-0 transition-all ${
+                      currentImg === product.primaryImg ? 'border-[#0D447B] shadow-md scale-105' : 'border-slate-200 opacity-70 hover:opacity-100 hover:border-slate-300'
                     }`}
                   >
-                    <img src={product.primaryImg} alt="Thumbnail Main" className="w-full h-full object-contain" />
+                    <img src={product.primaryImg} alt="Thumbnail Main" className="w-full h-full object-contain" referrerPolicy="no-referrer" />
                   </button>
                   {product.galleryImages.map((imgUrl, idx) => (
                     <button 
                       key={idx}
                       onClick={() => setActiveImage(imgUrl)}
-                      className={`w-16 h-16 rounded-xl border-2 p-1 bg-white overflow-hidden shrink-0 transition-all ${
-                        currentImg === imgUrl ? 'border-[#0D447B] shadow-md scale-105' : 'border-slate-200 opacity-70 hover:opacity-100'
+                      className={`w-20 h-20 rounded-xl border-2 p-1.5 bg-white overflow-hidden shrink-0 transition-all ${
+                        currentImg === imgUrl ? 'border-[#0D447B] shadow-md scale-105' : 'border-slate-200 opacity-70 hover:opacity-100 hover:border-slate-300'
                       }`}
                     >
-                      <img src={imgUrl} alt={`Thumbnail ${idx + 1}`} className="w-full h-full object-contain" />
+                      <img 
+                        src={imgUrl} 
+                        alt={`Thumbnail ${idx + 1}`} 
+                        className="w-full h-full object-contain" 
+                        referrerPolicy="no-referrer"
+                        onError={(e) => {
+                          e.currentTarget.parentElement.style.display = 'none';
+                        }}
+                      />
                     </button>
                   ))}
                 </div>
@@ -228,19 +253,26 @@ export default function ImesaProduct() {
                   key={idx}
                   className="bg-white rounded-2xl p-6 border border-slate-200/70 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center justify-between group"
                 >
-                  <div className="w-16 h-16 rounded-full bg-[#0D447B]/5 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <div className="w-16 h-16 rounded-full bg-[#0D447B]/5 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform relative">
                     {box.iconUrl ? (
                       <img 
                         src={box.iconUrl} 
                         alt={box.title} 
+                        referrerPolicy="no-referrer"
                         className="w-10 h-10 object-contain drop-shadow-sm" 
                         onError={(e) => {
-                          e.target.style.display = 'none';
+                          e.currentTarget.style.display = 'none';
+                          const fallback = e.currentTarget.parentElement.querySelector('.icon-fallback');
+                          if (fallback) fallback.style.display = 'flex';
                         }}
                       />
-                    ) : (
-                      <Sparkles className="w-7 h-7 text-[#0D447B]" />
-                    )}
+                    ) : null}
+                    <div 
+                      className="icon-fallback items-center justify-center" 
+                      style={{ display: box.iconUrl ? 'none' : 'flex' }}
+                    >
+                      {getFeatureIcon(box.title)}
+                    </div>
                   </div>
                   <h3 className="text-xs md:text-sm font-semibold text-[#0D447B] leading-snug flex-1 flex items-center">
                     {box.title}

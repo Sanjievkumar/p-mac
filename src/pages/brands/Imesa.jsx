@@ -23,6 +23,13 @@ import fiSmartImg from '../../assets/brands/imesa/imesa-fi-smart.jpg';
 import mcaIronerImg from '../../assets/brands/imesa/imesa-mca-ironer.jpg';
 import mcmIronerImg from '../../assets/brands/imesa/imesa-mcm-ironer.jpg';
 
+// Local Connection Space Images
+import imConnectImg from '../../assets/brands/imesa/IMESA_Dashboard-PC_Portal-IMConnect_1200x800-1024x683.jpg';
+import smartLaundryImg from '../../assets/brands/imesa/Stanza.71_con-telefono-in-mano-copia.jpg';
+import tapTechImg from '../../assets/brands/imesa/LM_Tap.Tech_-1024x683.jpg';
+import selfServiceImg from '../../assets/brands/imesa/stanza.80_rielaborata_1000X700.jpg';
+
+
 // 4 Official IMESA Categories & 8 Products directly from imesa.it
 const IMESA_CATEGORIES = [
   { id: 'all', name: 'All Products' },
@@ -229,13 +236,14 @@ export default function Imesa() {
       </div>
 
       {/* ── 1. Hero Section with Video (Pure clean video, NO overlaid text or buttons) ── */}
-      <section className="relative w-full h-[85vh] min-h-[600px] flex flex-col justify-center overflow-hidden bg-[#0A0A0A] pt-20 group">
+      <section className="relative w-full h-[85vh] min-h-[600px] flex flex-col justify-center overflow-hidden bg-gradient-to-br from-slate-950 via-[#001F3F] to-slate-900 pt-20 group">
         <video
           autoPlay
           loop
           muted={isMuted}
           playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-90"
+          preload="auto"
+          className="absolute inset-0 w-full h-full object-cover opacity-95 transition-opacity duration-700"
         >
           <source src={imesaHeroVideo} type="video/mp4" />
         </video>
@@ -373,7 +381,7 @@ export default function Imesa() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="order-2 lg:order-1 relative">
                 <img 
-                  src="https://promactech.com/wp-content/uploads/2025/01/IMESA_Dashboard-PC_Portal-IMConnect_1200x800-1024x683.jpg" 
+                  src={imConnectImg} 
                   alt="IMConnect" 
                   className="rounded-3xl shadow-2xl relative z-10 w-full object-cover"
                 />
@@ -393,7 +401,7 @@ export default function Imesa() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="order-2 lg:order-2 relative">
                 <img 
-                  src="https://promactech.com/wp-content/uploads/2025/01/Stanza.71_con-telefono-in-mano-copia.jpg" 
+                  src={smartLaundryImg} 
                   alt="Smarter Laundry" 
                   className="rounded-3xl shadow-2xl relative z-10 w-full object-cover"
                 />
@@ -413,7 +421,7 @@ export default function Imesa() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="order-2 lg:order-1 relative">
                 <img 
-                  src="https://promactech.com/wp-content/uploads/2025/01/LM_Tap.Tech_-1024x683.jpg" 
+                  src={tapTechImg} 
                   alt="Tap.Tech Label" 
                   className="rounded-3xl shadow-2xl relative z-10 w-full object-cover"
                 />
@@ -433,7 +441,7 @@ export default function Imesa() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="order-2 lg:order-2 relative">
                 <img 
-                  src="https://promactech.com/wp-content/uploads/2025/01/stanza.80_rielaborata_1000X700.jpg" 
+                  src={selfServiceImg} 
                   alt="Self Service App" 
                   className="rounded-3xl shadow-2xl relative z-10 w-full object-cover"
                 />

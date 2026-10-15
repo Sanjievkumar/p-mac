@@ -8,7 +8,21 @@ import fiSmartImg from '../../assets/brands/imesa/imesa-fi-smart.jpg';
 import mcaIronerImg from '../../assets/brands/imesa/imesa-mca-ironer.jpg';
 import mcmIronerImg from '../../assets/brands/imesa/imesa-mcm-ironer.jpg';
 
-export const IMESA_OFFICIAL_PRODUCTS = {
+// Local mirrored assets for 100% reliability, zero 403 blocks, and instant loading
+const localAssets = import.meta.glob('../../assets/brands/imesa/remote/*.*', { eager: true, import: 'default' });
+
+export function resolveAsset(urlOrFilename) {
+  if (!urlOrFilename) return null;
+  const filename = urlOrFilename.split('/').pop();
+  for (const [path, mod] of Object.entries(localAssets)) {
+    if (path.endsWith('/' + filename)) {
+      return mod;
+    }
+  }
+  return urlOrFilename;
+}
+
+const RAW_IMESA_PRODUCTS = {
   "imesa-lm-series": {
     id: "imesa-lm-series",
     category: "Washing Machines",
@@ -146,3 +160,19 @@ export const IMESA_OFFICIAL_PRODUCTS = {
     specsTable: [["MODELLI","MCM 2500","MCM 2800","MCM 3200"],["Ironing width","2505 mm","2715 mm","3130 mm"],["Ironing width with feeder","1978 mm","2190 mm","2608 mm"],["Maximum length of fabrics for first fold","3500 mm","3500 mm","3500 mm"],["Hourly production*","62 kg/h","68 kg/h","80 kg/h"],["Evaporation*","31 lt/h","34 lt/h","40 lt/h"],["Rotation Speed","1-10 mt./min.","1-10 mt./min.","1-10 mt./min."],["Ironing Humidity Required","50%","50%","50%"],["Humid Air Drain","100 Ø mm","100 Ø mm","100 Ø mm"],["Smokes Drain (Gas Version)","100 Ø mm","100 Ø mm","100 Ø mm"],["Basic machine and with motorised EXIT dimensions: WxDxH","3414x1358x1708 mm","3610x1358x1708 mm","4027x1358x1708 mm"],["Machine dimensions with OUTPUT, FOLDER and INTRODUCER: LxWxH","3413x1655x1708 mm","3610x1655x1708 mm","4027x1655x1708 mm"],["Net weight basic machine and with motorised EXIT","1283 Kg","1371 Kg","1522 Kg"],["Net Weight with OUTPUT, FOLDER and INTRODUCER","1656 Kg","1730 Kg","1856 Kg"],["Packing dimensions basic machine or with motorised EXIT: WxDxH","3420x1100x1868 mm","3630x1100x1868 mm","4040x1100x1868 mm"],["Packing dimensions machine with EXIT, FOLD and FEEDER: WxDxH","3420x1300x1868 mm","3630x1300x1868 mm","4040x1300x1868 mm"],["Gross weight basic machine and with motorised EXIT","1351 Kg","1443 Kg","1598 Kg"],["Gross weight with EXIT and FOLD","1726 Kg","1804 Kg","1930 Kg"],["Electric power basic machine","49,3 kW","52,9 kW","61,9 kW"],["Steam power basic machine","0,7 kW","0,7 kW","0,7 kW"],["Gas power basic machine","0,9 kW","0,9 kW","0,9 kW"],["Electrical Machine Power with EXIT","49,5 kW","52,9 kW","61,9 kW"],["Steam Machine Power with EXIT","0,9 kW","0,9 kW","0,9 kW"],["Gas Machine Power with EXIT","1,1 kW","1,1 kW","1,1 kW"],["Electrical Machine Power with EXIT, FOLDER and INTRODUCER","49,5 kW","53,1 kW","62,1 kW"],["Steam Machine Power with EXIT, FOLDER and INTRODUCER","0,9 kW","0,9 kW","0,9 kW"],["Gas Machine Power with EXIT, FOLDER and INTRODUCER","1,1 kW","1,1 kW","1,1 kW"],["Hourly steam Consumption","100 Kg/h","110 Kg/h","125 Kg/h"],["Air compressed consumption (with EA or EB)","500 lt/h","500 lt/h","500 lt/h"],["Air compressed pressure (with EA or EB)","6 bar","6 bar","6 bar"],["Basic machine container 20\" - 40\" loading plan","2 - 6 pcs","2 - 6 pcs","2 - 4 pcs"],["Machine with EXIT, FOLD and FEEDER container 20\" - 40\" loading plan","1 - 3 pcs","1 - 3 pcs","1 - 2 pcs"]]
   },
 };
+
+// Process products to automatically map all gallery and icon assets to local Vite bundles
+export const IMESA_OFFICIAL_PRODUCTS = Object.fromEntries(
+  Object.entries(RAW_IMESA_PRODUCTS).map(([key, prod]) => [
+    key,
+    {
+      ...prod,
+      galleryImages: (prod.galleryImages || []).map(resolveAsset),
+      iconBoxes: (prod.iconBoxes || []).map(box => ({
+        ...box,
+        iconUrl: resolveAsset(box.iconUrl)
+      }))
+    }
+  ])
+);
+
