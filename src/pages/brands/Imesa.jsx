@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { Link, useLocation } from 'react-router-dom';
 import { 
   ArrowLeft, ChevronRight, Droplets, Wind, Layers, RefreshCw, 
   HeartHandshake, Factory, Volume2, VolumeX, ShieldCheck, 
@@ -17,11 +17,21 @@ import imesaLogo from '../../assets/brands/imesa.png';
 import lmSeriesImg from '../../assets/brands/imesa/imesa-lm-series.png';
 import d2wBarrierImg from '../../assets/brands/imesa/imesa-d2w-barrier.jpg';
 import esSmartImg from '../../assets/brands/imesa/imesa-es-smart.png';
-import esPremiumImg from '../../assets/brands/imesa/imesa-es-premium.png';
+import es5575Img from '../../assets/brands/imesa/imesa-es-55-75.png';
 import fiEasyImg from '../../assets/brands/imesa/imesa-fi-easy.jpg';
 import fiSmartImg from '../../assets/brands/imesa/imesa-fi-smart.jpg';
 import mcaIronerImg from '../../assets/brands/imesa/imesa-mca-ironer.jpg';
 import mcmIronerImg from '../../assets/brands/imesa/imesa-mcm-ironer.jpg';
+
+// Category Hero Photography & Icons (Official imesa.it assets downloaded locally)
+import catHeroWashingImg from '../../assets/brands/imesa/imesa-cat-hero-washing.jpg';
+import iconWashingImg from '../../assets/brands/imesa/icon-washing.png';
+import catHeroDryersImg from '../../assets/brands/imesa/imesa-cat-hero-dryers.png';
+import iconDryersImg from '../../assets/brands/imesa/icon-dryers.png';
+import catHeroFlatworkImg from '../../assets/brands/imesa/imesa-cat-hero-flatwork.jpg';
+import iconFlatworkImg from '../../assets/brands/imesa/icon-flatwork.png';
+import catHeroDryingIronersImg from '../../assets/brands/imesa/imesa-cat-hero-drying-ironers.jpg';
+import iconDryingIronersImg from '../../assets/brands/imesa/icon-drying-ironers.png';
 
 // Local Connection Space Images
 import imConnectImg from '../../assets/brands/imesa/IMESA_Dashboard-PC_Portal-IMConnect_1200x800-1024x683.jpg';
@@ -29,222 +39,221 @@ import smartLaundryImg from '../../assets/brands/imesa/Stanza.71_con-telefono-in
 import tapTechImg from '../../assets/brands/imesa/LM_Tap.Tech_-1024x683.jpg';
 import selfServiceImg from '../../assets/brands/imesa/stanza.80_rielaborata_1000X700.jpg';
 
+// 4 Official IMESA Categories & Series Database (1:1 clone of imesa.it structure)
+const OFFICIAL_CATEGORIES = [
+  {
+    id: 'washing-machines',
+    name: 'Washing Machines',
+    capacityBadge: '8/125 KG',
+    badgeIcon: iconWashingImg,
+    h1: 'INDUSTRIAL WASHING MACHINES',
+    heroImg: catHeroWashingImg,
+    introLead: 'EVO.LINE: THE INDUSTRIAL WASHING MACHINES BY IMESA',
+    introParas: [
+      'The wide range of washing machines IMESA is the answer to every specific washing need.',
+      'Efficiency, sturdiness and ease of use for high level washing results. The new EVO.LINE washing machines, completely renewed in design, present features that further enhance their performance.',
+      'Simplicity, Flexibility and Productivity are the characteristics that distinguish the IMESA product, designed for the complete satisfaction of the customer.'
+    ],
+    showcases: [
+      {
+        id: 'high-spin',
+        title: 'HIGH SPIN INDUSTRIAL WASHING MACHINES',
+        subtitle: 'LM SERIES',
+        machineImg: lmSeriesImg,
+        primaryTarget: 'imesa-lm-series',
+        paras: [
+          'With the LM series, IMESA deploys technology and quality.',
+          'The IM11 computer touchscreen is an indispensable device that makes the washing machine perfect for every customer. A wash for every need.'
+        ],
+        seriesButtons: [
+          { id: 'imesa-lm-8-11', label: 'LM 8-11 kg' },
+          { id: 'imesa-lm-series', label: 'LM 14-23 kg' },
+          { id: 'imesa-lm-26-32', label: 'LM 26-32 kg' },
+          { id: 'imesa-lm-40-85', label: 'LM 40-85 kg' },
+          { id: 'imesa-lm-100-125', label: 'LM 100-125 kg' }
+        ]
+      },
+      {
+        id: 'barrier-washers',
+        title: 'HYGIENE BARRIER WASHERS',
+        subtitle: 'D2W SERIES',
+        machineImg: d2wBarrierImg,
+        primaryTarget: 'imesa-d2w-barrier',
+        paras: [
+          'The IMESA D2W series of hygiene barrier washers fully satisfies the needs of hospitals, nursing and retirement homes, nurseries and schools, clinics and the pharmaceutical and food industries by guaranteeing maximum safety and zero contamination risk.',
+          'Pass-through dual door biological separation complying with EN 14065 (RABC) sanitary standards.'
+        ],
+        seriesButtons: [
+          { id: 'imesa-d2w-barrier', label: 'D2W 18-23 kg' },
+          { id: 'imesa-d2w-30-55', label: 'D2W 30-55 kg' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'dryers',
+    name: 'Dryers',
+    capacityBadge: '11/75 KG',
+    badgeIcon: iconDryersImg,
+    h1: 'TUMBLE DRYERS',
+    heroImg: catHeroDryersImg,
+    introLead: 'THE DRYING REVOLUTION: ES SMART & PREMIUM',
+    introParas: [
+      'Designed for industrial and community use, the IMESA ES tumble dryer series delivers outstanding performance, reliable productivity, and flawless drying every time.',
+      'ES Dryer Line: redefining the concept of drying and its importance in modern laundry operations with patented D-FLOW axial airflow.'
+    ],
+    showcases: [
+      {
+        id: 'es-smart-premium',
+        title: 'TUMBLE DRYER',
+        subtitle: 'ES SMART AND PREMIUM SERIES (11 - 36 KG)',
+        machineImg: esSmartImg,
+        primaryTarget: 'imesa-es-smart',
+        paras: [
+          'Available in Smart and Premium versions, the ES tumble dryer line offers flexible configurations to meet every need with tailored, modular solutions.',
+          'ES Dryer Line: redefining the concept of drying and its importance in modern laundry operations.'
+        ],
+        seriesButtons: [
+          { id: 'imesa-es-smart', label: 'ES Smart Line 11-36 kg' },
+          { id: 'imesa-es-premium', label: 'ES Premium Line 11-36 kg' }
+        ]
+      },
+      {
+        id: 'es-large-capacity',
+        title: 'TUMBLE DRYER',
+        subtitle: 'ES 55 AND 75 SERIES',
+        machineImg: es5575Img,
+        primaryTarget: 'imesa-es-premium',
+        paras: [
+          'The large capacity 55 and 75 kg ES dryers are designed to meet the needs of industrial laundries and high productivity facilities that require high performance and full control of drying parameters.'
+        ],
+        seriesButtons: [
+          { id: 'imesa-es-premium', label: 'ES Premium Line 55-75 kg' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'flatwork-ironers',
+    name: 'Flatwork Ironers',
+    capacityBadge: 'Ø 250 - 330 MM',
+    badgeIcon: iconFlatworkImg,
+    h1: 'FLATWORK IRONERS',
+    heroImg: catHeroFlatworkImg,
+    introLead: 'TAILOR-MADE FLATWORK FINISHING BY IMESA',
+    introParas: [
+      'The IMESA FI flatwork ironer serie comes in Easy LINE and Smart LINE versions: two different control units to meet customer’s needs at best.',
+      'Optimized machine overall dimensions, polished steel roller for anti-wrinkle ironing and easy introduction of linen. Safety is guaranteed by the manual lever release system, the emergency button and chest lifting pedal.'
+    ],
+    showcases: [
+      {
+        id: 'fi-easy',
+        title: 'FLATWORK IRONERS',
+        subtitle: 'SERIE EASY FI (DIAM. 25 CM – DIAM. 33 CM)',
+        machineImg: fiEasyImg,
+        primaryTarget: 'imesa-fi-easy',
+        paras: [
+          'The IMESA flatwork ironer Easy FI is equipped with analog control unit, digital thermostat for temperature adjustment, fixed ironing speed (or adjustable by inverter as optional) and fixed ironing pressure uniform all over the entire roller length by means of the special torsion bar.',
+          'The Easy FI flatwork ironer is equipped with Cotton roller cover (Nomex available on request), vacuum suction system, and IoT remote connection ready.'
+        ],
+        seriesButtons: [
+          { id: 'imesa-fi-easy', label: 'Serie Easy FI' }
+        ]
+      },
+      {
+        id: 'fi-smart',
+        title: 'FLATWORK IRONERS',
+        subtitle: 'SERIE SMART FI (DIAM. 25 CM – DIAM. 33 CM)',
+        machineImg: fiSmartImg,
+        primaryTarget: 'imesa-fi-smart',
+        paras: [
+          'The IMESA Smart FI flatwork ironer is equipped with digital control unit IM10 touch screen, allowing endless ironing solution for effective and customized ironing result.',
+          'Complete with frequency variator for electronic speed control according to temperature, Cool Down system and patented linear drive system for uniform ironing quality across the entire roller length.'
+        ],
+        seriesButtons: [
+          { id: 'imesa-fi-smart', label: 'Serie Smart FI' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'drying-ironers',
+    name: 'Drying Ironers',
+    capacityBadge: 'Ø 330 - 502 MM',
+    badgeIcon: iconDryingIronersImg,
+    h1: 'DRYING IRONERS',
+    heroImg: catHeroDryingIronersImg,
+    introLead: 'SINGLE-PASS DRY & IRON PRODUCTIVITY',
+    introParas: [
+      'The series of IMESA DRYING IRONER are designed to meet every ironing need. A unique machine with chrome steel roller that operates with maximum efficiency and low energy consumption ensuring high performance.',
+      'The ideal products to meet the needs of industrial hotels and laundries.'
+    ],
+    showcases: [
+      {
+        id: 'mca-line',
+        title: 'DRYING IRONER',
+        subtitle: 'MCA LINE',
+        machineImg: mcaIronerImg,
+        primaryTarget: 'imesa-mca-ironer',
+        paras: [
+          'IMESA MCA drying ironers dry and iron damp linen in a single operation, without having to pass through a dryer.',
+          'Front linen feed and return enables compact, space-saving installation against walls.'
+        ],
+        seriesButtons: [
+          { id: 'imesa-mca-ironer', label: 'MCA 150-180-210' }
+        ]
+      },
+      {
+        id: 'mcm-line',
+        title: 'DRYING IRONER',
+        subtitle: 'MCM LINE',
+        machineImg: mcmIronerImg,
+        primaryTarget: 'imesa-mcm-ironer',
+        paras: [
+          'IMESA MCM series drying ironers guarantee high performance and reliability.',
+          'Industrial roller with 82% contact surface, output up to 140 kg/h, and modular automated feeders and folders.'
+        ],
+        seriesButtons: [
+          { id: 'imesa-mcm-ironer', label: 'MCM 2500 - 2800 - 3200' }
+        ]
+      }
+    ]
+  }
+];
 
-// 4 Official IMESA Categories & 8 Products directly from imesa.it
-const IMESA_CATEGORIES = [
-  { id: 'all', name: 'All Products' },
+const CATEGORY_TABS = [
+  { id: 'all', name: 'All Categories' },
   { id: 'washing-machines', name: 'Washing Machines' },
   { id: 'dryers', name: 'Dryers' },
   { id: 'flatwork-ironers', name: 'Flatwork Ironers' },
   { id: 'drying-ironers', name: 'Drying Ironers' }
 ];
 
-const PRODUCTS = [
-  // ── 1. Washing Machines (https://imesa.it/en/washing-machines/) ──
-  {
-    id: 'imesa-lm-series',
-    category: 'washing-machines',
-    categoryName: 'Washing Machines',
-    name: 'HIGH SPIN INDUSTRIAL WASHING MACHINES',
-    series: 'LM Series (8 - 125 kg)',
-    desc: 'Freestanding high spin industrial washing machines with IM11 7" touch screen computer, G-Factor up to 400 G, and Wet Cleaning compatibility.',
-    img: lmSeriesImg,
-    badge: 'High Spin 400 G',
-    icon: Droplets,
-    subModels: ['LM 8-11 kg', 'LM 14-23 kg', 'LM 26-32 kg', 'LM 40-85 kg', 'LM 100-125 kg']
-  },
-  {
-    id: 'imesa-d2w-barrier',
-    category: 'washing-machines',
-    categoryName: 'Washing Machines',
-    name: 'HYGIENE BARRIER WASHERS',
-    series: 'D2W Series (18 - 55 kg)',
-    desc: 'Pass-through aseptic barrier washers with opposed dual-door system designed to eliminate contamination risks according to EN 14065 (RABC).',
-    img: d2wBarrierImg,
-    badge: 'EN 14065 / RABC',
-    icon: ShieldCheck,
-    subModels: ['D2W 18-23 kg', 'D2W 30-55 kg']
-  },
-
-  // ── 2. Dryers (https://imesa.it/en/dryers/) ──
-  {
-    id: 'imesa-es-smart',
-    category: 'dryers',
-    categoryName: 'Dryers',
-    name: 'ES SMART LINE TUMBLE DRYERS',
-    series: 'ES Smart Line (11 - 36 kg)',
-    desc: 'Commercial tumble dryers featuring the patented D-FLOW axial airflow system, standard reversing drum rotation, and IM10 touchscreen computer.',
-    img: esSmartImg,
-    badge: 'D-FLOW System',
-    icon: Wind,
-    subModels: ['11 kg', '14 kg', '18 kg', '23 kg', '26 kg', '32 kg', '36 kg']
-  },
-  {
-    id: 'imesa-es-premium',
-    category: 'dryers',
-    categoryName: 'Dryers',
-    name: 'ES PREMIUM LINE TUMBLE DRYERS',
-    series: 'ES Premium Line (11 - 75 kg)',
-    desc: 'Top-of-the-range industrial tumble dryers with Dual Power staged heating, residual humidity control, DSC/FSC speed control, and capacities up to 75 kg.',
-    img: esPremiumImg,
-    badge: 'Up to 75 kg',
-    icon: Sparkles,
-    subModels: ['11 kg', '14 kg', '18 kg', '23 kg', '26 kg', '32 kg', '36 kg', '55-75 kg']
-  },
-
-  // ── 3. Flatwork Ironers (https://imesa.it/en/flatwork-ironers-easy-and-smart-fi/) ──
-  {
-    id: 'imesa-fi-easy',
-    category: 'flatwork-ironers',
-    categoryName: 'Flatwork Ironers',
-    name: 'FI EASY LINE FLATWORK IRONERS',
-    series: 'FI EASY Line (Ø 250 - 330 mm)',
-    desc: 'Simple, robust flatwork ironer with digital thermostat, uniform pressure mechanical torsion bar, and ergonomic 930 mm work height.',
-    img: fiEasyImg,
-    badge: 'Torsion Bar',
-    icon: Layers,
-    subModels: ['FI 100/25', 'FI 120/25', 'FI 150/25', 'FI 160/33', 'FI 180/33', 'FI 200/33']
-  },
-  {
-    id: 'imesa-fi-smart',
-    category: 'flatwork-ironers',
-    categoryName: 'Flatwork Ironers',
-    name: 'FI SMART LINE FLATWORK IRONERS',
-    series: 'FI SMART Line (Ø 250 - 330 mm)',
-    desc: 'Top-of-the-range full-optional flatwork ironer with IM10 touchscreen, electronic chest pressure, inverter speed control, Nomex coating, and Cool-Down.',
-    img: fiSmartImg,
-    badge: 'IM10 Touch',
-    icon: Cpu,
-    subModels: ['FI 100/25', 'FI 120/25', 'FI 150/25', 'FI 160/33', 'FI 180/33', 'FI 200/33']
-  },
-
-  // ── 4. Drying Ironers (https://imesa.it/en/drying-ironers/) ──
-  {
-    id: 'imesa-mca-ironer',
-    category: 'drying-ironers',
-    categoryName: 'Drying Ironers',
-    name: 'MCA COMPACT DRYING IRONERS',
-    series: 'MCA Series (Ø 330 mm / 1500 - 2100 mm)',
-    desc: 'Compact drying ironers enabling direct drying and ironing of damp linen (up to 50% moisture) in a single operation with front return for wall installation.',
-    img: mcaIronerImg,
-    badge: 'Single Pass Dry & Iron',
-    icon: RefreshCw,
-    subModels: ['MCA 150', 'MCA 180', 'MCA 210']
-  },
-  {
-    id: 'imesa-mcm-ironer',
-    category: 'drying-ironers',
-    categoryName: 'Drying Ironers',
-    name: 'MCM INDUSTRIAL DRYING IRONERS',
-    series: 'MCM Series (Ø 502 mm / 2500 - 3200 mm)',
-    desc: 'High-productivity industrial drying ironer with 82% roller contact, output up to 140 kg/h, IM10 touch control, and modular feeder and folder units.',
-    img: mcmIronerImg,
-    badge: 'Up to 140 kg/h',
-    icon: Award,
-    subModels: ['MCM 2500', 'MCM 2800', 'MCM 3200']
-  }
-];
-
-function ImesaProductCard({ product, idx }) {
-  const cardRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: cardRef,
-    offset: ['start end', 'end start']
-  });
-  const smoothY = useSpring(
-    useTransform(scrollYProgress, [0, 1], [35, -35]),
-    { stiffness: 100, damping: 20 }
-  );
-  const smoothScale = useSpring(
-    useTransform(scrollYProgress, [0, 0.5, 1], [0.94, 1.08, 0.94]),
-    { stiffness: 100, damping: 20 }
-  );
-
-  return (
-    <motion.div
-      ref={cardRef}
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.6, delay: Math.min((idx % 2) * 0.15, 0.3) }}
-      className="h-full"
-    >
-      <Link 
-        to={`/brands/imesa/${product.id}`} 
-        className="group flex flex-col h-full bg-white rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer"
-      >
-        {/* Card Top Meta Bar - Dedicated bar prevents any clashing with image */}
-        <div className="px-8 pt-7 pb-2 flex items-center justify-between z-20 relative bg-white">
-          <span className="inline-flex items-center gap-1.5 bg-[#001F3F] text-white text-[11px] font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
-            {product.badge}
-          </span>
-          <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">
-            {product.categoryName}
-          </span>
-        </div>
-
-        {/* Dedicated Large Image Container with Parallax Scroll Animation */}
-        <div className="px-8 py-6 flex items-center justify-center bg-white border-b border-slate-100 min-h-[320px] md:min-h-[350px] relative overflow-hidden">
-          <motion.img 
-            style={{ y: smoothY, scale: smoothScale }}
-            src={product.img} 
-            alt={product.name} 
-            className="w-full h-64 md:h-72 object-contain relative z-10 drop-shadow-md group-hover:drop-shadow-2xl transition-shadow duration-500 will-change-transform" 
-          />
-        </div>
-        
-        {/* Content Container */}
-        <div className="p-8 flex flex-col gap-3 flex-1 relative bg-white">
-          <div className="text-[#00A3E0] text-xs font-bold uppercase tracking-widest">
-            {product.series}
-          </div>
-
-          <h3 className="text-xl md:text-2xl font-bold text-[#001F3F] group-hover:text-[#00A3E0] transition-colors leading-snug">
-            {product.name}
-          </h3>
-          
-          <p className="text-slate-500 text-sm leading-relaxed flex-1">
-            {product.desc}
-          </p>
-          
-          {/* Official Series Capacity Badges */}
-          {product.subModels && product.subModels.length > 0 && (
-            <div className="flex flex-wrap gap-1.5 pt-2">
-              {product.subModels.map((sm, i) => (
-                <span 
-                  key={i}
-                  className="bg-slate-100 group-hover:bg-[#001F3F]/10 text-slate-700 group-hover:text-[#001F3F] text-[11px] font-bold px-2.5 py-0.5 rounded-full transition-colors"
-                >
-                  {sm}
-                </span>
-              ))}
-            </div>
-          )}
-          
-          <div className="flex items-center gap-2 text-[#00A3E0] font-bold text-sm mt-4 pt-4 border-t border-slate-100 group-hover:text-[#001F3F] transition-colors tracking-wide">
-            View Technical Details
-            <ChevronRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" />
-          </div>
-        </div>
-      </Link>
-    </motion.div>
-  );
-}
-
 export default function Imesa() {
   const [isMuted, setIsMuted] = useState(true);
   const [activeCategory, setActiveCategory] = useState('all');
+  const location = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    // If arriving with a hash or query param like #dryers or ?category=washing-machines
+    const params = new URLSearchParams(location.search);
+    const catQuery = params.get('category');
+    const hash = location.hash.replace('#', '');
+    if (catQuery && OFFICIAL_CATEGORIES.some(c => c.id === catQuery)) {
+      setActiveCategory(catQuery);
+    } else if (hash && OFFICIAL_CATEGORIES.some(c => c.id === hash)) {
+      setActiveCategory(hash);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [location]);
 
-  const filteredProducts = activeCategory === 'all' 
-    ? PRODUCTS 
-    : PRODUCTS.filter(p => p.category === activeCategory);
+  const displayedCategories = activeCategory === 'all'
+    ? OFFICIAL_CATEGORIES
+    : OFFICIAL_CATEGORIES.filter(c => c.id === activeCategory);
 
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-800">
+    <div className="min-h-screen bg-[#FDFDFD] font-sans text-slate-800">
       <Navbar />
 
       {/* Back to Brands Navigation */}
@@ -257,7 +266,7 @@ export default function Imesa() {
         </Link>
       </div>
 
-      {/* ── 1. Hero Section with Video (Pure clean video, NO overlaid text or buttons) ── */}
+      {/* ── 1. Hero Section with Video (Pure clean video, NO overlaid text or buttons per user requirement) ── */}
       <section className="relative w-full h-[85vh] min-h-[600px] flex flex-col justify-center overflow-hidden bg-gradient-to-br from-slate-950 via-[#001F3F] to-slate-900 pt-20 group">
         <video
           autoPlay
@@ -483,51 +492,172 @@ export default function Imesa() {
         </div>
       </section>
 
-      {/* ── 5. Explore Products (4 Categories, 8 Products from imesa.it) ── */}
-      <section className="py-24 bg-slate-50 relative border-t border-slate-200 overflow-hidden" id="products">
-        {/* Animated Grid Background */}
-        <div
-          className="absolute inset-0 pointer-events-none opacity-[0.10] animate-grid"
-          style={{
-            backgroundImage: 'linear-gradient(#00A3E0 1px, transparent 1px), linear-gradient(90deg, #00A3E0 1px, transparent 1px)',
-            backgroundSize: '48px 48px',
-          }}
-          aria-hidden="true"
-        />
-        
-        <div className="max-w-7xl mx-auto px-6 lg:px-16 relative z-10">
-          <div className="flex flex-col items-center mb-12 text-center">
-            <h2 className="text-4xl lg:text-5xl font-black text-[#001F3F] mb-4">
-              EXPLORE <span className="text-[#00A3E0]">PRODUCTS</span>
+      {/* ── 5. Official IMESA Category Showcase Pages (1:1 Clone matching official imesa.it category structure) ── */}
+      <section className="py-20 bg-[#F8F9FA] relative border-t border-slate-200" id="products">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          
+          {/* Section Header & Category Filter Tabs */}
+          <div className="flex flex-col items-center mb-16 text-center">
+            <h2 className="text-3xl md:text-5xl font-black text-[#0D447B] tracking-tight uppercase mb-3">
+              PRODUCT <span className="text-[#00A3E0]">CATEGORIES</span>
             </h2>
-            <p className="text-slate-500 max-w-2xl text-lg">
-              Discover IMESA's complete range of washing machines, tumble dryers, flatwork ironers, and drying ironers.
+            <p className="text-slate-500 max-w-2xl text-base md:text-lg">
+              Explore IMESA's complete industrial machinery catalogue. Select a category below or explore the full range.
             </p>
 
-            {/* Category Filter Pills */}
-            <div className="flex flex-wrap items-center justify-center gap-2 mt-8">
-              {IMESA_CATEGORIES.map(cat => (
+            {/* Interactive Category Filter Pills */}
+            <div className="flex flex-wrap items-center justify-center gap-2.5 mt-8">
+              {CATEGORY_TABS.map(tab => (
                 <button
-                  key={cat.id}
-                  onClick={() => setActiveCategory(cat.id)}
-                  className={`px-5 py-2.5 rounded-full text-sm font-bold tracking-wide transition-all ${
-                    activeCategory === cat.id
-                      ? 'bg-[#00A3E0] text-white shadow-md shadow-[#00A3E0]/20'
-                      : 'bg-white text-slate-600 hover:text-[#001F3F] border border-slate-200 hover:border-slate-300'
+                  key={tab.id}
+                  onClick={() => setActiveCategory(tab.id)}
+                  className={`px-5 py-2.5 rounded-full text-xs md:text-sm font-bold tracking-wide transition-all duration-200 ${
+                    activeCategory === tab.id
+                      ? 'bg-[#0D447B] text-white shadow-md shadow-[#0D447B]/20'
+                      : 'bg-white text-slate-600 hover:text-[#0D447B] border border-slate-200 hover:border-slate-300'
                   }`}
                 >
-                  {cat.name}
+                  {tab.name}
                 </button>
               ))}
             </div>
           </div>
 
-          {/* Product Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 lg:gap-10 max-w-6xl mx-auto">
-            {filteredProducts.map((product, idx) => (
-              <ImesaProductCard key={product.id} product={product} idx={idx} />
+          {/* Render Each Category Exactly as on imesa.it */}
+          <div className="space-y-28">
+            {displayedCategories.map((cat) => (
+              <div key={cat.id} className="space-y-12" id={cat.id}>
+                
+                {/* ── Official Category Hero Banner (Exact match of Screenshot 2) ── */}
+                <div className="bg-white border border-slate-200/80 rounded-3xl p-8 lg:p-12 shadow-sm overflow-hidden">
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    
+                    {/* Left: Category Icon, Capacity Pill, H1, Underline, and Intro Copy */}
+                    <div className="lg:col-span-6 flex flex-col justify-center">
+                      
+                      {/* Capacity Badge Pill */}
+                      <div className="inline-flex items-center gap-2.5 bg-[#f0f4f8] border border-[#0D447B]/15 px-3.5 py-1.5 rounded-full mb-5 w-fit">
+                        {cat.badgeIcon && (
+                          <img 
+                            src={cat.badgeIcon} 
+                            alt={cat.name} 
+                            className="w-5 h-5 object-contain" 
+                          />
+                        )}
+                        <span className="text-[#0D447B] text-xs font-bold tracking-wider uppercase">
+                          {cat.capacityBadge}
+                        </span>
+                      </div>
+
+                      {/* Category Main H1 */}
+                      <h1 className="text-2xl md:text-4xl font-extrabold text-[#0D447B] tracking-tight uppercase leading-snug mb-3">
+                        {cat.h1}
+                      </h1>
+
+                      {/* Official IMESA Accent Underline (30px wide, 2px height) */}
+                      <div className="w-10 h-0.5 bg-[#00A3E0] mb-5" />
+
+                      {/* Category Lead Title */}
+                      <h4 className="text-sm md:text-base font-bold text-[#0D447B] uppercase tracking-wide mb-4">
+                        {cat.introLead}
+                      </h4>
+
+                      {/* Category Intro Paragraphs */}
+                      <div className="space-y-3 text-slate-600 text-sm md:text-base leading-relaxed">
+                        {cat.introParas.map((para, pIdx) => (
+                          <p key={pIdx}>{para}</p>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Right: Category Hero Operator Image with Subtle Clean Frame */}
+                    <div className="lg:col-span-6 flex justify-center">
+                      <div className="w-full max-w-xl rounded-2xl overflow-hidden border border-slate-100 shadow-lg">
+                        <img 
+                          src={cat.heroImg} 
+                          alt={cat.h1} 
+                          className="w-full h-auto object-cover max-h-[380px] hover:scale-105 transition-transform duration-700" 
+                        />
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                {/* ── Official 2-Column Machine Showcases (Exact match of Screenshot 1) ── */}
+                <div className="space-y-8">
+                  {cat.showcases.map((showcase) => (
+                    <div 
+                      key={showcase.id}
+                      className="bg-white border border-slate-200/80 rounded-3xl p-8 lg:p-12 shadow-sm hover:shadow-md transition-shadow duration-300"
+                    >
+                      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                        
+                        {/* Left Column (5-6 cols): Large Front-Facing Machine Cutout */}
+                        <div className="lg:col-span-5 flex items-center justify-center py-4 bg-gradient-to-b from-slate-50/50 to-white rounded-2xl border border-slate-100/60 p-6">
+                          <Link 
+                            to={`/brands/imesa/${showcase.primaryTarget}`}
+                            className="group block w-full text-center"
+                          >
+                            <img 
+                              src={showcase.machineImg} 
+                              alt={showcase.title}
+                              className="max-h-[380px] md:max-h-[440px] w-auto mx-auto object-contain drop-shadow-md group-hover:scale-105 transition-transform duration-500 will-change-transform" 
+                            />
+                          </Link>
+                        </div>
+
+                        {/* Right Column (6-7 cols): Machine Title, Eyebrow, Copy, & Series Buttons */}
+                        <div className="lg:col-span-7 flex flex-col justify-center">
+                          
+                          {/* Machine Showcase Title (uppercase navy) */}
+                          <h3 className="text-xl md:text-3xl font-extrabold text-[#0D447B] tracking-tight uppercase leading-snug mb-1">
+                            {showcase.title}
+                          </h3>
+
+                          {/* Machine Series Eyebrow */}
+                          <h6 className="text-xs md:text-sm font-bold text-[#0D447B]/70 uppercase tracking-widest mb-4">
+                            {showcase.subtitle}
+                          </h6>
+
+                          {/* Description Text */}
+                          <div className="space-y-3 text-slate-600 text-sm md:text-base leading-relaxed mb-6">
+                            {showcase.paras.map((para, idx) => (
+                              <p key={idx}>{para}</p>
+                            ))}
+                          </div>
+
+                          {/* Official Capacity Series Rectangular Buttons (Exact match of Screenshot 1) */}
+                          <div className="pt-2 border-t border-slate-100">
+                            <span className="block text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-3">
+                              Select Series Model / Capacity:
+                            </span>
+
+                            <div className="flex flex-wrap gap-2.5">
+                              {showcase.seriesButtons.map((btn) => (
+                                <Link
+                                  key={btn.id}
+                                  to={`/brands/imesa/${btn.id}`}
+                                  className="inline-flex items-center justify-center px-4 py-2 border border-[#0D447B] text-[#0D447B] hover:bg-[#0D447B] hover:text-white transition-all duration-200 text-xs md:text-sm font-semibold tracking-wide group rounded-none"
+                                >
+                                  <span className="btn-txt">{btn.label}</span>
+                                  <ChevronRight className="w-3.5 h-3.5 ml-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all duration-200" />
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+              </div>
             ))}
           </div>
+
         </div>
       </section>
 
