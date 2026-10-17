@@ -119,9 +119,11 @@ export default function ImesaProduct() {
         <div className="max-w-7xl mx-auto flex items-center flex-wrap gap-2">
           <Link to="/" className="hover:text-[#0D447B] transition-colors">Home</Link>
           <span className="text-slate-300">/</span>
-          <Link to="/brands/imesa" className="hover:text-[#0D447B] transition-colors">Products</Link>
+          <Link to="/brands/imesa" className="hover:text-[#0D447B] transition-colors">Brands</Link>
           <span className="text-slate-300">/</span>
-          <Link to="/brands/imesa" className="hover:text-[#0D447B] transition-colors">{product.category}</Link>
+          <Link to={`/brands/imesa/${product.categorySlug || 'washing-machines'}`} className="hover:text-[#0D447B] transition-colors font-semibold">
+            {product.category}
+          </Link>
           <span className="text-slate-300">/</span>
           <span className="text-slate-500">{product.subCategory}</span>
           <span className="text-slate-300">/</span>

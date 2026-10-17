@@ -13,6 +13,7 @@ import SeaLion from './pages/brands/SeaLion';
 import MaxiPress from './pages/brands/MaxiPress';
 import MaxiPressProduct from './pages/brands/MaxiPressProduct';
 import Imesa from './pages/brands/Imesa';
+import ImesaCategory from './pages/brands/ImesaCategory';
 import ImesaProduct from './pages/brands/ImesaProduct';
 import Maestrelli from './pages/brands/Maestrelli';
 import MaestrelliProduct from './pages/brands/MaestrelliProduct';
@@ -42,6 +43,11 @@ function App() {
           <Route path="/pro-parts" element={<ProParts />} />
         
           <Route path="/brands/imesa" element={<Imesa />} />
+          <Route path="/brands/imesa/washing-machines" element={<ImesaCategory categoryId="washing-machines" />} />
+          <Route path="/brands/imesa/dryers" element={<ImesaCategory categoryId="dryers" />} />
+          <Route path="/brands/imesa/flatwork-ironers" element={<ImesaCategory categoryId="flatwork-ironers" />} />
+          <Route path="/brands/imesa/drying-ironers" element={<ImesaCategory categoryId="drying-ironers" />} />
+          <Route path="/brands/imesa/category/:categorySlug" element={<ImesaCategory />} />
           <Route path="/brands/imesa/:id" element={<ImesaProduct />} />
         </Routes>
       </div>
