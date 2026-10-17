@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import TurnkeyProcess from '../components/TurnkeyProcess';
 import MissionSection from '../components/MissionSection';
-import engineeringBg from '../assets/engineering-brands-bg.jpg';
+import aboutHeroBg from '../assets/about-hero-bg.jpg';
 
 /* ============================================================================
    Letter-by-letter stagger helper
@@ -73,6 +73,13 @@ function PulseIcon({ children }) {
    Main Page
 ============================================================================ */
 export default function About() {
+  const scrollToCompany = () => {
+    const el = document.getElementById('company-profile');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const coreStrengths = [
     {
       id: '01',
@@ -118,82 +125,148 @@ export default function About() {
 
       {/* ============================================================================
           SECTION 1 — HERO
+          Uses cropped about-hero-bg.jpg (with website header cleanly removed at 100% quality)
+          Overlays coded text and button directly on top for desktop, with high-contrast mobile view.
       ============================================================================ */}
-      <section className="relative w-full pt-44 pb-20 px-6 lg:px-12 flex flex-col items-center overflow-hidden bg-[#001F3F]">
+      <section id="about-hero" className="relative w-full mt-[80px] bg-white overflow-hidden">
+        {/* DESKTOP VIEW (lg: and above) - aspect ratio matching 1024x508 canvas */}
+        <div className="hidden lg:block relative w-full max-w-[1536px] mx-auto aspect-[1024/508] overflow-hidden select-none">
           {/* Background Image */}
-          <div className="absolute inset-0 z-0">
-            <img 
-              src={engineeringBg} 
-              alt="Engineering Background" 
-              className="w-full h-full object-cover opacity-30 mix-blend-luminosity"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-[#001F3F]/80 via-[#001F3F]/50 to-[#001F3F]" />
-          </div>
-  
-          {/* Animated Blueprint Grid */}
-          <motion.div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              backgroundImage: 'linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)',
-              backgroundSize: '48px 48px',
-            }}
-            animate={{ 
-              backgroundPosition: ['0px 0px', '48px 48px'],
-              opacity: [0.03, 0.09, 0.03]
-            }}
-            transition={{ 
-              backgroundPosition: { repeat: Infinity, duration: 8, ease: 'linear' },
-              opacity: { repeat: Infinity, duration: 4, ease: 'easeInOut' }
-            }}
+          <img 
+            src={aboutHeroBg} 
+            alt="Promac Technologies Industrial Laundry Facility" 
+            className="w-full h-full object-contain object-center pointer-events-none" 
           />
-          {/* Ambient glow */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[#E31E24]/10 rounded-full blur-[120px] pointer-events-none z-0" />
 
-        <div className="max-w-[1100px] w-full text-center mb-20 relative z-10">
-          {/* Eyebrow pill */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="mb-8"
-          >
-            <span className="text-white font-bold text-xs md:text-sm tracking-[0.25em] uppercase bg-white/10 px-6 py-2 rounded-full border border-white/20">
-              Engineering the Future
-            </span>
-          </motion.div>
+          {/* Soft Left Mask: blends seamlessly into image background behind text,
+              preventing any double-text ghosting while keeping factory & operators fully visible */}
+          <div className="absolute inset-y-0 left-0 w-[50%] bg-gradient-to-r from-white via-white/95 to-transparent pointer-events-none z-10" />
 
-          {/* Staggered hero headline */}
-          <h1
-            className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-8 leading-[0.95] relative overflow-hidden"
-            aria-label="EVERY CLEANING CHALLENGE. ONE SOLUTION."
-          >
-            <div className="block">
-              <SplitText text="EVERY CLEANING CHALLENGE. " className="inline" baseDelay={0.1} />
-            </div>
-            <div className="block mt-2">
-              <SplitText
-                text="ONE SOLUTION."
-                className="inline text-[#E31E24]"
-                baseDelay={0.1 + 'EVERY CLEANING CHALLENGE. '.length * 0.03}
-              />
-            </div>
-          </h1>
+          {/* Interactive Desktop Content Layer */}
+          <div className="absolute inset-0 z-20 pointer-events-none">
+            {/* Eyebrow - sits at x=56, y=108 (5.47%, 21.26%) */}
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              style={{ left: '5.47%', top: '21.26%' }}
+              className="absolute"
+            >
+              <span className="text-[#CC141A] font-bold text-[clamp(9.5px,1vw,14px)] tracking-[0.24em] uppercase block">
+                ABOUT PROMAC TECHNOLOGIES
+              </span>
+            </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-            className="text-lg md:text-xl text-white/90 font-bold max-w-2xl mx-auto leading-relaxed drop-shadow-sm bg-white/5 p-2 rounded-xl backdrop-blur-sm border border-white/10"
-          >
-            Promac Technologies is India's premier turnkey partner for world-class industrial laundry systems.
-          </motion.p>
+            {/* Red Accent Line - sits at x=55, y=132 (5.37%, 25.98%) */}
+            <motion.div 
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              style={{ left: '5.47%', top: '25.98%' }}
+              className="absolute w-[3.2%] h-[0.4%] min-h-[3px] bg-[#CC141A] origin-left rounded-full"
+            />
+
+            {/* H1 Heading - sits at x=55, y=154 (5.47%, 30.31%) */}
+            <motion.h1 
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              style={{ left: '5.47%', top: '30.31%', maxWidth: '44%' }}
+              className="absolute font-black tracking-tight text-[#1A233A] leading-[1.08] text-[clamp(26px,3.3vw,50px)]"
+            >
+              WE KNOW WHAT<br/>
+              INDUSTRY NEEDS.
+            </motion.h1>
+
+            {/* Paragraph - sits at x=54, y=265 (5.47%, 52.17%) */}
+            <motion.p 
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.45 }}
+              style={{ left: '5.47%', top: '52.17%', maxWidth: '38%' }}
+              className="absolute text-slate-600 font-medium text-[clamp(11px,1.2vw,16px)] leading-[1.45] text-justify"
+            >
+              Industrial laundry and professional cleaning expertise, backed by international technology partnerships and technical support.
+            </motion.p>
+
+            {/* Button - sits at x=54, y=357 (5.47%, 70.28%) */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              style={{ left: '5.47%', top: '70.28%' }}
+              className="absolute pointer-events-auto"
+            >
+              <motion.button 
+                onClick={scrollToCompany}
+                whileHover={{ scale: 1.04, backgroundColor: '#A31015' }}
+                whileTap={{ scale: 0.97 }}
+                className="bg-[#CC141A] text-white px-[clamp(18px,1.8vw,28px)] py-[clamp(8px,0.9vw,13px)] text-[clamp(9.5px,0.95vw,12px)] font-bold tracking-[0.2em] uppercase transition-all duration-300 shadow-[0_6px_20px_rgba(204,20,26,0.35)] hover:shadow-[0_8px_25px_rgba(204,20,26,0.5)] rounded-sm cursor-pointer"
+              >
+                OUR COMPANY
+              </motion.button>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* MOBILE & TABLET VIEW (< lg)
+            Full-height responsive hero with clear focus on the facility,
+            readable mobile typography, and a touch-friendly button. */}
+        <div className="lg:hidden relative w-full min-h-[520px] sm:min-h-[580px] flex flex-col justify-center overflow-hidden px-6 sm:px-10 py-12">
+          {/* Background Image with factory machinery focus */}
+          <img 
+            src={aboutHeroBg} 
+            alt="Promac Technologies Industrial Laundry Facility" 
+            className="absolute inset-0 w-full h-full object-cover object-[70%_center] pointer-events-none" 
+          />
+
+          {/* Gradient Overlay for high-contrast mobile readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/40 pointer-events-none z-10" />
+
+          {/* Mobile Content */}
+          <div className="relative z-20 w-full max-w-xl">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+            >
+              {/* Eyebrow */}
+              <span className="text-[#CC141A] font-bold text-xs sm:text-sm tracking-[0.22em] uppercase block mb-3">
+                ABOUT PROMAC TECHNOLOGIES
+              </span>
+
+              {/* Red Accent Line */}
+              <div className="w-12 h-1 bg-[#CC141A] mb-6 rounded-full" />
+
+              {/* Headline */}
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-black leading-[1.12] tracking-tight mb-4 text-[#1A233A]">
+                WE KNOW WHAT<br/>
+                INDUSTRY NEEDS.
+              </h1>
+
+              {/* Paragraph */}
+              <p className="text-slate-600 text-sm sm:text-base font-medium leading-relaxed mb-8 max-w-md">
+                Industrial laundry and professional cleaning expertise, backed by international technology partnerships and technical support.
+              </p>
+
+              {/* Action Button */}
+              <motion.button 
+                onClick={scrollToCompany}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                className="bg-[#CC141A] hover:bg-[#A31015] text-white px-8 py-3.5 text-xs font-bold tracking-[0.2em] uppercase transition-all duration-300 shadow-md rounded-sm cursor-pointer inline-block"
+              >
+                OUR COMPANY
+              </motion.button>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       {/* ============================================================================
           SECTION 2 — ABOUT PROMAC
       ============================================================================ */}
-      <section className="relative w-full px-6 lg:px-12 py-24 flex flex-col items-center bg-white border-y border-gray-100">
+      <section id="company-profile" className="relative w-full px-6 lg:px-12 py-24 flex flex-col items-center bg-white border-y border-gray-100">
         <div className="max-w-[900px] w-full relative z-10">
           <div className="mb-16">
             <h2 className="text-4xl md:text-5xl font-black text-[#0a0a0a] tracking-tighter mb-6 uppercase border-l-4 border-[#E31E24] pl-6">
