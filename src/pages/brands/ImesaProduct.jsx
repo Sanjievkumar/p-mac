@@ -298,7 +298,7 @@ export default function ImesaProduct() {
               <span className="text-[#0d447b] text-xs sm:text-sm md:text-base font-extrabold tracking-[0.24em] uppercase block mb-2 sm:mb-3">
                 EXCELLENCE IN DESIGN
               </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-black text-[#0d447b] tracking-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-[32px] xl:text-[36px] font-bold text-[#0d447b] tracking-tight leading-snug">
                 Key Machine Features
               </h2>
             </div>
@@ -352,7 +352,7 @@ export default function ImesaProduct() {
               <span className="text-[#0d447b] text-xs sm:text-sm font-extrabold tracking-[0.22em] uppercase block mb-2 sm:mb-3">
                 OPERATIONAL ADVANTAGES
               </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-black text-[#0d447b] tracking-tight mb-3">
+              <h2 className="text-2xl sm:text-3xl lg:text-[32px] xl:text-[36px] font-bold text-[#0d447b] tracking-tight leading-snug mb-3">
                 Technological Advantages
               </h2>
               <div className="w-16 h-1.5 bg-[#0d447b] rounded-full mb-4 sm:mb-5"></div>
@@ -386,7 +386,7 @@ export default function ImesaProduct() {
               <span className="text-[#0d447b] text-xs sm:text-sm md:text-base font-extrabold tracking-[0.24em] uppercase block mb-2 sm:mb-3">
                 CONNECTED INNOVATION
               </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-black text-[#0d447b] tracking-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-[32px] xl:text-[36px] font-bold text-[#0d447b] tracking-tight leading-snug">
                 Smart Systems & IoT Telemetry
               </h2>
             </div>

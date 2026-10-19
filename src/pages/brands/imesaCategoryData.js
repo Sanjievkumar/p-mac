@@ -26,6 +26,7 @@ export const OFFICIAL_CATEGORIES = [
     capacityBadge: '8/125 KG',
     badgeIcon: iconWashingImg,
     h1: 'INDUSTRIAL WASHING MACHINES',
+    h1Formatted: 'INDUSTRIAL WASHING<br class="hidden sm:inline" /> MACHINES',
     heroImg: catHeroWashingImg,
     cardImg: lmSeriesImg,
     subtitle: 'High Spin & Hygiene Barrier Washers',
@@ -34,7 +35,7 @@ export const OFFICIAL_CATEGORIES = [
     introLead: 'EVO.LINE: THE INDUSTRIAL WASHING MACHINES BY IMESA',
     introParas: [
       'The wide range of <strong>washing machines</strong> IMESA is the answer to every specific washing need.',
-      '<strong>Efficiency, sturdiness and ease of use</strong> for high level washing results.<br class="hidden sm:inline" />The new <strong>EVO.LINE</strong> washing machines, completely renewed in design, present features that further enhance their performance.',
+      '<strong>Efficiency, sturdiness and ease of use</strong> for high level washing results.<br class="hidden sm:inline" />The new <strong class="text-[#009ee2]">EVO.LINE</strong> washing machines, completely renewed in design, present features that further enhance their performance.',
       'Simplicity, Flexibility and Productivity are the characteristics that distinguish the IMESA product, designed for the complete satisfaction of the customer.'
     ],
     showcases: [
@@ -80,6 +81,7 @@ export const OFFICIAL_CATEGORIES = [
     capacityBadge: '11/75 KG',
     badgeIcon: iconDryersImg,
     h1: 'TUMBLE DRYERS',
+    h1Formatted: 'TUMBLE DRYERS',
     heroImg: catHeroDryersImg,
     cardImg: esSmartImg,
     subtitle: 'ES Smart & Premium Tumble Dryers',
@@ -88,7 +90,7 @@ export const OFFICIAL_CATEGORIES = [
     introLead: 'THE DRYING REVOLUTION: ES SMART & PREMIUM',
     introParas: [
       'The wide range of <strong>tumble dryers</strong> IMESA is designed to deliver top quality drying results while minimizing energy consumption.',
-      '<strong>Patented D-FLOW</strong> axial airflow ensures gentle linen treatment and uniform drying.<br class="hidden sm:inline" />The new <strong>EVO.LINE</strong> dryers, completely renewed in design, present features that further enhance their performance.',
+      '<strong>Patented D-FLOW</strong> axial airflow ensures gentle linen treatment and uniform drying.<br class="hidden sm:inline" />The new <strong class="text-[#009ee2]">EVO.LINE</strong> dryers, completely renewed in design, present features that further enhance their performance.',
       'Simplicity, Flexibility and Productivity are the characteristics that distinguish the IMESA product, designed for the complete satisfaction of the customer.'
     ],
     showcases: [
@@ -130,6 +132,7 @@ export const OFFICIAL_CATEGORIES = [
     capacityBadge: 'Ø 250 - 330 MM',
     badgeIcon: iconFlatworkImg,
     h1: 'FLATWORK IRONERS',
+    h1Formatted: 'FLATWORK IRONERS',
     heroImg: catHeroFlatworkImg,
     cardImg: fiSmartImg,
     subtitle: 'FI Easy & Smart Line Ironers',
@@ -138,7 +141,7 @@ export const OFFICIAL_CATEGORIES = [
     introLead: 'TAILOR-MADE FLATWORK FINISHING BY IMESA',
     introParas: [
       'The wide range of <strong>flatwork ironers</strong> IMESA is the answer to every specific ironing need.',
-      '<strong>Efficiency, sturdiness and ease of use</strong> for high level ironing results.<br class="hidden sm:inline" />The new <strong>FI SERIES</strong> ironers, completely renewed in design, present features that further enhance their performance.',
+      '<strong>Efficiency, sturdiness and ease of use</strong> for high level ironing results.<br class="hidden sm:inline" />The new <strong class="text-[#009ee2]">FI SERIES</strong> ironers, completely renewed in design, present features that further enhance their performance.',
       'Simplicity, Flexibility and Productivity are the characteristics that distinguish the IMESA product, designed for the complete satisfaction of the customer.'
     ],
     showcases: [
@@ -184,6 +187,7 @@ export const OFFICIAL_CATEGORIES = [
     capacityBadge: 'Ø 330 - 502 MM',
     badgeIcon: iconDryingIronersImg,
     h1: 'DRYING IRONERS',
+    h1Formatted: 'DRYING IRONERS',
     heroImg: catHeroDryingIronersImg,
     cardImg: mcmIronerImg,
     subtitle: 'MCA & MCM High-Speed Ironers',
@@ -192,7 +196,7 @@ export const OFFICIAL_CATEGORIES = [
     introLead: 'SINGLE-PASS DRY & IRON PRODUCTIVITY',
     introParas: [
       'The series of <strong>drying ironers</strong> IMESA are designed to meet every ironing need.',
-      '<strong>Single-pass dry and iron</strong> capability without pre-drying saves significant space, time and energy.<br class="hidden sm:inline" />The new <strong>MCA and MCM SERIES</strong> present features that further enhance their performance.',
+      '<strong>Single-pass dry and iron</strong> capability without pre-drying saves significant space, time and energy.<br class="hidden sm:inline" />The new <strong class="text-[#009ee2]">MCA and MCM SERIES</strong> present features that further enhance their performance.',
       'Simplicity, Flexibility and Productivity are the characteristics that distinguish the IMESA product, designed for the complete satisfaction of the customer.'
     ],
     showcases: [

@@ -442,7 +442,9 @@ const RAW_IMESA_PRODUCTS = {
     seriesSiblings: ES_SIBLINGS,
     galleryImages: ["ES_36_SMART1.jpg", "ES_18_SMART1.jpg", "ES_18_SMART2.jpg", "ES_18_SMART3.jpg", "ES_36_SMART2.jpg", "ES_36_SMART3.jpg"],
     shortDesc: [
-      "The ES Smart tumble dryer line delivers top-level performance and ensures high energy efficiency. It's the perfect choice for facilities looking to manage drying programs independently, with flexibility and professional precision."
+      "The <span class=\"text-[#009ee2] font-semibold\">ES Smart tumble dryer line</span> delivers top-level performance and ensures high energy efficiency.",
+      "It is the perfect choice for facilities looking to manage drying programs independently, with flexibility and professional precision.",
+      "Equipped with the <strong>IM10 computer touchscreen</strong> and <strong>patented D-FLOW</strong> axial airflow system."
     ],
     iconBoxes: [
       { title: "IM.10 Touch Screen Computer for efficient programming of drying cycles and performance monitoring", iconUrl: "Icone-touch-screen.png" },
@@ -502,7 +504,9 @@ const RAW_IMESA_PRODUCTS = {
     seriesSiblings: ES_SIBLINGS,
     galleryImages: ["ES_36_SMART1.jpg", "ES_18_SMART1.jpg", "ES_18_SMART2.jpg", "ES_18_SMART3.jpg", "ES_36_SMART2.jpg", "ES_36_SMART3.jpg"],
     shortDesc: [
-      "At the top of the range, the ES Premium dryer line combines exceptional drying performance with superior energy efficiency. With advanced, easily programmable functions, it's the perfect solution for businesses that demand precision and control in every cycle."
+      "At the top of the range, the <span class=\"text-[#009ee2] font-semibold\">ES Premium dryer line</span> combines exceptional drying performance with superior energy efficiency.",
+      "With advanced, easily programmable functions, it is the perfect solution for businesses that demand precision and control in every cycle.",
+      "Standard AISI 304 stainless steel front panel and <strong>soft-care drum perforation</strong> for delicate linen treatment."
     ],
     iconBoxes: [
       { title: "IM.10 Touch Screen Computer for efficient programming of drying cycles and performance monitoring", iconUrl: "Icone-touch-screen.png" },
@@ -689,7 +693,9 @@ const RAW_IMESA_PRODUCTS = {
     seriesSiblings: IRONER_SIBLINGS,
     galleryImages: ["IMESA_Calandre-asciuganti_Drying-Ironing_MCA_NEW_FRONTE-1.png", "IMESA_Calandre-asciuganti_Drying-Ironing_MCA_NEW_PROSPETTIVA.png", "IMESA_Calandre-asciuganti_Drying-Ironing_MCA_NEW_PROSPETTIVA-ALTO.png", "03-4.jpg", "02-4.jpg"],
     shortDesc: [
-      "IMESA MCA drying ironers dry and iron damp linen in a single operation. IMESA MCA drying ironers are designed to guarantee continuous production and high quality ironing. The compact size and possibility of installation against a wall make MCA models ideal for restaurants, pubs and small/medium sized hotels."
+      "The IMESA <span class=\"text-[#009ee2] font-semibold\">MCA drying ironers</span> dry and iron damp linen in a single operation without pre-drying.",
+      "Designed to guarantee continuous production, exceptional finish quality and energy efficiency.",
+      "The compact size and possibility of installation against a wall make MCA models ideal for restaurants, pubs and small/medium sized hotels."
     ],
     iconBoxes: [
       { title: "IM10 computer touch screen for easy programming and monitoring of drying cycles.", iconUrl: "Icone-touch-screen.png" },
@@ -747,7 +753,9 @@ const RAW_IMESA_PRODUCTS = {
     seriesSiblings: IRONER_SIBLINGS,
     galleryImages: ["Calandre-asciuganti_Drying-Ironing_MCM_3.jpg", "Calandre-asciuganti_Drying-Ironing_MCM_1.jpg", "Calandre-asciuganti_Drying-Ironing_MCM_2.jpg", "03-4.jpg", "02-4.jpg"],
     shortDesc: [
-      "IMESA MCM series drying ironers guarantee high performance and reliability. Designed for maximum ironing quality, the complete MCM range is the ideal linen ironing solution for restaurants, hotels, nursing and retirement homes and hospitals."
+      "The IMESA <span class=\"text-[#009ee2] font-semibold\">MCM series drying ironers</span> guarantee high industrial performance and maximum reliability.",
+      "Engineered with an <strong>82% roller contact perimeter</strong> for superior ironing output and finish consistency.",
+      "The complete MCM range is the ideal linen finishing solution for large restaurants, centralized hotels, nursing homes and hospitals."
     ],
     iconBoxes: [
       { title: "IM10 computer touch screen for easy programming and monitoring of drying cycles", iconUrl: "Icone-touch-screen.png" },

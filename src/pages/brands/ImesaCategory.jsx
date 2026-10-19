@@ -101,16 +101,17 @@ export default function ImesaCategory({ categoryId }) {
               />
             )}
 
-            {/* Official Category H1 Title - enlarged and bold in #0d447b */}
-            <h1 className="text-3xl sm:text-4xl lg:text-[46px] xl:text-[52px] font-extrabold text-[#0d447b] tracking-tight uppercase leading-[1.12] mb-5">
-              {currentCategory.h1}
-            </h1>
+            {/* Official Category H1 Title - matching official site proportions */}
+            <h1 
+              className="text-2xl sm:text-3xl lg:text-[34px] xl:text-[38px] font-bold text-[#0d447b] tracking-tight uppercase leading-[1.25] mb-4 sm:mb-5"
+              dangerouslySetInnerHTML={{ __html: currentCategory.h1Formatted || currentCategory.h1 }}
+            />
 
             {/* Official IMESA Underline Accent */}
-            <div className="w-16 h-[3px] bg-[#9BB7D0] mb-7 sm:mb-9" />
+            <div className="w-16 h-[3px] bg-[#9BB7D0] mb-6 sm:mb-8" />
 
-            {/* Category Intro Paragraphs in #0d447b - enlarged */}
-            <div className="space-y-4 sm:space-y-5 text-[#0d447b] text-base sm:text-lg lg:text-[19px] leading-[1.8]">
+            {/* Category Intro Paragraphs in #0d447b */}
+            <div className="space-y-4 text-[#0d447b] text-[15px] sm:text-base lg:text-[16.5px] leading-[1.75] font-normal">
               {currentCategory.introParas.map((para, idx) => (
                 <p key={idx} dangerouslySetInnerHTML={{ __html: para }} />
               ))}
@@ -136,17 +137,17 @@ export default function ImesaCategory({ categoryId }) {
       </section>
 
       {/* ── 4. Official IMESA Machine Series Section (Exact 1:1 clone of official site img2) ── */}
-      <section className="w-full bg-[#FFFFFF] py-18 sm:py-24 lg:py-28">
+      <section className="w-full bg-[#FFFFFF] py-16 sm:py-20 lg:py-24">
         <div className="max-w-[1536px] mx-auto px-6 sm:px-10 lg:px-16">
           
-          <div className="space-y-24 sm:space-y-32">
+          <div className="space-y-20 sm:space-y-28">
             {currentCategory.showcases.map((showcase, index) => {
               const isReversed = index % 2 === 1;
               return (
                 <div 
                   key={showcase.id}
                   className={`grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center ${
-                    index > 0 ? 'pt-24 sm:pt-32 border-t border-slate-200/80' : ''
+                    index > 0 ? 'pt-20 sm:pt-28 border-t border-slate-200/80' : ''
                   }`}
                 >
                   
@@ -162,7 +163,7 @@ export default function ImesaCategory({ categoryId }) {
                       <img 
                         src={showcase.machineImg} 
                         alt={showcase.title}
-                        className="max-w-full w-auto max-h-[380px] sm:max-h-[440px] lg:max-h-[500px] xl:max-h-[540px] mx-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]" 
+                        className="max-w-full w-auto max-h-[360px] sm:max-h-[420px] lg:max-h-[480px] xl:max-h-[520px] mx-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]" 
                       />
                     </Link>
                   </div>
@@ -172,30 +173,30 @@ export default function ImesaCategory({ categoryId }) {
                     isReversed ? 'lg:order-1 lg:pr-6 xl:pr-10' : 'lg:order-2 lg:pl-6 xl:pl-10'
                   }`}>
                     
-                    {/* Machine Showcase Title (uppercase #0d447b) - enlarged */}
-                    <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[40px] font-bold text-[#0d447b] tracking-[0.02em] uppercase leading-tight mb-2.5">
+                    {/* Machine Showcase Title (uppercase #0d447b) */}
+                    <h2 className="text-xl sm:text-2xl lg:text-[24px] font-bold text-[#0d447b] tracking-[0.03em] uppercase leading-snug mb-2">
                       {showcase.title}
                     </h2>
 
-                    {/* Machine Series Subtitle - enlarged and prominent */}
-                    <h3 className="text-base sm:text-lg lg:text-xl font-bold text-[#0d447b] tracking-[0.14em] uppercase mb-6 sm:mb-8">
+                    {/* Machine Series Subtitle */}
+                    <h3 className="text-xs sm:text-sm lg:text-[14.5px] font-semibold text-[#0d447b] tracking-[0.14em] uppercase mb-5 sm:mb-6">
                       {showcase.subtitle}
                     </h3>
 
                     {/* Description Paragraphs - comfortable reading in #0d447b */}
-                    <div className="space-y-4 sm:space-y-4.5 text-[#0d447b] text-base sm:text-[17px] lg:text-lg leading-[1.8] mb-8 sm:mb-10 max-w-2xl font-normal">
+                    <div className="space-y-3.5 text-[#0d447b] text-[15px] sm:text-[15.5px] leading-[1.75] mb-7 sm:mb-8 max-w-2xl font-normal">
                       {showcase.paras.map((para, idx) => (
                         <p key={idx} dangerouslySetInnerHTML={{ __html: para }} />
                       ))}
                     </div>
 
                     {/* Official Capacity Series Rectangular Buttons (Image 1 & 2 exact match) */}
-                    <div className="flex flex-wrap gap-3 sm:gap-4 pt-1">
+                    <div className="flex flex-wrap gap-2.5 sm:gap-3.5 pt-1">
                       {showcase.seriesButtons.map((btn) => (
                         <Link
                           key={btn.id}
                           to={`/brands/imesa/${btn.id}`}
-                          className="border border-[#0d447b] text-[#0d447b] bg-white hover:bg-[#0d447b] hover:text-white transition-colors duration-150 px-7 sm:px-8 py-3 sm:py-3.5 text-[15px] sm:text-base font-semibold tracking-wide rounded-none inline-block text-center shadow-none cursor-pointer"
+                          className="border border-[#0d447b] text-[#0d447b] bg-white hover:bg-[#0d447b] hover:text-white transition-colors duration-150 px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold tracking-wide rounded-none inline-block text-center shadow-none cursor-pointer"
                         >
                           {btn.label}
                         </Link>
