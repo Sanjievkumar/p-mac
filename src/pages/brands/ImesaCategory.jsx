@@ -31,7 +31,7 @@ export default function ImesaCategory({ categoryId }) {
       <Navbar />
 
       {/* ── 1. Official Breadcrumbs Bar with Standard Back Button ── */}
-      <nav aria-label="Breadcrumb" className="w-full bg-[#f8f9fa] border-b border-slate-200/80 pt-20 sm:pt-24 pb-3 sm:pb-4 px-4 sm:px-8 lg:px-12 xl:px-16 text-xs sm:text-sm text-slate-500 font-medium">
+      <nav aria-label="Breadcrumb" className="w-full bg-[#f8f9fa] border-b border-slate-200/80 pt-20 sm:pt-24 pb-3 sm:pb-4 px-4 sm:px-8 lg:px-12 xl:px-16 text-[14px] sm:text-[15px] lg:text-[16px] leading-[29px] tracking-[0.34px] text-[#767676] font-normal font-inter">
         <div className="max-w-[1536px] mx-auto flex items-center justify-between flex-wrap gap-3 sm:gap-4">
           <div className="flex items-center flex-wrap gap-1.5 sm:gap-2">
             <Link to="/" className="hover:text-[#0d447b] transition-colors">Home</Link>
@@ -186,9 +186,9 @@ export default function ImesaCategory({ categoryId }) {
                     </h4>
 
                     {/* Machine Series Subtitle (e.g. LM SERIES, DIAM. 25 CM - DIAM. 33 CM) */}
-                    <div className="text-[14px] sm:text-[15px] lg:text-[16px] font-normal text-[#0d447b] tracking-[0.18em] uppercase mb-6 sm:mb-7 font-inter">
+                    <h6 className="text-[14px] sm:text-[15px] lg:text-[16px] font-normal text-[#0d447b] tracking-[0.18em] uppercase mb-6 sm:mb-7 font-inter">
                       {showcase.subtitle}
-                    </div>
+                    </h6>
 
                     {/* Description Paragraphs - Exact Inspector specs: 17px font, 29px leading, 0.34px tracking, 400 weight, #0D447B */}
                     <div className="space-y-4 text-[#0d447b] text-[17px] leading-[29px] tracking-[0.34px] mb-7 sm:mb-8 max-w-2xl font-normal font-inter [&>p>strong]:font-bold [&>p>strong]:text-[#0d447b]">
