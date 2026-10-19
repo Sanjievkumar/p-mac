@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Globe2, Settings, ShieldCheck, Users } from 'lucide-react';
-import homeHeroBg from '../assets/home-hero-bg.jpg';
+import homeHeroBg from '../assets/home-hero-bg.png';
 import { Link } from 'react-router-dom';
 
 const FEATURES = [
@@ -15,20 +15,16 @@ export default function HeroSection() {
     <section id="hero" className="relative w-full mt-[80px] bg-white overflow-hidden">
       {/* =========================================================================
           DESKTOP VIEW (lg: and above)
-          Uses aspect ratio matching the 1024x576 hero background with exact
-          percentage overlay so coded interactive elements sit precisely on top.
+          Uses aspect ratio matching the clean 1024x576 hero background (img1)
+          with contents placed exactly matching the reference mockup (img2).
       ========================================================================= */}
       <div className="hidden lg:block relative w-full max-w-[1536px] mx-auto aspect-[1024/576] overflow-hidden select-none">
-        {/* Background Image */}
+        {/* Background Image (Clean img1 with machinery and sun rays) */}
         <img 
           src={homeHeroBg} 
           alt="Promac Industrial Laundry Engineering" 
           className="w-full h-full object-contain object-center pointer-events-none" 
         />
-
-        {/* Soft Left Mask: seamlessly blends into the image background behind text,
-            eliminating duplicate text ghosting while keeping factory & machinery 100% visible */}
-        <div className="absolute inset-y-0 left-0 w-[50%] bg-gradient-to-r from-white via-white/95 to-transparent pointer-events-none z-10" />
 
         {/* Interactive Desktop Content Layer */}
         <div className="absolute inset-0 z-20 pointer-events-none">
@@ -87,10 +83,10 @@ export default function HeroSection() {
           </motion.div>
         </div>
 
-        {/* Bottom Feature Strip (Interactive Coded Grid) - covers baked bottom bar perfectly */}
-        <div className="absolute bottom-0 inset-x-0 w-full bg-white/95 backdrop-blur-md py-3.5 xl:py-4.5 border-t border-slate-100/90 z-20">
+        {/* Bottom Feature Strip - sits directly on clean warehouse floor with dividers like in img2 */}
+        <div className="absolute bottom-[4.2%] xl:bottom-[5%] inset-x-0 w-full z-20 pointer-events-auto">
           <div className="w-full px-6 xl:px-14">
-            <div className="grid grid-cols-4 gap-4 divide-x divide-slate-100">
+            <div className="grid grid-cols-4 gap-2 divide-x divide-slate-300/80">
               {FEATURES.map((feature, idx) => (
                 <motion.div 
                   key={idx} 
