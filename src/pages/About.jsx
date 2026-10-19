@@ -140,64 +140,64 @@ export default function About() {
 
           {/* Interactive Desktop Content Layer */}
           <div className="absolute inset-0 z-20 pointer-events-none">
-            {/* Eyebrow - sits at x=56, y=108 (5.47%, 21.26%) */}
+            {/* Eyebrow - positioned with bold presence */}
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              style={{ left: '5.47%', top: '21.26%' }}
+              style={{ left: '5.5%', top: '19%' }}
               className="absolute"
             >
-              <span className="text-[#CC141A] font-bold text-[clamp(9.5px,1vw,14px)] tracking-[0.24em] uppercase block">
+              <span className="text-[#CC141A] font-extrabold text-[clamp(11px,1.2vw,16px)] tracking-[0.25em] uppercase block">
                 ABOUT PROMAC TECHNOLOGIES
               </span>
             </motion.div>
 
-            {/* Red Accent Line - sits at x=55, y=132 (5.37%, 25.98%) */}
+            {/* Red Accent Line - sits above headline */}
             <motion.div 
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              style={{ left: '5.47%', top: '25.98%' }}
-              className="absolute w-[3.3%] h-[0.4%] min-h-[3px] bg-[#CC141A] origin-left rounded-full"
+              style={{ left: '5.5%', top: '24.5%' }}
+              className="absolute w-[4.2%] h-[0.5%] min-h-[4px] bg-[#CC141A] origin-left rounded-full"
             />
 
-            {/* H1 Heading - sits at x=55, y=154 (5.47%, 30.31%) */}
+            {/* H1 Heading - enlarged, bold, commanding */}
             <motion.h1 
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              style={{ left: '5.47%', top: '30.31%', maxWidth: '44%' }}
-              className="absolute font-black tracking-tight text-[#1A233A] leading-[1.08] text-[clamp(26px,3.3vw,50px)]"
+              style={{ left: '5.5%', top: '29%', maxWidth: '46%' }}
+              className="absolute font-black tracking-tight text-[#1A233A] leading-[1.04] text-[clamp(30px,4vw,62px)] drop-shadow-sm"
             >
               WE KNOW WHAT<br/>
               INDUSTRY NEEDS.
             </motion.h1>
 
-            {/* Paragraph - sits at x=54, y=265 (5.47%, 52.17%) */}
+            {/* Paragraph - larger, highly readable typography */}
             <motion.p 
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.45 }}
-              style={{ left: '5.47%', top: '52.17%', maxWidth: '38%' }}
-              className="absolute text-slate-600 font-medium text-[clamp(11px,1.2vw,16px)] leading-[1.45] text-justify"
+              style={{ left: '5.5%', top: '53%', maxWidth: '40%' }}
+              className="absolute text-slate-700 font-medium text-[clamp(12.5px,1.3vw,17.5px)] leading-[1.5] text-justify"
             >
               Industrial laundry and professional cleaning expertise, backed by international technology partnerships and technical support.
             </motion.p>
 
-            {/* Button - sits at x=54, y=357 (5.47%, 70.28%) */}
+            {/* Button - prominent CTA */}
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              style={{ left: '5.47%', top: '70.28%' }}
+              style={{ left: '5.5%', top: '70%' }}
               className="absolute pointer-events-auto"
             >
               <motion.button 
                 onClick={scrollToCompany}
                 whileHover={{ scale: 1.04, backgroundColor: '#A31015' }}
                 whileTap={{ scale: 0.97 }}
-                className="bg-[#CC141A] text-white px-[clamp(18px,1.8vw,28px)] py-[clamp(8px,0.9vw,13px)] text-[clamp(9.5px,0.95vw,12px)] font-bold tracking-[0.2em] uppercase transition-all duration-300 shadow-[0_6px_20px_rgba(204,20,26,0.35)] hover:shadow-[0_8px_25px_rgba(204,20,26,0.5)] rounded-sm cursor-pointer"
+                className="bg-[#CC141A] text-white px-[clamp(20px,2vw,32px)] py-[clamp(9px,1vw,15px)] text-[clamp(10px,1vw,13.5px)] font-bold tracking-[0.22em] uppercase transition-all duration-300 shadow-[0_6px_22px_rgba(204,20,26,0.38)] hover:shadow-[0_8px_28px_rgba(204,20,26,0.55)] rounded-sm cursor-pointer"
               >
                 OUR COMPANY
               </motion.button>
