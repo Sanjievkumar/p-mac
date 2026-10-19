@@ -33,8 +33,8 @@ export const OFFICIAL_CATEGORIES = [
     highlights: ['IM11 7" Touchscreen', '350 - 400 G Factor', 'EN 14065 / RABC Certified'],
     introLead: 'EVO.LINE: THE INDUSTRIAL WASHING MACHINES BY IMESA',
     introParas: [
-      'The wide range of washing machines IMESA is the answer to every specific washing need.',
-      'Efficiency, sturdiness and ease of use for high level washing results. The new EVO.LINE washing machines, completely renewed in design, present features that further enhance their performance.',
+      'The wide range of <strong>washing machines</strong> IMESA is the answer to every specific washing need.',
+      '<strong>Efficiency, sturdiness and ease of use</strong> for high level washing results.<br class="hidden sm:inline" />The new <strong>EVO.LINE</strong> washing machines, completely renewed in design, present features that further enhance their performance.',
       'Simplicity, Flexibility and Productivity are the characteristics that distinguish the IMESA product, designed for the complete satisfaction of the customer.'
     ],
     showcases: [
@@ -46,7 +46,7 @@ export const OFFICIAL_CATEGORIES = [
         primaryTarget: 'imesa-lm-series',
         paras: [
           'With the LM series, IMESA deploys technology and quality.',
-          'The IM11 computer touchscreen is an indispensable device that makes the washing machine perfect for every customer. A wash for every need.'
+          'The <strong>IM11 computer touchscreen</strong> is an indispensable device that makes the washing machine perfect for every customer.<br />A wash for every need.'
         ],
         seriesButtons: [
           { id: 'imesa-lm-8-11', label: 'LM 8-11 kg' },
@@ -64,7 +64,7 @@ export const OFFICIAL_CATEGORIES = [
         primaryTarget: 'imesa-d2w-barrier',
         paras: [
           'The IMESA D2W series of hygiene barrier washers fully satisfies the needs of hospitals, nursing and retirement homes, nurseries and schools, clinics and the pharmaceutical and food industries by guaranteeing maximum safety and zero contamination risk.',
-          'Pass-through dual door biological separation complying with EN 14065 (RABC) sanitary standards.'
+          'Pass-through dual door biological separation complying with <strong>EN 14065 (RABC)</strong> sanitary standards.'
         ],
         seriesButtons: [
           { id: 'imesa-d2w-barrier', label: 'D2W 18-23 kg' },
@@ -87,8 +87,9 @@ export const OFFICIAL_CATEGORIES = [
     highlights: ['Patented D-FLOW Airflow', 'Standard Reversing Drum', 'Capacities up to 75 kg'],
     introLead: 'THE DRYING REVOLUTION: ES SMART & PREMIUM',
     introParas: [
-      'Designed for industrial and community use, the IMESA ES tumble dryer series delivers outstanding performance, reliable productivity, and flawless drying every time.',
-      'ES Dryer Line: redefining the concept of drying and its importance in modern laundry operations with patented D-FLOW axial airflow.'
+      'The wide range of <strong>tumble dryers</strong> IMESA is designed to deliver top quality drying results while minimizing energy consumption.',
+      '<strong>Patented D-FLOW</strong> axial airflow ensures gentle linen treatment and uniform drying.<br class="hidden sm:inline" />The new <strong>EVO.LINE</strong> dryers, completely renewed in design, present features that further enhance their performance.',
+      'Simplicity, Flexibility and Productivity are the characteristics that distinguish the IMESA product, designed for the complete satisfaction of the customer.'
     ],
     showcases: [
       {
@@ -98,8 +99,8 @@ export const OFFICIAL_CATEGORIES = [
         machineImg: esSmartImg,
         primaryTarget: 'imesa-es-smart',
         paras: [
-          'Available in Smart and Premium versions, the ES tumble dryer line offers flexible configurations to meet every need with tailored, modular solutions.',
-          'ES Dryer Line: redefining the concept of drying and its importance in modern laundry operations.'
+          'With the ES series, IMESA deploys technology and quality.',
+          'The <strong>IM10 computer touchscreen</strong> allows endless drying solutions for effective and customized drying results.<br />A dry for every need.'
         ],
         seriesButtons: [
           { id: 'imesa-es-smart', label: 'ES Smart Line 11-36 kg' },
@@ -113,7 +114,8 @@ export const OFFICIAL_CATEGORIES = [
         machineImg: es5575Img,
         primaryTarget: 'imesa-es-premium',
         paras: [
-          'The large capacity 55 and 75 kg ES dryers are designed to meet the needs of industrial laundries and high productivity facilities that require high performance and full control of drying parameters.'
+          'The large capacity 55 and 75 kg ES dryers are designed to meet the needs of industrial laundries and high productivity facilities.',
+          'Full control of drying parameters with <strong>DSC (Dynamic Speed Control)</strong> and self-cleaning lint filters.'
         ],
         seriesButtons: [
           { id: 'imesa-es-premium', label: 'ES Premium Line 55-75 kg' }
@@ -135,8 +137,9 @@ export const OFFICIAL_CATEGORIES = [
     highlights: ['Torsion Bar Pressure', 'IM10 Touch Screen', 'Nomex Coating & Cool-Down'],
     introLead: 'TAILOR-MADE FLATWORK FINISHING BY IMESA',
     introParas: [
-      'The IMESA FI flatwork ironer serie comes in Easy LINE and Smart LINE versions: two different control units to meet customer’s needs at best.',
-      'Optimized machine overall dimensions, polished steel roller for anti-wrinkle ironing and easy introduction of linen. Safety is guaranteed by the manual lever release system, the emergency button and chest lifting pedal.'
+      'The wide range of <strong>flatwork ironers</strong> IMESA is the answer to every specific ironing need.',
+      '<strong>Efficiency, sturdiness and ease of use</strong> for high level ironing results.<br class="hidden sm:inline" />The new <strong>FI SERIES</strong> ironers, completely renewed in design, present features that further enhance their performance.',
+      'Simplicity, Flexibility and Productivity are the characteristics that distinguish the IMESA product, designed for the complete satisfaction of the customer.'
     ],
     showcases: [
       {
@@ -146,8 +149,8 @@ export const OFFICIAL_CATEGORIES = [
         machineImg: fiEasyImg,
         primaryTarget: 'imesa-fi-easy',
         paras: [
-          'The IMESA flatwork ironer Easy FI is equipped with analog control unit, digital thermostat for temperature adjustment, fixed ironing speed (or adjustable by inverter as optional) and fixed ironing pressure uniform all over the entire roller length by means of the special torsion bar.',
-          'The Easy FI flatwork ironer is equipped with Cotton roller cover (Nomex available on request), vacuum suction system, and IoT remote connection ready.'
+          'The IMESA flatwork ironer Easy FI is equipped with analog control unit and special torsion bar.',
+          'Uniform ironing pressure along the entire roller length. <strong>Cotton roller cover</strong> with optional Nomex, vacuum suction system, and IoT connection ready.'
         ],
         seriesButtons: [
           { id: 'imesa-fi-easy', label: 'Serie Easy FI' }
@@ -160,8 +163,8 @@ export const OFFICIAL_CATEGORIES = [
         machineImg: fiSmartImg,
         primaryTarget: 'imesa-fi-smart',
         paras: [
-          'The IMESA Smart FI flatwork ironer is equipped with digital control unit IM10 touch screen, allowing endless ironing solution for effective and customized ironing result.',
-          'Complete with frequency variator for electronic speed control according to temperature, Cool Down system and patented linear drive system for uniform ironing quality across the entire roller length.'
+          'The IMESA Smart FI flatwork ironer is equipped with digital control unit <strong>IM10 touch screen</strong>, allowing endless ironing solutions for effective and customized ironing results.',
+          'Complete with frequency variator for electronic speed control according to temperature, Cool Down system and <strong>patented linear drive system</strong> for uniform ironing quality across the entire roller length.'
         ],
         seriesButtons: [
           { id: 'imesa-fi-smart', label: 'Serie Smart FI' }
@@ -183,8 +186,9 @@ export const OFFICIAL_CATEGORIES = [
     highlights: ['Single Pass Dry & Iron', 'Output up to 140 kg/h', '82% Roller Contact Area'],
     introLead: 'SINGLE-PASS DRY & IRON PRODUCTIVITY',
     introParas: [
-      'The series of IMESA DRYING IRONER are designed to meet every ironing need. A unique machine with chrome steel roller that operates with maximum efficiency and low energy consumption ensuring high performance.',
-      'The ideal products to meet the needs of industrial hotels and laundries.'
+      'The series of <strong>drying ironers</strong> IMESA are designed to meet every ironing need.',
+      '<strong>Single-pass dry and iron</strong> capability without pre-drying saves significant space, time and energy.<br class="hidden sm:inline" />The new <strong>MCA and MCM SERIES</strong> present features that further enhance their performance.',
+      'Simplicity, Flexibility and Productivity are the characteristics that distinguish the IMESA product, designed for the complete satisfaction of the customer.'
     ],
     showcases: [
       {
@@ -195,7 +199,7 @@ export const OFFICIAL_CATEGORIES = [
         primaryTarget: 'imesa-mca-ironer',
         paras: [
           'IMESA MCA drying ironers dry and iron damp linen in a single operation, without having to pass through a dryer.',
-          'Front linen feed and return enables compact, space-saving installation against walls.'
+          'Front linen feed and return enables compact, <strong>space-saving installation against walls</strong>.'
         ],
         seriesButtons: [
           { id: 'imesa-mca-ironer', label: 'MCA 150-180-210' }
@@ -209,7 +213,7 @@ export const OFFICIAL_CATEGORIES = [
         primaryTarget: 'imesa-mcm-ironer',
         paras: [
           'IMESA MCM series drying ironers guarantee high performance and reliability.',
-          'Industrial roller with 82% contact surface, output up to 140 kg/h, and modular automated feeders and folders.'
+          'Industrial roller with <strong>82% contact surface</strong>, output up to 140 kg/h, and modular automated feeders and folders.'
         ],
         seriesButtons: [
           { id: 'imesa-mcm-ironer', label: 'MCM 2500 - 2800 - 3200' }
