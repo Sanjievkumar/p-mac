@@ -25,6 +25,10 @@ export default {
       letterSpacing: {
         'tightest': '-0.04em',
       },
+      spacing: {
+        '18': '4.5rem',
+        '22': '5.5rem',
+      },
     },
   },
   plugins: [],

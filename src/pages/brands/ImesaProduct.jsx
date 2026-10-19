@@ -178,7 +178,7 @@ export default function ImesaProduct() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             
             {/* Left Column: Generous Product Image Showcase + Interactive Gallery Thumbnails */}
-            <div className="lg:col-span-6 flex flex-col items-center w-full">
+            <div className="lg:col-span-6 min-w-0 flex flex-col items-center w-full">
               {/* Main Machine Container */}
               <div className="relative w-full bg-white rounded-3xl p-6 sm:p-8 lg:p-12 border border-slate-200/80 shadow-sm flex items-center justify-center min-h-[320px] sm:min-h-[460px] md:min-h-[540px] overflow-hidden group">
                 {/* Official IMESA Badge */}
@@ -206,14 +206,14 @@ export default function ImesaProduct() {
 
               {/* Gallery Thumbnails Strip */}
               {product.galleryImages && product.galleryImages.length > 0 && (
-                <div className="flex items-center gap-2.5 sm:gap-3.5 mt-5 sm:mt-6 overflow-x-auto w-full py-2 scrollbar-none">
+                <div className="flex items-center gap-2.5 sm:gap-3.5 mt-5 sm:mt-6 overflow-x-auto w-full py-2 scrollbar-none max-w-full">
                   <button 
                     onClick={() => setActiveImage(product.primaryImg)}
-                    className={`w-18 h-18 sm:w-22 sm:h-22 rounded-2xl border-2 p-1.5 bg-white overflow-hidden shrink-0 transition-all ${
+                    className={`w-16 h-16 sm:w-20 sm:h-20 min-w-[64px] min-h-[64px] sm:min-w-[80px] sm:min-h-[80px] rounded-xl sm:rounded-2xl border-2 p-1.5 bg-white overflow-hidden shrink-0 transition-all flex items-center justify-center ${
                       currentImg === product.primaryImg ? 'border-[#0d447b] shadow-md scale-105' : 'border-slate-200 opacity-70 hover:opacity-100 hover:border-slate-300'
                     }`}
                   >
-                    <img src={product.primaryImg} alt="Thumbnail Main" className="w-full h-full object-contain" referrerPolicy="no-referrer" />
+                    <img src={product.primaryImg} alt="Thumbnail Main" className="w-full h-full max-w-full max-h-full object-contain pointer-events-none" referrerPolicy="no-referrer" />
                   </button>
                   {product.galleryImages.map((imgUrl, idx) => {
                     const resolvedThumb = resolveAsset(imgUrl);
@@ -222,14 +222,14 @@ export default function ImesaProduct() {
                       <button 
                         key={idx}
                         onClick={() => setActiveImage(imgUrl)}
-                        className={`w-18 h-18 sm:w-22 sm:h-22 rounded-2xl border-2 p-1.5 bg-white overflow-hidden shrink-0 transition-all ${
+                        className={`w-16 h-16 sm:w-20 sm:h-20 min-w-[64px] min-h-[64px] sm:min-w-[80px] sm:min-h-[80px] rounded-xl sm:rounded-2xl border-2 p-1.5 bg-white overflow-hidden shrink-0 transition-all flex items-center justify-center ${
                           isSelected ? 'border-[#0d447b] shadow-md scale-105' : 'border-slate-200 opacity-70 hover:opacity-100 hover:border-slate-300'
                         }`}
                       >
                         <img 
                           src={resolvedThumb} 
                           alt={`Thumbnail ${idx + 1}`} 
-                          className="w-full h-full object-contain" 
+                          className="w-full h-full max-w-full max-h-full object-contain pointer-events-none" 
                           referrerPolicy="no-referrer"
                           onError={(e) => {
                             e.currentTarget.parentElement.style.display = 'none';
@@ -243,7 +243,7 @@ export default function ImesaProduct() {
             </div>
 
             {/* Right Column: Title, Short Description, Key Points, and Actions */}
-            <div className="lg:col-span-6 flex flex-col w-full">
+            <div className="lg:col-span-6 min-w-0 flex flex-col w-full">
               {/* Category Eyebrow - enlarged */}
               <div className="text-sm sm:text-base font-extrabold text-[#0d447b] uppercase tracking-[0.2em] mb-2 sm:mb-3">
                 {product.subCategory}

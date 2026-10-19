@@ -151,24 +151,24 @@ export default function ImesaCategory({ categoryId }) {
                 >
                   
                   {/* Machine Front-Facing Photography floating on clean background */}
-                  <div className={`lg:col-span-6 flex items-center justify-center order-1 ${
+                  <div className={`lg:col-span-6 min-w-0 flex items-center justify-center order-1 ${
                     isReversed ? 'lg:order-2 lg:pl-6 xl:pl-10' : 'lg:order-1 lg:pr-6 xl:pr-10'
                   }`}>
                     <Link 
                       to={`/brands/imesa/${showcase.primaryTarget}`}
-                      className="group block w-full text-center"
+                      className="group block w-full max-w-full text-center"
                       title="Click to view full specifications"
                     >
                       <img 
                         src={showcase.machineImg} 
                         alt={showcase.title}
-                        className="max-h-[400px] sm:max-h-[460px] lg:max-h-[520px] xl:max-h-[560px] w-auto mx-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]" 
+                        className="max-w-full w-auto max-h-[380px] sm:max-h-[440px] lg:max-h-[500px] xl:max-h-[540px] mx-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]" 
                       />
                     </Link>
                   </div>
 
                   {/* Title, Subtitle, Text, Boxed Capacity Buttons */}
-                  <div className={`lg:col-span-6 flex flex-col justify-center order-2 ${
+                  <div className={`lg:col-span-6 min-w-0 flex flex-col justify-center order-2 ${
                     isReversed ? 'lg:order-1 lg:pr-6 xl:pr-10' : 'lg:order-2 lg:pl-6 xl:pl-10'
                   }`}>
                     
