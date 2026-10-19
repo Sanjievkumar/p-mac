@@ -120,50 +120,50 @@ export default function Imesa() {
       </section>
 
       {/* ── 3. IMESA, Designing Your Clean ── */}
-      <section className="py-16 sm:py-24 bg-slate-50 border-t border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 text-center">
+      <section className="py-18 sm:py-24 lg:py-28 bg-slate-50 border-t border-slate-200">
+        <div className="max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 text-center">
           <div className="flex flex-col items-center mb-12 sm:mb-16">
-            <div className="w-12 h-[2px] bg-[#0d447b] mb-4" />
+            <div className="w-16 h-[3px] bg-[#0d447b] mb-4" />
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d447b] uppercase tracking-tight">IMESA, Designing Your Clean</h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            <div className="bg-white p-6 sm:p-8 rounded-3xl border border-slate-100 shadow-sm flex flex-col items-center text-center">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#0d447b]/10 flex items-center justify-center mb-5 sm:mb-6 text-[#0d447b]">
-                <Droplets className="w-7 h-7 sm:w-8 sm:h-8" />
+            <div className="bg-white p-7 sm:p-9 rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-lg transition-all flex flex-col items-center text-center">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-[#0d447b]/10 flex items-center justify-center mb-5 sm:mb-6 text-[#0d447b]">
+                <Droplets className="w-8 h-8 sm:w-10 sm:h-10" />
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-[#0d447b] mb-2 sm:mb-3">Washing</h3>
-              <p className="text-slate-500 leading-relaxed text-sm">
+              <h3 className="text-xl sm:text-2xl font-bold text-[#0d447b] mb-3">Washing</h3>
+              <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
                 High spin freestanding washers and aseptic hygiene barrier machines engineered with IM11 touchscreens and conscious water recovery.
               </p>
             </div>
 
-            <div className="bg-white p-6 sm:p-8 rounded-3xl border border-slate-100 shadow-sm flex flex-col items-center text-center">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#0d447b]/10 flex items-center justify-center mb-5 sm:mb-6 text-[#0d447b]">
-                <Wind className="w-7 h-7 sm:w-8 sm:h-8" />
+            <div className="bg-white p-7 sm:p-9 rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-lg transition-all flex flex-col items-center text-center">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-[#0d447b]/10 flex items-center justify-center mb-5 sm:mb-6 text-[#0d447b]">
+                <Wind className="w-8 h-8 sm:w-10 sm:h-10" />
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-[#0d447b] mb-2 sm:mb-3">Drying</h3>
-              <p className="text-slate-500 leading-relaxed text-sm">
+              <h3 className="text-xl sm:text-2xl font-bold text-[#0d447b] mb-3">Drying</h3>
+              <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
                 ES Smart and Premium dryers powered by patented D-FLOW axial airflow for rapid, uniform moisture extraction and fabric protection.
               </p>
             </div>
 
-            <div className="bg-white p-6 sm:p-8 rounded-3xl border border-slate-100 shadow-sm flex flex-col items-center text-center">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#0d447b]/10 flex items-center justify-center mb-5 sm:mb-6 text-[#0d447b]">
-                <Layers className="w-7 h-7 sm:w-8 sm:h-8" />
+            <div className="bg-white p-7 sm:p-9 rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-lg transition-all flex flex-col items-center text-center">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-[#0d447b]/10 flex items-center justify-center mb-5 sm:mb-6 text-[#0d447b]">
+                <Layers className="w-8 h-8 sm:w-10 sm:h-10" />
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-[#0d447b] mb-2 sm:mb-3">Ironing</h3>
-              <p className="text-slate-500 leading-relaxed text-sm">
+              <h3 className="text-xl sm:text-2xl font-bold text-[#0d447b] mb-3">Ironing</h3>
+              <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
                 FI flatwork chest ironers and MCA/MCM drying ironers delivering flawless flatwork finish in single-pass operations.
               </p>
             </div>
 
-            <div className="bg-white p-6 sm:p-8 rounded-3xl border border-slate-100 shadow-sm flex flex-col items-center text-center">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#0d447b]/10 flex items-center justify-center mb-5 sm:mb-6 text-[#0d447b]">
-                <Cpu className="w-7 h-7 sm:w-8 sm:h-8" />
+            <div className="bg-white p-7 sm:p-9 rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-lg transition-all flex flex-col items-center text-center">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-[#0d447b]/10 flex items-center justify-center mb-5 sm:mb-6 text-[#0d447b]">
+                <Cpu className="w-8 h-8 sm:w-10 sm:h-10" />
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-[#0d447b] mb-2 sm:mb-3">Connected Space</h3>
-              <p className="text-slate-500 leading-relaxed text-sm">
+              <h3 className="text-xl sm:text-2xl font-bold text-[#0d447b] mb-3">Connected Space</h3>
+              <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
                 Complete Industry 4.0 ecosystem with IMConnect telemetry, Laundry for You manager app, Tap.Tech NFC, and online payment integration.
               </p>
             </div>
@@ -172,21 +172,21 @@ export default function Imesa() {
       </section>
 
       {/* ── 4. The IMESA Connection Space (IoT Showcase) ── */}
-      <section className="py-16 sm:py-24 bg-white border-t border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16">
-          <div className="flex flex-col items-center mb-12 sm:mb-20 text-center">
-            <div className="w-12 h-[2px] bg-[#0d447b] mb-4" />
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d447b] uppercase tracking-tight mb-3 sm:mb-4">
+      <section className="py-18 sm:py-24 lg:py-28 bg-white border-t border-slate-200">
+        <div className="max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
+          <div className="flex flex-col items-center mb-14 sm:mb-20 text-center">
+            <div className="w-16 h-[3px] bg-[#0d447b] mb-4" />
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d447b] uppercase tracking-tight mb-4">
               The IMESA Connection Space
             </h2>
-            <p className="text-slate-500 text-base sm:text-lg max-w-2xl">
+            <p className="text-slate-600 text-base sm:text-lg md:text-xl max-w-3xl leading-relaxed">
               An ecosystem of digital platforms and services created to manage machines, track operations, and simplify daily laundry workflows.
             </p>
           </div>
 
-          <div className="space-y-16 sm:space-y-24">
+          <div className="space-y-20 sm:space-y-28">
             {/* 1. Benefits At Your Fingertips */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 items-center">
               <div className="order-2 lg:order-1 relative">
                 <img 
                   src={imConnectImg} 
@@ -195,18 +195,18 @@ export default function Imesa() {
                 />
               </div>
               <div className="order-1 lg:order-2">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#0d447b]/10 rounded-2xl flex items-center justify-center mb-4 sm:mb-6">
-                  <span className="text-[#0d447b] font-black text-lg sm:text-xl">1</span>
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#0d447b]/10 rounded-2xl flex items-center justify-center mb-5 sm:mb-6">
+                  <span className="text-[#0d447b] font-black text-xl sm:text-2xl">1</span>
                 </div>
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0d447b] mb-4 sm:mb-6">Benefits At Your Fingertips</h3>
-                <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[42px] font-black text-[#0d447b] mb-5 sm:mb-6 leading-tight">Benefits At Your Fingertips</h3>
+                <p className="text-base sm:text-lg md:text-xl text-slate-700 leading-relaxed">
                   With <strong className="text-[#0d447b]">IMConnect</strong>, there is room for remote management of the laundry for real-time control of production, acquisition of valuable data, predictive maintenance and organizational agility.
                 </p>
               </div>
             </div>
 
             {/* 2. The Laundry is Ever Smarter and More Social */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 items-center">
               <div className="order-2 lg:order-2 relative">
                 <img 
                   src={smartLaundryImg} 
@@ -215,18 +215,18 @@ export default function Imesa() {
                 />
               </div>
               <div className="order-1 lg:order-1">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#0d447b]/10 rounded-2xl flex items-center justify-center mb-4 sm:mb-6">
-                  <span className="text-[#0d447b] font-black text-lg sm:text-xl">2</span>
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#0d447b]/10 rounded-2xl flex items-center justify-center mb-5 sm:mb-6">
+                  <span className="text-[#0d447b] font-black text-xl sm:text-2xl">2</span>
                 </div>
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0d447b] mb-4 sm:mb-6">The Laundry is Ever Smarter and More Social</h3>
-                <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[42px] font-black text-[#0d447b] mb-5 sm:mb-6 leading-tight">The Laundry is Ever Smarter and More Social</h3>
+                <p className="text-base sm:text-lg md:text-xl text-slate-700 leading-relaxed">
                   Laundry For You is the <strong className="text-[#0d447b]">IMESA</strong> app dedicated to the dealer and laundry manager that allows you to monitor and optimize your machine fleet and provides a space dedicated to the publication of personalized news and promotions.
                 </p>
               </div>
             </div>
             
             {/* 3. TAP.TECH Label */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 items-center">
               <div className="order-2 lg:order-1 relative">
                 <img 
                   src={tapTechImg} 
@@ -235,18 +235,18 @@ export default function Imesa() {
                 />
               </div>
               <div className="order-1 lg:order-2">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#0d447b]/10 rounded-2xl flex items-center justify-center mb-4 sm:mb-6">
-                  <span className="text-[#0d447b] font-black text-lg sm:text-xl">3</span>
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#0d447b]/10 rounded-2xl flex items-center justify-center mb-5 sm:mb-6">
+                  <span className="text-[#0d447b] font-black text-xl sm:text-2xl">3</span>
                 </div>
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0d447b] mb-4 sm:mb-6">TAP.TECH Label</h3>
-                <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[42px] font-black text-[#0d447b] mb-5 sm:mb-6 leading-tight">TAP.TECH Label</h3>
+                <p className="text-base sm:text-lg md:text-xl text-slate-700 leading-relaxed">
                   <strong className="text-[#0d447b]">Tap.Tech. Label</strong>, with built-in NFC technology, communicates with the Laundry for You app to access the washing machine's identification data. Available on all washing machines up to 32 kg.
                 </p>
               </div>
             </div>
 
             {/* 4. The Self-service Laundry App */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 items-center">
               <div className="order-2 lg:order-2 relative">
                 <img 
                   src={selfServiceImg} 
@@ -255,11 +255,11 @@ export default function Imesa() {
                 />
               </div>
               <div className="order-1 lg:order-1">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#0d447b]/10 rounded-2xl flex items-center justify-center mb-4 sm:mb-6">
-                  <span className="text-[#0d447b] font-black text-lg sm:text-xl">4</span>
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#0d447b]/10 rounded-2xl flex items-center justify-center mb-5 sm:mb-6">
+                  <span className="text-[#0d447b] font-black text-xl sm:text-2xl">4</span>
                 </div>
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0d447b] mb-4 sm:mb-6">The Self-service Laundry App</h3>
-                <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[42px] font-black text-[#0d447b] mb-5 sm:mb-6 leading-tight">The Self-service Laundry App</h3>
+                <p className="text-base sm:text-lg md:text-xl text-slate-700 leading-relaxed">
                   Laundry for you PAY is the <strong className="text-[#0d447b]">IMESA</strong> app dedicated to the end customer of the self-service laundry that allows you to book and pay for the service online.
                 </p>
               </div>
@@ -270,7 +270,7 @@ export default function Imesa() {
       </section>
 
       {/* ── 5. Product Category Boxes (Clicking a box navigates to that category's dedicated official build page) ── */}
-      <section className="py-16 sm:py-24 bg-[#F8F9FA] relative border-t border-slate-200" id="products">
+      <section className="py-18 sm:py-24 lg:py-28 bg-[#F8F9FA] relative border-t border-slate-200" id="products">
         {/* Animated Grid Background */}
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.08] animate-grid"
@@ -281,19 +281,19 @@ export default function Imesa() {
           aria-hidden="true"
         />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 relative z-10">
-          <div className="flex flex-col items-center mb-12 sm:mb-16 text-center">
-            <div className="w-12 h-[2px] bg-[#0d447b] mb-4" />
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d447b] tracking-tight uppercase mb-3">
+        <div className="max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10">
+          <div className="flex flex-col items-center mb-14 sm:mb-18 text-center">
+            <div className="w-16 h-[3px] bg-[#0d447b] mb-4" />
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d447b] tracking-tight uppercase mb-4">
               PRODUCT CATEGORIES
             </h2>
-            <p className="text-slate-500 max-w-2xl text-sm sm:text-base md:text-lg">
+            <p className="text-slate-600 max-w-3xl text-base sm:text-lg md:text-xl leading-relaxed">
               Select a category box below to explore official series models, specifications, and technical documentation.
             </p>
           </div>
 
           {/* 4 Interactive Category Boxes (2x2 Grid) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 max-w-6xl mx-auto">
             {OFFICIAL_CATEGORIES.map((cat, idx) => (
               <motion.div
                 key={cat.id}
@@ -308,47 +308,47 @@ export default function Imesa() {
                   className="group flex flex-col h-full bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-2xl hover:border-[#0d447b]/40 transition-all duration-300 overflow-hidden cursor-pointer"
                 >
                   {/* Card Header Bar */}
-                  <div className="px-6 sm:px-8 pt-6 sm:pt-7 pb-3 flex items-center justify-between bg-white border-b border-slate-100">
-                    <span className="inline-flex items-center gap-1.5 bg-[#0d447b] text-white text-[10px] sm:text-[11px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
+                  <div className="px-7 sm:px-9 pt-7 sm:pt-8 pb-4 flex items-center justify-between bg-white border-b border-slate-100">
+                    <span className="inline-flex items-center gap-2 bg-[#0d447b] text-white text-xs sm:text-sm font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
                       {cat.capacityBadge}
                     </span>
-                    <span className="text-[11px] sm:text-xs font-bold text-slate-400 uppercase tracking-widest flex items-center gap-1.5">
+                    <span className="text-xs sm:text-sm font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2">
                       {cat.badgeIcon && (
-                        <img src={cat.badgeIcon} alt="" className="w-3.5 h-3.5 sm:w-4 sm:h-4 object-contain" />
+                        <img src={cat.badgeIcon} alt="" className="w-4 h-4 sm:w-5 sm:h-5 object-contain" />
                       )}
                       IMESA SpA
                     </span>
                   </div>
 
                   {/* Machine Photography Preview */}
-                  <div className="px-6 sm:px-8 py-6 sm:py-8 flex items-center justify-center bg-gradient-to-b from-slate-50/50 to-white min-h-[220px] sm:min-h-[280px] md:min-h-[320px] relative overflow-hidden border-b border-slate-100">
+                  <div className="px-7 sm:px-9 py-8 sm:py-10 flex items-center justify-center bg-gradient-to-b from-slate-50/50 to-white min-h-[240px] sm:min-h-[300px] md:min-h-[340px] relative overflow-hidden border-b border-slate-100">
                     <img
                       src={cat.cardImg}
                       alt={cat.name}
-                      className="w-full h-48 sm:h-56 md:h-64 object-contain drop-shadow-md group-hover:scale-105 transition-transform duration-500 will-change-transform"
+                      className="w-full h-52 sm:h-64 md:h-72 object-contain drop-shadow-md group-hover:scale-105 transition-transform duration-500 will-change-transform"
                     />
                   </div>
 
                   {/* Card Content */}
-                  <div className="p-6 sm:p-8 flex flex-col gap-3 flex-1 bg-white">
-                    <div className="text-[#0d447b] text-xs font-bold uppercase tracking-widest">
+                  <div className="p-7 sm:p-9 flex flex-col gap-3.5 flex-1 bg-white">
+                    <div className="text-[#0d447b] text-xs sm:text-sm font-bold uppercase tracking-widest">
                       {cat.subtitle}
                     </div>
 
-                    <h3 className="text-xl sm:text-2xl font-black text-[#0d447b] transition-colors uppercase tracking-tight">
+                    <h3 className="text-2xl sm:text-3xl font-black text-[#0d447b] transition-colors uppercase tracking-tight">
                       {cat.name}
                     </h3>
 
-                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed flex-1">
+                    <p className="text-slate-600 text-sm sm:text-base leading-relaxed flex-1">
                       {cat.cardDesc}
                     </p>
 
                     {/* Highlights tags */}
-                    <div className="flex flex-wrap gap-1.5 sm:gap-2 pt-2">
+                    <div className="flex flex-wrap gap-2 pt-2">
                       {cat.highlights.map((h, i) => (
                         <span
                           key={i}
-                          className="bg-slate-100 group-hover:bg-[#0d447b]/10 text-slate-700 group-hover:text-[#0d447b] text-[11px] sm:text-xs font-semibold px-2.5 py-1 rounded-md transition-colors"
+                          className="bg-slate-100 group-hover:bg-[#0d447b]/10 text-slate-700 group-hover:text-[#0d447b] text-xs sm:text-sm font-semibold px-3 py-1.5 rounded-lg transition-colors"
                         >
                           {h}
                         </span>
@@ -356,9 +356,9 @@ export default function Imesa() {
                     </div>
 
                     {/* Action Bar */}
-                    <div className="flex items-center justify-between text-[#0d447b] font-bold text-xs sm:text-sm mt-4 pt-4 border-t border-slate-100 group-hover:text-[#093560] transition-colors tracking-wide">
+                    <div className="flex items-center justify-between text-[#0d447b] font-bold text-sm sm:text-base mt-5 pt-5 border-t border-slate-100 group-hover:text-[#093560] transition-colors tracking-wide">
                       <span>Explore {cat.name}</span>
-                      <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-2 transition-transform duration-300" />
+                      <ChevronRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
                     </div>
                   </div>
                 </Link>

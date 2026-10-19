@@ -90,27 +90,27 @@ export default function ImesaCategory({ categoryId }) {
         <div className="max-w-[1536px] mx-auto grid grid-cols-1 lg:grid-cols-12 items-stretch">
           
           {/* Left Column: Icon mark, H1, Thin line, Official Paragraphs */}
-          <div className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center px-6 sm:px-10 lg:pl-12 xl:pl-20 lg:pr-10 py-10 sm:py-14 lg:py-16">
+          <div className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center px-6 sm:px-10 lg:pl-12 xl:pl-20 lg:pr-10 py-12 sm:py-16 lg:py-20">
             
             {/* Official Icon mark with built-in capacity */}
             {currentCategory.badgeIcon && (
               <img 
                 src={currentCategory.badgeIcon} 
                 alt={currentCategory.name} 
-                className="w-14 h-14 sm:w-16 sm:h-16 object-contain mb-5 sm:mb-6" 
+                className="w-16 h-16 sm:w-20 sm:h-20 object-contain mb-6 sm:mb-8" 
               />
             )}
 
             {/* Official Category H1 Title - enlarged and bold in #0d447b */}
-            <h1 className="text-3xl sm:text-4xl lg:text-[42px] xl:text-[46px] font-bold text-[#0d447b] tracking-normal uppercase leading-[1.12] mb-4">
+            <h1 className="text-3xl sm:text-4xl lg:text-[46px] xl:text-[52px] font-extrabold text-[#0d447b] tracking-tight uppercase leading-[1.12] mb-5">
               {currentCategory.h1}
             </h1>
 
             {/* Official IMESA Underline Accent */}
-            <div className="w-12 h-[3px] bg-[#9BB7D0] mb-6 sm:mb-8" />
+            <div className="w-16 h-[3px] bg-[#9BB7D0] mb-7 sm:mb-9" />
 
-            {/* Category Intro Paragraphs in #0d447b */}
-            <div className="space-y-4 text-[#0d447b] text-[15px] sm:text-[16px] leading-[1.7]">
+            {/* Category Intro Paragraphs in #0d447b - enlarged */}
+            <div className="space-y-4 sm:space-y-5 text-[#0d447b] text-base sm:text-lg lg:text-[19px] leading-[1.8]">
               {currentCategory.introParas.map((para, idx) => (
                 <p key={idx} dangerouslySetInnerHTML={{ __html: para }} />
               ))}
@@ -120,7 +120,7 @@ export default function ImesaCategory({ categoryId }) {
 
           {/* Right Column: Full-bleed Category Hero Photography (Operator with machine drum) */}
           <div className="lg:col-span-6 xl:col-span-6 flex items-stretch">
-            <div className="w-full h-full min-h-[340px] sm:min-h-[440px] lg:min-h-[500px]">
+            <div className="w-full h-full min-h-[360px] sm:min-h-[460px] lg:min-h-[520px]">
               <img 
                 src={currentCategory.heroImg} 
                 alt={currentCategory.h1} 
@@ -136,17 +136,17 @@ export default function ImesaCategory({ categoryId }) {
       </section>
 
       {/* ── 4. Official IMESA Machine Series Section (Exact 1:1 clone of official site img2) ── */}
-      <section className="w-full bg-[#FFFFFF] py-16 sm:py-20 lg:py-24">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
+      <section className="w-full bg-[#FFFFFF] py-18 sm:py-24 lg:py-28">
+        <div className="max-w-[1536px] mx-auto px-6 sm:px-10 lg:px-16">
           
-          <div className="space-y-20 sm:space-y-28">
+          <div className="space-y-24 sm:space-y-32">
             {currentCategory.showcases.map((showcase, index) => {
               const isReversed = index % 2 === 1;
               return (
                 <div 
                   key={showcase.id}
                   className={`grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center ${
-                    index > 0 ? 'pt-20 sm:pt-28 border-t border-slate-200/80' : ''
+                    index > 0 ? 'pt-24 sm:pt-32 border-t border-slate-200/80' : ''
                   }`}
                 >
                   
@@ -162,7 +162,7 @@ export default function ImesaCategory({ categoryId }) {
                       <img 
                         src={showcase.machineImg} 
                         alt={showcase.title}
-                        className="max-h-[380px] sm:max-h-[440px] lg:max-h-[480px] xl:max-h-[520px] w-auto mx-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]" 
+                        className="max-h-[400px] sm:max-h-[460px] lg:max-h-[520px] xl:max-h-[560px] w-auto mx-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]" 
                       />
                     </Link>
                   </div>
@@ -172,18 +172,18 @@ export default function ImesaCategory({ categoryId }) {
                     isReversed ? 'lg:order-1 lg:pr-6 xl:pr-10' : 'lg:order-2 lg:pl-6 xl:pl-10'
                   }`}>
                     
-                    {/* Machine Showcase Title (uppercase #0d447b) */}
-                    <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-bold text-[#0d447b] tracking-[0.02em] uppercase leading-tight mb-2">
+                    {/* Machine Showcase Title (uppercase #0d447b) - enlarged */}
+                    <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[40px] font-bold text-[#0d447b] tracking-[0.02em] uppercase leading-tight mb-2.5">
                       {showcase.title}
                     </h2>
 
-                    {/* Machine Series Subtitle */}
-                    <h3 className="text-sm sm:text-base lg:text-[16px] font-bold text-[#0d447b] tracking-[0.14em] uppercase mb-6 sm:mb-8">
+                    {/* Machine Series Subtitle - enlarged and prominent */}
+                    <h3 className="text-base sm:text-lg lg:text-xl font-bold text-[#0d447b] tracking-[0.14em] uppercase mb-6 sm:mb-8">
                       {showcase.subtitle}
                     </h3>
 
                     {/* Description Paragraphs - comfortable reading in #0d447b */}
-                    <div className="space-y-4 text-[#0d447b] text-[15px] sm:text-[16px] leading-[1.75] mb-8 max-w-2xl font-normal">
+                    <div className="space-y-4 sm:space-y-4.5 text-[#0d447b] text-base sm:text-[17px] lg:text-lg leading-[1.8] mb-8 sm:mb-10 max-w-2xl font-normal">
                       {showcase.paras.map((para, idx) => (
                         <p key={idx} dangerouslySetInnerHTML={{ __html: para }} />
                       ))}
@@ -195,7 +195,7 @@ export default function ImesaCategory({ categoryId }) {
                         <Link
                           key={btn.id}
                           to={`/brands/imesa/${btn.id}`}
-                          className="border border-[#0d447b] text-[#0d447b] bg-white hover:bg-[#0d447b] hover:text-white transition-colors duration-150 px-6 sm:px-7 py-2.5 sm:py-3 text-sm sm:text-[15px] font-medium tracking-wide rounded-none inline-block text-center shadow-none cursor-pointer"
+                          className="border border-[#0d447b] text-[#0d447b] bg-white hover:bg-[#0d447b] hover:text-white transition-colors duration-150 px-7 sm:px-8 py-3 sm:py-3.5 text-[15px] sm:text-base font-semibold tracking-wide rounded-none inline-block text-center shadow-none cursor-pointer"
                         >
                           {btn.label}
                         </Link>
@@ -213,44 +213,44 @@ export default function ImesaCategory({ categoryId }) {
       </section>
 
       {/* ── 5. Cross-Category Exploration Cards ── */}
-      <section className="w-full bg-[#f8f9fa] border-t border-slate-200/80 py-14 sm:py-18">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-8">
+      <section className="w-full bg-[#f8f9fa] border-t border-slate-200/80 py-16 sm:py-20 lg:py-24">
+        <div className="max-w-[1536px] mx-auto px-6 sm:px-10 lg:px-16">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
             <div>
-              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#0d447b] uppercase tracking-tight">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0d447b] uppercase tracking-tight">
                 Explore Other IMESA Categories
               </h3>
-              <p className="text-slate-500 text-xs sm:text-sm mt-0.5">
+              <p className="text-slate-600 text-sm sm:text-base md:text-lg mt-1">
                 Browse complementary laundry systems manufactured by IMESA in Italy.
               </p>
             </div>
 
             <Link 
               to="/brands/imesa" 
-              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#0d447b] hover:text-[#083256] uppercase tracking-wider transition-colors"
+              className="inline-flex items-center gap-2 text-sm sm:text-base font-bold text-[#0d447b] hover:text-[#083256] uppercase tracking-wider transition-colors shrink-0"
             >
-              All IMESA Products <ChevronRight className="w-4 h-4" />
+              All IMESA Products <ChevronRight className="w-5 h-5" />
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {otherCategories.map((cat) => (
               <Link
                 key={cat.id}
                 to={`/brands/imesa/${cat.id}`}
-                className="group bg-white p-5 sm:p-6 border border-slate-200 hover:border-[#0d447b] transition-all duration-200 flex flex-col justify-between"
+                className="group bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 hover:border-[#0d447b] hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-[10px] font-bold text-[#0d447b] bg-[#f0f4f8] px-2.5 py-1 uppercase tracking-wider">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-xs font-bold text-[#0d447b] bg-[#f0f4f8] px-3 py-1.5 rounded-full uppercase tracking-wider">
                       {cat.capacityBadge}
                     </span>
                     {cat.badgeIcon && (
-                      <img src={cat.badgeIcon} alt="" className="w-4 h-4 object-contain opacity-70" />
+                      <img src={cat.badgeIcon} alt="" className="w-5 h-5 object-contain opacity-80" />
                     )}
                   </div>
 
-                  <div className="h-32 sm:h-36 flex items-center justify-center p-2 mb-4 bg-slate-50/50 overflow-hidden">
+                  <div className="h-40 sm:h-44 flex items-center justify-center p-3 mb-5 bg-slate-50/60 rounded-xl overflow-hidden">
                     <img 
                       src={cat.cardImg} 
                       alt={cat.name} 
@@ -258,16 +258,16 @@ export default function ImesaCategory({ categoryId }) {
                     />
                   </div>
 
-                  <h4 className="font-bold text-[#0d447b] text-base uppercase mb-1 transition-colors">
+                  <h4 className="font-bold text-[#0d447b] text-lg sm:text-xl uppercase mb-2 transition-colors">
                     {cat.name}
                   </h4>
-                  <p className="text-slate-500 text-xs leading-relaxed">
+                  <p className="text-slate-600 text-sm sm:text-[15px] leading-relaxed">
                     {cat.cardDesc}
                   </p>
                 </div>
 
-                <div className="flex items-center gap-1.5 text-xs font-bold text-[#0d447b] mt-4 pt-3 border-t border-slate-100 group-hover:translate-x-1 transition-transform">
-                  View Category <ChevronRight className="w-3.5 h-3.5" />
+                <div className="flex items-center gap-2 text-sm font-bold text-[#0d447b] mt-5 pt-4 border-t border-slate-100 group-hover:translate-x-1.5 transition-transform">
+                  View Category <ChevronRight className="w-4 h-4" />
                 </div>
               </Link>
             ))}
@@ -276,25 +276,25 @@ export default function ImesaCategory({ categoryId }) {
       </section>
 
       {/* ── 6. Technical Consultation Banner ── */}
-      <section className="w-full bg-[#0d447b] py-14 sm:py-18 text-white">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 text-center md:text-left">
-          <div className="max-w-2xl">
-            <span className="text-cyan-200 text-xs font-bold tracking-widest uppercase mb-2 block">
+      <section className="w-full bg-[#0d447b] py-16 sm:py-20 lg:py-24 text-white">
+        <div className="max-w-[1536px] mx-auto px-6 sm:px-10 lg:px-16 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+          <div className="max-w-3xl">
+            <span className="text-cyan-200 text-xs sm:text-sm font-extrabold tracking-widest uppercase mb-2.5 block">
               Engineering & Project Consultation
             </span>
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight mb-2">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tight mb-3">
               Need Guidance Selecting the Right IMESA Capacity?
             </h3>
-            <p className="text-white/85 text-xs sm:text-sm md:text-base leading-relaxed">
+            <p className="text-white/90 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
               Our laundry engineers help calculate hourly linen throughput, utility consumption, and floorplan configuration for hospital, hotel, and industrial installations.
             </p>
           </div>
 
           <Link
             to="/contact"
-            className="px-6 sm:px-8 py-3.5 rounded-none bg-white text-[#0d447b] hover:bg-slate-100 font-bold text-xs sm:text-sm tracking-wider uppercase transition-colors shrink-0 inline-flex items-center gap-2"
+            className="px-8 sm:px-10 py-4 sm:py-4.5 rounded-none bg-white text-[#0d447b] hover:bg-slate-100 font-bold text-sm sm:text-base tracking-wider uppercase transition-colors shrink-0 inline-flex items-center gap-2.5 shadow-lg"
           >
-            <Mail className="w-4 h-4" /> Request Technical Quotation
+            <Mail className="w-5 h-5" /> Request Technical Quotation
           </Link>
         </div>
       </section>
