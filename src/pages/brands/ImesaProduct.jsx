@@ -255,9 +255,40 @@ export default function ImesaProduct() {
               </h1>
 
               {/* Series Model Label - enlarged */}
-              <div className="inline-block text-slate-600 font-bold text-base sm:text-lg mb-6 sm:mb-8">
+              <div className="inline-block text-slate-600 font-bold text-base sm:text-lg mb-4 sm:mb-5">
                 {product.seriesName}
               </div>
+
+              {/* Available Model Configurations Chips */}
+              {product.modelsList && product.modelsList.length > 0 && (
+                <div className="mb-6 sm:mb-8 p-4 sm:p-5 rounded-2xl bg-[#f8fafc] border border-slate-200/90 shadow-2xs">
+                  <div className="flex items-center justify-between gap-2 mb-2.5 flex-wrap">
+                    <span className="text-xs font-black text-[#0d447b] uppercase tracking-wider">
+                      Available Models in Series:
+                    </span>
+                    <span className="text-[11px] text-slate-500 font-medium">
+                      Click model to view specifications
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {product.modelsList.map((m, idx) => (
+                      <button
+                        key={idx}
+                        type="button"
+                        onClick={() => {
+                          const el = document.getElementById('technical-tabs');
+                          if (el) el.scrollIntoView({ behavior: 'smooth' });
+                          setActiveTab('specs');
+                        }}
+                        className="px-3.5 py-1.5 bg-white hover:bg-[#0d447b] text-[#0d447b] hover:text-white text-xs sm:text-sm font-bold rounded-lg border border-slate-200 hover:border-[#0d447b] transition-all shadow-2xs cursor-pointer"
+                        title={`View ${m} technical specifications`}
+                      >
+                        {m}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               {/* Official Short Description Bullet Paragraphs - enlarged */}
               <div className="space-y-4 mb-8 sm:mb-10 text-slate-700 text-base sm:text-lg leading-relaxed border-l-3 border-[#0d447b]/50 pl-5 sm:pl-6">
