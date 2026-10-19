@@ -554,13 +554,16 @@ const RAW_IMESA_PRODUCTS = {
     categorySlug: "flatwork-ironers",
     seriesName: "FI Series • Roller Length 1000 – 2000 mm • Ø 250 – 330 mm",
     badge: "Chromed Chest / Torsion Bar",
-    title: "Flatwork Ironer Easy Line (Easy FI)",
+    title: "Flatwork Ironer Easy Line FI 100/25 – 120/25 – 150/25 – 160/33 – 180/33 – 200/33",
+    titleFormatted: "Flatwork Ironer Easy Line FI 100/25 – 120/25 –<br class='hidden sm:inline' /> 150/25 – 160/33 – 180/33 – 200/33",
     modelsList: ["FI 100/25", "FI 120/25", "FI 150/25", "FI 160/33", "FI 180/33", "FI 200/33"],
     primaryImg: fiEasyImg,
     seriesSiblings: FI_SIBLINGS,
     galleryImages: ["fi2022_02.380-1.png", "fi2022_02.441.png", "fi2022_02.440.png", "fi2022_02.439.png", "fi2022_02.442.png"],
     shortDesc: [
-      "The IMESA Easy FI flatwork ironer series is unique: dedicated to customers who look for a simple but high-performance flatwork ironer. The IMESA Easy FI flatwork ironer series is equipped with analog control system, digital thermostat for temperature regulation, fixed ironing speed (adjustable with inverter on request) and fixed ironing pressure. It is the ideal solution for ironing in restaurants, small hotels and agritourisms."
+      "The IMESA <em>Easy FI</em> <span class=\"text-[#009ee2] font-medium\">flatwork ironer series</span> is unique: dedicated to customers wholook for a simple but high-performance flatwork ironer.",
+      "The IMESA <em>Easy FI</em> <span class=\"text-[#009ee2] font-medium\">flatwork ironer series</span> is equipped with analog control system, digital thermostat for temperature regulation, fixed ironing speed (adjustable with inverter on request) and fixed ironing pressure.",
+      "It is the ideal solution for ironing in restaurants, <span class=\"text-[#009ee2] font-medium\">small hotels</span> and agritourisms."
     ],
     iconBoxes: [
       { title: "Analog control unit, adjustable ironing parameters, digital thermostat for temperature control.", iconUrl: "Icone_IM7Easy.png" },
@@ -614,13 +617,16 @@ const RAW_IMESA_PRODUCTS = {
     categorySlug: "flatwork-ironers",
     seriesName: "FI Series • Roller Length 1000 – 2000 mm • Ø 250 – 330 mm",
     badge: "Patented Torsion Bar",
-    title: "Flatwork Ironer Smart Line (Smart FI)",
+    title: "Flatwork Ironer Smart Line FI 100/25 – 120/25 – 150/25 – 160/33 – 180/33 – 200/33",
+    titleFormatted: "Flatwork Ironer Smart Line FI 100/25 – 120/25 –<br class='hidden sm:inline' /> 150/25 – 160/33 – 180/33 – 200/33",
     modelsList: ["FI 100/25", "FI 120/25", "FI 150/25", "FI 160/33", "FI 180/33", "FI 200/33"],
     primaryImg: fiSmartImg,
     seriesSiblings: FI_SIBLINGS,
     galleryImages: ["fi2022_03.369.png", "fi2022_03.367.png", "fi2022_03.368.png", "fi2022_03.371.png", "fi2022_03.370.png"],
     shortDesc: [
-      "The IMESA Smart FI flatwork ironer series is unique: top performance and maximum productivity. The IMESA Smart FI flatwork ironer series is equipped with the most modern devices to make the work in the laundry efficient, simple and safe. It is the ideal ironing solution for restaurants, small hotels and agritourisms."
+      "The IMESA <em>Smart FI</em> <span class=\"text-[#009ee2] font-medium\">flatwork ironer series</span> is unique: top performance and maximum productivity.",
+      "The IMESA <em>Smart FI</em> <span class=\"text-[#009ee2] font-medium\">flatwork ironer series</span> is equipped with the most modern devices to make the work in the laundry efficient, simple and safe.",
+      "It is the ideal ironing solution for restaurants, <span class=\"text-[#009ee2] font-medium\">small hotels</span> and agritourisms."
     ],
     iconBoxes: [
       { title: "IM10 computer touch screen for easy programming and monitoring of ironing cycles.", iconUrl: "Icone-touch-screen.png" },

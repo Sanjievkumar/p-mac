@@ -5,7 +5,7 @@ import {
   ArrowLeft, ChevronRight, CheckCircle2, ShieldCheck, 
   FileText, Download, Mail, ExternalLink, Sparkles,
   Info, Cpu, Layers, Wind, Droplets, ArrowRight,
-  Maximize2, Tablet, Wifi, RotateCw, Flame, Thermometer
+  Maximize2, Tablet, Wifi, RotateCw, Flame, Thermometer, Search
 } from 'lucide-react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
@@ -172,59 +172,28 @@ export default function ImesaProduct() {
         </div>
       )}
 
-      {/* ── 2. Hero / Product Presentation Section (Exact 2-Column IMESA Layout) ── */}
-      <section className="w-full py-10 sm:py-14 lg:py-20 bg-white border-b border-slate-100">
-        <div className="max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+      {/* ── 2. Hero / Product Presentation Section (Exact 1:1 Official IMESA Layout) ── */}
+      <section className="w-full py-8 sm:py-12 lg:py-14 bg-white border-b border-slate-100">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-14 items-start">
             
-            {/* Left Column: Generous Product Image Showcase + Interactive Gallery Thumbnails */}
-            <div className="lg:col-span-6 min-w-0 flex flex-col items-center w-full">
-              {/* Main Machine Container */}
-              <div className="relative w-full bg-white rounded-3xl p-6 sm:p-8 lg:p-12 border border-slate-200/80 shadow-sm flex items-center justify-center min-h-[320px] sm:min-h-[460px] md:min-h-[540px] overflow-hidden group">
-                {/* Official IMESA Badge */}
-                <div className="absolute top-5 left-5 z-10 flex items-center gap-2">
-                  <span className="bg-[#0d447b] text-white text-xs sm:text-sm font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
-                    {product.badge}
-                  </span>
-                </div>
-
-                {/* Main Machine Image */}
-                <motion.img 
-                  key={currentImg}
-                  initial={{ opacity: 0.8, scale: 0.98 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4 }}
-                  src={currentImg} 
-                  alt={product.title}
-                  referrerPolicy="no-referrer"
-                  onError={(e) => {
-                    e.currentTarget.src = product.primaryImg;
-                  }}
-                  className="w-full h-auto max-h-[340px] sm:max-h-[460px] md:max-h-[520px] object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-
-              {/* Gallery Thumbnails Strip */}
+            {/* Left Column: Vertical Thumbnails Strip + Floating Machine Image */}
+            <div className="lg:col-span-5 xl:col-span-5 min-w-0 flex flex-col sm:flex-row gap-4 sm:gap-6 items-start w-full">
+              
+              {/* Vertical Gallery Thumbnails Strip (matching official IMESA site) */}
               {product.galleryImages && product.galleryImages.length > 0 && (
-                <div className="flex items-center gap-2.5 sm:gap-3.5 mt-5 sm:mt-6 overflow-x-auto w-full py-2 scrollbar-none max-w-full">
-                  <button 
-                    onClick={() => setActiveImage(product.primaryImg)}
-                    className={`w-16 h-16 sm:w-20 sm:h-20 min-w-[64px] min-h-[64px] sm:min-w-[80px] sm:min-h-[80px] rounded-xl sm:rounded-2xl border-2 p-1.5 bg-white overflow-hidden shrink-0 transition-all flex items-center justify-center ${
-                      currentImg === product.primaryImg ? 'border-[#0d447b] shadow-md scale-105' : 'border-slate-200 opacity-70 hover:opacity-100 hover:border-slate-300'
-                    }`}
-                  >
-                    <img src={product.primaryImg} alt="Thumbnail Main" className="w-full h-full max-w-full max-h-full object-contain pointer-events-none" referrerPolicy="no-referrer" />
-                  </button>
+                <div className="flex sm:flex-col gap-2.5 overflow-x-auto sm:overflow-y-auto sm:max-h-[500px] w-full sm:w-auto shrink-0 scrollbar-none order-2 sm:order-1 py-1">
                   {product.galleryImages.map((imgUrl, idx) => {
                     const resolvedThumb = resolveAsset(imgUrl);
-                    const isSelected = activeImage === imgUrl || (!activeImage && product.primaryImg === resolvedThumb);
+                    const isSelected = activeImage ? activeImage === imgUrl : (currentImg === resolvedThumb || idx === 0);
                     return (
                       <button 
                         key={idx}
                         onClick={() => setActiveImage(imgUrl)}
-                        className={`w-16 h-16 sm:w-20 sm:h-20 min-w-[64px] min-h-[64px] sm:min-w-[80px] sm:min-h-[80px] rounded-xl sm:rounded-2xl border-2 p-1.5 bg-white overflow-hidden shrink-0 transition-all flex items-center justify-center ${
-                          isSelected ? 'border-[#0d447b] shadow-md scale-105' : 'border-slate-200 opacity-70 hover:opacity-100 hover:border-slate-300'
+                        className={`w-16 h-12 sm:w-[72px] sm:h-[54px] rounded border p-1 bg-white transition-all shrink-0 flex items-center justify-center cursor-pointer ${
+                          isSelected ? 'border-[#0d447b] ring-1.5 ring-[#0d447b] shadow-xs' : 'border-slate-200 hover:border-slate-400'
                         }`}
+                        title={`View image ${idx + 1}`}
                       >
                         <img 
                           src={resolvedThumb} 
@@ -240,70 +209,56 @@ export default function ImesaProduct() {
                   })}
                 </div>
               )}
+
+              {/* Main Machine Image floating cleanly on white background */}
+              <div className="flex-1 w-full flex items-center justify-center relative min-h-[300px] sm:min-h-[380px] lg:min-h-[440px] order-1 sm:order-2 group">
+                <motion.img 
+                  key={currentImg}
+                  initial={{ opacity: 0.85 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.25 }}
+                  src={currentImg} 
+                  alt={product.title}
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    e.currentTarget.src = product.primaryImg;
+                  }}
+                  className="w-auto max-w-full max-h-[340px] sm:max-h-[420px] lg:max-h-[480px] object-contain drop-shadow-sm mx-auto"
+                />
+
+                {/* Subtle zoom icon matching official IMESA product image */}
+                <button 
+                  onClick={() => window.open(currentImg, '_blank')}
+                  className="absolute top-2 right-2 p-2 rounded-full text-slate-400 hover:text-[#0d447b] hover:bg-slate-50 transition-all cursor-pointer opacity-80 hover:opacity-100"
+                  title="Enlarge image"
+                >
+                  <Search className="w-5 h-5 stroke-[1.75]" />
+                </button>
+              </div>
+
             </div>
 
-            {/* Right Column: Title, Short Description, Key Points, and Actions */}
-            <div className="lg:col-span-6 min-w-0 flex flex-col w-full">
-              {/* Category Eyebrow - enlarged */}
-              <div className="text-sm sm:text-base font-extrabold text-[#0d447b] uppercase tracking-[0.2em] mb-2 sm:mb-3">
-                {product.subCategory}
-              </div>
+            {/* Right Column: Title, Description, and Actions */}
+            <div className="lg:col-span-7 xl:col-span-7 min-w-0 flex flex-col justify-start w-full">
+              
+              {/* Official Product Title in #0d447b - matching font size & width from official site */}
+              <h1 
+                className="text-xl sm:text-[22px] lg:text-[23px] xl:text-[24px] font-bold text-[#0d447b] leading-[1.35] tracking-tight mb-5 sm:mb-6"
+                dangerouslySetInnerHTML={{ __html: product.titleFormatted || product.title }}
+              />
 
-              {/* Official Product Title in #0d447b - enlarged */}
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-[52px] font-black text-[#0d447b] leading-tight mb-3 sm:mb-4 tracking-tight">
-                {product.title}
-              </h1>
-
-              {/* Series Model Label - enlarged */}
-              <div className="inline-block text-slate-600 font-bold text-base sm:text-lg mb-4 sm:mb-5">
-                {product.seriesName}
-              </div>
-
-              {/* Available Model Configurations Chips */}
-              {product.modelsList && product.modelsList.length > 0 && (
-                <div className="mb-6 sm:mb-8 p-4 sm:p-5 rounded-2xl bg-[#f8fafc] border border-slate-200/90 shadow-2xs">
-                  <div className="flex items-center justify-between gap-2 mb-2.5 flex-wrap">
-                    <span className="text-xs font-black text-[#0d447b] uppercase tracking-wider">
-                      Available Models in Series:
-                    </span>
-                    <span className="text-[11px] text-slate-500 font-medium">
-                      Click model to view specifications
-                    </span>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {product.modelsList.map((m, idx) => (
-                      <button
-                        key={idx}
-                        type="button"
-                        onClick={() => {
-                          const el = document.getElementById('technical-tabs');
-                          if (el) el.scrollIntoView({ behavior: 'smooth' });
-                          setActiveTab('specs');
-                        }}
-                        className="px-3.5 py-1.5 bg-white hover:bg-[#0d447b] text-[#0d447b] hover:text-white text-xs sm:text-sm font-bold rounded-lg border border-slate-200 hover:border-[#0d447b] transition-all shadow-2xs cursor-pointer"
-                        title={`View ${m} technical specifications`}
-                      >
-                        {m}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Official Short Description Bullet Paragraphs - enlarged */}
-              <div className="space-y-4 mb-8 sm:mb-10 text-slate-700 text-base sm:text-lg leading-relaxed border-l-3 border-[#0d447b]/50 pl-5 sm:pl-6">
+              {/* Description Paragraphs in #0d447b with authentic highlights */}
+              <div className="space-y-4 mb-7 sm:mb-8 text-[#0d447b] text-[15px] sm:text-[15.5px] lg:text-[16px] leading-[1.75] font-normal">
                 {product.shortDesc && product.shortDesc.map((para, idx) => (
-                  <p key={idx} className="leading-relaxed">
-                    {para}
-                  </p>
+                  <p key={idx} dangerouslySetInnerHTML={{ __html: para }} />
                 ))}
               </div>
 
-              {/* Action Buttons (Request Info / View Technical Specs) - enlarged */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 pt-5 border-t border-slate-100">
+              {/* Action Buttons (Request Info / View Technical Specs) */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-5 border-t border-slate-100">
                 <button 
                   onClick={() => setShowInquiryModal(true)}
-                  className="bg-[#0d447b] hover:bg-[#093560] text-white py-3.5 sm:py-4 px-7 sm:px-9 rounded-xl font-bold text-sm sm:text-base tracking-wide shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2.5"
+                  className="bg-[#0d447b] hover:bg-[#093560] text-white py-3.5 px-7 rounded-xl font-bold text-sm tracking-wide shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2.5 cursor-pointer"
                 >
                   <Mail className="w-5 h-5" />
                   REQUEST INFORMATION
@@ -314,20 +269,21 @@ export default function ImesaProduct() {
                     if (el) el.scrollIntoView({ behavior: 'smooth' });
                     setActiveTab('specs');
                   }}
-                  className="bg-white hover:bg-slate-50 text-[#0d447b] border border-slate-300 hover:border-[#0d447b] py-3.5 sm:py-4 px-6 sm:px-8 rounded-xl font-bold text-sm sm:text-base tracking-wide transition-all flex items-center justify-center gap-2.5"
+                  className="bg-white hover:bg-slate-50 text-[#0d447b] border border-slate-300 hover:border-[#0d447b] py-3.5 px-6 rounded-xl font-bold text-sm tracking-wide transition-all flex items-center justify-center gap-2.5 cursor-pointer"
                 >
                   <FileText className="w-5 h-5" />
                   TECHNICAL SPECIFICATIONS
                 </button>
               </div>
 
-              {/* Direct Category Link - enlarged */}
-              <div className="mt-8 pt-5 border-t border-slate-100 flex items-center justify-between text-xs sm:text-sm text-slate-500">
+              {/* Direct Category Link */}
+              <div className="mt-7 pt-4 border-t border-slate-100 flex items-center justify-between text-xs sm:text-sm text-slate-500">
                 <span className="font-medium">Official IMESA Factory Warranty</span>
                 <Link to={`/brands/imesa/${product.categorySlug || 'washing-machines'}`} className="text-[#0d447b] hover:underline font-bold flex items-center gap-1.5 text-sm">
                   Back to {product.category} <ChevronRight className="w-4 h-4" />
                 </Link>
               </div>
+
             </div>
 
           </div>
