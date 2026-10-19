@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Globe2, Settings, ShieldCheck, Users } from 'lucide-react';
-import homeHeroBg from '../assets/home-hero-bg.png';
+import homeHeroBg from '../assets/home-hero-bg.jpg';
 import { Link } from 'react-router-dom';
 
 const FEATURES = [
@@ -15,11 +15,11 @@ export default function HeroSection() {
     <section id="hero" className="relative w-full mt-[80px] bg-white overflow-hidden">
       {/* =========================================================================
           DESKTOP VIEW (lg: and above)
-          Uses aspect ratio matching the 1024x576 hero background (img1)
+          Uses aspect ratio matching the 1600x900 hero background (16:9)
           with contents placed with strong, commanding hierarchy and proper spacing.
       ========================================================================= */}
-      <div className="hidden lg:block relative w-full max-w-[1536px] mx-auto aspect-[1024/576] overflow-hidden select-none">
-        {/* Background Image (Clean img1 with machinery) */}
+      <div className="hidden lg:block relative w-full max-w-[1536px] mx-auto aspect-[16/9] overflow-hidden select-none">
+        {/* Background Image (Clean machinery in ultra-sharp 1600x900) */}
         <img 
           src={homeHeroBg} 
           alt="Promac Industrial Laundry Engineering" 
@@ -33,16 +33,16 @@ export default function HeroSection() {
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            style={{ left: '5.5%', top: '15%' }}
+            style={{ left: '5.5%', top: '11%' }}
             className="absolute w-[4%] h-[0.5%] min-h-[4px] bg-[#CC141A] origin-left rounded-full"
           />
 
-          {/* H1 Heading - enlarged, bold, commanding */}
+          {/* H1 Heading - shifted up, enlarged, bold, commanding */}
           <motion.h1 
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            style={{ left: '5.5%', top: '20%', maxWidth: '46%' }}
+            style={{ left: '5.5%', top: '15.5%', maxWidth: '46%' }}
             className="absolute font-black tracking-tight text-[#1A233A] leading-[1.04] text-[clamp(28px,3.6vw,58px)] drop-shadow-sm"
           >
             ENGINEERED FOR<br/>
@@ -51,23 +51,23 @@ export default function HeroSection() {
             FUTURE.
           </motion.h1>
 
-          {/* Paragraph - larger, highly readable typography */}
+          {/* Paragraph - shifted up, larger, highly readable typography */}
           <motion.p 
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.35 }}
-            style={{ left: '5.5%', top: '55%', maxWidth: '38%' }}
+            style={{ left: '5.5%', top: '47%', maxWidth: '38%' }}
             className="absolute text-slate-700 font-medium text-[clamp(12px,1.25vw,17px)] leading-[1.5] text-justify"
           >
             Complete laundry solutions engineered for efficiency, reliability and scale — from individual machines to fully integrated industrial laundry systems.
           </motion.p>
 
-          {/* Button - enlarged, prominent CTA */}
+          {/* Button - shifted up, enlarged, prominent CTA */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            style={{ left: '5.5%', top: '71.5%' }}
+            style={{ left: '5.5%', top: '62%' }}
             className="absolute pointer-events-auto"
           >
             <Link to="/brands">

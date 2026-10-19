@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import TurnkeyProcess from '../components/TurnkeyProcess';
 import MissionSection from '../components/MissionSection';
-import aboutHeroBg from '../assets/about-hero-bg.png';
+import aboutHeroBg from '../assets/about-hero-bg.jpg';
 
 /* ============================================================================
    Letter-by-letter stagger helper
@@ -125,12 +125,12 @@ export default function About() {
 
       {/* ============================================================================
           SECTION 1 — HERO
-          Uses clean background image (img1: about-hero-bg.png) with contents
-          placed exactly matching the reference mockup (img2).
+          Uses clean background image (about-hero-bg.jpg) with contents
+          placed with strong hierarchy and generous breathing room.
       ============================================================================ */}
       <section id="about-hero" className="relative w-full mt-[80px] bg-white overflow-hidden">
-        {/* DESKTOP VIEW (lg: and above) - aspect ratio matching clean 1024x508 (2048x1016) canvas */}
-        <div className="hidden lg:block relative w-full max-w-[1536px] mx-auto aspect-[1024/508] overflow-hidden select-none">
+        {/* DESKTOP VIEW (lg: and above) - aspect ratio matching clean 1600x901 (16:9) canvas */}
+        <div className="hidden lg:block relative w-full max-w-[1536px] mx-auto aspect-[16/9] overflow-hidden select-none">
           {/* Background Image (Clean Ultra-HD with factory facility) */}
           <img 
             src={aboutHeroBg} 
@@ -140,12 +140,12 @@ export default function About() {
 
           {/* Interactive Desktop Content Layer */}
           <div className="absolute inset-0 z-20 pointer-events-none">
-            {/* Eyebrow - positioned with bold presence */}
+            {/* Eyebrow - shifted up with bold presence */}
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              style={{ left: '5.5%', top: '19%' }}
+              style={{ left: '5.5%', top: '13%' }}
               className="absolute"
             >
               <span className="text-[#CC141A] font-extrabold text-[clamp(11px,1.2vw,16px)] tracking-[0.25em] uppercase block">
@@ -158,39 +158,39 @@ export default function About() {
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              style={{ left: '5.5%', top: '24.5%' }}
+              style={{ left: '5.5%', top: '18%' }}
               className="absolute w-[4.2%] h-[0.5%] min-h-[4px] bg-[#CC141A] origin-left rounded-full"
             />
 
-            {/* H1 Heading - enlarged, bold, commanding */}
+            {/* H1 Heading - shifted up, enlarged, bold, commanding */}
             <motion.h1 
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              style={{ left: '5.5%', top: '29%', maxWidth: '46%' }}
+              style={{ left: '5.5%', top: '22.5%', maxWidth: '46%' }}
               className="absolute font-black tracking-tight text-[#1A233A] leading-[1.04] text-[clamp(30px,4vw,62px)] drop-shadow-sm"
             >
               WE KNOW WHAT<br/>
               INDUSTRY NEEDS.
             </motion.h1>
 
-            {/* Paragraph - larger, highly readable typography */}
+            {/* Paragraph - shifted up, larger, highly readable typography */}
             <motion.p 
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.45 }}
-              style={{ left: '5.5%', top: '53%', maxWidth: '40%' }}
+              style={{ left: '5.5%', top: '44%', maxWidth: '40%' }}
               className="absolute text-slate-700 font-medium text-[clamp(12.5px,1.3vw,17.5px)] leading-[1.5] text-justify"
             >
               Industrial laundry and professional cleaning expertise, backed by international technology partnerships and technical support.
             </motion.p>
 
-            {/* Button - prominent CTA */}
+            {/* Button - shifted up, prominent CTA */}
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              style={{ left: '5.5%', top: '70%' }}
+              style={{ left: '5.5%', top: '58%' }}
               className="absolute pointer-events-auto"
             >
               <motion.button 
