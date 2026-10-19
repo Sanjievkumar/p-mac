@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import TurnkeyProcess from '../components/TurnkeyProcess';
 import MissionSection from '../components/MissionSection';
-import aboutHeroBg from '../assets/about-hero-bg.jpg';
+import aboutHeroBg from '../assets/about-hero-bg.png';
 
 /* ============================================================================
    Letter-by-letter stagger helper
@@ -125,31 +125,27 @@ export default function About() {
 
       {/* ============================================================================
           SECTION 1 — HERO
-          Uses cropped about-hero-bg.jpg (with website header cleanly removed at 100% quality)
-          Overlays coded text and button directly on top for desktop, with high-contrast mobile view.
+          Uses clean background image (img1: about-hero-bg.png) with contents
+          placed exactly matching the reference mockup (img2).
       ============================================================================ */}
       <section id="about-hero" className="relative w-full mt-[80px] bg-white overflow-hidden">
-        {/* DESKTOP VIEW (lg: and above) - aspect ratio matching 1024x508 canvas */}
-        <div className="hidden lg:block relative w-full max-w-[1536px] mx-auto aspect-[1024/508] overflow-hidden select-none">
-          {/* Background Image */}
+        {/* DESKTOP VIEW (lg: and above) - aspect ratio matching clean 1024x576 canvas */}
+        <div className="hidden lg:block relative w-full max-w-[1536px] mx-auto aspect-[1024/576] overflow-hidden select-none">
+          {/* Background Image (Clean img1 with sun rays and factory facility) */}
           <img 
             src={aboutHeroBg} 
             alt="Promac Technologies Industrial Laundry Facility" 
             className="w-full h-full object-contain object-center pointer-events-none" 
           />
 
-          {/* Soft Left Mask: blends seamlessly into image background behind text,
-              preventing any double-text ghosting while keeping factory & operators fully visible */}
-          <div className="absolute inset-y-0 left-0 w-[50%] bg-gradient-to-r from-white via-white/95 to-transparent pointer-events-none z-10" />
-
           {/* Interactive Desktop Content Layer */}
           <div className="absolute inset-0 z-20 pointer-events-none">
-            {/* Eyebrow - sits at x=56, y=108 (5.47%, 21.26%) */}
+            {/* Eyebrow - sits at x=55, y=176 (5.37%, 30.55%) */}
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              style={{ left: '5.47%', top: '21.26%' }}
+              style={{ left: '5.37%', top: '30.55%' }}
               className="absolute"
             >
               <span className="text-[#CC141A] font-bold text-[clamp(9.5px,1vw,14px)] tracking-[0.24em] uppercase block">
@@ -157,44 +153,44 @@ export default function About() {
               </span>
             </motion.div>
 
-            {/* Red Accent Line - sits at x=55, y=132 (5.37%, 25.98%) */}
+            {/* Red Accent Line - sits at x=55, y=200 (5.37%, 34.72%) */}
             <motion.div 
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              style={{ left: '5.47%', top: '25.98%' }}
-              className="absolute w-[3.2%] h-[0.4%] min-h-[3px] bg-[#CC141A] origin-left rounded-full"
+              style={{ left: '5.37%', top: '34.72%' }}
+              className="absolute w-[3.3%] h-[0.4%] min-h-[3px] bg-[#CC141A] origin-left rounded-full"
             />
 
-            {/* H1 Heading - sits at x=55, y=154 (5.47%, 30.31%) */}
+            {/* H1 Heading - sits at x=53, y=221 (5.17%, 38.37%) */}
             <motion.h1 
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              style={{ left: '5.47%', top: '30.31%', maxWidth: '44%' }}
+              style={{ left: '5.37%', top: '38.37%', maxWidth: '44%' }}
               className="absolute font-black tracking-tight text-[#1A233A] leading-[1.08] text-[clamp(26px,3.3vw,50px)]"
             >
               WE KNOW WHAT<br/>
               INDUSTRY NEEDS.
             </motion.h1>
 
-            {/* Paragraph - sits at x=54, y=265 (5.47%, 52.17%) */}
+            {/* Paragraph - sits at x=54, y=333 (5.27%, 57.8%) */}
             <motion.p 
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.45 }}
-              style={{ left: '5.47%', top: '52.17%', maxWidth: '38%' }}
+              style={{ left: '5.37%', top: '57.8%', maxWidth: '38%' }}
               className="absolute text-slate-600 font-medium text-[clamp(11px,1.2vw,16px)] leading-[1.45] text-justify"
             >
               Industrial laundry and professional cleaning expertise, backed by international technology partnerships and technical support.
             </motion.p>
 
-            {/* Button - sits at x=54, y=357 (5.47%, 70.28%) */}
+            {/* Button - sits at x=54, y=425 (5.27%, 73.78%) */}
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              style={{ left: '5.47%', top: '70.28%' }}
+              style={{ left: '5.37%', top: '73.78%' }}
               className="absolute pointer-events-auto"
             >
               <motion.button 
