@@ -23,7 +23,7 @@ function getFeatureIcon(title = '') {
 }
 
 // Official IMESA Products Database (Extracted directly from imesa.it)
-import { IMESA_OFFICIAL_PRODUCTS } from './imesaProductData';
+import { IMESA_OFFICIAL_PRODUCTS, resolveAsset } from './imesaProductData';
 
 // Slug & Route Aliases for 100% backward compatibility
 const SLUG_ALIASES = {
@@ -97,7 +97,7 @@ export default function ImesaProduct() {
   const product = IMESA_OFFICIAL_PRODUCTS[resolvedKey] || IMESA_OFFICIAL_PRODUCTS["imesa-lm-series"];
 
   // Displayed image (selected thumbnail or primary fallback)
-  const currentImg = activeImage || product.primaryImg;
+  const currentImg = activeImage ? resolveAsset(activeImage) : product.primaryImg;
 
   // Contact form submission handler
   const handleInquirySubmit = (e) => {
@@ -215,25 +215,29 @@ export default function ImesaProduct() {
                   >
                     <img src={product.primaryImg} alt="Thumbnail Main" className="w-full h-full object-contain" referrerPolicy="no-referrer" />
                   </button>
-                  {product.galleryImages.map((imgUrl, idx) => (
-                    <button 
-                      key={idx}
-                      onClick={() => setActiveImage(imgUrl)}
-                      className={`w-16 h-16 sm:w-20 sm:h-20 rounded-xl border-2 p-1 bg-white overflow-hidden shrink-0 transition-all ${
-                        currentImg === imgUrl ? 'border-[#0d447b] shadow-md scale-105' : 'border-slate-200 opacity-70 hover:opacity-100 hover:border-slate-300'
-                      }`}
-                    >
-                      <img 
-                        src={imgUrl} 
-                        alt={`Thumbnail ${idx + 1}`} 
-                        className="w-full h-full object-contain" 
-                        referrerPolicy="no-referrer"
-                        onError={(e) => {
-                          e.currentTarget.parentElement.style.display = 'none';
-                        }}
-                      />
-                    </button>
-                  ))}
+                  {product.galleryImages.map((imgUrl, idx) => {
+                    const resolvedThumb = resolveAsset(imgUrl);
+                    const isSelected = activeImage === imgUrl || (!activeImage && product.primaryImg === resolvedThumb);
+                    return (
+                      <button 
+                        key={idx}
+                        onClick={() => setActiveImage(imgUrl)}
+                        className={`w-16 h-16 sm:w-20 sm:h-20 rounded-xl border-2 p-1 bg-white overflow-hidden shrink-0 transition-all ${
+                          isSelected ? 'border-[#0d447b] shadow-md scale-105' : 'border-slate-200 opacity-70 hover:opacity-100 hover:border-slate-300'
+                        }`}
+                      >
+                        <img 
+                          src={resolvedThumb} 
+                          alt={`Thumbnail ${idx + 1}`} 
+                          className="w-full h-full object-contain" 
+                          referrerPolicy="no-referrer"
+                          onError={(e) => {
+                            e.currentTarget.parentElement.style.display = 'none';
+                          }}
+                        />
+                      </button>
+                    );
+                  })}
                 </div>
               )}
             </div>
@@ -314,37 +318,40 @@ export default function ImesaProduct() {
 
             {/* Responsive Grid matching imesa.it layout */}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3.5 sm:gap-6">
-              {product.iconBoxes.map((box, idx) => (
-                <div 
-                  key={idx}
-                  className="bg-white rounded-2xl p-4 sm:p-6 border border-slate-200/70 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center justify-between group"
-                >
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-[#0d447b]/5 flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform relative">
-                    {box.iconUrl ? (
-                      <img 
-                        src={box.iconUrl} 
-                        alt={box.title} 
-                        referrerPolicy="no-referrer"
-                        className="w-8 h-8 sm:w-10 sm:h-10 object-contain drop-shadow-sm" 
-                        onError={(e) => {
-                          e.currentTarget.style.display = 'none';
-                          const fallback = e.currentTarget.parentElement.querySelector('.icon-fallback');
-                          if (fallback) fallback.style.display = 'flex';
-                        }}
-                      />
-                    ) : null}
-                    <div 
-                      className="icon-fallback items-center justify-center" 
-                      style={{ display: box.iconUrl ? 'none' : 'flex' }}
-                    >
-                      {getFeatureIcon(box.title)}
+              {product.iconBoxes.map((box, idx) => {
+                const resolvedIcon = resolveAsset(box.iconUrl);
+                return (
+                  <div 
+                    key={idx}
+                    className="bg-white rounded-2xl p-4 sm:p-6 border border-slate-200/70 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center justify-between group"
+                  >
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-[#0d447b]/5 flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform relative">
+                      {resolvedIcon ? (
+                        <img 
+                          src={resolvedIcon} 
+                          alt={box.title} 
+                          referrerPolicy="no-referrer"
+                          className="w-8 h-8 sm:w-10 sm:h-10 object-contain drop-shadow-sm" 
+                          onError={(e) => {
+                            e.currentTarget.style.display = 'none';
+                            const fallback = e.currentTarget.parentElement.querySelector('.icon-fallback');
+                            if (fallback) fallback.style.display = 'flex';
+                          }}
+                        />
+                      ) : null}
+                      <div 
+                        className="icon-fallback items-center justify-center" 
+                        style={{ display: resolvedIcon ? 'none' : 'flex' }}
+                      >
+                        {getFeatureIcon(box.title)}
+                      </div>
                     </div>
+                    <h3 className="text-[11px] sm:text-xs md:text-sm font-semibold text-[#0d447b] leading-snug flex-1 flex items-center">
+                      {box.title}
+                    </h3>
                   </div>
-                  <h3 className="text-[11px] sm:text-xs md:text-sm font-semibold text-[#0d447b] leading-snug flex-1 flex items-center">
-                    {box.title}
-                  </h3>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
