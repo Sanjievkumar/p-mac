@@ -114,7 +114,7 @@ export default function ImesaProduct() {
       <Navbar />
 
       {/* ── 1. Official IMESA Breadcrumbs Bar with Standard Back Button ── */}
-      <nav aria-label="Breadcrumb" className="w-full bg-[#f8f9fa] border-b border-slate-200/80 pt-20 sm:pt-24 pb-3 sm:pb-4 px-4 sm:px-6 lg:px-16 text-xs sm:text-sm text-slate-500 font-medium">
+      <nav aria-label="Breadcrumb" className="w-full bg-[#f8f9fa] border-b border-slate-200/80 pt-20 sm:pt-24 pb-3 sm:pb-4 px-4 sm:px-6 lg:px-16 text-[14px] sm:text-[15px] lg:text-[16px] leading-[29px] tracking-[0.34px] text-[#767676] font-normal font-inter">
         <div className="max-w-7xl mx-auto flex items-center justify-between flex-wrap gap-3 sm:gap-4">
           <div className="flex items-center flex-wrap gap-1.5 sm:gap-2">
             <Link to="/" className="hover:text-[#0d447b] transition-colors">Home</Link>
@@ -123,13 +123,13 @@ export default function ImesaProduct() {
             <span className="text-slate-300">/</span>
             <Link to="/brands/imesa" className="hover:text-[#0d447b] transition-colors">IMESA</Link>
             <span className="text-slate-300">/</span>
-            <Link to={`/brands/imesa/${product.categorySlug || 'washing-machines'}`} className="hover:text-[#0d447b] transition-colors font-medium">
+            <Link to={`/brands/imesa/${product.categorySlug || 'washing-machines'}`} className="hover:text-[#0d447b] transition-colors">
               {product.category}
             </Link>
             <span className="text-slate-300">/</span>
-            <span className="text-slate-500 hidden sm:inline">{product.subCategory}</span>
+            <span className="text-[#767676] hidden sm:inline">{product.subCategory}</span>
             <span className="text-slate-300 hidden sm:inline">/</span>
-            <span className="text-[#0d447b] font-bold truncate max-w-[200px] sm:max-w-xs md:max-w-md">{product.title}</span>
+            <span className="text-[#0d447b] font-medium truncate max-w-[200px] sm:max-w-xs md:max-w-md">{product.title}</span>
           </div>
 
           {/* Standard Promac Back Button */}
@@ -147,7 +147,7 @@ export default function ImesaProduct() {
       {product.seriesSiblings && product.seriesSiblings.length > 1 && (
         <div className="w-full bg-[#f1f5f9]/70 border-b border-slate-200/80 py-2.5 sm:py-3.5 px-4 sm:px-6 lg:px-16">
           <div className="max-w-7xl mx-auto flex items-center justify-between flex-wrap gap-2">
-            <span className="text-xs sm:text-sm font-black text-[#0d447b] uppercase tracking-wider shrink-0 flex items-center gap-2">
+            <span className="text-xs sm:text-sm font-bold text-[#0d447b] uppercase tracking-wider shrink-0 flex items-center gap-2">
               Available Models:
             </span>
             <div className="flex items-center gap-2.5 overflow-x-auto pb-1 sm:pb-0 scrollbar-none w-full sm:w-auto">
@@ -241,14 +241,14 @@ export default function ImesaProduct() {
             {/* Right Column: Title, Description, and Actions */}
             <div className="lg:col-span-7 xl:col-span-7 min-w-0 flex flex-col justify-start w-full">
               
-              {/* Official Product Title in #0d447b - matching font size & width from official site */}
+              {/* Official Product Title in #0d447b - exact official IMESA font-size: 25px, line-height: 38px, letter-spacing: 1.25px, weight: 700 */}
               <h1 
-                className="text-xl sm:text-[22px] lg:text-[23px] xl:text-[24px] font-bold text-[#0d447b] leading-[1.35] tracking-tight mb-5 sm:mb-6"
+                className="text-[22px] sm:text-[24px] lg:text-[25px] font-bold text-[#0d447b] leading-[34px] sm:leading-[38px] tracking-[1.25px] mb-5 sm:mb-6 font-inter"
                 dangerouslySetInnerHTML={{ __html: product.titleFormatted || product.title }}
               />
 
-              {/* Description Paragraphs in #0d447b with authentic highlights */}
-              <div className="space-y-4 mb-7 sm:mb-8 text-[#0d447b] text-[15px] sm:text-[15.5px] lg:text-[16px] leading-[1.75] font-normal">
+              {/* Description Paragraphs in #0d447b - exact official IMESA font-size: 17px, line-height: 29px, letter-spacing: 0.34px, weight: 400 */}
+              <div className="space-y-4 mb-7 sm:mb-8 text-[#0d447b] text-[15px] sm:text-[16px] lg:text-[17px] leading-[27px] sm:leading-[29px] tracking-[0.34px] font-normal font-inter">
                 {product.shortDesc && product.shortDesc.map((para, idx) => (
                   <p key={idx} dangerouslySetInnerHTML={{ __html: para }} />
                 ))}
@@ -292,33 +292,33 @@ export default function ImesaProduct() {
 
       {/* ── 3. Key Features Icon Boxes (Direct clone of imesa.it signature iconbox row) ── */}
       {product.iconBoxes && product.iconBoxes.length > 0 && (
-        <section className="w-full py-16 sm:py-20 lg:py-24 bg-[#f8f9fa] border-b border-slate-200/80">
-          <div className="max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
-            <div className="text-center mb-10 sm:mb-14">
-              <span className="text-[#0d447b] text-xs sm:text-sm md:text-base font-extrabold tracking-[0.24em] uppercase block mb-2 sm:mb-3">
+        <section className="w-full py-14 sm:py-18 lg:py-20 bg-[#f8f9fa] border-b border-slate-200/80">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+            <div className="text-center mb-10 sm:mb-12">
+              <span className="text-[#0d447b] text-[13px] sm:text-[14px] leading-[21px] tracking-[0.2em] font-bold uppercase block mb-2 sm:mb-3 font-inter">
                 EXCELLENCE IN DESIGN
               </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-[32px] xl:text-[36px] font-bold text-[#0d447b] tracking-tight leading-snug">
+              <h2 className="text-[22px] sm:text-[24px] lg:text-[25px] font-bold text-[#0d447b] leading-[34px] sm:leading-[38px] tracking-[0.5px] font-inter">
                 Key Machine Features
               </h2>
             </div>
 
-            {/* Responsive Grid matching imesa.it layout - enlarged for readability */}
+            {/* Responsive Grid matching imesa.it layout - exact official specs: 14px, 21px, 0.7px tracking, #0d447b */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
               {product.iconBoxes.map((box, idx) => {
                 const resolvedIcon = resolveAsset(box.iconUrl);
                 return (
                   <div 
                     key={idx}
-                    className="bg-white rounded-2xl p-5 sm:p-7 border border-slate-200/80 shadow-sm hover:shadow-lg transition-all duration-200 flex flex-col items-center text-center justify-between group min-h-[220px] sm:min-h-[260px]"
+                    className="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200/80 shadow-xs hover:shadow-md transition-all duration-200 flex flex-col items-center text-center justify-between group min-h-[220px] sm:min-h-[240px]"
                   >
-                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-[#0d447b]/8 flex items-center justify-center mb-4 sm:mb-5 group-hover:scale-110 transition-transform relative shrink-0">
+                    <div className="w-16 h-16 sm:w-18 sm:h-18 rounded-2xl bg-[#0d447b]/8 flex items-center justify-center mb-4 sm:mb-5 group-hover:scale-105 transition-transform relative shrink-0">
                       {resolvedIcon ? (
                         <img 
                           src={resolvedIcon} 
                           alt={box.title} 
                           referrerPolicy="no-referrer"
-                          className="w-10 h-10 sm:w-12 sm:h-12 object-contain drop-shadow-sm" 
+                          className="w-10 h-10 sm:w-12 sm:h-12 object-contain drop-shadow-xs" 
                           onError={(e) => {
                             e.currentTarget.style.display = 'none';
                             const fallback = e.currentTarget.parentElement.querySelector('.icon-fallback');
@@ -333,7 +333,8 @@ export default function ImesaProduct() {
                         {getFeatureIcon(box.title)}
                       </div>
                     </div>
-                    <h3 className="text-xs sm:text-sm md:text-[15px] font-bold text-[#0d447b] leading-relaxed flex-1 flex items-center justify-center">
+                    {/* Exact official IMESA font-size: 14px, line-height: 21px, letter-spacing: 0.7px, weight: 300 / normal, color: #0D447B */}
+                    <h3 className="text-[14px] leading-[21px] tracking-[0.7px] font-light sm:font-normal text-[#0d447b] font-inter text-center flex-1 flex items-center justify-center">
                       {box.title}
                     </h3>
                   </div>
@@ -344,66 +345,76 @@ export default function ImesaProduct() {
         </section>
       )}
 
-      {/* ── 4. Key Highlights & Operational Advantages ── */}
+      {/* ── 4. Key Highlights & Operational Advantages (Exact 1:1 match to official IMESA layout & inspector specs) ── */}
       {product.highlights && product.highlights.length > 0 && (
-        <section className="w-full py-16 sm:py-20 lg:py-24 bg-white border-b border-slate-100">
-          <div className="max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
-            <div className="max-w-3xl mb-10 sm:mb-12">
-              <span className="text-[#0d447b] text-xs sm:text-sm font-extrabold tracking-[0.22em] uppercase block mb-2 sm:mb-3">
-                OPERATIONAL ADVANTAGES
-              </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-[32px] xl:text-[36px] font-bold text-[#0d447b] tracking-tight leading-snug mb-3">
-                Technological Advantages
-              </h2>
-              <div className="w-16 h-1.5 bg-[#0d447b] rounded-full mb-4 sm:mb-5"></div>
-              <p className="text-slate-600 text-sm sm:text-base md:text-lg leading-relaxed">
-                Engineered to maximize efficiency, fabric care, and longevity in professional and commercial laundry operations.
-              </p>
+        <section className="w-full py-14 sm:py-18 lg:py-20 bg-white border-b border-slate-100">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+            
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-center">
+              
+              {/* Left Column: Machine Angle Photography matching official site */}
+              <div className="lg:col-span-5 flex items-center justify-center">
+                <img 
+                  src={resolveAsset(product.galleryImages?.[1] || product.galleryImages?.[0] || product.primaryImg)} 
+                  alt={product.title}
+                  className="max-h-[340px] sm:max-h-[400px] lg:max-h-[440px] w-auto max-w-full object-contain drop-shadow-sm"
+                  onError={(e) => {
+                    e.currentTarget.src = product.primaryImg;
+                  }}
+                />
+              </div>
+
+              {/* Right Column: Section Header + Bulleted List with exact official typography (17px / 29px / 0.34px / #0d447b) */}
+              <div className="lg:col-span-7 flex flex-col justify-center">
+                <span className="text-[#0d447b] text-[13px] sm:text-[14px] leading-[21px] tracking-[0.2em] font-bold uppercase block mb-2 sm:mb-3 font-inter">
+                  OPERATIONAL ADVANTAGES
+                </span>
+                <h2 className="text-[22px] sm:text-[24px] lg:text-[25px] font-bold text-[#0d447b] leading-[34px] sm:leading-[38px] tracking-[0.5px] font-inter mb-6 sm:mb-7">
+                  Technological Advantages
+                </h2>
+
+                <ul className="space-y-3.5 sm:space-y-4">
+                  {product.highlights.map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-3.5 text-[15px] sm:text-[16px] lg:text-[17px] leading-[27px] sm:leading-[29px] tracking-[0.34px] text-[#0d447b] font-normal font-inter">
+                      <span className="w-2 h-2 rounded-full bg-[#0d447b] shrink-0 mt-2.5" />
+                      <span className="flex-1 [&>strong]:font-bold [&>strong]:text-[#0d447b]" dangerouslySetInnerHTML={{ __html: item }} />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-              {product.highlights.map((item, idx) => (
-                <div 
-                  key={idx}
-                  className="flex items-start gap-4 p-5 sm:p-6 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-[#0d447b]/40 hover:bg-white transition-all shadow-sm"
-                >
-                  <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-[#0d447b] shrink-0 mt-0.5" />
-                  <span className="text-sm sm:text-base md:text-[17px] text-slate-800 font-medium leading-relaxed">
-                    {item}
-                  </span>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
       )}
 
       {/* ── 5. Technology Spotlight (IM11, IMConnect, etc.) ── */}
       {product.techCards && product.techCards.length > 0 && (
-        <section className="w-full py-16 sm:py-20 lg:py-24 bg-slate-50 border-b border-slate-200">
-          <div className="max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
-            <div className="text-center mb-10 sm:mb-14">
-              <span className="text-[#0d447b] text-xs sm:text-sm md:text-base font-extrabold tracking-[0.24em] uppercase block mb-2 sm:mb-3">
+        <section className="w-full py-14 sm:py-18 lg:py-20 bg-slate-50 border-b border-slate-200">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+            <div className="text-center mb-10 sm:mb-12">
+              <span className="text-[#0d447b] text-[13px] sm:text-[14px] leading-[21px] tracking-[0.2em] font-bold uppercase block mb-2 sm:mb-3 font-inter">
                 CONNECTED INNOVATION
               </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-[32px] xl:text-[36px] font-bold text-[#0d447b] tracking-tight leading-snug">
+              <h2 className="text-[22px] sm:text-[24px] lg:text-[25px] font-bold text-[#0d447b] leading-[34px] sm:leading-[38px] tracking-[0.5px] font-inter">
                 Smart Systems & IoT Telemetry
               </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
               {product.techCards.map((card, idx) => (
-                <div key={idx} className="bg-white rounded-3xl p-7 sm:p-10 border border-slate-200/90 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                <div key={idx} className="bg-white rounded-3xl p-7 sm:p-9 border border-slate-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
                   <div>
                     <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#0d447b]/10 flex items-center justify-center text-[#0d447b] mb-5 sm:mb-6">
                       <Cpu className="w-7 h-7 sm:w-8 sm:h-8" />
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-[#0d447b] mb-3">{card.title}</h3>
-                    <p className="text-slate-600 text-sm sm:text-base md:text-[17px] leading-relaxed mb-6 sm:mb-8">{card.text}</p>
+                    <h3 className="text-[20px] sm:text-[22px] font-bold text-[#0d447b] leading-[30px] font-inter mb-3">{card.title}</h3>
+                    <p className="text-[#0d447b]/90 text-[15px] sm:text-[16px] lg:text-[17px] leading-[27px] sm:leading-[29px] tracking-[0.34px] font-inter font-normal mb-6 sm:mb-8">{card.text}</p>
                   </div>
                   <Link 
                     to="/brands/imesa" 
-                    className="inline-flex items-center gap-2 text-sm sm:text-base font-bold text-[#0d447b] uppercase tracking-wider hover:underline"
+                    className="inline-flex items-center gap-2 text-sm sm:text-base font-bold text-[#0d447b] uppercase tracking-wider hover:underline font-inter"
                   >
                     Discover Connectivity <ArrowRight className="w-4 h-4" />
                   </Link>
@@ -415,14 +426,14 @@ export default function ImesaProduct() {
       )}
 
       {/* ── 6. Official IMESA Tabbed Section (Learn More / Technical Data / Download Area) ── */}
-      <section id="technical-tabs" className="w-full py-16 sm:py-20 lg:py-24 bg-white flex-1">
-        <div className="max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
+      <section id="technical-tabs" className="w-full py-14 sm:py-18 lg:py-20 bg-white flex-1">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
           
           {/* Tab Selection Navigation (Horizontal Swipe on Small Devices) */}
           <div className="flex border-b border-slate-200 mb-10 sm:mb-12 overflow-x-auto gap-3 sm:gap-4 scrollbar-none pb-1">
             <button
               onClick={() => setActiveTab('learnMore')}
-              className={`pb-3.5 sm:pb-4 px-5 sm:px-8 text-sm sm:text-base md:text-lg font-bold whitespace-nowrap border-b-2 transition-all shrink-0 ${
+              className={`pb-3.5 sm:pb-4 px-5 sm:px-8 text-[15px] sm:text-[16px] lg:text-[17px] leading-[29px] tracking-[0.34px] font-bold whitespace-nowrap border-b-2 transition-all shrink-0 font-inter cursor-pointer ${
                 activeTab === 'learnMore'
                   ? 'border-[#0d447b] text-[#0d447b]'
                   : 'border-transparent text-slate-500 hover:text-slate-800'
@@ -432,7 +443,7 @@ export default function ImesaProduct() {
             </button>
             <button
               onClick={() => setActiveTab('specs')}
-              className={`pb-3.5 sm:pb-4 px-5 sm:px-8 text-sm sm:text-base md:text-lg font-bold whitespace-nowrap border-b-2 transition-all shrink-0 ${
+              className={`pb-3.5 sm:pb-4 px-5 sm:px-8 text-[15px] sm:text-[16px] lg:text-[17px] leading-[29px] tracking-[0.34px] font-bold whitespace-nowrap border-b-2 transition-all shrink-0 font-inter cursor-pointer ${
                 activeTab === 'specs'
                   ? 'border-[#0d447b] text-[#0d447b]'
                   : 'border-transparent text-slate-500 hover:text-slate-800'
@@ -442,7 +453,7 @@ export default function ImesaProduct() {
             </button>
             <button
               onClick={() => setActiveTab('downloads')}
-              className={`pb-3.5 sm:pb-4 px-5 sm:px-8 text-sm sm:text-base md:text-lg font-bold whitespace-nowrap border-b-2 transition-all shrink-0 ${
+              className={`pb-3.5 sm:pb-4 px-5 sm:px-8 text-[15px] sm:text-[16px] lg:text-[17px] leading-[29px] tracking-[0.34px] font-bold whitespace-nowrap border-b-2 transition-all shrink-0 font-inter cursor-pointer ${
                 activeTab === 'downloads'
                   ? 'border-[#0d447b] text-[#0d447b]'
                   : 'border-transparent text-slate-500 hover:text-slate-800'
@@ -460,14 +471,14 @@ export default function ImesaProduct() {
               transition={{ duration: 0.3 }}
               className="space-y-6"
             >
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-[#0d447b] mb-6 sm:mb-8">
+              <h3 className="text-[22px] sm:text-[24px] lg:text-[25px] font-bold text-[#0d447b] leading-[34px] sm:leading-[38px] tracking-[0.5px] font-inter mb-6 sm:mb-8">
                 Detailed Design & Engineering Features
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 {product.learnMoreTable && product.learnMoreTable.map((item, idx) => (
-                  <div key={idx} className="p-5 sm:p-6 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-start gap-3.5 sm:gap-4 shadow-sm hover:border-[#0d447b]/40 transition-colors">
-                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-[#0d447b] shrink-0 mt-0.5" />
-                    <p className="text-sm sm:text-base md:text-lg text-slate-700 leading-relaxed font-normal">
+                  <div key={idx} className="p-5 sm:p-6 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-start gap-3.5 sm:gap-4 shadow-xs hover:border-[#0d447b]/40 transition-colors">
+                    <CheckCircle2 className="w-5 h-5 text-[#0d447b] shrink-0 mt-0.5" />
+                    <p className="text-[15px] sm:text-[16px] lg:text-[17px] leading-[27px] sm:leading-[29px] tracking-[0.34px] text-[#0d447b] font-normal font-inter">
                       {item}
                     </p>
                   </div>
@@ -484,7 +495,7 @@ export default function ImesaProduct() {
               transition={{ duration: 0.3 }}
             >
               <div className="flex items-center justify-between mb-6 sm:mb-8 flex-wrap gap-2">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-[#0d447b]">
+                <h3 className="text-[22px] sm:text-[24px] lg:text-[25px] font-bold text-[#0d447b] leading-[34px] sm:leading-[38px] tracking-[0.5px] font-inter">
                   Technical Specifications
                 </h3>
                 <span className="text-xs sm:text-sm text-slate-500 bg-slate-100 px-3.5 py-1.5 rounded-full font-medium">
@@ -493,7 +504,7 @@ export default function ImesaProduct() {
               </div>
 
               {product.specsTable && product.specsTable.length > 0 ? (
-                <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                <div className="bg-white rounded-2xl shadow-xs border border-slate-200 overflow-hidden font-inter">
                   <div className="overflow-x-auto scrollbar-thin">
                     <table className="w-full text-left border-collapse min-w-[700px] sm:min-w-[800px]">
                       {/* Header Row */}
@@ -513,13 +524,13 @@ export default function ImesaProduct() {
                       </thead>
 
                       {/* Body Rows */}
-                      <tbody className="divide-y divide-slate-100 text-xs sm:text-sm md:text-base">
+                      <tbody className="divide-y divide-slate-100 text-xs sm:text-sm md:text-[15px]">
                         {product.specsTable.slice(1).map((row, rowIdx) => (
                           <tr key={rowIdx} className="hover:bg-slate-50 transition-colors">
                             {row.map((cell, cellIdx) => (
                               <td 
                                 key={cellIdx} 
-                                className={`py-4 sm:py-4.5 px-5 sm:px-7 text-slate-700 ${
+                                className={`py-4 sm:py-4.5 px-5 sm:px-7 text-slate-700 leading-[24px] ${
                                   cellIdx === 0 
                                     ? 'font-bold text-[#0d447b] bg-slate-50/90 sticky left-0 z-10 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.06)]' 
                                     : ''
@@ -535,7 +546,7 @@ export default function ImesaProduct() {
                   </div>
                 </div>
               ) : (
-                <div className="p-10 text-center text-slate-600 bg-slate-50 rounded-2xl border border-slate-200 text-base sm:text-lg">
+                <div className="p-10 text-center text-[#0d447b] bg-slate-50 rounded-2xl border border-slate-200 text-base sm:text-lg font-inter">
                   Detailed technical data sheet available upon request.
                 </div>
               )}
@@ -551,16 +562,16 @@ export default function ImesaProduct() {
               className="bg-slate-50 rounded-3xl p-8 sm:p-12 border border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 text-center md:text-left"
             >
               <div>
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#0d447b] mb-3">
+                <h3 className="text-[22px] sm:text-[24px] lg:text-[25px] font-bold text-[#0d447b] leading-[34px] sm:leading-[38px] tracking-[0.5px] font-inter mb-3">
                   IMESA Official Product Catalog & Documentation
                 </h3>
-                <p className="text-slate-600 text-sm sm:text-base md:text-lg max-w-2xl leading-relaxed">
+                <p className="text-[#0d447b]/90 text-[15px] sm:text-[16px] lg:text-[17px] leading-[27px] sm:leading-[29px] tracking-[0.34px] font-inter max-w-2xl">
                   Download the complete technical brochure, dimensional drawings, and installation manual for {product.title}.
                 </p>
               </div>
               <button 
                 onClick={() => setShowInquiryModal(true)}
-                className="bg-[#0d447b] hover:bg-[#093560] text-white py-4 px-8 sm:px-10 rounded-xl font-bold text-sm sm:text-base tracking-wide shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2.5 shrink-0 w-full sm:w-auto"
+                className="bg-[#0d447b] hover:bg-[#093560] text-white py-4 px-8 sm:px-10 rounded-xl font-bold text-sm sm:text-base tracking-wide shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2.5 shrink-0 w-full sm:w-auto cursor-pointer"
               >
                 <Download className="w-5 h-5" /> Download Official Datasheet
               </button>

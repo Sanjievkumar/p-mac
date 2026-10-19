@@ -86,10 +86,10 @@ const RAW_IMESA_PRODUCTS = {
       { title: "No anchoring to the ground", iconUrl: "Icone-caratteristiche.png" }
     ],
     highlights: [
-      "New oversized door, the largest in its category, for easier loading and unloading",
-      "Balanced water fill: hot and cold water are mixed during filling phase to save energy",
-      "Programmable water, temperature, engine speed and rotation/break rate levels",
-      "Self-service ready with centralised pay point, coin acceptor or other payment systems"
+      "<strong>New oversized door</strong>, the largest in its category, for easier loading and unloading",
+      "<strong>Balanced water fill:</strong> hot and cold water are mixed during filling phase to save energy",
+      "<strong>Programmable parameters:</strong> water, temperature, engine speed and rotation/break rate levels",
+      "<strong>Self-service ready</strong> with centralised pay point, coin acceptor or other payment systems"
     ],
     techCards: [
       { title: "IM 11", text: "Learn more about technological innovation to support the customer." },
@@ -135,10 +135,10 @@ const RAW_IMESA_PRODUCTS = {
       { title: "No anchoring to the ground", iconUrl: "Icone-caratteristiche.png" }
     ],
     highlights: [
-      "5 alternative heating methods: hot water, electric, Electric + steam, direct steam, indirect steam",
-      "Balanced water fill: hot and cold water are mixed during the filling phase to save energy",
-      "Management of delicate laundry for the specific treatment of all types of fabrics",
-      "Programmable water, temperature, engine speed and rotation/break rate levels for total customization of washing cycles"
+      "<strong>5 alternative heating methods:</strong> hot water, electric, electric + steam, direct steam, indirect steam",
+      "<strong>Balanced water fill:</strong> hot and cold water are mixed during the filling phase to save energy",
+      "<strong>Delicate laundry management</strong> for the specific treatment of all types of fabrics",
+      "<strong>Programmable cycles:</strong> water, temperature, engine speed and rotation/break rate levels for total customization"
     ],
     techCards: [
       { title: "IM 11", text: "Learn more about technological innovation to support the customer." },
@@ -203,10 +203,10 @@ const RAW_IMESA_PRODUCTS = {
       { title: "No anchoring to the ground", iconUrl: "Icone-caratteristiche.png" }
     ],
     highlights: [
-      "Double water fill valves for rapid balanced cycles",
-      "Heavy duty suspension and multi-point shock absorbing system",
-      "Easily removable front panel for quick access to drain valve and heating elements",
-      "Standard IoT connectivity for predictive service alerts"
+      "<strong>Double water fill valves</strong> for rapid balanced cycles",
+      "<strong>Heavy duty suspension</strong> and multi-point shock absorbing system",
+      "<strong>Easily removable front panel</strong> for quick access to drain valve and heating elements",
+      "<strong>Standard IoT connectivity</strong> for predictive service alerts"
     ],
     techCards: [
       { title: "IM 11", text: "Learn more about technological innovation to support the customer." },
@@ -250,10 +250,10 @@ const RAW_IMESA_PRODUCTS = {
       { title: "No anchoring to the ground", iconUrl: "Icone-caratteristiche.png" }
     ],
     highlights: [
-      "Pneumatically operated drain valves for high-flow instant discharge",
-      "Double water connections with integrated hot and cold mixing",
-      "Advanced unbalance sensing system for ultra-smooth high spin ramp-up",
-      "Pre-configured for up to 11 external liquid detergent pumps"
+      "<strong>Pneumatically operated drain valves</strong> for high-flow instant discharge",
+      "<strong>Double water connections</strong> with integrated hot and cold mixing",
+      "<strong>Advanced unbalance sensing system</strong> for ultra-smooth high spin ramp-up",
+      "<strong>Pre-configured for up to 11 external liquid detergent pumps</strong>"
     ],
     techCards: [
       { title: "IM 11", text: "Learn more about technological innovation to support the customer." },
@@ -297,10 +297,10 @@ const RAW_IMESA_PRODUCTS = {
       { title: "Total Industry 4.0 telemetry via IMConnect", iconUrl: "ICONA_TECNOLOGIA.png" }
     ],
     highlights: [
-      "Optional two-way pneumatic tilting system drastically reduces operator loading/unloading fatigue",
-      "Wide 180° opening door with double pneumatic safety lock",
-      "Reduced imbalance, heavy duty industrial bearings with extended working life",
-      "Integrated weighing cells option for automatic water and chemical proportional metering"
+      "<strong>Optional two-way pneumatic tilting system</strong> drastically reduces operator loading/unloading fatigue",
+      "<strong>Wide 180° opening door</strong> with double pneumatic safety lock",
+      "<strong>Reduced imbalance:</strong> heavy duty industrial bearings with extended working life",
+      "<strong>Integrated weighing cells option</strong> for automatic water and chemical proportional metering"
     ],
     techCards: [
       { title: "IM 11", text: "Learn more about technological innovation to support the customer." },
@@ -343,10 +343,10 @@ const RAW_IMESA_PRODUCTS = {
       { title: "300-350 G factor", iconUrl: "ICONA_FATTORE-G.png" }
     ],
     highlights: [
-      "Hygiene Barrier Washers designed for full biological separation (EN 14065)",
-      "3 alternative heating methods: electric, direct or indirect steam",
-      "Electronic interlock of opposite doors to prevent contamination",
-      "Display on clean side to visualise progress, time left and end of programme"
+      "<strong>Hygiene Barrier Washers</strong> designed for full biological separation (EN 14065 / RABC)",
+      "<strong>3 alternative heating methods:</strong> electric, direct or indirect steam",
+      "<strong>Electronic interlock</strong> of opposite doors to prevent contamination",
+      "<strong>Clean room display</strong> on sterile side to visualise progress, time left and end of programme"
     ],
     techCards: [
       { title: "IM 11", text: "Learn more about technological innovation to support the customer." },
@@ -407,10 +407,10 @@ const RAW_IMESA_PRODUCTS = {
       { title: "300-350 G factor", iconUrl: "ICONA_FATTORE-G.png" }
     ],
     highlights: [
-      "High capacity hospital barrier washers designed for EN 14065 and RABC strict microbiological protocols",
-      "Two large opposite doors prevent cross-contamination between dirty and sterile sectors",
-      "Secondary digital display on sterile cleanroom side to monitor cycle progression",
-      "Pneumatic braking and automatic drum positioning for effortless opening"
+      "<strong>High capacity hospital barrier washers</strong> designed for EN 14065 and RABC strict microbiological protocols",
+      "<strong>Two large opposite doors</strong> prevent cross-contamination between dirty and sterile sectors",
+      "<strong>Secondary digital display</strong> on sterile cleanroom side to monitor cycle progression",
+      "<strong>Pneumatic braking</strong> and automatic drum positioning for effortless opening"
     ],
     techCards: [
       { title: "IM 11", text: "Learn more about technological innovation to support the customer." },
@@ -455,11 +455,11 @@ const RAW_IMESA_PRODUCTS = {
       { title: "AISI 304 stainless steel drum with new \"soft care\" perforation for greater delicacy on fabrics.", iconUrl: "Icone-soft-care.png" }
     ],
     highlights: [
-      "3 heating systems available: electric, steam and gas",
-      "New practical drawer filter, easily removable and easy to clean.",
-      "Multi-step heating function for optimal temperature management during the cycle: ensures greater delicacy in the treatment of garments.",
-      "Dual power: two heating elements that can be activated independently (only for electric models).",
-      "Cool down system, air cooling at the end of the cycle, and anti-wrinkle function for perfect and easy ironing"
+      "<strong>3 heating systems available:</strong> electric, steam and gas",
+      "<strong>New practical drawer filter</strong>, easily removable and easy to clean.",
+      "<strong>Multi-step heating function</strong> for optimal temperature management during the cycle: ensures greater delicacy in the treatment of garments.",
+      "<strong>Dual power:</strong> two heating elements that can be activated independently (only for electric models).",
+      "<strong>Cool down system:</strong> air cooling at the end of the cycle, and anti-wrinkle function for perfect and easy ironing"
     ],
     techCards: [
       { title: "IM 10", text: "Discover the innovative touch-screen interface" }
@@ -517,11 +517,11 @@ const RAW_IMESA_PRODUCTS = {
       { title: "Humidity control sensor", iconUrl: "Icone-caratteristiche.png" }
     ],
     highlights: [
-      "3 heating systems available: electric, steam and gas",
-      "New practical drawer filter, easily removable and easy to clean.",
-      "Multi-step heating function for optimal temperature management during the cycle: ensures greater delicacy in the treatment of garments.",
-      "Dual power: two heating groups that can be activated independently together with air flow control for better optimization of electrical consumption. (only for electric models).",
-      "Cool down system operated by IM.10, air cooling at the end of the cycle, and anti-wrinkle function for perfect and easy ironing"
+      "<strong>3 heating systems available:</strong> electric, steam and gas",
+      "<strong>New practical drawer filter</strong>, easily removable and easy to clean.",
+      "<strong>Multi-step heating function</strong> for optimal temperature management during the cycle: ensures greater delicacy in the treatment of garments.",
+      "<strong>Dual power:</strong> two heating groups that can be activated independently together with air flow control for better optimization of electrical consumption (only for electric models).",
+      "<strong>Cool down system</strong> operated by IM.10, air cooling at the end of the cycle, and anti-wrinkle function for perfect and easy ironing"
     ],
     techCards: [],
     learnMoreTable: [
@@ -578,11 +578,11 @@ const RAW_IMESA_PRODUCTS = {
       { title: "Safety devices: manual handle release, emergency stop, chest lifting pedal.", iconUrl: "ICONA_FATTORE-G.png" }
     ],
     highlights: [
-      "New aesthetic and optimized machine dimensions.",
-      "Analog control units, adjustable ironing parameters, digital thermostat for temperature control.",
-      "Fixed or adjustable (opt.) ironing speed, fixed pressure.",
-      "Uniform chest pressure throughout the entire length of the roller for top quality ironing.",
-      "Options and Accessories: NOMEX roller cover, frequency variator for electronic control of ironing speed, vacuum, IoT (wi-fi connection) for remote control of the machine and cloth collection tray"
+      "<strong>New aesthetics</strong> and optimized machine dimensions.",
+      "<strong>Analog control units</strong>, adjustable ironing parameters, digital thermostat for temperature control.",
+      "<strong>Fixed or adjustable (opt.) ironing speed</strong>, fixed pressure.",
+      "Uniform chest pressure throughout the entire length of the roller for top <strong>quality ironing</strong>.",
+      "<strong>Options and Accessories:</strong> NOMEX roller cover, frequency variator for electronic control of ironing speed, vacuum, IoT (wi-fi connection) for remote control of the machine and cloth collection tray"
     ],
     techCards: [],
     learnMoreTable: [
@@ -641,11 +641,11 @@ const RAW_IMESA_PRODUCTS = {
       { title: "The patented technology confirms the absolute uniqueness of the IMESA flatwork ironer.", iconUrl: "ICONA_BREVETTO.png" }
     ],
     highlights: [
-      "Uniform ironing pressure over the entire length of the roller, electronically controlled for an excellent ironing result.",
-      "Programmes with customised temperature and speed for different types of fabric for perfect ironing, even with difficult creases.",
-      "Electronic ironing speed control by inverter.",
-      "Automatic regulation of ironing speed according to temperature variation: constant quality results.",
-      "Cool down system useful to save energy and preserve over time the good state of the roller coating."
+      "<strong>Uniform ironing pressure</strong> over the entire length of the roller, electronically controlled for an excellent ironing result.",
+      "<strong>Customised programmes</strong> with temperature and speed for different types of fabric for perfect ironing, even with difficult creases.",
+      "<strong>Electronic ironing speed control</strong> by inverter.",
+      "<strong>Automatic speed regulation</strong> according to temperature variation: constant quality results.",
+      "<strong>Cool down system:</strong> saves energy and preserves over time the good state of the roller coating."
     ],
     techCards: [
       { title: "IM 10", text: "Discover the innovative touch-screen interface." }
@@ -705,11 +705,11 @@ const RAW_IMESA_PRODUCTS = {
       { title: "IMESA MCA series 33 mm diam. drying ironers are available with 150 cm, 180 cm and 210 cm roller.", iconUrl: "ICONA_FATTORE-G.png" }
     ],
     highlights: [
-      "2 heating methods: electric or gas",
-      "The inverter fitted as standard electronically regulates ironing speed for maximum productivity on the basis of the moisture in the fabric and ironing temperature.",
-      "Automatic speed/temperature compensation: the speed of the roller is set automatically according to the temperature, facilitating the operator's work and guaranteeing top quality results.",
-      "System cooldown: saves energy and helps preserve the ironing belts.",
-      "Openable cover for easy maintenance."
+      "<strong>2 heating methods:</strong> electric or gas",
+      "<strong>Inverter speed regulation:</strong> electronically regulates ironing speed for maximum productivity on the basis of moisture and temperature.",
+      "<strong>Automatic speed/temperature compensation:</strong> roller speed adapts automatically to temperature, guaranteeing top quality results.",
+      "<strong>System cooldown:</strong> saves energy and preserves ironing belts over time.",
+      "<strong>Openable top cover</strong> for convenient maintenance and servicing."
     ],
     techCards: [],
     learnMoreTable: [
@@ -768,13 +768,13 @@ const RAW_IMESA_PRODUCTS = {
       { title: "Models with automatic FEEDER and FOLDER are equipped with PLC control with 128 ironing programs.", iconUrl: "Icone-caratteristiche.png" }
     ],
     highlights: [
-      "MCM 2500 – 2800 – 3200",
-      "3 heating methods: electric, steam, gas",
-      "Automatic speed/temperature compensation: the speed of the roller is set automatically according to the temperature, facilitating the operator's work and guaranteeing top quality results.",
-      "System cooldown: saves energy and helps preserve the ironing belts.",
-      "Available with motorised linen exit on two sides: faster ironing, higher productivity and more than one operator.",
-      "The linen can be ironed on two independent lines, with the possibility of configuring the type of fold: single, double or none.",
-      "Available with suction feed table for perfect fabric feed, enabling a single operator to iron and fold even large items."
+      "<strong>MCM 2500 – 2800 – 3200:</strong> industrial heavy duty series",
+      "<strong>3 heating methods:</strong> electric, steam, gas",
+      "<strong>Automatic speed/temperature compensation:</strong> roller speed is set automatically according to temperature for consistent quality.",
+      "<strong>System cooldown:</strong> saves energy and preserves ironing belts.",
+      "<strong>Motorised linen exit</strong> available on two sides for high-throughput productivity.",
+      "<strong>Dual independent ironing lines</strong> with configurable folding (single, double or none).",
+      "<strong>Suction feed table option</strong> for flawless fabric introduction by a single operator."
     ],
     techCards: [],
     learnMoreTable: [

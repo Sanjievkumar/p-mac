@@ -110,8 +110,8 @@ export default function ImesaCategory({ categoryId }) {
             {/* Official IMESA Underline Accent */}
             <div className="w-16 h-[3px] bg-[#9BB7D0] mb-6 sm:mb-8" />
 
-            {/* Category Intro Paragraphs in #0d447b */}
-            <div className="space-y-4 text-[#0d447b] text-[15px] sm:text-base lg:text-[16.5px] leading-[1.75] font-normal">
+            {/* Category Intro Paragraphs in #0d447b - exact official IMESA specs: 17px, 29px leading, 0.34px tracking */}
+            <div className="space-y-4 text-[#0d447b] text-[15px] sm:text-[16px] lg:text-[17px] leading-[27px] sm:leading-[29px] tracking-[0.34px] font-normal font-inter">
               {currentCategory.introParas.map((para, idx) => (
                 <p key={idx} dangerouslySetInnerHTML={{ __html: para }} />
               ))}
@@ -173,30 +173,30 @@ export default function ImesaCategory({ categoryId }) {
                     isReversed ? 'lg:order-1 lg:pr-6 xl:pr-10' : 'lg:order-2 lg:pl-6 xl:pl-10'
                   }`}>
                     
-                    {/* Machine Showcase Title (uppercase #0d447b) */}
-                    <h2 className="text-xl sm:text-2xl lg:text-[24px] font-bold text-[#0d447b] tracking-[0.03em] uppercase leading-snug mb-2">
+                    {/* Machine Showcase Title (exact official IMESA specs: 25px, 38px, 1.25px tracking) */}
+                    <h2 className="text-[20px] sm:text-[22px] lg:text-[25px] font-bold text-[#0d447b] leading-[32px] sm:leading-[38px] tracking-[1.25px] uppercase mb-2 font-inter">
                       {showcase.title}
                     </h2>
 
-                    {/* Machine Series Subtitle */}
-                    <h3 className="text-xs sm:text-sm lg:text-[14.5px] font-semibold text-[#0d447b] tracking-[0.14em] uppercase mb-5 sm:mb-6">
+                    {/* Machine Series Subtitle (exact official IMESA specs: 14px, 21px, 0.7px tracking) */}
+                    <h3 className="text-[13px] sm:text-[14px] leading-[21px] tracking-[0.7px] font-semibold text-[#0d447b] uppercase mb-5 sm:mb-6 font-inter">
                       {showcase.subtitle}
                     </h3>
 
-                    {/* Description Paragraphs - comfortable reading in #0d447b */}
-                    <div className="space-y-3.5 text-[#0d447b] text-[15px] sm:text-[15.5px] leading-[1.75] mb-7 sm:mb-8 max-w-2xl font-normal">
+                    {/* Description Paragraphs - exact official IMESA specs: 17px, 29px leading, 0.34px tracking */}
+                    <div className="space-y-3.5 text-[#0d447b] text-[15px] sm:text-[16px] lg:text-[17px] leading-[27px] sm:leading-[29px] tracking-[0.34px] mb-7 sm:mb-8 max-w-2xl font-normal font-inter">
                       {showcase.paras.map((para, idx) => (
                         <p key={idx} dangerouslySetInnerHTML={{ __html: para }} />
                       ))}
                     </div>
 
-                    {/* Official Capacity Series Rectangular Buttons (Image 1 & 2 exact match) */}
+                    {/* Official Capacity Series Rectangular Buttons */}
                     <div className="flex flex-wrap gap-2.5 sm:gap-3.5 pt-1">
                       {showcase.seriesButtons.map((btn) => (
                         <Link
                           key={btn.id}
                           to={`/brands/imesa/${btn.id}`}
-                          className="border border-[#0d447b] text-[#0d447b] bg-white hover:bg-[#0d447b] hover:text-white transition-colors duration-150 px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold tracking-wide rounded-none inline-block text-center shadow-none cursor-pointer"
+                          className="border border-[#0d447b] text-[#0d447b] bg-white hover:bg-[#0d447b] hover:text-white transition-colors duration-150 px-5 sm:px-6 py-2.5 sm:py-3 text-[13px] sm:text-[14px] leading-[21px] tracking-[0.34px] font-semibold font-inter inline-block text-center shadow-none cursor-pointer"
                         >
                           {btn.label}
                         </Link>
