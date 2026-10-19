@@ -7,7 +7,9 @@ import lm100125Img from '../../assets/brands/imesa/imesa-lm-100-125.jpg';
 
 import d2wBarrierImg from '../../assets/brands/imesa/remote/Lavatrice-a-barriera-asettica_Barrier-Washers_D2W_18_1.jpg';
 import d2w3055Img from '../../assets/brands/imesa/remote/A_D2W-30_55_F1-copia-1000x1000.jpg';
+import rcSeriesImg from '../../assets/brands/imesa/remote/Lavatrici-rigide_Low-spin-washing-machines_RC_30_1-1000x707.jpg';
 
+import esEasyImg from '../../assets/brands/imesa/remote/ES18_EASY_1-1000x1000.jpg';
 import esSmartImg from '../../assets/brands/imesa/imesa-es-smart.png';
 import esPremiumImg from '../../assets/brands/imesa/imesa-es-premium.png';
 import fiEasyImg from '../../assets/brands/imesa/remote/fi2022_02.439.png';
@@ -38,12 +40,17 @@ const LM_SIBLINGS = [
   { id: 'imesa-lm-100-125', label: 'LM 100 - 125 kg' }
 ];
 
+const RC_SIBLINGS = [
+  { id: 'imesa-rc-series', label: 'RC 11 - 85 kg (Hard Mounted)' }
+];
+
 const D2W_SIBLINGS = [
   { id: 'imesa-d2w-barrier', label: 'D2W 18 - 23 kg' },
   { id: 'imesa-d2w-30-55', label: 'D2W 30 - 55 kg' }
 ];
 
 const ES_SIBLINGS = [
+  { id: 'imesa-es-easy', label: 'ES Easy Line (11 - 36 kg)' },
   { id: 'imesa-es-smart', label: 'ES Smart Line (11 - 36 kg)' },
   { id: 'imesa-es-premium', label: 'ES Premium Line (11 - 75 kg)' }
 ];
@@ -426,6 +433,137 @@ const RAW_IMESA_PRODUCTS = {
       "Emergency stop button on both dirty and clean sides for total operator safety"
     ],
     specsTable: [["MODELLI","D2W 30","D2W 55"],["Drum Size","880 x 523 &Oslash; x P mm","977 x753 &Oslash; x P mm"],["Drum Volume","318 lt","565 lt"],["High spin speed","840 r.p.m.","802 r.p.m."],["G Factor","347","350"],["Water Connection","2 x 1&rdquo; &Oslash;","2 x 1&rdquo;1/2&rdquo; &Oslash;"],["Water Drain","80 &Oslash; mm","80 &Oslash; mm"],["Size: LxWxH","1373x1166x1968 mm","1627x1625x1908 mm"],["Net Weight","1047,1 Kg","1825,9 Kg"],["Packaging Size: LxWxH","1300x1300x2100 mm","1660x1700x2120 mm"],["Gross Weight","1084 Kg","1884 Kg"],["Electrical Heating Power","24 kW","30 kW"],["Direct Steam Consumption","3 kg","6 kg"]]
+  },
+
+  // ── 7.1. Medium and Low Spin Hard Mounted Washing Machines: RC 11 - 85 kg ──
+  "imesa-rc-series": {
+    id: "imesa-rc-series",
+    category: "Washing Machines",
+    subCategory: "Medium and Low Spin Washing Machines",
+    categorySlug: "washing-machines",
+    seriesName: "RC Series (11 – 85 kg)",
+    badge: "Hard Mounted Low Spin",
+    title: "Industrial Washing Machine RC 11-14-18-23-30-40-55-70-85 Kg",
+    modelsList: ["RC 11", "RC 14", "RC 18", "RC 23", "RC 30", "RC 40", "RC 55", "RC 70", "RC 85"],
+    primaryImg: rcSeriesImg,
+    seriesSiblings: RC_SIBLINGS,
+    galleryImages: [
+      "Lavatrici-rigide_Low-spin-washing-machines_RC_30_1-1000x707.jpg",
+      "Lavatrici-rigide_Low-spin-washing-machines_RC_30_2-1000x707.jpg",
+      "Lavatrici-rigide_Low-spin-washing-machines_RC_30_3-1000x707.jpg"
+    ],
+    shortDesc: [
+      "Hard mounted industrial washing machine designed to last.",
+      "Efficiency, sturdiness and ease of use for high level washing results. RC series industrial washing machines do not require springs or shock absorbers.",
+      "Fixed to the ground by fixing devices.",
+      "Ideal for use on board small and medium sized ships, ferries and freighters.",
+      "The innovative <strong>IM11 computer touchscreen</strong> makes programming, use and maintenance extremely simple and within reach of all types of user."
+    ],
+    iconBoxes: [
+      { title: "INNOVATIVE IM11 7\" tilted capacitive touchscreen", iconUrl: "Icone-touch-screen.png" },
+      { title: "Total control of wash cycles by wi-fi via IM11, IMConnect portal and Laundry for You App", iconUrl: "ICONA_TECNOLOGIA.png" },
+      { title: "Infinite washing solutions", iconUrl: "ICONA_INFINITI-PROGRAMMI.png" },
+      { title: "Drum and outer drum made of stainless steel AISI 304 AS STANDARD.", iconUrl: "ICONA_INOX.png" },
+      { title: "80-100 G factor", iconUrl: "ICONA_FATTORE-G.png" }
+    ],
+    highlights: [
+      "<strong>Hard mounted construction:</strong> does not require springs or shock absorbers, fixed directly to floor or plinth",
+      "<strong>Marine application ready:</strong> ideal for ships, naval vessels, ferries and offshore platforms",
+      "<strong>IM11 7\" Touchscreen:</strong> intuitive icon-based interface, USB data transfer, and remote Wi-Fi telemetry",
+      "<strong>Door lock system:</strong> hand-operated with lock support pins, conical gasket, and 180° opening angle"
+    ],
+    techCards: [
+      { title: "IM 11", text: "Learn more about technological innovation to support the customer." },
+      { title: "IMConnect", text: "Remote laundry management for real-time production control, predictive maintenance and organisational agility." }
+    ],
+    learnMoreTable: [
+      "New: glazing door with hand operation door lock system, lock support pins and conical gasket.",
+      "Electrical panel air flow system improved efficiency (RC from 11 to 40Kg).",
+      "For mod. 14-18-23 Kg: Easily removable front panel for easy maintenance of exhaust valve and shock absorber control.",
+      "Hand operation door lock system and wide 180° opening of the door to facilitate loading and unloading linen.",
+      "Compatible with water recovery tanks.",
+      "USB port for cycle backup and HACCP trace data.",
+      "Delayed start function for off-peak energy savings."
+    ],
+    specsTable: [
+      ["MODELLI","RC 11","RC 14","RC 18","RC 23","RC 30","RC 40","RC 55","RC 70","RC 85"],
+      ["Drum Size","535 x 470 Ø x P mm","700 x 365 Ø x P mm","700 x 470 Ø x P mm","700 x 560 Ø x P mm","880 x 523 Ø x P mm","870 x 650 Ø x P mm","1080 x 603 Ø x P mm","1200 x 618 Ø x P mm","1200 x750 Ø x P mm"],
+      ["Drum Volume","105 lt","140 lt","180 lt","215 lt","318 lt","400 lt","550 lt","700 lt","850 lt"],
+      ["High spin speed","535 r.p.m.","568 r.p.m.","568 r.p.m.","568 r.p.m.","452 r.p.m.","452 r.p.m.","408 r.p.m.","360 r.p.m.","360 r.p.m."],
+      ["G Factor","85","126","126","126","100","100","100","86","86"],
+      ["Water Connection","2 x 3/4\" Ø","2 x 3/4\" Ø","2 x 3/4\" Ø","2 x 3/4\" Ø","2 x 3/4\" Ø","2 x 3/4\" Ø","2 x 1\"1/2 Ø","2 x 1\"1/2 Ø","2 x 1\"1/2 Ø"],
+      ["Water Drain","50 Ø mm","50 Ø mm","50 Ø mm","50 Ø mm","80 Ø mm","80 Ø mm","80 Ø mm","80 Ø mm","80 Ø mm"],
+      ["Size: LxWxH","720x933x1087 mm","880x954x1312 mm","880x1010x1312 mm","880x1100x1312 mm","1098x946x1433 mm","1098x1139x1433 mm","1430x1344x1870 mm","1560x1395x1870 mm","1560x1525x1870 mm"],
+      ["Net Weight","220,8 Kg","295.2 Kg","304,5 Kg","315,6 Kg","478,7 Kg","511,7 Kg","967,9 Kg","1052 Kg","1184 Kg"],
+      ["Packaging Size: LxWxH","760x1045x1210 mm","920x1150x1430 mm","920x1150x1430 mm","920x1150x1430 mm","1150x1100x1720 mm","1300x1300x1720 mm","1540x1500x2020 mm","1700x1540x2020 mm","1750x1700x2020 mm"],
+      ["Gross Weight","231,5 Kg","310,4 Kg","319,7 Kg","330,9 Kg","531,3 Kg","566,2 Kg","1051 Kg","1150 Kg","1276 Kg"],
+      ["Electrical Heating Power","9 kW","9 kW","12 kW","15 kW","24 kW","24 kW","30 kW","30 kW","30 kW"],
+      ["Steam Machine Power","0,2 kW","0,2 kW","0,4 kW","0,6 kW","0,8 kW","1 kW","1,4 kW","1,8 kW","2,2 kW"],
+      ["Container 20\" - 40\" loading plan","32 - 68 pcs stacked","12 - 26 pcs","12 - 26 pcs","12 - 26 pcs","10 -20 pcs","4 - 9 pcs","3 - 8 pcs","3 - 7 pcs","3 - 7 pcs"]
+    ]
+  },
+
+  // ── 7.2. Dryers: ES Easy Line ──
+  "imesa-es-easy": {
+    id: "imesa-es-easy",
+    category: "Dryers",
+    subCategory: "Tumble Dryers ES Easy Line",
+    categorySlug: "dryers",
+    seriesName: "ES Easy Series (11 – 36 kg)",
+    badge: "Entry-Level Reliability",
+    title: "Tumble Dryers ES Easy Line 11-14-18-23-26-32-36 Kg",
+    modelsList: ["EL ES 10", "EL ES 14", "EL ES 18", "EL ES 23", "EL ES 26", "EL ES 32", "EL ES 36"],
+    primaryImg: esEasyImg,
+    seriesSiblings: ES_SIBLINGS,
+    galleryImages: [
+      "ES18_EASY_1-1000x1000.jpg",
+      "ES18_EASY_2-1000x1000.jpg",
+      "IM7.EASY_-1000x1000.jpg"
+    ],
+    shortDesc: [
+      "The ES Easy line by IMESA, equipped with integrated digital controls for temperature regulation, represents the entry-level solution in the range.",
+      "Simple machines, yet engineered to ensure maximum reliability and high-level performance.",
+      "Equipped with <strong>patented D-FLOW</strong> axial airflow system and reversible drum rotation as standard."
+    ],
+    iconBoxes: [
+      { title: "IM.7EASY: 4-digit keypad control unit.", iconUrl: "Icone-touch-screen.png" },
+      { title: "D-FLOW SYSTEM: new axial air flow system inside the drum", iconUrl: "Icone_D-Flow.png" },
+      { title: "Large door with right opening and reversible on the field (extension kit included).", iconUrl: "Icone-oblo.png" },
+      { title: "Durable, effective and easy to clean anti-breakage filter", iconUrl: "Icone-filtro.png" },
+      { title: "Galvanized drum with new \"soft care\" perforation for greater delicacy on fabrics.", iconUrl: "Icone-soft-care.png" }
+    ],
+    highlights: [
+      "<strong>IM.7EASY digital keypad:</strong> simple and intuitive operation with precise temperature regulation",
+      "<strong>D-FLOW axial airflow:</strong> rapid moisture extraction with reduced energy consumption",
+      "<strong>Reversible field door:</strong> oversized door with reversible opening direction",
+      "<strong>Robust build:</strong> heavy-duty construction engineered for dependable everyday operation"
+    ],
+    techCards: [
+      { title: "IM.7 EASY", text: "Rugged 4-digit keypad controller for essential and reliable operation." }
+    ],
+    learnMoreTable: [
+      "Entry-level simplicity with commercial grade performance.",
+      "D-FLOW axial air flow system for uniform garment drying.",
+      "Reversible door opening with included extension kit.",
+      "Durable anti-breakage lint filter with easy slide-out cleaning.",
+      "Available with electric, gas, or steam heating configurations."
+    ],
+    specsTable: [
+      ["MODELS","EL ES 10","EL ES 14","EL ES 18","EL ES 23","EL ES 26","EL ES 32","EL ES 36"],
+      ["Drum Size","756 x 445 Ø x P mm","756 x 565 Ø x P mm","756 x 736 Ø x P mm","977 x 565 Ø x P mm","977 x 625 Ø x P mm","977 x 775 Ø x P mm","977 x 875 Ø x P mm"],
+      ["Drum Volume","189 lt.","247,5 lt.","322 lt.","417 lt.","462 lt.","572 lt.","646 lt."],
+      ["Drying Speed","38 r.p.m.","38 r.p.m.","38 r.p.m.","44 r.p.m.","44 r.p.m.","44 r.p.m.","44 r.p.m."],
+      ["Drain Flow","1200 m3/h","1200 m3/h","1200 m3/h","1680 m3/h","1680 m3/h","1680 m3/h","1680 m3/h"],
+      ["Drain Diameter","150 Ø","150 Ø","150 Ø","200 Ø","200 Ø","200 Ø","200 Ø"],
+      ["Size: LxWxH","789x796x1647 mm","789x916x1647 mm","789x1086x1647 mm","1010x916x1932 mm","1010x976x1932 mm","1010x1126x1932 mm","1010x1226x1932 mm"],
+      ["Net Weight electric/gas/steam","191 / 187 / 206 Kg","202 / 198 / 217 Kg","218 / 220 / 239 Kg","261 / 267 / 286 Kg","270 / 282 / 299 Kg","282 / 293 / 312 Kg","295 / 305 / 324 Kg"],
+      ["Packaging Size: LxWxH","836x790x1810 mm","836x910x1810 mm","836x1080x1810 mm","1057x910x2095 mm","1057x970x2095 mm","1057x1120x2095 mm","1057x1210x2095 mm"],
+      ["Gross Weight electric/gas/steam","200 / 196 / 215 Kg","212 / 208 / 227 Kg","220 / 233 / 252 Kg","273 / 279 / 298 Kg","283 / 293 / 313 Kg","297 / 308 / 327 Kg","311 / 321 / 340 Kg"],
+      ["Electrical Heating Power","12 kW (6x2)","12 kW (6x2)","18 kW (6x3)","24 kW (6x4)","24 kW (6x4)","30 kW (6x5)","30 kW (6x5)"],
+      ["Steam heating consumption","26 Kg","36 Kg","46 Kg","49 Kg","52 Kg","64 Kg","73 Kg"],
+      ["Gas power installed","23,5 kW","23,5 kW","23,5 kW","32 kW","32 kW","42 kW","42 kW"],
+      ["Container 20\" - 40\" loading plan","14 - 30 pz","12 - 28 pcs","12 - 28 pcs","12 - 26 pcs","12 - 24 pz","12 - 22 pz","10 - 21 pz"]
+    ]
   },
 
   // ── 8. Dryers: ES Smart Line ──

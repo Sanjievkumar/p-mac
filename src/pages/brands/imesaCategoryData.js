@@ -1,6 +1,7 @@
 // Official IMESA Categories & Series Database (1:1 clone of imesa.it structure)
 import lmSeriesImg from '../../assets/brands/imesa/imesa-lm-series.png';
 import d2wBarrierImg from '../../assets/brands/imesa/remote/Lavatrice-a-barriera-asettica_Barrier-Washers_D2W_18_1.jpg';
+import rcSeriesImg from '../../assets/brands/imesa/remote/Lavatrici-rigide_Low-spin-washing-machines_RC_30_1-1000x707.jpg';
 import esSmartImg from '../../assets/brands/imesa/imesa-es-smart.png';
 import es5575Img from '../../assets/brands/imesa/imesa-es-55-75.png';
 import fiEasyImg from '../../assets/brands/imesa/remote/fi2022_02.439.png';
@@ -58,6 +59,22 @@ export const OFFICIAL_CATEGORIES = [
         ]
       },
       {
+        id: 'hard-mounted',
+        title: 'HARD MOUNTED INDUSTRIAL WASHING MACHINES',
+        subtitle: 'RC SERIES',
+        machineImg: rcSeriesImg,
+        primaryTarget: 'imesa-rc-series',
+        paras: [
+          'Hard mounted industrial washing machine designed to last.',
+          'Efficiency, sturdiness and ease of use for high level washing results. RC series industrial washing machines do not require springs or shock absorbers.',
+          'Fixed to the ground by fixing devices. Ideal for use on board small and medium sized ships, ferries and freighters.',
+          'The innovative <strong>IM11 computer touchscreen</strong> makes programming, use and maintenance extremely simple and within reach of all types of user.'
+        ],
+        seriesButtons: [
+          { id: 'imesa-rc-series', label: 'RC 11-85 kg' }
+        ]
+      },
+      {
         id: 'barrier-washers',
         title: 'HYGIENE BARRIER WASHERS',
         subtitle: 'D2W SERIES',
@@ -97,7 +114,7 @@ export const OFFICIAL_CATEGORIES = [
       {
         id: 'es-smart-premium',
         title: 'TUMBLE DRYER',
-        subtitle: 'ES SMART AND PREMIUM SERIES (11 - 36 KG)',
+        subtitle: 'ES EASY, SMART AND PREMIUM SERIES (11 - 36 KG)',
         machineImg: esSmartImg,
         primaryTarget: 'imesa-es-smart',
         paras: [
@@ -105,6 +122,7 @@ export const OFFICIAL_CATEGORIES = [
           'The <strong>IM10 computer touchscreen</strong> allows endless drying solutions for effective and customized drying results.<br />A dry for every need.'
         ],
         seriesButtons: [
+          { id: 'imesa-es-easy', label: 'ES Easy Line 11-36 kg' },
           { id: 'imesa-es-smart', label: 'ES Smart Line 11-36 kg' },
           { id: 'imesa-es-premium', label: 'ES Premium Line 11-36 kg' }
         ]
