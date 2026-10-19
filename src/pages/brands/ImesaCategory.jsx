@@ -139,67 +139,74 @@ export default function ImesaCategory({ categoryId }) {
       <section className="w-full bg-[#FFFFFF] py-16 sm:py-20 lg:py-24">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
           
-          <div className="space-y-18 sm:space-y-28">
-            {currentCategory.showcases.map((showcase, index) => (
-              <div 
-                key={showcase.id}
-                className={`grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center ${
-                  index > 0 ? 'pt-18 sm:pt-28 border-t border-slate-200/70' : ''
-                }`}
-              >
-                
-                {/* Left Column (5 cols): Machine Front-Facing Photo floating on clean background */}
-                <div className="lg:col-span-5 flex items-center justify-center">
-                  <Link 
-                    to={`/brands/imesa/${showcase.primaryTarget}`}
-                    className="group block"
-                    title="Click to view full specifications"
-                  >
-                    <img 
-                      src={showcase.machineImg} 
-                      alt={showcase.title}
-                      className="max-h-[380px] sm:max-h-[460px] lg:max-h-[520px] w-auto mx-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]" 
-                    />
-                  </Link>
-                </div>
-
-                {/* Right Column (7 cols): Title, Subtitle, Text, Boxed Capacity Buttons */}
-                <div className="lg:col-span-7 flex flex-col justify-center">
+          <div className="space-y-20 sm:space-y-28">
+            {currentCategory.showcases.map((showcase, index) => {
+              const isReversed = index % 2 === 1;
+              return (
+                <div 
+                  key={showcase.id}
+                  className={`grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center ${
+                    index > 0 ? 'pt-20 sm:pt-28 border-t border-slate-200/80' : ''
+                  }`}
+                >
                   
-                  {/* Machine Showcase Title (uppercase #0d447b) */}
-                  <h2 className="text-2xl sm:text-3xl lg:text-[30px] font-bold text-[#0d447b] tracking-[0.04em] uppercase leading-snug mb-2">
-                    {showcase.title}
-                  </h2>
-
-                  {/* Machine Series Subtitle - ENLARGED as requested */}
-                  <h3 className="text-sm sm:text-base lg:text-[17px] font-bold text-[#0d447b] tracking-[0.14em] uppercase mb-6 sm:mb-8">
-                    {showcase.subtitle}
-                  </h3>
-
-                  {/* Description Paragraphs - larger, comfortable reading */}
-                  <div className="space-y-3.5 text-[#0d447b] text-sm sm:text-base leading-[1.7] mb-8 max-w-2xl">
-                    {showcase.paras.map((para, idx) => (
-                      <p key={idx} dangerouslySetInnerHTML={{ __html: para }} />
-                    ))}
+                  {/* Machine Front-Facing Photography floating on clean background */}
+                  <div className={`lg:col-span-6 flex items-center justify-center order-1 ${
+                    isReversed ? 'lg:order-2 lg:pl-6 xl:pl-10' : 'lg:order-1 lg:pr-6 xl:pr-10'
+                  }`}>
+                    <Link 
+                      to={`/brands/imesa/${showcase.primaryTarget}`}
+                      className="group block w-full text-center"
+                      title="Click to view full specifications"
+                    >
+                      <img 
+                        src={showcase.machineImg} 
+                        alt={showcase.title}
+                        className="max-h-[380px] sm:max-h-[440px] lg:max-h-[480px] xl:max-h-[520px] w-auto mx-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]" 
+                      />
+                    </Link>
                   </div>
 
-                  {/* Official Capacity Series Rectangular Buttons (Image 2 exact match) */}
-                  <div className="flex flex-wrap gap-2.5 sm:gap-3.5">
-                    {showcase.seriesButtons.map((btn) => (
-                      <Link
-                        key={btn.id}
-                        to={`/brands/imesa/${btn.id}`}
-                        className="border border-[#0d447b] text-[#0d447b] bg-white hover:bg-[#0d447b] hover:text-white transition-colors duration-150 px-5 py-2.5 sm:px-6 sm:py-3 text-sm sm:text-[15px] font-medium tracking-wide rounded-none inline-block text-center shadow-none cursor-pointer"
-                      >
-                        {btn.label}
-                      </Link>
-                    ))}
+                  {/* Title, Subtitle, Text, Boxed Capacity Buttons */}
+                  <div className={`lg:col-span-6 flex flex-col justify-center order-2 ${
+                    isReversed ? 'lg:order-1 lg:pr-6 xl:pr-10' : 'lg:order-2 lg:pl-6 xl:pl-10'
+                  }`}>
+                    
+                    {/* Machine Showcase Title (uppercase #0d447b) */}
+                    <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-bold text-[#0d447b] tracking-[0.02em] uppercase leading-tight mb-2">
+                      {showcase.title}
+                    </h2>
+
+                    {/* Machine Series Subtitle */}
+                    <h3 className="text-sm sm:text-base lg:text-[16px] font-bold text-[#0d447b] tracking-[0.14em] uppercase mb-6 sm:mb-8">
+                      {showcase.subtitle}
+                    </h3>
+
+                    {/* Description Paragraphs - comfortable reading in #0d447b */}
+                    <div className="space-y-4 text-[#0d447b] text-[15px] sm:text-[16px] leading-[1.75] mb-8 max-w-2xl font-normal">
+                      {showcase.paras.map((para, idx) => (
+                        <p key={idx} dangerouslySetInnerHTML={{ __html: para }} />
+                      ))}
+                    </div>
+
+                    {/* Official Capacity Series Rectangular Buttons (Image 1 & 2 exact match) */}
+                    <div className="flex flex-wrap gap-3 sm:gap-4 pt-1">
+                      {showcase.seriesButtons.map((btn) => (
+                        <Link
+                          key={btn.id}
+                          to={`/brands/imesa/${btn.id}`}
+                          className="border border-[#0d447b] text-[#0d447b] bg-white hover:bg-[#0d447b] hover:text-white transition-colors duration-150 px-6 sm:px-7 py-2.5 sm:py-3 text-sm sm:text-[15px] font-medium tracking-wide rounded-none inline-block text-center shadow-none cursor-pointer"
+                        >
+                          {btn.label}
+                        </Link>
+                      ))}
+                    </div>
+
                   </div>
 
                 </div>
-
-              </div>
-            ))}
+              );
+            })}
           </div>
 
         </div>

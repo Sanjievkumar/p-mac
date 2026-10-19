@@ -5,15 +5,15 @@ import lm2632Img from '../../assets/brands/imesa/imesa-lm-26-32.png';
 import lm4085Img from '../../assets/brands/imesa/imesa-lm-40-85.jpg';
 import lm100125Img from '../../assets/brands/imesa/imesa-lm-100-125.jpg';
 
-import d2wBarrierImg from '../../assets/brands/imesa/imesa-d2w-barrier.jpg';
-import d2w3055Img from '../../assets/brands/imesa/imesa-d2w-30-55.jpg';
+import d2wBarrierImg from '../../assets/brands/imesa/remote/Lavatrice-a-barriera-asettica_Barrier-Washers_D2W_18_1.jpg';
+import d2w3055Img from '../../assets/brands/imesa/remote/A_D2W-30_55_F1-copia-1000x1000.jpg';
 
 import esSmartImg from '../../assets/brands/imesa/imesa-es-smart.png';
 import esPremiumImg from '../../assets/brands/imesa/imesa-es-premium.png';
-import fiEasyImg from '../../assets/brands/imesa/imesa-fi-easy.jpg';
-import fiSmartImg from '../../assets/brands/imesa/imesa-fi-smart.jpg';
-import mcaIronerImg from '../../assets/brands/imesa/imesa-mca-ironer.jpg';
-import mcmIronerImg from '../../assets/brands/imesa/imesa-mcm-ironer.jpg';
+import fiEasyImg from '../../assets/brands/imesa/remote/fi2022_02.439.png';
+import fiSmartImg from '../../assets/brands/imesa/remote/fi2022_03.369.png';
+import mcaIronerImg from '../../assets/brands/imesa/remote/IMESA_Calandre-asciuganti_Drying-Ironing_MCA_NEW_FRONTE-1.png';
+import mcmIronerImg from '../../assets/brands/imesa/remote/Calandre-asciuganti_Drying-Ironing_MCM_1.jpg';
 
 // Local mirrored assets for 100% reliability, zero 403 blocks, and instant loading
 const localAssets = import.meta.glob('../../assets/brands/imesa/remote/*.*', { eager: true, import: 'default' });

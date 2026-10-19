@@ -1,12 +1,12 @@
 // Official IMESA Categories & Series Database (1:1 clone of imesa.it structure)
 import lmSeriesImg from '../../assets/brands/imesa/imesa-lm-series.png';
-import d2wBarrierImg from '../../assets/brands/imesa/imesa-d2w-barrier.jpg';
+import d2wBarrierImg from '../../assets/brands/imesa/remote/Lavatrice-a-barriera-asettica_Barrier-Washers_D2W_18_1.jpg';
 import esSmartImg from '../../assets/brands/imesa/imesa-es-smart.png';
 import es5575Img from '../../assets/brands/imesa/imesa-es-55-75.png';
-import fiEasyImg from '../../assets/brands/imesa/imesa-fi-easy.jpg';
-import fiSmartImg from '../../assets/brands/imesa/imesa-fi-smart.jpg';
-import mcaIronerImg from '../../assets/brands/imesa/imesa-mca-ironer.jpg';
-import mcmIronerImg from '../../assets/brands/imesa/imesa-mcm-ironer.jpg';
+import fiEasyImg from '../../assets/brands/imesa/remote/fi2022_02.439.png';
+import fiSmartImg from '../../assets/brands/imesa/remote/fi2022_03.369.png';
+import mcaIronerImg from '../../assets/brands/imesa/remote/IMESA_Calandre-asciuganti_Drying-Ironing_MCA_NEW_FRONTE-1.png';
+import mcmIronerImg from '../../assets/brands/imesa/remote/Calandre-asciuganti_Drying-Ironing_MCM_1.jpg';
 
 // Category Hero Photography & Icons
 import catHeroWashingImg from '../../assets/brands/imesa/imesa-cat-hero-washing.jpg';
@@ -144,13 +144,15 @@ export const OFFICIAL_CATEGORIES = [
     showcases: [
       {
         id: 'fi-easy',
-        title: 'FLATWORK IRONERS',
-        subtitle: 'SERIE EASY FI (DIAM. 25 CM – DIAM. 33 CM)',
+        title: 'FLATWORK IRONERS - Easy FI -',
+        subtitle: 'DIAM. 25 CM – DIAM. 33 CM',
         machineImg: fiEasyImg,
         primaryTarget: 'imesa-fi-easy',
         paras: [
-          'The IMESA flatwork ironer Easy FI is equipped with analog control unit and special torsion bar.',
-          'Uniform ironing pressure along the entire roller length. <strong>Cotton roller cover</strong> with optional Nomex, vacuum suction system, and IoT connection ready.'
+          'The IMESA flatwork ironer <em>Easy</em> FI is equipped with <strong>analog control unit</strong>, digital thermostat for temperature adjustment, fixed ironing speed (or adjustable by inverter as optional) and fixed ironing pressure uniform all over the entire roller length by means of the special torsion bar.',
+          'The <em>Easy</em> FI flatwork ironer is equipped with Cotton roller cover, on request can be replaced with NOMEX roller cover. The vacuum system and frequency variator for electronic ironing speed control are available on order.',
+          'Available with IoT connection for the remote machine control.',
+          '<em>Easy</em> FI line is the ideal solution for restaurants, small hotels and country houses.'
         ],
         seriesButtons: [
           { id: 'imesa-fi-easy', label: 'Serie Easy FI' }
@@ -158,13 +160,16 @@ export const OFFICIAL_CATEGORIES = [
       },
       {
         id: 'fi-smart',
-        title: 'FLATWORK IRONERS',
-        subtitle: 'SERIE SMART FI (DIAM. 25 CM – DIAM. 33 CM)',
+        title: 'FLATWORK IRONERS - Smart FI -',
+        subtitle: 'DIAM. 25 CM – DIAM. 33 CM',
         machineImg: fiSmartImg,
         primaryTarget: 'imesa-fi-smart',
         paras: [
-          'The IMESA Smart FI flatwork ironer is equipped with digital control unit <strong>IM10 touch screen</strong>, allowing endless ironing solutions for effective and customized ironing results.',
-          'Complete with frequency variator for electronic speed control according to temperature, Cool Down system and <strong>patented linear drive system</strong> for uniform ironing quality across the entire roller length.'
+          'The IMESA <em>Smart</em> FI flatwork ironer is equipped with <strong>digital control unit IM10 touch screen</strong>, allowing endless ironing solution for effective and customized ironing result.',
+          'The <em>Smart</em> FI flatwork ironer is complete with frequency variator for <strong>electronic ironing speed control according to temperature</strong>, Cool Down system and patented linear drive system for the <strong>control of the ironing pressure</strong> for a uniform ironing quality all over the entire length of the roller by means of the special torsion bar.',
+          'The roller cover is in NOMEX as standard, resistant to high temperature. The roller metal mesh cover is on request. Models with diameter 33 cm come with suction included as standard.',
+          'The <em>Smart</em> FI flatwork ironer is available with IoT connection for the machine remote control.',
+          '<em>Smart</em> FI line is the ideal solution for restaurants, small hotels and country houses.'
         ],
         seriesButtons: [
           { id: 'imesa-fi-smart', label: 'Serie Smart FI' }
