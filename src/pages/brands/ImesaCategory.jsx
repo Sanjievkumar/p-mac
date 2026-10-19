@@ -27,27 +27,29 @@ export default function ImesaCategory({ categoryId }) {
   }, [resolvedId]);
 
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-800 flex flex-col">
+    <div className="min-h-screen bg-white font-inter text-slate-800 flex flex-col">
       <Navbar />
 
-      {/* ── 1. Official Breadcrumbs Bar ── */}
-      <nav aria-label="Breadcrumb" className="w-full bg-[#f8f9fa] border-b border-slate-200/80 pt-20 sm:pt-24 pb-3 sm:pb-4 px-4 sm:px-8 lg:px-12 xl:px-16 text-xs text-slate-500 font-medium">
-        <div className="max-w-[1536px] mx-auto flex items-center justify-between flex-wrap gap-2.5 sm:gap-4">
+      {/* ── 1. Official Breadcrumbs Bar with Standard Back Button ── */}
+      <nav aria-label="Breadcrumb" className="w-full bg-[#f8f9fa] border-b border-slate-200/80 pt-20 sm:pt-24 pb-3 sm:pb-4 px-4 sm:px-8 lg:px-12 xl:px-16 text-xs sm:text-sm text-slate-500 font-medium">
+        <div className="max-w-[1536px] mx-auto flex items-center justify-between flex-wrap gap-3 sm:gap-4">
           <div className="flex items-center flex-wrap gap-1.5 sm:gap-2">
-            <Link to="/" className="hover:text-[#0C4779] transition-colors">Home</Link>
+            <Link to="/" className="hover:text-[#0d447b] transition-colors">Home</Link>
             <span className="text-slate-300">/</span>
-            <Link to="/brands" className="hover:text-[#0C4779] transition-colors">Brands</Link>
+            <Link to="/brands" className="hover:text-[#0d447b] transition-colors">Brands</Link>
             <span className="text-slate-300">/</span>
-            <Link to="/brands/imesa" className="hover:text-[#0C4779] transition-colors">IMESA</Link>
+            <Link to="/brands/imesa" className="hover:text-[#0d447b] transition-colors">IMESA</Link>
             <span className="text-slate-300">/</span>
-            <span className="text-[#0C4779] font-bold">{currentCategory.name}</span>
+            <span className="text-[#0d447b] font-bold">{currentCategory.name}</span>
           </div>
 
+          {/* Standard Promac Back Button */}
           <Link 
             to="/brands/imesa" 
-            className="inline-flex items-center gap-1.5 text-slate-500 hover:text-[#0C4779] font-semibold transition-colors text-[11px] sm:text-xs"
+            className="inline-flex items-center gap-2 text-slate-500 hover:text-[#0d447b] transition-colors font-medium text-xs sm:text-sm group"
           >
-            <ArrowLeft className="w-3.5 h-3.5" /> Back to IMESA Overview
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+            <span>Back to IMESA Overview</span>
           </Link>
         </div>
       </nav>
@@ -55,7 +57,7 @@ export default function ImesaCategory({ categoryId }) {
       {/* ── 2. Category Switcher Bar ── */}
       <div className="w-full bg-white border-b border-slate-200 py-3 sm:py-3.5 px-4 sm:px-8 lg:px-12 xl:px-16 sticky top-16 z-30 shadow-sm backdrop-blur-md bg-white/95">
         <div className="max-w-[1536px] mx-auto flex items-center justify-between flex-wrap gap-3">
-          <span className="text-xs font-bold text-[#0C4779] uppercase tracking-wider hidden lg:inline-block">
+          <span className="text-xs sm:text-sm font-bold text-[#0d447b] uppercase tracking-wider hidden lg:inline-block">
             IMESA Categories:
           </span>
           
@@ -66,10 +68,10 @@ export default function ImesaCategory({ categoryId }) {
                 <Link
                   key={cat.id}
                   to={`/brands/imesa/${cat.id}`}
-                  className={`px-4 sm:px-5 py-2 text-xs font-bold transition-all duration-150 flex items-center gap-2 shrink-0 border ${
+                  className={`px-4 sm:px-5 py-2 text-xs sm:text-sm font-bold transition-all duration-150 flex items-center gap-2 shrink-0 border ${
                     isActive
-                      ? 'bg-[#0C4779] text-white border-[#0C4779]'
-                      : 'bg-white text-[#0C4779] border-slate-200 hover:border-[#0C4779]'
+                      ? 'bg-[#0d447b] text-white border-[#0d447b]'
+                      : 'bg-white text-[#0d447b] border-slate-200 hover:border-[#0d447b]'
                   }`}
                 >
                   {cat.badgeIcon && (
@@ -95,20 +97,20 @@ export default function ImesaCategory({ categoryId }) {
               <img 
                 src={currentCategory.badgeIcon} 
                 alt={currentCategory.name} 
-                className="w-12 h-12 sm:w-14 sm:h-14 object-contain mb-5 sm:mb-6" 
+                className="w-14 h-14 sm:w-16 sm:h-16 object-contain mb-5 sm:mb-6" 
               />
             )}
 
-            {/* Official Category H1 Title */}
-            <h1 className="text-2xl sm:text-3xl lg:text-[34px] xl:text-[38px] font-semibold text-[#0C4779] tracking-normal uppercase leading-[1.18] mb-4">
+            {/* Official Category H1 Title - enlarged and bold in #0d447b */}
+            <h1 className="text-3xl sm:text-4xl lg:text-[42px] xl:text-[46px] font-bold text-[#0d447b] tracking-normal uppercase leading-[1.12] mb-4">
               {currentCategory.h1}
             </h1>
 
             {/* Official IMESA Underline Accent */}
-            <div className="w-10 h-[2px] bg-[#9BB7D0] mb-6 sm:mb-8" />
+            <div className="w-12 h-[3px] bg-[#9BB7D0] mb-6 sm:mb-8" />
 
-            {/* Category Intro Paragraphs in IMESA brand blue */}
-            <div className="space-y-4 text-[#0C4779] text-[13.5px] sm:text-[14.5px] leading-[1.65]">
+            {/* Category Intro Paragraphs in #0d447b */}
+            <div className="space-y-4 text-[#0d447b] text-[15px] sm:text-[16px] leading-[1.7]">
               {currentCategory.introParas.map((para, idx) => (
                 <p key={idx} dangerouslySetInnerHTML={{ __html: para }} />
               ))}
@@ -118,7 +120,7 @@ export default function ImesaCategory({ categoryId }) {
 
           {/* Right Column: Full-bleed Category Hero Photography (Operator with machine drum) */}
           <div className="lg:col-span-6 xl:col-span-6 flex items-stretch">
-            <div className="w-full h-full min-h-[320px] sm:min-h-[420px] lg:min-h-[480px]">
+            <div className="w-full h-full min-h-[340px] sm:min-h-[440px] lg:min-h-[500px]">
               <img 
                 src={currentCategory.heroImg} 
                 alt={currentCategory.h1} 
@@ -130,19 +132,19 @@ export default function ImesaCategory({ categoryId }) {
         </div>
 
         {/* Official Site Horizontal Bottom Grey Strip */}
-        <div className="w-full h-7 sm:h-9 bg-[#EDF1F5]" />
+        <div className="w-full h-8 sm:h-10 bg-[#EDF1F5]" />
       </section>
 
       {/* ── 4. Official IMESA Machine Series Section (Exact 1:1 clone of official site img2) ── */}
-      <section className="w-full bg-[#FFFFFF] py-14 sm:py-20 lg:py-24">
+      <section className="w-full bg-[#FFFFFF] py-16 sm:py-20 lg:py-24">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
           
-          <div className="space-y-16 sm:space-y-24">
+          <div className="space-y-18 sm:space-y-28">
             {currentCategory.showcases.map((showcase, index) => (
               <div 
                 key={showcase.id}
                 className={`grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center ${
-                  index > 0 ? 'pt-16 sm:pt-24 border-t border-slate-200/70' : ''
+                  index > 0 ? 'pt-18 sm:pt-28 border-t border-slate-200/70' : ''
                 }`}
               >
                 
@@ -156,7 +158,7 @@ export default function ImesaCategory({ categoryId }) {
                     <img 
                       src={showcase.machineImg} 
                       alt={showcase.title}
-                      className="max-h-[360px] sm:max-h-[440px] lg:max-h-[500px] w-auto mx-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]" 
+                      className="max-h-[380px] sm:max-h-[460px] lg:max-h-[520px] w-auto mx-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]" 
                     />
                   </Link>
                 </div>
@@ -164,30 +166,30 @@ export default function ImesaCategory({ categoryId }) {
                 {/* Right Column (7 cols): Title, Subtitle, Text, Boxed Capacity Buttons */}
                 <div className="lg:col-span-7 flex flex-col justify-center">
                   
-                  {/* Machine Showcase Title (uppercase IMESA blue) */}
-                  <h2 className="text-xl sm:text-2xl lg:text-[24px] font-medium text-[#0C4779] tracking-[0.05em] uppercase leading-snug mb-1.5">
+                  {/* Machine Showcase Title (uppercase #0d447b) */}
+                  <h2 className="text-2xl sm:text-3xl lg:text-[30px] font-bold text-[#0d447b] tracking-[0.04em] uppercase leading-snug mb-2">
                     {showcase.title}
                   </h2>
 
-                  {/* Machine Series Subtitle */}
-                  <h3 className="text-xs sm:text-sm font-medium text-[#0C4779] tracking-[0.14em] uppercase mb-6 sm:mb-8">
+                  {/* Machine Series Subtitle - ENLARGED as requested */}
+                  <h3 className="text-sm sm:text-base lg:text-[17px] font-bold text-[#0d447b] tracking-[0.14em] uppercase mb-6 sm:mb-8">
                     {showcase.subtitle}
                   </h3>
 
-                  {/* Description Paragraphs */}
-                  <div className="space-y-3 text-[#0C4779] text-xs sm:text-sm md:text-[14.5px] leading-[1.65] mb-8 max-w-xl">
+                  {/* Description Paragraphs - larger, comfortable reading */}
+                  <div className="space-y-3.5 text-[#0d447b] text-sm sm:text-base leading-[1.7] mb-8 max-w-2xl">
                     {showcase.paras.map((para, idx) => (
                       <p key={idx} dangerouslySetInnerHTML={{ __html: para }} />
                     ))}
                   </div>
 
                   {/* Official Capacity Series Rectangular Buttons (Image 2 exact match) */}
-                  <div className="flex flex-wrap gap-2.5 sm:gap-3">
+                  <div className="flex flex-wrap gap-2.5 sm:gap-3.5">
                     {showcase.seriesButtons.map((btn) => (
                       <Link
                         key={btn.id}
                         to={`/brands/imesa/${btn.id}`}
-                        className="border border-[#0C4779] text-[#0C4779] bg-white hover:bg-[#0C4779] hover:text-white transition-colors duration-150 px-4 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-[13.5px] font-normal tracking-wide rounded-none inline-block text-center shadow-none cursor-pointer"
+                        className="border border-[#0d447b] text-[#0d447b] bg-white hover:bg-[#0d447b] hover:text-white transition-colors duration-150 px-5 py-2.5 sm:px-6 sm:py-3 text-sm sm:text-[15px] font-medium tracking-wide rounded-none inline-block text-center shadow-none cursor-pointer"
                       >
                         {btn.label}
                       </Link>
@@ -208,7 +210,7 @@ export default function ImesaCategory({ categoryId }) {
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-8">
             <div>
-              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#0C4779] uppercase tracking-tight">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#0d447b] uppercase tracking-tight">
                 Explore Other IMESA Categories
               </h3>
               <p className="text-slate-500 text-xs sm:text-sm mt-0.5">
@@ -218,7 +220,7 @@ export default function ImesaCategory({ categoryId }) {
 
             <Link 
               to="/brands/imesa" 
-              className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0C4779] hover:text-[#083256] uppercase tracking-wider transition-colors"
+              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#0d447b] hover:text-[#083256] uppercase tracking-wider transition-colors"
             >
               All IMESA Products <ChevronRight className="w-4 h-4" />
             </Link>
@@ -229,11 +231,11 @@ export default function ImesaCategory({ categoryId }) {
               <Link
                 key={cat.id}
                 to={`/brands/imesa/${cat.id}`}
-                className="group bg-white p-5 sm:p-6 border border-slate-200 hover:border-[#0C4779] transition-all duration-200 flex flex-col justify-between"
+                className="group bg-white p-5 sm:p-6 border border-slate-200 hover:border-[#0d447b] transition-all duration-200 flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-[10px] font-bold text-[#0C4779] bg-[#f0f4f8] px-2.5 py-1 uppercase tracking-wider">
+                    <span className="text-[10px] font-bold text-[#0d447b] bg-[#f0f4f8] px-2.5 py-1 uppercase tracking-wider">
                       {cat.capacityBadge}
                     </span>
                     {cat.badgeIcon && (
@@ -249,15 +251,15 @@ export default function ImesaCategory({ categoryId }) {
                     />
                   </div>
 
-                  <h4 className="font-bold text-[#0C4779] text-sm sm:text-base uppercase mb-1 transition-colors">
+                  <h4 className="font-bold text-[#0d447b] text-base uppercase mb-1 transition-colors">
                     {cat.name}
                   </h4>
-                  <p className="text-slate-500 text-xs line-clamp-2 leading-relaxed">
+                  <p className="text-slate-500 text-xs leading-relaxed">
                     {cat.cardDesc}
                   </p>
                 </div>
 
-                <div className="flex items-center gap-1.5 text-xs font-bold text-[#0C4779] mt-4 pt-3 border-t border-slate-100 group-hover:translate-x-1 transition-transform">
+                <div className="flex items-center gap-1.5 text-xs font-bold text-[#0d447b] mt-4 pt-3 border-t border-slate-100 group-hover:translate-x-1 transition-transform">
                   View Category <ChevronRight className="w-3.5 h-3.5" />
                 </div>
               </Link>
@@ -267,7 +269,7 @@ export default function ImesaCategory({ categoryId }) {
       </section>
 
       {/* ── 6. Technical Consultation Banner ── */}
-      <section className="w-full bg-[#0C4779] py-12 sm:py-16 text-white">
+      <section className="w-full bg-[#0d447b] py-14 sm:py-18 text-white">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 text-center md:text-left">
           <div className="max-w-2xl">
             <span className="text-cyan-200 text-xs font-bold tracking-widest uppercase mb-2 block">
@@ -276,14 +278,14 @@ export default function ImesaCategory({ categoryId }) {
             <h3 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight mb-2">
               Need Guidance Selecting the Right IMESA Capacity?
             </h3>
-            <p className="text-white/80 text-xs sm:text-sm leading-relaxed">
+            <p className="text-white/85 text-xs sm:text-sm md:text-base leading-relaxed">
               Our laundry engineers help calculate hourly linen throughput, utility consumption, and floorplan configuration for hospital, hotel, and industrial installations.
             </p>
           </div>
 
           <Link
             to="/contact"
-            className="px-6 sm:px-8 py-3 rounded-none bg-white text-[#0C4779] hover:bg-slate-100 font-bold text-xs sm:text-sm tracking-wider uppercase transition-colors shrink-0 inline-flex items-center gap-2"
+            className="px-6 sm:px-8 py-3.5 rounded-none bg-white text-[#0d447b] hover:bg-slate-100 font-bold text-xs sm:text-sm tracking-wider uppercase transition-colors shrink-0 inline-flex items-center gap-2"
           >
             <Mail className="w-4 h-4" /> Request Technical Quotation
           </Link>

@@ -13,12 +13,14 @@ export default {
         'promac-blue': '#0B4F8A',
         'promac-red': '#E31E24',
         'promac-dark': '#0a0a0a',
+        'imesa-blue': '#0d447b',
       },
       fontFamily: {
         'sans': ['"Montserrat"', 'sans-serif'],
         'display': ['"Montserrat"', 'sans-serif'],
         'body': ['"Montserrat"', 'sans-serif'],
         'roboto': ['"Roboto"', 'sans-serif'],
+        'inter': ['"Inter"', 'sans-serif'],
       },
       letterSpacing: {
         'tightest': '-0.04em',
