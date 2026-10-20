@@ -213,16 +213,6 @@ export default function Services() {
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#E31E24]/[0.04] rounded-full blur-[180px] -mr-40 -mt-40 pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#001F3F]/[0.04] rounded-full blur-[160px] -ml-40 -mb-40 pointer-events-none" />
 
-        {/* Blueprint Grid Watermark */}
-        <div
-          className="absolute inset-0 pointer-events-none opacity-[0.2] animate-grid"
-          style={{
-            backgroundImage: 'linear-gradient(#001F3F 1px, transparent 1px), linear-gradient(90deg, #001F3F 1px, transparent 1px)',
-            backgroundSize: '48px 48px',
-          }}
-          aria-hidden="true"
-        />
-
         <div className="max-w-[1200px] w-full relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -246,7 +236,7 @@ export default function Services() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="text-lg md:text-xl text-slate-500 max-w-3xl mx-auto font-light tracking-wide leading-relaxed"
+            className="text-lg md:text-xl text-slate-700 md:text-slate-800 max-w-3xl mx-auto font-bold tracking-wide leading-relaxed text-center"
           >
             From the initial blueprint to decades of reliable operation, Promac provides end-to-end engineering solutions that transform commercial laundries into highly efficient, automated production powerhouses.
           </motion.p>
