@@ -27,6 +27,18 @@
     text-justify: inter-word;
   }
 
+  .text-center, p.text-center, .text-center p {
+    text-align: center !important;
+    text-justify: auto !important;
+    word-spacing: normal !important;
+  }
+
+  .text-left, p.text-left, .text-left p {
+    text-align: left !important;
+    text-justify: auto !important;
+    word-spacing: normal !important;
+  }
+
   ::selection {
     background-color: #0B4F8A;
     color: #fff;

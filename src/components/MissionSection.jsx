@@ -69,7 +69,8 @@ export default function MissionSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-white text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-8"
+            className="text-white text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-8 text-center"
+            style={{ textAlign: 'center', textJustify: 'none', wordSpacing: 'normal' }}
           >
             OUR PURPOSE
           </motion.p>
@@ -80,9 +81,10 @@ export default function MissionSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.75, delay: 0.32 }}
-            className="text-white text-4xl md:text-5xl font-bold italic leading-tight"
+            className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold italic leading-snug md:leading-tight text-center max-w-3xl mx-auto"
+            style={{ textAlign: 'center', textJustify: 'none', wordSpacing: 'normal' }}
           >
-            "To transform complex laundry requirements into efficient, reliable, and scalable operations."
+            &ldquo;To transform complex laundry requirements into efficient, reliable, and scalable operations.&rdquo;
           </motion.p>
 
           {/* ── Decorative divider ── */}
@@ -100,7 +102,8 @@ export default function MissionSection() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="text-white text-xs md:text-sm font-bold tracking-[0.25em] uppercase"
+            className="text-white text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-center"
+            style={{ textAlign: 'center', textJustify: 'none', wordSpacing: 'normal' }}
           >
             PROMAC TECHNOLOGIES &mdash; ESTD 2022.
           </motion.p>

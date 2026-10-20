@@ -180,7 +180,7 @@ export default function About() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.45 }}
               style={{ left: '5.5%', top: '44%', maxWidth: '40%' }}
-              className="absolute text-slate-700 font-medium text-[clamp(12.5px,1.3vw,17.5px)] leading-[1.5] text-justify"
+              className="absolute text-slate-700 font-medium text-[clamp(12.5px,1.3vw,17.5px)] leading-[1.5] text-left"
             >
               Industrial laundry and professional cleaning expertise, backed by international technology partnerships and technical support.
             </motion.p>
@@ -270,7 +270,7 @@ export default function About() {
             </h2>
           </div>
           
-          <div className="space-y-6 text-slate-700 text-lg leading-relaxed font-medium text-justify">
+          <div className="space-y-6 text-slate-700 text-lg leading-relaxed font-medium text-left">
             <p className="text-xl md:text-2xl font-bold text-[#001F3F] leading-tight mb-8">
               At Promac Technologies Pvt. Ltd., machines are not merely supplied — systems are engineered, performance is optimized, and long-term operational reliability is built into every solution.
             </p>
