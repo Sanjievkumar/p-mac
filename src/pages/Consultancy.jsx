@@ -12,59 +12,58 @@ import maestrelliLogo from '../assets/brands/maestrelli.png';
 import maxipressLogo from '../assets/brands/maxipress.png';
 import sealionLogo from '../assets/brands/sealion.png';
 import imesaLogo from '../assets/brands/imesa.png';
+import consultancyHeroBg from '../assets/consultancy hero.jpeg';
 
 /* ─────────────────────────────────────────────
    HERO SECTION
 ───────────────────────────────────────────── */
 function HeroSection() {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-[#fafcff] px-6 py-24 lg:px-16 flex flex-col justify-center">
+    <section className="relative min-h-[640px] sm:min-h-[700px] lg:min-h-[760px] w-full overflow-hidden bg-[#f4f7fb] px-4 sm:px-8 lg:px-16 pt-24 sm:pt-28 pb-8 flex flex-col justify-between">
       
       {/* BACKGROUND LAYER STACK */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        {/* 3D Wave Photorealistic Background Image */}
-        <div 
-          className="absolute inset-0 w-full h-full opacity-70 mix-blend-multiply"
-          style={{
-            backgroundImage: "url('/images/consultancy/hero-waves-bg.jpg')",
-            backgroundSize: 'cover',
-            backgroundPosition: 'left center',
-          }}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        {/* Photorealistic Consultancy Hero Image */}
+        <img 
+          src={consultancyHeroBg} 
+          alt="Promac Laundry Consultancy" 
+          className="w-full h-full object-cover object-right md:object-right"
         />
-        {/* Soft diffused background mixed with central gradient light effect */}
-        <div className="absolute top-[10%] left-[10%] w-[1000px] h-[1000px] rounded-full bg-gradient-to-br from-teal-50/60 via-purple-50/60 to-orange-50/60 blur-[100px] opacity-80" />
+
+        {/* Responsive contrast overlay: solid/soft white on mobile/tablet so text pops, gentle wash on desktop */}
+        <div className="absolute inset-0 bg-white/90 sm:bg-white/80 md:bg-gradient-to-r md:from-white/95 md:via-white/80 md:to-transparent lg:from-white/90 lg:via-white/40 lg:to-transparent" />
       </div>
 
       {/* CONTENT GRID */}
-      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full mt-16">
+      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center w-full mt-6 sm:mt-10 lg:mt-8">
         
         {/* LEFT COLUMN: TYPOGRAPHY & CTAs */}
         <motion.div 
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="lg:col-span-12 space-y-6 text-center flex flex-col items-center"
+          className="lg:col-span-6 xl:col-span-6 space-y-5 sm:space-y-6 text-left flex flex-col items-start max-w-xl"
         >
-          <span className="text-sm font-bold tracking-[0.25em] text-[#E31E24] uppercase block">
+          <span className="text-xs sm:text-sm font-bold tracking-[0.25em] text-[#E31E24] uppercase block">
             Consultancy
           </span>
           
-          <h1 className="text-5xl md:text-6xl lg:text-[72px] font-extrabold tracking-tighter text-[#001F3F] leading-[1.05]">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[52px] xl:text-[62px] font-extrabold tracking-tight text-[#001F3F] leading-[1.1] text-left">
             Smart Planning.<br />
             Efficient Operations.<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-blue-500 to-green-400">
+            <span className="text-[#E31E24]">
               Stronger Results.
             </span>
           </h1>
 
-          <p className="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed">
+          <p className="text-slate-700 text-sm sm:text-base md:text-lg lg:text-xl max-w-lg font-medium leading-relaxed text-left">
             Expert consultancy for industrial laundry setups that reduce costs, improve efficiency and drive long term success.
           </p>
 
           {/* CTA BUTTONS */}
-          <div className="flex flex-wrap gap-4 pt-4 justify-center">
+          <div className="flex flex-wrap gap-3 sm:gap-4 pt-1 sm:pt-2 justify-start">
             <Link to="/contact">
-              <button className="bg-[#E31E24] hover:bg-gradient-to-r hover:from-pink-600 hover:to-[#E31E24] text-white font-bold tracking-wider text-xs md:text-sm uppercase px-8 py-4 rounded-[8px] flex items-center gap-3 transition-all duration-300 shadow-md shadow-[#E31E24]/20 hover:shadow-lg hover:-translate-y-1 group">
+              <button className="bg-[#E31E24] hover:bg-gradient-to-r hover:from-pink-600 hover:to-[#E31E24] text-white font-bold tracking-wider text-xs sm:text-sm uppercase px-6 sm:px-8 py-3.5 sm:py-4 rounded-[8px] flex items-center gap-2.5 sm:gap-3 transition-all duration-300 shadow-md shadow-[#E31E24]/20 hover:shadow-lg hover:-translate-y-1 group cursor-pointer">
                 Request Consultation
                 <span className="group-hover:translate-x-1 transition-transform border border-white rounded-full p-1 bg-white/10">
                   <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -74,10 +73,10 @@ function HeroSection() {
               </button>
             </Link>
             <Link to="/contact">
-              <button className="bg-white hover:bg-[#001F3F] text-[#001F3F] hover:text-white font-bold tracking-wider text-xs md:text-sm uppercase px-8 py-4 rounded-[8px] border border-slate-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex items-center gap-3 group">
+              <button className="bg-white hover:bg-[#001F3F] text-[#001F3F] hover:text-white font-bold tracking-wider text-xs sm:text-sm uppercase px-6 sm:px-8 py-3.5 sm:py-4 rounded-[8px] border border-slate-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex items-center gap-2.5 sm:gap-3 group cursor-pointer">
                 Talk to an Expert
                 <span className="text-slate-400 group-hover:text-white transition-colors">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
                   </svg>
                 </span>
@@ -85,51 +84,54 @@ function HeroSection() {
             </Link>
           </div>
         </motion.div>
-        </div>
 
-        {/* FOOTER STATS */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto mt-20 border-t border-slate-200 pt-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center">
+        {/* Empty right column on desktop to showcase the background presentation screen */}
+        <div className="hidden lg:block lg:col-span-6 xl:col-span-6 pointer-events-none" aria-hidden="true" />
+      </div>
+
+      {/* FOOTER STATS */}
+      <div className="relative z-20 w-full max-w-7xl mx-auto mt-10 sm:mt-14 lg:mt-16 bg-white/90 backdrop-blur-md rounded-2xl p-4 sm:p-5 lg:p-6 shadow-sm border border-slate-200/80">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 items-center">
           {/* Feature 1 */}
-          <div className="flex items-center gap-3">
-            <div className="text-[#E31E24]">
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <div className="flex items-center gap-2.5 sm:gap-3">
+            <div className="text-[#E31E24] shrink-0">
+              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
             </div>
-            <span className="text-[13px] font-bold text-[#001F3F] tracking-wide">20+ Years of Experience</span>
+            <span className="text-xs sm:text-[13px] font-bold text-[#001F3F] tracking-wide leading-tight">20+ Years of Experience</span>
           </div>
 
           {/* Feature 2 */}
-          <div className="flex items-center gap-3">
-            <div className="text-[#E31E24]">
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <div className="flex items-center gap-2.5 sm:gap-3">
+            <div className="text-[#E31E24] shrink-0">
+              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
               </svg>
             </div>
-            <span className="text-[13px] font-bold text-[#001F3F] tracking-wide">1000+ Installations Completed</span>
+            <span className="text-xs sm:text-[13px] font-bold text-[#001F3F] tracking-wide leading-tight">1000+ Installations</span>
           </div>
 
           {/* Feature 3 */}
-          <div className="flex items-center gap-3">
-            <div className="text-[#E31E24]">
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <div className="flex items-center gap-2.5 sm:gap-3">
+            <div className="text-[#E31E24] shrink-0">
+              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
               </svg>
             </div>
-            <span className="text-[13px] font-bold text-[#001F3F] tracking-wide">Pan India Presence</span>
+            <span className="text-xs sm:text-[13px] font-bold text-[#001F3F] tracking-wide leading-tight">Pan India Presence</span>
           </div>
 
           {/* Feature 4 */}
-          <div className="flex items-center gap-3">
-            <div className="text-[#E31E24]">
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <div className="flex items-center gap-2.5 sm:gap-3">
+            <div className="text-[#E31E24] shrink-0">
+              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
               </svg>
             </div>
-            <span className="text-[13px] font-bold text-[#001F3F] tracking-wide">End-to-End Support</span>
+            <span className="text-xs sm:text-[13px] font-bold text-[#001F3F] tracking-wide leading-tight">End-to-End Support</span>
           </div>
         </div>
       </div>
