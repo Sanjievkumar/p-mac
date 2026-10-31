@@ -163,7 +163,7 @@ export default function Kannegiesser() {
               <img 
                 src={buildingBg} 
                 alt="Kannegiesser Headquarters" 
-                className="w-full h-auto min-h-[380px] lg:min-h-[480px] max-h-[580px] object-cover scale-[1.35] origin-[55%_65%] group-hover:scale-[1.42] transition-transform duration-700"
+                className="w-full h-auto min-h-[380px] lg:min-h-[480px] max-h-[580px] object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
             <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-[#00509B] -z-10 rounded-2xl opacity-90" style={{ clipPath: 'polygon(100% 0, 0% 100%, 100% 100%)' }} />
