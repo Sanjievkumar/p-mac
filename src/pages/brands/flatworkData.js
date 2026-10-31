@@ -1,11 +1,44 @@
+// Local Kannegiesser asset imports
+import img_Keyvisual_CSP_NEU from '../../assets/brands/kannegiesser/Keyvisual_CSP_NEU.jpg';
+import img_Keyvisual_Fluglinien from '../../assets/brands/kannegiesser/Keyvisual_Fluglinien.jpg';
+import img_Keyvisual_Bewohner from '../../assets/brands/kannegiesser/Keyvisual_Bewohner.jpg';
+import img_Keyvisual_Hotel from '../../assets/brands/kannegiesser/Keyvisual_Hotel.jpg';
+import img_Keyvisual_Krankenhaus from '../../assets/brands/kannegiesser/Keyvisual_Krankenhaus.jpg';
+import img_Keyvisual_Schutzkleidung from '../../assets/brands/kannegiesser/Keyvisual_Schutzkleidung.jpg';
+import img_Keyvisual_EMV from '../../assets/brands/kannegiesser/Keyvisual_EMV.jpg';
+import img_Keyvisual_EMC from '../../assets/brands/kannegiesser/Keyvisual_EMC.jpg';
+import img_Keyvisual_Kreuzfahrtschiff from '../../assets/brands/kannegiesser/Keyvisual_Kreuzfahrtschiff.jpg';
+import img_Thumbs_HPM from '../../assets/brands/kannegiesser/Thumbs_HPM.png';
+import img_Keyvisual_HPM from '../../assets/brands/kannegiesser/Keyvisual_HPM.jpg';
+import img_Keyvisual_CFM from '../../assets/brands/kannegiesser/Keyvisual_CFM.jpg';
+import img_csm_Precise_article_handling_54d23679cd from '../../assets/brands/kannegiesser/csm_Precise-article-handling_54d23679cd.png';
+import img_csm_Secure_article_guidance_a13fccbf92 from '../../assets/brands/kannegiesser/csm_Secure-article-guidance_a13fccbf92.png';
+import img_csm_Complete_article_control_4078d1bb8d from '../../assets/brands/kannegiesser/csm_Complete-article-control_4078d1bb8d.png';
+import img_csm_Perfect_Folding_results_112c2d7893 from '../../assets/brands/kannegiesser/csm_Perfect-Folding-results_112c2d7893.png';
+import img_csm_Sebastian_Minz_72965b5974 from '../../assets/brands/kannegiesser/csm_Sebastian-Minz_72965b5974.jpg';
+import img_Keyvisual_SFM from '../../assets/brands/kannegiesser/Keyvisual_SFM.jpg';
+import img_Thumbs_EMQ_EMT from '../../assets/brands/kannegiesser/Thumbs_EMQ_EMT.png';
+import img_Keyvisual_EMQ_EMT from '../../assets/brands/kannegiesser/Keyvisual_EMQ_EMT.jpg';
+import img_csm_Stapel_shutterstock_1128093479_2ed0942d74 from '../../assets/brands/kannegiesser/csm_Stapel_shutterstock_1128093479_2ed0942d74.jpg';
+import img_csm_shutterstock_286023770_8503e01e1c from '../../assets/brands/kannegiesser/csm_shutterstock_286023770_8503e01e1c.png';
+import img_csm_shutterstock_130622120_4c_d920875ee1 from '../../assets/brands/kannegiesser/csm_shutterstock_130622120_4c_d920875ee1.jpg';
+import img_csm_ServoTronic_df8d089cff from '../../assets/brands/kannegiesser/csm_ServoTronic_df8d089cff.jpg';
+import img_csm_20140325_2018_layout_46d77bc6be from '../../assets/brands/kannegiesser/csm_20140325_2018_layout_46d77bc6be.png';
+import img_csm_IMG_4866_1db66b120f from '../../assets/brands/kannegiesser/csm_IMG_4866_1db66b120f.png';
+import img_csm_Margarita_Stuckenbrok_01_33e28dbc99 from '../../assets/brands/kannegiesser/csm_Margarita-Stuckenbrok_01_33e28dbc99.jpg';
+import img_Thumbs_RFM from '../../assets/brands/kannegiesser/Thumbs_RFM.png';
+import img_Keyvisual_RFM from '../../assets/brands/kannegiesser/Keyvisual_RFM.jpg';
+import img_Thumbs_XFM from '../../assets/brands/kannegiesser/Thumbs_XFM.png';
+import img_Keyvisual_XFM from '../../assets/brands/kannegiesser/Keyvisual_XFM.jpg';
+
 export const FLATWORK_DATA = {
   "kannegiesser-separating": {
     "category": "Flatwork",
     "title": "Separating and Feeding Systems",
     "subtitle": "CSP",
     "description": "Clipmaster CSP ensures maximum separation performance.",
-    "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_CSP_NEU.jpg",
-    "heroImg": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_CSP_NEU.jpg",
+    "img": img_Keyvisual_CSP_NEU,
+    "heroImg": img_Keyvisual_CSP_NEU,
     "tabs": {
       "overview": {
         "introTitle": "GREAT QUANTITIES NEED A GREAT SOLUTION",
@@ -15,27 +48,27 @@ export const FLATWORK_DATA = {
         "applications": [
           {
             "name": "Airlines",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Fluglinien.jpg",
+            "img": img_Keyvisual_Fluglinien,
             "text": "Above the clouds you want to ensure the best results for every passenger. With Kannegiesser machine you can perfectly handle your customer's wide range of Airline Blankets."
           },
           {
             "name": "Residental",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Bewohner.jpg",
+            "img": img_Keyvisual_Bewohner,
             "text": "Respectful dealing with people and their textiles. Hygienically and gently processed, clean and completely back at the resident – that's your core business. Kannegiesser supports you with the right machine and data technology!"
           },
           {
             "name": "Hospitality & Restaurant",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Hotel.jpg",
+            "img": img_Keyvisual_Hotel,
             "text": "The variety of articles is constantly growing. Customers expect their individual selection of linen. With Kannegiesser machines, you can offer the highest quality, which is particularly gentle on the textile and resources!"
           },
           {
             "name": "Healthcare",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Krankenhaus.jpg",
+            "img": img_Keyvisual_Krankenhaus,
             "text": "Do you handle a wide range of linen for the healthcare sector? The professional preparation of those textiles requires a reproducible hygiene process. With Kannegiesser you are on the safe side!"
           },
           {
             "name": "Workwear",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Schutzkleidung.jpg",
+            "img": img_Keyvisual_Schutzkleidung,
             "text": "High pollution loads. Preservation of the protective function. Textile variety in a modern design. These requirements are handled daily! Kannegiesser solutions help you to provide your customers with fresh workwear punctually and reliably."
           }
         ],
@@ -71,7 +104,7 @@ export const FLATWORK_DATA = {
     "title": "EMV",
     "subtitle": "Feeding machines",
     "description": "",
-    "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_EMV.jpg",
+    "img": img_Keyvisual_EMV,
     "tabs": {
       "overview": {
         "introTitle": "INCREASING PROFITS WITH SMALL PIECES.",
@@ -80,15 +113,15 @@ export const FLATWORK_DATA = {
         "applications": [
           {
             "name": "Airlines",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Fluglinien.jpg"
+            "img": img_Keyvisual_Fluglinien
           },
           {
             "name": "Hospitality & Restaurant",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Hotel.jpg"
+            "img": img_Keyvisual_Hotel
           },
           {
             "name": "Healthcare",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Krankenhaus.jpg"
+            "img": img_Keyvisual_Krankenhaus
           }
         ],
         "summaryBlocks": [
@@ -105,7 +138,7 @@ export const FLATWORK_DATA = {
     "title": "EMC",
     "subtitle": "Feeding machines",
     "description": "",
-    "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_EMC.jpg",
+    "img": img_Keyvisual_EMC,
     "tabs": {
       "overview": {
         "introTitle": "WHERE FLEXIBILTY AND QUALITY COUNT",
@@ -114,23 +147,23 @@ export const FLATWORK_DATA = {
         "applications": [
           {
             "name": "Cruise Ships",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Kreuzfahrtschiff.jpg"
+            "img": img_Keyvisual_Kreuzfahrtschiff
           },
           {
             "name": "Airlines",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Fluglinien.jpg"
+            "img": img_Keyvisual_Fluglinien
           },
           {
             "name": "Hospitality & Restaurant",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Hotel.jpg"
+            "img": img_Keyvisual_Hotel
           },
           {
             "name": "Healthcare",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Krankenhaus.jpg"
+            "img": img_Keyvisual_Krankenhaus
           },
           {
             "name": "Residental",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Bewohner.jpg"
+            "img": img_Keyvisual_Bewohner
           }
         ],
         "summaryBlocks": [
@@ -147,8 +180,8 @@ export const FLATWORK_DATA = {
     "title": "Ironers",
     "subtitle": "HPM / HPM Gas",
     "description": "High performance ironers",
-    "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_HPM.png",
-    "heroImg": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_HPM.jpg",
+    "img": img_Thumbs_HPM,
+    "heroImg": img_Keyvisual_HPM,
     "tabs": {
       "overview": {
         "introTitle": "THE MOST POWERFUL IRONER IN THE WORLD",
@@ -157,27 +190,27 @@ export const FLATWORK_DATA = {
         "applications": [
           {
             "name": "Cruise Ships",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Kreuzfahrtschiff.jpg",
+            "img": img_Keyvisual_Kreuzfahrtschiff,
             "text": "Floating cities where nothing is left to be desired! The textiles are processed in a minimum space with the lowest possible use of resources – with innovative laundry technology from Kannegiesser."
           },
           {
             "name": "Airlines",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Fluglinien.jpg",
+            "img": img_Keyvisual_Fluglinien,
             "text": "Above the clouds you want to ensure the best results for every passenger. With Kannegiesser machine you can perfectly handle your customer’s wide range of Airline Blankets."
           },
           {
             "name": "Hospitality & Restaurant",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Hotel.jpg",
+            "img": img_Keyvisual_Hotel,
             "text": "The variety of articles is constantly growing. Customers expect their individual selection of linen. With Kannegiesser machines, you can offer the highest quality, which is particularly gentle on the textile and resources!"
           },
           {
             "name": "Healthcare",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Krankenhaus.jpg",
+            "img": img_Keyvisual_Krankenhaus,
             "text": "Do you handle a wide range of linen for the healthcare sector? The professional preparation of those textiles requires a reproducible hygiene process. With Kannegiesser you are on the safe side!"
           },
           {
             "name": "Residental",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Bewohner.jpg",
+            "img": img_Keyvisual_Bewohner,
             "text": "Respectful dealing with people and their textiles. Hygienically and gently processed, clean and completely back at the resident – that’s your core business. Kannegiesser supports you with the right machine and data technology!"
           }
         ],
@@ -202,7 +235,7 @@ export const FLATWORK_DATA = {
     "title": "CFM",
     "subtitle": "Folding machines",
     "description": "",
-    "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_CFM.jpg",
+    "img": img_Keyvisual_CFM,
     "tabs": {
       "overview": {
         "introTitle": "VISIBLE SPEED MEETS TOUCHABLE RELIABILITY",
@@ -211,19 +244,19 @@ export const FLATWORK_DATA = {
         "applications": [
           {
             "name": "Cruise Ships",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Kreuzfahrtschiff.jpg"
+            "img": img_Keyvisual_Kreuzfahrtschiff
           },
           {
             "name": "Airlines",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Fluglinien.jpg"
+            "img": img_Keyvisual_Fluglinien
           },
           {
             "name": "Hospitality & Restaurant",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Hotel.jpg"
+            "img": img_Keyvisual_Hotel
           },
           {
             "name": "Healthcare",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Krankenhaus.jpg"
+            "img": img_Keyvisual_Krankenhaus
           }
         ],
         "summaryBlocks": [
@@ -242,7 +275,7 @@ export const FLATWORK_DATA = {
           {
             "title": "Precise article handling",
             "text": "",
-            "img": "https://www.kannegiesser.com/fileadmin/_processed_/0/c/csm_Precise-article-handling_54d23679cd.png"
+            "img": img_csm_Precise_article_handling_54d23679cd
           },
           {
             "title": "",
@@ -251,7 +284,7 @@ export const FLATWORK_DATA = {
           {
             "title": "Secure article guidance",
             "text": "",
-            "img": "https://www.kannegiesser.com/fileadmin/_processed_/6/d/csm_Secure-article-guidance_a13fccbf92.png"
+            "img": img_csm_Secure_article_guidance_a13fccbf92
           },
           {
             "title": "",
@@ -260,7 +293,7 @@ export const FLATWORK_DATA = {
           {
             "title": "Complete article control",
             "text": "",
-            "img": "https://www.kannegiesser.com/fileadmin/_processed_/6/c/csm_Complete-article-control_4078d1bb8d.png"
+            "img": img_csm_Complete_article_control_4078d1bb8d
           },
           {
             "title": "",
@@ -269,12 +302,12 @@ export const FLATWORK_DATA = {
           {
             "title": "Perfect folding results",
             "text": "",
-            "img": "https://www.kannegiesser.com/fileadmin/_processed_/8/9/csm_Perfect-Folding-results_112c2d7893.png"
+            "img": img_csm_Perfect_Folding_results_112c2d7893
           },
           {
             "title": "",
             "text": "The air blast folding principle provides exact folding results for different article ranges applying high process speed and the outcome supports excellent folding and stacking quality.",
-            "img": "https://www.kannegiesser.com/fileadmin/_processed_/5/9/csm_Sebastian-Minz_72965b5974.jpg"
+            "img": img_csm_Sebastian_Minz_72965b5974
           }
         ]
       },
@@ -297,7 +330,7 @@ export const FLATWORK_DATA = {
     "title": "SFM",
     "subtitle": "Folding machines",
     "description": "",
-    "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_SFM.jpg",
+    "img": img_Keyvisual_SFM,
     "tabs": {
       "overview": {
         "introTitle": "HIGH SPEED AND CONTINUOUSLY HIGH QUALITY DEMANDS",
@@ -306,11 +339,11 @@ export const FLATWORK_DATA = {
         "applications": [
           {
             "name": "Airlines",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Fluglinien.jpg"
+            "img": img_Keyvisual_Fluglinien
           },
           {
             "name": "Hospitality & Restaurant",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Hotel.jpg"
+            "img": img_Keyvisual_Hotel
           }
         ],
         "summaryBlocks": []
@@ -322,8 +355,8 @@ export const FLATWORK_DATA = {
     "title": "Feeding machines",
     "subtitle": "Synchro (EMT / EMQ)",
     "description": "The feeding machine for the entire range of flatwork",
-    "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_EMQ_EMT.png",
-    "heroImg": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_EMQ_EMT.jpg",
+    "img": img_Thumbs_EMQ_EMT,
+    "heroImg": img_Keyvisual_EMQ_EMT,
     "tabs": {
       "overview": {
         "introTitle": "UNBEATABLE IN SPEED, PRECISION AND DIVERSITY",
@@ -332,19 +365,19 @@ export const FLATWORK_DATA = {
         "applications": [
           {
             "name": "Cruise Ships",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Kreuzfahrtschiff.jpg"
+            "img": img_Keyvisual_Kreuzfahrtschiff
           },
           {
             "name": "Hospitality & Restaurant",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Hotel.jpg"
+            "img": img_Keyvisual_Hotel
           },
           {
             "name": "Healthcare",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Krankenhaus.jpg"
+            "img": img_Keyvisual_Krankenhaus
           },
           {
             "name": "Residental",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Bewohner.jpg"
+            "img": img_Keyvisual_Bewohner
           }
         ],
         "summaryBlocks": [
@@ -363,7 +396,7 @@ export const FLATWORK_DATA = {
           {
             "title": "ONE MACHINE TO FEED THEM ALL",
             "text": "With the Synchro you get one feeding machine to process everything. From small to large pieces!",
-            "img": "https://www.kannegiesser.com/fileadmin/_processed_/5/b/csm_Stapel_shutterstock_1128093479_2ed0942d74.jpg",
+            "img": img_csm_Stapel_shutterstock_1128093479_2ed0942d74,
             "boxBullets": [
               "Sheets",
               "Duvets",
@@ -376,7 +409,7 @@ export const FLATWORK_DATA = {
           {
             "title": "THE FASTEST WAY TO FEED IT ALL",
             "text": "High performance and a wide range of diversity go hand in hand when processing your articles.",
-            "img": "https://www.kannegiesser.com/fileadmin/_processed_/2/e/csm_shutterstock_286023770_8503e01e1c.png",
+            "img": img_csm_shutterstock_286023770_8503e01e1c,
             "boxBullets": [
               "ServoTronic",
               "SynchroClamp"
@@ -385,7 +418,7 @@ export const FLATWORK_DATA = {
           {
             "title": "KEEP THE PACE: FOCUS ON THE OPERATOR",
             "text": "The operators feeding performance determines the output of the feeding machine. A time saving of only one second per piece can increase the overall performance by approx. 10 %. The Synchro workstations are designed with a clear focus on ergonomics, with the aim of achieving a constantly high output throughout the day.",
-            "img": "https://www.kannegiesser.com/fileadmin/_processed_/1/3/csm_shutterstock_130622120_4c_d920875ee1.jpg",
+            "img": img_csm_shutterstock_130622120_4c_d920875ee1,
             "boxBullets": [
               "Smooth operation without interruption",
               "Ergonomic working conditions for consistent feeding rate"
@@ -398,7 +431,7 @@ export const FLATWORK_DATA = {
           {
             "title": "ServoTronic - A masterpiece in precision dynamics",
             "text": "",
-            "img": "https://www.kannegiesser.com/fileadmin/_processed_/6/8/csm_ServoTronic_df8d089cff.jpg"
+            "img": img_csm_ServoTronic_df8d089cff
           },
           {
             "title": "",
@@ -407,17 +440,17 @@ export const FLATWORK_DATA = {
           {
             "title": "EasyFeed",
             "text": "",
-            "img": "https://www.kannegiesser.com/fileadmin/_processed_/a/e/csm_20140325_2018_layout_46d77bc6be.png"
+            "img": img_csm_20140325_2018_layout_46d77bc6be
           },
           {
             "title": "SynchroClamp",
             "text": "",
-            "img": "https://www.kannegiesser.com/fileadmin/_processed_/0/b/csm_IMG_4866_1db66b120f.png"
+            "img": img_csm_IMG_4866_1db66b120f
           },
           {
             "title": "",
             "text": "The innovative design of the SynchroClamp allows reliable spreading and depositing of a wide variety of articles.\n\nThe synchronic process of handling the textile articles is the key to quality and process reliability.",
-            "img": "https://www.kannegiesser.com/fileadmin/_processed_/c/4/csm_Margarita-Stuckenbrok_01_33e28dbc99.jpg"
+            "img": img_csm_Margarita_Stuckenbrok_01_33e28dbc99
           }
         ]
       },
@@ -444,8 +477,8 @@ export const FLATWORK_DATA = {
     "title": "Folding machines",
     "subtitle": "RFM",
     "description": "High-precision cross folding machine ensuring clean edges and tight stacking.",
-    "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_RFM.png",
-    "heroImg": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_RFM.jpg",
+    "img": img_Thumbs_RFM,
+    "heroImg": img_Keyvisual_RFM,
     "tabs": {
       "overview": {
         "introTitle": "DIVERSITY MEETS HIGH QUALITY DEMANDS",
@@ -454,7 +487,7 @@ export const FLATWORK_DATA = {
         "applications": [
           {
             "name": "Hospitality & Restaurant",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Hotel.jpg",
+            "img": img_Keyvisual_Hotel,
             "text": "The variety of articles is constantly growing. Customers expect their individual selection of linen. With Kannegiesser machines, you can offer the highest quality, which is particularly gentle on the textile and resources!"
           }
         ],
@@ -485,8 +518,8 @@ export const FLATWORK_DATA = {
     "title": "Dry work folding machines",
     "subtitle": "XFM",
     "description": "Advanced dry work folding encompassing robotic handling and specialized blanket processing.",
-    "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_XFM.png",
-    "heroImg": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_XFM.jpg",
+    "img": img_Thumbs_XFM,
+    "heroImg": img_Keyvisual_XFM,
     "tabs": {
       "overview": {
         "introTitle": "THE FASTEST FOLDING MACHINE IN THE WORLD",
@@ -495,22 +528,22 @@ export const FLATWORK_DATA = {
         "applications": [
           {
             "name": "Hospitality & Restaurant",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Hotel.jpg",
+            "img": img_Keyvisual_Hotel,
             "text": "The variety of articles is constantly growing. Customers expect their individual selection of linen. With Kannegiesser machines, you can offer the highest quality, which is particularly gentle on the textile and resources!"
           },
           {
             "name": "Healthcare",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Krankenhaus.jpg",
+            "img": img_Keyvisual_Krankenhaus,
             "text": "Do you handle a wide range of linen for the healthcare sector? The professional preparation of those textiles requires a reproducible hygiene process. With Kannegiesser you are on the safe side!"
           },
           {
             "name": "Cruise Ships",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Kreuzfahrtschiff.jpg",
+            "img": img_Keyvisual_Kreuzfahrtschiff,
             "text": "Floating cities where nothing is left to be desired! The textiles are processed in a minimum space with the lowest possible use of resources – with innovative laundry technology from Kannegiesser."
           },
           {
             "name": "Airlines",
-            "img": "https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Applications/Keyvisual_Fluglinien.jpg",
+            "img": img_Keyvisual_Fluglinien,
             "text": "Above the clouds you want to ensure the best results for every passenger. With Kannegiesser machine you can perfectly handle your customer’s wide range of Airline Blankets."
           }
         ],

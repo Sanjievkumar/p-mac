@@ -16,22 +16,34 @@ import sealionFactory4 from '../../assets/brands/sealion-factory-4.jpg';
 
 import ecosystemBg from '../../assets/ecosystem-factory.jpg';
 
+// Local brand asset imports
+import img_Pin_Merge_1024x819 from '../../assets/brands/sea-lion/Pin-Merge-1024x819.png';
+import img_01__WASHER_EXTRACTOR_1024x819 from '../../assets/brands/sea-lion/01.-WASHER-EXTRACTOR-1024x819.png';
+import img_OPEN_POCKET_WASHER_EXTRACTOR_4_1024x819 from '../../assets/brands/sea-lion/OPEN-POCKET-WASHER-EXTRACTOR-4-1024x819.png';
+import img_BARRIER_WASHER_6_1024x819 from '../../assets/brands/sea-lion/BARRIER-WASHER-6-1024x819.png';
+import img_Tumble_Dryer_2_1024x819 from '../../assets/brands/sea-lion/Tumble-Dryer-2-1024x819.png';
+import img_AUTOMATIC_FEEDER_2_1024x819 from '../../assets/brands/sea-lion/AUTOMATIC-FEEDER-2-1024x819.png';
+import img_FLATWORK_IRONER_ROLLER_1024x819 from '../../assets/brands/sea-lion/FLATWORK-IRONER-ROLLER-1024x819.png';
+import img_HIGH_SPEED_SERPENTINE_FLATWORK_IRONER_1024x819 from '../../assets/brands/sea-lion/HIGH-SPEED-SERPENTINE-FLATWORK-IRONER-1024x819.png';
+import img_HIGH_SPEED_CHEST_IRONER_2_1024x819 from '../../assets/brands/sea-lion/HIGH-SPEED-CHEST-IRONER-2-1024x819.png';
+import img_AUTOMATIC_LINEN_FOLDER_WITH_STACKER_1_1024x819 from '../../assets/brands/sea-lion/AUTOMATIC-LINEN-FOLDER-WITH-STACKER-1-1024x819.png';
+
 const PRODUCTS = [
   // Washing Technology
-  { id: 'sea-lion-tunnel-continuous-batch-washer-systems', category: 'Washing', title: 'TUNNEL CONTINUOUS BATCH WASHER SYSTEMS', img: 'https://promactech.com/wp-content/uploads/2024/07/Pin-Merge-1024x819.png' },
-  { id: 'sea-lion-washer-extractor', category: 'Washing', title: 'WASHER EXTRACTOR', img: 'https://promactech.com/wp-content/uploads/2024/07/01.-WASHER-EXTRACTOR-1024x819.png' },
-  { id: 'sea-lion-open-pocket-washer-extractor', category: 'Washing', title: 'OPEN POCKET WASHER EXTRACTOR', img: 'https://promactech.com/wp-content/uploads/2024/07/OPEN-POCKET-WASHER-EXTRACTOR-4-1024x819.png' },
-  { id: 'sea-lion-barrier-washer', category: 'Washing', title: 'BARRIER WASHER', img: 'https://promactech.com/wp-content/uploads/2024/07/BARRIER-WASHER-6-1024x819.png' },
+  { id: 'sea-lion-tunnel-continuous-batch-washer-systems', category: 'Washing', title: 'TUNNEL CONTINUOUS BATCH WASHER SYSTEMS', img: img_Pin_Merge_1024x819 },
+  { id: 'sea-lion-washer-extractor', category: 'Washing', title: 'WASHER EXTRACTOR', img: img_01__WASHER_EXTRACTOR_1024x819 },
+  { id: 'sea-lion-open-pocket-washer-extractor', category: 'Washing', title: 'OPEN POCKET WASHER EXTRACTOR', img: img_OPEN_POCKET_WASHER_EXTRACTOR_4_1024x819 },
+  { id: 'sea-lion-barrier-washer', category: 'Washing', title: 'BARRIER WASHER', img: img_BARRIER_WASHER_6_1024x819 },
   
   // Drying Technology
-  { id: 'sea-lion-tumble-dryer', category: 'Drying', title: 'TUMBLE DRYER', img: 'https://promactech.com/wp-content/uploads/2024/07/Tumble-Dryer-2-1024x819.png' },
+  { id: 'sea-lion-tumble-dryer', category: 'Drying', title: 'TUMBLE DRYER', img: img_Tumble_Dryer_2_1024x819 },
   
   // Finishing Technology
-  { id: 'sea-lion-automatic-feeder', category: 'Finishing', title: 'AUTOMATIC FEEDER', img: 'https://promactech.com/wp-content/uploads/2024/07/AUTOMATIC-FEEDER-2-1024x819.png' },
-  { id: 'sea-lion-flatwork-roller-ironer', category: 'Finishing', title: 'FLATWORK ROLLER IRONER', img: 'https://promactech.com/wp-content/uploads/2024/07/FLATWORK-IRONER-ROLLER-1024x819.png' },
-  { id: 'sea-lion-high-speed-serpentine-flatwork-ironer', category: 'Finishing', title: 'HIGH SPEED SERPENTINE FLATWORK IRONER', img: 'https://promactech.com/wp-content/uploads/2024/07/HIGH-SPEED-SERPENTINE-FLATWORK-IRONER-1024x819.png' },
-  { id: 'sea-lion-high-speed-chest-ironer', category: 'Finishing', title: 'HIGH SPEED CHEST IRONER', img: 'https://promactech.com/wp-content/uploads/2024/07/HIGH-SPEED-CHEST-IRONER-2-1024x819.png' },
-  { id: 'sea-lion-automatic-high-speed-folder-with-stacker', category: 'Finishing', title: 'AUTOMATIC HIGH SPEED FOLDER WITH STACKER', img: 'https://promactech.com/wp-content/uploads/2024/07/AUTOMATIC-LINEN-FOLDER-WITH-STACKER-1-1024x819.png' },
+  { id: 'sea-lion-automatic-feeder', category: 'Finishing', title: 'AUTOMATIC FEEDER', img: img_AUTOMATIC_FEEDER_2_1024x819 },
+  { id: 'sea-lion-flatwork-roller-ironer', category: 'Finishing', title: 'FLATWORK ROLLER IRONER', img: img_FLATWORK_IRONER_ROLLER_1024x819 },
+  { id: 'sea-lion-high-speed-serpentine-flatwork-ironer', category: 'Finishing', title: 'HIGH SPEED SERPENTINE FLATWORK IRONER', img: img_HIGH_SPEED_SERPENTINE_FLATWORK_IRONER_1024x819 },
+  { id: 'sea-lion-high-speed-chest-ironer', category: 'Finishing', title: 'HIGH SPEED CHEST IRONER', img: img_HIGH_SPEED_CHEST_IRONER_2_1024x819 },
+  { id: 'sea-lion-automatic-high-speed-folder-with-stacker', category: 'Finishing', title: 'AUTOMATIC HIGH SPEED FOLDER WITH STACKER', img: img_AUTOMATIC_LINEN_FOLDER_WITH_STACKER_1_1024x819 },
 ];
 
 const CATEGORIES = [

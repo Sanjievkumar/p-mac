@@ -10,14 +10,21 @@ import maxipressHero from '../../assets/brands/maxipress_hero_actual.jpg';
 import heroBg from '../../assets/brands/kannegiesser/kannegiesser_video_thumbnail_1780671618796.png';
 import buildingBg from '../../assets/brands/sea-lion/sealion_building_1780727375255.png';
 const WORKFLOW = [
-  { step: '01', title: 'Spotting', img: 'https://promactech.com/wp-content/uploads/2024/07/MPSB-1024x819.png' },
-  { step: '02', title: 'Collar & Cuff', img: 'https://promactech.com/wp-content/uploads/2024/07/MPCY-1024x819.png' },
-  { step: '03', title: 'Body Pressing', img: 'https://promactech.com/wp-content/uploads/2024/07/MPBBP-1024x819.png' },
-  { step: '04', title: 'Utility Pressing', img: 'https://promactech.com/wp-content/uploads/2024/07/MP51-1024x819.png' },
-  { step: '05', title: 'Form Finishing', img: 'https://promactech.com/wp-content/uploads/2024/07/MPCAFF-FORM-FINISHER-640x640.png' }
+  { step: '01', title: 'Spotting', img: img_MPSB_1024x819 },
+  { step: '02', title: 'Collar & Cuff', img: img_MPCY_1024x819 },
+  { step: '03', title: 'Body Pressing', img: img_MPBBP_1024x819 },
+  { step: '04', title: 'Utility Pressing', img: img_MP51_1024x819 },
+  { step: '05', title: 'Form Finishing', img: img_MPCAFF_FORM_FINISHER_640x640 }
 ];
 
 import { PRODUCT_DATA } from './MaxiPressProduct';
+
+// Local brand asset imports
+import img_MPSB_1024x819 from '../../assets/brands/maxipress/MPSB-1024x819.png';
+import img_MPCY_1024x819 from '../../assets/brands/maxipress/MPCY-1024x819.png';
+import img_MPBBP_1024x819 from '../../assets/brands/maxipress/MPBBP-1024x819.png';
+import img_MP51_1024x819 from '../../assets/brands/maxipress/MP51-1024x819.png';
+import img_MPCAFF_FORM_FINISHER_640x640 from '../../assets/brands/maxipress/MPCAFF-FORM-FINISHER-640x640.png';
 
 function ProductCard({ id, product, idx }) {
   const cardRef = useRef(null);

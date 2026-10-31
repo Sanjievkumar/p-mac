@@ -11,6 +11,10 @@ import dreamCleanImg from '../../assets/brands/maestrelli/dream-clean.png';
 import energyCompactSpecs from '../../assets/brands/maestrelli/energy-compact-specs.jpg';
 import dreamCleanSpecs from '../../assets/brands/maestrelli/dream-clean-specs.jpg';
 
+// Local brand asset imports
+import img_ENERGY_COMPACT_PERC_dry_Cleaning_1024x819 from '../../assets/brands/maestrelli/ENERGY-COMPACT-PERC-dry-Cleaning-1024x819.png';
+import img_ENERGY_PLUS_1_1024x819 from '../../assets/brands/maestrelli/ENERGY-PLUS-1-1024x819.png';
+
 const PRODUCT_DATA = {
   'perc-dry-cleaning-machines': {
     title: 'PERC DRY-CLEANING MACHINES',
@@ -29,19 +33,19 @@ const PRODUCT_DATA = {
       {
         id: 'energy-compact-2-tanks',
         title: 'ENERGY COMPACT – 2 TANKS',
-        img: 'https://promactech.com/wp-content/uploads/2024/07/ENERGY-COMPACT-PERC-dry-Cleaning-1024x819.png'
+        img: img_ENERGY_COMPACT_PERC_dry_Cleaning_1024x819
       },
       {
         id: 'energy-plus-3-tanks',
         title: 'ENERGY PLUS – 3 TANKS',
-        img: 'https://promactech.com/wp-content/uploads/2024/07/ENERGY-PLUS-1-1024x819.png'
+        img: img_ENERGY_PLUS_1_1024x819
       }
     ],
     sections: []
   },
   'energy-compact-2-tanks': {
     title: 'ENERGY COMPACT – 2 TANKS',
-    img: 'https://promactech.com/wp-content/uploads/2024/07/ENERGY-COMPACT-PERC-dry-Cleaning-1024x819.png',
+    img: img_ENERGY_COMPACT_PERC_dry_Cleaning_1024x819,
     subtitle: 'High Efficiency 2 Tanks Dry-Cleaning System',
     description: 'The ENERGY line was named and developed taking into high consideration the "energy saving" issue. Energy COMPACT series are a slim version with 2 tanks and 1 filter.',
     features: [
@@ -103,7 +107,7 @@ const PRODUCT_DATA = {
   },
   'energy-plus-3-tanks': {
     title: 'ENERGY PLUS – 3 TANKS',
-    img: 'https://promactech.com/wp-content/uploads/2024/07/ENERGY-PLUS-1-1024x819.png',
+    img: img_ENERGY_PLUS_1_1024x819,
     subtitle: 'High Efficiency 3 Tanks Dry-Cleaning System',
     description: 'The ENERGY line was named and developed taking into high consideration the "energy saving" issue. ENERGY PLUS series is a classical wide version with 3 tanks and 1 or 2 filters.',
     features: [
@@ -165,7 +169,7 @@ const PRODUCT_DATA = {
     ]
   },
   'dream-clean': {
-    title: 'DREAM CLEAN -MULTOSOLVENT-SOFT-MOUNT',
+    title: 'DREAM CLEAN - MULTISOLVENT-SOFT-MOUNT',
     img: dreamCleanImg,
     subtitle: 'Multi-Solvent Soft-Mount Washing Technology',
     description: `Maestrelli exploits again its experience innovating the sector with the DREAMCLEAN series, multi-solvent machines capable of using all new-generation solvents, from the isoparaffin to the silicone ones. The range consists of machines with still (HS & RS series) or without still (H & R series), hard-mounted (R & RS) or soft-mounted (H & HS), compact-sized (H & R) or large-sized (HS & RS) with load capacities from 11 to 45 Kg.`,

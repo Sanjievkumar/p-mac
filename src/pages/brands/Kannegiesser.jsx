@@ -11,26 +11,42 @@ import kannegiesserVideo from '../../assets/brands/kannegiesser-hero.mp4';
 import buildingBg from '../../assets/brands/kannegiesser/kannegiesser_showroom_facility.jpg';
 import { formatKannegiesserTitle } from './kannegiesserUtils';
 
+// Local Kannegiesser asset imports
+import img_Keyvisual_CSP_NEU from '../../assets/brands/kannegiesser/Keyvisual_CSP_NEU.jpg';
+import img_Thumbs_HPM from '../../assets/brands/kannegiesser/Thumbs_HPM.png';
+import img_Thumbs_EMQ_EMT from '../../assets/brands/kannegiesser/Thumbs_EMQ_EMT.png';
+import img_Thumbs_RFM from '../../assets/brands/kannegiesser/Thumbs_RFM.png';
+import img_Thumbs_XFM from '../../assets/brands/kannegiesser/Thumbs_XFM.png';
+import img_Thumbs_PT_VARIO from '../../assets/brands/kannegiesser/Thumbs_PT_VARIO.png';
+import img_Thumbs_PowerPress from '../../assets/brands/kannegiesser/Thumbs_PowerPress.png';
+import img_Thumbs_PowerDry from '../../assets/brands/kannegiesser/Thumbs_PowerDry.png';
+import img_Thumbs_PowerSwing from '../../assets/brands/kannegiesser/Thumbs_PowerSwing.png';
+import img_Keyvisual_Cleanroom from '../../assets/brands/kannegiesser/Keyvisual_Cleanroom.png';
+import img_Thumbs_CWD_Desi from '../../assets/brands/kannegiesser/Thumbs_CWD_Desi.png';
+import img_Thumbs_CD_Desi from '../../assets/brands/kannegiesser/Thumbs_CD_Desi.png';
+import img_Category_Process_Control from '../../assets/brands/kannegiesser/Category_Process-Control.png';
+import img_Thumbs_DataInfoSystems from '../../assets/brands/kannegiesser/Thumbs_DataInfoSystems.png';
+
 const PRODUCTS = [
   // Washing Technology
-  { id: 'kannegiesser-powertrans-vario', category: 'Washing Technology', name: 'Tunnel Washers', desc: 'PowerTrans Vario', img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_PT_VARIO.png' },
-  { id: 'kannegiesser-powerpress', category: 'Washing Technology', name: 'Extraction Technology', desc: 'PowerPress', img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_PowerPress.png' },
-  { id: 'kannegiesser-powerdry', category: 'Washing Technology', name: 'Dryers', desc: 'PowerDry', img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_PowerDry.png' },
-  { id: 'kannegiesser-powerswing', category: 'Washing Technology', name: 'Washer Extractors', desc: 'PowerSwing', img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_PowerSwing.png' },
-  { id: 'kannegiesser-cleanroom', category: 'Washing Technology', name: 'Clean Room Technology', desc: 'Favorit Vario HighClean', img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_Cleanroom.png' },
-  { id: 'kannegiesser-cwd', category: 'Washing Technology', name: 'Disinfection Sluices', desc: 'CWD', img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_CWD_Desi.png' },
-    { id: 'kannegiesser-cd', category: 'Washing Technology', name: 'Disinfection Sluices', desc: 'CD', img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_CD_Desi.png' },
+  { id: 'kannegiesser-powertrans-vario', category: 'Washing Technology', name: 'Tunnel Washers', desc: 'PowerTrans Vario', img: img_Thumbs_PT_VARIO },
+  { id: 'kannegiesser-powerpress', category: 'Washing Technology', name: 'Extraction Technology', desc: 'PowerPress', img: img_Thumbs_PowerPress },
+  { id: 'kannegiesser-powerdry', category: 'Washing Technology', name: 'Dryers', desc: 'PowerDry', img: img_Thumbs_PowerDry },
+  { id: 'kannegiesser-powerswing', category: 'Washing Technology', name: 'Washer Extractors', desc: 'PowerSwing', img: img_Thumbs_PowerSwing },
+  { id: 'kannegiesser-cleanroom', category: 'Washing Technology', name: 'Clean Room Technology', desc: 'Favorit Vario HighClean', img: img_Keyvisual_Cleanroom },
+  { id: 'kannegiesser-cwd', category: 'Washing Technology', name: 'Disinfection Sluices', desc: 'CWD', img: img_Thumbs_CWD_Desi },
+    { id: 'kannegiesser-cd', category: 'Washing Technology', name: 'Disinfection Sluices', desc: 'CD', img: img_Thumbs_CD_Desi },
 
   // Flatwork
-  { id: 'kannegiesser-separating', category: 'Flatwork', name: 'Separating and Feeding Systems', desc: 'CSP', img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Keyvisual_CSP_NEU.jpg' },
-  { id: 'kannegiesser-feeding', category: 'Flatwork', name: 'Feeding machines', desc: 'EMQ / EMT', img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_EMQ_EMT.png' },
-  { id: 'kannegiesser-ironers', category: 'Flatwork', name: 'Ironers', desc: 'HPM', img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_HPM.png' },
-  { id: 'kannegiesser-folding', category: 'Flatwork', name: 'Folding machines', desc: 'RFM', img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_RFM.png' },
-  { id: 'kannegiesser-drywork', category: 'Flatwork', name: 'Dry work folding machines', desc: 'XFM', img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_XFM.png' },
+  { id: 'kannegiesser-separating', category: 'Flatwork', name: 'Separating and Feeding Systems', desc: 'CSP', img: img_Keyvisual_CSP_NEU },
+  { id: 'kannegiesser-feeding', category: 'Flatwork', name: 'Feeding machines', desc: 'EMQ / EMT', img: img_Thumbs_EMQ_EMT },
+  { id: 'kannegiesser-ironers', category: 'Flatwork', name: 'Ironers', desc: 'HPM', img: img_Thumbs_HPM },
+  { id: 'kannegiesser-folding', category: 'Flatwork', name: 'Folding machines', desc: 'RFM', img: img_Thumbs_RFM },
+  { id: 'kannegiesser-drywork', category: 'Flatwork', name: 'Dry work folding machines', desc: 'XFM', img: img_Thumbs_XFM },
 
   // Data Information Systems
-  { id: 'kannegiesser-process-control', category: 'Data Information Systems', name: 'Process Control', desc: 'Smart Process Control', img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Category_Process-Control.png' },
-  { id: 'kannegiesser-monitoring', category: 'Data Information Systems', name: 'Monitoring', desc: 'Data Analytics', img: 'https://www.kannegiesser.com/fileadmin/SHARED/Images/Products/Thumbs_DataInfoSystems.png' },
+  { id: 'kannegiesser-process-control', category: 'Data Information Systems', name: 'Process Control', desc: 'Smart Process Control', img: img_Category_Process_Control },
+  { id: 'kannegiesser-monitoring', category: 'Data Information Systems', name: 'Monitoring', desc: 'Data Analytics', img: img_Thumbs_DataInfoSystems },
 ];
 
 const CATEGORIES = [
@@ -116,9 +132,9 @@ export default function Kannegiesser() {
 
       {/* ── 2. About Kannegiesser ── */}
       <section className="w-full py-24 bg-white relative">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center mb-24">
+        <div className="max-w-[1440px] mx-auto px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-24">
           
-          <div>
+          <div className="lg:col-span-5">
             <div className="flex items-center gap-4 mb-6">
               <h4 className="text-[#00509B] text-base md:text-lg font-bold tracking-[0.2em] uppercase">ABOUT KANNEGIESSER</h4>
             </div>
@@ -142,13 +158,15 @@ export default function Kannegiesser() {
             </div>
           </div>
 
-          <div className="relative">
-            <img 
-              src={buildingBg} 
-              alt="Kannegiesser Headquarters" 
-              className="w-full h-auto object-cover shadow-2xl rounded-2xl"
-            />
-            <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-[#00509B] -z-10" style={{ clipPath: 'polygon(100% 0, 0% 100%, 100% 100%)' }} />
+          <div className="relative lg:col-span-7 flex justify-end">
+            <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl group border border-slate-100">
+              <img 
+                src={buildingBg} 
+                alt="Kannegiesser Headquarters" 
+                className="w-full h-auto min-h-[380px] lg:min-h-[480px] max-h-[580px] object-cover hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+            <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-[#00509B] -z-10 rounded-2xl opacity-90" style={{ clipPath: 'polygon(100% 0, 0% 100%, 100% 100%)' }} />
           </div>
         </div>
       </section>
@@ -201,7 +219,7 @@ export default function Kannegiesser() {
           aria-hidden="true"
         />
 
-        <div className="max-w-7xl mx-auto px-8 lg:px-16 relative z-10">
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
           <div className="text-center mb-16">
             <h4 className="text-[#00509B] text-base md:text-lg font-bold tracking-[0.2em] uppercase mb-4">PRODUCT CATALOG</h4>
             <h2 className="text-4xl md:text-5xl font-bold text-[#001F3F] tracking-tight">
@@ -209,13 +227,13 @@ export default function Kannegiesser() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 xl:gap-10">
             {CATEGORIES.map(cat => {
               const catProducts = PRODUCTS.filter(p => p.category === cat.name);
               return (
                 <div key={cat.id} className="flex flex-col">
                   {/* Category Header */}
-                  <div className={`w-full p-8 rounded-t-xl ${cat.color} text-white flex flex-col items-center text-center shadow-md relative overflow-hidden group/header`}>
+                  <div className={`w-full p-8 rounded-t-2xl ${cat.color} text-white flex flex-col items-center text-center shadow-md relative overflow-hidden group/header`}>
                     <div className="absolute inset-0 bg-black/20 opacity-0 group-hover/header:opacity-100 transition-opacity duration-500" />
                     <cat.icon className="w-12 h-12 mb-5 opacity-90 stroke-[1.2] transition-transform duration-500 group-hover/header:scale-110" />
                     <h3 className="text-xl font-bold tracking-wide uppercase text-white/95">{cat.name}</h3>
@@ -223,14 +241,14 @@ export default function Kannegiesser() {
                   </div>
 
                   {/* Category Products */}
-                  <div className="flex-1 bg-slate-50 border border-t-0 border-slate-200 rounded-b-xl p-6 flex flex-col gap-4">
+                  <div className="flex-1 bg-slate-50 border border-t-0 border-slate-200 rounded-b-2xl p-6 sm:p-7 flex flex-col gap-5">
                     {catProducts.map(product => (
                       <Link 
                         key={product.id}
                         to={`/brands/kannegiesser/${product.id}`}
-                        className="group bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex items-center p-4 hover:-translate-y-1"
+                        className="group bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex items-center p-5 sm:p-6 hover:-translate-y-1"
                       >
-                        <div className="w-20 h-20 bg-slate-50 rounded-xl flex-shrink-0 flex items-center justify-center overflow-hidden border border-slate-100 mr-4">
+                        <div className="w-24 h-24 sm:w-28 sm:h-28 bg-white rounded-xl flex-shrink-0 flex items-center justify-center overflow-hidden border border-slate-100 p-2 mr-5 shadow-inner">
                           <img 
                             src={product.img} 
                             alt={product.name}
@@ -238,14 +256,14 @@ export default function Kannegiesser() {
                           />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <h4 className="text-[#00509B] text-[10px] tracking-wide uppercase mb-1 truncate">
+                          <h4 className="text-[#00509B] text-xs font-semibold tracking-wider uppercase mb-1.5 truncate">
                             {formatKannegiesserTitle(product.id, product.desc)}
                           </h4>
-                          <h3 className="text-sm font-bold text-[#00509B] leading-snug truncate">
+                          <h3 className="text-base sm:text-lg font-bold text-[#001F3F] group-hover:text-[#00509B] leading-snug truncate transition-colors">
                             {product.name}
                           </h3>
                         </div>
-                        <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-[#00509B] transition-colors ml-2 flex-shrink-0" />
+                        <ArrowRight className="w-5 h-5 text-slate-300 group-hover:text-[#00509B] group-hover:translate-x-1 transition-all ml-3 flex-shrink-0" />
                       </Link>
                     ))}
                   </div>

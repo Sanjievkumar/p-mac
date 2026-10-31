@@ -11,19 +11,6 @@ import dreamCleanImg from '../../assets/brands/maestrelli/dream-clean.png';
 import heroBg from '../../assets/brands/kannegiesser/kannegiesser_video_thumbnail_1780671618796.png';
 import buildingBg from '../../assets/brands/maestrelli_building.png';
 import maestrelliHero from '../../assets/brands/maestrelli_hero_actual.jpg';
-import wf1 from '../../assets/brands/sea-lion/sealion_washer_1780727413794.png';
-import wf2 from '../../assets/brands/sea-lion/sealion_dryer_1780727427054.png';
-import wf3 from '../../assets/brands/kannegiesser/kannegiesser_finishing_1780671087290.png';
-import wf4 from '../../assets/brands/sea-lion/sealion_ironer_1780727455295.png';
-import wf5 from '../../assets/brands/kannegiesser/kannegiesser_washing_1780671064949.png';
-
-const WORKFLOW = [
-  { step: '01', title: 'Garment Intake', img: wf1 },
-  { step: '02', title: 'Dry Cleaning', img: wf2 },
-  { step: '03', title: 'Fabric Care', img: wf3 },
-  { step: '04', title: 'Finishing', img: wf4 },
-  { step: '05', title: 'Ready For Delivery', img: wf5 }
-];
 
 const PRODUCTS = [
   { 
@@ -34,7 +21,7 @@ const PRODUCTS = [
   },
   { 
     id: 'dream-clean',
-    title: 'DREAM CLEAN -MULTOSOLVENT-SOFT-MOUNT', 
+    title: 'DREAM CLEAN - MULTISOLVENT-SOFT-MOUNT', 
     desc: 'Maestrelli exploits again its experience innovating the sector with the DREAMCLEAN series, multi-solvent machines capable of using all new-generation solvents, from the isoparaffin to the silicone ones. The range consists of machines with still (HS & RS series) or without still (H & R series).', 
     img: dreamCleanImg 
   }
@@ -78,7 +65,7 @@ function ProductCard({ item, idx }) {
             <motion.img 
               style={{ y: smoothY, scale: smoothScale }}
               src={item.img} 
-              alt={item.name} 
+              alt={item.title} 
               className="w-full h-full object-contain filter drop-shadow-xl relative z-10" 
             />
           </div>
@@ -86,9 +73,9 @@ function ProductCard({ item, idx }) {
           {/* Content Area */}
           <div className="p-6 relative z-10 bg-white m-[2px] mt-0 rounded-b-2xl flex-1 flex flex-col">
             <span className="text-[10px] font-bold tracking-widest text-[#CC141A] uppercase mb-2 block">
-              {item.category}
+              {item.category || 'DRY-CLEANING'}
             </span>
-            <h3 className="text-xl font-bold text-slate-900 mb-2">{item.name}</h3>
+            <h3 className="text-lg font-bold text-slate-900 mb-2 leading-snug">{item.title}</h3>
             <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed mb-4 flex-1">
               {item.desc}
             </p>
@@ -191,42 +178,7 @@ export default function Maestrelli() {
         </div>
       </section>
 
-      {/* ── 3. Workflow Section ── */}
-      <section className="w-full py-24 bg-[#FAFAFA] border-y border-slate-100 overflow-hidden">
-        <div className="max-w-[1400px] mx-auto px-8 lg:px-16 flex flex-col xl:flex-row gap-16 items-center">
-          
-          <div className="w-full xl:w-1/4 flex-shrink-0">
-            <h4 className="text-[#CC141A] text-base md:text-lg font-bold tracking-[0.2em] uppercase mb-4">GARMENT CARE WORKFLOW</h4>
-            <h2 className="text-3xl font-bold text-slate-900 mb-6 leading-tight tracking-tight">
-              Care In Every Step<span className="text-[#CC141A]">.</span>
-            </h2>
-            <p className="text-slate-600 font-normal text-sm leading-relaxed mb-8">
-              <span className="text-[#001F3F] font-bold">Maestrelli</span> delivers complete solutions to ensure superior results, fabric care and customer satisfaction.
-            </p>
-          </div>
-
-          <div className="w-full xl:w-3/4 relative">
-            <div className="absolute top-1/2 left-0 w-full h-[1px] border-t border-dashed border-[#CC141A]/30 -z-10" />
-            <div className="flex justify-between items-center w-full gap-4 overflow-x-auto pb-8 snap-x">
-              {WORKFLOW.map((item, idx) => (
-                <div key={idx} className="flex flex-col items-center flex-1 min-w-[120px] snap-center">
-                  <div className="bg-white rounded-lg p-2 shadow-sm border border-slate-100 w-full aspect-[4/5] flex flex-col items-center justify-center relative mb-6 group hover:-translate-y-2 transition-transform duration-300 overflow-hidden">
-                    <img src={item.img} alt={item.title} className="w-full h-full object-cover mix-blend-multiply opacity-80 group-hover:opacity-100 transition-opacity" />
-                    {idx !== WORKFLOW.length - 1 && (
-                      <ArrowRight className="absolute -right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#CC141A] z-10 hidden md:block" />
-                    )}
-                  </div>
-                  <div className="w-2 h-2 rounded-full bg-[#CC141A] mb-3" />
-                  <span className="text-[10px] font-bold text-[#CC141A] mb-1">0{idx + 1}</span>
-                  <h3 className="text-xs font-bold text-slate-900 text-center">{item.title}</h3>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 4. Solutions Grid ── */}
+      {/* ── 3. Solutions Grid ── */}
       <section className="relative w-full py-24 bg-slate-50 overflow-hidden" id="products">
         {/* Animated Grid Background */}
         <div

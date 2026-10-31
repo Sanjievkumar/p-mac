@@ -5,21 +5,74 @@ import { ArrowLeft, ChevronLeft, ChevronRight, CheckCircle2 } from 'lucide-react
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
+// Local brand asset imports
+import img_Pin_Merge_1024x819 from '../../assets/brands/sea-lion/Pin-Merge-1024x819.png';
+import img_01__WASHER_EXTRACTOR_1024x819 from '../../assets/brands/sea-lion/01.-WASHER-EXTRACTOR-1024x819.png';
+import img_HIGH_SPEED_SERPENTINE_FLATWORK_IRONER_1024x819 from '../../assets/brands/sea-lion/HIGH-SPEED-SERPENTINE-FLATWORK-IRONER-1024x819.png';
+import img_efficacy_qrww6c1jcuzebf08uau5t09fbs1r5ss0yq241whdyg from '../../assets/brands/sea-lion/efficacy-qrww6c1jcuzebf08uau5t09fbs1r5ss0yq241whdyg.png';
+import img_drop_qrww6p7a0jhetyh4pgixrwxvn68w5k89oj6wrrxvjc from '../../assets/brands/sea-lion/drop-qrww6p7a0jhetyh4pgixrwxvn68w5k89oj6wrrxvjc.png';
+import img_energy_control_qrww6p7a0jhetyh4pgixrwxvn68w5k89oj6wrrxvjc from '../../assets/brands/sea-lion/energy-control-qrww6p7a0jhetyh4pgixrwxvn68w5k89oj6wrrxvjc.png';
+import img_rpa_qrww6p7a0jhetyh4pgixrwxvn68w5k89oj6wrrxvjc from '../../assets/brands/sea-lion/rpa-qrww6p7a0jhetyh4pgixrwxvn68w5k89oj6wrrxvjc.png';
+import img_thermometer_qrww6980scvjcl4carma3iz1jmfnipgtyc3nm2lkh4 from '../../assets/brands/sea-lion/thermometer-qrww6980scvjcl4carma3iz1jmfnipgtyc3nm2lkh4.png';
+import img_knob_qrww6o9ftpg4icihuy4b7f6f1sdixv4jcejfahz9pk from '../../assets/brands/sea-lion/knob-qrww6o9ftpg4icihuy4b7f6f1sdixv4jcejfahz9pk.png';
+import img_LOADING_CONVEYOR from '../../assets/brands/sea-lion/LOADING-CONVEYOR.png';
+import img_TUNNEL_WASHER_SYSTEM from '../../assets/brands/sea-lion/TUNNEL-WASHER-SYSTEM.png';
+import img_EXTRACTION_PRESS from '../../assets/brands/sea-lion/EXTRACTION-PRESS.png';
+import img_SHUTTLE_CONVEYOR from '../../assets/brands/sea-lion/SHUTTLE-CONVEYOR.png';
+import img_BATCH_DRYER from '../../assets/brands/sea-lion/BATCH-DRYER.png';
+import img_01__WASHER_EXTRACTOR from '../../assets/brands/sea-lion/01.-WASHER-EXTRACTOR.png';
+import img_01__WASHER_EXTRACTOR_2 from '../../assets/brands/sea-lion/01.-WASHER-EXTRACTOR-2.png';
+import img_02__TILTING_MODELS from '../../assets/brands/sea-lion/02.-TILTING-MODELS.png';
+import img_WASHER_EXTRACTOR_1_1 from '../../assets/brands/sea-lion/WASHER-EXTRACTOR-1-1.png';
+import img_WASHER_EXTRACTOR_2_1 from '../../assets/brands/sea-lion/WASHER-EXTRACTOR-2-1.png';
+import img_WASHER_EXTRACTOR_3 from '../../assets/brands/sea-lion/WASHER-EXTRACTOR-3.png';
+import img_WASHER_EXTRACTOR_4 from '../../assets/brands/sea-lion/WASHER-EXTRACTOR-4.png';
+import img_WASHER_EXTRACTOR_1 from '../../assets/brands/sea-lion/WASHER-EXTRACTOR-1.png';
+import img_WASHER_EXTRACTOR_2 from '../../assets/brands/sea-lion/WASHER-EXTRACTOR-2.png';
+import img_WASHER_EXTRACTOR from '../../assets/brands/sea-lion/WASHER-EXTRACTOR.png';
+import img_OPEN_POCKET_WASHER_EXTRACTOR_4 from '../../assets/brands/sea-lion/OPEN-POCKET-WASHER-EXTRACTOR-4.png';
+import img_OPEN_POCKET_WASHER_EXTRACTOR_2 from '../../assets/brands/sea-lion/OPEN-POCKET-WASHER-EXTRACTOR-2.png';
+import img_OPEN_POCKET_WASHER_EXTRACTOR_1 from '../../assets/brands/sea-lion/OPEN-POCKET-WASHER-EXTRACTOR-1.png';
+import img_OPEN_POCKET_WASHER_EXTRACTOR from '../../assets/brands/sea-lion/OPEN-POCKET-WASHER-EXTRACTOR.png';
+import img_OPEN_POCKET_WASHER_EXTRACTOR_3 from '../../assets/brands/sea-lion/OPEN-POCKET-WASHER-EXTRACTOR-3.png';
+import img_OPEN_POCKET_WASHER_EXTRACTOR_5 from '../../assets/brands/sea-lion/OPEN-POCKET-WASHER-EXTRACTOR-5.png';
+import img_BARRIER_WASHER_6 from '../../assets/brands/sea-lion/BARRIER-WASHER-6.png';
+import img_BARRIER_WASHER_5 from '../../assets/brands/sea-lion/BARRIER-WASHER-5.png';
+import img_BARRIER_WASHER_7 from '../../assets/brands/sea-lion/BARRIER-WASHER-7.png';
+import img_BARRIER_WASHER from '../../assets/brands/sea-lion/BARRIER-WASHER.png';
+import img_BARRIER_WASHER_1 from '../../assets/brands/sea-lion/BARRIER-WASHER-1.png';
+import img_BARRIER_WASHER_2 from '../../assets/brands/sea-lion/BARRIER-WASHER-2.png';
+import img_BARRIER_WASHER_3 from '../../assets/brands/sea-lion/BARRIER-WASHER-3.png';
+import img_BARRIER_WASHER_4 from '../../assets/brands/sea-lion/BARRIER-WASHER-4.png';
+import img_TUMBLE_DRYER_1 from '../../assets/brands/sea-lion/TUMBLE-DRYER-1.png';
+import img_TUMBLE_DRYER_3 from '../../assets/brands/sea-lion/TUMBLE-DRYER-3.png';
+import img_TUMBLE_DRYER from '../../assets/brands/sea-lion/TUMBLE-DRYER.png';
+import img_Tumble_Dryer_2 from '../../assets/brands/sea-lion/Tumble-Dryer-2.png';
+import img_AUTOMATIC_FEEDER_2 from '../../assets/brands/sea-lion/AUTOMATIC-FEEDER-2.png';
+import img_AUTOMATIC_FEEDER_1 from '../../assets/brands/sea-lion/AUTOMATIC-FEEDER-1.png';
+import img_AUTOMATIC_FEEDER from '../../assets/brands/sea-lion/AUTOMATIC-FEEDER.png';
+import img_FLATWORK_IRONER_ROLLER_1 from '../../assets/brands/sea-lion/FLATWORK-IRONER-ROLLER-1.png';
+import img_FLATWORK_IRONER_ROLLER from '../../assets/brands/sea-lion/FLATWORK-IRONER-ROLLER.png';
+import img_FLATWORK_IRONER_ROLLER_2 from '../../assets/brands/sea-lion/FLATWORK-IRONER-ROLLER-2.png';
+import img_HIGH_SPEED_CHEST_IRONER_2 from '../../assets/brands/sea-lion/HIGH-SPEED-CHEST-IRONER-2.png';
+import img_HIGH_SPEED_CHEST_IRONER from '../../assets/brands/sea-lion/HIGH-SPEED-CHEST-IRONER.png';
+import img_AUTOMATIC_LINEN_FOLDER_WITH_STACKER_1024x819 from '../../assets/brands/sea-lion/AUTOMATIC-LINEN-FOLDER-WITH-STACKER-1024x819.png';
+
 const BADGE_ICONS = {
-  'Efficiency': 'https://promactech.com/wp-content/uploads/elementor/thumbs/efficacy-qrww6c1jcuzebf08uau5t09fbs1r5ss0yq241whdyg.png',
-  'Water Saving': 'https://promactech.com/wp-content/uploads/elementor/thumbs/drop-qrww6p7a0jhetyh4pgixrwxvn68w5k89oj6wrrxvjc.png',
-  'Energy Saving': 'https://promactech.com/wp-content/uploads/elementor/thumbs/energy-control-qrww6p7a0jhetyh4pgixrwxvn68w5k89oj6wrrxvjc.png',
-  'Easy Maintenance': 'https://promactech.com/wp-content/uploads/elementor/thumbs/rpa-qrww6p7a0jhetyh4pgixrwxvn68w5k89oj6wrrxvjc.png',
-  'Temperature Control': 'https://promactech.com/wp-content/uploads/elementor/thumbs/thermometer-qrww6980scvjcl4carma3iz1jmfnipgtyc3nm2lkh4.png',
-  'Speed Control': 'https://promactech.com/wp-content/uploads/elementor/thumbs/knob-qrww6o9ftpg4icihuy4b7f6f1sdixv4jcejfahz9pk.png'
+  'Efficiency': img_efficacy_qrww6c1jcuzebf08uau5t09fbs1r5ss0yq241whdyg,
+  'Water Saving': img_drop_qrww6p7a0jhetyh4pgixrwxvn68w5k89oj6wrrxvjc,
+  'Energy Saving': img_energy_control_qrww6p7a0jhetyh4pgixrwxvn68w5k89oj6wrrxvjc,
+  'Easy Maintenance': img_rpa_qrww6p7a0jhetyh4pgixrwxvn68w5k89oj6wrrxvjc,
+  'Temperature Control': img_thermometer_qrww6980scvjcl4carma3iz1jmfnipgtyc3nm2lkh4,
+  'Speed Control': img_knob_qrww6o9ftpg4icihuy4b7f6f1sdixv4jcejfahz9pk
 };
 
 const PRODUCT_DATA = {
   'sea-lion-tunnel-continuous-batch-washer-systems': {
     title: 'TUNNEL CONTINUOUS BATCH WASHER SYSTEMS',
-    img: 'https://promactech.com/wp-content/uploads/2024/07/Pin-Merge-1024x819.png',
+    img: img_Pin_Merge_1024x819,
     images: [
-      'https://promactech.com/wp-content/uploads/2024/07/Pin-Merge-1024x819.png'
+      img_Pin_Merge_1024x819
     ],
     subtitle: 'LAUNDRY DRAGON - Smart and Powerful',
     description: 'Sea-Lion\'s "LAUNDRY DRAGON" is a smart and powerful tunnel washer system. Its design consists of the perfect, field proven combination of single drum and double drum technology.',
@@ -31,7 +84,7 @@ const PRODUCT_DATA = {
     subProducts: [
       {
         title: 'LOADING CONVEYOR',
-        img: 'https://promactech.com/wp-content/uploads/2024/07/LOADING-CONVEYOR.png',
+        img: img_LOADING_CONVEYOR,
         description: 'The system is easy for operation and precise for linen loading and transference. After putting the linen to be washed on the first groove, the loading system begins to weigh the linen automatically and the value is displayed at the screen of the controller.',
         features: [
           'Weighing accuracy of ±0.1kg',
@@ -44,7 +97,7 @@ const PRODUCT_DATA = {
       },
       {
         title: 'TUNNEL WASHER SYSTEM',
-        img: 'https://promactech.com/wp-content/uploads/2024/07/TUNNEL-WASHER-SYSTEM.png',
+        img: img_TUNNEL_WASHER_SYSTEM,
         description: 'Automatic continuous washing is the most effective linen washing and drying solution for large-scale manufacturing needs. It includes a loading system, a batch washer, extraction presses, and a drying system.',
         features: [
           'The SEA-LION SDX Tunnel washing system contains all of the necessary equipment for continuous washing, as well as synchronisation, programming, and laundry management.',
@@ -57,7 +110,7 @@ const PRODUCT_DATA = {
       },
       {
         title: 'EXTRACTION PRESS',
-        img: 'https://promactech.com/wp-content/uploads/2024/07/EXTRACTION-PRESS.png',
+        img: img_EXTRACTION_PRESS,
         description: 'Hydraulically driven, head pressure is infinitely adjustable up to 45 bar. Graphical real-time monitoring of the entire pressing process, with 100 built-in pressing programs.',
         features: [
           'With unique wringing and rinsing function, rinsing is more thorough. Reinforced pressure head enables seamless pressure regulation.',
@@ -70,7 +123,7 @@ const PRODUCT_DATA = {
       },
       {
         title: 'SHUTTLE CONVEYOR',
-        img: 'https://promactech.com/wp-content/uploads/2024/07/SHUTTLE-CONVEYOR.png',
+        img: img_SHUTTLE_CONVEYOR,
         description: 'The shuttle is used to transport linen cakes that have been washed and extracted to the pass-through type dryers for drying.',
         features: [
           'Available in single and double cake configurations.',
@@ -80,7 +133,7 @@ const PRODUCT_DATA = {
       },
       {
         title: 'BATCH DRYER',
-        img: 'https://promactech.com/wp-content/uploads/2024/07/BATCH-DRYER.png',
+        img: img_BATCH_DRYER,
         description: 'Specially designed to break up, organize and thoroughly dry dehydrated laundry fabrics.',
         features: [
           'Available in steam or gas heating.',
@@ -98,18 +151,18 @@ const PRODUCT_DATA = {
   },
   'sea-lion-washer-extractor': {
     title: 'WASHER EXTRACTOR',
-    img: 'https://promactech.com/wp-content/uploads/2024/07/01.-WASHER-EXTRACTOR-1024x819.png',
+    img: img_01__WASHER_EXTRACTOR_1024x819,
     images: [
-      'https://promactech.com/wp-content/uploads/2024/07/01.-WASHER-EXTRACTOR.png',
-      'https://promactech.com/wp-content/uploads/2024/07/01.-WASHER-EXTRACTOR-2.png',
-      'https://promactech.com/wp-content/uploads/2024/07/02.-TILTING-MODELS.png',
-      'https://promactech.com/wp-content/uploads/2024/07/WASHER-EXTRACTOR-1-1.png',
-      'https://promactech.com/wp-content/uploads/2024/07/WASHER-EXTRACTOR-2-1.png',
-      'https://promactech.com/wp-content/uploads/2024/07/WASHER-EXTRACTOR-3.png',
-      'https://promactech.com/wp-content/uploads/2024/07/WASHER-EXTRACTOR-4.png',
-      'https://promactech.com/wp-content/uploads/2024/07/WASHER-EXTRACTOR-1.png',
-      'https://promactech.com/wp-content/uploads/2024/07/WASHER-EXTRACTOR-2.png',
-      'https://promactech.com/wp-content/uploads/2024/07/WASHER-EXTRACTOR.png'
+      img_01__WASHER_EXTRACTOR,
+      img_01__WASHER_EXTRACTOR_2,
+      img_02__TILTING_MODELS,
+      img_WASHER_EXTRACTOR_1_1,
+      img_WASHER_EXTRACTOR_2_1,
+      img_WASHER_EXTRACTOR_3,
+      img_WASHER_EXTRACTOR_4,
+      img_WASHER_EXTRACTOR_1,
+      img_WASHER_EXTRACTOR_2,
+      img_WASHER_EXTRACTOR
     ],
     subtitle: 'Reliable, Field Proven Machine Design',
     description: 'Commercial washer-extractors from Sea-lion combine economy and performance into a reliable, field proven machine design. Features like extra-large door openings into baskets with smooth, dimpled perforations highlight the design quality and build craftsmanship put into these machines. XGQ-F washer-extractors have a full spring and shock suspension system that effectively isolates vibration transmission to the floor. Inverter with single motor drive is energy efficient, has fewer parts, and provides smooth power at all speeds.',
@@ -206,14 +259,14 @@ const PRODUCT_DATA = {
   },
   'sea-lion-open-pocket-washer-extractor': {
     title: 'OPEN POCKET WASHER EXTRACTOR',
-    img: 'https://promactech.com/wp-content/uploads/2024/07/OPEN-POCKET-WASHER-EXTRACTOR-4.png',
+    img: img_OPEN_POCKET_WASHER_EXTRACTOR_4,
     images: [
-      'https://promactech.com/wp-content/uploads/2024/07/OPEN-POCKET-WASHER-EXTRACTOR-4.png',
-      'https://promactech.com/wp-content/uploads/2024/07/OPEN-POCKET-WASHER-EXTRACTOR-2.png',
-      'https://promactech.com/wp-content/uploads/2024/07/OPEN-POCKET-WASHER-EXTRACTOR-1.png',
-      'https://promactech.com/wp-content/uploads/2024/07/OPEN-POCKET-WASHER-EXTRACTOR.png',
-      'https://promactech.com/wp-content/uploads/2024/07/OPEN-POCKET-WASHER-EXTRACTOR-3.png',
-      'https://promactech.com/wp-content/uploads/2024/07/OPEN-POCKET-WASHER-EXTRACTOR-5.png'
+      img_OPEN_POCKET_WASHER_EXTRACTOR_4,
+      img_OPEN_POCKET_WASHER_EXTRACTOR_2,
+      img_OPEN_POCKET_WASHER_EXTRACTOR_1,
+      img_OPEN_POCKET_WASHER_EXTRACTOR,
+      img_OPEN_POCKET_WASHER_EXTRACTOR_3,
+      img_OPEN_POCKET_WASHER_EXTRACTOR_5
     ],
     subtitle: 'Rugged, Reliable Workhorses Engineered to Last',
     description: "Industrial washer-extractors from Sea-lion are rugged, reliable workhorses engineered to last. They have a low total cost of ownership and produce superior wash results. The no nonsense, smart automation design saves time in the loading and unloading processes. Machine's open structure design incorporates an innovative suspension system located higher on the frame to better reduce vibration.",
@@ -260,16 +313,16 @@ const PRODUCT_DATA = {
   },
   'sea-lion-barrier-washer': {
     title: 'BARRIER WASHER',
-    img: 'https://promactech.com/wp-content/uploads/2024/07/BARRIER-WASHER-6.png',
+    img: img_BARRIER_WASHER_6,
     images: [
-      'https://promactech.com/wp-content/uploads/2024/07/BARRIER-WASHER-5.png',
-      'https://promactech.com/wp-content/uploads/2024/07/BARRIER-WASHER-6.png',
-      'https://promactech.com/wp-content/uploads/2024/07/BARRIER-WASHER-7.png',
-      'https://promactech.com/wp-content/uploads/2024/07/BARRIER-WASHER.png',
-      'https://promactech.com/wp-content/uploads/2024/07/BARRIER-WASHER-1.png',
-      'https://promactech.com/wp-content/uploads/2024/07/BARRIER-WASHER-2.png',
-      'https://promactech.com/wp-content/uploads/2024/07/BARRIER-WASHER-3.png',
-      'https://promactech.com/wp-content/uploads/2024/07/BARRIER-WASHER-4.png'
+      img_BARRIER_WASHER_5,
+      img_BARRIER_WASHER_6,
+      img_BARRIER_WASHER_7,
+      img_BARRIER_WASHER,
+      img_BARRIER_WASHER_1,
+      img_BARRIER_WASHER_2,
+      img_BARRIER_WASHER_3,
+      img_BARRIER_WASHER_4
     ],
     subtitle: 'Prevents Cross Contamination',
     description: 'Sea-lion BW barrier type washer-extractors provide the necessary separation between soiled and clean sides of the laundry with a fully enclosed frame and protective seal. Linen to be washed is loaded on the soiled side and unloaded on the clean side once the wash is complete eliminating any chance for cross contamination. Available in open pocket and split pocket configuration. Models available in 60 and 100kg dry load capacity and in open pocket and 2-pocket drum designs.',
@@ -285,12 +338,12 @@ const PRODUCT_DATA = {
   },
   'sea-lion-tumble-dryer': {
     title: 'TUMBLE DRYER',
-    img: 'https://promactech.com/wp-content/uploads/2024/07/TUMBLE-DRYER-1.png',
+    img: img_TUMBLE_DRYER_1,
     images: [
-      'https://promactech.com/wp-content/uploads/2024/07/TUMBLE-DRYER-1.png',
-      'https://promactech.com/wp-content/uploads/2024/07/TUMBLE-DRYER-3.png',
-      'https://promactech.com/wp-content/uploads/2024/07/TUMBLE-DRYER.png',
-      'https://promactech.com/wp-content/uploads/2024/07/Tumble-Dryer-2.png'
+      img_TUMBLE_DRYER_1,
+      img_TUMBLE_DRYER_3,
+      img_TUMBLE_DRYER,
+      img_Tumble_Dryer_2
     ],
     subtitle: 'Air Flow & Heating Balanced',
     description: 'GZ series standalone auto dryers from Sea-lion are used to prepare various types of garments for the ironing and folders finishing. Designed to have the perfect balance of CFM airflow and heat transfer for optimal drying.',
@@ -342,11 +395,11 @@ const PRODUCT_DATA = {
   },
   'sea-lion-automatic-feeder': {
     title: 'AUTOMATIC FEEDER',
-    img: 'https://promactech.com/wp-content/uploads/2024/07/AUTOMATIC-FEEDER-2.png',
+    img: img_AUTOMATIC_FEEDER_2,
     images: [
-      'https://promactech.com/wp-content/uploads/2024/07/AUTOMATIC-FEEDER-1.png',
-      'https://promactech.com/wp-content/uploads/2024/07/AUTOMATIC-FEEDER.png',
-      'https://promactech.com/wp-content/uploads/2024/07/AUTOMATIC-FEEDER-2.png'
+      img_AUTOMATIC_FEEDER_1,
+      img_AUTOMATIC_FEEDER,
+      img_AUTOMATIC_FEEDER_2
     ],
     subtitle: 'Precision Linen Feeding Systems',
     description: 'Sea-lion spreader feeders make quick work of preparing linens to be properly positioned for the ironer or folder. Available in three and four stations, ZBQ series spreader feeders provide high efficiency and require less labour to process goods. Models can spread a variety of flatwork items up to 130 inches.',
@@ -381,11 +434,11 @@ const PRODUCT_DATA = {
   },
   'sea-lion-flatwork-roller-ironer': {
     title: 'FLATWORK ROLLER IRONER',
-    img: 'https://promactech.com/wp-content/uploads/2024/07/FLATWORK-IRONER-ROLLER-1.png',
+    img: img_FLATWORK_IRONER_ROLLER_1,
     images: [
-      'https://promactech.com/wp-content/uploads/2024/07/FLATWORK-IRONER-ROLLER-1.png',
-      'https://promactech.com/wp-content/uploads/2024/07/FLATWORK-IRONER-ROLLER.png',
-      'https://promactech.com/wp-content/uploads/2024/07/FLATWORK-IRONER-ROLLER-2.png'
+      img_FLATWORK_IRONER_ROLLER_1,
+      img_FLATWORK_IRONER_ROLLER,
+      img_FLATWORK_IRONER_ROLLER_2
     ],
     subtitle: 'Efficient Roller Ironing Technology',
     description: 'The YZ series ironers are ideal for medium to large size laundries including resort hospitality, health care and commercial laundries. This line of ironers produces high quality linen finishes easily and efficiently.',
@@ -439,9 +492,9 @@ const PRODUCT_DATA = {
   },
   'sea-lion-high-speed-serpentine-flatwork-ironer': {
     title: 'HIGH SPEED SERPENTINE FLATWORK IRONER',
-    img: 'https://promactech.com/wp-content/uploads/2024/07/HIGH-SPEED-SERPENTINE-FLATWORK-IRONER-1024x819.png',
+    img: img_HIGH_SPEED_SERPENTINE_FLATWORK_IRONER_1024x819,
     images: [
-      'https://promactech.com/wp-content/uploads/2024/07/HIGH-SPEED-SERPENTINE-FLATWORK-IRONER-1024x819.png'
+      img_HIGH_SPEED_SERPENTINE_FLATWORK_IRONER_1024x819
     ],
     subtitle: 'Maximum Throughput Ironing Systems',
     description: 'Utilizes a unique serpentine path to maximize ironing contact area, enabling unprecedented operating speeds without compromising quality.',
@@ -481,10 +534,10 @@ const PRODUCT_DATA = {
   },
   'sea-lion-high-speed-chest-ironer': {
     title: 'HIGH SPEED CHEST IRONER',
-    img: 'https://promactech.com/wp-content/uploads/2024/07/HIGH-SPEED-CHEST-IRONER-2.png',
+    img: img_HIGH_SPEED_CHEST_IRONER_2,
     images: [
-      'https://promactech.com/wp-content/uploads/2024/07/HIGH-SPEED-CHEST-IRONER-2.png',
-      'https://promactech.com/wp-content/uploads/2024/07/HIGH-SPEED-CHEST-IRONER.png'
+      img_HIGH_SPEED_CHEST_IRONER_2,
+      img_HIGH_SPEED_CHEST_IRONER
     ],
     subtitle: 'Premium Flatwork Finishing',
     description: 'Sea-lion YZC series double chest ironers are high performers thanks to the precise structure of the double chest, springs and heat proof felt which ensures the rolls keep adequate elasticity and spring cushion for maximum surface contact with the chest.',
@@ -525,9 +578,9 @@ const PRODUCT_DATA = {
   },
   'sea-lion-automatic-high-speed-folder-with-stacker': {
     title: 'AUTOMATIC HIGH SPEED FOLDER WITH STACKER',
-    img: 'https://promactech.com/wp-content/uploads/2024/07/AUTOMATIC-LINEN-FOLDER-WITH-STACKER-1024x819.png',
+    img: img_AUTOMATIC_LINEN_FOLDER_WITH_STACKER_1024x819,
     images: [
-      'https://promactech.com/wp-content/uploads/2024/07/AUTOMATIC-LINEN-FOLDER-WITH-STACKER-1024x819.png'
+      img_AUTOMATIC_LINEN_FOLDER_WITH_STACKER_1024x819
     ],
     subtitle: 'Automated Post-Ironing Management',
     description: 'The Sea-Lion intelligent linen folder is the industry\'s most efficient folder, with the highest efficiency and productivity. It does two forward lengthwise folding and three left/right breath-wise folding, for a total of five folding capabilities. The maximum folding size is 3000 × 3000 millimetres.',

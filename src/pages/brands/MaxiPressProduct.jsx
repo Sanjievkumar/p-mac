@@ -5,13 +5,30 @@ import { ArrowLeft, ChevronRight, ChevronLeft, ShieldCheck, CheckCircle2 } from 
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
+// Local brand asset imports
+import img_MPSB_1024x819 from '../../assets/brands/maxipress/MPSB-1024x819.png';
+import img_MPCY_1024x819 from '../../assets/brands/maxipress/MPCY-1024x819.png';
+import img_MPBBP_1024x819 from '../../assets/brands/maxipress/MPBBP-1024x819.png';
+import img_MP51_1024x819 from '../../assets/brands/maxipress/MP51-1024x819.png';
+import img_MPCAFF_FORM_FINISHER_640x640 from '../../assets/brands/maxipress/MPCAFF-FORM-FINISHER-640x640.png';
+import img_MP51_UTILITY_PRESS_BUCK_DIMENSION_01_01_1024x342 from '../../assets/brands/maxipress/MP51-UTILITY-PRESS-BUCK-DIMENSION-01-01-1024x342.jpg';
+import img_MP53_1024x819 from '../../assets/brands/maxipress/MP53-1024x819.png';
+import img_MP53_LAUNDRY_UTILITY_LEGGER_PRESS_BUCK_DIMENSION_01_1024x342 from '../../assets/brands/maxipress/MP53-LAUNDRY-UTILITY-LEGGER-PRESS-BUCK-DIMENSION-01-1024x342.jpg';
+import img_MP54_1024x819 from '../../assets/brands/maxipress/MP54-1024x819.png';
+import img_MPCCY_1024x819 from '../../assets/brands/maxipress/MPCCY-1024x819.png';
+import img_MP19_1024x819 from '../../assets/brands/maxipress/MP19-1024x819.png';
+import img_MP19_MUSHROOM_TOPPER_BUCK_DIMENSION_01_01_1024x342 from '../../assets/brands/maxipress/MP19-MUSHROOM-TOPPER-BUCK-DIMENSION-01-01-1024x342.jpg';
+import img_MPs42 from '../../assets/brands/maxipress/MPs42.png';
+import img_MPS_42_DRYCLEANING_PRESS_BUCK_DIMENSION_01_1024x342 from '../../assets/brands/maxipress/MPS-42-DRYCLEANING-PRESS-BUCK-DIMENSION-01-1024x342.jpg';
+import img_MP46_1024x819 from '../../assets/brands/maxipress/MP46-1024x819.png';
+
 export const PRODUCT_DATA = {
   "mp51-laundry-utility-press": {
     title: "MP51 – LAUNDRY UTILITY PRESS",
     subtitle: "MP51 - LAUNDRY UTILITY PRESS",
     description: "MAXIPRESS laundry presses are well-known for their speed and efficiency in the industry. These presses are available in steam and electrically heated variants, with a range of buck sizes and choices. This patented design is simple and reliable, with one of the industry’s finest warranties.",
-    img: "https://promactech.com/wp-content/uploads/2024/07/MP51-1024x819.png",
-    specImg: "https://promactech.com/wp-content/uploads/2024/02/MP51-UTILITY-PRESS-BUCK-DIMENSION-01-01-1024x342.jpg",
+    img: img_MP51_1024x819,
+    specImg: img_MP51_UTILITY_PRESS_BUCK_DIMENSION_01_01_1024x342,
     features: [
       "51 Inch Tapered Buck, Steam Heated Laundry Utility Press.",
       "Fast head closing for maximum operator efficiency.",
@@ -27,8 +44,8 @@ export const PRODUCT_DATA = {
     title: "MP53 – LAUNDRY UTILITY LEGGER PRESS",
     subtitle: "MP53 - LAUNDRY UTILITY LEGGER PRESS",
     description: "MAXIPRESS laundry presses are well-known for their speed and efficiency in the industry. These presses are available in steam and electrically heated variants, with a range of buck sizes and choices. This patented design is simple and reliable, with one of the industry’s finest warranties.",
-    img: "https://promactech.com/wp-content/uploads/2024/07/MP53-1024x819.png",
-    specImg: "https://promactech.com/wp-content/uploads/2024/07/MP53-LAUNDRY-UTILITY-LEGGER-PRESS-BUCK-DIMENSION-01-1024x342.jpg",
+    img: img_MP53_1024x819,
+    specImg: img_MP53_LAUNDRY_UTILITY_LEGGER_PRESS_BUCK_DIMENSION_01_1024x342,
     features: [
       "53 Inch Tapered Buck, Steam Heated Laundry Utility Press",
       "Fast head closing for maximum operator efficiency.",
@@ -44,7 +61,7 @@ export const PRODUCT_DATA = {
     title: "MP54 – RECTANGULAR BUCK LAUNDRY UTILITY PRESS",
     subtitle: "MP54 - RECTANGULAR BUCK LAUNDRY UTILITY PRESS",
     description: "MAXIPRESS laundry presses are well-known for their speed and efficiency in the industry. These presses are available in steam and electrically heated variants, with a range of buck sizes and choices. This patented design is simple and reliable, with one of the industry’s finest warranties.",
-    img: "https://promactech.com/wp-content/uploads/2024/07/MP54-1024x819.png",
+    img: img_MP54_1024x819,
     features: [
       "Rectangular Buck Laundry Press, Steam Heated",
       "Fast head closing for maximum operator efficiency.",
@@ -58,7 +75,7 @@ export const PRODUCT_DATA = {
     title: "MPBBP – BANTOM BODY PRESS",
     subtitle: "MPBBP - BANTOM BODY PRESS",
     description: "MAXIPRESS laundry presses are well-known for their speed and efficiency in the industry. These presses are available in steam and electrically heated variants, with a range of buck sizes and choices. This patented design is simple and reliable, with one of the industry’s finest warranties.",
-    img: "https://promactech.com/wp-content/uploads/2024/07/MPBBP-1024x819.png",
+    img: img_MPBBP_1024x819,
     features: [
       "Bantam Body Press, Steam Heated",
       "Fast head closing for maximum operator efficiency.",
@@ -73,7 +90,7 @@ export const PRODUCT_DATA = {
     title: "MPBCY – BANTON COLLAR & CUFF PRESS",
     subtitle: "MPBCY - BANTON COLLAR & CUFF PRESS",
     description: "MAXIPRESS laundry presses are well-known for their speed and efficiency in the industry. These presses are available in steam and electrically heated variants, with a range of buck sizes and choices. This patented design is simple and reliable, with one of the industry’s finest warranties.",
-    img: "https://promactech.com/wp-content/uploads/2024/07/MPCY-1024x819.png",
+    img: img_MPCY_1024x819,
     features: [
       "Banton Collar-Cuff-Yoke, Steam Heated",
       "Fast head closing for maximum operator efficiency.",
@@ -89,7 +106,7 @@ export const PRODUCT_DATA = {
     title: "MPCCY – TRIPLE HEAD COLLAR & CUFF PRESS",
     subtitle: "MPCCY - TRIPLE HEAD COLLAR & CUFF PRESS",
     description: "MAXIPRESS laundry presses are well-known for their speed and efficiency in the industry. These presses are available in steam and electrically heated variants, with a range of buck sizes and choices. This patented design is simple and reliable, with one of the industry’s finest warranties.",
-    img: "https://promactech.com/wp-content/uploads/2024/07/MPCCY-1024x819.png",
+    img: img_MPCCY_1024x819,
     features: [
       "Collar-Cuff Yoke Press, Triple Head, In-line, Y-Buck, Electric Timer, Steam Heated",
       "Two Hand Control.",
@@ -104,8 +121,8 @@ export const PRODUCT_DATA = {
     title: "MP19 – MUSHROOM TOPPER PRESS",
     subtitle: "MP19 - MUSHROOM  TOPPER PRESS",
     description: "MAXIPRESS laundry presses are well-known for their speed and efficiency in the industry. These presses are available in steam and electrically heated variants, with a range of buck sizes and choices. This patented design is simple and reliable, with one of the industry’s finest warranties.",
-    img: "https://promactech.com/wp-content/uploads/2024/07/MP19-1024x819.png",
-    specImg: "https://promactech.com/wp-content/uploads/2024/07/MP19-MUSHROOM-TOPPER-BUCK-DIMENSION-01-01-1024x342.jpg",
+    img: img_MP19_1024x819,
+    specImg: img_MP19_MUSHROOM_TOPPER_BUCK_DIMENSION_01_01_1024x342,
     features: [
       "Mushroom Press with Water Spray Gun, Steam Heated",
       "Insulated Head Cover and Nickel-Plated Head Reduces Heat Loss, Saves Energy.",
@@ -120,8 +137,8 @@ export const PRODUCT_DATA = {
     title: "MPS42/MPS46 – DRYCLEANING UTILITY",
     subtitle: "MPS42/MPS46 - DRYCLEANING UTILITY",
     description: "The MAXIPRESS Drycleaning Press, with its distinctive design head buck, offers excellent garment visibility, convenience of dressing and the capacity to function as a steam/vacuum/ironing board. With numerous upgraded capabilities, this time-tested classic is one of the most flexible presses in the market.",
-    img: "https://promactech.com/wp-content/uploads/2024/07/MPs42.png",
-    specImg: "https://promactech.com/wp-content/uploads/2024/07/MPS-42-DRYCLEANING-PRESS-BUCK-DIMENSION-01-1024x342.jpg",
+    img: img_MPs42,
+    specImg: img_MPS_42_DRYCLEANING_PRESS_BUCK_DIMENSION_01_1024x342,
     features: [
       "Manual Dry-Cleaning Utility Press, Steam Heated, 42″ Buck",
       "Patented controls allow head closing with either hand.",
@@ -140,7 +157,7 @@ export const PRODUCT_DATA = {
     title: "MPCAFF – FORM FINISHER",
     subtitle: "MPCAFF - FORM FINISHER",
     description: "This finisher can finish the clothes automatically after putting the clothes on the model, which takes 20-30 seconds. It features high degree automation, with air blast function, is optional for manual and automatic operation, has adjustable shoulder size, and the frame of model can be rotary by 360°, adjustable force for the operating rod, is an ideal finishing equipment for various laundries.",
-    img: "https://promactech.com/wp-content/uploads/2024/07/MPCAFF-FORM-FINISHER-640x640.png",
+    img: img_MPCAFF_FORM_FINISHER_640x640,
     features: [
       "Manual and automatic operation under computer control.",
       "The model can be rotated at 360 degrees allowing easy positioning of garments.",
@@ -154,7 +171,7 @@ export const PRODUCT_DATA = {
     title: "MP46SVB – STEAM – VACUUM BOARD",
     subtitle: "",
     description: "Conditioning steam and vacuum provided with MAXIPRESS’s time-proven steam and vacuum valves.",
-    img: "https://promactech.com/wp-content/uploads/2024/07/MP46-1024x819.png",
+    img: img_MP46_1024x819,
     features: [
       "Steam-Vacuum Board",
       "Pleater pads included for special needs.",
@@ -167,7 +184,7 @@ export const PRODUCT_DATA = {
     title: "MPSB – SPOTTING BOARD",
     subtitle: "MPSB - SPOTTING BOARD",
     description: "Vacuum Spotting Board with all required spotting guns, air gun, and steam gun.",
-    img: "https://promactech.com/wp-content/uploads/2024/07/MPSB-1024x819.png",
+    img: img_MPSB_1024x819,
     features: [
       "Vacuum Spotting Board",
       "With all required spotting guns, air gun, and steam gun.",

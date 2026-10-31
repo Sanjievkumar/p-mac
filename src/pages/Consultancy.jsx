@@ -839,39 +839,22 @@ function CombinedWhyChooseAndCta() {
       
       {/* ──────────────── ROW 1: WHY CHOOSE PROMAC ──────────────── */}
       
-      <div className="max-w-[1450px] mx-auto px-4 relative z-10 flex flex-col xl:flex-row items-center justify-between gap-8 mb-16">
+      <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16 mb-20">
         
-        {/* 1. Dynamic Machine */}
-        <div className="w-full xl:w-[30%] relative flex items-center justify-center min-h-[350px]">
-          <motion.div
-            animate={{ y: [0, -8, 0] }}
-            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-            className="w-full h-[400px] flex justify-center items-center"
-          >
-            <img 
-              src="/images/consultancy/promac-dynamic-splash.png" 
-              alt="Dynamic Washer Composition" 
-              className="w-full h-full object-contain drop-shadow-2xl"
-              style={{ maskImage: 'radial-gradient(ellipse at center, black 70%, transparent 100%)', WebkitMaskImage: 'radial-gradient(ellipse at center, black 70%, transparent 100%)' }}
-            />
-          </motion.div>
-        </div>
-
-        {/* 2. Text */}
-        <div className="w-full xl:w-[25%] z-10 text-center xl:text-left px-2">
-          <span className="text-[#E31E24] font-bold text-xs md:text-sm tracking-widest uppercase mb-4 block">
+        {/* 1. Text */}
+        <div className="w-full lg:w-[38%] xl:w-[35%] z-10 text-center lg:text-left">
+          <span className="text-[#E31E24] font-bold text-xs sm:text-sm tracking-[0.2em] uppercase mb-4 block">
             WHY CHOOSE PROMAC
           </span>
-          <h2 className="text-3xl xl:text-[38px] font-black text-[#041E42] tracking-tight leading-[1.15]">
-            Your Partner in <br/>
-            Building <br/>
-            Better Laundry <br/>
-            Operations
+          <h2 className="text-3xl sm:text-4xl xl:text-[44px] font-black text-[#041E42] tracking-tight leading-[1.15]">
+            Your Partner in <br className="hidden sm:inline" />
+            Building Better <br className="hidden sm:inline" />
+            Laundry Operations<span className="text-[#E31E24]">.</span>
           </h2>
         </div>
 
-        {/* 3. Premium White Card */}
-        <div className="w-full xl:w-[45%] relative z-10">
+        {/* 2. Premium White Card */}
+        <div className="w-full lg:w-[62%] xl:w-[65%] relative z-10">
           <motion.div 
             animate={{ rotate: 360 }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
@@ -882,20 +865,18 @@ function CombinedWhyChooseAndCta() {
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="bg-white rounded-[32px] shadow-[0_20px_60px_rgba(4,30,66,0.04)] border border-slate-100 py-12 px-2 relative z-10"
+            className="bg-white rounded-[28px] sm:rounded-[32px] shadow-[0_20px_60px_rgba(4,30,66,0.05)] border border-slate-100 py-10 sm:py-12 px-4 sm:px-8 relative z-10"
           >
-            {/* Removed the top-left ornament based on user feedback */}
-            
-            <div className="flex flex-row justify-between divide-x divide-slate-100 relative z-10">
+            <div className="grid grid-cols-2 sm:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-slate-100 relative z-10">
               {reasons.map((r, idx) => (
                 <motion.div 
                   key={idx} 
-                  className={`flex-1 flex flex-col items-center text-center px-2 group cursor-pointer rounded-2xl transition-all duration-300 ${r.bgGlow} hover:shadow-sm py-4 -my-4`}
+                  className={`flex flex-col items-center text-center px-2 sm:px-3 group cursor-pointer rounded-2xl transition-all duration-300 ${r.bgGlow} hover:shadow-sm py-4 sm:py-3`}
                 >
                   <div className={`transition-transform duration-500 group-hover:-translate-y-2 group-hover:scale-110 ${r.color}`}>
                     {r.icon}
                   </div>
-                  <p className="text-[11px] font-bold text-slate-600 leading-[1.4] whitespace-pre-line group-hover:text-[#041E42] transition-colors">
+                  <p className="text-xs sm:text-[13px] font-bold text-slate-700 leading-[1.4] whitespace-pre-line group-hover:text-[#041E42] transition-colors">
                     {r.text}
                   </p>
                 </motion.div>
@@ -904,7 +885,6 @@ function CombinedWhyChooseAndCta() {
           </motion.div>
         </div>
       </div>
-
 
       {/* ──────────────── ROW 2: CTA BANNER ──────────────── */}
       
