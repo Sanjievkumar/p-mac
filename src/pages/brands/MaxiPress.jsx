@@ -134,8 +134,8 @@ export default function MaxiPress() {
             <div className="relative w-full h-[450px] lg:h-[600px] flex items-center justify-center rounded-3xl overflow-hidden shadow-2xl border border-slate-200 group">
               <img 
                 src={maxipressHero} 
-                alt="MaxiPress Products" 
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                alt="MaxiPress Finishing Solutions" 
+                className="w-full h-full object-cover object-[65%_center] group-hover:scale-105 transition-transform duration-700"
               />
             </div>
 
