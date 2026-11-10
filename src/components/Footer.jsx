@@ -70,11 +70,11 @@ export default function Footer() {
                     <MapPin className="w-4 h-4 text-[#e31e24] group-hover:text-white transition-colors duration-300" />
                   </div>
                   <p className="leading-relaxed mt-1">
-                    Promac Tech Pvt Ltd,<br />
-                    Ground Floor, Door No:5, Plot No:33,<br />
+                    Promac Technologies Pvt Ltd,<br />
+                    Ground Floor, Door No. 5, Plot No. 33,<br />
                     Sapthagiri Nagar, Inner Ring Road,<br />
                     Puludivakkam, Chennai — 600 091,<br />
-                    Tamil Nadu — INDIA.
+                    Tamil Nadu, India.
                   </p>
                 </div>
                 <div className="flex items-center gap-4 group cursor-pointer hover:text-white transition-colors duration-300">
