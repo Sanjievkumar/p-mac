@@ -30,8 +30,11 @@ function HeroSection() {
         <img 
           src={consultancyHeroBg} 
           alt="Promac Laundry Consultancy" 
-          className="w-full h-full object-cover object-left xl:object-center pointer-events-none" 
+          className="w-full h-full object-cover object-[right_center] pointer-events-none" 
         />
+
+        {/* Soft left gradient wash to ensure 100% text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 via-[36%] to-transparent pointer-events-none z-10" />
 
         {/* Interactive Desktop Content Layer */}
         <div className="absolute inset-0 z-20 pointer-events-none">
