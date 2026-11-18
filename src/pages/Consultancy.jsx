@@ -19,110 +19,255 @@ import consultancyHeroBg from '../assets/consultancy hero.jpeg';
 ───────────────────────────────────────────── */
 function HeroSection() {
   return (
-    <section id="consultancy-hero" className="relative w-full mt-[80px] bg-white overflow-hidden py-10 lg:py-16">
-      <div className="max-w-[1500px] mx-auto px-6 sm:px-10 lg:px-16">
-        
-        {/* Main Grid: Left Content, Right Complete Image */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-12 lg:mb-16">
-          
-          {/* Left Column: Typography & CTAs */}
-          <div className="lg:col-span-5 flex flex-col items-start space-y-6">
-            <div>
-              <span className="text-[#E31E24] font-extrabold text-xs tracking-[0.25em] uppercase block mb-3">
-                CONSULTANCY
-              </span>
-              <div className="w-12 h-1 bg-[#E31E24] rounded-full mb-6" />
-              
-              <h1 className="text-3xl sm:text-4xl xl:text-[46px] font-black tracking-tight text-[#001F3F] leading-[1.12]">
-                SMART PLANNING.<br/>
-                EFFICIENT OPERATIONS.<br/>
-                <span className="text-[#E31E24]">STRONGER RESULTS.</span>
-              </h1>
-            </div>
+    <section id="consultancy-hero" className="relative w-full mt-[80px] bg-white overflow-hidden">
+      {/* =========================================================================
+          DESKTOP VIEW (lg: and above)
+          Full background image displayed 100% completely (natural 1024x666 ratio,
+          zero cropping), with all contents positioned cleanly in the open top-left
+          space and sleek bottom feature bar—leaving every person & the display
+          screen completely clear and unobstructed.
+      ========================================================================= */}
+      <div className="hidden lg:block relative w-full max-w-[1536px] mx-auto aspect-[1024/666] overflow-hidden select-none">
+        {/* Complete Background Image — 100% visible, zero cropping */}
+        <img
+          src={consultancyHeroBg}
+          alt="Promac Laundry Consultancy Presentation"
+          className="w-full h-full object-contain object-center block pointer-events-none"
+        />
 
-            <p className="text-slate-600 text-base xl:text-lg font-normal leading-relaxed max-w-lg">
+        {/* Localized soft bright backdrop strictly over top-left window glass (zero wash on people/screen) */}
+        <div
+          className="absolute inset-0 pointer-events-none z-10"
+          style={{
+            background:
+              'radial-gradient(ellipse 46% 44% at 21% 21%, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.68) 52%, rgba(255,255,255,0) 88%)',
+          }}
+        />
+
+        {/* Interactive Desktop Content Layer — Positioned cleanly in top-left open space */}
+        <div className="absolute inset-0 z-20 pointer-events-none">
+          <div
+            style={{ left: '4.5%', top: '4.8%', maxWidth: '41%' }}
+            className="absolute flex flex-col items-start"
+          >
+            {/* Eyebrow tag */}
+            <motion.span
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.05 }}
+              className="text-[#E31E24] font-extrabold text-[clamp(10px,0.95vw,13px)] tracking-[0.25em] uppercase block mb-[0.7vw]"
+            >
+              CONSULTANCY
+            </motion.span>
+
+            {/* Red Accent Line */}
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+              className="w-10 h-[3px] bg-[#E31E24] origin-left rounded-full mb-[1vw]"
+            />
+
+            {/* H1 Heading */}
+            <motion.h1
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45, delay: 0.15 }}
+              className="font-black tracking-tight text-[#001F3F] leading-[1.06] text-[clamp(22px,2.5vw,38px)] drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)] mb-[0.9vw]"
+            >
+              SMART PLANNING.<br />
+              EFFICIENT OPERATIONS.<br />
+              <span className="text-[#E31E24]">STRONGER RESULTS.</span>
+            </motion.h1>
+
+            {/* Paragraph */}
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45, delay: 0.22 }}
+              className="text-slate-800 font-medium text-[clamp(11px,0.98vw,14.5px)] leading-[1.45] max-w-[92%] mb-[1.3vw]"
+            >
               Expert consultancy for industrial laundry setups that reduce costs, improve efficiency and drive long term success.
-            </p>
+            </motion.p>
 
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            {/* CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: 0.28 }}
+              className="flex items-center gap-3 pointer-events-auto"
+            >
               <Link to="/contact">
-                <button className="bg-[#E31E24] hover:bg-[#A31015] text-white px-7 py-3.5 text-xs font-bold tracking-[0.18em] uppercase transition-all shadow-md flex items-center gap-2 rounded-sm cursor-pointer">
+                <motion.button
+                  whileHover={{ scale: 1.03, backgroundColor: '#A31015' }}
+                  whileTap={{ scale: 0.97 }}
+                  className="bg-[#E31E24] text-white px-[clamp(13px,1.35vw,22px)] py-[clamp(8px,0.75vw,12px)] text-[clamp(9.5px,0.8vw,12px)] font-bold tracking-[0.16em] uppercase transition-all duration-300 shadow-[0_6px_20px_rgba(227,30,36,0.35)] hover:shadow-[0_8px_26px_rgba(227,30,36,0.5)] flex items-center gap-2 rounded-sm group cursor-pointer"
+                >
                   <span>Request Consultation</span>
-                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
+                  <span className="group-hover:translate-x-1 transition-transform border border-white rounded-full p-0.5 bg-white/10">
+                    <svg className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                </motion.button>
               </Link>
 
               <Link to="/contact">
-                <button className="bg-white text-[#001F3F] border border-slate-300 hover:border-slate-500 px-6 py-3.5 text-xs font-bold tracking-[0.16em] uppercase transition-all shadow-sm flex items-center gap-2 rounded-sm cursor-pointer">
+                <motion.button
+                  whileHover={{ scale: 1.03, borderColor: '#001F3F' }}
+                  whileTap={{ scale: 0.97 }}
+                  className="bg-white/95 hover:bg-white text-[#001F3F] border border-slate-300 hover:border-slate-500 px-[clamp(12px,1.2vw,19px)] py-[clamp(8px,0.75vw,12px)] text-[clamp(9.5px,0.8vw,12px)] font-bold tracking-[0.15em] uppercase transition-all duration-300 backdrop-blur-sm flex items-center gap-2 rounded-sm cursor-pointer shadow-sm"
+                >
                   <span>Talk to an Expert</span>
                   <svg className="w-3.5 h-3.5 text-[#E31E24]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
                   </svg>
-                </button>
+                </motion.button>
               </Link>
-            </div>
+            </motion.div>
           </div>
-
-          {/* Right Column: Complete Image Displayed 100% */}
-          <div className="lg:col-span-7">
-            <div className="relative w-full rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-50 group">
-              <img 
-                src={consultancyHeroBg} 
-                alt="Promac Laundry Consultancy Presentation" 
-                className="w-full h-auto object-contain block hover:scale-[1.02] transition-transform duration-700" 
-              />
-            </div>
-          </div>
-
         </div>
 
-        {/* Bottom Feature Strip - 3 Balanced Points */}
-        <div className="w-full">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 divide-y md:divide-y-0 md:divide-x divide-slate-200 bg-slate-50/80 py-5 px-6 sm:px-8 rounded-2xl border border-slate-200/80 shadow-sm">
-            
-            <div className="flex items-center gap-4 pl-2 first:pl-0">
-              <div className="w-12 h-12 rounded-xl bg-white shadow-sm border border-slate-100 flex items-center justify-center text-[#E31E24] shrink-0">
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+        {/* Bottom Feature Strip - sits sleekly along the conference table foreground */}
+        <div className="absolute bottom-[2.2%] inset-x-0 w-full z-20 pointer-events-auto">
+          <div className="w-full px-6 xl:px-14">
+            <div className="grid grid-cols-3 gap-6 divide-x divide-slate-300/80 bg-white/95 backdrop-blur-md py-3.5 px-6 xl:px-8 rounded-xl border border-slate-200/80 shadow-xl">
+              <div className="flex items-center gap-3.5 pl-2 first:pl-0">
+                <div className="text-[#E31E24] shrink-0">
+                  <svg className="w-5 h-5 xl:w-6 xl:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-xs xl:text-sm font-extrabold text-[#001F3F] tracking-wide">20+ Years Experience</h3>
+                  <p className="text-[10px] xl:text-xs text-slate-500 font-medium">Proven Industry Expertise</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3.5 pl-6">
+                <div className="text-[#E31E24] shrink-0">
+                  <svg className="w-5 h-5 xl:w-6 xl:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-xs xl:text-sm font-extrabold text-[#001F3F] tracking-wide">Pan India Presence</h3>
+                  <p className="text-[10px] xl:text-xs text-slate-500 font-medium">National Support Network</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3.5 pl-6">
+                <div className="text-[#E31E24] shrink-0">
+                  <svg className="w-5 h-5 xl:w-6 xl:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-xs xl:text-sm font-extrabold text-[#001F3F] tracking-wide">End-to-End Support</h3>
+                  <p className="text-[10px] xl:text-xs text-slate-500 font-medium">Concept to Commissioning</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* =========================================================================
+          MOBILE & TABLET VIEW (< lg)
+          Background image with readable overlay and full visual context.
+      ========================================================================= */}
+      <div className="lg:hidden relative w-full min-h-[580px] sm:min-h-[640px] flex flex-col justify-between overflow-hidden">
+        <img
+          src={consultancyHeroBg}
+          alt="Promac Laundry Consultancy Presentation"
+          className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
+        />
+
+        {/* Soft gradient overlay so text is legible while preserving photo visibility */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/80 to-slate-900/40 pointer-events-none z-10" />
+
+        {/* Main Content Area */}
+        <div className="relative z-20 w-full px-6 sm:px-10 pt-10 sm:pt-14 pb-8 flex-grow flex flex-col justify-start max-w-xl">
+          <span className="text-[#E31E24] font-extrabold text-xs tracking-[0.25em] uppercase block mb-2.5">
+            CONSULTANCY
+          </span>
+          <div className="w-10 h-1 bg-[#E31E24] mb-4 rounded-full" />
+
+          <h1 className="text-3xl sm:text-4xl font-black leading-[1.1] tracking-tight mb-4 text-[#001F3F]">
+            SMART PLANNING.<br />
+            EFFICIENT OPERATIONS.<br />
+            <span className="text-[#E31E24]">STRONGER RESULTS.</span>
+          </h1>
+
+          <p className="text-slate-700 text-sm sm:text-base font-medium leading-relaxed mb-6 max-w-md">
+            Expert consultancy for industrial laundry setups that reduce costs, improve efficiency and drive long term success.
+          </p>
+
+          <div className="flex flex-wrap items-center gap-3">
+            <Link to="/contact">
+              <button className="bg-[#E31E24] hover:bg-[#A31015] text-white px-5 py-3 text-xs font-bold tracking-[0.16em] uppercase transition-all shadow-md flex items-center gap-2 rounded-sm cursor-pointer">
+                <span>Request Consultation</span>
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </Link>
+
+            <Link to="/contact">
+              <button className="bg-white/95 text-[#001F3F] border border-slate-300 px-5 py-3 text-xs font-bold tracking-[0.15em] uppercase transition-all shadow-sm flex items-center gap-2 rounded-sm cursor-pointer">
+                <span>Talk to an Expert</span>
+                <svg className="w-3.5 h-3.5 text-[#E31E24]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
+                </svg>
+              </button>
+            </Link>
+          </div>
+        </div>
+
+        {/* Bottom Feature Strip (Mobile) */}
+        <div className="relative z-20 w-full px-4 sm:px-8 pb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 bg-white/95 backdrop-blur-md p-4 rounded-xl border border-slate-200/80 shadow-lg">
+            <div className="flex items-center gap-3">
+              <div className="text-[#E31E24] shrink-0">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
               <div>
-                <h3 className="text-sm font-bold text-[#001F3F] tracking-wide">20+ Years Experience</h3>
-                <p className="text-xs text-slate-500 font-medium">Proven Industry Expertise</p>
+                <h3 className="text-xs font-bold text-[#001F3F]">20+ Years Experience</h3>
+                <p className="text-[11px] text-slate-500">Proven Industry Expertise</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-4 pl-0 md:pl-6 pt-4 md:pt-0">
-              <div className="w-12 h-12 rounded-xl bg-white shadow-sm border border-slate-100 flex items-center justify-center text-[#E31E24] shrink-0">
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+            <div className="flex items-center gap-3">
+              <div className="text-[#E31E24] shrink-0">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                 </svg>
               </div>
               <div>
-                <h3 className="text-sm font-bold text-[#001F3F] tracking-wide">Pan India Presence</h3>
-                <p className="text-xs text-slate-500 font-medium">National Support Network</p>
+                <h3 className="text-xs font-bold text-[#001F3F]">Pan India Presence</h3>
+                <p className="text-[11px] text-slate-500">National Support Network</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-4 pl-0 md:pl-6 pt-4 md:pt-0">
-              <div className="w-12 h-12 rounded-xl bg-white shadow-sm border border-slate-100 flex items-center justify-center text-[#E31E24] shrink-0">
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+            <div className="flex items-center gap-3">
+              <div className="text-[#E31E24] shrink-0">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
                 </svg>
               </div>
               <div>
-                <h3 className="text-sm font-bold text-[#001F3F] tracking-wide">End-to-End Support</h3>
-                <p className="text-xs text-slate-500 font-medium">Concept to Commissioning</p>
+                <h3 className="text-xs font-bold text-[#001F3F]">End-to-End Support</h3>
+                <p className="text-[11px] text-slate-500">Concept to Commissioning</p>
               </div>
             </div>
-
           </div>
         </div>
-
       </div>
     </section>
   );
