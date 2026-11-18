@@ -19,43 +19,45 @@ import consultancyHeroBg from '../assets/consultancy hero.jpeg';
 ───────────────────────────────────────────── */
 function HeroSection() {
   return (
-    <section id="consultancy-hero" className="relative w-full mt-[80px] bg-white overflow-hidden">
+    <section id="consultancy-hero" className="relative w-full mt-[80px] bg-gradient-to-r from-white via-[#f5f8fb] to-[#e9eff5] overflow-hidden">
       {/* =========================================================================
           DESKTOP VIEW (lg: and above)
-          Full background image displayed 100% completely (natural 1024x666 ratio,
-          zero cropping), with all contents positioned cleanly in the open top-left
-          space and sleek bottom feature bar—leaving every person & the display
-          screen completely clear and unobstructed.
+          Sized cleanly to fit comfortably above the fold (~560px–650px tall),
+          displaying 100% of the uncropped background photo seamlessly on the right
+          with all hero contents cleanly overlaid on the left and bottom.
       ========================================================================= */}
-      <div className="hidden lg:block relative w-full max-w-[1536px] mx-auto aspect-[1024/666] overflow-hidden select-none">
-        {/* Complete Background Image — 100% visible, zero cropping */}
-        <img
-          src={consultancyHeroBg}
-          alt="Promac Laundry Consultancy Presentation"
-          className="w-full h-full object-contain object-center block pointer-events-none"
-        />
+      <div className="hidden lg:block relative w-full max-w-[1536px] mx-auto h-[calc(100vh-80px)] min-h-[560px] max-h-[650px] overflow-hidden select-none">
+        {/* Complete Uncropped Background Image — 100% full height visible, seamless left edge */}
+        <div className="absolute inset-y-0 right-0 h-full flex justify-end pointer-events-none">
+          <img
+            src={consultancyHeroBg}
+            alt="Promac Laundry Consultancy Presentation"
+            className="h-full w-auto max-w-none object-contain block"
+            style={{
+              WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 9%, black 100%)',
+              maskImage: 'linear-gradient(to right, transparent 0%, black 9%, black 100%)',
+            }}
+          />
+        </div>
 
-        {/* Localized soft bright backdrop strictly over top-left window glass (zero wash on people/screen) */}
+        {/* Soft localized left light cushion strictly behind text (never washes out people/screen) */}
         <div
           className="absolute inset-0 pointer-events-none z-10"
           style={{
             background:
-              'radial-gradient(ellipse 46% 44% at 21% 21%, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.68) 52%, rgba(255,255,255,0) 88%)',
+              'linear-gradient(to right, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.86) 22%, rgba(255,255,255,0.22) 35%, rgba(255,255,255,0) 48%)',
           }}
         />
 
-        {/* Interactive Desktop Content Layer — Positioned cleanly in top-left open space */}
-        <div className="absolute inset-0 z-20 pointer-events-none">
-          <div
-            style={{ left: '4.5%', top: '4.8%', maxWidth: '41%' }}
-            className="absolute flex flex-col items-start"
-          >
+        {/* Interactive Desktop Content Layer — Positioned cleanly in upper-left open space */}
+        <div className="relative z-20 h-full w-full px-8 xl:px-14 flex flex-col justify-between pt-6 xl:pt-9 pb-5">
+          <div className="max-w-[520px] flex flex-col items-start">
             {/* Eyebrow tag */}
             <motion.span
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.05 }}
-              className="text-[#E31E24] font-extrabold text-[clamp(10px,0.95vw,13px)] tracking-[0.25em] uppercase block mb-[0.7vw]"
+              className="text-[#E31E24] font-extrabold text-xs tracking-[0.25em] uppercase block mb-2"
             >
               CONSULTANCY
             </motion.span>
@@ -65,7 +67,7 @@ function HeroSection() {
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 0.4, delay: 0.1 }}
-              className="w-10 h-[3px] bg-[#E31E24] origin-left rounded-full mb-[1vw]"
+              className="w-10 h-[3px] bg-[#E31E24] origin-left rounded-full mb-3.5"
             />
 
             {/* H1 Heading */}
@@ -73,7 +75,7 @@ function HeroSection() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45, delay: 0.15 }}
-              className="font-black tracking-tight text-[#001F3F] leading-[1.06] text-[clamp(22px,2.5vw,38px)] drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)] mb-[0.9vw]"
+              className="font-black tracking-tight text-[#001F3F] leading-[1.05] text-[28px] xl:text-[38px] drop-shadow-[0_1px_1px_rgba(255,255,255,0.9)] mb-3"
             >
               SMART PLANNING.<br />
               EFFICIENT OPERATIONS.<br />
@@ -85,7 +87,7 @@ function HeroSection() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45, delay: 0.22 }}
-              className="text-slate-800 font-medium text-[clamp(11px,0.98vw,14.5px)] leading-[1.45] max-w-[92%] mb-[1.3vw]"
+              className="text-slate-700 font-medium text-[13.5px] xl:text-[15px] leading-relaxed max-w-[360px] xl:max-w-[420px] mb-5"
             >
               Expert consultancy for industrial laundry setups that reduce costs, improve efficiency and drive long term success.
             </motion.p>
@@ -101,7 +103,7 @@ function HeroSection() {
                 <motion.button
                   whileHover={{ scale: 1.03, backgroundColor: '#A31015' }}
                   whileTap={{ scale: 0.97 }}
-                  className="bg-[#E31E24] text-white px-[clamp(13px,1.35vw,22px)] py-[clamp(8px,0.75vw,12px)] text-[clamp(9.5px,0.8vw,12px)] font-bold tracking-[0.16em] uppercase transition-all duration-300 shadow-[0_6px_20px_rgba(227,30,36,0.35)] hover:shadow-[0_8px_26px_rgba(227,30,36,0.5)] flex items-center gap-2 rounded-sm group cursor-pointer"
+                  className="bg-[#E31E24] text-white px-4 xl:px-5 py-2.5 xl:py-3 text-[10.5px] xl:text-[11.5px] font-bold tracking-[0.15em] uppercase whitespace-nowrap transition-all duration-300 shadow-[0_6px_20px_rgba(227,30,36,0.35)] hover:shadow-[0_8px_26px_rgba(227,30,36,0.5)] flex items-center gap-2 rounded-sm group cursor-pointer"
                 >
                   <span>Request Consultation</span>
                   <span className="group-hover:translate-x-1 transition-transform border border-white rounded-full p-0.5 bg-white/10">
@@ -116,22 +118,20 @@ function HeroSection() {
                 <motion.button
                   whileHover={{ scale: 1.03, borderColor: '#001F3F' }}
                   whileTap={{ scale: 0.97 }}
-                  className="bg-white/95 hover:bg-white text-[#001F3F] border border-slate-300 hover:border-slate-500 px-[clamp(12px,1.2vw,19px)] py-[clamp(8px,0.75vw,12px)] text-[clamp(9.5px,0.8vw,12px)] font-bold tracking-[0.15em] uppercase transition-all duration-300 backdrop-blur-sm flex items-center gap-2 rounded-sm cursor-pointer shadow-sm"
+                  className="bg-white/95 hover:bg-white text-[#001F3F] border border-slate-300 hover:border-slate-500 px-4 xl:px-5 py-2.5 xl:py-3 text-[10.5px] xl:text-[11.5px] font-bold tracking-[0.14em] uppercase whitespace-nowrap transition-all duration-300 backdrop-blur-sm flex items-center gap-2 rounded-sm cursor-pointer shadow-sm"
                 >
                   <span>Talk to an Expert</span>
-                  <svg className="w-3.5 h-3.5 text-[#E31E24]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <svg className="w-3.5 h-3.5 text-[#E31E24] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
                   </svg>
                 </motion.button>
               </Link>
             </motion.div>
           </div>
-        </div>
 
-        {/* Bottom Feature Strip - sits sleekly along the conference table foreground */}
-        <div className="absolute bottom-[2.2%] inset-x-0 w-full z-20 pointer-events-auto">
-          <div className="w-full px-6 xl:px-14">
-            <div className="grid grid-cols-3 gap-6 divide-x divide-slate-300/80 bg-white/95 backdrop-blur-md py-3.5 px-6 xl:px-8 rounded-xl border border-slate-200/80 shadow-xl">
+          {/* Bottom Feature Strip - sits sleekly along the bottom edge */}
+          <div className="w-full pointer-events-auto">
+            <div className="grid grid-cols-3 gap-6 divide-x divide-slate-300/80 bg-white/95 backdrop-blur-md py-3 px-6 xl:px-8 rounded-xl border border-slate-200/80 shadow-lg">
               <div className="flex items-center gap-3.5 pl-2 first:pl-0">
                 <div className="text-[#E31E24] shrink-0">
                   <svg className="w-5 h-5 xl:w-6 xl:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
