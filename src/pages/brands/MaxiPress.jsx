@@ -93,22 +93,20 @@ function ProductCard({ id, product, idx }) {
 export default function MaxiPress() {
   return (
     <div className="w-full min-h-screen bg-[#F8F9FA] font-sans text-slate-800">
-      <Navbar /><div className="absolute top-[100px] left-8 lg:left-16 z-50"><Link to="/brands" className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors font-medium text-sm bg-black/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/10"><ArrowLeft className="w-4 h-4" /> Back to Brands</Link></div>
+      <Navbar />
 
       {/* ── 1. Hero Section ── */}
-      <section className="relative w-full min-h-[70vh] flex flex-col justify-center overflow-hidden bg-white pt-24 pb-12 border-b border-slate-100">
+      <section className="relative w-full min-h-[70vh] flex flex-col justify-center overflow-hidden bg-white pt-24 md:pt-28 pb-12 border-b border-slate-100">
         <div className="absolute inset-0 bg-slate-50/50" />
-        
-        {/* Top Floating Elements */}
-        <div className="absolute top-8 left-0 w-full px-8 lg:px-20 flex justify-between items-start z-30">
-          <Link to="/brands" className="inline-flex items-center gap-2 text-slate-500 hover:text-[#E31E24] transition-colors group">
-            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-            <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase">Back to Brands</span>
-          </Link>
-        </div>
 
-        <div className="relative z-20 w-full px-8 lg:px-20 mt-8 md:mt-16">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="relative z-20 w-full px-6 sm:px-8 lg:px-20">
+          <div className="max-w-7xl mx-auto">
+            <Link to="/brands" className="inline-flex items-center gap-2 text-slate-500 hover:text-[#E31E24] transition-colors group mb-8">
+              <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+              <span className="text-[11px] md:text-xs font-bold tracking-[0.2em] uppercase">Back to Brands</span>
+            </Link>
+          </div>
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
             
             {/* Left side: Logo & Text */}
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-xl">

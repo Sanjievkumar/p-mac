@@ -102,9 +102,9 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 top-[68px] z-40 bg-white/95 backdrop-blur-2xl md:hidden"
+            className="fixed inset-0 top-[80px] z-40 bg-white/95 backdrop-blur-2xl md:hidden overflow-y-auto"
           >
-            <div className="flex flex-col items-center gap-6 pt-16">
+            <div className="flex flex-col items-center gap-6 pt-12 pb-12">
               {NAV_LINKS.map((link, i) => {
                 const isHash = link.href.startsWith('/#');
                 
@@ -113,9 +113,9 @@ export default function Navbar() {
                     <motion.a
                       key={link.label}
                       href={link.href}
-                      initial={{ opacity: 0, y: 20 }}
+                      initial={{ opacity: 0, y: 14 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: i * 0.08 }}
+                      transition={{ delay: i * 0.04 }}
                       onClick={() => setMobileOpen(false)}
                       className="text-lg font-bold tracking-[0.12em] text-gray-900 font-display uppercase"
                     >
@@ -127,9 +127,9 @@ export default function Navbar() {
                 return (
                   <motion.div
                     key={link.label}
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 14 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: i * 0.08 }}
+                    transition={{ delay: i * 0.04 }}
                   >
                     <Link
                       to={link.href}

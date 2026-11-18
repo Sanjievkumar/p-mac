@@ -16,6 +16,65 @@ const BUBBLES = [
   { id: 'maxipress', logo: maxipressLogo, size: 200, top: '78%', left: '70%', depth: 2.5, dur: 16, rot: 0, driftX: -15, driftY: 15 },
 ];
 
+function DesktopBubbleNode({ bubble, index, smoothX, smoothY, prefersReducedMotion, onSelect }) {
+  const xOffset = useTransform(smoothX, [-1, 1], [-15 * bubble.depth, 15 * bubble.depth]);
+  const yOffset = useTransform(smoothY, [-1, 1], [-15 * bubble.depth, 15 * bubble.depth]);
+
+  const animationProps = prefersReducedMotion ? {} : {
+    x: [0, bubble.driftX, 0],
+    y: [0, bubble.driftY, 0],
+    scale: [1, 1.02, 0.98, 1]
+  };
+
+  return (
+    <motion.button
+      onClick={() => onSelect(bubble.id)}
+      className="absolute flex items-center justify-center will-change-transform z-10 group cursor-pointer"
+      style={{
+        top: bubble.top,
+        left: bubble.left,
+        width: bubble.size,
+        height: bubble.size,
+        x: xOffset,
+        y: yOffset
+      }}
+      initial={{ opacity: 0, scale: 0 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 1.2, delay: 1.0 + (index * 0.15), type: "spring", bounce: 0.4 }}
+    >
+      {/* Interactive Outer Glow on Hover */}
+      <div className="absolute inset-[-20%] rounded-full bg-[#0B4F8A]/[0.0] group-hover:bg-[#0B4F8A]/[0.04] blur-[15px] transition-colors duration-500 pointer-events-none" />
+
+      {/* Perfect Circle Node Background */}
+      <motion.div
+        className="absolute inset-0 bg-white border border-white/60 rounded-full shadow-[0_20px_50px_rgba(11,79,138,0.1)] group-hover:border-white transition-colors duration-500 will-change-transform"
+        animate={animationProps}
+        transition={{ duration: bubble.dur, repeat: Infinity, ease: "easeInOut" }}
+      />
+
+      {/* Soft Inner Highlight */}
+      <motion.div
+        className="absolute top-[15%] left-[20%] w-[30%] h-[30%] rounded-full bg-slate-50/[0.8] group-hover:bg-slate-100/[0.8] blur-[8px] transition-colors duration-500 pointer-events-none will-change-transform"
+        animate={animationProps}
+        transition={{ duration: bubble.dur, repeat: Infinity, ease: "easeInOut" }}
+      />
+
+      {/* Logo Image */}
+      <motion.div
+        className="relative w-[85%] h-[85%] flex items-center justify-center will-change-transform transition-transform duration-500 group-hover:scale-110"
+        animate={animationProps}
+        transition={{ duration: bubble.dur, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <img
+          src={bubble.logo}
+          alt={`${bubble.id} strategic partner logo`}
+          className="w-[85%] h-[85%] object-contain pointer-events-none drop-shadow-sm"
+        />
+      </motion.div>
+    </motion.button>
+  );
+}
+
 export default function BrandsHero() {
   const containerRef = useRef(null);
   const prefersReducedMotion = useReducedMotion();
@@ -46,17 +105,6 @@ export default function BrandsHero() {
   const percentX = useTransform(smoothX, [-1, 1], [0, 100]);
   const percentY = useTransform(smoothY, [-1, 1], [0, 100]);
   const spotlightGradient = useMotionTemplate`radial-gradient(circle at ${percentX}% ${percentY}%, rgba(255,255,255,0.06) 0%, transparent 40%)`;
-
-  const getMobilePos = (index) => {
-    const positions = [
-      { top: '12%', left: '15%', size: 100 }, 
-      { top: '10%', left: '72%', size: 90 }, 
-      { top: '45%', left: '85%', size: 80 }, 
-      { top: '85%', left: '18%', size: 100 }, 
-      { top: '82%', left: '70%', size: 110 }, 
-    ];
-    return positions[index];
-  };
 
   const handleScrollToBrand = (id) => {
     const el = document.getElementById(id);
@@ -105,8 +153,8 @@ export default function BrandsHero() {
       )}
 
       {/* Interactive Brand Stage: max-w-[1400px] matching master layout */}
-      <div className="relative w-full max-w-[1400px] h-full min-h-[90vh] max-h-[950px] mx-auto flex items-center justify-center">
-        {/* 3. Subtle Constellation Network (SVG) */}
+      <div className="relative w-full max-w-[1400px] h-full min-h-[85vh] lg:min-h-[90vh] lg:max-h-[950px] mx-auto flex flex-col items-center justify-center pt-28 pb-14 lg:py-0">
+        {/* 3. Subtle Constellation Network (SVG) — Desktop only */}
         {!isMobile && (
           <motion.svg 
             className="absolute inset-0 w-full h-full pointer-events-none z-0"
@@ -130,80 +178,28 @@ export default function BrandsHero() {
         </motion.svg>
       )}
 
-      {/* 4. The 5 Perfect Circle Brand Nodes */}
-      {BUBBLES.map((bubble, i) => {
-        const xOffset = useTransform(smoothX, [-1, 1], [-15 * bubble.depth, 15 * bubble.depth]);
-        const yOffset = useTransform(smoothY, [-1, 1], [-15 * bubble.depth, 15 * bubble.depth]);
-
-        const animationProps = prefersReducedMotion ? {} : {
-          x: [0, bubble.driftX, 0],
-          y: [0, bubble.driftY, 0],
-          scale: [1, 1.02, 0.98, 1]
-        };
-
-        const activeSize = isMobile ? getMobilePos(i).size : bubble.size;
-        const activeTop = isMobile ? getMobilePos(i).top : bubble.top;
-        const activeLeft = isMobile ? getMobilePos(i).left : bubble.left;
-
-        return (
-          <motion.button
-            key={bubble.id}
-            onClick={() => handleScrollToBrand(bubble.id)}
-            className="absolute flex items-center justify-center will-change-transform z-10 group cursor-pointer"
-            style={{ 
-              top: activeTop, 
-              left: activeLeft, 
-              width: activeSize, 
-              height: activeSize,
-              x: isMobile ? 0 : xOffset,
-              y: isMobile ? 0 : yOffset
-            }}
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, delay: 1.0 + (i * 0.15), type: "spring", bounce: 0.4 }}
-          >
-            {/* Interactive Outer Glow on Hover */}
-            <div className="absolute inset-[-20%] rounded-full bg-[#0B4F8A]/[0.0] group-hover:bg-[#0B4F8A]/[0.04] blur-[15px] transition-colors duration-500 pointer-events-none" />
-
-            {/* Perfect Circle Node Background */}
-            <motion.div
-              className="absolute inset-0 bg-white border border-white/60 rounded-full shadow-[0_20px_50px_rgba(11,79,138,0.1)] group-hover:border-white transition-colors duration-500 will-change-transform"
-              animate={animationProps}
-              transition={{ duration: bubble.dur, repeat: Infinity, ease: "easeInOut" }}
-            />
-            
-            {/* Soft Inner Highlight */}
-            <motion.div 
-              className="absolute top-[15%] left-[20%] w-[30%] h-[30%] rounded-full bg-slate-50/[0.8] group-hover:bg-slate-100/[0.8] blur-[8px] transition-colors duration-500 pointer-events-none will-change-transform"
-              animate={animationProps}
-              transition={{ duration: bubble.dur, repeat: Infinity, ease: "easeInOut" }}
-            />
-
-            {/* Logo Image */}
-            <motion.div
-              className="relative w-[85%] h-[85%] flex items-center justify-center will-change-transform transition-transform duration-500 group-hover:scale-110"
-              animate={animationProps}
-              transition={{ duration: bubble.dur, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <img 
-                src={bubble.logo} 
-                alt={`${bubble.id} strategic partner logo`}
-                className="w-[85%] h-[85%] object-contain pointer-events-none drop-shadow-sm"
-              />
-            </motion.div>
-          </motion.button>
-        );
-      })}
+      {/* 4. The 5 Perfect Circle Brand Nodes — Floating Constellation on Desktop (lg+) */}
+      {!isMobile && BUBBLES.map((bubble, i) => (
+        <DesktopBubbleNode
+          key={bubble.id}
+          bubble={bubble}
+          index={i}
+          smoothX={smoothX}
+          smoothY={smoothY}
+          prefersReducedMotion={prefersReducedMotion}
+          onSelect={handleScrollToBrand}
+        />
+      ))}
 
       {/* 5. Central Typography (Staggered Cinematic Entry) */}
-      <div className="relative z-20 flex flex-col items-center justify-center w-full max-w-[800px] px-6 mt-16 pointer-events-none">
+      <div className="relative z-20 flex flex-col items-center justify-center w-full max-w-[800px] px-6 lg:mt-16 pointer-events-none">
         
         {/* Eyebrow Label */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="inline-flex items-center gap-4 mb-10"
+          className="inline-flex items-center gap-4 mb-6 lg:mb-10"
         >
           <div className="w-8 h-[1px] bg-[#E31E24]/60" />
           <p className="text-[#E31E24] text-xs md:text-sm font-bold tracking-[0.25em] uppercase">
@@ -213,13 +209,13 @@ export default function BrandsHero() {
         </motion.div>
 
         {/* Hero Typography */}
-        <h1 className="text-center font-black flex flex-col items-center uppercase mb-10 w-full">
+        <h1 className="text-center font-black flex flex-col items-center uppercase mb-6 lg:mb-10 w-full">
           
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-            className="text-[#001F3F]/70 text-lg md:text-2xl lg:text-[28px] mb-3 tracking-[0.1em] font-semibold"
+            className="text-[#001F3F]/70 text-base sm:text-lg md:text-2xl lg:text-[28px] mb-2 lg:mb-3 tracking-[0.1em] font-semibold"
           >
             PARTNERSHIPS THAT
           </motion.span>
@@ -228,7 +224,7 @@ export default function BrandsHero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, delay: 0.6, type: "spring", bounce: 0.4 }}
-            className="text-[#E31E24] text-[70px] md:text-[110px] lg:text-[130px] leading-[0.85] tracking-tighter font-black drop-shadow-[0_0_30px_rgba(227,30,36,0.3)] z-10"
+            className="text-[#E31E24] text-[56px] sm:text-[76px] md:text-[110px] lg:text-[130px] leading-[0.88] tracking-tighter font-black drop-shadow-[0_0_30px_rgba(227,30,36,0.3)] z-10"
           >
             POWER
           </motion.span>
@@ -237,7 +233,7 @@ export default function BrandsHero() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
-            className="text-[#001F3F] text-[40px] md:text-[70px] lg:text-[85px] leading-[1] tracking-tighter mt-3 md:mt-4 drop-shadow-sm"
+            className="text-[#001F3F] text-[34px] sm:text-[46px] md:text-[70px] lg:text-[85px] leading-[1] tracking-tighter mt-2 sm:mt-3 md:mt-4 drop-shadow-sm"
           >
             PERFORMANCE.
           </motion.span>
@@ -252,6 +248,30 @@ export default function BrandsHero() {
         >
           We work with established technology manufacturers to bring specialised equipment and proven solutions to India's professional laundry industry.
         </motion.p>
+
+        {/* Mobile & Tablet Clean Partner Badges Row (< lg) — zero clipping or text collision */}
+        {isMobile && (
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4 pointer-events-auto max-w-md mx-auto">
+            {BUBBLES.map((bubble, i) => (
+              <motion.button
+                key={bubble.id}
+                onClick={() => handleScrollToBrand(bubble.id)}
+                initial={{ opacity: 0, scale: 0.85 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.45, delay: 0.3 + i * 0.08 }}
+                whileTap={{ scale: 0.95 }}
+                className="w-[86px] h-[86px] sm:w-[100px] sm:h-[100px] rounded-full bg-white border border-white/80 shadow-[0_12px_30px_rgba(11,79,138,0.12)] flex items-center justify-center p-3 cursor-pointer hover:shadow-lg transition-shadow"
+                aria-label={`Scroll to ${bubble.id}`}
+              >
+                <img
+                  src={bubble.logo}
+                  alt={`${bubble.id} strategic partner logo`}
+                  className="w-full h-full object-contain pointer-events-none"
+                />
+              </motion.button>
+            ))}
+          </div>
+        )}
       </div>
       </div>
     </section>
