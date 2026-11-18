@@ -26,7 +26,7 @@ function HeroSection() {
           displaying 100% of the uncropped background photo seamlessly on the right
           with all hero contents cleanly overlaid on the left and bottom.
       ========================================================================= */}
-      <div className="hidden lg:block relative w-full max-w-[1536px] mx-auto h-[calc(100vh-80px)] min-h-[560px] max-h-[650px] overflow-hidden select-none">
+      <div className="hidden lg:block relative w-full max-w-[1536px] mx-auto h-[calc(100vh-80px)] min-h-[480px] max-h-[620px] overflow-hidden select-none">
         {/* Complete Uncropped Background Image — 100% full height visible, seamless left edge */}
         <div className="absolute inset-y-0 right-0 h-full flex justify-end pointer-events-none">
           <img
@@ -50,14 +50,14 @@ function HeroSection() {
         />
 
         {/* Interactive Desktop Content Layer — Positioned cleanly in upper-left open space */}
-        <div className="relative z-20 h-full w-full px-8 xl:px-14 flex flex-col justify-between pt-6 xl:pt-9 pb-5">
+        <div className="relative z-20 h-full w-full px-8 xl:px-14 flex flex-col justify-between pt-5 xl:pt-8 pb-4">
           <div className="max-w-[520px] flex flex-col items-start">
             {/* Eyebrow tag */}
             <motion.span
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.05 }}
-              className="text-[#E31E24] font-extrabold text-xs tracking-[0.25em] uppercase block mb-2"
+              className="text-[#E31E24] font-extrabold text-[11px] xl:text-xs tracking-[0.25em] uppercase block mb-1.5"
             >
               CONSULTANCY
             </motion.span>
@@ -67,7 +67,7 @@ function HeroSection() {
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 0.4, delay: 0.1 }}
-              className="w-10 h-[3px] bg-[#E31E24] origin-left rounded-full mb-3.5"
+              className="w-10 h-[3px] bg-[#E31E24] origin-left rounded-full mb-3"
             />
 
             {/* H1 Heading */}
@@ -75,7 +75,7 @@ function HeroSection() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45, delay: 0.15 }}
-              className="font-black tracking-tight text-[#001F3F] leading-[1.05] text-[28px] xl:text-[38px] drop-shadow-[0_1px_1px_rgba(255,255,255,0.9)] mb-3"
+              className="font-black tracking-tight text-[#001F3F] leading-[1.05] text-[26px] xl:text-[36px] drop-shadow-[0_1px_1px_rgba(255,255,255,0.9)] mb-2.5"
             >
               SMART PLANNING.<br />
               EFFICIENT OPERATIONS.<br />
@@ -87,7 +87,7 @@ function HeroSection() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45, delay: 0.22 }}
-              className="text-slate-700 font-medium text-[13.5px] xl:text-[15px] leading-relaxed max-w-[360px] xl:max-w-[420px] mb-5"
+              className="text-slate-700 font-medium text-[13px] xl:text-[14.5px] leading-relaxed max-w-[350px] xl:max-w-[410px] mb-4"
             >
               Expert consultancy for industrial laundry setups that reduce costs, improve efficiency and drive long term success.
             </motion.p>
